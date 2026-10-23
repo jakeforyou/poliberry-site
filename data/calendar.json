@@ -1,0 +1,86 @@
+[
+  {
+    "date": "2026-10-19",
+    "event": "South Carolina in-person early voting opens",
+    "why": "First SC county totals to set against 2022 (inference 3).",
+    "source": "https://scvotes.gov/voters/early-voting/",
+    "past": true
+  },
+  {
+    "date": "2026-10-22",
+    "event": "FEC pre-general reports due (Oct 1 to 14)",
+    "why": "Tests whether any candidate's cash fell below 30% of Q3.",
+    "source": "https://www.fec.gov/help-candidates-and-committees/dates-and-deadlines/2026-reporting-dates/pre-and-post-general-reports-2026/",
+    "past": true
+  },
+  {
+    "date": "2026-10-28",
+    "event": "Fed rate decision (FOMC Oct 27 to 28)",
+    "why": "2028 mechanism variable. A second hike before Election Day would be new.",
+    "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "past": false
+  },
+  {
+    "date": "2026-10-29",
+    "event": "September personal income release",
+    "why": "Real disposable income, a 2028 mechanism variable.",
+    "source": "https://www.bea.gov/data/income-saving/disposable-personal-income",
+    "past": false
+  },
+  {
+    "date": "2026-11-02",
+    "event": "Last day for a closing call",
+    "why": "Optional /where --closing, graded separately from the lock.",
+    "source": "HANDOFF.md section 5.4",
+    "past": false
+  },
+  {
+    "date": "2026-11-03",
+    "event": "Election Day",
+    "why": "Night mode polls public results every 15 minutes.",
+    "source": "HANDOFF.md section 10",
+    "past": false
+  },
+  {
+    "date": "2026-11-04",
+    "event": "First grading pass (called races)",
+    "why": "Brier scores on called races.",
+    "source": "HANDOFF.md section 5.5",
+    "past": false
+  },
+  {
+    "date": "2026-11-06",
+    "event": "October jobs report",
+    "why": "Lands after the election. Context only.",
+    "source": "https://www.bls.gov/schedule/news_release/empsit.htm",
+    "past": false
+  },
+  {
+    "date": "2026-11-10",
+    "event": "Second grading pass (slow states)",
+    "why": "About this date.",
+    "source": "HANDOFF.md section 5.5",
+    "past": false
+  },
+  {
+    "date": "2026-12-07",
+    "event": "Final grade on certified results (early December)",
+    "why": "Decision rule applied. About this date.",
+    "source": "HANDOFF.md section 5.5",
+    "past": false
+  },
+  {
+    "date": "2026-12-12",
+    "event": "Louisiana runoff (LA-06)",
+    "why": "Last redrawn seat to resolve.",
+    "source": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Louisiana",
+    "past": false
+  },
+  {
+    "date": "2027-01-03",
+    "event": "New House seated",
+    "why": "Resolves the seating-dispute gate item.",
+    "source": "HANDOFF.md section 3",
+    "past": false
+  }
+]

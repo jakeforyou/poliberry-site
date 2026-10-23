@@ -1,0 +1,248 @@
+{
+  "run_id": "2026-10-21T2145",
+  "kind": "run",
+  "built_at": "2026-10-23T11:51:05-04:00",
+  "datasets": {
+    "scorecard": {
+      "file": "data/dashboard/scorecard.json",
+      "rows": 273,
+      "title": "Scorecard items",
+      "description": "One row per locked scorecard item: our number, every benchmark with its source link, deltas from scripts/deltas.py, and the reasoning. Binary items in percent, P(Democrat). From the latest run document (data/lock.json or data/runs/)."
+    },
+    "run": {
+      "file": "data/dashboard/run.json",
+      "rows": 147,
+      "title": "Run summary",
+      "description": "Key facts about the run shown: ids, dates, gate level and the parent's written summary. From the run document."
+    },
+    "reasoning": {
+      "file": "data/dashboard/reasoning.json",
+      "rows": 85,
+      "title": "Reasoning and red team",
+      "description": "Inference items, red team, cable and errors found, as written in the run's narrative."
+    },
+    "signals": {
+      "file": "data/dashboard/signals.json",
+      "rows": 247,
+      "title": "Non-poll signals",
+      "description": "Committee triage, ad spend, surrogate travel, registration and early-vote signals from the independence agent for this run (data/runs/<run>-independence.json)."
+    },
+    "gate_events": {
+      "file": "data/dashboard/gate_events.json",
+      "rows": 235,
+      "title": "Gate events",
+      "description": "Election-integrity events and the severity level each supports, from the gate agent (data/gate/)."
+    },
+    "fec": {
+      "file": "data/dashboard/fec.json",
+      "rows": 224,
+      "title": "Candidate cash on hand",
+      "description": "Cash on hand by candidate from FEC processed reports (scripts/fetch_fec.py, latest pull)."
+    },
+    "early_vote": {
+      "file": "data/dashboard/early_vote.json",
+      "rows": 921,
+      "title": "Early-vote composition",
+      "description": "Who has voted so far by registration, with PA's 2022 same-point baseline and NC's voter-history join (scripts/fetch_early_vote.py, latest pull). Composition only, never a forecast."
+    },
+    "mechanism_2028": {
+      "file": "data/dashboard/mechanism_2028.json",
+      "rows": 42,
+      "title": "2028 mechanism variables",
+      "description": "Variables tracked for 2028 without calling names, from the run document."
+    },
+    "districts": {
+      "file": "data/dashboard/districts.json",
+      "rows": 112,
+      "title": "Redrawn GOP seats",
+      "description": "The 16 seats drawn for 2026 to favor Republicans in TX, TN, LA, AL, NC, OH and FL, with Trump's 2024 margin under old and new lines, nominees, the newest DDHQ chance and ratings."
+    },
+    "daily_chance": {
+      "file": "data/dashboard/daily_chance.json",
+      "rows": 87,
+      "title": "The daily model chance",
+      "description": "One row per race chance item and lock margin item per day: the run's chance as the prior, the polls the run did not see as evidence, the posterior chance and margin at two decimals, every poll that entered with its weight and every poll excluded as seen. The rule is frozen in data/daily_rule.json (scripts/daily_chance.py). Labeled inferred."
+    },
+    "chambers": {
+      "file": "data/dashboard/chambers.json",
+      "rows": 6,
+      "title": "The chamber model",
+      "description": "One row per chamber per day: House and Senate control chance and seats simulated from the race posteriors (daily model) and the ratings consensus for every other race, with one national swing shared by every race; 20,000 draws, fixed seed; the seat distribution; the run's numbers beside. The rule is frozen in data/chamber_rule.json (scripts/chambers.py). Labeled inferred."
+    },
+    "core": {
+      "file": "data/dashboard/core.json",
+      "rows": 78,
+      "title": "The core model",
+      "description": "One row per race per day: fundamentals (2024 margin, the generic-ballot swing, incumbency), the weighted poll average with every poll and its weight, the ratings margin where no poll exists, the core margin and chance, sigma by days out, the run's judgment applied under its cap, and the final margin, range and chance. Constants fitted on 2022 and frozen in data/core_rule.json (scripts/core_model.py). Labeled inferred."
+    },
+    "days": {
+      "file": "data/dashboard/days.json",
+      "rows": 7,
+      "title": "Snapshot days",
+      "description": "Each day the dashboard was rebuilt, with the run it showed. The page's date picker reads this."
+    },
+    "changes": {
+      "file": "data/dashboard/changes.json",
+      "rows": 313,
+      "title": "What changed since the last pull",
+      "description": "Every difference between a snapshot and the one before it (forecast runs, DDHQ, markets, ratings, votes counted, FEC cash, gate events, signals, 2028 variables), each with a rule-based reading written in advance (scripts/changes.py). Readings say what moved and what the lock said would make it matter. They never forecast."
+    },
+    "model_history": {
+      "file": "data/dashboard/model_history.json",
+      "rows": 130,
+      "title": "The model's series, reconstructed",
+      "description": "The core model recomputed for each day from the lock day to the day before the first stored core rows: polls by the day their fieldwork ended, the generic ballot as of that day, the run in force that day, sigma by days out. Labeled reconstructed; the stored rows take over from the first day they exist. This is what since-lock and last-day compare against."
+    },
+    "trends": {
+      "file": "data/dashboard/trends.json",
+      "rows": 8292,
+      "title": "Benchmarks over time",
+      "description": "One row per item, source and day: our number on every snapshot day (a run day where the run changed), DDHQ's chamber series from its own page, and daily Polymarket and Kalshi prices (scripts/fetch_history.py). Percent for binary items. Snapshot-day values fill in where no daily series exists.",
+      "lazy": true
+    },
+    "battlefield": {
+      "file": "data/dashboard/battlefield.json",
+      "rows": 210,
+      "title": "Every rated race",
+      "description": "Every Senate, governor and rated House race in Wikipedia's prediction tables: each rater's rating, the median rater probability, a category from it, the inferred incumbent party, and our number where the race is on the scorecard. The map and the battlefield list draw this. Ratings are retrieved, never ours."
+    },
+    "battlefield_summary": {
+      "file": "data/dashboard/battlefield_summary.json",
+      "rows": 3,
+      "title": "Battlefield counts",
+      "description": "Rated races by office and category, and how many the consensus has flipping."
+    },
+    "state_overview": {
+      "file": "data/dashboard/state_overview.json",
+      "rows": 50,
+      "title": "State by state",
+      "description": "One row per state: who holds the governorship and both Senate seats today and whether each is on the 2026 ballot, the House delegation by party, how many of its districts the raters call competitive, Trump's 2024 margin, and our numbers where the state's races are on the scorecard. Officeholders from Wikipedia's current-member lists (scripts/fetch_composition.py)."
+    },
+    "baseline_2024": {
+      "file": "data/dashboard/baseline_2024.json",
+      "rows": 88,
+      "title": "The 2024 baseline",
+      "description": "What each race would look like if the whole country swung evenly since 2024: the 2024 presidential margin in the state or district plus the national swing our House popular-vote forecast implies, turned into a chance with the historical scatter around an even swing (scripts/swing2024.py). A baseline to argue with, not a forecast; the sigmas are the builder's and labeled inferred."
+    },
+    "upsets": {
+      "file": "data/dashboard/upsets.json",
+      "rows": 30,
+      "title": "Upset watch",
+      "description": "Races where the signals disagree enough that the favorite could lose, scored by fixed rules: we differ from the raters or Decision Desk by 10 or more, the markets moved 4 or more against the favorite in a week, the 2024 even-swing baseline is far away, or the markets price a race the raters call safe (scripts/upsets.py). Nothing here changes a forecast."
+    },
+    "calendar": {
+      "file": "data/dashboard/calendar.json",
+      "rows": 12,
+      "title": "Dates ahead",
+      "description": "Dated events that can move the scorecard, each with its source."
+    },
+    "faces": {
+      "file": "data/dashboard/faces.json",
+      "rows": 85,
+      "title": "Candidate photos",
+      "description": "Freely licensed photos from Wikimedia Commons (scripts/fetch_faces.py), cropped to 128 px, with author and license for each. Candidates with no free photo are listed with the reason."
+    },
+    "early_vote_daily": {
+      "file": "data/dashboard/early_vote_daily.json",
+      "rows": 2011,
+      "title": "Early vote by day",
+      "description": "Ballots counted per day by registration, cumulative, for 2026 and for 2022 at the same number of days before Election Day. Built from the states' own files (scripts/fetch_early_vote.py, scripts/fetch_ev_more.py) or the UF Election Lab tracker. A state's 2026 series comes from one source at a time: the state's own file when it is dated within two days of the run, the tracker otherwise, never both. Each row names its source."
+    },
+    "statements": {
+      "file": "data/dashboard/statements.json",
+      "rows": 500,
+      "title": "Election-legitimacy statements, coverage",
+      "description": "News articles matching an election-legitimacy query for each tracked speaker (the president and his allies), from the GDELT news index, newest first, with a keyword kind (scripts/fetch_statements.py, scripts/statements.py). Articles are retrieved; the kind is inferred from the headline. Coverage, not truth; never a forecast."
+    },
+    "statements_daily": {
+      "file": "data/dashboard/statements_daily.json",
+      "rows": 74,
+      "title": "Election-legitimacy statements, by day",
+      "description": "Articles per day per tracked speaker, and a total, from GDELT's daily volume."
+    },
+    "statements_summary": {
+      "file": "data/dashboard/statements_summary.json",
+      "rows": 1,
+      "title": "Election-legitimacy statements, this week",
+      "description": "Last seven days against the seven before, the top kind and speaker, and a template sentence."
+    },
+    "early_vote_readings": {
+      "file": "data/dashboard/early_vote_readings.json",
+      "rows": 46,
+      "title": "Early vote against 2022 and 2024",
+      "description": "Per state: ballots so far against the 2022 and 2024 counts at the same number of days before Election Day, the party mix at the same point in each year, and a reading written as a template (scripts/ev_readings.py). Counts are retrieved; the reading is inferred and says what the comparison can and cannot mean."
+    },
+    "flags": {
+      "file": "data/dashboard/flags.json",
+      "rows": 28,
+      "title": "Flagged moves",
+      "description": "Every move that cleared a fixed threshold (3 points in a market in a day, a rating change, a 5-point Decision Desk move, a poll 5 points off its 21-day average or in a thin race, 3 points intraday), with the news, polls and price path the scripts could gather beside it. A flag is a question, not a reading."
+    },
+    "brief": {
+      "file": "data/dashboard/brief.json",
+      "rows": 38,
+      "title": "The morning brief",
+      "description": "One lead and one entry per flagged item: what happened, why it moved, whether it should move us, and what would change the answer. Facts are retrieved by scripts. The reading is written each morning by /brief and labeled inferred. A day without a brief shows the facts alone."
+    },
+    "expected_rows": {
+      "file": "data/dashboard/expected_rows.json",
+      "rows": 23,
+      "title": "The result we expect, today",
+      "description": "One row per race: our margin with its 80 percent range and where it came from (the lock's margin, derived from our chance inside 10 to 90, else the poll average or the 2024 swing), the other share, the D and R shares, the turnout band or point and the votes, and the night view. Rules in scripts/expected.py."
+    },
+    "expected": {
+      "file": "data/dashboard/expected.json",
+      "rows": 23,
+      "title": "The result we expect, as frozen",
+      "description": "The rows frozen in data/expected.json on the ship date, the result layer's pre-registration, graded beside the lock after the election. Empty until frozen."
+    },
+    "night_shape": {
+      "file": "data/dashboard/night_shape.json",
+      "rows": 0,
+      "title": "How each state counts",
+      "description": "Per state: what is counted after midnight, how much was in by midnight in 2022, near-final and certification dates, ranked-choice tabulation. Retrieved or inferred per field."
+    },
+    "sc_composition": {
+      "file": "data/dashboard/sc_composition.json",
+      "rows": 1,
+      "title": "South Carolina composition",
+      "description": "County composition of the early vote against 2022 at the same days out, the race of absentee (mail) voters against 2022's final, and a geography estimate of party (modeled, never in a number). The lock's own tests for South Carolina. scripts/sc_composition.py."
+    },
+    "modeled_party": {
+      "file": "data/dashboard/modeled_party.json",
+      "rows": 7,
+      "title": "Modeled party of the early vote",
+      "description": "TargetSmart's modeled party split of ballots cast, as NBC News prints it per state: a model of who voted, not a count. Shown on the cards of states whose files carry no party, labeled modeled. Never enters the composition readings, the early-vote grade or any number."
+    },
+    "ev_swing": {
+      "file": "data/dashboard/ev_swing.json",
+      "rows": 4,
+      "title": "Early-vote composition swing",
+      "description": "One row per state with a same-point 2022 party baseline: the D minus R gap of the ballots today, the same gap at the same days out in 2022, and the swing between them. Recorded daily into data/daily and graded after the election against the poll miss (data/ev_rule.json, scripts/ev_signal.py). Not an input to any number."
+    },
+    "race_summary": {
+      "file": "data/dashboard/race_summary.json",
+      "rows": 25,
+      "title": "Every race we forecast, one row each",
+      "description": "Our number with its method label, the market and Decision Desk today, the consensus rating, the gap to the market now and at the lock and how far the market has moved since (all from deltas.py), the run's trigger and biggest unknown, today's flag and brief verdict, the upset reading, the incumbent party and the last seven days of ours and the market."
+    },
+    "polls_by_race": {
+      "file": "data/dashboard/polls_by_race.json",
+      "rows": 646,
+      "title": "Polls by race",
+      "description": "Every public poll in a tracked race from the daily pull (pollster, dates, population, D, R, margin), plus one average row per race over the last 21 days. Read by the race panel."
+    },
+    "events_by_race": {
+      "file": "data/dashboard/events_by_race.json",
+      "rows": 173,
+      "title": "Campaign news by race",
+      "description": "The top articles from the last 48 hours per race from the event feed, classified by kind, plus one summary row per race. Absence of an article is not absence of an event."
+    },
+    "trends_recent": {
+      "file": "data/dashboard/trends_recent.json",
+      "rows": 4730,
+      "title": "Trend lines, last 75 days",
+      "description": "The same rows as trends, limited to the last 75 days, for sparklines. The full trends file loads only when a race panel opens."
+    }
+  }
+}

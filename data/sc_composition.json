@@ -1,0 +1,163 @@
+[
+  {
+    "state": "SC",
+    "as_of": "2026-10-21",
+    "days_out": 13,
+    "through_2022": "2022-10-26",
+    "statewide_2026": 280114,
+    "statewide_2022_same_point": 131038,
+    "ratio_2022": 2.138,
+    "county_groups": [
+      {
+        "label": "Charleston, Richland and Greenville",
+        "counties": [
+          "CHARLESTON",
+          "RICHLAND",
+          "GREENVILLE"
+        ],
+        "ballots_2026": 76422,
+        "share_2026": 27.28,
+        "ballots_2022_same_point": 34109,
+        "share_2022_same_point": 26.03,
+        "share_change": 1.25,
+        "ratio_2022": 2.241,
+        "label_kind": "retrieved"
+      },
+      {
+        "label": "Counties Harris won in 2024",
+        "counties": [
+          "ALLENDALE",
+          "BAMBERG",
+          "CHARLESTON",
+          "FAIRFIELD",
+          "HAMPTON",
+          "LEE",
+          "MARION",
+          "MARLBORO",
+          "ORANGEBURG",
+          "RICHLAND",
+          "SUMTER",
+          "WILLIAMSBURG"
+        ],
+        "ballots_2026": 68003,
+        "share_2026": 24.28,
+        "ballots_2022_same_point": 31620,
+        "share_2022_same_point": 24.13,
+        "share_change": 0.15,
+        "ratio_2022": 2.151,
+        "label_kind": "retrieved"
+      },
+      {
+        "label": "Counties at Harris 45 percent or more of the two-party vote in 2024",
+        "counties": [
+          "ALLENDALE",
+          "BAMBERG",
+          "CHARLESTON",
+          "FAIRFIELD",
+          "FLORENCE",
+          "HAMPTON",
+          "JASPER",
+          "LEE",
+          "MARION",
+          "MARLBORO",
+          "ORANGEBURG",
+          "RICHLAND",
+          "SUMTER",
+          "WILLIAMSBURG"
+        ],
+        "ballots_2026": 77988,
+        "share_2026": 27.84,
+        "ballots_2022_same_point": 36273,
+        "share_2022_same_point": 27.68,
+        "share_change": 0.16,
+        "ratio_2022": 2.15,
+        "label_kind": "retrieved"
+      },
+      {
+        "label": "The Pee Dee (the lock's phrase, ten counties, inferred list)",
+        "counties": [
+          "FLORENCE",
+          "DARLINGTON",
+          "MARION",
+          "DILLON",
+          "MARLBORO",
+          "WILLIAMSBURG",
+          "CHESTERFIELD",
+          "LEE",
+          "SUMTER",
+          "CLARENDON"
+        ],
+        "ballots_2026": 25527,
+        "share_2026": 9.11,
+        "ballots_2022_same_point": 11901,
+        "share_2022_same_point": 9.08,
+        "share_change": 0.03,
+        "ratio_2022": 2.145,
+        "label_kind": "retrieved"
+      }
+    ],
+    "race": {
+      "black_ballots_2026": 6921,
+      "all_ballots_2026": 26106,
+      "black_share_2026": 26.51,
+      "black_ballots_2022_final": 14166,
+      "all_ballots_2022_final": 58583,
+      "black_share_2022_final": 24.18,
+      "white_share_2026": 70.7,
+      "note": "mail ballots returned only; the in-person early vote carries no race; 2022 is the final report, not the same point",
+      "label_kind": "retrieved"
+    },
+    "geography": {
+      "by_2024_lean": {
+        "now_2026": {
+          "d_two_party": 42.0,
+          "ballots_weighted": 280114
+        },
+        "same_point_2022": {
+          "d_two_party": 41.7,
+          "ballots_weighted": 129701
+        },
+        "weights": "each county's 2024 presidential two-party Democratic share",
+        "swing": 0.3
+      },
+      "by_primary_2026": {
+        "now_2026": {
+          "d_two_party": 55.58,
+          "ballots_weighted": 254192
+        },
+        "same_point_2022": {
+          "d_two_party": 54.74,
+          "ballots_weighted": 115660
+        },
+        "weights": "each county's Democratic share of June 2026 primary participation",
+        "swing": 0.84
+      },
+      "label": "modeled",
+      "in_number": false,
+      "note": "a model of who voted from where the ballots come from, not a count; ElectIndex's version of this method carries about a 4-point error and leans Republican at the close"
+    },
+    "sources": {
+      "ev_2026": {
+        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-23T1001-EV-Totals-10-21-26.csv",
+        "source_url": "https://scvotes.gov/elections-statistics/voter-participation/"
+      },
+      "archive_2022": {
+        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-23T1001-2022-Historical-Absentee-EV-Reports.zip",
+        "source_url": "https://scvotes.gov/wp-content/uploads/2022/12/2022-Historical-Absentee-EV-Reports.zip"
+      },
+      "race_2026": {
+        "source_url": "https://scvotes.gov/wp-content/uploads/2026/10/2026-10-23-Absentee-Statistics-by-Race-for-Election.xlsx"
+      },
+      "primary_participation_2026": {
+        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-21T2100-Political-Party-Participation-Through-060526.csv",
+        "source_url": "https://scvotes.gov/wp-content/uploads/2026/06/Political-Party-Participation-Through-060526.csv"
+      },
+      "counties_2024": {
+        "source_url": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_South_Carolina#By_county",
+        "revid": 1378678996,
+        "file": "/Users/jakeberry/Desktop/poliberry/data/sc_counties_2024.json"
+      }
+    },
+    "label": "retrieved"
+  }
+]

@@ -1,0 +1,1079 @@
+[
+  {
+    "as_of": "2026-10-16",
+    "kind": "lead",
+    "item_id": null,
+    "text": null,
+    "written_at": null,
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": "No brief written for this day yet.",
+    "label": null
+  },
+  {
+    "as_of": "2026-10-18",
+    "kind": "lead",
+    "item_id": null,
+    "text": null,
+    "written_at": null,
+    "n_flags": 2,
+    "n_explained": 0,
+    "stale": "No brief written for this day yet.",
+    "label": null
+  },
+  {
+    "as_of": "2026-10-18",
+    "kind": "item",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +4.0 points since the last pull (Polymarket 53.5 to 57.5%)"
+    ],
+    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 53.5 to 57.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-18",
+    "kind": "item",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.1 points since the last pull (Polymarket 88.5 to 92.5; Kalshi 88.5 to 90.8%)"
+    ],
+    "facts": "Flagged: markets moved +3.1 points since the last pull (Polymarket 88.5 to 92.5; Kalshi 88.5 to 90.8%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-19",
+    "kind": "lead",
+    "item_id": null,
+    "text": null,
+    "written_at": null,
+    "n_flags": 1,
+    "n_explained": 0,
+    "stale": "No brief written for this day yet.",
+    "label": null
+  },
+  {
+    "as_of": "2026-10-19",
+    "kind": "item",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -4.0 points since the last pull (Polymarket 67.5 to 63.5%)"
+    ],
+    "facts": "Flagged: markets moved -4.0 points since the last pull (Polymarket 67.5 to 63.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Tuesday's moves ran one way, toward Democrats, with Minnesota the exception. Ohio's governor market rose 5 points on two things that landed the same day: a Marist poll with Acton up 7 among likely voters in the morning and, in the afternoon, a Ramaswamy campaign ad featuring Acton's estranged mother that drew condemnation from Republicans. Cook moved South Carolina's Senate race to Lean Republican and Minnesota's to Lean Democratic, both on candidate quality. Sabato moved four House seats, three toward Democrats. None of this moves our numbers until a run says so. The open question is whether the Ohio ad changes votes or only prices, and no poll fielded after it exists.",
+    "written_at": "2026-10-21T11:01:48-04:00",
+    "n_flags": 7,
+    "n_explained": 7,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Likely R to Lean R",
+      "Silver Bulletin changed its rating, Likely R to Lean R"
+    ],
+    "facts": "Flagged: Cook changed its rating, Likely R to Lean R; Silver Bulletin changed its rating, Likely R to Lean R. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Cook and Silver move South Carolina to Lean Republican",
+    "what_happened": "Cook moved the race from Likely Republican to Lean Republican on Oct 20, one of three Senate moves that day, and its editor Jessica Taylor attributed them to candidate quality (retrieved, Cook's own post; the full analysis is behind its paywall). Silver Bulletin made the same move the same day (retrieved, ratings table). Darline Graham is the Republican nominee after her brother's death (retrieved, CNN). Trafalgar, through Oct 18, has Andrews 3 behind among likely voters, one of two public polls in 21 days (retrieved, polls feed).",
+    "why_it_moved": "The raters caught up to a race the sparse polling has shown close since early October, in a state Trump won by 18 (inferred).",
+    "should_it_move_us": "No. Our 19 sits where the market is, at 18. Decision Desk's 30 is the Lean Republican table value, not a new fact.",
+    "trigger": "A second nonpartisan likely-voter poll with Andrews ahead, or NRSC money arriving in South Carolina.",
+    "sources": [
+      "https://thecookpoliticalreport.substack.com/p/three-new-senate-moves-south-carolina",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +5.2 points since the last pull (Polymarket 72.5 to 77.0; Kalshi 70.5 to 76.5%)"
+    ],
+    "facts": "Flagged: markets moved +5.2 points since the last pull (Polymarket 72.5 to 77.0; Kalshi 70.5 to 76.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Ohio governor: a poll and an ad on the same day",
+    "what_happened": "Marist released its Ohio poll on the morning of Oct 20: Acton 50, Ramaswamy 43 among likely voters, fielded Oct 15 to 18, margin of error 4.5 (retrieved). That afternoon a video featuring Acton's estranged mother calling her a liar spread on social media, and at about 3:30 pm the Ramaswamy campaign said it made the ad and would spend 4 million dollars promoting it (retrieved, NBC News). Republicans including Meghan McCain and a DeWine appointee condemned it, and Sherrod Brown called it disgusting (retrieved, Newsweek). Kalshi's price for Acton went from 72 at 9 am to 74 by 11 am and 77 by 5 pm; Polymarket closed at 78.5 from 72.5 (retrieved, hourly prices). The day before, ActiVote had Ramaswamy up 2.8 among 400 likely voters (retrieved, polls feed). The event feed's first pull had not reached the governor's race at writing time, but the Ohio Senate feed carried the ad coverage: 8 ad and 8 scandal articles in 48 hours.",
+    "why_it_moved": "About two points on the poll by late morning and about three more on the ad in the afternoon, by the timing of the price path (inferred). The poll is the measured part. The ad is a reaction, not a measurement.",
+    "should_it_move_us": "Wait. The poll alone moves a seven-poll average by about a point, and our 63 already carries a 2 to 2.5 point Ohio polling-bias assumption against Democrats. The ad has no poll behind it yet.",
+    "trigger": "A likely-voter poll fielded after Oct 20 with Acton at 8 or more, or Republican outside groups cutting Ohio TV, moves us toward 70. A post-ad poll inside 3 says the market priced the ad wrong.",
+    "sources": [
+      "https://maristpoll.marist.edu/polls/midterm-elections-in-ohio-october-2026/",
+      "https://www.nbcnews.com/politics/2026-election/amy-acton-attack-ad-ohio-governors-race-rcna604601",
+      "https://www.newsweek.com/vivek-ramaswamys-election-odds-crash-to-new-low-amid-amy-acton-ad-backlash-12596323",
+      "https://kalshi.com/markets/govpartyoh/ohio-governor/govpartyoh-26",
+      "https://polymarket.com/event/ohio-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "item",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Likely D to Lean D"
+    ],
+    "facts": "Flagged: Cook changed its rating, Likely D to Lean D. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Cook moves Minnesota toward Republicans on candidate quality",
+    "what_happened": "Cook moved the race from Likely Democrat to Lean Democrat on Oct 20, the one move toward Republicans in its batch, on candidate quality (retrieved, Cook's post). The race's only debate was Oct 16 (retrieved, Axios). Trump has endorsed Tafoya (retrieved). The public polls on file are thin: a TIPP poll sponsored by a conservative group had Flanagan up 2 in early September and Impact Research had her up 7 in May (retrieved, search).",
+    "why_it_moved": "Cook's stated reason is the candidates, not a new poll (retrieved). Tafoya's name recognition and the debate are the likely inputs (inferred).",
+    "should_it_move_us": "No for now. Our 85 sits between Decision Desk at 82 and the market at 87.5. Minnesota last elected a Republican senator in 2002 (inferred, not retrieved).",
+    "trigger": "A nonpartisan likely-voter poll inside 3 points.",
+    "sources": [
+      "https://thecookpoliticalreport.substack.com/p/three-new-senate-moves-south-carolina",
+      "https://www.washingtonpost.com/politics/2026/10/20/us-senate-race-minnesota-moves-toward-gop-new-cook-rating/",
+      "https://www.axios.com/local/twin-cities/2026/10/16/minnesota-senate-debate-2026-watch-listen-time"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "item",
+    "item_id": "TX-35",
+    "item": "TX-35",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Lean R (flip) to Tossup"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Lean R (flip) to Tossup. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Sabato moves TX-35 from Lean R (flip) to Tossup",
+    "what_happened": "Sabato's Crystal Ball rating for TX-35 (open, redrawn San Antonio seat) reads Tossup in the ratings table dated Oct 20, against Lean R (flip) before (retrieved from the Wikipedia ratings table). Crystal Ball's own write-up was not retrieved: its site refuses scripted fetches. 270towin's copy of the Crystal Ball table, as of Oct 8, still shows Lean R (flip), so the move came after Oct 8 (retrieved).",
+    "why_it_moved": "The seat was redrawn mildly Republican in 2025 and a Toss-up rating says the national environment is eating that margin (inferred: the rater's reasoning was not retrieved).",
+    "should_it_move_us": "No. The lock forecasts a count of flips across the redrawn-seat set, not a rating per seat, and one rater's move does not change a count. A run reads the whole set.",
+    "trigger": "A public district poll, or a party committee adding or cutting the seat from its ad reservations.",
+    "sources": [
+      "https://270towin.com/2026-house-election/table/crystal-ball-2026-house-forecast"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "item",
+    "item_id": "TX-23",
+    "item": "TX-23",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Likely R to Lean R"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Likely R to Lean R. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Sabato moves TX-23 from Likely R to Lean R",
+    "what_happened": "Sabato's Crystal Ball rating for TX-23 (open) reads Lean R in the ratings table dated Oct 20, against Likely R before (retrieved from the Wikipedia ratings table). Crystal Ball's own write-up was not retrieved: its site refuses scripted fetches. 270towin's copy of the Crystal Ball table, as of Oct 8, still shows Likely R, so the move came after Oct 8 (retrieved).",
+    "why_it_moved": "An open seat in a Democratic year moves a notch toward competitive (inferred: the rater's reasoning was not retrieved).",
+    "should_it_move_us": "No. The lock forecasts a count of flips across the redrawn-seat set, not a rating per seat, and one rater's move does not change a count. A run reads the whole set.",
+    "trigger": "A public district poll, or a party committee adding or cutting the seat from its ad reservations.",
+    "sources": [
+      "https://270towin.com/2026-house-election/table/crystal-ball-2026-house-forecast"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "item",
+    "item_id": "NC-01",
+    "item": "NC-01",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Tossup to Lean D. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Sabato moves NC-01 from Tossup to Lean D",
+    "what_happened": "Sabato's Crystal Ball rating for NC-01 (Davis) reads Lean D in the ratings table dated Oct 20, against Tossup before (retrieved from the Wikipedia ratings table). Crystal Ball's own write-up was not retrieved: its site refuses scripted fetches. 270towin's copy of the Crystal Ball table, as of Oct 8, still shows Tossup, so the move came after Oct 8 (retrieved).",
+    "why_it_moved": "The incumbent Democrat in a redrawn seat is now favored by the rater (inferred: the rater's reasoning was not retrieved).",
+    "should_it_move_us": "No. The lock forecasts a count of flips across the redrawn-seat set, not a rating per seat, and one rater's move does not change a count. A run reads the whole set.",
+    "trigger": "A public district poll, or a party committee adding or cutting the seat from its ad reservations.",
+    "sources": [
+      "https://270towin.com/2026-house-election/table/crystal-ball-2026-house-forecast"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-20",
+    "kind": "item",
+    "item_id": "OH-01",
+    "item": "OH-01",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Lean D to Likely D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Lean D to Likely D. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Sabato moves OH-01 from Lean D to Likely D",
+    "what_happened": "Sabato's Crystal Ball rating for OH-01 (Landsman) reads Likely D in the ratings table dated Oct 20, against Lean D before (retrieved from the Wikipedia ratings table). Crystal Ball's own write-up was not retrieved: its site refuses scripted fetches. 270towin's copy of the Crystal Ball table, as of Oct 8, still shows Lean D, so the move came after Oct 8 (retrieved).",
+    "why_it_moved": "The incumbent Democrat moves further from danger (inferred: the rater's reasoning was not retrieved).",
+    "should_it_move_us": "No. The lock forecasts a count of flips across the redrawn-seat set, not a rating per seat, and one rater's move does not change a count. A run reads the whole set.",
+    "trigger": "A public district poll, or a party committee adding or cutting the seat from its ad reservations.",
+    "sources": [
+      "https://270towin.com/2026-house-election/table/crystal-ball-2026-house-forecast"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Decision Desk caught up to Ohio: its governor rating went from Toss-up to Lean Democratic, a 20-point move in the number we compare against, after Tuesday's Marist poll and the ad. Markets were flat overnight. Two polls landed in thin races: ActiVote has Ossoff up 8 in Georgia and Trafalgar has Andrews 3 behind in South Carolina, which fits yesterday's rating moves. Our numbers did not move. The Ohio question is unchanged: no poll fielded after the ad exists yet, and Ohio has no party-coded early vote to test the polling-bias assumption that keeps us at 63.",
+    "written_at": "2026-10-21T11:01:48-04:00",
+    "n_flags": 5,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +7.0 points since the last pull (Polymarket 58.5 to 65.5; Kalshi 57.5 to 64.5%)"
+    ],
+    "facts": "Flagged: markets moved +7.0 points since the last pull (Polymarket 58.5 to 65.5; Kalshi 57.5 to 64.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +5.0 points since the last pull (Polymarket 64.0 to 70.0; Kalshi 64.5 to 68.5%)"
+    ],
+    "facts": "Flagged: markets moved +5.0 points since the last pull (Polymarket 64.0 to 70.0; Kalshi 64.5 to 68.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.5 points since the last pull (Polymarket 64.5 to 67.5; Kalshi 63.5 to 67.5%)"
+    ],
+    "facts": "Flagged: markets moved +3.5 points since the last pull (Polymarket 64.5 to 67.5; Kalshi 63.5 to 67.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "rating",
+    "triggers": [
+      "Silver Bulletin changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: Silver Bulletin changed its rating, Tossup to Lean D (flip). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Kalshi 51.5 to 54.5%)"
+    ],
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 51.5 to 54.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Decision Desk moves Ohio governor to Lean Democratic",
+    "what_happened": "Decision Desk's governor rating for Ohio reads Lean D (flip) dated Oct 20 on the ratings table, against Toss-up on Oct 15; our table maps that to 70 from 50 (retrieved). Its public model page still carries the Oct 14 stamp. Behind it: Marist, Oct 15 to 18, Acton 50 to 43 among likely voters, and ActiVote, through Oct 19, Ramaswamy up 2.8 (retrieved, polls feed: 7 polls, average D+3.7). The ad featuring Acton's estranged mother and the Ramaswamy campaign's confirmation came Tuesday afternoon (retrieved, NBC News). Markets this morning: Polymarket 78.5, Kalshi 77.5, flat since Tuesday's close after rising 5 that day (retrieved).",
+    "why_it_moved": "The same two events as Tuesday's market move, read through a rater that blends markets at a quarter weight (inferred).",
+    "should_it_move_us": "Wait. Our 63 is 7 under Decision Desk and 15 under the markets. The gap is the Ohio polling-bias assumption the lock said the early vote would test, and Ohio publishes no party-coded early vote. A post-ad poll is the test that exists.",
+    "trigger": "A likely-voter poll fielded after Oct 20 with Acton at 8 or more, or Republican outside groups cutting Ohio TV, moves us toward 70. A post-ad poll inside 3 says the market priced the ad wrong.",
+    "sources": [
+      "https://maristpoll.marist.edu/polls/midterm-elections-in-ohio-october-2026/",
+      "https://www.nbcnews.com/politics/2026-election/amy-acton-attack-ad-ohio-governors-race-rcna604601",
+      "https://kalshi.com/markets/govpartyoh/ohio-governor/govpartyoh-26",
+      "https://polymarket.com/event/ohio-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "senate_ga",
+    "item": "Senate · GA",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "ActiVote: Ossoff up 8, in a race with two other polls",
+    "what_happened": "ActiVote, through Oct 20, has Ossoff up 8 among likely voters. It is the third public poll in 21 days; the average is D+7.7 (retrieved, polls feed).",
+    "why_it_moved": "Nothing moved. The flag fired because the race is thinly polled, not because the poll disagrees with the others (retrieved).",
+    "should_it_move_us": "No. Our 95 sits at the market's 95.6, and the poll says what the others say.",
+    "trigger": "Any nonpartisan poll with Collins inside 4.",
+    "sources": [],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-21",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Trafalgar: Andrews 3 behind in a thinly polled race",
+    "what_happened": "Trafalgar, through Oct 18, has Andrews 3 behind among likely voters, one of two public polls in 21 days; the average is D-3.5 (retrieved, polls feed). Cook and Silver moved the race to Lean Republican yesterday (retrieved).",
+    "why_it_moved": "The poll and the rating moves describe the same close race. Trafalgar's results have leaned Republican in past cycles (inferred, not retrieved this run).",
+    "should_it_move_us": "No. Our 19 is at the market's 18.",
+    "trigger": "A nonpartisan likely-voter poll with Andrews ahead.",
+    "sources": [
+      "https://thecookpoliticalreport.substack.com/p/three-new-senate-moves-south-carolina",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-22",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Ohio is the story again, and it is still not a new poll. Sabato moved the governor race to Leans Democratic, Silver Bulletin to Likely Democratic, Decision Desk to 70 from 50, and the markets to 83, while the only new nonpartisan polls show Acton up 2 (Fox News) and down 2 (ActiVote), both fielded before the Ramaswamy ad. The ad is now a fight inside the Republican party: DeWine asked for it to be pulled Thursday morning and Trump praised it on Truth Social. Georgia's governor market rose 7 points with no new poll and no feed, which we cannot explain. Our numbers did not move. The 09:30 snapshot did not fire. This one started at 10:05 and its pulls finished at 20:11, so every price here is an evening price.",
+    "written_at": "2026-10-22T20:16:35-04:00",
+    "n_flags": 5,
+    "n_explained": 5,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-22",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "market",
+    "triggers": [
+      "Decision Desk moved +20.0 (50.0 to 70.0%)",
+      "markets moved +6.0 points since the last pull (Polymarket 77.5 to 83.5; Kalshi 76.5 to 82.5%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)",
+      "Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip)"
+    ],
+    "facts": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%); markets moved +6.0 points since the last pull (Polymarket 77.5 to 83.5; Kalshi 76.5 to 82.5%); Sabato changed its rating, Tossup to Lean D (flip); Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Ohio governor: every benchmark moves toward Acton, no post-ad poll",
+    "what_happened": "Retrieved. Fox News (Beacon Research and Shaw and Co.) fielded Oct 15 to 19, released Oct 21 at 6 pm: Acton 50, Ramaswamy 48 among 1,592 likely voters, Acton +4 among 2,005 registered. Fox says the survey closed before the ad became public. ActiVote, Sep 27 to Oct 19, 400 likely voters: Ramaswamy 51, Acton 49. Sabato's Crystal Ball on Oct 22 moved the race from Toss-up to Leans Democratic, citing the Silver Bulletin average of Acton +4.7 and the ad, and warning that Ohio polls understated Republicans in 2018. Our ratings pull shows Silver Bulletin at Likely Democratic from Lean; the page is paywalled and says updated Oct 20. Decision Desk went to 70 from 50 in our pull; a direct check of its page returned HTTP 429. Polymarket 77.5 to 83.5 and Kalshi 76.5 to 82.5 since the Oct 21 evening pull, and +5 from midnight to 20:10 today. The ad features Acton's estranged mother. Secretary of State LaRose distanced himself Oct 21, Trump said Oct 21 it was not Ramaswamy's doing then praised it Oct 22 on Truth Social, and Governor DeWine on Oct 22 called it deeply troubling and asked that it come down. Ohio's Secretary of State dashboard, coded by last primary ballot taken (Ohio has no party registration): of 828,847 ballots received, 33.3 percent Democratic primary voters and 27.4 percent Republican, against 17.4 and 27.4 at the end of 2024.",
+    "why_it_moved": "Inferred. The ad backlash crossing into the Republican party, with DeWine and Trump on opposite sides, is the market driver, since no poll fielded after the ad exists. The Fox poll confirms an Acton lead but a smaller one than Marist's 8. The ratings and Decision Desk follow the average and the ad story, and Decision Desk blends the market at 25 percent, so part of its 20 points is the price. The primary-ballot early-vote split cannot be read as a party split: Democrats had the contested 2026 primary.",
+    "should_it_move_us": "Wait. Our core number is 70 (margin Acton +3.8) and the run's judgment is 63. The model counted ActiVote at Ramaswamy +2 and left the Fox poll out under its partisan (D/R) rule for the Beacon and Shaw pair, which is a classification to check, not a reason to move. Both new polls are below the average and both predate the ad, so today's moves are narrative and market-blended, not new polling.",
+    "trigger": "A likely-voter poll fielded after Oct 20 with Acton at 8 or more, or a Republican outside group cutting Ohio TV, moves the judgment toward 70. A post-ad poll inside 3 says the market priced the ad wrong.",
+    "sources": [
+      "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-15-19-2026_ohio_topline_october-21-release.pdf",
+      "https://www.foxnews.com/politics/fox-news-poll-gender-gap-pocketbook-pain-shape-ohio-senate-race",
+      "https://www.activote.net/polls/2026/oh-governor/",
+      "https://centerforpolitics.org/crystalball/2026-governor/",
+      "https://www.rasmussenreports.com/public_content/political_commentary/commentary_by_kyle_kondik/the_governors_ohio_to_leans_democratic_among_other_changes_as_dems_eye_gubernatorial_majority",
+      "https://www.natesilver.net/p/nate-silver-2026-midterm-election-governors-model",
+      "https://votes.decisiondeskhq.com/forecast/governor",
+      "https://polymarket.com/event/ohio-governor-winner-2026",
+      "https://kpic.com/news/nation-world/trump-praises-ramaswamy-attack-ad-against-acton-says-it-shouldnt-be-taken-down-ohio-mike-dewine",
+      "https://www.ms.now/rachel-maddow-show/maddowblog/ohio-ramaswamy-governor-acton-ad-dewine-backlash-midterm-elections",
+      "https://www.ohiosos.gov/data"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-22",
+    "kind": "item",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +7.2 points since the last pull (Polymarket 53.5 to 62.0; Kalshi 54.5 to 60.5%)"
+    ],
+    "facts": "Flagged: markets moved +7.2 points since the last pull (Polymarket 53.5 to 62.0; Kalshi 54.5 to 60.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Georgia governor market up 7 with no new poll",
+    "what_happened": "Retrieved. Polymarket 53.5 to 62.0 and Kalshi 54.5 to 60.5 since the Oct 21 evening pull. The intraday path climbed from 57.75 at midnight to 61.25 at 20:10 with no single step. No new nonpartisan poll: AJC/UGA, Oct 7 to 15, 1,000 likely voters, Jackson 46, Bottoms 45, released Oct 20. ActiVote, Oct 6 to 20, 400 likely voters, Jackson +3. Sabato's Crystal Ball on Oct 22 kept Georgia a Toss-up, one of two left. Decision Desk unchanged at 50. The Bottoms campaign said Thursday it raised 23.2 million dollars since August, with 11.5 million from the Democratic Governors Association, and Pritzker and Bloomberg each gave 1 million on Oct 20 and 21. Jackson has spent about 120 million of his own money. NBC's TargetSmart model of the 1.33 million early ballots cast has Democrats 55, Republicans 40, updated Oct 22; that is a model, not a count. Not retrieved today: the GDELT campaign feed for the race (connection reset) and Georgia's absentee file (Cloudflare bot check).",
+    "why_it_moved": "Unexplained after checking the feed and the polls. The feed is missing, the polls are unchanged, and the ratings did not move. The candidates, inferred and unranked: the fundraising story, the modeled early-vote split, and the Ohio move spilling into other open-seat Democratic markets, which load on the same national mood.",
+    "should_it_move_us": "Wait. Our core number is 49 (margin Jackson +0.1) and the run's judgment is 47, 14 under the market. A 7-point market move in a race with no new poll is sentiment until a poll or a counted early vote says otherwise.",
+    "trigger": "A nonpartisan likely-voter poll with Bottoms ahead by 3 or more, or Georgia's own absentee file showing the Black share of ballots above its 2022 same-point share.",
+    "sources": [
+      "https://polymarket.com/event/georgia-governor-winner-2026",
+      "https://kalshi.com/markets/govpartyga",
+      "https://www.wsbtv.com/news/local/ajcuga-poll-bottoms-jackson-dead-heat-georgia-governor-race/76TN3NROXRG4HDILVYDUMJS4RQ/",
+      "https://www.activote.net/polls/2026/ga-governor/",
+      "https://www.ajc.com/politics/2026/10/keisha-lance-bottoms-fundraising/",
+      "https://thegrio.com/2026/10/21/keisha-lance-bottoms-jb-pritzker-bloomberg-donation/",
+      "https://www.nbcnews.com/politics/2026-elections/georgia-results",
+      "https://www.rasmussenreports.com/public_content/political_commentary/commentary_by_kyle_kondik/the_governors_ohio_to_leans_democratic_among_other_changes_as_dems_eye_gubernatorial_majority"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-22",
+    "kind": "item",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "flag_kind": "rating",
+    "triggers": [
+      "Silver Bulletin changed its rating, Likely D to Solid D"
+    ],
+    "facts": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Silver Bulletin moves Arizona governor to Solid Democratic",
+    "what_happened": "Retrieved. Our ratings pull shows Silver Bulletin at Solid Democratic from Likely. Its page is paywalled and says updated Oct 20. No new poll: the newest nonpartisan poll is HighGround, Oct 8, Hobbs +17, and the four-poll average is +8.25. Markets 91.7 to 92.2 today. Decision Desk 70.",
+    "why_it_moved": "Inferred. No poll since Oct 8, so the change is the forecaster's own update, most likely the national environment feeding its model.",
+    "should_it_move_us": "No. Our core number is 95 (margin Hobbs +11.7) and the run's judgment is 80. A rating change with no new poll behind it is not information the model lacks.",
+    "trigger": "A nonpartisan likely-voter poll fielded after Oct 15 with Hobbs under +5.",
+    "sources": [
+      "https://www.natesilver.net/p/nate-silver-2026-midterm-election-governors-model",
+      "https://polymarket.com/event/arizona-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-22",
+    "kind": "item",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Lean D to Likely D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Lean D to Likely D. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Sabato moves Michigan governor to Likely Democratic",
+    "what_happened": "Retrieved. Sabato's Crystal Ball on Oct 22 moved the race from Leans to Likely Democratic, citing Marist (Benson 53 to 42 among registered voters, 51 to 45 among likely) and a cut in spending by James's allies that leaves Benson ahead on the air. Four-poll average Benson +6.5. Markets 92.7 to 93.0 today. Decision Desk 85.",
+    "why_it_moved": "Inferred. The Marist poll, which the model already counts at +6, and the spending cut, which is the one new fact and is reported secondhand by the Crystal Ball.",
+    "should_it_move_us": "No. Our core number is 79 (margin Benson +5.7) and the run's judgment is 85. The poll is in the model and the spending cut points the same way.",
+    "trigger": "Republican outside spending returning to Michigan broadcast, or a nonpartisan poll inside 3.",
+    "sources": [
+      "https://www.rasmussenreports.com/public_content/political_commentary/commentary_by_kyle_kondik/the_governors_ohio_to_leans_democratic_among_other_changes_as_dems_eye_gubernatorial_majority",
+      "https://centerforpolitics.org/crystalball/2026-governor/",
+      "https://maristpoll.marist.edu/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-22",
+    "kind": "item",
+    "item_id": "gov_nh",
+    "item": "Governor · NH",
+    "flag_kind": "rating",
+    "triggers": [
+      "Silver Bulletin changed its rating, Solid R to Likely R"
+    ],
+    "facts": "Flagged: Silver Bulletin changed its rating, Solid R to Likely R. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Silver Bulletin moves New Hampshire governor to Likely Republican",
+    "what_happened": "Retrieved. Our ratings pull shows Silver Bulletin at Likely Republican from Solid. Its page is paywalled and says updated Oct 20. No new poll: YouGov Oct 5 has Ayotte +9 and a Republican firm, National Public Affairs, Oct 12 has +16. Markets 5.3 to 5.2 today. Decision Desk 30.",
+    "why_it_moved": "Inferred. No new poll, so the change is the forecaster's own update, most likely the national environment.",
+    "should_it_move_us": "No. Our core number is 16 (margin Ayotte +7.1) and the run's judgment is 7. The market at 5 agrees with the run.",
+    "trigger": "A nonpartisan poll with Ayotte under +7.",
+    "sources": [
+      "https://www.natesilver.net/p/nate-silver-2026-midterm-election-governors-model",
+      "https://polymarket.com/event/new-hampshire-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "lead",
+    "item_id": null,
+    "text": null,
+    "written_at": null,
+    "n_flags": 8,
+    "n_explained": 0,
+    "stale": "No brief written for this day yet.",
+    "label": null
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "TX-28",
+    "item": "TX-28",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Lean D to Likely D"
+    ],
+    "facts": "Flagged: Cook changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "TX-34",
+    "item": "TX-34",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: Cook changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "TX-35",
+    "item": "TX-35",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Lean R (flip) to Tossup"
+    ],
+    "facts": "Flagged: Cook changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "TX-23",
+    "item": "TX-23",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Likely R to Lean R"
+    ],
+    "facts": "Flagged: Cook changed its rating, Likely R to Lean R. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "AL-02",
+    "item": "AL-02",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Likely R (flip) to Lean R (flip)"
+    ],
+    "facts": "Flagged: Cook changed its rating, Likely R (flip) to Lean R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "ga_margin_above_4",
+    "item": "Ossoff wins GA by more than 4",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Polymarket 85.7 to 88.7%)"
+    ],
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Polymarket 85.7 to 88.7%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "senate_nh",
+    "item": "Senate · NH",
+    "flag_kind": "poll",
+    "triggers": [
+      "Saint Anselm College (LV, through 2026-10-20) shows D+7 in a race with 2 other polls in 21 days"
+    ],
+    "facts": "Flagged: Saint Anselm College (LV, through 2026-10-20) shows D+7 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Saint Anselm College D+7 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Saint Anselm College",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-20",
+          "population": "LV",
+          "sample": 1672,
+          "d": 50.0,
+          "r": 43.0,
+          "margin_d": 7.0,
+          "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 6.67,
+        "n": 3,
+        "newest": "2026-10-20"
+      },
+      "market_path": [
+        [
+          "2026-10-23T10:28:41-04:00",
+          0.905
+        ],
+        [
+          "2026-10-23T10:44:47-04:00",
+          0.905
+        ],
+        [
+          "2026-10-23T11:00:00-04:00",
+          0.905
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "gov_nh",
+    "item": "Governor · NH",
+    "flag_kind": "poll",
+    "triggers": [
+      "Saint Anselm College (LV, through 2026-10-20) shows D-8 in a race with 2 other polls in 21 days"
+    ],
+    "facts": "Flagged: Saint Anselm College (LV, through 2026-10-20) shows D-8 in a race with 2 other polls in 21 days. News in the last 48 hours: 12 articles (2 legal, 1 poll, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 scandal, 0 money). Polls just in: Saint Anselm College D-8 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Supreme Court allows New Hampshire to reject student IDs at polls",
+          "url": "https://www.foxnews.com/politics/supreme-court-blocks-student-ids-voter-identification-new-hampshire",
+          "domain": "foxnews.com",
+          "seendate": "2026-10-23T07:15:00Z",
+          "kinds": [
+            "poll",
+            "legal"
+          ]
+        },
+        {
+          "title": "Medicare Advantage plans Coos and Carroll counties for 2027",
+          "url": "https://www.wmur.com/article/medicare-advantage-coos-and-carroll-for-2027/74223158",
+          "domain": "wmur.com",
+          "seendate": "2026-10-23T06:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "SCOTUS Says NH Can Close Student ID  Loophole  In Elections",
+          "url": "https://thefederalist.com/2026/10/22/scotus-says-new-hampshire-can-close-student-id-loophole-in-elections/",
+          "domain": "thefederalist.com",
+          "seendate": "2026-10-23T00:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Kamala Harris hopes to help Dems during NH visit in final sprint to midterms",
+          "url": "https://www.concordmonitor.com/2026/10/22/kamala-harris-hopes-to-help-dems-during-nh-visit-in-final-sprint-to-midterms/",
+          "domain": "concordmonitor.com",
+          "seendate": "2026-10-22T23:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Was Cinde Warmington a Purdue Pharma lobbyist ? Did she call OxyContin a  miracle drug ? Yes and yes – PolitiFact",
+          "url": "https://politifact.com/factchecks/2026/oct/22/kelly-ayotte/warmington-opioid-purdue-pharma-new-hampshire/",
+          "domain": "politifact.com",
+          "seendate": "2026-10-22T22:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Granite and Green Mountains : Key New Hampshire and Vermont Races",
+          "url": "https://www.dailykos.com/stories/2026/10/22/800097508/community/gran/",
+          "domain": "dailykos.com",
+          "seendate": "2026-10-22T22:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 2,
+        "scandal": 0,
+        "money": 0,
+        "other": 9
+      },
+      "polls": [
+        {
+          "pollster": "Saint Anselm College",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-20",
+          "population": "LV",
+          "sample": 1672,
+          "d": 42.0,
+          "r": 50.0,
+          "margin_d": -8.0,
+          "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -11.0,
+        "n": 3,
+        "newest": "2026-10-20"
+      },
+      "market_path": [
+        [
+          "2026-10-23T10:28:41-04:00",
+          0.05
+        ],
+        [
+          "2026-10-23T10:44:47-04:00",
+          0.0513
+        ],
+        [
+          "2026-10-23T11:00:00-04:00",
+          0.0515
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  }
+]

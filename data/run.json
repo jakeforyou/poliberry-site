@@ -1,0 +1,737 @@
+[
+  {
+    "key": "run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "kind",
+    "value": "lock",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "created_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "locked_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "lock_run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "previous_run_id",
+    "value": null,
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "gate_level",
+    "value": 1,
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "gate_set_by",
+    "value": "nc-sbe-memos-2026-09-04",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "lead",
+    "value": "Democrats are favored to take the House at 90. The Senate is a coin flip at 53, below DDHQ (56) and markets (63). Gate level 1. The live gate risk is North Carolina's mail-ballot memos, not troops and not USPS.",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "gate_paragraph",
+    "value": "Level 1. Set by the North Carolina State Board of Elections' Sept 4 memos, which require counties to disqualify mail ballots returned in unsealed envelopes and lift the ban on signature matching. A federal judge heard the injunction motion on Oct 14 and has not ruled. No rejections have been reported yet. The federal mail-ballot order is mostly stalled. On Sept 14 the Supreme Court refused to lift the injunction on the USPS ballot rule, so USPS gating cannot apply on Nov 3. That corrects the prior read. DOJ sued California on Oct 15 to stop counting about 20,000 flagged mail ballots. California has no scorecard race. The Joint Chiefs letter stands: no troops or federalized Guard at polling places. Level 2 triggers to watch: a denial in the NC case followed by county disqualifications, or a court order halting tabulation in a state with a close scorecard race.",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "control_note",
+    "value": "DDHQ's numbers come from a cached page about 46 hours old (model stamp Oct 14). DDHQ blends markets at 25 percent of every race, so DDHQ and the markets are not independent of each other.",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "seats_note",
+    "value": "Kalshi's Senate seat market counts Democratic Party seats and does not say whether King and Sanders count. Our item counts them.",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "ddhq_model_updated",
+    "value": "2026-10-14 13:48:09.087032",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "ddhq_cache_age_hours",
+    "value": 46.2,
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "markets_retrieved_at",
+    "value": "2026-10-16T15:37:56-04:00",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "benchmarks_with_source",
+    "value": 183,
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "benchmarks_null_with_reason",
+    "value": 26,
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "fec_stamp",
+    "value": "2026-10-16T1652",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "early_vote_stamp",
+    "value": "2026-10-16T1734",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "signals_note",
+    "value": "Pulled after this run: FEC cash 2026-10-16T1652, early vote 2026-10-16T1734. They have not moved any forecast number yet. The next /where run decides whether they do.",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "dashboard_built_at",
+    "value": "2026-10-16T17:42:48-04:00",
+    "as_of": "2026-10-16"
+  },
+  {
+    "key": "run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "kind",
+    "value": "lock",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "created_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "locked_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "lock_run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "previous_run_id",
+    "value": null,
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "gate_level",
+    "value": 1,
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "gate_set_by",
+    "value": "nc-sbe-memos-2026-09-04",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "lead",
+    "value": "Democrats are favored to take the House at 90. The Senate is a coin flip at 53, below DDHQ (56) and markets (63). Gate level 1. The live gate risk is North Carolina's mail-ballot memos, not troops and not USPS.",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "gate_paragraph",
+    "value": "Level 1. Set by the North Carolina State Board of Elections' Sept 4 memos, which require counties to disqualify mail ballots returned in unsealed envelopes and lift the ban on signature matching. A federal judge heard the injunction motion on Oct 14 and has not ruled. No rejections have been reported yet. The federal mail-ballot order is mostly stalled. On Sept 14 the Supreme Court refused to lift the injunction on the USPS ballot rule, so USPS gating cannot apply on Nov 3. That corrects the prior read. DOJ sued California on Oct 15 to stop counting about 20,000 flagged mail ballots. California has no scorecard race. The Joint Chiefs letter stands: no troops or federalized Guard at polling places. Level 2 triggers to watch: a denial in the NC case followed by county disqualifications, or a court order halting tabulation in a state with a close scorecard race.",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "control_note",
+    "value": "DDHQ's numbers come from a cached page about 46 hours old (model stamp Oct 14). DDHQ blends markets at 25 percent of every race, so DDHQ and the markets are not independent of each other.",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "seats_note",
+    "value": "Kalshi's Senate seat market counts Democratic Party seats and does not say whether King and Sanders count. Our item counts them.",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "ddhq_model_updated",
+    "value": "2026-10-14 13:48:09.087032",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "ddhq_cache_age_hours",
+    "value": 46.2,
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "markets_retrieved_at",
+    "value": "2026-10-16T15:37:56-04:00",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "benchmarks_with_source",
+    "value": 183,
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "benchmarks_null_with_reason",
+    "value": 26,
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "fec_stamp",
+    "value": "2026-10-18T1426",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "early_vote_stamp",
+    "value": "2026-10-18T1426",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "signals_note",
+    "value": "Pulled after this run: FEC cash 2026-10-18T1426, early vote 2026-10-18T1426. They have not moved any forecast number yet. The next /where run decides whether they do.",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "dashboard_built_at",
+    "value": "2026-10-18T15:34:50-04:00",
+    "as_of": "2026-10-18"
+  },
+  {
+    "key": "run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "kind",
+    "value": "lock",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "created_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "locked_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "lock_run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "previous_run_id",
+    "value": null,
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "gate_level",
+    "value": 1,
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "gate_set_by",
+    "value": "nc-sbe-memos-2026-09-04",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "lead",
+    "value": "Democrats are favored to take the House at 90. The Senate is a coin flip at 53, below DDHQ (56) and markets (63). Gate level 1. The live gate risk is North Carolina's mail-ballot memos, not troops and not USPS.",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "gate_paragraph",
+    "value": "Level 1. Set by the North Carolina State Board of Elections' Sept 4 memos, which require counties to disqualify mail ballots returned in unsealed envelopes and lift the ban on signature matching. A federal judge heard the injunction motion on Oct 14 and has not ruled. No rejections have been reported yet. The federal mail-ballot order is mostly stalled. On Sept 14 the Supreme Court refused to lift the injunction on the USPS ballot rule, so USPS gating cannot apply on Nov 3. That corrects the prior read. DOJ sued California on Oct 15 to stop counting about 20,000 flagged mail ballots. California has no scorecard race. The Joint Chiefs letter stands: no troops or federalized Guard at polling places. Level 2 triggers to watch: a denial in the NC case followed by county disqualifications, or a court order halting tabulation in a state with a close scorecard race.",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "control_note",
+    "value": "DDHQ's numbers come from a cached page about 46 hours old (model stamp Oct 14). DDHQ blends markets at 25 percent of every race, so DDHQ and the markets are not independent of each other.",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "seats_note",
+    "value": "Kalshi's Senate seat market counts Democratic Party seats and does not say whether King and Sanders count. Our item counts them.",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "ddhq_model_updated",
+    "value": "2026-10-14 13:48:09.087032",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "ddhq_cache_age_hours",
+    "value": 46.2,
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "markets_retrieved_at",
+    "value": "2026-10-16T15:37:56-04:00",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "benchmarks_with_source",
+    "value": 183,
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "benchmarks_null_with_reason",
+    "value": 26,
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "fec_stamp",
+    "value": "2026-10-19T1932",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "early_vote_stamp",
+    "value": "2026-10-19T1932",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "signals_note",
+    "value": "Pulled after this run: FEC cash 2026-10-19T1932, early vote 2026-10-19T1932. They have not moved any forecast number yet. The next /where run decides whether they do.",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "dashboard_built_at",
+    "value": "2026-10-19T19:37:20-04:00",
+    "as_of": "2026-10-19"
+  },
+  {
+    "key": "run_id",
+    "value": "2026-10-20T1031",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "kind",
+    "value": "run",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "created_at",
+    "value": "2026-10-20T10:41:08-04:00",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "locked_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "lock_run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "previous_run_id",
+    "value": null,
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "gate_level",
+    "value": 1,
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "gate_set_by",
+    "value": "nc-sbe-memos-2026-09-04",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "lead",
+    "value": "Democrats are favored for the House at 90. Senate control moves from 53 to 55, still below DDHQ (56) and markets (63.5 to 64.5). Gate level 1. The re-derivation loosened the red-state shading but did not drop it. Texas rises from 52 to 58 on four new polls, Alaska and Iowa move up slightly, and Ohio holds at 58. Iowa's Democratic early-vote edge was 2022 timing and is gone at 14 days out. The Republican shortfall held at about 4 points. South Carolina's first county file had not posted.",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "gate_paragraph",
+    "value": "Level 1, set by the North Carolina State Board's Sept 4 memos (unsealed-envelope disqualification, signature matching). On Oct 19 Judge Schroeder denied the preliminary injunction, citing Purcell and plaintiff delay, so the memos govern this election. No rejection counts are reported. A reported scale of disqualified ballots in North Carolina would support level 2. No troops, certification refusals or new executive orders were found since Oct 16.",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "control_note",
+    "value": null,
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "seats_note",
+    "value": null,
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "ddhq_model_updated",
+    "value": "2026-10-14 13:48:09.087032",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "ddhq_cache_age_hours",
+    "value": 41.1,
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "markets_retrieved_at",
+    "value": "2026-10-20T10:31:21-04:00",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "benchmarks_with_source",
+    "value": 183,
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "benchmarks_null_with_reason",
+    "value": 26,
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "fec_stamp",
+    "value": "2026-10-20T1747",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "early_vote_stamp",
+    "value": "2026-10-20T1747",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "signals_note",
+    "value": "Pulled after this run: FEC cash 2026-10-20T1747, early vote 2026-10-20T1747. They have not moved any forecast number yet. The next /where run decides whether they do.",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "dashboard_built_at",
+    "value": "2026-10-20T18:45:06-04:00",
+    "as_of": "2026-10-20"
+  },
+  {
+    "key": "run_id",
+    "value": "2026-10-21T2145",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "kind",
+    "value": "run",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "created_at",
+    "value": "2026-10-21T21:10:30-04:00",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "locked_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "lock_run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "previous_run_id",
+    "value": "2026-10-20T1031",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "gate_level",
+    "value": 1,
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "gate_set_by",
+    "value": "nc-sbe-memos-2026-09-04",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "lead",
+    "value": "Quick run: a judgment update for one race, South Carolina Senate, after the county early-vote file and the absentee-by-race report posted and were read against 2022 at the same point. Every other item carries the 2026-10-20T1031 run's number unchanged.",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "gate_paragraph",
+    "value": "Level 1, set by the North Carolina State Board's Sept 4 memos (unsealed-envelope disqualification, signature matching). On Oct 19 Judge Schroeder denied the preliminary injunction, citing Purcell and plaintiff delay, so the memos govern this election. No rejection counts are reported. A reported scale of disqualified ballots in North Carolina would support level 2. No troops, certification refusals or new executive orders were found since Oct 16.",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "control_note",
+    "value": null,
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "seats_note",
+    "value": null,
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "ddhq_model_updated",
+    "value": "2026-10-14 13:48:09.087032",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "ddhq_cache_age_hours",
+    "value": 41.1,
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "markets_retrieved_at",
+    "value": "2026-10-20T10:31:21-04:00",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "benchmarks_with_source",
+    "value": 183,
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "benchmarks_null_with_reason",
+    "value": 26,
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "fec_stamp",
+    "value": "2026-10-21T1952",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "early_vote_stamp",
+    "value": "2026-10-21T2349",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "signals_note",
+    "value": "Pulled after this run: early vote 2026-10-21T2349. They have not moved any forecast number yet. The next /where run decides whether they do.",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "dashboard_built_at",
+    "value": "2026-10-21T23:57:42-04:00",
+    "as_of": "2026-10-21"
+  },
+  {
+    "key": "run_id",
+    "value": "2026-10-21T2145",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "kind",
+    "value": "run",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "created_at",
+    "value": "2026-10-21T21:10:30-04:00",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "locked_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "lock_run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "previous_run_id",
+    "value": "2026-10-20T1031",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "gate_level",
+    "value": 1,
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "gate_set_by",
+    "value": "nc-sbe-memos-2026-09-04",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "lead",
+    "value": "Quick run: a judgment update for one race, South Carolina Senate, after the county early-vote file and the absentee-by-race report posted and were read against 2022 at the same point. Every other item carries the 2026-10-20T1031 run's number unchanged.",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "gate_paragraph",
+    "value": "Level 1, set by the North Carolina State Board's Sept 4 memos (unsealed-envelope disqualification, signature matching). On Oct 19 Judge Schroeder denied the preliminary injunction, citing Purcell and plaintiff delay, so the memos govern this election. No rejection counts are reported. A reported scale of disqualified ballots in North Carolina would support level 2. No troops, certification refusals or new executive orders were found since Oct 16.",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "control_note",
+    "value": null,
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "seats_note",
+    "value": null,
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "ddhq_model_updated",
+    "value": "2026-10-14 13:48:09.087032",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "ddhq_cache_age_hours",
+    "value": 41.1,
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "markets_retrieved_at",
+    "value": "2026-10-20T10:31:21-04:00",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "benchmarks_with_source",
+    "value": 183,
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "benchmarks_null_with_reason",
+    "value": 26,
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "fec_stamp",
+    "value": "2026-10-22T2034",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "early_vote_stamp",
+    "value": "2026-10-22T2010",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "signals_note",
+    "value": "Pulled after this run: FEC cash 2026-10-22T2034, early vote 2026-10-22T2010. They have not moved any forecast number yet. The next /where run decides whether they do.",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "dashboard_built_at",
+    "value": "2026-10-22T20:35:15-04:00",
+    "as_of": "2026-10-22"
+  },
+  {
+    "key": "run_id",
+    "value": "2026-10-21T2145",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "kind",
+    "value": "run",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "created_at",
+    "value": "2026-10-21T21:10:30-04:00",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "locked_at",
+    "value": "2026-10-16T15:49:43-04:00",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "lock_run_id",
+    "value": "2026-10-16T1540",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "previous_run_id",
+    "value": "2026-10-20T1031",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "gate_level",
+    "value": 1,
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "gate_set_by",
+    "value": "nc-sbe-memos-2026-09-04",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "lead",
+    "value": "Quick run: a judgment update for one race, South Carolina Senate, after the county early-vote file and the absentee-by-race report posted and were read against 2022 at the same point. Every other item carries the 2026-10-20T1031 run's number unchanged.",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "gate_paragraph",
+    "value": "Level 1, set by the North Carolina State Board's Sept 4 memos (unsealed-envelope disqualification, signature matching). On Oct 19 Judge Schroeder denied the preliminary injunction, citing Purcell and plaintiff delay, so the memos govern this election. No rejection counts are reported. A reported scale of disqualified ballots in North Carolina would support level 2. No troops, certification refusals or new executive orders were found since Oct 16.",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "control_note",
+    "value": null,
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "seats_note",
+    "value": null,
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "ddhq_model_updated",
+    "value": "2026-10-14 13:48:09.087032",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "ddhq_cache_age_hours",
+    "value": 41.1,
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "markets_retrieved_at",
+    "value": "2026-10-20T10:31:21-04:00",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "benchmarks_with_source",
+    "value": 183,
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "benchmarks_null_with_reason",
+    "value": 26,
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "fec_stamp",
+    "value": "2026-10-23T1001",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "early_vote_stamp",
+    "value": "2026-10-23T1001",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "signals_note",
+    "value": "Pulled after this run: FEC cash 2026-10-23T1001, early vote 2026-10-23T1001. They have not moved any forecast number yet. The next /where run decides whether they do.",
+    "as_of": "2026-10-23"
+  },
+  {
+    "key": "dashboard_built_at",
+    "value": "2026-10-23T11:51:02-04:00",
+    "as_of": "2026-10-23"
+  }
+]

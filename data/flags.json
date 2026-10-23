@@ -1,0 +1,834 @@
+[
+  {
+    "as_of": "2026-10-18",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +4.0 points since the last pull (Polymarket 53.5 to 57.5%)"
+    ],
+    "weight": 4.0,
+    "source_url": "https://polymarket.com/event/nevada-governor-winner-2026",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +4.0 points since the last pull (Polymarket 53.5 to 57.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-18",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +3.1 points since the last pull (Polymarket 88.5 to 92.5; Kalshi 88.5 to 90.8%)"
+    ],
+    "weight": 3.1,
+    "source_url": "https://polymarket.com/event/arizona-governor-winner-2026",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +3.1 points since the last pull (Polymarket 88.5 to 92.5; Kalshi 88.5 to 90.8%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-19",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved -4.0 points since the last pull (Polymarket 67.5 to 63.5%)"
+    ],
+    "weight": 4.0,
+    "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved -4.0 points since the last pull (Polymarket 67.5 to 63.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Likely R to Lean R",
+      "Silver Bulletin changed its rating, Likely R to Lean R"
+    ],
+    "weight": 6.0,
+    "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Cook changed its rating, Likely R to Lean R; Silver Bulletin changed its rating, Likely R to Lean R. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +5.2 points since the last pull (Polymarket 72.5 to 77.0; Kalshi 70.5 to 76.5%)"
+    ],
+    "weight": 5.2,
+    "source_url": "https://polymarket.com/event/ohio-governor-winner-2026",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +5.2 points since the last pull (Polymarket 72.5 to 77.0; Kalshi 70.5 to 76.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Likely D to Lean D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Cook changed its rating, Likely D to Lean D. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "item_id": "TX-35",
+    "item": "TX-35",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Lean R (flip) to Tossup"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Sabato changed its rating, Lean R (flip) to Tossup. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "item_id": "TX-23",
+    "item": "TX-23",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Likely R to Lean R"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Sabato changed its rating, Likely R to Lean R. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "item_id": "NC-01",
+    "item": "NC-01",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Tossup to Lean D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://rollcall.com/2025/10/22/north-carolina-congressional-map-republicans-election/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Sabato changed its rating, Tossup to Lean D. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-20",
+    "item_id": "OH-01",
+    "item": "OH-01",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Lean D to Likely D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.ellisinsight.com/house/ohio-redistricts/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Sabato changed its rating, Lean D to Likely D. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +7.0 points since the last pull (Polymarket 58.5 to 65.5; Kalshi 57.5 to 64.5%)"
+    ],
+    "weight": 7.0,
+    "source_url": "https://polymarket.com/event/nevada-governor-winner-2026",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +7.0 points since the last pull (Polymarket 58.5 to 65.5; Kalshi 57.5 to 64.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +5.0 points since the last pull (Polymarket 64.0 to 70.0; Kalshi 64.5 to 68.5%)"
+    ],
+    "weight": 5.0,
+    "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +5.0 points since the last pull (Polymarket 64.0 to 70.0; Kalshi 64.5 to 68.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +3.5 points since the last pull (Polymarket 64.5 to 67.5; Kalshi 63.5 to 67.5%)"
+    ],
+    "weight": 3.5,
+    "source_url": "https://polymarket.com/event/texas-senate-election-winner",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +3.5 points since the last pull (Polymarket 64.5 to 67.5; Kalshi 63.5 to 67.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Silver Bulletin changed its rating, Tossup to Lean D (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Silver Bulletin changed its rating, Tossup to Lean D (flip). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-21",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Kalshi 51.5 to 54.5%)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://kalshi.com/markets/govpartyga",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +3.0 points since the last pull (Kalshi 51.5 to 54.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-22",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "kinds": [
+      "benchmark",
+      "market",
+      "rating"
+    ],
+    "triggers": [
+      "Decision Desk moved +20.0 (50.0 to 70.0%)",
+      "markets moved +6.0 points since the last pull (Polymarket 77.5 to 83.5; Kalshi 76.5 to 82.5%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)",
+      "Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip)"
+    ],
+    "weight": 22.0,
+    "source_url": "https://votes.decisiondeskhq.com/forecast/governor",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%); markets moved +6.0 points since the last pull (Polymarket 77.5 to 83.5; Kalshi 76.5 to 82.5%); Sabato changed its rating, Tossup to Lean D (flip); Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-22",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +7.2 points since the last pull (Polymarket 53.5 to 62.0; Kalshi 54.5 to 60.5%)"
+    ],
+    "weight": 7.2,
+    "source_url": "https://polymarket.com/event/georgia-governor-winner-2026",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +7.2 points since the last pull (Polymarket 53.5 to 62.0; Kalshi 54.5 to 60.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-22",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Silver Bulletin changed its rating, Likely D to Solid D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-22",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Lean D to Likely D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://centerforpolitics.org/crystalball/2026-governor/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Sabato changed its rating, Lean D to Likely D. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-22",
+    "item_id": "gov_nh",
+    "item": "Governor · NH",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Silver Bulletin changed its rating, Solid R to Likely R"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Silver Bulletin changed its rating, Solid R to Likely R. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "TX-28",
+    "item": "TX-28",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Lean D to Likely D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Cook changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "TX-34",
+    "item": "TX-34",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Tossup to Lean D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Cook changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "TX-35",
+    "item": "TX-35",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Lean R (flip) to Tossup"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Cook changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "TX-23",
+    "item": "TX-23",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Likely R to Lean R"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Cook changed its rating, Likely R to Lean R. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "AL-02",
+    "item": "AL-02",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Likely R (flip) to Lean R (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.wvtm13.com/article/alabama-special-primary-election-2026-congressional-map/73394722",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Cook changed its rating, Likely R (flip) to Lean R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "ga_margin_above_4",
+    "item": "Ossoff wins GA by more than 4",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Polymarket 85.7 to 88.7%)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: markets moved +3.0 points since the last pull (Polymarket 85.7 to 88.7%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "senate_nh",
+    "item": "Senate · NH",
+    "kinds": [
+      "poll"
+    ],
+    "triggers": [
+      "Saint Anselm College (LV, through 2026-10-20) shows D+7 in a race with 2 other polls in 21 days"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape",
+    "kind": "poll",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Saint Anselm College",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-20",
+          "population": "LV",
+          "sample": 1672,
+          "d": 50.0,
+          "r": 43.0,
+          "margin_d": 7.0,
+          "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 6.67,
+        "n": 3,
+        "newest": "2026-10-20"
+      },
+      "market_path": [
+        [
+          "2026-10-23T10:28:41-04:00",
+          0.905
+        ],
+        [
+          "2026-10-23T10:44:47-04:00",
+          0.905
+        ],
+        [
+          "2026-10-23T11:00:00-04:00",
+          0.905
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Saint Anselm College (LV, through 2026-10-20) shows D+7 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Saint Anselm College D+7 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-23",
+    "item_id": "gov_nh",
+    "item": "Governor · NH",
+    "kinds": [
+      "poll"
+    ],
+    "triggers": [
+      "Saint Anselm College (LV, through 2026-10-20) shows D-8 in a race with 2 other polls in 21 days"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape",
+    "kind": "poll",
+    "why": {
+      "events": [
+        {
+          "title": "Supreme Court allows New Hampshire to reject student IDs at polls",
+          "url": "https://www.foxnews.com/politics/supreme-court-blocks-student-ids-voter-identification-new-hampshire",
+          "domain": "foxnews.com",
+          "seendate": "2026-10-23T07:15:00Z",
+          "kinds": [
+            "poll",
+            "legal"
+          ]
+        },
+        {
+          "title": "Medicare Advantage plans Coos and Carroll counties for 2027",
+          "url": "https://www.wmur.com/article/medicare-advantage-coos-and-carroll-for-2027/74223158",
+          "domain": "wmur.com",
+          "seendate": "2026-10-23T06:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "SCOTUS Says NH Can Close Student ID  Loophole  In Elections",
+          "url": "https://thefederalist.com/2026/10/22/scotus-says-new-hampshire-can-close-student-id-loophole-in-elections/",
+          "domain": "thefederalist.com",
+          "seendate": "2026-10-23T00:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Kamala Harris hopes to help Dems during NH visit in final sprint to midterms",
+          "url": "https://www.concordmonitor.com/2026/10/22/kamala-harris-hopes-to-help-dems-during-nh-visit-in-final-sprint-to-midterms/",
+          "domain": "concordmonitor.com",
+          "seendate": "2026-10-22T23:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Was Cinde Warmington a Purdue Pharma lobbyist ? Did she call OxyContin a  miracle drug ? Yes and yes – PolitiFact",
+          "url": "https://politifact.com/factchecks/2026/oct/22/kelly-ayotte/warmington-opioid-purdue-pharma-new-hampshire/",
+          "domain": "politifact.com",
+          "seendate": "2026-10-22T22:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Granite and Green Mountains : Key New Hampshire and Vermont Races",
+          "url": "https://www.dailykos.com/stories/2026/10/22/800097508/community/gran/",
+          "domain": "dailykos.com",
+          "seendate": "2026-10-22T22:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 2,
+        "scandal": 0,
+        "money": 0,
+        "other": 9
+      },
+      "polls": [
+        {
+          "pollster": "Saint Anselm College",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-20",
+          "population": "LV",
+          "sample": 1672,
+          "d": 42.0,
+          "r": 50.0,
+          "margin_d": -8.0,
+          "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -11.0,
+        "n": 3,
+        "newest": "2026-10-20"
+      },
+      "market_path": [
+        [
+          "2026-10-23T10:28:41-04:00",
+          0.05
+        ],
+        [
+          "2026-10-23T10:44:47-04:00",
+          0.0513
+        ],
+        [
+          "2026-10-23T11:00:00-04:00",
+          0.0515
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Saint Anselm College (LV, through 2026-10-20) shows D-8 in a race with 2 other polls in 21 days. News in the last 48 hours: 12 articles (2 legal, 1 poll, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 scandal, 0 money). Polls just in: Saint Anselm College D-8 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  }
+]
