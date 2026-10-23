@@ -195,7 +195,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> A pre-registered forecast of the 2026 midterms, kept by Jake Berry with Claude. Every chance is the model's probability that the Democrat wins, printed raw. Beside it: the lock, a judgment frozen on Oct 16, and the latest run. Since lock compares the model with its own lock-day figure. Early-vote and modeled lines never enter a number. Every figure is labeled, and a marked number opens its source. Markets are benchmarks, not inputs. A record to be graded after Nov 3, not advice.</p></section>
 <div class="lx-bar" role="region" aria-label="About this copy">
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-10-23 12:12</b></span>
+  <span>Data built <b id="lx-built">2026-10-23 12:47</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Republished each morning.</span>
@@ -735,6 +735,12 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-flagline[open] > summary::after { content: " less"; }
 .ms-flagline > .m { margin: .25rem 0 0; }
 .ms-moving td.race .why { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 400; font-size: 10.5px; line-height: 1.35; color: var(--color-fg-muted); max-width: 24rem; margin-top: .1rem; cursor: help; }
+.ms-headline { display: grid; gap: .4rem; padding: var(--cds-gap-md) 0 var(--cds-gap-sm); border-bottom: 1px solid var(--color-border-line); }
+.ms-hl { font-family: var(--font-anthropic-serif); font-size: 1.65rem; line-height: 1.22; margin: 0; max-width: 36ch; text-wrap: balance; }
+.ms-hl-vibe { margin: 0; font-size: var(--cds-font-size-body); line-height: 1.5; max-width: 72ch; }
+.ms-hl-meta { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.ms-hl-meta a { color: inherit; }
+@media (max-width: 48rem) { .ms-hl { font-size: 1.3rem; } }
 </style>
 
 <div class="ms">
@@ -753,6 +759,11 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     <p class="ms-note" id="signals-note" hidden></p>
   </header>
 
+  <section class="ms-headline" id="headline" hidden aria-label="Today's read">
+    <p class="ms-hl" id="hl-text"></p>
+    <p class="ms-hl-vibe" id="hl-vibe"></p>
+    <p class="ms-sub ms-hl-meta"><span class="ms-chip" id="hl-chip">today's read</span> <span id="hl-meta"></span><span id="help-headline"></span></p>
+  </section>
   <nav class="ms-tabs" id="tabs" role="tablist" aria-label="Sections"></nav>
   <nav class="ms-tabs ms-subtabs" id="ref-tabs" role="tablist" aria-label="Reference sections" hidden></nav>
 
@@ -1217,6 +1228,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (sc && run) drawBand(sc, run, ev || [], idx); else if (D('scorecard').status === 'error') fail($('#nums'));
     if (state.tab === 'forecast') {
       const br = at('brief'); if (br) drawBrief(br); else if (D('brief').status === 'error') fail($('#brief-flags'));
+      if (typeof drawHeadline === 'function') drawHeadline(D('brief').data || []);
       if (sc) { state.mapMode = 'ours'; drawMap(sc); drawForecast(sc, run || [], idx); }
     } else {
       const ch = at('changes'); if (ch) drawChanges(ch); else if (D('changes').status === 'error') fail($('#changes'));
@@ -1305,6 +1317,20 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const w = m[1][0].toUpperCase() + m[1].slice(1).toLowerCase();
     const tone = w === 'Wait' ? 'wait' : w === 'Yes' ? (/republican/i.test(s) ? 'R' : 'D') : null;
     return { word: w === 'Yes' ? (tone === 'R' ? 'Moved us toward R' : 'Moved us toward D') : w === 'No' ? 'No change' : 'Watching', tone };
+  }
+  // the day's read: the brief's headline and one sentence, written under the voice guide; falls back to the latest earlier day
+  function drawHeadline(rows) {
+    const box = $('#headline'); if (!box) return;
+    const hs = (rows || []).filter((r) => r.kind === 'headline' && r.headline && r.as_of <= state.snap).sort((a, b) => a.as_of.localeCompare(b.as_of));
+    const h = hs[hs.length - 1];
+    if (!h) { box.hidden = true; return; }
+    box.hidden = false;
+    const t = $('#hl-text'); t.textContent = h.headline; mark(t, 'brief', 'headline', Wh('kind=headline'));
+    $('#hl-vibe').textContent = h.vibe || '';
+    $('#hl-chip').textContent = h.as_of === state.snap ? "today's read" : `the read from ${nice(h.as_of)}`;
+    const meta = $('#hl-meta'); meta.replaceChildren(document.createTextNode(nice(h.as_of) + (h.written_at ? `, written ${String(h.written_at).slice(11, 16)}` : '') + (h.sources && h.sources.length ? ' · ' : '')));
+    (h.sources || []).slice(0, 4).forEach((u, i, arr) => { meta.append(el('a', { href: u, target: '_blank', rel: 'noopener' }, `source ${i + 1}`)); if (i < arr.length - 1) meta.append(document.createTextNode(' · ')); });
+    const hh = $('#help-headline'); if (hh && !hh.childElementCount) hh.append(help('headline', "Written each morning from the day's board: what moved, the early vote, the markets and the news. A reading in plain words, labeled as such. It carries no number the board does not already show, and it is not a forecast."));
   }
   function drawBrief(rows) {
     const lead = rows.find((r) => r.kind === 'lead'); const items = rows.filter((r) => r.kind === 'item');
