@@ -648,6 +648,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-mapwrap .ms-map { min-height: 24rem; }
 .ms-read { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cds-gap-xl); margin-top: var(--cds-gap-lg); padding-top: var(--cds-gap-md); border-top: 1px solid var(--color-border-line); }
 @media (max-width: 64rem) { .ms-read { grid-template-columns: minmax(0, 1fr); } }
+.ms-read.ms-read1 { grid-template-columns: minmax(0, 1fr); }
+.ms-read1 .ms-todaylead { max-width: 78ch; }
 .ms-readcol { display: grid; gap: .4rem; align-content: start; min-width: 0; }
 .ms-readcol h2 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 1.05rem; color: var(--color-fg-muted); margin: 0; }
 .ms-readcol .ms-lead2 { font-size: 1.15rem; line-height: 1.5; max-width: 62ch; }
@@ -772,12 +774,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       <section class="ms-moving" id="moving" data-source="race_summary"></section>
     </div>
     <div class="ms-nums ms-compact" id="nums" hidden></div>
-    <div class="ms-read">
-      <div class="ms-readcol">
-        <h2>Our latest call</h2>
-        <p class="ms-lead2 dash-skeleton" id="lead">—</p>
-        <p class="ms-sub" id="meta"></p>
-      </div>
+    <div class="ms-read ms-read1">
       <div class="ms-readcol">
         <h2>Today</h2>
         <p class="ms-todaylead" id="brief-lead">—</p>
@@ -895,6 +892,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   </section>
 
   <section class="ms-panel" data-panel="reasoning" hidden>
+    <div class="ms-card"><h3>The latest call, in its own words</h3><p class="ms-lead2 dash-skeleton" id="lead">—</p><p class="ms-sub" id="meta"></p></div>
     <div class="ms-grid" id="inference"></div>
     <div class="ms-grid" id="redteam"></div>
     <div class="ms-card" id="errors-card"><h3>Errors found this run</h3><ul id="errors" style="margin:0;padding-left:1.1rem;display:grid;gap:.35rem;line-height:1.45"></ul></div>
@@ -1021,7 +1019,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (state.snap > state.day) parts.push(`The first saved day is ${nice(state.snap)}, so forecasts show that day.`);
     else parts.push(`As of ${nice(state.snap)}.`);
     const counted = ['NC', 'PA', 'SC'].map((s) => [s, latestVoteDate(s)]).filter(([, d]) => d);
-    if (counted.length) parts.push('Votes through ' + counted.map(([s, d]) => `${nice(d)} in ${s}`).join(', ') + '.');
+    if (counted.length) parts.push('Day-by-day files through ' + counted.map(([s, d]) => `${nice(d)} in ${s}`).join(', ') + '.');
     $('#day-status').textContent = parts.join(' ');
   }
 
@@ -1236,10 +1234,12 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     { id: 'house_dem_seats', label: 'Democratic House seats', unit: 'seats', range: true },
     { id: 'senate_dem_seats', label: 'Democratic Senate seats', unit: 'seats', range: true },
   ];
-  function ballotsCounted(ev) {
-    const tot = (st, re) => d3.sum((ev || []).filter((r) => r.state === st && re.test(r.measure || '') && r.count != null), (r) => r.count);
-    const parts = [['NC', tot('NC', /^Accepted/)], ['PA', tot('PA', /returned by party/)], ['FL', tot('FL', /by party/)], ['SC', tot('SC', /^Early voters/)]].filter(([, n]) => n > 0);
-    return { total: d3.sum(parts, (p) => p[1]), parts };
+  // every state with a count: the states' own files where we read them, the UF Election Lab tracker elsewhere
+  function ballotsCounted() {
+    const rows = (D('early_vote_readings').data || []).filter((r) => r.total_2026 != null && r.total_2026 > 0);
+    const parts = rows.map((r) => [r.state, r.total_2026, r.as_of_date]).sort((a, b) => b[1] - a[1]);
+    const through = parts.map((p) => p[2]).filter(Boolean).sort().slice(-1)[0] || null;
+    return { total: d3.sum(parts, (p) => p[1]), parts, states: parts.length, through };
   }
   function drawBand(sc, run, ev, idx) {
     const prev = runVal(run, 'previous_run_id');
@@ -1257,8 +1257,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     gc.append(runMark('b', 'gate_level', lvl == null ? '—' : String(lvl)), document.createTextNode(' · ' + (['Normal', 'Pressure', 'Interference', 'Outcome at risk'][lvl] || '')), help('gate'));
     gc.addEventListener('click', () => { state.moneySub = 'gate'; setTab('money'); });
     chips.push(gc);
-    const bc = ballotsCounted(ev);
-    if (bc.total) { const c = el('span', { class: 'ms-chip', style: 'cursor:pointer', title: bc.parts.map(([s, n]) => `${s} ${d3.format(',')(n)}`).join(', ') }, `${compact(bc.total)} early and mail ballots counted (${bc.parts.map((p) => p[0]).join(', ')})`); c.addEventListener('click', () => setTab('votes')); chips.push(c); }
+    const bc = ballotsCounted();
+    if (bc.total) { const c = el('span', { class: 'ms-chip', style: 'cursor:pointer', title: `Early and mail ballots counted so far in ${bc.states} states, from the states' own files and the UF Election Lab tracker` + (bc.through ? `, through ${nice(bc.through)}` : '') + `. Largest: ` + bc.parts.slice(0, 6).map(([s, n]) => `${s} ${d3.format(',')(n)}`).join(', ') }, `${compact(bc.total)} early and mail ballots counted in ${bc.states} states`); c.addEventListener('click', () => setTab('votes')); chips.push(c); }
     $('#chips').replaceChildren(...chips);
     const byId = Object.fromEntries(sc.map((r) => [r.id, r]));
     $('#nums').replaceChildren(...NUMS.map((t) => {
