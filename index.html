@@ -704,7 +704,12 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   .ms-mapwrap .ms-map { min-height: 0; }
   .ms-moving table { font-size: 12.5px; }
   .ms-moving .evhead, .ms-moving th:nth-child(n+5), .ms-moving td:nth-child(n+5) { display: none; }
-  .ms-moving td.race { white-space: normal; min-width: 11rem; }
+  .ms-moving td.race { white-space: normal; min-width: 7.5rem; max-width: 8.5rem; }
+  .ms-moving td.race .why { max-width: 8.5rem; }
+  .ms-moving th { white-space: normal; line-height: 1.2; }
+  .ms-moving .ms-sort { white-space: normal; text-align: right; }
+  .ms-moving th.num { max-width: 4.8rem; }
+  .ms-moving table { font-size: 12px; }
   .ms-moving td { padding: .4rem .4rem .4rem 0; }
   .ms-moving .ms-why, .ms-moving .ms-sort { padding-top: .35rem; padding-bottom: .35rem; }
   .ms-hero .ms-slpop { position: fixed; left: 0; right: 0; top: auto; bottom: 0; width: auto; max-height: 72vh; border-radius: var(--cds-radius) var(--cds-radius) 0 0; }
@@ -729,7 +734,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-flagline > summary::after { content: " more"; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
 .ms-flagline[open] > summary::after { content: " less"; }
 .ms-flagline > .m { margin: .25rem 0 0; }
-.ms-moving td.race .why { display: block; white-space: normal; font-weight: 400; font-size: 10.5px; line-height: 1.35; color: var(--color-fg-muted); max-width: 24rem; margin-top: .1rem; }
+.ms-moving td.race .why { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 400; font-size: 10.5px; line-height: 1.35; color: var(--color-fg-muted); max-width: 24rem; margin-top: .1rem; cursor: help; }
 </style>
 
 <div class="ms">
@@ -1498,11 +1503,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         } else {
           ch.append(mark(el('b', {}, pct2(r.ours) + '%'), 'race_summary', 'ours', where), el('span', { class: 'm' }, `chance ${nd} wins · our call`));
         }
-        const sp = el('div', { class: 'ms-chart spark', 'data-source': 'trends_recent', title: 'The model since Oct 16' });
-        foot.append(ch, sp); art.append(foot);
-        const ti = idx && idx[r.id];
-        const series = ti ? { model: ti.model || null, run: ti.ours || null } : null;
-        if (series && series.model) requestAnimationFrame(() => lineChart(sp, { model: series.model }, { H: 34, since: LOCK_DAY, unit: '%' }));
+        foot.append(ch); art.append(foot);  // the sparkline came off on 2026-10-23: a week of near-flat points in 34 pixels said nothing
         const ev = r.early_vote;
         if (ev && ev.total != null) {
           let t = `${compact(ev.total)} ballots`;
@@ -1728,16 +1729,25 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       });
     }
     const coreBy = {}; for (const c of (D('core').data || [])) (coreBy[c.id] = coreBy[c.id] || []).push(c);
-    // why a race moved since yesterday: the polls that entered or aged out of the 21-day window, from the stored core rows
+    // why a race moved since yesterday, in one short line: the polls that entered, re-entered or aged out of the window,
+    // from the stored core rows of the two days. A poll is the same poll if its end date, margin and sample type match,
+    // so a pollster renamed in the feed does not read as one poll leaving and another arriving.
+    const SHORT_POLLSTER = { 'New York Times / Siena University': 'NYT/Siena', 'The New York Times / Siena University': 'NYT/Siena', 'Mitchell Research & Communications': 'Mitchell', 'Marist University': 'Marist',
+      'CBS News / YouGov': 'CBS/YouGov', 'Verasight/VoteHub': 'Verasight', 'Versalight/VoteHub': 'Verasight', 'Noble Predictive Insights': 'Noble', "Maine People's Resource Center": 'MPRC',
+      'Suffolk University': 'Suffolk', 'Guidant Polling & Strategy': 'Guidant', 'Saint Anselm College': 'Saint Anselm', 'University of New Hampshire': 'UNH', 'Emerson College': 'Emerson', 'Quinnipiac University': 'Quinnipiac' };
+    const shortP = (p) => SHORT_POLLSTER[p] || String(p || '').split(/ ?[/(] ?/)[0].slice(0, 16);
     const dayReason = (r) => {
       const cs = (coreBy[r.id] || []).slice().sort((a, b) => a.as_of.localeCompare(b.as_of)); if (cs.length < 2) return null;
-      const [prev, cur] = cs.slice(-2); const k = (u) => `${u.pollster}|${u.end_date}`;
+      const [prev, cur] = cs.slice(-2); const k = (u) => `${u.end_date}|${u.margin_d}|${u.population || ''}`;
       const pu = ((prev.polls || {}).used) || [], cu = ((cur.polls || {}).used) || [];
-      const out = [];
-      for (const u of pu.filter((u) => !cu.some((v) => k(v) === k(u)))) out.push(`${u.pollster} (${nice(u.end_date)}, ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}) aged out of the poll window (21 days, then a 7-day fade)`);
-      for (const u of cu.filter((u) => !pu.some((v) => k(v) === k(u)))) { const age = Math.round((new Date(cur.as_of) - new Date(u.end_date)) / 864e5); out.push(`${age > 21 ? 'poll counting again under the fade' : 'new poll'}: ${u.pollster} (${nice(u.end_date)}), ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}`); }
-      if (!out.length) return cu.length ? 'no new poll; the national mood and days-out drift' : 'no poll in the window; fundamentals and the national mood only';
-      return out.join('; ');
+      const gone = pu.filter((u) => !cu.some((v) => k(v) === k(u))), came = cu.filter((u) => !pu.some((v) => k(v) === k(u)));
+      const md = (u) => (u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d));
+      const ev = [];
+      for (const u of gone) ev.push({ short: `${shortP(u.pollster)} (${nice(u.end_date)}) aged out`, full: `${u.pollster} (${nice(u.end_date)}, ${md(u)}) aged out of the poll window (21 days, then a 7-day fade)` });
+      for (const u of came) { const age = Math.round((new Date(cur.as_of) - new Date(u.end_date)) / 864e5); ev.push(age > 21 ? { short: `${shortP(u.pollster)} (${nice(u.end_date)}) counts again`, full: `${u.pollster} (${nice(u.end_date)}, ${md(u)}) counts again under the fade` } : { short: `new poll: ${shortP(u.pollster)} ${md(u)}`, full: `new poll: ${u.pollster} (${nice(u.end_date)}), ${md(u)}` }); }
+      if (!ev.length) return cu.length ? { short: 'no new poll', full: 'no new poll; the national mood and days-out drift' } : { short: 'no poll in the window', full: 'no poll in the window; fundamentals and the national mood only' };
+      const full = ev.map((e) => e.full).join('; ');
+      return ev.length === 1 ? { short: ev[0].short, full } : { short: `${ev.length} polls changed weight`, full };
     };
     for (const r of sorted) {
       const m = r.move || {}, ev = r.early_vote || {}, d = ev.day || {};
@@ -1745,7 +1755,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const name = el('a', { href: '#forecast/' + (r.state || '').toLowerCase(), class: 'race' }); name.append(el('b', {}, raceTitle(r)));
       name.addEventListener('click', (e) => { e.preventDefault(); focusBlock(r.id); });
       const why = Math.abs(m.d_day || 0) >= 2 ? dayReason(r) : null;
-      tr.append(td([name, r.flag_today ? el('span', { class: 'ms-chip', 'data-tone': 'warn', title: r.brief_headline || r.flag_today }, 'today') : '', why ? el('span', { class: 'why' }, why) : ''], 'race'),
+      tr.append(td([name, r.flag_today ? el('span', { class: 'ms-chip', 'data-tone': 'warn', title: r.brief_headline || r.flag_today }, 'today') : '', why ? el('span', { class: 'why', title: why.full }, why.short) : ''], 'race'),
         td([m.chance != null ? pct2(m.chance) + '%' : '—'], 'num'));
       const sl = r.model && r.model.since_lock;
       if (sl && sl.steps && sl.steps.length) {
