@@ -1,7 +1,7 @@
 {
   "run_id": "2026-10-21T2145",
   "kind": "run",
-  "built_at": "2026-10-23T11:51:05-04:00",
+  "built_at": "2026-10-23T12:01:55-04:00",
   "datasets": {
     "scorecard": {
       "file": "data/dashboard/scorecard.json",
@@ -180,7 +180,7 @@
     },
     "brief": {
       "file": "data/dashboard/brief.json",
-      "rows": 38,
+      "rows": 39,
       "title": "The morning brief",
       "description": "One lead and one entry per flagged item: what happened, why it moved, whether it should move us, and what would change the answer. Facts are retrieved by scripts. The reading is written each morning by /brief and labeled inferred. A day without a brief shows the facts alone."
     },

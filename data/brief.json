@@ -727,12 +727,12 @@
     "as_of": "2026-10-23",
     "kind": "lead",
     "item_id": null,
-    "text": null,
-    "written_at": null,
+    "text": "Cook moved five of the redrawn southern seats toward Democrats this morning, part of a round of 19 changes that leaves Democrats favored outright in 218 seats, and TX-35 is now a Toss Up. A rating is a judgment on the national signals we already hold, so our count of six redrawn seats waits for a district poll, not for Cook. The only new nonpartisan poll is Saint Anselm in New Hampshire, Pappas +7 and Ayotte +8, which matches YouGov in both races and is already in the model. The Georgia margin market rose 3 with no new poll, on a CNN story about Collins and a weekend of rallies. Our numbers did not move. Attorney General Blanche declined to rule out a DOJ role in certification in a doomsday scenario, a gate item, not a race item. The 09:30 snapshot did not fire again. This one started at 10:01 and the market pull finished at 11:50, so the prices here are late-morning prices.",
+    "written_at": "2026-10-23T12:01:53-04:00",
     "n_flags": 8,
-    "n_explained": 0,
-    "stale": "No brief written for this day yet.",
-    "label": null
+    "n_explained": 8,
+    "stale": null,
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -752,14 +752,18 @@
       "market_path": [],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Cook moves Cuellar's seat to Likely D",
+    "what_happened": "Cook published a round of 19 House rating changes toward Democrats on the morning of 2026-10-23 (retrieved, The Hill, 10:07 ET). Cook's House editor wrote that Democrats are now favored outright in 218 seats, Republicans in 198, with 17 pure Toss Ups (retrieved). Cook's own ratings page returns 403 to scripts and to WebFetch, so the district-level changes other than TX-35 are read from the Wikipedia ratings table dated Oct. 23 (retrieved). CNN's live page quoted Cook that several of the changes, particularly in Texas and North Carolina, are tied to Republican underperformance at the top of the ticket (retrieved secondhand from a search snippet, the page itself returned 451). No district poll was retrieved for any of the five seats. TX-28 moved from Lean D to Likely D (retrieved, Wikipedia table). Henry Cuellar (D) is the incumbent, the seat was redrawn from about Trump +7.3 to Trump +10.4 (retrieved, races.json). DDHQ, Silver, the Economist and Fifty Plus One already had it Likely D, Split Ticket Safe D (retrieved). DDHQ gave Cuellar 0.90 at the lock (retrieved).",
+    "why_it_moved": "Inferred: same round. Cook moved to where the models already were.",
+    "should_it_move_us": "No. Our number here is the count item, Redrawn GOP seats Democrats win: 6 with an 80 percent range of 3 to 9, unchanged from the lock. DDHQ's probabilities summed to 6.9 at the last pull. TX-28 is already counted as a probable Democratic hold in the rationale. A move from Lean to Likely on a seat we already count changes the expected count by very little, and the scripts would compute that, not this brief.",
+    "trigger": "A nonpartisan district poll of TX-28 showing Cuellar under 50. None has been retrieved.",
+    "sources": [
+      "https://thehill.com/homenews/campaign/6167727-cook-political-report-democrats-19-house-seats/",
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas",
+      "https://www.cookpolitical.com/ratings/house-race-ratings"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -779,14 +783,18 @@
       "market_path": [],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Cook moves Gonzalez's Rio Grande Valley seat to Lean D",
+    "what_happened": "Cook published a round of 19 House rating changes toward Democrats on the morning of 2026-10-23 (retrieved, The Hill, 10:07 ET). Cook's House editor wrote that Democrats are now favored outright in 218 seats, Republicans in 198, with 17 pure Toss Ups (retrieved). Cook's own ratings page returns 403 to scripts and to WebFetch, so the district-level changes other than TX-35 are read from the Wikipedia ratings table dated Oct. 23 (retrieved). CNN's live page quoted Cook that several of the changes, particularly in Texas and North Carolina, are tied to Republican underperformance at the top of the ticket (retrieved secondhand from a search snippet, the page itself returned 451). No district poll was retrieved for any of the five seats. TX-34 moved from Toss Up to Lean D (retrieved, Wikipedia table). Vicente Gonzalez (D) is the incumbent, the seat was redrawn from about Trump +4.4 to Trump +10.1 (retrieved, races.json). Inside Elections still has it Toss Up as of Oct. 15, every other rater had it Lean D or better before today (retrieved).",
+    "why_it_moved": "Inferred: same round, same cause. Cook was the last major rater holding Toss Up here.",
+    "should_it_move_us": "Wait. Our number here is the count item, Redrawn GOP seats Democrats win: 6 with an 80 percent range of 3 to 9, unchanged from the lock. DDHQ's probabilities summed to 6.9 at the last pull. TX-34 is one of the seats the rationale already counts toward the six. Cook agreeing adds no information the model lacks. The count moves on a district poll, not a rating.",
+    "trigger": "A nonpartisan district poll of TX-34. None has been retrieved.",
+    "sources": [
+      "https://thehill.com/homenews/campaign/6167727-cook-political-report-democrats-19-house-seats/",
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas",
+      "https://www.cookpolitical.com/ratings/house-race-ratings"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -806,14 +814,19 @@
       "market_path": [],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Cook moves the new San Antonio seat to Toss Up",
+    "what_happened": "Cook published a round of 19 House rating changes toward Democrats on the morning of 2026-10-23 (retrieved, The Hill, 10:07 ET). Cook's House editor wrote that Democrats are now favored outright in 218 seats, Republicans in 198, with 17 pure Toss Ups (retrieved). Cook's own ratings page returns 403 to scripts and to WebFetch, so the district-level changes other than TX-35 are read from the Wikipedia ratings table dated Oct. 23 (retrieved). CNN's live page quoted Cook that several of the changes, particularly in Texas and North Carolina, are tied to Republican underperformance at the top of the ticket (retrieved secondhand from a search snippet, the page itself returned 451). No district poll was retrieved for any of the five seats. TX-35 moved from Lean R (flip) to Toss Up, confirmed by The Hill by name: Democrat Johnny Garcia against Republican Carlos De La Cruz in an open seat drawn at Trump +10.4 (retrieved). Sabato, DDHQ, Silver and RCP already had it Toss Up, Split Ticket and Fifty Plus One had it Lean D (retrieved).",
+    "why_it_moved": "Inferred: Cook caught up to the other raters on the same national signal, a D+8 generic ballot and Republican weakness at the top of the Texas ticket. No district poll is behind it. Ratings load on national mood like every other poll-derived signal, so this is not independent confirmation of anything.",
+    "should_it_move_us": "Wait. Our number here is the count item, Redrawn GOP seats Democrats win: 6 with an 80 percent range of 3 to 9, unchanged from the lock. DDHQ's probabilities summed to 6.9 at the last pull. The lock rationale said we sit at 6 rather than 7 because the Hispanic-heavy Texas seats had not shown a reversal yet. A rating change is a judgment on signals we already hold, not the reversal itself. A /where run should re-derive the count, this brief does not compute it.",
+    "trigger": "A nonpartisan district poll of TX-35 showing Garcia ahead. None has been retrieved.",
+    "sources": [
+      "https://thehill.com/homenews/campaign/6167727-cook-political-report-democrats-19-house-seats/",
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas",
+      "https://www.cookpolitical.com/ratings/house-race-ratings",
+      "https://www.cnn.com/2026/10/23/politics/live-news/midterm-election-congress"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -833,14 +846,18 @@
       "market_path": [],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Cook moves the vacant Gonzales seat to Lean R",
+    "what_happened": "Cook published a round of 19 House rating changes toward Democrats on the morning of 2026-10-23 (retrieved, The Hill, 10:07 ET). Cook's House editor wrote that Democrats are now favored outright in 218 seats, Republicans in 198, with 17 pure Toss Ups (retrieved). Cook's own ratings page returns 403 to scripts and to WebFetch, so the district-level changes other than TX-35 are read from the Wikipedia ratings table dated Oct. 23 (retrieved). CNN's live page quoted Cook that several of the changes, particularly in Texas and North Carolina, are tied to Republican underperformance at the top of the ticket (retrieved secondhand from a search snippet, the page itself returned 451). No district poll was retrieved for any of the five seats. TX-23 moved from Likely R to Lean R (retrieved, Wikipedia table). The seat is vacant since Tony Gonzales resigned in April 2026, Republican Brandon Herrera against Democrat Katy Stout, drawn at Trump +14.8 (retrieved, races.json). Sabato, the Economist and Fifty Plus One already had it Lean R, Silver, Split Ticket and RCP Toss Up (retrieved). DDHQ gave the Democrat 0.23 at the lock (retrieved).",
+    "why_it_moved": "Inferred: same round. A Trump +15 seat moving to Lean R is the national environment showing up in the ratings, plus an open seat with a nominee who lost the 2024 primary to Gonzales.",
+    "should_it_move_us": "No. Our number here is the count item, Redrawn GOP seats Democrats win: 6 with an 80 percent range of 3 to 9, unchanged from the lock. DDHQ's probabilities summed to 6.9 at the last pull. TX-23 is not among the seats the rationale counts toward the six. The top of the count's range already allows a surprise here.",
+    "trigger": "A nonpartisan district poll of TX-23 showing Stout within 5. None has been retrieved.",
+    "sources": [
+      "https://thehill.com/homenews/campaign/6167727-cook-political-report-democrats-19-house-seats/",
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas",
+      "https://www.cookpolitical.com/ratings/house-race-ratings"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -860,14 +877,19 @@
       "market_path": [],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Cook moves Figures's redrawn seat to Lean R",
+    "what_happened": "Cook published a round of 19 House rating changes toward Democrats on the morning of 2026-10-23 (retrieved, The Hill, 10:07 ET). Cook's House editor wrote that Democrats are now favored outright in 218 seats, Republicans in 198, with 17 pure Toss Ups (retrieved). Cook's own ratings page returns 403 to scripts and to WebFetch, so the district-level changes other than TX-35 are read from the Wikipedia ratings table dated Oct. 23 (retrieved). CNN's live page quoted Cook that several of the changes, particularly in Texas and North Carolina, are tied to Republican underperformance at the top of the ticket (retrieved secondhand from a search snippet, the page itself returned 451). No district poll was retrieved for any of the five seats. AL-02 moved from Likely R (flip) to Lean R (flip) (retrieved, Wikipedia table). Shomari Figures (D) is the incumbent, the court-drawn Harris +7 seat was replaced by the legislature's 2023 map at Trump +15 (retrieved, races.json). Inside Elections, Sabato and RCP already had it Lean R, Split Ticket and Fifty Plus One Toss Up (retrieved). DDHQ gave Figures 0.24 at the lock (retrieved).",
+    "why_it_moved": "Inferred: same round. Cook moved to the middle of the rater pack. No Alabama district poll was retrieved.",
+    "should_it_move_us": "No. Our number here is the count item, Redrawn GOP seats Democrats win: 6 with an 80 percent range of 3 to 9, unchanged from the lock. DDHQ's probabilities summed to 6.9 at the last pull. AL-02 sits with the Trump +15 seats the rationale puts near zero. One notch toward the Democrat on a seat near zero does not change a count of six.",
+    "trigger": "A nonpartisan district poll of AL-02 showing Figures within 5. None has been retrieved.",
+    "sources": [
+      "https://thehill.com/homenews/campaign/6167727-cook-political-report-democrats-19-house-seats/",
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections",
+      "https://www.cookpolitical.com/ratings/house-race-ratings",
+      "https://www.wvtm13.com/article/alabama-special-primary-election-2026-congressional-map/73394722"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -887,14 +909,20 @@
       "market_path": [],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Georgia margin market up 3 with no new poll",
+    "what_happened": "Polymarket's Ossoff-by-more-than-4 contract moved from 85.7 at the 2026-10-22 20:10 pull to 88.7 at the 2026-10-23 11:50 pull (retrieved). The margin market's implied point moved from +10.1 to +11.2 (retrieved). There is no intraday path for this market, only the two pulls. No new Georgia poll since the last pull: the newest is ActiVote through Oct 20 at D+8, already in the model (retrieved). The 48-hour feed has 46 articles: CNN's KFile on Mike Collins's 2021 remark about pushing Pelosi from a plane and a 2021 post about hanging leaders from a helicopter, published the morning of Oct 23 with no campaign response (retrieved), Trump, Obama and Harris all in Georgia as early voting nears its end (Oct 22, retrieved), and Ossoff attacking Collins in Savannah (Oct 22, retrieved).",
+    "why_it_moved": "Inferred, in order of weight: the KFile story landed between the two pulls and is the only new fact. The rallies and Ossoff's Savannah attack are campaign noise the market already priced. A 3-point move at 86 in a thin margin market is also consistent with a single trader.",
+    "should_it_move_us": "No. Our number is 75, unchanged from the lock, and it follows from a margin centered at +8 with an 80 percent range of +1 to +15. The core model's Georgia margin is +9.3 (range 4.8 to 13.7) from two polls, ActiVote and the University of Georgia. The market is 13.7 points above us and has been above us all week. A Collins story with no poll behind it is sentiment. The gap is a known disagreement about how much Ossoff slips from registered to likely voters, not new information.",
+    "trigger": "A nonpartisan likely-voter poll with Ossoff under +5, or one above +12, before Nov 3.",
+    "sources": [
+      "https://polymarket.com/event/georgia-senate-election-winner",
+      "https://www.kten.com/news/politics/kfile-mike-collins-joked-about-pushing-pelosi-from-a-plane-suggested-hanging-us-leaders/article_d98272f1-69ce-50db-9afd-2c513832af10.html",
+      "https://www.atlantanewsfirst.com/2026/10/22/star-power-showdown-trump-obama-harris-storm-georgia-early-voting-nears-end/",
+      "https://www.wjcl.com/article/georgia-senate-race-ossoff-targets-collins-oct-2026/74222295",
+      "https://www.activote.net/polls/2026/ga-u-s-senate/"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -940,18 +968,27 @@
         [
           "2026-10-23T11:00:00-04:00",
           0.905
+        ],
+        [
+          "2026-10-23T12:00:00-04:00",
+          0.9078
         ]
       ],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Saint Anselm has Pappas up 7, matching YouGov",
+    "what_happened": "Saint Anselm College, fielded 2026-10-19 to 10-20, 1,672 likely voters, margin of error 2.4, released 2026-10-22: Pappas 50, Sununu 43, D+7 (retrieved). Both candidates are under water on favorability, Pappas 41 to 56 and Sununu 40 to 56 (retrieved). Trump approval in the sample is 38 to 62 and the generic ballot is D+9 (retrieved). The release does not compare to a prior Saint Anselm poll (retrieved). The three polls in 21 days average D+6.7: YouGov through Oct 5 at D+8 and National Public Affairs through Oct 12 at D+5 (retrieved).",
+    "why_it_moved": "Inferred: nothing moved. The flag fires because a new nonpartisan poll landed in a race with few polls. D+7 sits between the two prior readings. The market is at 90.8 and has been between 89 and 91 all week (retrieved).",
+    "should_it_move_us": "No. Our core number is 98.6 (margin Pappas +7.65, range 3.2 to 12.1) and the run's judgment is 87, lock 86. The model counted Saint Anselm at weight 0.69 and YouGov at 0.31, and left National Public Affairs out as partisan (R). The poll is already in the number. Base rate: an open seat in a Harris +2.8 state in a D+8 year goes to the Democrat in nearly every cycle, and the 12-point gap between the core model and the run is a method gap, not new information.",
+    "trigger": "A nonpartisan likely-voter poll with Sununu within 3. None exists.",
+    "sources": [
+      "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape",
+      "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_nh_20260921_lv.pdf",
+      "https://backend.natpublicaffairs.com/media/NH_General_Election_Memo_101526.2.pdf",
+      "https://polymarket.com/event/new-hampshire-senate-election-winner"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-23",
@@ -1063,17 +1100,48 @@
         [
           "2026-10-23T11:00:00-04:00",
           0.0515
+        ],
+        [
+          "2026-10-23T12:00:00-04:00",
+          0.0525
         ]
       ],
       "events_window_hours": 48
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Saint Anselm has Ayotte up 8, matching YouGov",
+    "what_happened": "Same Saint Anselm poll: Ayotte 50, Warmington 42, R+8 (retrieved). Ayotte job approval 51 (retrieved). The three polls in 21 days average Ayotte +11, pulled wider by National Public Affairs at R+16 (retrieved). YouGov through Oct 5 had R+9 (retrieved). The 48-hour feed for the race is the Supreme Court allowing New Hampshire to reject student IDs at the polls (Oct 22), a PolitiFact check confirming Warmington lobbied for Purdue Pharma, and Harris visiting the state (retrieved, titles only).",
+    "why_it_moved": "Inferred: nothing moved. A popular Republican incumbent holding an 8-point lead in a D+9 generic-ballot sample is the same split-ticket picture YouGov showed. The market is at 5.2 (retrieved).",
+    "should_it_move_us": "No. Our core number is 14.2 (margin Ayotte +7.4, range Ayotte +16.3 to Warmington +1.5) and the run's judgment is 6, lock 7. The model counted Saint Anselm at weight 0.69 and YouGov at 0.31 and left National Public Affairs out as partisan (R). The poll confirms the number rather than challenging it.",
+    "trigger": "A nonpartisan likely-voter poll with Warmington within 4. None exists.",
+    "sources": [
+      "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape",
+      "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_nh_20260921_lv.pdf",
+      "https://backend.natpublicaffairs.com/media/NH_General_Election_Memo_101526.2.pdf",
+      "https://www.foxnews.com/politics/supreme-court-blocks-student-ids-voter-identification-new-hampshire",
+      "https://politifact.com/factchecks/2026/oct/22/kelly-ayotte/warmington-opioid-purdue-pharma-new-hampshire/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-23",
+    "kind": "item",
+    "item_id": "any_state_misses_federal_certification_deadline",
+    "item": "Any state misses the federal certification deadline",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Blanche will not rule out a DOJ role in certification",
+    "what_happened": "Not flagged by the scripts, added here. Attorney General Todd Blanche told reporters in Norfolk, Virginia on 2026-10-22 that there could be a doomsday scenario in which the Justice Department would seek to get involved in certification, that it is not DOJ's intention to improperly interfere with elections or the state certification process, and that he is not planning his days around the election to be somewhere to not certify (retrieved, NBC News). He did not describe the scenario (retrieved). NBC notes no U.S. law lets the Justice Department challenge ballots or delay certification (retrieved). DOJ has sued California to force a review of 18,000 registrants it suspects are noncitizens (retrieved, NBC). The Hill's own story on the remark sits behind a bot check and was not read.",
+    "why_it_moved": "Nothing moved in the gate items. This is a statement of posture, not an action. It belongs to the gate agent's record because it is the first time the sitting attorney general has declined to rule out DOJ involvement in state certification this cycle.",
+    "should_it_move_us": "Wait. The base rate is zero: the federal Justice Department has never blocked or delayed a state's certification of a federal election. A refusal to rule something out does not change a zero base rate. The gate agent should log it at its current severity and re-grade only on a filing.",
+    "trigger": "A DOJ filing that asks a court to enjoin or delay a state's certification, or a public DOJ demand that a state withhold certification.",
+    "sources": [
+      "https://www.nbcnews.com/politics/justice-department/blanche-wont-rule-doj-post-election-action-doomsday-scenario-rcna605035",
+      "https://thehill.com/homenews/administration/6167033-todd-blanche-doj-election-certification-block/"
+    ],
+    "label": "inferred"
   }
 ]

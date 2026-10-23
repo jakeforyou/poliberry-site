@@ -195,8 +195,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> A pre-registered forecast of the 2026 midterms, kept by Jake Berry with Claude. Every chance is the model's probability that the Democrat wins, printed raw. Beside it: the lock, a judgment frozen on Oct 16, and the latest run. Since lock compares the model with its own lock-day figure. Early-vote and modeled lines never enter a number. Every figure is labeled, and a marked number opens its source. Markets are benchmarks, not inputs. A record to be graded after Nov 3, not advice.</p></section>
 <div class="lx-bar" role="region" aria-label="About this copy">
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-10-23 11:51</b></span>
-  <span>Snapshots <b id="lx-days">—</b></span>
+  <span>Data built <b id="lx-built">2026-10-23 12:01</b></span>
+  <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Republished each morning.</span>
 </div>
@@ -702,7 +702,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   .ms-mapwrap .ms-map { min-height: 0; }
   .ms-moving table { font-size: 12.5px; }
   .ms-moving .evhead, .ms-moving th:nth-child(n+5), .ms-moving td:nth-child(n+5) { display: none; }
-  .ms-moving td.race { white-space: normal; }
+  .ms-moving td.race { white-space: normal; min-width: 11rem; }
   .ms-moving td { padding: .4rem .4rem .4rem 0; }
   .ms-moving .ms-why, .ms-moving .ms-sort { padding-top: .35rem; padding-bottom: .35rem; }
   .ms-hero .ms-slpop { position: fixed; left: 0; right: 0; top: auto; bottom: 0; width: auto; max-height: 82vh; border-radius: var(--cds-radius) var(--cds-radius) 0 0; }
@@ -725,6 +725,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-flagline > summary::after { content: " more"; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
 .ms-flagline[open] > summary::after { content: " less"; }
 .ms-flagline > .m { margin: .25rem 0 0; }
+.ms-moving td.race .why { display: block; white-space: normal; font-weight: 400; font-size: 10.5px; line-height: 1.35; color: var(--color-fg-muted); max-width: 24rem; margin-top: .1rem; }
 </style>
 
 <div class="ms">
@@ -771,7 +772,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     <div class="ms-nums ms-compact" id="nums" hidden></div>
     <div class="ms-read">
       <div class="ms-readcol">
-        <h2>The model's view</h2>
+        <h2>Our latest call</h2>
         <p class="ms-lead2 dash-skeleton" id="lead">—</p>
         <p class="ms-sub" id="meta"></p>
       </div>
@@ -795,7 +796,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         <button type="button" class="ms-btn" id="changes-more" hidden>Show all</button>
       </div>
       <div style="display:grid;gap:var(--cds-gap-md)">
-        <div class="ms-card"><h3>The story since the lock <span id="help-story"></span></h3><div class="ms-story" id="story" data-source="brief"></div></div>
+        <div class="ms-card"><h3>Day by day since Oct 16 <span id="help-story"></span></h3><div class="ms-story" id="story" data-source="brief"></div></div>
         <div class="ms-card"><h3>Next dates</h3><div id="next-dates"></div></div>
       </div>
     </div>
@@ -901,7 +902,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     <div class="ms-cols2">
       <div class="ms-card"><h3>Dates ahead</h3><div class="ms-table-wrap"><table id="cal-table" data-source="calendar" data-row-key="date">
         <thead><tr><th>Date</th><th>Event</th><th>Why it matters</th></tr></thead><tbody></tbody></table></div></div>
-      <div class="ms-card"><h3>2028 mechanism variables</h3><p class="ms-sub">Names frozen until the final grade. Change since the lock.</p>
+      <div class="ms-card"><h3>2028 mechanism variables</h3><p class="ms-sub">Names frozen until the final grade. Change since Oct 16.</p>
         <div class="ms-table-wrap"><table id="m28-table" data-source="mechanism_2028" data-row-key="variable,as_of">
           <thead><tr><th>Variable</th><th>Value</th><th>Change</th></tr></thead><tbody></tbody></table></div></div>
     </div>
@@ -952,12 +953,12 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 
   // ---------------- plain-language help
   const HELP = {
-    result: 'The result we expect: the vote shares and margin, not the chance. The margin is the lock\'s where it states one, derived from our chance inside 10 to 90 percent, else the poll average or the 2024 swing. Other is the poll average of third parties, else 2. Votes are the 2022 turnout times a band until Oct 30, then the early-vote pace, capped. Frozen in data/expected.json the day it shipped and graded beside the lock.',
+    result: 'The result we expect: the vote shares and margin, not the chance. The margin is the Oct 16 call\'s where it states one, derived from our chance inside 10 to 90 percent, else the poll average or the 2024 swing. Other is the poll average of third parties, else 2. Votes are the 2022 turnout times a band until Oct 30, then the early-vote pace, capped. Frozen in data/expected.json the day it shipped and graded beside the Oct 16 call.',
     bop: 'The seat count for each chamber: our 80 percent range (thick) against the market ranges and Decision Desk, with the chance of control beside it and its line over the last 75 days. This is the only distribution chart on the site.',
-    table: 'Every race we forecast, one row each. Ours is the chance we give the Democrat; the market and Decision Desk are context. Gap now is ours minus the market today; at lock is the same gap when we locked; the market column is how far the price has moved since. All three come from deltas.py. Conviction shows the run\'s own doubts. Click a row to open the race.',
-    story: 'One line per day since the lock: the brief\'s first sentence, or the change log\'s summary on a day without a brief. Click a day to move the whole page to it.',
+    table: 'Every race we forecast, one row each. Ours is the chance we give the Democrat; the market and Decision Desk are context. Gap now is ours minus the market today; at lock is the same gap when we locked; the market column is how far the price has moved since. All three come from deltas.py. Conviction shows our call\'s own doubts. Click a row to open the race.',
+    story: 'One line per day since the Oct 16 call: the brief\'s first sentence, or the change log\'s summary on a day without a brief. Click a day to move the whole page to it.',
     brief: 'Every move that cleared a fixed bar (3 points in a market in a day, a rating change, a 5-point Decision Desk move, a poll 5 off its average or in a thin race, 3 points intraday) gets an entry: what happened, why it moved, whether it should move us, and what would change the answer. Scripts gather the facts. The reading is written each morning and labeled inferred. "Needs a why" means the facts are in and the reading is not.',
-    ours: 'Our forecast: the chance we give the Democrat. Set at the lock on Oct 16 and changed only by a new run, never by a price or a poll on its own.',
+    ours: 'Our forecast: the chance we give the Democrat. Set on Oct 16 and changed only by a new call, never by a price or a poll on its own.',
     ddhq: 'Decision Desk HQ, a public forecasting model, read from The Hill’s forecast page. It blends markets into its numbers.',
     markets: 'The average of Polymarket and Kalshi, two prediction markets where people bet real money on the result.',
     consensus: 'The middle rating among the forecasters we track (Cook, Sabato, Inside Elections, Decision Desk, Silver Bulletin, the Economist, Split Ticket, Fox, RCP and 50+1), turned into a chance. Not our number.',
@@ -973,15 +974,16 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     board: 'Each row is a race we forecast. The big dot is our chance the Democrat wins. Small marks are Decision Desk and the markets. A long line means we disagree with the markets.',
     redrawn: 'Seats redrawn for 2026 to favor Republicans. If Democrats win many, the new maps backfired.',
     votes: 'Composition only. Early voters skew toward whichever party votes early in that state, and a shift says nothing about the result on its own.',
-    money: 'Cash on hand from FEC reports, the election-integrity gate, and the non-poll signals (committee spending, travel, registration) that moved our numbers at the lock.',
+    money: 'Cash on hand from FEC reports, the election-integrity gate, and the non-poll signals (committee spending, travel, registration) that moved our numbers at the Oct 16 call.',
     flip: 'The raters’ consensus has this seat changing party.',
-    sincelock: 'How far this number has moved since the lock. Zero until a new run.',
+    sincelock: 'How far this number has moved since the Oct 16 call. Zero until a new call.',
     upsets: 'Races where the signals disagree enough that the favorite could lose: we differ from the raters or Decision Desk by 10 or more, the markets moved 4 or more against the favorite this week, the 2024 even-swing baseline is far away, or the markets price a race the raters call safe. Rules only, scored and listed; nothing here changes a forecast.',
     statements: 'News coverage of statements about voting and election legitimacy by the president and his allies, counted by day from the GDELT news index and linked. It counts coverage, not truth, and never forecasts.',
     baseline: 'What this race would look like if the whole country swung evenly since 2024: the state’s 2024 presidential margin plus the national swing our House popular-vote forecast implies, turned into a chance with the historical scatter of races around an even swing. A baseline to argue with, not our forecast.',
     glance: 'Every seat, as a square. Seats not on the ballot this year are faded in the party of the person holding them. Seats on the ballot are colored by our forecast where we have one (outlined), else by the raters’ consensus. The line is the majority.',
   };
   HELP.changed = (HELP.changed || '') + ' Decision Desk blends markets at 25 percent of every race, so part of any move follows the price. A price moves our number only through a run.';
+  const TERMS = 'The model is computed from polls, fundamentals and the raters. Our call is a human judgment, recorded on a date. The Oct 16 call is the first one, pre-registered and never changed.';
   const help = (key, text) => el('span', { class: 'ms-help', tabindex: 0, role: 'note', 'aria-label': text || HELP[key], 'data-tip': text || HELP[key] }, '?');
   HELP.pace = 'Ballots counted so far against the 2022 and 2024 totals at the same number of days before Election Day. A midterm always runs far below a presidential year, so the 2022 ratio is the like-for-like pace and the 2024 ratio is about habits. Shares are the party registration of the people who have voted, not how they voted.';
   for (const [id, key] of [['help-changed', 'changed'], ['help-differ', 'differ'], ['help-glance', 'glance'], ['help-map', 'map'], ['help-comp', 'comp'], ['help-trends', 'trends'], ['help-board', 'board'], ['help-redrawn', 'redrawn'], ['help-votes', 'votes'], ['help-money', 'money'], ['help-upsets', 'upsets'], ['help-statements', 'statements'], ['help-statements2', 'statements'], ['help-pace', 'pace']]) { const n = $('#' + id); if (n) n.replaceChildren(help(key)); }
@@ -1014,8 +1016,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     $('#day-prev').disabled = state.day <= b.min; $('#day-next').disabled = state.day >= b.max;
     const ds = days();
     const parts = [`${d3.utcFormat('%A, %B %-d')(new Date(state.day + 'T12:00:00Z'))}.`];
-    if (state.snap > state.day) parts.push(`The first snapshot is ${nice(state.snap)}, so forecasts show that day.`);
-    else parts.push(`Forecasts as saved on ${nice(state.snap)}${state.snap === ds[ds.length - 1] ? ' (the latest snapshot)' : ''}.`);
+    if (state.snap > state.day) parts.push(`The first saved day is ${nice(state.snap)}, so forecasts show that day.`);
+    else parts.push(`As of ${nice(state.snap)}.`);
     const counted = ['NC', 'PA', 'SC'].map((s) => [s, latestVoteDate(s)]).filter(([, d]) => d);
     if (counted.length) parts.push('Votes through ' + counted.map(([s, d]) => `${nice(d)} in ${s}`).join(', ') + '.');
     $('#day-status').textContent = parts.join(' ');
@@ -1240,14 +1242,16 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   function drawBand(sc, run, ev, idx) {
     const prev = runVal(run, 'previous_run_id');
     const meta = $('#meta');
-    meta.replaceChildren(document.createTextNode('Run '), runMark('span', 'run_id', runVal(run, 'run_id')), document.createTextNode(' · '), runMark('span', 'kind', runVal(run, 'kind')),
-      document.createTextNode(' · Lock '), runMark('span', 'lock_run_id', String(runVal(run, 'lock_run_id') || '').slice(0, 10)), help('lock'),
-      document.createTextNode(' · Previous run '), prev == null ? el('span', {}, 'none') : runMark('span', 'previous_run_id', prev));
+    const KIND = { run: 'update', full: 'full update', quick: 'partial update', closing: 'closing call', lock: 'first' };
+    const day = (id) => { const d = String(id || '').slice(0, 10); return /^\d{4}-\d{2}-\d{2}$/.test(d) ? nice(d) : String(id || ''); };
+    meta.replaceChildren(document.createTextNode('Our call: '), runMark('span', 'run_id', day(runVal(run, 'run_id'))), document.createTextNode(' (' ), runMark('span', 'kind', KIND[runVal(run, 'kind')] || runVal(run, 'kind')), document.createTextNode(')'),
+      document.createTextNode(' · first call '), runMark('span', 'lock_run_id', day(runVal(run, 'lock_run_id'))), help('lock'),
+      document.createTextNode(' · previous call '), prev == null ? el('span', {}, 'none') : runMark('span', 'previous_run_id', day(prev)));
     const chips = [];
     const db = daysBefore(state.day);
     chips.push(el('span', { class: 'ms-chip' }, db > 0 ? `${db} days to Election Day` : db === 0 ? 'Election Day' : `${-db} days after Election Day`));
     const lvl = runVal(run, 'gate_level');
-    const gc = el('span', { class: 'ms-chip', 'data-tone': lvl >= 2 ? 'bad' : lvl === 1 ? 'warn' : 'ok', style: 'cursor:pointer' }, 'Gate ');
+    const gc = el('span', { class: 'ms-chip', 'data-tone': lvl >= 2 ? 'bad' : lvl === 1 ? 'warn' : 'ok', style: 'cursor:pointer' }, 'Election integrity ');
     gc.append(runMark('b', 'gate_level', lvl == null ? '—' : String(lvl)), document.createTextNode(' · ' + (['Normal', 'Pressure', 'Interference', 'Outcome at risk'][lvl] || '')), help('gate'));
     gc.addEventListener('click', () => { state.moneySub = 'gate'; setTab('money'); });
     chips.push(gc);
@@ -1282,7 +1286,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const gp = $('#gate-para'); gp.classList.remove('dash-skeleton'); gp.textContent = runVal(run, 'gate_paragraph') || ''; mark(gp, 'run', 'value', Wh('key=gate_paragraph'));
     $('#foot-run').replaceChildren(document.createTextNode('DDHQ model stamp '), runMark('span', 'ddhq_model_updated', runVal(run, 'ddhq_model_updated') ?? '—'),
       document.createTextNode('. Its public page was cached '), runMark('span', 'ddhq_cache_age_hours', fmt1(runVal(run, 'ddhq_cache_age_hours') ?? 0)),
-      document.createTextNode(' hours at the run. Benchmarks with a source: '), runMark('span', 'benchmarks_with_source', String(runVal(run, 'benchmarks_with_source'))),
+      document.createTextNode(' hours at our call. Benchmarks with a source: '), runMark('span', 'benchmarks_with_source', String(runVal(run, 'benchmarks_with_source'))),
       document.createTextNode('. Missing with a stated reason: '), runMark('span', 'benchmarks_null_with_reason', String(runVal(run, 'benchmarks_null_with_reason'))), document.createTextNode('.'));
   }
 
@@ -1293,7 +1297,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const m = /^\s*(No|Wait|Yes)\b/i.exec(s || ''); if (!m) return null;
     const w = m[1][0].toUpperCase() + m[1].slice(1).toLowerCase();
     const tone = w === 'Wait' ? 'wait' : w === 'Yes' ? (/republican/i.test(s) ? 'R' : 'D') : null;
-    return { word: w === 'Yes' ? (tone === 'R' ? 'Yes, toward R' : 'Yes, toward D') : w, tone };
+    return { word: w === 'Yes' ? (tone === 'R' ? 'Moved us toward R' : 'Moved us toward D') : w === 'No' ? 'No change' : 'Watching', tone };
   }
   function drawBrief(rows) {
     const lead = rows.find((r) => r.kind === 'lead'); const items = rows.filter((r) => r.kind === 'item');
@@ -1313,7 +1317,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const p = el('details', { class: 'ms-flagline' });
       const sm = el('summary');
       const v = r.explained ? verdict(r.should_it_move_us) : null;
-      sm.append(el('span', { class: 'ms-chip', 'data-tone': r.explained ? (v ? v.tone : null) : 'warn' }, r.explained ? (v ? v.word : 'read') : 'needs a why'), document.createTextNode(' '));
+      sm.append(el('span', { class: 'ms-chip', 'data-tone': r.explained ? (v ? v.tone : null) : 'warn' }, r.explained ? (v ? v.word : 'Read') : 'Unexplained'), document.createTextNode(' '));
       const b = el('b', {}, r.headline || r.item);
       if (r.item_id) b.addEventListener('click', (e) => { e.preventDefault(); select(r.item_id, true); });
       sm.append(b);
@@ -1332,7 +1336,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const run = changes.find((r) => r.as_of === d && r.category === 'forecast' && /^New run/.test(r.item || ''));
       const text = lead ? firstSentence(lead.text) : sum ? firstSentence(sum.reading) : 'No record for this day.';
       const row = el('div', { class: 'row', 'aria-current': String(d === state.snap) });
-      row.append(el('span', { class: 'd' }, nice(d) + (run ? ' · run' : '')), el('span', { class: 's' }, text + (lead ? '' : sum ? ' (no brief; the change log)' : '')));
+      row.append(el('span', { class: 'd' }, nice(d) + (run ? ' · our call' : '')), el('span', { class: 's' }, text + (lead ? '' : sum ? ' (no brief; the change log)' : '')));
       row.addEventListener('click', () => { state.day = d; state.snap = pickSnap(d); redraw(); });
       return row;
     }));
@@ -1412,15 +1416,15 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const d = el('div', { class: 'ms-inst' });
       const big = el('div', { class: 'big' });
       if (m && m.chance_d != null) {
-        const lbl = el('span', { class: 'lbl' }, `${name}: chance Democrats win it `); lbl.append(help('chamber', `Chamber model: ${m.n_from_daily} race${m.n_from_daily === 1 ? '' : 's'} from the core model, ${m.n_from_ratings} from the ratings consensus, ${m.not_up_d} Democratic seats not on the ballot. One shared national swing, ${m.n_sims.toLocaleString()} draws.`)); d.append(lbl);
-        big.append(mark(el('span', {}, pct2(m.chance_d)), 'chambers', 'chance_d', Wh('chamber=' + office)), el('small', {}, `% · run ${pct2(m.run_chance ?? c.ours)}` + (m.lock_chance != null && m.lock_chance !== m.run_chance ? ` · lock ${pct2(m.lock_chance)}` : '')));
+        const lbl = el('span', { class: 'lbl' }, `${name}: chance Democrats win it `); lbl.append(help('chamber', `Chamber model: ${m.n_from_daily} race${m.n_from_daily === 1 ? '' : 's'} from the core model, ${m.n_from_ratings} from the ratings consensus, ${m.not_up_d} Democratic seats not on the ballot. One shared national swing, ${m.n_sims.toLocaleString()} draws. ${TERMS}`)); d.append(lbl);
+        big.append(mark(el('span', {}, pct2(m.chance_d)), 'chambers', 'chance_d', Wh('chamber=' + office)), el('small', {}, `% · our call ${pct2(m.run_chance ?? c.ours)}` + (m.lock_chance != null && m.lock_chance !== m.run_chance ? ` · Oct 16 call ${pct2(m.lock_chance)}` : '')));
         d.append(big);
-        const seats = el('div', { class: 'seats' }); seats.append(mark(el('span', {}, fmt2(m.seats_mean)), 'chambers', 'seats_mean', Wh('chamber=' + office)), document.createTextNode(' seats'), el('span', { class: 'm' }, `80%: ${m.seats_lo} to ${m.seats_hi}` + (s ? ` · run ${fmt1(s.ours)} (${fmt1(s.ours_lo)} to ${fmt1(s.ours_hi)})` : ''))); d.append(seats);
+        const seats = el('div', { class: 'seats' }); seats.append(mark(el('span', {}, fmt2(m.seats_mean)), 'chambers', 'seats_mean', Wh('chamber=' + office)), document.createTextNode(' seats'), el('span', { class: 'm' }, `80%: ${m.seats_lo} to ${m.seats_hi}` + (s ? ` · our call ${fmt1(s.ours)} (${fmt1(s.ours_lo)} to ${fmt1(s.ours_hi)})` : ''))); d.append(seats);
         const bar = el('div', { class: 'bar ms-chart', 'data-source': 'chambers' }); d.append(bar);
         requestAnimationFrame(() => seatBar(bar, { ours: m.seats_mean, ours_lo: m.seats_lo, ours_hi: m.seats_hi, run: s ? s.ours : null }, maj, dom));
       } else {
-        d.append(el('span', { class: 'lbl' }, `${name}: chance Democrats win it, the run`));
-        big.append(mark(el('span', {}, pct2(c.ours)), 'scorecard', 'ours', Wh('id=' + enc(cid))), el('small', {}, '%' + (c.d_lock ? ` · ${signed(c.d_lock)} since the lock` : ' · unchanged since the lock'))); d.append(big);
+        d.append(el('span', { class: 'lbl' }, `${name}: chance Democrats win it, our call`));
+        big.append(mark(el('span', {}, pct2(c.ours)), 'scorecard', 'ours', Wh('id=' + enc(cid))), el('small', {}, '%' + (c.d_lock ? ` · ${signed(c.d_lock)} since Oct 16` : ' · unchanged since Oct 16'))); d.append(big);
         if (s) {
           const seats = el('div', { class: 'seats' }); seats.append(mark(el('span', {}, fmt1(s.ours)), 'scorecard', 'ours', Wh('id=' + enc(sid))), document.createTextNode(' seats'), el('span', { class: 'm' }, `80%: ${fmt1(s.ours_lo)} to ${fmt1(s.ours_hi)}`)); d.append(seats);
           const bar = el('div', { class: 'bar ms-chart', 'data-source': 'scorecard' }); d.append(bar); requestAnimationFrame(() => seatBar(bar, s, maj, dom));
@@ -1453,9 +1457,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (md.excluded && md.excluded.length) parts.push(`${md.excluded.length} in the window left out by the rule: ` + md.excluded.map((q) => `${pollTxt(q)}, ${q.reason}`).join('; ') + '.');
     if (md.m_r != null && md.weights.ratings) parts.push(`Ratings ${pm(md.m_r)} at equal weight.`);
     if (md.core_margin != null) parts.push(`Core ${pm(md.core_margin)}, ${pct2(md.core_chance)}% with sigma ${fmt2(md.sigma)} at ${md.days_out} days out.`);
-    if (md.adjustment) parts.push(`The run's ${md.run_chance != null ? pct2(md.run_chance) : pm(md.run_margin)} adds ${signed2(md.adjustment)}` + (md.adjustment_capped ? ' (capped at 3)' : '') + `: ${pm(md.margin)}, ${pct2(md.chance)}%.`);
+    if (md.adjustment) parts.push(`Our call's ${md.run_chance != null ? pct2(md.run_chance) : pm(md.run_margin)} adds ${signed2(md.adjustment)}` + (md.adjustment_capped ? ' (capped at 3)' : '') + `: ${pm(md.margin)}, ${pct2(md.chance)}%.`);
     else if (md.core_margin != null) parts.push('The run agrees. No adjustment.');
-    else parts.push(`No input the model can use. The run's margin ${pm(md.margin)} stands.`);
+    else parts.push(`No input the model can use. Our call's margin ${pm(md.margin)} stands.`);
     return parts.join(' ');
   }
   // "Graham +8.32 (80%: +3.85 to +12.80), other 2." in the leader's frame; a range that crosses zero names both candidates
@@ -1474,7 +1478,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         const where = Wh('id=' + enc(r.id));
         const art = el('article', { class: 'ms-race', id: prefix + r.id, 'data-state': r.state || '' });
         const h = el('div', { class: 'h' }); h.append(el('b', {}, raceTitle(r)));
-        if (r.incumbent_party) h.append(el('span', { class: 'm' }, `${r.incumbent_party} seat`));
+        if (r.incumbent_party) h.append(el('span', { class: 'm' }, `${r.incumbent_party === 'R' ? 'Republican' : r.incumbent_party === 'D' ? 'Democratic' : r.incumbent_party}-held`));
         if (r.flag_today) h.append(el('span', { class: 'ms-chip', 'data-tone': 'warn' }, 'flagged today'));
         art.append(h);
         const pp = typeof pair === 'function' ? pair(r.id, cleanName(r.cand_d) || null, cleanName(r.cand_r) || null, false, 'sm') : null;
@@ -1488,11 +1492,11 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         const ch = el('div', { class: 'chance' });
         if (md && md.chance != null) {
           ch.append(mark(el('b', {}, pct2(md.chance) + '%'), 'race_summary', 'model', where),
-            el('span', { class: 'm' }, `chance ${nd}` + (md.run_chance != null ? ` · run ${pct2(md.run_chance)}` : '') + (md.lock_chance != null ? ` · lock ${pct2(md.lock_chance)}` : '')));
+            el('span', { class: 'm' }, `chance ${nd} wins` + (md.run_chance != null ? ` · our call ${pct2(md.run_chance)}` : '') + (md.lock_chance != null ? ` · Oct 16 call ${pct2(md.lock_chance)}` : '')));
         } else {
-          ch.append(mark(el('b', {}, pct2(r.ours) + '%'), 'race_summary', 'ours', where), el('span', { class: 'm' }, `chance ${nd} · the run's number`));
+          ch.append(mark(el('b', {}, pct2(r.ours) + '%'), 'race_summary', 'ours', where), el('span', { class: 'm' }, `chance ${nd} wins · our call`));
         }
-        const sp = el('div', { class: 'ms-chart spark', 'data-source': 'trends_recent', title: 'Since the lock: the model (solid) and the run (dashed)' });
+        const sp = el('div', { class: 'ms-chart spark', 'data-source': 'trends_recent', title: 'Since Oct 16: the model (solid) and our call (dashed)' });
         foot.append(ch, sp); art.append(foot);
         const ti = idx && idx[r.id];
         const series = ti ? { model: ti.model || null, run: ti.ours || null } : null;
@@ -1512,20 +1516,20 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
             if (cmp.race && cmp.race.black_share_2026 != null) t += `; Black share of mail ballots ${fmt1(cmp.race.black_share_2026)}% (2022 ${fmt1(cmp.race.black_share_2022_final)})`;
             else if (cmp.race_not_retrieved) t += '; race file not read today';
           } else t += '. No party data';
-          const p = el('p', { class: 'today' }); p.append(el('b', {}, 'Early vote. '), mark(el('span', {}, t + '. '), 'early_vote_readings', 'share_d_2026', Wh('state=' + enc(r.state))), el('span', { class: 'ms-chip' }, 'not in the number'));
+          const p = el('p', { class: 'today' }); p.append(el('b', {}, 'Early vote. '), mark(el('span', {}, t + '. '), 'early_vote_readings', 'share_d_2026', Wh('state=' + enc(r.state))), el('span', { class: 'ms-chip' }, 'not in the forecast'));
           art.append(p);
         }
         const geo = ev && ev.composition && ev.composition.geography;
         if (geo && geo.by_2024_lean && geo.by_2024_lean.now_2026) {
           const a = geo.by_2024_lean, b = geo.by_primary_2026;
           const p = el('p', { class: 'today' });
-          p.append(el('b', {}, 'Geography estimate. '), mark(el('span', {}, `D two-party share by county: ${fmt1(a.now_2026.d_two_party)} by 2024 county lean (2022 ${a.same_point_2022 ? fmt1(a.same_point_2022.d_two_party) : '—'})` + (b && b.now_2026 ? `, ${fmt1(b.now_2026.d_two_party)} by June primary participation (${b.same_point_2022 ? fmt1(b.same_point_2022.d_two_party) : '—'})` : '') + '. '), 'sc_composition', 'geography', Wh('state=SC')), el('span', { class: 'ms-chip' }, 'our model, not in the number'));
+          p.append(el('b', {}, 'Geography estimate. '), mark(el('span', {}, `D two-party share by county: ${fmt1(a.now_2026.d_two_party)} by 2024 county lean (2022 ${a.same_point_2022 ? fmt1(a.same_point_2022.d_two_party) : '—'})` + (b && b.now_2026 ? `, ${fmt1(b.now_2026.d_two_party)} by June primary participation (${b.same_point_2022 ? fmt1(b.same_point_2022.d_two_party) : '—'})` : '') + '. '), 'sc_composition', 'geography', Wh('state=SC')), el('span', { class: 'ms-chip' }, 'our model, not in the forecast'));
           art.append(p);
         }
         const mp = r.modeled_party;
         if (mp && mp.pct_d != null && !(ev && ev.has_party)) {
           const p = el('p', { class: 'today' });
-          p.append(el('b', {}, 'Modeled party. '), mark(el('span', {}, `${compact(mp.votes_cast)} ballots, D ${fmt1(mp.pct_d)} · R ${fmt1(mp.pct_r)} · other ${fmt1(mp.pct_other)}, ${mp.basis} (${mp.last_updated_text || '?'}). `), 'modeled_party', 'pct_d', Wh('state=' + enc(r.state))), el('span', { class: 'ms-chip' }, 'a model, not in the number'));
+          p.append(el('b', {}, 'Modeled party. '), mark(el('span', {}, `${compact(mp.votes_cast)} ballots, D ${fmt1(mp.pct_d)} · R ${fmt1(mp.pct_r)} · other ${fmt1(mp.pct_other)}, ${mp.basis} (${mp.last_updated_text || '?'}). `), 'modeled_party', 'pct_d', Wh('state=' + enc(r.state))), el('span', { class: 'ms-chip' }, 'a model, not in the forecast'));
           art.append(p);
         }
         const head = (b && b.headline) || (r.flag_today && r.flag_triggers && r.flag_triggers.length ? r.flag_triggers[0] : null);
@@ -1578,6 +1582,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const wrap = document.querySelector('.ms-mapwrap'); if (!wrap) return true;
     let btn = $('#map-toggle');
     if (!narrow()) { if (btn) btn.remove(); wrap.hidden = false; return true; }
+    if (state.mapOpen === undefined) state.mapOpen = true;
     if (!btn) {
       btn = el('button', { type: 'button', class: 'ms-maptoggle', id: 'map-toggle', 'aria-controls': 'mapchart' });
       btn.addEventListener('click', () => { state.mapOpen = !state.mapOpen; if (_lastSc) drawMap(_lastSc); });
@@ -1592,13 +1597,14 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     _lastSc = sc;
     if (!mapGate(sc)) return;
     const box = $('#mapchart');
-    if (box.clientWidth < 560 || _geoFailed) return drawTileMap(sc);
+    if (_geoFailed) return drawTileMap(sc);
     if (!_geo) { drawTileMap(sc); loadGeo().then((g) => { if (g && state.tab === 'forecast' && document.contains(box)) drawMap(sc); }); return; }
     drawGeoMap(sc, _geo);
   }
   function drawGeoMap(sc, geo) {
     const box = $('#mapchart');
     const office = officeKey(), overview = state.office === 'overview';
+    const compact = box.clientWidth < 560;  // a phone: the map scales down, so no state labels and larger discs
     const W = Math.max(560, box.clientWidth), H = Math.min(Math.round(W * 0.62), 760);
     const proj = d3.geoAlbersUsa().fitExtent([[6, 6], [W - 6, H - 6]], { type: 'FeatureCollection', features: geo.feats });
     const path = d3.geoPath(proj);
@@ -1634,6 +1640,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const lab = svg.append('g').attr('pointer-events', 'none');
     const labelled = geo.feats.filter((d) => (overview ? !!closest(d.st) : office === 'house' ? !!houseN[d.st] && houseN[d.st] >= 3 : !!chanceFor(office, d.st)));
     for (const d of labelled) {
+      if (compact && !overview) break;
       const c0 = path.centroid(d); if (!isFinite(c0[0])) continue;
       const off = LABEL_OFFSET[d.st]; const [x, y] = off ? [c0[0] + off[0], c0[1] + off[1]] : c0;
       if (off) lab.append('line').attr('x1', c0[0]).attr('y1', c0[1]).attr('x2', x).attr('y2', y).attr('stroke', 'rgba(255,255,255,.45)').attr('stroke-width', 1);
@@ -1641,13 +1648,13 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const g = lab.append('g').attr('transform', `translate(${x},${y})`);
       if (overview) {
         const sen = chanceFor('senate', d.st), gov = chanceFor('governor', d.st);
-        g.append('text').attr('class', 'ms-geo-lbl').attr('text-anchor', 'middle').attr('y', -4).attr('fill', ink).text(d.st);
+        if (!compact) g.append('text').attr('class', 'ms-geo-lbl').attr('text-anchor', 'middle').attr('y', -4).attr('fill', ink).text(d.st);
         const marks = [sen && sen.ours ? ['S', sen.p] : null, gov && gov.ours ? ['G', gov.p] : null].filter(Boolean);
-        const rr = 8, gap = 5, w = marks.length * (2 * rr) + (marks.length - 1) * gap;
+        const rr = compact ? 13 : 8, gap = compact ? 6 : 5, w = marks.length * (2 * rr) + (marks.length - 1) * gap;
         marks.forEach(([letter, p], i) => {
-          const cx = -w / 2 + rr + i * (2 * rr + gap), cy = 10;
+          const cx = -w / 2 + rr + i * (2 * rr + gap), cy = compact ? 0 : 10;
           g.append('circle').attr('cx', cx).attr('cy', cy).attr('r', rr).attr('fill', scale(p)).attr('stroke', 'rgba(255,255,255,.85)').attr('stroke-width', 1.3);
-          g.append('text').attr('class', 'ms-geo-mark').attr('x', cx).attr('y', cy + 3.6).attr('text-anchor', 'middle').attr('fill', inkOn(scale(p))).text(letter);
+          g.append('text').attr('class', 'ms-geo-mark').attr('x', cx).attr('y', cy + (compact ? 5.5 : 3.6)).attr('text-anchor', 'middle').attr('font-size', compact ? 16 : null).attr('fill', inkOn(scale(p))).text(letter);
         });
       } else if (office === 'house') {
         g.append('text').attr('class', 'ms-geo-lbl').attr('text-anchor', 'middle').attr('y', -2).attr('fill', inkOn(fill)).text(d.st);
@@ -1673,9 +1680,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   // ---------------- what's moving: the chance since the lock and in the last day, beside the votes being cast
   const dsign = (v, unit = '') => (v == null ? el('span', { class: 'm' }, '—') : el('span', { class: v > 0 ? 'pos' : v < 0 ? 'neg' : 'm' }, (v > 0 ? '+' : v < 0 ? '−' : '') + fmt2(Math.abs(v)) + unit));
   let _movingIdx = null;
-  const MOVING_COLS = [['race', 'Race', ''], ['chance', 'Chance', 'num'], ['d_lock', 'Since lock', 'num'], ['d_day', 'Last day', 'num'], ['ballots', 'Ballots (+ day)', 'num'], ['pace', 'Pace', 'num'], ['swing', 'Gap swing (Δ day)', 'num']];
+  const MOVING_COLS = [['race', 'Race', ''], ['chance', 'Chance', 'num'], ['d_lock', 'Since Oct 16', 'num'], ['d_day', 'Since yesterday', 'num'], ['ballots', 'Ballots (+ day)', 'num'], ['pace', 'Pace', 'num'], ['swing', 'Gap swing (Δ day)', 'num']];
   const movingKey = (r, k) => { const m = r.move || {}, ev = r.early_vote || {}, d = ev.day || {}; return k === 'race' ? raceTitle(r) : k === 'chance' ? m.chance : k === 'd_lock' ? m.d_lock : k === 'd_day' ? m.d_day : k === 'ballots' ? ev.total : k === 'pace' ? (ev.ratio_2022 ?? (ev.share_of_2022_turnout != null ? ev.share_of_2022_turnout / 100 : null)) : k === 'swing' ? (ev.swing ?? d.swing) : null; };
-  const MOVING_NOTE = (prevDay) => `Since lock compares today with the model on the lock day's information, reconstructed the same way; the lock's judgment and the change of method are kept beside it, not inside it. Click a since-lock figure for the steps. Last day compares with the previous day${prevDay ? ` (${nice(prevDay)})` : ''}, reconstructed where no stored day exists. Pace is ballots as a multiple of 2022 at this point, or the share of 2022\u2019s total where no same-point count exists. Gap swing is the D minus R share of the ballots against 2022 at this point, in points, with its last-day change in brackets.`;
+  const MOVING_NOTE = (prevDay) => `Since Oct 16 compares today's model with the model on Oct 16, built the same way. Our Oct 16 call, and any later change of method, is shown beside the figure and never inside it. Click a figure for every step. Since yesterday compares with the day before${prevDay ? ` (${nice(prevDay)})` : ''}. A reason appears under a race when a poll entered or aged out of the 21-day window. Pace is ballots as a multiple of 2022 at this point, or the share of 2022's total where no same-point count exists. Gap swing is the Democratic minus Republican share of ballots against 2022 at this point, in points, with its change since yesterday in brackets. ${TERMS}`;
   function drawMoving(idx) {
     if (idx !== undefined) _movingIdx = idx; else idx = _movingIdx;
     const box = $('#moving'); if (!box) return;
@@ -1697,14 +1704,14 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       b.addEventListener('click', () => { state.movingSort = !on ? { key, dir: key === 'race' ? 'asc' : 'desc' } : sort.dir === (key === 'race' ? 'asc' : 'desc') ? { key, dir: key === 'race' ? 'desc' : 'asc' } : null; drawMoving(); });
       th.append(b); head.append(th);
     }
-    const grp = el('tr', { class: 'evhead' }); grp.append(el('th', { colspan: '4' }, ''), el('th', { colspan: '3' }, 'Early vote, not in the number'));
+    const grp = el('tr', { class: 'evhead' }); grp.append(el('th', { colspan: '4' }, ''), el('th', { colspan: '3' }, 'Early vote, not in the forecast'));
     t.append(grp, head);
     const td = (kids, cls) => { const c = el('td', cls ? { class: cls } : {}); for (const k of kids) c.append(typeof k === 'string' ? document.createTextNode(k) : k); return c; };
     for (const c of chNow) {
       const p = chPrev[c.chamber];
       const tr = el('tr', { class: 'chamber' + (c === chNow[chNow.length - 1] ? ' sep' : '') });
       tr.append(td([el('b', {}, c.chamber === 'house' ? 'House control' : 'Senate control'), el('span', { class: 'm' }, ` · ${fmt2(c.seats_mean)} seats`)], 'race'),
-        td([pct2(c.chance_d) + '%'], 'num'), (() => { const cell = td([dsign(c.d_model_lock ?? c.d_lock)], 'num'); cell.title = (c.model_lock_chance != null ? `the model on the lock day: ${pct2(c.model_lock_chance)}; the lock's judgment said ${pct2(c.lock_judgment)} (method gap ${signed2(c.method_gap)})` : '') + (c.lock_note ? `. ${c.lock_note}` : ''); return cell; })(), (() => { const cd = td([dsign(c.d_day ?? (p ? c.chance_d - p.chance_d : null))], 'num'); if (c.prev_from) cd.title = `against ${c.prev_from === 'stored row' ? "yesterday's stored row" : c.prev_from}: ${pct2(c.model_prev_chance)}`; return cd; })(), td([''], 'num'), td([''], 'num'), td([''], 'num'));
+        td([pct2(c.chance_d) + '%'], 'num'), (() => { const cell = td([dsign(c.d_model_lock ?? c.d_lock)], 'num'); cell.title = (c.model_lock_chance != null ? `the model on Oct 16: ${pct2(c.model_lock_chance)}. Our Oct 16 call said ${pct2(c.lock_judgment)}. The gap of ${signed2(c.method_gap)} is the method, not an event` : '') + (c.lock_note ? `. ${c.lock_note}` : ''); return cell; })(), (() => { const cd = td([dsign(c.d_day ?? (p ? c.chance_d - p.chance_d : null))], 'num'); if (c.prev_from) cd.title = `against ${c.prev_from === 'stored row' ? "yesterday's stored row" : c.prev_from}: ${pct2(c.model_prev_chance)}`; return cd; })(), td([''], 'num'), td([''], 'num'), td([''], 'num'));
       t.append(tr);
     }
     const key = (r) => [Math.abs((r.move || {}).d_day ?? 0), Math.abs((r.move || {}).d_lock ?? 0)];
@@ -1717,16 +1724,29 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         return typeof va === 'string' ? dir * va.localeCompare(vb) : dir * (va - vb);
       });
     }
+    const coreBy = {}; for (const c of (D('core').data || [])) (coreBy[c.id] = coreBy[c.id] || []).push(c);
+    // why a race moved since yesterday: the polls that entered or aged out of the 21-day window, from the stored core rows
+    const dayReason = (r) => {
+      const cs = (coreBy[r.id] || []).slice().sort((a, b) => a.as_of.localeCompare(b.as_of)); if (cs.length < 2) return null;
+      const [prev, cur] = cs.slice(-2); const k = (u) => `${u.pollster}|${u.end_date}`;
+      const pu = ((prev.polls || {}).used) || [], cu = ((cur.polls || {}).used) || [];
+      const out = [];
+      for (const u of pu.filter((u) => !cu.some((v) => k(v) === k(u)))) out.push(`${u.pollster} (${nice(u.end_date)}, ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}) aged out of the 21-day poll window`);
+      for (const u of cu.filter((u) => !pu.some((v) => k(v) === k(u)))) out.push(`new poll: ${u.pollster} (${nice(u.end_date)}), ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}`);
+      if (!out.length) return cu.length ? 'no new poll; the national mood and days-out drift' : 'no poll in the window; fundamentals and the national mood only';
+      return out.join('; ');
+    };
     for (const r of sorted) {
       const m = r.move || {}, ev = r.early_vote || {}, d = ev.day || {};
       const tr = el('tr', { 'data-id': r.id });
       const name = el('a', { href: '#forecast/' + (r.state || '').toLowerCase(), class: 'race' }); name.append(el('b', {}, raceTitle(r)));
       name.addEventListener('click', (e) => { e.preventDefault(); focusBlock(r.id); });
-      tr.append(td([name, r.flag_today ? el('span', { class: 'ms-chip', 'data-tone': 'warn', title: r.brief_headline || r.flag_today }, 'today') : ''], 'race'),
+      const why = Math.abs(m.d_day || 0) >= 2 ? dayReason(r) : null;
+      tr.append(td([name, r.flag_today ? el('span', { class: 'ms-chip', 'data-tone': 'warn', title: r.brief_headline || r.flag_today }, 'today') : '', why ? el('span', { class: 'why' }, why) : ''], 'race'),
         td([m.chance != null ? pct2(m.chance) + '%' : '—'], 'num'));
       const sl = r.model && r.model.since_lock;
       if (sl && sl.steps && sl.steps.length) {
-        const btn = el('button', { type: 'button', class: 'ms-why', title: `against the model on the lock day (${pct2(sl.model_at_lock)}), over ${sl.n_new_polls} new poll${sl.n_new_polls === 1 ? '' : 's'}. The lock's judgment said ${pct2(sl.lock_chance)}; method gap ${signed2(sl.method_gap)}. Click for every step.` });
+        const btn = el('button', { type: 'button', class: 'ms-why', title: `against the model on Oct 16 (${pct2(sl.model_at_lock)}), over ${sl.n_new_polls} new poll${sl.n_new_polls === 1 ? '' : 's'}. Our Oct 16 call said ${pct2(sl.lock_chance)}; method gap ${signed2(sl.method_gap)}. Click for every step.` });
         btn.append(dsign(m.d_lock)); btn.addEventListener('click', (e) => { e.stopPropagation(); showSinceLock(r, btn); });
         tr.append(td([btn], 'num'));
       } else tr.append(td([dsign(m.d_lock)], 'num'));
@@ -1742,17 +1762,19 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   // ---------------- the steps behind a since-lock figure
   let _slOpen = null;
   function closeSinceLock() { const p = $('#sl-pop'); if (p) p.remove(); _slOpen = null; }
+  const STEP_LBL = { window: 'Polls aged out of the 21-day window, and days out', generic: 'National mood (generic ballot)', judgment: 'Our call' };
+  const plainDetail = (t) => t.replace('dropped out of the 21-day window:', 'aged out:').replace('the lock said', 'Oct 16 call').replace('the run says', 'our call now').replace('at the lock', 'on Oct 16');
   function sinceLockNodes(r) {
     const sl = r.model.since_lock, out = [];
-    out.push(el('p', { class: 'ms-sub' }, `Lock day, ${nice(sl.lock_date)}: ${pct2(sl.model_at_lock)}. Today: ${pct2(sl.chance)}, ${signed2(sl.since_lock)} over ${sl.n_new_polls} new poll${sl.n_new_polls === 1 ? '' : 's'}.`));
-    const pre = el('p', { class: 'ms-sub' }); pre.append(el('b', {}, 'For the record. '), document.createTextNode(`The lock's judgment said ${pct2(sl.lock_chance)}. The model on the same information differs by ${signed2(sl.method_gap)}, a method change, not an event, and not in this figure.`)); out.push(pre);
+    out.push(el('p', { class: 'ms-sub' }, `The model on ${nice(sl.lock_date)}: ${pct2(sl.model_at_lock)}. Today: ${pct2(sl.chance)}, ${signed2(sl.since_lock)} over ${sl.n_new_polls} new poll${sl.n_new_polls === 1 ? '' : 's'}.`));
+    const pre = el('p', { class: 'ms-sub' }); pre.append(el('b', {}, 'For the record. '), document.createTextNode(`Our Oct 16 call said ${pct2(sl.lock_chance)}. The model on the same information said ${pct2(sl.model_at_lock)}. That gap is the method, not an event, and it is not in this figure.`)); out.push(pre);
     const t = el('table', { class: 'ms-steps' });
     const h = el('tr'); for (const x of ['Step', 'What', 'Δ', 'Chance after']) h.append(el('th', {}, x)); t.append(h);
     for (const s of sl.steps.filter((x) => x.kind !== 'method')) {
       const tr = el('tr', { 'data-kind': s.kind });
-      const what = el('td', { class: 'what' }); what.append(document.createTextNode(s.detail || ''));
+      const what = el('td', { class: 'what' }); what.append(document.createTextNode(plainDetail(s.detail || '')));
       if (s.source_url) { what.append(document.createTextNode(' ')); what.append(el('a', { href: s.source_url, target: '_blank', rel: 'noopener' }, 'source')); }
-      tr.append(el('td', {}, s.label), what, (() => { const c = el('td', { class: 'num' }); c.append(dsign(s.delta)); return c; })(), el('td', { class: 'num' }, pct2(s.chance) + '%'));
+      tr.append(el('td', {}, STEP_LBL[s.kind] || s.label), what, (() => { const c = el('td', { class: 'num' }); c.append(dsign(s.delta)); return c; })(), el('td', { class: 'num' }, pct2(s.chance) + '%'));
       t.append(tr);
     }
     out.push(t);
@@ -1762,7 +1784,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (ev.length) {
       const kinds = {}; for (const x of ev) for (const k of (x.kinds || [])) kinds[k] = (kinds[k] || 0) + 1;
       const top = ev.filter((x) => (x.kinds || []).some((k) => k !== 'other')).slice(0, 3);
-      const p = el('p', { class: 'ms-sub' }); p.append(el('b', {}, 'News, last 48 hours (not in the number). '), document.createTextNode(`${sum && sum.n_articles != null ? sum.n_articles : ev.length} articles` + (Object.keys(kinds).length ? ': ' + Object.entries(kinds).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n} ${k}`).join(', ') : '') + '. '));
+      const p = el('p', { class: 'ms-sub' }); p.append(el('b', {}, 'News, last 48 hours (not in the forecast). '), document.createTextNode(`${sum && sum.n_articles != null ? sum.n_articles : ev.length} articles` + (Object.keys(kinds).length ? ': ' + Object.entries(kinds).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n} ${k}`).join(', ') : '') + '. '));
       top.forEach((x, i) => { p.append(el('a', { href: x.url, target: '_blank', rel: 'noopener' }, x.title), document.createTextNode(i < top.length - 1 ? ' · ' : '')); });
       out.push(p);
     }
@@ -1772,9 +1794,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (_slOpen === r.id) { closeSinceLock(); return; }
     closeSinceLock();
     const host = document.querySelector('.ms-hero') || $('#moving'); if (!host) return;
-    const pop = el('div', { class: 'ms-pop ms-slpop', id: 'sl-pop', role: 'dialog', 'aria-label': `Since the lock: ${raceTitle(r)}` });
+    const pop = el('div', { class: 'ms-pop ms-slpop', id: 'sl-pop', role: 'dialog', 'aria-label': `Since Oct 16: ${raceTitle(r)}` });
     const head = el('div', { class: 'ph' }); const close = el('button', { type: 'button', class: 'ms-x', 'aria-label': 'Close' }, '×'); close.addEventListener('click', closeSinceLock);
-    head.append(el('b', {}, raceTitle(r)), el('span', { class: 'm' }, 'since the lock, step by step'), close); pop.append(head);
+    head.append(el('b', {}, raceTitle(r)), el('span', { class: 'm' }, 'since Oct 16, step by step'), close); pop.append(head);
     for (const n of sinceLockNodes(r)) pop.append(n);
     host.append(pop); _slOpen = r.id;
     if (anchor && !narrow()) { const ar = anchor.getBoundingClientRect(), hr = host.getBoundingClientRect(); pop.style.top = Math.max(0, ar.bottom - hr.top + 6) + 'px'; }
