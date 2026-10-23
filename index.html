@@ -643,7 +643,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-pop .ms-x:hover, .ms-pop .ms-x:focus-visible { color: var(--color-fg); }
 .ms-pop .ms-race { border-top: 1px solid var(--color-border-line); padding: .6rem 0 0; }
 .ms-pop .ms-race:first-of-type { border-top: 0; }
-@media (max-width: 48rem) { .ms-pop { position: fixed; top: auto; right: 0; bottom: 0; left: 0; width: auto; max-height: 82vh; border-radius: var(--cds-radius) var(--cds-radius) 0 0; } }
+@media (max-width: 48rem) { .ms-pop { position: fixed; top: auto; right: 0; bottom: 0; left: 0; width: auto; max-height: 72vh; border-radius: var(--cds-radius) var(--cds-radius) 0 0; } }
 .ms-mapwrap { max-width: none; }
 .ms-mapwrap .ms-map { min-height: 24rem; }
 .ms-read { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cds-gap-xl); margin-top: var(--cds-gap-lg); padding-top: var(--cds-gap-md); border-top: 1px solid var(--color-border-line); }
@@ -705,7 +705,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   .ms-moving td.race { white-space: normal; min-width: 11rem; }
   .ms-moving td { padding: .4rem .4rem .4rem 0; }
   .ms-moving .ms-why, .ms-moving .ms-sort { padding-top: .35rem; padding-bottom: .35rem; }
-  .ms-hero .ms-slpop { position: fixed; left: 0; right: 0; top: auto; bottom: 0; width: auto; max-height: 82vh; border-radius: var(--cds-radius) var(--cds-radius) 0 0; }
+  .ms-hero .ms-slpop { position: fixed; left: 0; right: 0; top: auto; bottom: 0; width: auto; max-height: 72vh; border-radius: var(--cds-radius) var(--cds-radius) 0 0; }
   .ms-steps td.what { white-space: normal; }
   .ms-inst .big { font-size: 2.6rem; }
   /* the since-lock steps stack: label and figures on one line, the explanation under them */
@@ -718,7 +718,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   .ms-moving tr.chamber td.race .m { display: none; }
   .ms-pop .ph { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; }
   .ms-pop .ph .m { grid-column: 1 / -1; }
-  .ms-pop .ph .ms-x { grid-column: 2; grid-row: 1; justify-self: end; }
+  .ms-pop .ph .ms-x { grid-column: 2; grid-row: 1; justify-self: end; font-size: var(--cds-font-size-caption); font-weight: 600; color: var(--color-fg); padding: .35rem .9rem; border: 1px solid var(--color-border-line); border-radius: 999px; min-height: 2.2rem; }
+  .ms-pop, .ms-hero .ms-slpop { z-index: 7; }
+  .ms-backdrop { position: fixed; inset: 0; background: rgba(8, 8, 14, .45); z-index: 6; }
 }
 .ms-flagline > summary { cursor: pointer; list-style: none; }
 .ms-flagline > summary::-webkit-details-marker { display: none; }
@@ -1762,7 +1764,10 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   }
   // ---------------- the steps behind a since-lock figure
   let _slOpen = null;
-  function closeSinceLock() { const p = $('#sl-pop'); if (p) p.remove(); _slOpen = null; }
+  // On a phone a sheet covers the row that opened it, so a dimmed backdrop closes it on any tap and the close button says so
+  function removeBackdrop() { const b = $('#sheet-backdrop'); if (b) b.remove(); }
+  function addBackdrop(onClose) { removeBackdrop(); if (!narrow()) return; const b = el('div', { class: 'ms-backdrop', id: 'sheet-backdrop' }); b.addEventListener('click', onClose); document.body.append(b); }
+  function closeSinceLock() { const p = $('#sl-pop'); if (p) p.remove(); _slOpen = null; removeBackdrop(); }
   const STEP_LBL = { window: 'Polls aging out of the window, and days out', generic: 'National mood (generic ballot)', judgment: 'Our call' };
   const plainDetail = (t) => t.replace('dropped out of the 21-day window:', 'aged out:').replace('the lock said', 'Oct 16 call').replace('the run says', 'our call now').replace('at the lock', 'on Oct 16');
   function sinceLockNodes(r) {
@@ -1799,14 +1804,15 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const head = el('div', { class: 'ph' }); const close = el('button', { type: 'button', class: 'ms-x', 'aria-label': 'Close' }, '×'); close.addEventListener('click', closeSinceLock);
     head.append(el('b', {}, raceTitle(r)), el('span', { class: 'm' }, 'since Oct 16, step by step'), close); pop.append(head);
     for (const n of sinceLockNodes(r)) pop.append(n);
-    host.append(pop); _slOpen = r.id;
+    if (narrow()) close.textContent = 'Close';
+    host.append(pop); _slOpen = r.id; addBackdrop(closeSinceLock);
     if (anchor && !narrow()) { const ar = anchor.getBoundingClientRect(), hr = host.getBoundingClientRect(); pop.style.top = Math.max(0, ar.bottom - hr.top + 6) + 'px'; }
     close.focus({ preventScroll: true });
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && _slOpen) closeSinceLock(); });
   document.addEventListener('click', (e) => { if (!_slOpen) return; const p = $('#sl-pop'); if (p && !p.contains(e.target) && !e.target.closest('.ms-why')) closeSinceLock(); });
   let _fctx = null, _popSt = null;
-  function closeStatePop() { const p = $('#state-pop'); if (p) p.remove(); _popSt = null; }
+  function closeStatePop() { const p = $('#state-pop'); if (p) p.remove(); _popSt = null; removeBackdrop(); }
   function showStatePop(st) {
     if (!_fctx || !st) return false;
     if (_popSt === st) { closeStatePop(); return true; }
@@ -1825,7 +1831,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     for (const r of rs) pop.append(raceCard(r, _fctx.ctx, 'pop-'));
     for (const s of hs) pop.append(houseCard(s, 'pop-'));
     if (n) { const a = el('a', { href: '#forecast/' + st.toLowerCase(), class: 'ms-sub' }, 'Show in the list below'); a.addEventListener('click', (e) => { e.preventDefault(); closeStatePop(); focusState(st, true); }); pop.append(a); }
-    wrap.append(pop); _popSt = st;
+    if (narrow()) close.textContent = 'Close';
+    wrap.append(pop); _popSt = st; addBackdrop(closeStatePop);
     close.focus({ preventScroll: true });
     return true;
   }
