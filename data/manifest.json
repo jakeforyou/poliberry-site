@@ -1,7 +1,7 @@
 {
   "run_id": "2026-10-21T2145",
   "kind": "run",
-  "built_at": "2026-10-23T12:01:55-04:00",
+  "built_at": "2026-10-23T12:12:33-04:00",
   "datasets": {
     "scorecard": {
       "file": "data/dashboard/scorecard.json",
@@ -150,13 +150,13 @@
     },
     "statements": {
       "file": "data/dashboard/statements.json",
-      "rows": 500,
+      "rows": 699,
       "title": "Election-legitimacy statements, coverage",
       "description": "News articles matching an election-legitimacy query for each tracked speaker (the president and his allies), from the GDELT news index, newest first, with a keyword kind (scripts/fetch_statements.py, scripts/statements.py). Articles are retrieved; the kind is inferred from the headline. Coverage, not truth; never a forecast."
     },
     "statements_daily": {
       "file": "data/dashboard/statements_daily.json",
-      "rows": 74,
+      "rows": 111,
       "title": "Election-legitimacy statements, by day",
       "description": "Articles per day per tracked speaker, and a total, from GDELT's daily volume."
     },

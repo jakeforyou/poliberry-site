@@ -195,7 +195,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> A pre-registered forecast of the 2026 midterms, kept by Jake Berry with Claude. Every chance is the model's probability that the Democrat wins, printed raw. Beside it: the lock, a judgment frozen on Oct 16, and the latest run. Since lock compares the model with its own lock-day figure. Early-vote and modeled lines never enter a number. Every figure is labeled, and a marked number opens its source. Markets are benchmarks, not inputs. A record to be graded after Nov 3, not advice.</p></section>
 <div class="lx-bar" role="region" aria-label="About this copy">
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-10-23 12:01</b></span>
+  <span>Data built <b id="lx-built">2026-10-23 12:12</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Republished each morning.</span>
@@ -1682,7 +1682,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   let _movingIdx = null;
   const MOVING_COLS = [['race', 'Race', ''], ['chance', 'Chance', 'num'], ['d_lock', 'Since Oct 16', 'num'], ['d_day', 'Since yesterday', 'num'], ['ballots', 'Ballots (+ day)', 'num'], ['pace', 'Pace', 'num'], ['swing', 'Gap swing (Δ day)', 'num']];
   const movingKey = (r, k) => { const m = r.move || {}, ev = r.early_vote || {}, d = ev.day || {}; return k === 'race' ? raceTitle(r) : k === 'chance' ? m.chance : k === 'd_lock' ? m.d_lock : k === 'd_day' ? m.d_day : k === 'ballots' ? ev.total : k === 'pace' ? (ev.ratio_2022 ?? (ev.share_of_2022_turnout != null ? ev.share_of_2022_turnout / 100 : null)) : k === 'swing' ? (ev.swing ?? d.swing) : null; };
-  const MOVING_NOTE = (prevDay) => `Since Oct 16 compares today's model with the model on Oct 16, built the same way. Our Oct 16 call, and any later change of method, is shown beside the figure and never inside it. Click a figure for every step. Since yesterday compares with the day before${prevDay ? ` (${nice(prevDay)})` : ''}. A reason appears under a race when a poll entered or aged out of the 21-day window. Pace is ballots as a multiple of 2022 at this point, or the share of 2022's total where no same-point count exists. Gap swing is the Democratic minus Republican share of ballots against 2022 at this point, in points, with its change since yesterday in brackets. ${TERMS}`;
+  const MOVING_NOTE = (prevDay) => `Since Oct 16 compares today's model with the model on Oct 16, built the same way. Our Oct 16 call, and any later change of method, is shown beside the figure and never inside it. Click a figure for every step. Since yesterday compares with the day before${prevDay ? ` (${nice(prevDay)})` : ''}. A reason appears under a race when a poll entered or aged out of the window (21 days, then a 7-day fade to nothing). Pace is ballots as a multiple of 2022 at this point, or the share of 2022's total where no same-point count exists. Gap swing is the Democratic minus Republican share of ballots against 2022 at this point, in points, with its change since yesterday in brackets. ${TERMS}`;
   function drawMoving(idx) {
     if (idx !== undefined) _movingIdx = idx; else idx = _movingIdx;
     const box = $('#moving'); if (!box) return;
@@ -1731,8 +1731,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const [prev, cur] = cs.slice(-2); const k = (u) => `${u.pollster}|${u.end_date}`;
       const pu = ((prev.polls || {}).used) || [], cu = ((cur.polls || {}).used) || [];
       const out = [];
-      for (const u of pu.filter((u) => !cu.some((v) => k(v) === k(u)))) out.push(`${u.pollster} (${nice(u.end_date)}, ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}) aged out of the 21-day poll window`);
-      for (const u of cu.filter((u) => !pu.some((v) => k(v) === k(u)))) out.push(`new poll: ${u.pollster} (${nice(u.end_date)}), ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}`);
+      for (const u of pu.filter((u) => !cu.some((v) => k(v) === k(u)))) out.push(`${u.pollster} (${nice(u.end_date)}, ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}) aged out of the poll window (21 days, then a 7-day fade)`);
+      for (const u of cu.filter((u) => !pu.some((v) => k(v) === k(u)))) { const age = Math.round((new Date(cur.as_of) - new Date(u.end_date)) / 864e5); out.push(`${age > 21 ? 'poll counting again under the fade' : 'new poll'}: ${u.pollster} (${nice(u.end_date)}), ${u.margin_d === 0 ? 'tie' : 'D' + signed(u.margin_d)}`); }
       if (!out.length) return cu.length ? 'no new poll; the national mood and days-out drift' : 'no poll in the window; fundamentals and the national mood only';
       return out.join('; ');
     };
@@ -1762,7 +1762,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   // ---------------- the steps behind a since-lock figure
   let _slOpen = null;
   function closeSinceLock() { const p = $('#sl-pop'); if (p) p.remove(); _slOpen = null; }
-  const STEP_LBL = { window: 'Polls aged out of the 21-day window, and days out', generic: 'National mood (generic ballot)', judgment: 'Our call' };
+  const STEP_LBL = { window: 'Polls aging out of the window, and days out', generic: 'National mood (generic ballot)', judgment: 'Our call' };
   const plainDetail = (t) => t.replace('dropped out of the 21-day window:', 'aged out:').replace('the lock said', 'Oct 16 call').replace('the run says', 'our call now').replace('at the lock', 'on Oct 16');
   function sinceLockNodes(r) {
     const sl = r.model.since_lock, out = [];

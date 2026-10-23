@@ -5,7 +5,7 @@
     "this_period": {
       "start": "2026-10-17",
       "end": "2026-10-23",
-      "articles": 1490,
+      "articles": 1765,
       "usable_days": 6,
       "skipped_days": [
         "2026-10-23"
@@ -14,7 +14,7 @@
     "prior_period": {
       "start": "2026-10-10",
       "end": "2026-10-16",
-      "articles": 545,
+      "articles": 624,
       "usable_days": 2,
       "skipped_days": [
         "2026-10-10",
@@ -27,17 +27,17 @@
     "change_pct": null,
     "direction": "unclear",
     "top_kind": "rigged or fraud claim",
-    "top_kind_articles": 57,
+    "top_kind_articles": 65,
     "top_speaker": "Donald Trump",
     "top_speaker_articles": 1573,
     "counts_source": "daily",
     "baseline": {
       "usable_days": 26,
-      "per_day": 195.3,
-      "this_per_day": 248.3,
-      "change_pct": 27.2
+      "per_day": 224.1,
+      "this_per_day": 294.2,
+      "change_pct": 31.3
     },
-    "sentence": "Coverage of election-legitimacy statements runs 27.2 percent above its average over the 26 earlier usable days (248.3 articles a day against 195.3) but cannot be compared week over week because GDELT has usable data for 6 of 7 days this week and 2 of 7 days the week before.",
+    "sentence": "Coverage of election-legitimacy statements runs 31.3 percent above its average over the 26 earlier usable days (294.2 articles a day against 224.1) but cannot be compared week over week because GDELT has usable data for 6 of 7 days this week and 2 of 7 days the week before.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",
