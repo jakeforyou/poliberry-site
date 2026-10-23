@@ -1416,12 +1416,12 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const d = el('div', { class: 'ms-inst' });
       const big = el('div', { class: 'big' });
       if (m && m.chance_d != null) {
-        const lbl = el('span', { class: 'lbl' }, `${name}: chance Democrats win it `); lbl.append(help('chamber', `Chamber model: ${m.n_from_daily} race${m.n_from_daily === 1 ? '' : 's'} from the core model, ${m.n_from_ratings} from the ratings consensus, ${m.not_up_d} Democratic seats not on the ballot. One shared national swing, ${m.n_sims.toLocaleString()} draws. ${TERMS}`)); d.append(lbl);
-        big.append(mark(el('span', {}, pct2(m.chance_d)), 'chambers', 'chance_d', Wh('chamber=' + office)), el('small', {}, `% · our call ${pct2(m.run_chance ?? c.ours)}` + (m.lock_chance != null && m.lock_chance !== m.run_chance ? ` · Oct 16 call ${pct2(m.lock_chance)}` : '')));
+        const lbl = el('span', { class: 'lbl' }, `${name}: chance Democrats win it `); lbl.append(help('chamber', `Chamber model: ${m.n_from_daily} race${m.n_from_daily === 1 ? '' : 's'} from the core model, ${m.n_from_ratings} from the ratings consensus, ${m.not_up_d} Democratic seats not on the ballot. One shared national swing, ${m.n_sims.toLocaleString()} draws. Our call (${callDay()}): ${pct2(m.run_chance ?? c.ours)}` + (m.lock_chance != null ? `. Oct 16 call: ${pct2(m.lock_chance)}` : '') + (s ? `. Our call for seats: ${fmt1(s.ours)} (${fmt1(s.ours_lo)} to ${fmt1(s.ours_hi)})` : '') + `. ${TERMS}`)); d.append(lbl);
+        big.append(mark(el('span', {}, pct2(m.chance_d)), 'chambers', 'chance_d', Wh('chamber=' + office)), el('small', {}, '%'));
         d.append(big);
-        const seats = el('div', { class: 'seats' }); seats.append(mark(el('span', {}, fmt2(m.seats_mean)), 'chambers', 'seats_mean', Wh('chamber=' + office)), document.createTextNode(' seats'), el('span', { class: 'm' }, `80%: ${m.seats_lo} to ${m.seats_hi}` + (s ? ` · our call ${fmt1(s.ours)} (${fmt1(s.ours_lo)} to ${fmt1(s.ours_hi)})` : ''))); d.append(seats);
+        const seats = el('div', { class: 'seats' }); seats.append(mark(el('span', {}, fmt2(m.seats_mean)), 'chambers', 'seats_mean', Wh('chamber=' + office)), document.createTextNode(' seats'), el('span', { class: 'm' }, `80%: ${m.seats_lo} to ${m.seats_hi}`)); d.append(seats);
         const bar = el('div', { class: 'bar ms-chart', 'data-source': 'chambers' }); d.append(bar);
-        requestAnimationFrame(() => seatBar(bar, { ours: m.seats_mean, ours_lo: m.seats_lo, ours_hi: m.seats_hi, run: s ? s.ours : null }, maj, dom));
+        requestAnimationFrame(() => seatBar(bar, { ours: m.seats_mean, ours_lo: m.seats_lo, ours_hi: m.seats_hi, run: null }, maj, dom));
       } else {
         d.append(el('span', { class: 'lbl' }, `${name}: chance Democrats win it, our call`));
         big.append(mark(el('span', {}, pct2(c.ours)), 'scorecard', 'ours', Wh('id=' + enc(cid))), el('small', {}, '%' + (c.d_lock ? ` · ${signed(c.d_lock)} since Oct 16` : ' · unchanged since Oct 16'))); d.append(big);
@@ -1492,15 +1492,15 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         const ch = el('div', { class: 'chance' });
         if (md && md.chance != null) {
           ch.append(mark(el('b', {}, pct2(md.chance) + '%'), 'race_summary', 'model', where),
-            el('span', { class: 'm' }, `chance ${nd} wins` + (md.run_chance != null ? ` · our call ${pct2(md.run_chance)}` : '') + (md.lock_chance != null ? ` · Oct 16 call ${pct2(md.lock_chance)}` : '')));
+            (() => { const sp = el('span', { class: 'm' }, `chance ${nd} wins `); sp.append(help('calls', (md.run_chance != null ? `Our call (${callDay()}): ${pct2(md.run_chance)}. ` : '') + (md.lock_chance != null ? `Oct 16 call: ${pct2(md.lock_chance)}. ` : '') + TERMS)); return sp; })());
         } else {
           ch.append(mark(el('b', {}, pct2(r.ours) + '%'), 'race_summary', 'ours', where), el('span', { class: 'm' }, `chance ${nd} wins · our call`));
         }
-        const sp = el('div', { class: 'ms-chart spark', 'data-source': 'trends_recent', title: 'Since Oct 16: the model (solid) and our call (dashed)' });
+        const sp = el('div', { class: 'ms-chart spark', 'data-source': 'trends_recent', title: 'The model since Oct 16' });
         foot.append(ch, sp); art.append(foot);
         const ti = idx && idx[r.id];
         const series = ti ? { model: ti.model || null, run: ti.ours || null } : null;
-        if (series && (series.model || series.run)) requestAnimationFrame(() => lineChart(sp, series, { H: 34, since: LOCK_DAY, unit: '%' }));
+        if (series && series.model) requestAnimationFrame(() => lineChart(sp, { model: series.model }, { H: 34, since: LOCK_DAY, unit: '%' }));
         const ev = r.early_vote;
         if (ev && ev.total != null) {
           let t = `${compact(ev.total)} ballots`;
@@ -1576,6 +1576,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   }
   const inkOn = (fill) => { try { return d3.lab(fill).l > 62 ? '#17171d' : '#ffffff'; } catch (e) { return '#ffffff'; } };
   const narrow = () => window.matchMedia('(max-width: 48rem)').matches;
+  const callDay = () => { const id = String((window.__dashManifest || {}).run_id || ''); return /^\d{4}-\d{2}-\d{2}/.test(id) ? nice(id.slice(0, 10)) : 'latest'; };
   let _lastSc = null;
   // On phones the list leads and the map waits behind a button; the wrap is hidden until asked for, then drawn.
   function mapGate(sc) {
