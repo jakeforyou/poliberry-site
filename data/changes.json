@@ -4785,7 +4785,7 @@
     "old": null,
     "new": null,
     "delta_text": "",
-    "reading": "44 changes since 2026-10-23 (24 vote, 12 cash, 6 market, 2 rating). No forecast number changed. Biggest: DE: ballots voted (mail accepted plus in person) (2026 so far); OR: ballots voted (mail accepted plus in person) (2026 so far); SC-01: Nancy Lacore (D).",
+    "reading": "47 changes since 2026-10-23 (27 vote, 12 cash, 6 market, 2 rating). No forecast number changed. Biggest: DE: ballots voted (mail accepted plus in person) (2026 so far); OR: ballots voted (mail accepted plus in person) (2026 so far); SC-01: Nancy Lacore (D).",
     "tone": null,
     "magnitude": 1000,
     "source_url": null,
@@ -4800,13 +4800,13 @@
     "old": null,
     "new": null,
     "delta_text": "House 90 · Senate 55",
-    "reading": "The outcome signals lean Republican: 1 moved toward Democrats and 5 toward Republicans (weighted D 12, R 59). Early-vote composition shifted in 22 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 24.0 against the 30 percent trigger by Oct 25 (6.0 away); our widest gap to the markets is Governor · NV at 20 points. The outlook stands at House 90, Senate 55.",
+    "reading": "The outcome signals lean Republican: 1 moved toward Democrats and 5 toward Republicans (weighted D 12, R 58). Early-vote composition shifted in 22 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 24.0 against the 30 percent trigger by Oct 25 (6.0 away); our widest gap to the markets is Governor · NV at 20 points. The outlook stands at House 90, Senate 55.",
     "tone": "R",
     "magnitude": 999,
     "source_url": null,
     "lean": "Republican",
     "weight_d": 12.5,
-    "weight_r": 58.7,
+    "weight_r": 58.5,
     "forecast_changes": 0,
     "flags_reached": 0,
     "house": 90.0,
@@ -4907,6 +4907,21 @@
     "as_of": "2026-10-24",
     "prev_as_of": "2026-10-23",
     "category": "votes",
+    "item": "CT: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_CT",
+    "old": "140,815",
+    "new": "204,720",
+    "delta_text": "D 54.7 to 53.0; R 17.0 to 17.6; Other 28.3 to 29.4",
+    "reading": "The share moved -1.7 points to 53.0 percent of early voters (204,720 voters).",
+    "tone": "R",
+    "magnitude": 24.9,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 8
+  },
+  {
+    "as_of": "2026-10-24",
+    "prev_as_of": "2026-10-23",
+    "category": "votes",
     "item": "CO: Ballots so far by party registration (2026 so far)",
     "item_id": "ev_CO",
     "old": "661,879",
@@ -4916,7 +4931,7 @@
     "tone": "R",
     "magnitude": 22.4,
     "source_url": "https://www.coloradosos.gov/pubs/newsRoom/pressReleases/index.html",
-    "n": 8
+    "n": 9
   },
   {
     "as_of": "2026-10-24",
@@ -4925,13 +4940,13 @@
     "item": "Florida: Vote-by-mail ballots returned by party (2026 so far)",
     "item_id": "ev_FL",
     "old": "1,218,896",
-    "new": "1,310,315",
+    "new": "1,310,451",
     "delta_text": "D 42.9 to 42.9; R 35.9 to 35.9; No party 18.8 to 18.9; Other 2.4 to 2.4",
-    "reading": "91,419 more ballots counted. The no-party share moved +0.1 points to 18.9. Florida's in-person early voting starts Oct 24. Until then this is mail only.",
+    "reading": "91,555 more ballots counted. The no-party share moved +0.1 points to 18.9. Florida's in-person early voting starts Oct 24. Until then this is mail only.",
     "tone": null,
     "magnitude": 20.6,
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
-    "n": 9
+    "n": 10
   },
   {
     "as_of": "2026-10-24",
@@ -4946,7 +4961,7 @@
     "tone": "R",
     "magnitude": 20.2,
     "source_url": "https://www.fec.gov/data/candidate/H8SC04250/?cycle=2026&election_full=true",
-    "n": 10
+    "n": 11
   },
   {
     "as_of": "2026-10-24",
@@ -4961,7 +4976,7 @@
     "tone": "R",
     "magnitude": 19.3,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 11
+    "n": 12
   },
   {
     "as_of": "2026-10-24",
@@ -4976,22 +4991,22 @@
     "tone": "R",
     "magnitude": 16.8,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 12
+    "n": 13
   },
   {
     "as_of": "2026-10-24",
     "prev_as_of": "2026-10-23",
     "category": "votes",
-    "item": "CT: ballots voted (mail accepted plus in person) (2026 so far)",
-    "item_id": "ev_CT",
-    "old": "140,815",
-    "new": "172,333",
-    "delta_text": "D 54.7 to 53.9; R 17.0 to 17.3; Other 28.3 to 28.9",
-    "reading": "The share moved -0.8 points to 53.9 percent of early voters (172,333 voters).",
+    "item": "Florida: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_FL",
+    "old": "1,990,123",
+    "new": "2,441,294",
+    "delta_text": "D 40.6 to 39.8; R 38.9 to 39.7; Other 20.5 to 20.5",
+    "reading": "The share moved -0.8 points to 39.8 percent of early voters (2,441,294 voters).",
     "tone": "R",
     "magnitude": 16.2,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 13
+    "n": 14
   },
   {
     "as_of": "2026-10-24",
@@ -5006,7 +5021,7 @@
     "tone": "D",
     "magnitude": 16.0,
     "source_url": "https://www.fec.gov/data/candidate/S6TX00479/?cycle=2026&election_full=true",
-    "n": 14
+    "n": 15
   },
   {
     "as_of": "2026-10-24",
@@ -5020,21 +5035,6 @@
     "reading": "The share moved -0.8 points to 41.4 percent of early voters (1,453,517 voters).",
     "tone": "R",
     "magnitude": 15.6,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 15
-  },
-  {
-    "as_of": "2026-10-24",
-    "prev_as_of": "2026-10-23",
-    "category": "votes",
-    "item": "Florida: ballots voted (mail accepted plus in person) (2026 so far)",
-    "item_id": "ev_FL",
-    "old": "1,990,123",
-    "new": "2,366,897",
-    "delta_text": "D 40.6 to 39.9; R 38.9 to 39.6; Other 20.5 to 20.5",
-    "reading": "The share moved -0.7 points to 39.9 percent of early voters (2,366,897 voters).",
-    "tone": "R",
-    "magnitude": 15.3,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "n": 16
   },
@@ -5072,6 +5072,21 @@
   {
     "as_of": "2026-10-24",
     "prev_as_of": "2026-10-23",
+    "category": "votes",
+    "item": "OH: Ballots voted (mail accepted plus in person), by last primary ballot (2026 so far)",
+    "item_id": "ev_OH",
+    "old": "1,824,170",
+    "new": "1,985,202",
+    "delta_text": "D 32.5 to 32.0; Other 0.2 to 0.2; R 27.2 to 27.1; Unaffiliated 40.1 to 40.8; All — to —",
+    "reading": "The share moved +0.7 points to 40.8 percent of early voters (1,985,202 voters).",
+    "tone": null,
+    "magnitude": 14.9,
+    "source_url": "https://www.ohiosos.gov/data",
+    "n": 19
+  },
+  {
+    "as_of": "2026-10-24",
+    "prev_as_of": "2026-10-23",
     "category": "money",
     "item": "Senate · AK: Mary Peltola (D)",
     "item_id": "senate_ak|D",
@@ -5082,7 +5097,22 @@
     "tone": "D",
     "magnitude": 14.9,
     "source_url": "https://www.fec.gov/data/candidate/S6AK00276/?cycle=2026&election_full=true",
-    "n": 19
+    "n": 20
+  },
+  {
+    "as_of": "2026-10-24",
+    "prev_as_of": "2026-10-23",
+    "category": "votes",
+    "item": "North Carolina: 2022 Election Day voters now voting early (2026 so far)",
+    "item_id": "ev_NC",
+    "old": "175,163",
+    "new": "209,599",
+    "delta_text": "Voted on Election Day 2022 13.9 to 14.5",
+    "reading": "The share moved +0.6 points to 14.5 percent of early voters (209,599 voters).",
+    "tone": null,
+    "magnitude": 14.3,
+    "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
+    "n": 21
   },
   {
     "as_of": "2026-10-24",
@@ -5097,7 +5127,23 @@
     "tone": "D",
     "magnitude": 14.0,
     "source_url": "https://www.fec.gov/data/candidate/S6MI00418/?cycle=2026&election_full=true",
-    "n": 20
+    "n": 22
+  },
+  {
+    "as_of": "2026-10-24",
+    "prev_as_of": "2026-10-23",
+    "category": "market",
+    "item": "Markets: Ossoff wins GA by more than 4",
+    "item_id": "ga_margin_above_4",
+    "old": null,
+    "new": null,
+    "delta_text": "Polymarket 88.7 to 86.0%",
+    "reading": "Polymarket moved -2.7 toward the Republican. Our number is 75.0; gap to the market now -11.0. ",
+    "tone": "R",
+    "magnitude": 13.5,
+    "source_url": "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495",
+    "move": -2.7,
+    "n": 23
   },
   {
     "as_of": "2026-10-24",
@@ -5112,7 +5158,7 @@
     "tone": "R",
     "magnitude": 13.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 21
+    "n": 24
   },
   {
     "as_of": "2026-10-24",
@@ -5127,23 +5173,7 @@
     "tone": null,
     "magnitude": 13.5,
     "source_url": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
-    "n": 22
-  },
-  {
-    "as_of": "2026-10-24",
-    "prev_as_of": "2026-10-23",
-    "category": "market",
-    "item": "Markets: Ossoff wins GA by more than 4",
-    "item_id": "ga_margin_above_4",
-    "old": null,
-    "new": null,
-    "delta_text": "Polymarket 88.7 to 86.1%",
-    "reading": "Polymarket moved -2.6 toward the Republican. Our number is 75.0; gap to the market now -11.1. ",
-    "tone": "R",
-    "magnitude": 13.0,
-    "source_url": "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495",
-    "move": -2.6,
-    "n": 23
+    "n": 25
   },
   {
     "as_of": "2026-10-24",
@@ -5158,7 +5188,7 @@
     "tone": "D",
     "magnitude": 13.0,
     "source_url": "https://www.fec.gov/data/candidate/S6SC04239/?cycle=2026&election_full=true",
-    "n": 24
+    "n": 26
   },
   {
     "as_of": "2026-10-24",
@@ -5173,7 +5203,7 @@
     "tone": "R",
     "magnitude": 12.8,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 25
+    "n": 27
   },
   {
     "as_of": "2026-10-24",
@@ -5183,13 +5213,13 @@
     "item_id": "gov_ks",
     "old": null,
     "new": null,
-    "delta_text": "Kalshi 22.5 to 25.0%",
-    "reading": "Kalshi moved +2.5 toward the Democrat. Our number is 25.0; gap to the market now +0.0. ",
+    "delta_text": "Polymarket 24.0 to 26.0; Kalshi 22.5 to 25.5%",
+    "reading": "Both markets moved +2.5 toward the Democrat. Our number is 25.0; gap to the market now -0.8. ",
     "tone": "D",
     "magnitude": 12.5,
-    "source_url": "https://kalshi.com/markets/govpartyks",
+    "source_url": "https://polymarket.com/event/kansas-governor-winner-2026",
     "move": 2.5,
-    "n": 26
+    "n": 28
   },
   {
     "as_of": "2026-10-24",
@@ -5204,7 +5234,22 @@
     "tone": "R",
     "magnitude": 12.4,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 27
+    "n": 29
+  },
+  {
+    "as_of": "2026-10-24",
+    "prev_as_of": "2026-10-23",
+    "category": "votes",
+    "item": "ID: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_ID",
+    "old": "70,695",
+    "new": "81,725",
+    "delta_text": "D 20.7 to 20.2; R 60.0 to 60.2; Other 19.4 to 19.5",
+    "reading": "The share moved -0.4 points to 20.2 percent of early voters (81,725 voters).",
+    "tone": "R",
+    "magnitude": 12.2,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 30
   },
   {
     "as_of": "2026-10-24",
@@ -5219,7 +5264,7 @@
     "tone": "R",
     "magnitude": 11.9,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 28
+    "n": 31
   },
   {
     "as_of": "2026-10-24",
@@ -5234,7 +5279,7 @@
     "tone": "R",
     "magnitude": 11.7,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 29
+    "n": 32
   },
   {
     "as_of": "2026-10-24",
@@ -5249,7 +5294,7 @@
     "tone": "R",
     "magnitude": 11.6,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 30
+    "n": 33
   },
   {
     "as_of": "2026-10-24",
@@ -5264,7 +5309,7 @@
     "tone": "R",
     "magnitude": 11.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 31
+    "n": 34
   },
   {
     "as_of": "2026-10-24",
@@ -5279,23 +5324,22 @@
     "tone": "R",
     "magnitude": 11.4,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 32
+    "n": 35
   },
   {
     "as_of": "2026-10-24",
     "prev_as_of": "2026-10-23",
-    "category": "market",
-    "item": "Markets: Governor · AZ",
-    "item_id": "gov_az",
-    "old": null,
-    "new": null,
-    "delta_text": "Polymarket 93.0 to 91.0; Kalshi 91.8 to 89.5%",
-    "reading": "Both markets moved -2.1 toward the Republican. Our number is 83.0; gap to the market now -7.2. ",
+    "category": "votes",
+    "item": "AR: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_AR",
+    "old": "164,678",
+    "new": "256,098",
+    "delta_text": "D 7.3 to 7.0; R 8.7 to 8.8; Other 84.0 to 84.2",
+    "reading": "The share moved -0.3 points to 7.0 percent of early voters (256,098 voters).",
     "tone": "R",
-    "magnitude": 10.7,
-    "source_url": "https://polymarket.com/event/arizona-governor-winner-2026",
-    "move": -2.1,
-    "n": 33
+    "magnitude": 11.0,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 36
   },
   {
     "as_of": "2026-10-24",
@@ -5310,7 +5354,7 @@
     "tone": "D",
     "magnitude": 10.3,
     "source_url": "https://www.fec.gov/data/candidate/S6FL00830/?cycle=2026&election_full=true",
-    "n": 34
+    "n": 37
   },
   {
     "as_of": "2026-10-24",
@@ -5326,7 +5370,7 @@
     "magnitude": 10.0,
     "source_url": "https://kalshi.com/markets/controls",
     "move": -2.0,
-    "n": 35
+    "n": 38
   },
   {
     "as_of": "2026-10-24",
@@ -5342,22 +5386,38 @@
     "magnitude": 10.0,
     "source_url": "https://kalshi.com/markets/govpartyga",
     "move": -2.0,
-    "n": 36
+    "n": 39
+  },
+  {
+    "as_of": "2026-10-24",
+    "prev_as_of": "2026-10-23",
+    "category": "market",
+    "item": "Markets: Governor · AZ",
+    "item_id": "gov_az",
+    "old": null,
+    "new": null,
+    "delta_text": "Polymarket 93.0 to 91.0%",
+    "reading": "Polymarket moved -2.0 toward the Republican. Our number is 83.0; gap to the market now -8.0. ",
+    "tone": "R",
+    "magnitude": 10.0,
+    "source_url": "https://polymarket.com/event/arizona-governor-winner-2026",
+    "move": -2.0,
+    "n": 40
   },
   {
     "as_of": "2026-10-24",
     "prev_as_of": "2026-10-23",
     "category": "votes",
-    "item": "AR: ballots voted (mail accepted plus in person) (2026 so far)",
-    "item_id": "ev_AR",
-    "old": "164,678",
-    "new": "210,296",
-    "delta_text": "D 7.3 to 7.1; R 8.7 to 8.7; Other 84.0 to 84.2",
-    "reading": "The share moved -0.2 points to 7.1 percent of early voters (210,296 voters).",
-    "tone": "R",
+    "item": "North Carolina: First-time voters among early voters (2026 so far)",
+    "item_id": "ev_NC",
+    "old": "52,461",
+    "new": "62,820",
+    "delta_text": "First-time 4.2 to 4.3",
+    "reading": "The share moved +0.2 points to 4.3 percent of early voters (62,820 voters).",
+    "tone": null,
     "magnitude": 9.9,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 37
+    "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
+    "n": 41
   },
   {
     "as_of": "2026-10-24",
@@ -5372,7 +5432,7 @@
     "tone": "R",
     "magnitude": 9.9,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 38
+    "n": 42
   },
   {
     "as_of": "2026-10-24",
@@ -5387,22 +5447,7 @@
     "tone": "D",
     "magnitude": 9.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 39
-  },
-  {
-    "as_of": "2026-10-24",
-    "prev_as_of": "2026-10-23",
-    "category": "votes",
-    "item": "ID: ballots voted (mail accepted plus in person) (2026 so far)",
-    "item_id": "ev_ID",
-    "old": "70,695",
-    "new": "76,300",
-    "delta_text": "D 20.7 to 20.5; R 60.0 to 60.0; Other 19.4 to 19.4",
-    "reading": "The share moved -0.1 points to 20.5 percent of early voters (76,300 voters).",
-    "tone": "R",
-    "magnitude": 9.3,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 40
+    "n": 43
   },
   {
     "as_of": "2026-10-24",
@@ -5417,7 +5462,7 @@
     "tone": "D",
     "magnitude": 7.4,
     "source_url": "https://www.fec.gov/data/candidate/S6IA00298/?cycle=2026&election_full=true",
-    "n": 41
+    "n": 44
   },
   {
     "as_of": "2026-10-24",
@@ -5432,7 +5477,7 @@
     "tone": "D",
     "magnitude": 4.9,
     "source_url": "https://www.fec.gov/data/candidate/S6KS00312/?cycle=2026&election_full=true",
-    "n": 42
+    "n": 45
   },
   {
     "as_of": "2026-10-24",
@@ -5447,7 +5492,7 @@
     "tone": "R",
     "magnitude": 2.0,
     "source_url": "https://www.fec.gov/data/candidate/S6SC04437/?cycle=2026&election_full=true",
-    "n": 43
+    "n": 46
   },
   {
     "as_of": "2026-10-24",
@@ -5462,7 +5507,7 @@
     "tone": "R",
     "magnitude": 1.4,
     "source_url": "https://www.fec.gov/data/candidate/S6TX00388/?cycle=2026&election_full=true",
-    "n": 44
+    "n": 47
   },
   {
     "as_of": "2026-10-24",
@@ -5477,6 +5522,6 @@
     "tone": "R",
     "magnitude": 0.0,
     "source_url": "https://www.fec.gov/data/candidate/S6OH00304/?cycle=2026&election_full=true",
-    "n": 45
+    "n": 48
   }
 ]

@@ -10175,6 +10175,28 @@
     "note": null
   },
   {
+    "state": "NC",
+    "measure": "First-time voters among early voters",
+    "period": "2026 so far",
+    "group": "First-time",
+    "share": 0.0434,
+    "count": 62820,
+    "as_of": "2026-10-24",
+    "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
+    "note": "No record in the NC voter history file for any earlier election."
+  },
+  {
+    "state": "NC",
+    "measure": "2022 Election Day voters now voting early",
+    "period": "2026 so far",
+    "group": "Voted on Election Day 2022",
+    "share": 0.1448,
+    "count": 209599,
+    "as_of": "2026-10-24",
+    "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
+    "note": null
+  },
+  {
     "state": "PA",
     "measure": "Mail ballots returned by party",
     "period": "2026 so far",
@@ -10312,7 +10334,7 @@
     "period": "2026 so far",
     "group": "D",
     "share": 0.4285,
-    "count": 561474,
+    "count": 561525,
     "as_of": "2026-10-24",
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
     "note": null
@@ -10323,7 +10345,7 @@
     "period": "2026 so far",
     "group": "R",
     "share": 0.3586,
-    "count": 469858,
+    "count": 469900,
     "as_of": "2026-10-24",
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
     "note": null
@@ -10334,7 +10356,7 @@
     "period": "2026 so far",
     "group": "No party",
     "share": 0.1888,
-    "count": 247349,
+    "count": 247389,
     "as_of": "2026-10-24",
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
     "note": null
@@ -10345,7 +10367,7 @@
     "period": "2026 so far",
     "group": "Other",
     "share": 0.0241,
-    "count": 31634,
+    "count": 31637,
     "as_of": "2026-10-24",
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
     "note": null
@@ -10487,8 +10509,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "D",
-    "share": 0.0708,
-    "count": 14899,
+    "share": 0.0697,
+    "count": 17856,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10498,8 +10520,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "R",
-    "share": 0.087,
-    "count": 18289,
+    "share": 0.0881,
+    "count": 22560,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10510,7 +10532,7 @@
     "period": "2026 so far",
     "group": "Other",
     "share": 0.8422,
-    "count": 177108,
+    "count": 215682,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10524,7 +10546,7 @@
     "count": 256098,
     "as_of": "2026-10-24",
     "source_url": "https://electindex.com/early-vote/",
-    "note": "Secondhand, corroborated: within 1% of the UF Election Lab tracker on 2026-10-23. The feed's row source is civicapi (tier 2). Not our pull."
+    "note": "Secondhand, corroborated: within 1% of the UF Election Lab tracker on 2026-10-24. The feed's row source is civicapi (tier 2). Not our pull."
   },
   {
     "state": "CA",
@@ -10619,8 +10641,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "D",
-    "share": 0.5386,
-    "count": 92814,
+    "share": 0.5299,
+    "count": 108483,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10630,8 +10652,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "R",
-    "share": 0.1727,
-    "count": 29759,
+    "share": 0.1765,
+    "count": 36132,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10641,8 +10663,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "Other",
-    "share": 0.2887,
-    "count": 49760,
+    "share": 0.2936,
+    "count": 60105,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10653,10 +10675,10 @@
     "period": "2026 so far",
     "group": "All",
     "share": null,
-    "count": 30343,
+    "count": 32404,
     "as_of": "2026-10-24",
     "source_url": "https://electindex.com/early-vote/",
-    "note": "Secondhand, unreconciled: 82.4 percent from the UF Election Lab tracker on 2026-10-23, not reconciled. The feed's row source is civicapi (tier 2). Not our pull."
+    "note": "Secondhand, unreconciled: 84.2 percent from the UF Election Lab tracker on 2026-10-24, not reconciled. The feed's row source is civicapi (tier 2). Not our pull."
   },
   {
     "state": "DE",
@@ -10729,8 +10751,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "D",
-    "share": 0.3992,
-    "count": 944914,
+    "share": 0.3983,
+    "count": 972489,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10740,8 +10762,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "R",
-    "share": 0.3956,
-    "count": 936240,
+    "share": 0.3966,
+    "count": 968285,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10751,8 +10773,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "Other",
-    "share": 0.2052,
-    "count": 485743,
+    "share": 0.205,
+    "count": 500520,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10766,7 +10788,7 @@
     "count": 2311509,
     "as_of": "2026-10-24",
     "source_url": "https://electindex.com/early-vote/",
-    "note": "Secondhand, unreconciled: 2.3 percent from the UF Election Lab tracker on 2026-10-24, not reconciled. The feed's row source is fl-doe (tier 1). Not our pull."
+    "note": "Secondhand, unreconciled: 5.3 percent from the UF Election Lab tracker on 2026-10-24, not reconciled. The feed's row source is fl-doe (tier 1). Not our pull."
   },
   {
     "state": "GA",
@@ -10817,8 +10839,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "D",
-    "share": 0.2053,
-    "count": 15662,
+    "share": 0.2024,
+    "count": 16543,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10828,8 +10850,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "R",
-    "share": 0.6003,
-    "count": 45805,
+    "share": 0.6025,
+    "count": 49241,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10839,8 +10861,8 @@
     "measure": "ballots voted (mail accepted plus in person)",
     "period": "2026 so far",
     "group": "Other",
-    "share": 0.1944,
-    "count": 14833,
+    "share": 0.1951,
+    "count": 15941,
     "as_of": "2026-10-24",
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
     "note": "UF Election Lab US.csv, the lab's compilation of each state's own report"
@@ -10854,7 +10876,7 @@
     "count": 129416,
     "as_of": "2026-10-24",
     "source_url": "https://electindex.com/early-vote/",
-    "note": "Secondhand, corroborated: within 1% of the UF Election Lab tracker on 2026-10-23. The feed's row source is id-sos (tier 1). Not our pull."
+    "note": "Secondhand, unreconciled: 4.0 percent from the UF Election Lab tracker on 2026-10-24, not reconciled. The feed's row source is id-sos (tier 1). Not our pull."
   },
   {
     "state": "IL",
@@ -11412,10 +11434,10 @@
     "period": "2026 so far",
     "group": "All",
     "share": null,
-    "count": 329724,
+    "count": 339059,
     "as_of": "2026-10-24",
     "source_url": "https://electindex.com/early-vote/",
-    "note": "Secondhand, unreconciled: no same-day figure of ours to compare. The feed's row source is civicapi (tier 2). Not our pull."
+    "note": "Secondhand, corroborated: within 1% of the UF Election Lab tracker on 2026-10-24. The feed's row source is civicapi (tier 2). Not our pull."
   },
   {
     "state": "NV",
@@ -11588,7 +11610,7 @@
     "period": "2026 so far",
     "group": "All",
     "share": null,
-    "count": 33743,
+    "count": 33938,
     "as_of": "2026-10-24",
     "source_url": "https://electindex.com/early-vote/",
     "note": "Secondhand, corroborated: within 1% of the UF Election Lab tracker on 2026-10-23. The feed's row source is nd-sos (tier 1). Not our pull."
@@ -12164,5 +12186,60 @@
     "as_of": "2026-10-24",
     "source_url": "https://www.sos.nh.gov/elections/voters/absentee-voting",
     "note": "New Hampshire has no early voting. Absentee ballots go to clerks and the state publishes no public daily absentee count. Skipped."
+  },
+  {
+    "state": "OH",
+    "measure": "Ballots voted (mail accepted plus in person), by last primary ballot",
+    "period": "2026 so far",
+    "group": "D",
+    "share": 0.3196,
+    "count": 317203,
+    "as_of": "2026-10-24",
+    "source_url": "https://www.ohiosos.gov/data",
+    "note": "Party is the last primary ballot the voter took; Ohio has no party registration."
+  },
+  {
+    "state": "OH",
+    "measure": "Ballots voted (mail accepted plus in person), by last primary ballot",
+    "period": "2026 so far",
+    "group": "Other",
+    "share": 0.0017,
+    "count": 1700,
+    "as_of": "2026-10-24",
+    "source_url": "https://www.ohiosos.gov/data",
+    "note": "Party is the last primary ballot the voter took; Ohio has no party registration."
+  },
+  {
+    "state": "OH",
+    "measure": "Ballots voted (mail accepted plus in person), by last primary ballot",
+    "period": "2026 so far",
+    "group": "R",
+    "share": 0.2709,
+    "count": 268939,
+    "as_of": "2026-10-24",
+    "source_url": "https://www.ohiosos.gov/data",
+    "note": "Party is the last primary ballot the voter took; Ohio has no party registration."
+  },
+  {
+    "state": "OH",
+    "measure": "Ballots voted (mail accepted plus in person), by last primary ballot",
+    "period": "2026 so far",
+    "group": "Unaffiliated",
+    "share": 0.4078,
+    "count": 404759,
+    "as_of": "2026-10-24",
+    "source_url": "https://www.ohiosos.gov/data",
+    "note": "Party is the last primary ballot the voter took; Ohio has no party registration."
+  },
+  {
+    "state": "OH",
+    "measure": "Ballots voted (mail accepted plus in person), by last primary ballot",
+    "period": "2026 so far",
+    "group": "All",
+    "share": null,
+    "count": 992601,
+    "as_of": "2026-10-24",
+    "source_url": "https://www.ohiosos.gov/data",
+    "note": null
   }
 ]
