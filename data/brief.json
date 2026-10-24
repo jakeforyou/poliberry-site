@@ -729,8 +729,8 @@
     "item_id": null,
     "text": "Cook moved five of the redrawn southern seats toward Democrats this morning, part of a round of 19 changes that leaves Democrats favored outright in 218 seats, and TX-35 is now a Toss Up. A rating is a judgment on the national signals we already hold, so our count of six redrawn seats waits for a district poll, not for Cook. The only new nonpartisan poll is Saint Anselm in New Hampshire, Pappas +7 and Ayotte +8, which matches YouGov in both races and is already in the model. The Georgia margin market rose 3 with no new poll, on a CNN story about Collins and a weekend of rallies. Our numbers did not move. Attorney General Blanche declined to rule out a DOJ role in certification in a doomsday scenario, a gate item, not a race item. The 09:30 snapshot did not fire again. This one started at 10:01 and the market pull finished at 11:50, so the prices here are late-morning prices.",
     "written_at": "2026-10-23T12:01:53-04:00",
-    "n_flags": 8,
-    "n_explained": 8,
+    "n_flags": 6,
+    "n_explained": 6,
     "stale": null,
     "label": "inferred"
   },
@@ -757,14 +757,14 @@
     "triggers": [
       "Cook changed its rating, Lean D to Likely D"
     ],
-    "facts": "Flagged: Cook changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Cook changed its rating, Lean D to Likely D. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Cook moves Cuellar's seat to Likely D",
@@ -788,14 +788,14 @@
     "triggers": [
       "Cook changed its rating, Tossup to Lean D"
     ],
-    "facts": "Flagged: Cook changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Cook changed its rating, Tossup to Lean D. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Cook moves Gonzalez's Rio Grande Valley seat to Lean D",
@@ -819,14 +819,14 @@
     "triggers": [
       "Cook changed its rating, Lean R (flip) to Tossup"
     ],
-    "facts": "Flagged: Cook changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Cook changed its rating, Lean R (flip) to Tossup. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Cook moves the new San Antonio seat to Toss Up",
@@ -851,14 +851,14 @@
     "triggers": [
       "Cook changed its rating, Likely R to Lean R"
     ],
-    "facts": "Flagged: Cook changed its rating, Likely R to Lean R. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Cook changed its rating, Likely R to Lean R. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Cook moves the vacant Gonzales seat to Lean R",
@@ -882,14 +882,14 @@
     "triggers": [
       "Cook changed its rating, Likely R (flip) to Lean R (flip)"
     ],
-    "facts": "Flagged: Cook changed its rating, Likely R (flip) to Lean R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Cook changed its rating, Likely R (flip) to Lean R (flip). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Cook moves Figures's redrawn seat to Lean R",
@@ -914,14 +914,14 @@
     "triggers": [
       "markets moved +3.0 points since the last pull (Polymarket 85.7 to 88.7%)"
     ],
-    "facts": "Flagged: markets moved +3.0 points since the last pull (Polymarket 85.7 to 88.7%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Polymarket 85.7 to 88.7%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Georgia margin market up 3 with no new poll",
@@ -943,53 +943,10 @@
     "kind": "item",
     "item_id": "senate_nh",
     "item": "Senate · NH",
-    "flag_kind": "poll",
-    "triggers": [
-      "Saint Anselm College (LV, through 2026-10-20) shows D+7 in a race with 2 other polls in 21 days"
-    ],
-    "facts": "Flagged: Saint Anselm College (LV, through 2026-10-20) shows D+7 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Saint Anselm College D+7 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Saint Anselm College",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-20",
-          "population": "LV",
-          "sample": 1672,
-          "d": 50.0,
-          "r": 43.0,
-          "margin_d": 7.0,
-          "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 6.67,
-        "n": 3,
-        "newest": "2026-10-20"
-      },
-      "market_path": [
-        [
-          "2026-10-23T10:28:41-04:00",
-          0.905
-        ],
-        [
-          "2026-10-23T10:44:47-04:00",
-          0.905
-        ],
-        [
-          "2026-10-23T11:00:00-04:00",
-          0.905
-        ],
-        [
-          "2026-10-23T12:00:00-04:00",
-          0.9078
-        ]
-      ],
-      "events_window_hours": 48
-    },
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
     "explained": true,
     "headline": "Saint Anselm has Pappas up 7, matching YouGov",
     "what_happened": "Saint Anselm College, fielded 2026-10-19 to 10-20, 1,672 likely voters, margin of error 2.4, released 2026-10-22: Pappas 50, Sununu 43, D+7 (retrieved). Both candidates are under water on favorability, Pappas 41 to 56 and Sununu 40 to 56 (retrieved). Trump approval in the sample is 38 to 62 and the generic ballot is D+9 (retrieved). The release does not compare to a prior Saint Anselm poll (retrieved). The three polls in 21 days average D+6.7: YouGov through Oct 5 at D+8 and National Public Affairs through Oct 12 at D+5 (retrieved).",
@@ -1009,119 +966,10 @@
     "kind": "item",
     "item_id": "gov_nh",
     "item": "Governor · NH",
-    "flag_kind": "poll",
-    "triggers": [
-      "Saint Anselm College (LV, through 2026-10-20) shows D-8 in a race with 2 other polls in 21 days"
-    ],
-    "facts": "Flagged: Saint Anselm College (LV, through 2026-10-20) shows D-8 in a race with 2 other polls in 21 days. News in the last 48 hours: 12 articles (2 legal, 1 poll, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 scandal, 0 money). Polls just in: Saint Anselm College D-8 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [
-        {
-          "title": "Supreme Court allows New Hampshire to reject student IDs at polls",
-          "url": "https://www.foxnews.com/politics/supreme-court-blocks-student-ids-voter-identification-new-hampshire",
-          "domain": "foxnews.com",
-          "seendate": "2026-10-23T07:15:00Z",
-          "kinds": [
-            "poll",
-            "legal"
-          ]
-        },
-        {
-          "title": "Medicare Advantage plans Coos and Carroll counties for 2027",
-          "url": "https://www.wmur.com/article/medicare-advantage-coos-and-carroll-for-2027/74223158",
-          "domain": "wmur.com",
-          "seendate": "2026-10-23T06:00:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "SCOTUS Says NH Can Close Student ID  Loophole  In Elections",
-          "url": "https://thefederalist.com/2026/10/22/scotus-says-new-hampshire-can-close-student-id-loophole-in-elections/",
-          "domain": "thefederalist.com",
-          "seendate": "2026-10-23T00:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Kamala Harris hopes to help Dems during NH visit in final sprint to midterms",
-          "url": "https://www.concordmonitor.com/2026/10/22/kamala-harris-hopes-to-help-dems-during-nh-visit-in-final-sprint-to-midterms/",
-          "domain": "concordmonitor.com",
-          "seendate": "2026-10-22T23:00:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Was Cinde Warmington a Purdue Pharma lobbyist ? Did she call OxyContin a  miracle drug ? Yes and yes – PolitiFact",
-          "url": "https://politifact.com/factchecks/2026/oct/22/kelly-ayotte/warmington-opioid-purdue-pharma-new-hampshire/",
-          "domain": "politifact.com",
-          "seendate": "2026-10-22T22:45:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Granite and Green Mountains : Key New Hampshire and Vermont Races",
-          "url": "https://www.dailykos.com/stories/2026/10/22/800097508/community/gran/",
-          "domain": "dailykos.com",
-          "seendate": "2026-10-22T22:45:00Z",
-          "kinds": [
-            "other"
-          ]
-        }
-      ],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 1,
-        "legal": 2,
-        "scandal": 0,
-        "money": 0,
-        "other": 9
-      },
-      "polls": [
-        {
-          "pollster": "Saint Anselm College",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-20",
-          "population": "LV",
-          "sample": 1672,
-          "d": 42.0,
-          "r": 50.0,
-          "margin_d": -8.0,
-          "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -11.0,
-        "n": 3,
-        "newest": "2026-10-20"
-      },
-      "market_path": [
-        [
-          "2026-10-23T10:28:41-04:00",
-          0.05
-        ],
-        [
-          "2026-10-23T10:44:47-04:00",
-          0.0513
-        ],
-        [
-          "2026-10-23T11:00:00-04:00",
-          0.0515
-        ],
-        [
-          "2026-10-23T12:00:00-04:00",
-          0.0525
-        ]
-      ],
-      "events_window_hours": 48
-    },
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
     "explained": true,
     "headline": "Saint Anselm has Ayotte up 8, matching YouGov",
     "what_happened": "Same Saint Anselm poll: Ayotte 50, Warmington 42, R+8 (retrieved). Ayotte job approval 51 (retrieved). The three polls in 21 days average Ayotte +11, pulled wider by National Public Affairs at R+16 (retrieved). YouGov through Oct 5 had R+9 (retrieved). The 48-hour feed for the race is the Supreme Court allowing New Hampshire to reject student IDs at the polls (Oct 22), a PolitiFact check confirming Warmington lobbied for Purdue Pharma, and Harris visiting the state (retrieved, titles only).",
@@ -1155,6 +1003,657 @@
     "sources": [
       "https://www.nbcnews.com/politics/justice-department/blanche-wont-rule-doj-post-election-action-doomsday-scenario-rcna605035",
       "https://thehill.com/homenews/administration/6167033-todd-blanche-doj-election-certification-block/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Two raters moved two governor races on Friday and the model moved on neither. Cook took Ohio from Toss Up to Lean D after a week of backlash to the Ramaswamy ad, and Silver Bulletin took Georgia from Lean D back to Tossup, each on polls the model already holds. Texas is the day's largest market move, Polymarket 66.5 to 62.5 after a Rasmussen tie that the model counted. Three Democratic-side polls in South Carolina, Kansas and SC-01 show a tie or a small Democratic lead, and the model leaves all three out as partisan. The snapshot started at 09:45 and committed at 13:36, so the prices here are early-afternoon prices.",
+    "written_at": "2026-10-24T13:45:02-04:00",
+    "n_flags": 6,
+    "n_explained": 6,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Ohio leans Acton, Georgia back to toss-up, no new poll in either.",
+    "vibe": "Two governor races changed rating on Friday, Ohio toward Acton after the Ramaswamy ad and Georgia back to a toss-up, and the model, which reads polls and not raters, moved on neither.",
+    "sources": [
+      "https://www.washingtonexaminer.com/news/campaigns/state/4778332/ohio-governor-race-shifts-favor-of-democrat-ramaswamy-ad/",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://polymarket.com/event/texas-senate-election-winner",
+      "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate"
+    ],
+    "written_at": "2026-10-24T13:45:02-04:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "item",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "flag_kind": "rating",
+    "triggers": [
+      "Silver Bulletin changed its rating, Lean D (flip) to Tossup"
+    ],
+    "facts": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. News in the last 48 hours: 21 articles (3 rally, 2 poll, 1 legal, 0 ad, 0 debate, 0 endorsement, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Georgia governor race tightens as Bottoms courts Latino voters and Jackson rallies GOP base – WSB - TV Channel 2",
+          "url": "https://www.wsbtv.com/news/local/georgia-governors-race-tightens-bottoms-courts-latino-voters-jackson-rallies-gop-base/YJY6EKQRHFBBNI6NOTU4V23RGM/",
+          "domain": "wsbtv.com",
+          "seendate": "2026-10-23T03:30:00Z",
+          "kinds": [
+            "rally",
+            "poll",
+            "legal"
+          ]
+        },
+        {
+          "title": "Augusta group rallies behind Bottoms for governor",
+          "url": "https://www.wrdw.com/2026/10/22/augusta-group-rallies-behind-bottoms-governor/",
+          "domain": "wrdw.com",
+          "seendate": "2026-10-23T00:15:00Z",
+          "kinds": [
+            "rally"
+          ]
+        },
+        {
+          "title": "The Best Black Fashion From Atlanta Inaugural Icon Honors Event – The Root",
+          "url": "https://www.theroot.com/the-best-black-fashion-from-atlanta-s-inaugural-icon-ho-2000131856",
+          "domain": "theroot.com",
+          "seendate": "2026-10-22T23:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Reports warn of historic losses for Black representation - The Washington Informer",
+          "url": "https://www.washingtoninformer.com/redistricting-threatens-black-representation/",
+          "domain": "washingtoninformer.com",
+          "seendate": "2026-10-22T21:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Star power showdown : Trump , Obama , Harris storm Georgia as early voting nears end",
+          "url": "https://www.atlantanewsfirst.com/2026/10/22/star-power-showdown-trump-obama-harris-storm-georgia-early-voting-nears-end/",
+          "domain": "atlantanewsfirst.com",
+          "seendate": "2026-10-22T21:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "The Blue Wave Is Redder Than We Realize",
+          "url": "https://www.newsweek.com/the-blue-wave-is-redder-than-we-realize-12604826",
+          "domain": "newsweek.com",
+          "seendate": "2026-10-22T15:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 3,
+        "poll": 2,
+        "legal": 1,
+        "scandal": 0,
+        "money": 0,
+        "other": 15
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": -1.75,
+        "n": 4,
+        "newest": "2026-10-20"
+      },
+      "market_path": [
+        [
+          "2026-10-24T01:12:04-04:00",
+          0.6075
+        ],
+        [
+          "2026-10-24T03:58:35-04:00",
+          0.6075
+        ],
+        [
+          "2026-10-24T07:19:51-04:00",
+          0.6075
+        ],
+        [
+          "2026-10-24T09:45:08-04:00",
+          0.605
+        ],
+        [
+          "2026-10-24T11:05:34-04:00",
+          0.6
+        ],
+        [
+          "2026-10-24T12:01:39-04:00",
+          0.6
+        ],
+        [
+          "2026-10-24T13:03:59-04:00",
+          0.6
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Silver Bulletin pulls Georgia back to Tossup",
+    "what_happened": "Silver Bulletin's Georgia governor rating changed from Lean D (flip) to Tossup in the Wikipedia ratings table dated Oct. 23 (retrieved). Silver's governor page is paywalled and shows no Georgia line to WebFetch, so the change is read secondhand and its reason is not retrieved. No new poll today. The two polls in the model are University of Georgia through 2026-10-15, Jackson +1, and ActiVote through 2026-10-20, Jackson +3 (retrieved). The AJC poll that WSB cited on 2026-10-23 as essentially tied with 8 percent undecided is that UGA poll (inferred). The feed's Georgia items are campaign travel: Trump in Perry on Saturday, Obama in metro Atlanta on Wednesday for Ossoff and Bottoms, Harris on Thursday and Friday (retrieved, Atlanta News First, 2026-10-22). Kalshi moved 60.5 to 58.5 since the last pull and Polymarket 60.75 to 60.0 intraday (retrieved). Georgia has 1,632,981 ballots in, 41.2 percent of everything cast in 2022 (retrieved).",
+    "why_it_moved": "A rater re-read the same two polls (inferred). The reason is behind Silver's paywall and is not retrieved.",
+    "should_it_move_us": "No. The model is at 49.76 with a margin of -0.04 on two polls, already a toss-up, and the run's 47 sits below the market's 60.",
+    "trigger": "A nonpartisan Georgia poll fielded after Obama's Wednesday visit with either candidate outside the margin.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://www.wsbtv.com/news/local/georgia-governors-race-tightens-bottoms-courts-latino-voters-jackson-rallies-gop-base/YJY6EKQRHFBBNI6NOTU4V23RGM/",
+      "https://www.atlantanewsfirst.com/2026/10/22/star-power-showdown-trump-obama-harris-storm-georgia-early-voting-nears-end/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: Cook changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 3.25,
+        "n": 8,
+        "newest": "2026-10-20"
+      },
+      "market_path": [
+        [
+          "2026-10-24T01:12:04-04:00",
+          0.82
+        ],
+        [
+          "2026-10-24T03:58:35-04:00",
+          0.82
+        ],
+        [
+          "2026-10-24T07:19:51-04:00",
+          0.82
+        ],
+        [
+          "2026-10-24T09:45:08-04:00",
+          0.82
+        ],
+        [
+          "2026-10-24T11:05:34-04:00",
+          0.82
+        ],
+        [
+          "2026-10-24T12:01:39-04:00",
+          0.82
+        ],
+        [
+          "2026-10-24T13:03:59-04:00",
+          0.82
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Cook leans Ohio to Acton after the ad week",
+    "what_happened": "Cook moved the Ohio governor race from Toss Up to Lean D on Friday 2026-10-23 (retrieved, Washington Examiner 21:52 ET, and the Wikipedia ratings table dated Oct. 23). Coverage ties the move to a week of backlash over the Ramaswamy ad featuring Acton's estranged mother, which Ramaswamy reportedly spent $4 million to air and Trump defended (retrieved, Washington Examiner). Search snippets say Cook's Jessica Taylor cited Cook's own pre-ad poll with Acton up 5, and that Sabato's Crystal Ball moved the race to Leans Democratic on Thursday 2026-10-22 (retrieved secondhand, The Hill and Washington Post pages return 403 to WebFetch). The feed has 0 Ohio governor articles in 48 hours and there is no new poll. The newest poll in the model is Verasight/VoteHub through 2026-10-20, Acton +1, and the poll average is D+3.25 over 8 polls (retrieved). Markets held at 82 all day (retrieved, intraday path).",
+    "why_it_moved": "A rater's judgment on the ad and on polls the model already holds (inferred). Nothing new entered the data.",
+    "should_it_move_us": "No. Our number is the model's, 70.34 with a margin of +3.58 over 9 polls, and a rating is a reading of those same polls, not a new one.",
+    "trigger": "A nonpartisan likely-voter poll fielded entirely after the ad aired.",
+    "sources": [
+      "https://www.washingtonexaminer.com/news/campaigns/state/4778332/ohio-governor-race-shifts-favor-of-democrat-ramaswamy-ad/",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "item",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -3.0 points since the last pull (Polymarket 66.5 to 62.5; Kalshi 65.5 to 63.5%)"
+    ],
+    "facts": "Flagged: markets moved -3.0 points since the last pull (Polymarket 66.5 to 62.5; Kalshi 65.5 to 63.5%). News in the last 48 hours: 111 articles (9 ad, 6 endorsement, 5 rally, 4 money, 3 poll, 3 legal, 3 scandal, 2 debate). Polls just in: Rasmussen Reports D+0 (LV); ActiVote D+2 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Fears about kid online safety unite Democrats and Republicans – The Press Democrat",
+          "url": "https://www.pressdemocrat.com/2026/10/23/kids-online-safety-democrats-republicans/",
+          "domain": "pressdemocrat.com",
+          "seendate": "2026-10-23T13:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Fears about kid online safety unite Democrats and Republicans – Colorado Hometown Weekly",
+          "url": "https://www.coloradohometownweekly.com/2026/10/23/kids-online-safety-democrats-republicans/",
+          "domain": "coloradohometownweekly.com",
+          "seendate": "2026-10-23T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "A Democratic win in Texas is a long shot – but Ken Paxton weakness is obvious | Moira Donegan",
+          "url": "https://www.theguardian.com/commentisfree/2026/oct/23/texas-senate-ken-paxton-weakness",
+          "domain": "theguardian.com",
+          "seendate": "2026-10-23T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Fears about kid online safety unite Democrats and Republicans – The Fort Morgan Times",
+          "url": "https://www.fortmorgantimes.com/2026/10/23/kids-online-safety-democrats-republicans/",
+          "domain": "fortmorgantimes.com",
+          "seendate": "2026-10-23T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Reported challenges with touchscreen voting machines dont signal election rigging",
+          "url": "https://jcpost.com/posts/d2769140-6b72-4c0b-8062-4eddfeae1ff5",
+          "domain": "jcpost.com",
+          "seendate": "2026-10-23T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Fear and hope in Texas : Paxton vs . Talarico in an expensive US Senate showdown",
+          "url": "http://www.goskagit.com/news/politics/fear-and-hope-in-texas-paxton-vs-talarico-in-an-expensive-us-senate-showdown/article_05271298-3a38-54b4-b1a3-701b03c992e4.html",
+          "domain": "goskagit.com",
+          "seendate": "2026-10-23T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 9,
+        "debate": 2,
+        "endorsement": 6,
+        "rally": 5,
+        "poll": 3,
+        "legal": 3,
+        "scandal": 3,
+        "money": 4,
+        "other": 76
+      },
+      "polls": [
+        {
+          "pollster": "Rasmussen Reports",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-21",
+          "population": "LV",
+          "sample": 965,
+          "d": 45.0,
+          "r": 45.0,
+          "margin_d": 0.0,
+          "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate"
+        },
+        {
+          "pollster": "ActiVote",
+          "sponsor": null,
+          "start_date": "2026-10-17",
+          "end_date": "2026-10-21",
+          "population": "LV",
+          "sample": 400,
+          "d": 51.0,
+          "r": 49.0,
+          "margin_d": 2.0,
+          "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.35,
+        "n": 17,
+        "newest": "2026-10-21"
+      },
+      "market_path": [
+        [
+          "2026-10-24T01:12:04-04:00",
+          0.635
+        ],
+        [
+          "2026-10-24T03:58:35-04:00",
+          0.635
+        ],
+        [
+          "2026-10-24T07:19:51-04:00",
+          0.635
+        ],
+        [
+          "2026-10-24T09:45:08-04:00",
+          0.6375
+        ],
+        [
+          "2026-10-24T11:05:34-04:00",
+          0.635
+        ],
+        [
+          "2026-10-24T12:01:39-04:00",
+          0.63
+        ],
+        [
+          "2026-10-24T13:03:59-04:00",
+          0.63
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Texas markets give back three points on a Rasmussen tie",
+    "what_happened": "Polymarket fell from 66.5 at Friday's pull to 62.5 and Kalshi from 65.5 to 63.5 (retrieved, changes.json). The intraday path shows 63.5 at 01:12 Saturday, so the drop happened Friday afternoon or evening (retrieved). Two new polls: Rasmussen Reports, LV, 965, Oct 20 to 21, 45 to 45, and ActiVote, LV, 400, Oct 17 to 21, Talarico +2 (retrieved). The Rasmussen tie is the first tie among the model's polls since Quantus on Oct 11 (retrieved). The feed's 111 Texas articles in 48 hours are the early-vote rush, the ad spend and opinion pieces, including the Guardian's 'A Democratic win in Texas is a long shot' (retrieved titles, the Guardian page is not fetchable). No debate, no scandal, no event dated Oct 23. Texas has 3,422,610 ballots in, 42.0 percent of everything cast in 2022, with record midterm turnout in Republican counties such as Montgomery and Denton as well as in Harris and Dallas (retrieved, state file and the Texas Tribune via search).",
+    "why_it_moved": "The Rasmussen tie is the only new fact and fits the timing (inferred). Reversion from Thursday's 67, which had no poll behind it, explains the rest (inferred).",
+    "should_it_move_us": "No. The model counted both polls. Its margin is +1.64 and its chance 68.16 over 17 polls, and the market at 63 moved toward the run's 58, not away from it.",
+    "trigger": "A nonpartisan likely-voter poll with Paxton ahead.",
+    "sources": [
+      "https://polymarket.com/event/texas-senate-election-winner",
+      "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate",
+      "https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/",
+      "https://www.texastribune.org/2026/10/20/texas-early-voting-records-election/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "poll",
+    "triggers": [
+      "Impact Research (LV, through 2026-10-21) shows D+1 in a race with 2 other polls in 21 days"
+    ],
+    "facts": "Flagged: Impact Research (LV, through 2026-10-21) shows D+1 in a race with 2 other polls in 21 days. News in the last 48 hours: 112 articles (49 rally, 7 poll, 3 ad, 1 debate, 1 legal, 1 money, 0 endorsement, 0 scandal). Polls just in: Impact Research D+1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "In Iowa stronghold , Trump urges Republicans to turn out and vote",
+          "url": "https://www.sowetan.co.za/news/world/2026-10-23-in-iowa-stronghold-trump-urges-republicans-to-turn-out-and-vote/",
+          "domain": "sowetan.co.za",
+          "seendate": "2026-10-23T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Reported challenges with touchscreen voting machines dont signal election rigging",
+          "url": "https://jcpost.com/posts/d2769140-6b72-4c0b-8062-4eddfeae1ff5",
+          "domain": "jcpost.com",
+          "seendate": "2026-10-23T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Youre 17 , Arent You ?: Escort Claims Lindsey Graham Asked His Age During Alleged Paid Encounter in New Documentary",
+          "url": "https://www.ibtimes.co.uk/documentary-lindsey-graham-escort-allegations-1827374",
+          "domain": "ibtimes.co.uk",
+          "seendate": "2026-10-23T08:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Trump Honors Graham Memory While Retreating From His Russia Strategy",
+          "url": "https://finchannel.com/trump-honors-grahams-memory-while-retreating-from-his-russia-strategy/139180/americas/white-house-en/2026/10/",
+          "domain": "finchannel.com",
+          "seendate": "2026-10-23T06:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Darline Graham Silent During Air Force One Ride",
+          "url": "https://politicalwire.com/2026/10/22/darline-graham-silent-during-air-force-one-ride/",
+          "domain": "politicalwire.com",
+          "seendate": "2026-10-23T02:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Evander Holyfield Takes the Stage With Trump in South Carolina as the Rally Boxing Card Reaches Four",
+          "url": "https://www.boxinginsider.com/headlines/evander-holyfield-takes-the-stage-with-trump-in-south-carolina-as-the-rally-boxing-card-reaches-four/",
+          "domain": "boxinginsider.com",
+          "seendate": "2026-10-23T01:00:00Z",
+          "kinds": [
+            "rally"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 3,
+        "debate": 1,
+        "endorsement": 0,
+        "rally": 49,
+        "poll": 7,
+        "legal": 1,
+        "scandal": 0,
+        "money": 1,
+        "other": 50
+      },
+      "polls": [
+        {
+          "pollster": "Impact Research",
+          "sponsor": null,
+          "start_date": "2026-10-15",
+          "end_date": "2026-10-21",
+          "population": "LV",
+          "sample": 800,
+          "d": 45.0,
+          "r": 44.0,
+          "margin_d": 1.0,
+          "source_url": "https://freshstartpac.org/wp-content/uploads/2026/10/SC-Senate-Track-Public-Memo.pdf"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -2.0,
+        "n": 3,
+        "newest": "2026-10-21"
+      },
+      "market_path": [
+        [
+          "2026-10-24T01:12:04-04:00",
+          0.2
+        ],
+        [
+          "2026-10-24T03:58:35-04:00",
+          0.2
+        ],
+        [
+          "2026-10-24T07:19:51-04:00",
+          0.2025
+        ],
+        [
+          "2026-10-24T09:45:08-04:00",
+          0.205
+        ],
+        [
+          "2026-10-24T11:05:34-04:00",
+          0.205
+        ],
+        [
+          "2026-10-24T12:01:39-04:00",
+          0.205
+        ],
+        [
+          "2026-10-24T13:03:59-04:00",
+          0.205
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "A PAC poll has Andrews up 1 and the model leaves it out",
+    "what_happened": "Impact Research, LV, 800, Oct 15 to 21, Andrews 45 Graham 44, published as a memo on Fresh Start PAC's site (retrieved, poll feed). Fresh Start SC PAC is the committee spending for Andrews and against Graham, about $2.5 million by Semafor's Sept 17 count (retrieved, search snippet). The memo PDF is image-only and WebFetch could not read it, so the field details come from the feed (retrieved). Impact Research's earlier waves for the Andrews side were a 41 to 41 tie in August and Andrews 42 to 39 in a later August wave (retrieved, Newsweek and search snippets). The poll average is R+2 over three polls, Impact Research, Trafalgar and Rasmussen (retrieved). The feed's 112 items are mostly the Trump rally in South Carolina, with Evander Holyfield on stage (retrieved titles). Markets 20 to 20.5 intraday (retrieved). South Carolina has 363,566 ballots in, 2.10 times 2022 at the same point (retrieved).",
+    "why_it_moved": "A sponsor-released poll timed with the PAC's spend (inferred). All four polls in the window are from partisan firms, so nothing the model counts has polled the race (retrieved, model.excluded).",
+    "should_it_move_us": "No. The model excludes Impact Research as partisan (D), counts no poll in the window, and sits at 0.5 with a margin of -8.95 on fundamentals and ratings. The run is at 5 and the market at 20.",
+    "trigger": "A nonpartisan likely-voter poll with Andrews within 3.",
+    "sources": [
+      "https://freshstartpac.org/wp-content/uploads/2026/10/SC-Senate-Track-Public-Memo.pdf",
+      "https://semafor.com/article/09/17/2026/democratic-group-launches-campaign-to-boost-graham-challenger",
+      "https://www.newsweek.com/annie-andrews-chances-of-beating-darline-graham-south-carolina-12364487"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "poll",
+    "triggers": [
+      "Global Strategy Group (LV, through 2026-10-21) shows D+0 in a race with 1 other poll in 21 days"
+    ],
+    "facts": "Flagged: Global Strategy Group (LV, through 2026-10-21) shows D+0 in a race with 1 other poll in 21 days. News in the last 48 hours: 0 articles. Polls just in: Global Strategy Group D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Global Strategy Group",
+          "sponsor": null,
+          "start_date": "2026-10-18",
+          "end_date": "2026-10-21",
+          "population": "LV",
+          "sample": 600,
+          "d": 47.0,
+          "r": 47.0,
+          "margin_d": 0.0,
+          "source_url": "https://globalstrategygroup.app.box.com/s/vwojuwfb4y52lmvw4r5c5b60svfyrmqc"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -1.5,
+        "n": 2,
+        "newest": "2026-10-21"
+      },
+      "market_path": [
+        [
+          "2026-10-24T01:12:04-04:00",
+          0.2525
+        ],
+        [
+          "2026-10-24T03:58:35-04:00",
+          0.25
+        ],
+        [
+          "2026-10-24T07:19:51-04:00",
+          0.245
+        ],
+        [
+          "2026-10-24T09:45:08-04:00",
+          0.255
+        ],
+        [
+          "2026-10-24T11:05:34-04:00",
+          0.255
+        ],
+        [
+          "2026-10-24T12:01:39-04:00",
+          0.255
+        ],
+        [
+          "2026-10-24T13:03:59-04:00",
+          0.2525
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "A Democratic internal in Kansas shows a tie",
+    "what_happened": "Global Strategy Group, LV, 600, Oct 18 to 21, Holscher 47 Masterson 47, from a Box link (retrieved, poll feed, the link was not fetched). GSG's polls for the Democratic side showed Holscher +1 in August and +3 in September (retrieved, KWCH and the Sunflower State Journal via search). The nonpartisan polls are NYT/Siena through Sept 30, Masterson +5, and YouGov through Oct 4, Masterson +3 (retrieved, model.polls). The feed has 0 articles in 48 hours. Kalshi moved 22.5 to 25.0 since the last pull and the intraday path sat between 24.5 and 25.5 (retrieved). Kansas has 154,074 ballots in, 47.7 percent from registered Democrats (retrieved).",
+    "why_it_moved": "The Democratic side released a tie, a step down from its own September wave (inferred). The Kalshi move is 2.5 on a thin market with nothing in the feed behind it (inferred).",
+    "should_it_move_us": "No. The model excludes GSG as partisan (D) and sits at 25.45 with a margin of -4.43 on the two nonpartisan polls. The run is 25 and the market 25.2.",
+    "trigger": "A nonpartisan likely-voter poll inside 3.",
+    "sources": [
+      "https://globalstrategygroup.app.box.com/s/vwojuwfb4y52lmvw4r5c5b60svfyrmqc",
+      "https://www.kwch.com/2026/08/28/poll-shows-tight-race-kansas-governor/",
+      "https://sunflowerstatejournal.com/new-york-times-poll-shows-masterson-up-five-points-in-governors-race/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-24",
+    "kind": "item",
+    "item_id": "sc01",
+    "item": "sc01",
+    "flag_kind": "poll",
+    "triggers": [
+      "Public Policy Polling (LV, through 2026-10-22) shows D+2 in a race with 1 other poll in 21 days"
+    ],
+    "facts": "Flagged: Public Policy Polling (LV, through 2026-10-22) shows D+2 in a race with 1 other poll in 21 days. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Public Policy Polling D+2 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "Public Policy Polling",
+          "sponsor": null,
+          "start_date": "2026-10-21",
+          "end_date": "2026-10-22",
+          "population": "LV",
+          "sample": 770,
+          "d": 47.0,
+          "r": 45.0,
+          "margin_d": 2.0,
+          "source_url": "https://x.com/cjwarnke/status/2113636550357528714"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.5,
+        "n": 2,
+        "newest": "2026-10-22"
+      },
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "PPP has Lacore up 2 in SC-01, surfaced on a tweet",
+    "what_happened": "Public Policy Polling, LV, 770, Oct 21 to 22, Lacore 47 Honeycutt 45, surfaced through a post on X (retrieved, poll feed). No sponsor is named. PPP is a Democratic firm (retrieved for the firm, sponsor not retrieved). The other poll in 21 days is GQR, Sept 30 to Oct 4, Lacore +3, also a Democratic firm (retrieved, Prediction Edge table). The same table lists co/efficient (R), Sept 30 to Oct 1, Honeycutt +6, and Kalshi at 63 for Honeycutt on Oct 24 (retrieved). The FEC pre-general report through Oct 14 has Lacore's cash at $175,304, down 68 percent from Sept 30, which is 32 percent of her Q3 and above the lock's 30 percent flag line (retrieved, changes.json). The feed has 0 articles. The board's item is the margin, not a chance: the run has R+6, DDHQ R+5 Lean R, and no market on the board.",
+    "why_it_moved": "Two Democratic-firm polls in three weeks, both inside 3, in a district the run rates R+6 (inferred). Nothing nonpartisan has polled it (retrieved).",
+    "should_it_move_us": "Wait. There is no core model for House districts, the run's R+6 was set with no district poll, and two Democratic-side polls at D+2 and D+3 against one Republican-side poll at R+6 do not settle it.",
+    "trigger": "A nonpartisan district poll, or the sponsor of the PPP poll.",
+    "sources": [
+      "https://x.com/cjwarnke/status/2113636550357528714",
+      "https://www.predictionedge.com/elections/us-house/south-carolina-district-1-race-winner-by-party/"
     ],
     "label": "inferred"
   }
