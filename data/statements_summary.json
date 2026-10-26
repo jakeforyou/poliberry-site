@@ -1,43 +1,17 @@
 [
   {
-    "as_of": "2026-10-23",
+    "as_of": null,
     "days": 7,
-    "this_period": {
-      "start": "2026-10-17",
-      "end": "2026-10-23",
-      "articles": 1842,
-      "usable_days": 6,
-      "skipped_days": [
-        "2026-10-23"
-      ]
-    },
-    "prior_period": {
-      "start": "2026-10-10",
-      "end": "2026-10-16",
-      "articles": 657,
-      "usable_days": 2,
-      "skipped_days": [
-        "2026-10-10",
-        "2026-10-11",
-        "2026-10-12",
-        "2026-10-13",
-        "2026-10-14"
-      ]
-    },
+    "this_period": null,
+    "prior_period": null,
     "change_pct": null,
-    "direction": "unclear",
-    "top_kind": "rigged or fraud claim",
-    "top_kind_articles": 65,
-    "top_speaker": "Donald Trump",
-    "top_speaker_articles": 1573,
-    "counts_source": "daily",
-    "baseline": {
-      "usable_days": 26,
-      "per_day": 239.6,
-      "this_per_day": 307.0,
-      "change_pct": 28.1
-    },
-    "sentence": "Coverage of election-legitimacy statements runs 28.1 percent above its average over the 26 earlier usable days (307 articles a day against 239.6) but cannot be compared week over week because GDELT has usable data for 6 of 7 days this week and 2 of 7 days the week before.",
+    "direction": "none",
+    "top_kind": null,
+    "top_kind_articles": 0,
+    "top_speaker": null,
+    "top_speaker_articles": 0,
+    "counts_source": null,
+    "sentence": "No coverage of election-legitimacy statements was retrieved.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",

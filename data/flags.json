@@ -672,44 +672,11 @@
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": -1.75,
-        "n": 4,
-        "newest": "2026-10-20"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.6075
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.6075
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.6075
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.605
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.6
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.6
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.6
-        ]
-      ],
-      "events_window_hours": 48
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
-    "reading": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -730,44 +697,11 @@
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 3.25,
-        "n": 8,
-        "newest": "2026-10-20"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.82
-        ]
-      ],
-      "events_window_hours": 48
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
-    "reading": "Flagged: Cook changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Cook changed its rating, Tossup to Lean D (flip). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -787,254 +721,313 @@
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved -3.0 points since the last pull (Polymarket 66.5 to 62.5; Kalshi 65.5 to 63.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-25",
+    "item_id": "ga_margin_above_4",
+    "item": "Ossoff wins GA by more than 4",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +4.0 points since the last pull (Polymarket 86.0 to 90.0%)"
+    ],
+    "weight": 4.0,
+    "source_url": "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved +4.0 points since the last pull (Polymarket 86.0 to 90.0%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-25",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved -3.0 points since the last pull (Kalshi 63.5 to 60.5%)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://kalshi.com/markets/senateme",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: markets moved -3.0 points since the last pull (Kalshi 63.5 to 60.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-26",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved -3.5 points since the last pull (Polymarket 63.5 to 60.0%)"
+    ],
+    "weight": 3.5,
+    "source_url": "https://polymarket.com/event/maine-senate-election-winner",
+    "kind": "market",
+    "why": {
+      "events": [
         {
-          "pollster": "Rasmussen Reports",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-21",
-          "population": "LV",
-          "sample": 965,
-          "d": 45.0,
-          "r": 45.0,
-          "margin_d": 0.0,
-          "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate"
+          "title": "Matthew Horwood",
+          "url": "https://www.theepochtimes.com/author/matthew-horwood",
+          "domain": "theepochtimes.com",
+          "seendate": "2026-10-26T05:00:00Z",
+          "kinds": [
+            "other"
+          ]
         },
         {
-          "pollster": "ActiVote",
-          "sponsor": null,
-          "start_date": "2026-10-17",
-          "end_date": "2026-10-21",
-          "population": "LV",
-          "sample": 400,
-          "d": 51.0,
-          "r": 49.0,
-          "margin_d": 2.0,
-          "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/"
+          "title": "Barack Obama mocks President Trump tariff war with Canada",
+          "url": "https://toronto.citynews.ca/2026/10/25/well-known-evil-empire-barack-obama-mocks-president-trumps-tariff-war-with-canada/",
+          "domain": "toronto.citynews.ca",
+          "seendate": "2026-10-25T19:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "GNR Sunday 10 / 25 ☀️ Good News Roundup ☀️ 53 Pips from Bill and Jess ☀️ Poll : Are you helping to Get Out The Vote ?",
+          "url": "https://www.dailykos.com/stories/2026/10/25/800117338/community/gnr-sunday-10-25-%E2%98%80%EF%B8%8F-good-news-roundup-%E2%98%80%EF%B8%8F-53-pips-from-bill-and-jess-%E2%98%80%EF%B8%8F-poll/",
+          "domain": "dailykos.com",
+          "seendate": "2026-10-25T12:30:00Z",
+          "kinds": [
+            "poll"
+          ]
+        },
+        {
+          "title": "What Toronto mayoral race tells us about partisanship",
+          "url": "https://www.niagarafallsreview.ca/opinion/contributors/what-toronto-s-mayoral-race-tells-us-about-partisanship/article_f5562fe8-9977-56e9-bf24-37363b63f526.html",
+          "domain": "niagarafallsreview.ca",
+          "seendate": "2026-10-25T10:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Why Democrats could find it hard to win the Senate despite their strong polls",
+          "url": "https://www.westhawaiitoday.com/2026/10/25/top-news/why-democrats-could-find-it-hard-to-win-the-senate-despite-their-strong-polls/",
+          "domain": "westhawaiitoday.com",
+          "seendate": "2026-10-25T10:30:00Z",
+          "kinds": [
+            "poll"
+          ]
+        },
+        {
+          "title": "Once adrift , Graham Platner fleet of volunteers finds new purpose",
+          "url": "https://www.pressherald.com/2026/10/25/once-adrift-graham-platners-volunteer-fleet-finds-purpose-in-self-organizing/",
+          "domain": "pressherald.com",
+          "seendate": "2026-10-25T09:45:00Z",
+          "kinds": [
+            "other"
+          ]
         }
       ],
-      "poll_average": {
-        "margin_d": 2.35,
-        "n": 17,
-        "newest": "2026-10-21"
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 3,
+        "legal": 1,
+        "scandal": 0,
+        "money": 0,
+        "other": 24
       },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.6375
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.63
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.63
-        ]
-      ],
-      "events_window_hours": 48
-    },
-    "reading": "Flagged: markets moved -3.0 points since the last pull (Polymarket 66.5 to 62.5; Kalshi 65.5 to 63.5%). News in the last 48 hours: 0 articles. Polls just in: Rasmussen Reports D+0 (LV); ActiVote D+2 (LV). No reading yet. The morning brief explains every flagged item.",
-    "needs_why": true,
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-10-24",
-    "item_id": "senate_sc",
-    "item": "Senate · SC",
-    "kinds": [
-      "poll"
-    ],
-    "triggers": [
-      "Impact Research (LV, through 2026-10-21) shows D+1 in a race with 2 other polls in 21 days"
-    ],
-    "weight": 3.0,
-    "source_url": "https://freshstartpac.org/wp-content/uploads/2026/10/SC-Senate-Track-Public-Memo.pdf",
-    "kind": "poll",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
       "polls": [
         {
-          "pollster": "Impact Research",
+          "pollster": "Trafalgar Group",
           "sponsor": null,
-          "start_date": "2026-10-15",
-          "end_date": "2026-10-21",
+          "start_date": "2026-10-21",
+          "end_date": "2026-10-23",
           "population": "LV",
-          "sample": 800,
-          "d": 45.0,
-          "r": 44.0,
-          "margin_d": 1.0,
-          "source_url": "https://freshstartpac.org/wp-content/uploads/2026/10/SC-Senate-Track-Public-Memo.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -2.0,
-        "n": 3,
-        "newest": "2026-10-21"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.2
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.2
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.2025
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.205
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.205
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.205
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.205
-        ]
-      ],
-      "events_window_hours": 48
-    },
-    "reading": "Flagged: Impact Research (LV, through 2026-10-21) shows D+1 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Impact Research D+1 (LV). No reading yet. The morning brief explains every flagged item.",
-    "needs_why": true,
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-10-24",
-    "item_id": "gov_ks",
-    "item": "Governor · KS",
-    "kinds": [
-      "poll"
-    ],
-    "triggers": [
-      "Global Strategy Group (LV, through 2026-10-21) shows D+0 in a race with 1 other poll in 21 days"
-    ],
-    "weight": 3.0,
-    "source_url": "https://globalstrategygroup.app.box.com/s/vwojuwfb4y52lmvw4r5c5b60svfyrmqc",
-    "kind": "poll",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Global Strategy Group",
-          "sponsor": null,
-          "start_date": "2026-10-18",
-          "end_date": "2026-10-21",
-          "population": "LV",
-          "sample": 600,
+          "sample": 1077,
           "d": 47.0,
           "r": 47.0,
           "margin_d": 0.0,
-          "source_url": "https://globalstrategygroup.app.box.com/s/vwojuwfb4y52lmvw4r5c5b60svfyrmqc"
+          "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf"
         }
       ],
       "poll_average": {
-        "margin_d": -1.5,
-        "n": 2,
-        "newest": "2026-10-21"
+        "margin_d": 1.67,
+        "n": 6,
+        "newest": "2026-10-23"
       },
       "market_path": [
         [
-          "2026-10-24T01:12:04-04:00",
-          0.2525
+          "2026-10-26T01:51:10-04:00",
+          0.595
         ],
         [
-          "2026-10-24T03:58:35-04:00",
-          0.25
+          "2026-10-26T05:39:05-04:00",
+          0.5975
         ],
         [
-          "2026-10-24T07:19:51-04:00",
-          0.245
+          "2026-10-26T07:26:25-04:00",
+          0.5975
         ],
         [
-          "2026-10-24T09:45:08-04:00",
-          0.255
+          "2026-10-26T08:30:28-04:00",
+          0.595
         ],
         [
-          "2026-10-24T11:05:34-04:00",
-          0.255
+          "2026-10-26T09:02:16-04:00",
+          0.5975
         ],
         [
-          "2026-10-24T12:01:39-04:00",
-          0.255
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.2525
+          "2026-10-26T10:00:00-04:00",
+          0.5975
         ]
       ],
       "events_window_hours": 48
     },
-    "reading": "Flagged: Global Strategy Group (LV, through 2026-10-21) shows D+0 in a race with 1 other poll in 21 days. News in the last 48 hours: 0 articles. Polls just in: Global Strategy Group D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved -3.5 points since the last pull (Polymarket 63.5 to 60.0%). News in the last 48 hours: 28 articles (3 poll, 1 legal, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 scandal, 0 money). Polls just in: Trafalgar Group D+0 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-24",
-    "item_id": "sc01",
-    "item": "sc01",
+    "as_of": "2026-10-26",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
     "kinds": [
-      "poll"
+      "rating"
     ],
     "triggers": [
-      "Public Policy Polling (LV, through 2026-10-22) shows D+2 in a race with 1 other poll in 21 days"
+      "Silver Bulletin changed its rating, Lean D (flip) to Tossup"
     ],
     "weight": 3.0,
-    "source_url": "https://x.com/cjwarnke/status/2113636550357528714",
-    "kind": "poll",
+    "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
+    "kind": "rating",
     "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
+      "events": [
         {
-          "pollster": "Public Policy Polling",
-          "sponsor": null,
-          "start_date": "2026-10-21",
-          "end_date": "2026-10-22",
-          "population": "LV",
-          "sample": 770,
-          "d": 47.0,
-          "r": 45.0,
-          "margin_d": 2.0,
-          "source_url": "https://x.com/cjwarnke/status/2113636550357528714"
+          "title": "Iowa U . S . Senate candidates disagree on range of issues",
+          "url": "http://www.wataugademocrat.com/news/national/iowa-u-s-senate-candidates-disagree-on-range-of-issues/article_17b6dd4e-b213-5f07-b0d8-de3ca5f6c778.html",
+          "domain": "wataugademocrat.com",
+          "seendate": "2026-10-25T18:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Talking to every single person matter :  prairie populist canvass the rural US heartland to win in midterms | US midterm elections 2026",
+          "url": "https://www.theguardian.com/us-news/2026/oct/25/prairie-populists-midwest-prairie-states-midterm-elections",
+          "domain": "theguardian.com",
+          "seendate": "2026-10-25T12:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Josh Turek , the Paralympic gold medalist seeking a US Senate seat from Iowa",
+          "url": "https://www.hindustantimes.com/world-news/us-news/josh-turek-the-paralympic-gold-medalist-seeking-a-us-senate-seat-from-iowa-101792611170895.html",
+          "domain": "hindustantimes.com",
+          "seendate": "2026-10-25T10:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Trump hits midterm rally trail as Republicans defend home turf : five takeaways",
+          "url": "https://www.hindustantimes.com/world-news/trump-hits-midterm-rally-trail-as-republicans-defend-home-turf-five-takeaways-101792843262862.html",
+          "domain": "hindustantimes.com",
+          "seendate": "2026-10-24T16:15:00Z",
+          "kinds": [
+            "rally"
+          ]
+        },
+        {
+          "title": "AOC rebukes anti - trans Democrats , calling them  Shameful  and  wrong  for  scaring so easily  – Lake County Record - Bee",
+          "url": "https://www.record-bee.com/2026/10/24/aoc-rebukes-anti-trans-democrats-calling-them-shameful-and-wrong-for-scaring-so-easily/",
+          "domain": "record-bee.com",
+          "seendate": "2026-10-24T16:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Election 2026 : What to know about the November midterm key races",
+          "url": "https://www.fox13news.com/news/election-2026-questions-key-races",
+          "domain": "fox13news.com",
+          "seendate": "2026-10-24T15:00:00Z",
+          "kinds": [
+            "other"
+          ]
         }
       ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 5,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 7
+      },
+      "polls": [],
       "poll_average": {
-        "margin_d": 2.5,
-        "n": 2,
+        "margin_d": -0.89,
+        "n": 9,
         "newest": "2026-10-22"
       },
-      "market_path": [],
+      "market_path": [
+        [
+          "2026-10-26T01:51:10-04:00",
+          0.415
+        ],
+        [
+          "2026-10-26T05:39:05-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T07:26:25-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T08:30:28-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T09:02:16-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T10:00:00-04:00",
+          0.4175
+        ]
+      ],
       "events_window_hours": 48
     },
-    "reading": "Flagged: Public Policy Polling (LV, through 2026-10-22) shows D+2 in a race with 1 other poll in 21 days. News in the last 48 hours: 0 articles. Polls just in: Public Policy Polling D+2 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. News in the last 48 hours: 12 articles (5 rally, 0 ad, 0 debate, 0 endorsement, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   }

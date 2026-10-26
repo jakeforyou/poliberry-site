@@ -1012,8 +1012,8 @@
     "item_id": null,
     "text": "Two raters moved two governor races on Friday and the model moved on neither. Cook took Ohio from Toss Up to Lean D after a week of backlash to the Ramaswamy ad, and Silver Bulletin took Georgia from Lean D back to Tossup, each on polls the model already holds. Texas is the day's largest market move, Polymarket 66.5 to 62.5 after a Rasmussen tie that the model counted. Three Democratic-side polls in South Carolina, Kansas and SC-01 show a tie or a small Democratic lead, and the model leaves all three out as partisan. The snapshot started at 09:45 and committed at 13:36, so the prices here are early-afternoon prices.",
     "written_at": "2026-10-24T13:45:02-04:00",
-    "n_flags": 6,
-    "n_explained": 6,
+    "n_flags": 3,
+    "n_explained": 3,
     "stale": null,
     "label": "inferred"
   },
@@ -1041,47 +1041,14 @@
     "triggers": [
       "Silver Bulletin changed its rating, Lean D (flip) to Tossup"
     ],
-    "facts": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": -1.75,
-        "n": 4,
-        "newest": "2026-10-20"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.6075
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.6075
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.6075
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.605
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.6
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.6
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.6
-        ]
-      ],
-      "events_window_hours": 48
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Silver Bulletin pulls Georgia back to Tossup",
@@ -1105,47 +1072,14 @@
     "triggers": [
       "Cook changed its rating, Tossup to Lean D (flip)"
     ],
-    "facts": "Flagged: Cook changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Cook changed its rating, Tossup to Lean D (flip). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 3.25,
-        "n": 8,
-        "newest": "2026-10-20"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.82
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.82
-        ]
-      ],
-      "events_window_hours": 48
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Cook leans Ohio to Acton after the ad week",
@@ -1168,72 +1102,14 @@
     "triggers": [
       "markets moved -3.0 points since the last pull (Polymarket 66.5 to 62.5; Kalshi 65.5 to 63.5%)"
     ],
-    "facts": "Flagged: markets moved -3.0 points since the last pull (Polymarket 66.5 to 62.5; Kalshi 65.5 to 63.5%). News in the last 48 hours: 0 articles. Polls just in: Rasmussen Reports D+0 (LV); ActiVote D+2 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved -3.0 points since the last pull (Polymarket 66.5 to 62.5; Kalshi 65.5 to 63.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Rasmussen Reports",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-21",
-          "population": "LV",
-          "sample": 965,
-          "d": 45.0,
-          "r": 45.0,
-          "margin_d": 0.0,
-          "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate"
-        },
-        {
-          "pollster": "ActiVote",
-          "sponsor": null,
-          "start_date": "2026-10-17",
-          "end_date": "2026-10-21",
-          "population": "LV",
-          "sample": 400,
-          "d": 51.0,
-          "r": 49.0,
-          "margin_d": 2.0,
-          "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.35,
-        "n": 17,
-        "newest": "2026-10-21"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.6375
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.635
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.63
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.63
-        ]
-      ],
-      "events_window_hours": 48
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Texas markets give back three points on a Rasmussen tie",
@@ -1254,65 +1130,10 @@
     "kind": "item",
     "item_id": "senate_sc",
     "item": "Senate · SC",
-    "flag_kind": "poll",
-    "triggers": [
-      "Impact Research (LV, through 2026-10-21) shows D+1 in a race with 2 other polls in 21 days"
-    ],
-    "facts": "Flagged: Impact Research (LV, through 2026-10-21) shows D+1 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Impact Research D+1 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Impact Research",
-          "sponsor": null,
-          "start_date": "2026-10-15",
-          "end_date": "2026-10-21",
-          "population": "LV",
-          "sample": 800,
-          "d": 45.0,
-          "r": 44.0,
-          "margin_d": 1.0,
-          "source_url": "https://freshstartpac.org/wp-content/uploads/2026/10/SC-Senate-Track-Public-Memo.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -2.0,
-        "n": 3,
-        "newest": "2026-10-21"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.2
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.2
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.2025
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.205
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.205
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.205
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.205
-        ]
-      ],
-      "events_window_hours": 48
-    },
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
     "explained": true,
     "headline": "A PAC poll has Andrews up 1 and the model leaves it out",
     "what_happened": "Impact Research, LV, 800, Oct 15 to 21, Andrews 45 Graham 44, published as a memo on Fresh Start PAC's site (retrieved, poll feed). Fresh Start SC PAC is the committee spending for Andrews and against Graham, about $2.5 million by Semafor's Sept 17 count (retrieved, search snippet). The memo PDF is image-only and WebFetch could not read it, so the field details come from the feed (retrieved). Impact Research's earlier waves for the Andrews side were a 41 to 41 tie in August and Andrews 42 to 39 in a later August wave (retrieved, Newsweek and search snippets). The poll average is R+2 over three polls, Impact Research, Trafalgar and Rasmussen (retrieved). The feed's 112 items are mostly the Trump rally in South Carolina, with Evander Holyfield on stage (retrieved titles). Markets 20 to 20.5 intraday (retrieved). South Carolina has 363,566 ballots in, 2.10 times 2022 at the same point (retrieved).",
@@ -1331,65 +1152,10 @@
     "kind": "item",
     "item_id": "gov_ks",
     "item": "Governor · KS",
-    "flag_kind": "poll",
-    "triggers": [
-      "Global Strategy Group (LV, through 2026-10-21) shows D+0 in a race with 1 other poll in 21 days"
-    ],
-    "facts": "Flagged: Global Strategy Group (LV, through 2026-10-21) shows D+0 in a race with 1 other poll in 21 days. News in the last 48 hours: 0 articles. Polls just in: Global Strategy Group D+0 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Global Strategy Group",
-          "sponsor": null,
-          "start_date": "2026-10-18",
-          "end_date": "2026-10-21",
-          "population": "LV",
-          "sample": 600,
-          "d": 47.0,
-          "r": 47.0,
-          "margin_d": 0.0,
-          "source_url": "https://globalstrategygroup.app.box.com/s/vwojuwfb4y52lmvw4r5c5b60svfyrmqc"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -1.5,
-        "n": 2,
-        "newest": "2026-10-21"
-      },
-      "market_path": [
-        [
-          "2026-10-24T01:12:04-04:00",
-          0.2525
-        ],
-        [
-          "2026-10-24T03:58:35-04:00",
-          0.25
-        ],
-        [
-          "2026-10-24T07:19:51-04:00",
-          0.245
-        ],
-        [
-          "2026-10-24T09:45:08-04:00",
-          0.255
-        ],
-        [
-          "2026-10-24T11:05:34-04:00",
-          0.255
-        ],
-        [
-          "2026-10-24T12:01:39-04:00",
-          0.255
-        ],
-        [
-          "2026-10-24T13:03:59-04:00",
-          0.2525
-        ]
-      ],
-      "events_window_hours": 48
-    },
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
     "explained": true,
     "headline": "A Democratic internal in Kansas shows a tie",
     "what_happened": "Global Strategy Group, LV, 600, Oct 18 to 21, Holscher 47 Masterson 47, from a Box link (retrieved, poll feed, the link was not fetched). GSG's polls for the Democratic side showed Holscher +1 in August and +3 in September (retrieved, KWCH and the Sunflower State Journal via search). The nonpartisan polls are NYT/Siena through Sept 30, Masterson +5, and YouGov through Oct 4, Masterson +3 (retrieved, model.polls). The feed has 0 articles in 48 hours. Kalshi moved 22.5 to 25.0 since the last pull and the intraday path sat between 24.5 and 25.5 (retrieved). Kansas has 154,074 ballots in, 47.7 percent from registered Democrats (retrieved).",
@@ -1407,37 +1173,11 @@
     "as_of": "2026-10-24",
     "kind": "item",
     "item_id": "sc01",
-    "item": "sc01",
-    "flag_kind": "poll",
-    "triggers": [
-      "Public Policy Polling (LV, through 2026-10-22) shows D+2 in a race with 1 other poll in 21 days"
-    ],
-    "facts": "Flagged: Public Policy Polling (LV, through 2026-10-22) shows D+2 in a race with 1 other poll in 21 days. News in the last 48 hours: 0 articles. Polls just in: Public Policy Polling D+2 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Public Policy Polling",
-          "sponsor": null,
-          "start_date": "2026-10-21",
-          "end_date": "2026-10-22",
-          "population": "LV",
-          "sample": 770,
-          "d": 47.0,
-          "r": 45.0,
-          "margin_d": 2.0,
-          "source_url": "https://x.com/cjwarnke/status/2113636550357528714"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.5,
-        "n": 2,
-        "newest": "2026-10-22"
-      },
-      "market_path": [],
-      "events_window_hours": 48
-    },
+    "item": "SC-01",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
     "explained": true,
     "headline": "PPP has Lacore up 2 in SC-01, surfaced on a tweet",
     "what_happened": "Public Policy Polling, LV, 770, Oct 21 to 22, Lacore 47 Honeycutt 45, surfaced through a post on X (retrieved, poll feed). No sponsor is named. PPP is a Democratic firm (retrieved for the firm, sponsor not retrieved). The other poll in 21 days is GQR, Sept 30 to Oct 4, Lacore +3, also a Democratic firm (retrieved, Prediction Edge table). The same table lists co/efficient (R), Sept 30 to Oct 1, Honeycutt +6, and Kalshi at 63 for Honeycutt on Oct 24 (retrieved). The FEC pre-general report through Oct 14 has Lacore's cash at $175,304, down 68 percent from Sept 30, which is 32 percent of her Q3 and above the lock's 30 percent flag line (retrieved, changes.json). The feed has 0 articles. The board's item is the margin, not a chance: the run has R+6, DDHQ R+5 Lean R, and no market on the board.",
@@ -1447,6 +1187,408 @@
     "sources": [
       "https://x.com/cjwarnke/status/2113636550357528714",
       "https://www.predictionedge.com/elections/us-house/south-carolina-district-1-race-winner-by-party/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-25",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Three flags today and none of them moves the model. Maine is the real one: Kalshi slid from 63.5 to 60.5 for Jackson between Friday afternoon and Sunday, alongside a broader Friday-evening drift across the Senate markets (control down 2.5, Ohio down 2), with a Trafalgar tie landing on the weekend after the Fox tie on Wednesday. The model leaves both ties out as partisan and sits where it was. The Georgia margin flag is a four-point jump in a Polymarket bracket market that traded about 1,750 dollars in a day, not news. SC-01 is Friday's PPP poll flagged a second day with nothing new behind it. The GDELT feed timed out for every race today, so no flag has events behind it, and the snapshot started at 09:34 and committed at 14:45, so these are afternoon prices.",
+    "written_at": "2026-10-25T15:28:53-04:00",
+    "n_flags": 2,
+    "n_explained": 2,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-25",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Texas is halfway to its 2022 vote with nine days left.",
+    "vibe": "Four million Texans have voted, half of everything the state cast in 2022, and the Senate markets spent the weekend giving back a few points on polls the model leaves out.",
+    "sources": [
+      "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
+      "https://kalshi.com/markets/controls",
+      "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf",
+      "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495"
+    ],
+    "written_at": "2026-10-25T15:28:53-04:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-25",
+    "kind": "item",
+    "item_id": "ga_margin_above_4",
+    "item": "Ossoff wins GA by more than 4",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +4.0 points since the last pull (Polymarket 86.0 to 90.0%)"
+    ],
+    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 86.0 to 90.0%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "A thin Georgia bracket market reprices, four points on 1,750 dollars",
+    "what_happened": "The script-derived chance that Ossoff wins by more than 4 rose from 86.0 to 90.0 between Friday and Sunday (retrieved, markets feed). It is computed from Polymarket's margin brackets, uniform within bracket. The Ossoff 0 to 3 bracket fell from 5.6 to 2.8 cents and the Ossoff 18 plus bracket rose from 5.3 to 12.1 cents (retrieved, bracket prices). The whole event has traded 36,593 dollars since August and 1,753 dollars in the last 24 hours, 571 of it in the 18 plus bracket (retrieved, Polymarket API). The Georgia winner market did not move, 95.8 (retrieved). No Georgia poll arrived. The newest counted are ActiVote Oct 20 and UGA Oct 15, both Ossoff +8 (retrieved, model polls). The feed timed out, so there are no articles (retrieved).",
+    "why_it_moved": "A few hundred dollars moved two tail brackets in a market with almost no depth, and the script's uniform-within-bracket rule turned that into four points (inferred). Nothing in the polls or the winner market changed (retrieved).",
+    "should_it_move_us": "No. The model's Georgia margin is +9.3 with an 80 percent range of +4.85 to +13.76 on two polls and fundamentals, and no poll was flagged or added. The run holds 75 on this item against a market of 90 that a single trader could move.",
+    "trigger": "A nonpartisan Georgia poll with Ossoff under +4 or above +12.",
+    "sources": [
+      "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495",
+      "https://gamma-api.polymarket.com/events?slug=georgia-senate-election-first-round-margin-of-victory-20260804175717495",
+      "https://www.activote.net/polls/2026/ga-u-s-senate/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-25",
+    "kind": "item",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -3.0 points since the last pull (Kalshi 63.5 to 60.5%)"
+    ],
+    "facts": "Flagged: markets moved -3.0 points since the last pull (Kalshi 63.5 to 60.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Maine markets give back three points on two ties the model excludes",
+    "what_happened": "Kalshi moved from 63.5 to 60.5 for Jackson between the Friday 13:55 pull and the Sunday 13:00 pull, and Polymarket from 64.5 to 63.5 (retrieved, markets feed). The hourly blended path was 62.25 at midnight and 62.0 at 14:08, so most of the move happened Friday afternoon or evening, before the weekend (retrieved, alerts path). Trafalgar Group, LV, 1,077, Oct 21 to 23, Collins 47 Jackson 47, published as a PDF dated Oct 25 and not yet on the firm's news page (retrieved, PDF and news page). Fox News by Beacon and Shaw, Oct 16 to 20, 49 to 49 among LV and Jackson +2 among RV, released Oct 22 (retrieved, poll feed). Senate control fell 2.5 and Ohio 2 over the same window (retrieved, changes). The GDELT feed timed out, so there are no articles behind the flag (retrieved, events_by_race). A search found a Jackson union rally in Westbrook on Friday and a CNBC tariff piece from Oct 22, nothing that reads as a shock (retrieved, web search).",
+    "why_it_moved": "A Friday-evening slide across the Senate markets that Maine shared, then the Trafalgar tie on the weekend (inferred, in that order). Two ties in four days from firms the model excludes, read by traders as a race at even (inferred). Base rate: Collins has beaten her final polls in every race since 2008, so a market pricing a tie as a Collins edge is following the base rate the run already carries (retrieved for the record, inferred for the reading).",
+    "should_it_move_us": "No. The model excludes Trafalgar and Beacon/Shaw as partisan, counts 5 nonpartisan polls with Suffolk the newest at Jackson +2, and sits at 84.66 with a margin of +3.55. The run is 54 on the Collins base rate and the market at 62 moved toward the run, not away from it.",
+    "trigger": "A nonpartisan likely-voter poll fielded after Oct 20 with Collins ahead.",
+    "sources": [
+      "https://kalshi.com/markets/senateme",
+      "https://polymarket.com/event/maine-senate-election-winner",
+      "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf",
+      "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf",
+      "https://www.newscentermaine.com/article/news/politics/maine-politics/troy-jackson-rallies-union-supporters-as-us-senate-race-in-maine-enters-final-stretch-senator-susan-collins-westbrook/97-b4a86c5c-f94d-4e8b-8d19-4a92a4a5ffb7"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-25",
+    "kind": "item",
+    "item_id": "sc01",
+    "item": "SC-01",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Friday's PPP poll flags again, nothing new behind it",
+    "what_happened": "The flag is the same Public Policy Polling survey as Friday: LV, 770, Oct 21 to 22, Lacore 47 Honeycutt 45, surfaced on X, sponsor not named (retrieved, poll feed). It flags again because the rule counts polls in a 21-day window and the only other is GQR at Lacore +3 (retrieved). No new poll, rating, or market reached the board since Friday's brief (retrieved, changes). The feed timed out (retrieved). A search found no coverage of the poll's release (retrieved, web search).",
+    "why_it_moved": "Nothing moved. The flag repeats because the poll is still inside the window (retrieved).",
+    "should_it_move_us": "Wait. Friday's answer stands: no core model for House districts, the run's R+6 was set with no district poll, and two Democratic-side polls against one Republican-side poll do not settle it.",
+    "trigger": "A nonpartisan district poll, or the sponsor of the PPP poll.",
+    "sources": [
+      "https://x.com/cjwarnke/status/2113636550357528714",
+      "https://www.predictionedge.com/elections/us-house/south-carolina-district-1-race-winner-by-party/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-26",
+    "kind": "lead",
+    "item_id": null,
+    "text": "A quiet Monday. Two items cleared a threshold and neither carries a new nonpartisan poll. The Maine Senate market kept sliding toward Collins on two tied polls the model leaves out, and Silver Bulletin pulled Iowa back from Lean D to Tossup, which puts it with the other raters. No intraday market alert fired. Nothing here moves the model's numbers.",
+    "written_at": "2026-10-26T10:01:30-04:00",
+    "n_flags": 2,
+    "n_explained": 2,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-26",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Maine's market slid three days on polls the model skips.",
+    "vibe": "Polymarket has walked Jackson down from 65.8 on Friday to 60.5 today after two tied Maine polls, and the model, which counts neither, is still reading the five older ones.",
+    "sources": [
+      "https://polymarket.com/event/maine-senate-election-winner",
+      "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf",
+      "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf",
+      "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
+    ],
+    "written_at": "2026-10-26T10:01:30-04:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-26",
+    "kind": "item",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -3.5 points since the last pull (Polymarket 63.5 to 60.0%)"
+    ],
+    "facts": "Flagged: markets moved -3.5 points since the last pull (Polymarket 63.5 to 60.0%). News in the last 48 hours: 28 articles (3 poll, 1 legal, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 scandal, 0 money). Polls just in: Trafalgar Group D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Matthew Horwood",
+          "url": "https://www.theepochtimes.com/author/matthew-horwood",
+          "domain": "theepochtimes.com",
+          "seendate": "2026-10-26T05:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Barack Obama mocks President Trump tariff war with Canada",
+          "url": "https://toronto.citynews.ca/2026/10/25/well-known-evil-empire-barack-obama-mocks-president-trumps-tariff-war-with-canada/",
+          "domain": "toronto.citynews.ca",
+          "seendate": "2026-10-25T19:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "GNR Sunday 10 / 25 ☀️ Good News Roundup ☀️ 53 Pips from Bill and Jess ☀️ Poll : Are you helping to Get Out The Vote ?",
+          "url": "https://www.dailykos.com/stories/2026/10/25/800117338/community/gnr-sunday-10-25-%E2%98%80%EF%B8%8F-good-news-roundup-%E2%98%80%EF%B8%8F-53-pips-from-bill-and-jess-%E2%98%80%EF%B8%8F-poll/",
+          "domain": "dailykos.com",
+          "seendate": "2026-10-25T12:30:00Z",
+          "kinds": [
+            "poll"
+          ]
+        },
+        {
+          "title": "What Toronto mayoral race tells us about partisanship",
+          "url": "https://www.niagarafallsreview.ca/opinion/contributors/what-toronto-s-mayoral-race-tells-us-about-partisanship/article_f5562fe8-9977-56e9-bf24-37363b63f526.html",
+          "domain": "niagarafallsreview.ca",
+          "seendate": "2026-10-25T10:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Why Democrats could find it hard to win the Senate despite their strong polls",
+          "url": "https://www.westhawaiitoday.com/2026/10/25/top-news/why-democrats-could-find-it-hard-to-win-the-senate-despite-their-strong-polls/",
+          "domain": "westhawaiitoday.com",
+          "seendate": "2026-10-25T10:30:00Z",
+          "kinds": [
+            "poll"
+          ]
+        },
+        {
+          "title": "Once adrift , Graham Platner fleet of volunteers finds new purpose",
+          "url": "https://www.pressherald.com/2026/10/25/once-adrift-graham-platners-volunteer-fleet-finds-purpose-in-self-organizing/",
+          "domain": "pressherald.com",
+          "seendate": "2026-10-25T09:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 3,
+        "legal": 1,
+        "scandal": 0,
+        "money": 0,
+        "other": 24
+      },
+      "polls": [
+        {
+          "pollster": "Trafalgar Group",
+          "sponsor": null,
+          "start_date": "2026-10-21",
+          "end_date": "2026-10-23",
+          "population": "LV",
+          "sample": 1077,
+          "d": 47.0,
+          "r": 47.0,
+          "margin_d": 0.0,
+          "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 1.67,
+        "n": 6,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-26T01:51:10-04:00",
+          0.595
+        ],
+        [
+          "2026-10-26T05:39:05-04:00",
+          0.5975
+        ],
+        [
+          "2026-10-26T07:26:25-04:00",
+          0.5975
+        ],
+        [
+          "2026-10-26T08:30:28-04:00",
+          0.595
+        ],
+        [
+          "2026-10-26T09:02:16-04:00",
+          0.5975
+        ],
+        [
+          "2026-10-26T10:00:00-04:00",
+          0.5975
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Market drifts toward Collins on two tied polls",
+    "what_happened": "Retrieved: Polymarket's Jackson price fell from 63.5 at yesterday's pull to 60.0 this morning, and the board's market line has fallen every day since 65.8 on Oct 23. The intraday path today was flat near 59.5 to 59.8, so the drop came overnight or earlier. Trafalgar (R) released a 47 to 47 tie, LV, fielded Oct 21 to 23. Fox News (Beacon and Shaw) released a tie among LV on Oct 22. The GDELT feed had 28 Maine articles in 48 hours, none reporting a new event in the race.",
+    "why_it_moved": "Inferred: the two tied polls, Trafalgar most recently, in that order. A national piece on why Democrats could struggle to win the Senate ran Oct 25 and may have added a little. No scandal, ad or debate in the feed explains it.",
+    "should_it_move_us": "No. The model left both ties out (Trafalgar as partisan R, the Fox poll as a bipartisan-firm poll) and holds Jackson at 85.4 on five nonpartisan polls ending Oct 11 plus fundamentals, while the run sits at 54.",
+    "trigger": "A nonpartisan Maine poll fielded after Oct 20. Its margin decides whether the model's +3.7 is stale or the ties were noise.",
+    "sources": [
+      "https://polymarket.com/event/maine-senate-election-winner",
+      "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf",
+      "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf",
+      "https://www.westhawaiitoday.com/2026/10/25/top-news/why-democrats-could-find-it-hard-to-win-the-senate-despite-their-strong-polls/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-26",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "rating",
+    "triggers": [
+      "Silver Bulletin changed its rating, Lean D (flip) to Tossup"
+    ],
+    "facts": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. News in the last 48 hours: 12 articles (5 rally, 0 ad, 0 debate, 0 endorsement, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Iowa U . S . Senate candidates disagree on range of issues",
+          "url": "http://www.wataugademocrat.com/news/national/iowa-u-s-senate-candidates-disagree-on-range-of-issues/article_17b6dd4e-b213-5f07-b0d8-de3ca5f6c778.html",
+          "domain": "wataugademocrat.com",
+          "seendate": "2026-10-25T18:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Talking to every single person matter :  prairie populist canvass the rural US heartland to win in midterms | US midterm elections 2026",
+          "url": "https://www.theguardian.com/us-news/2026/oct/25/prairie-populists-midwest-prairie-states-midterm-elections",
+          "domain": "theguardian.com",
+          "seendate": "2026-10-25T12:45:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Josh Turek , the Paralympic gold medalist seeking a US Senate seat from Iowa",
+          "url": "https://www.hindustantimes.com/world-news/us-news/josh-turek-the-paralympic-gold-medalist-seeking-a-us-senate-seat-from-iowa-101792611170895.html",
+          "domain": "hindustantimes.com",
+          "seendate": "2026-10-25T10:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Trump hits midterm rally trail as Republicans defend home turf : five takeaways",
+          "url": "https://www.hindustantimes.com/world-news/trump-hits-midterm-rally-trail-as-republicans-defend-home-turf-five-takeaways-101792843262862.html",
+          "domain": "hindustantimes.com",
+          "seendate": "2026-10-24T16:15:00Z",
+          "kinds": [
+            "rally"
+          ]
+        },
+        {
+          "title": "AOC rebukes anti - trans Democrats , calling them  Shameful  and  wrong  for  scaring so easily  – Lake County Record - Bee",
+          "url": "https://www.record-bee.com/2026/10/24/aoc-rebukes-anti-trans-democrats-calling-them-shameful-and-wrong-for-scaring-so-easily/",
+          "domain": "record-bee.com",
+          "seendate": "2026-10-24T16:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Election 2026 : What to know about the November midterm key races",
+          "url": "https://www.fox13news.com/news/election-2026-questions-key-races",
+          "domain": "fox13news.com",
+          "seendate": "2026-10-24T15:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 5,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 7
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": -0.89,
+        "n": 9,
+        "newest": "2026-10-22"
+      },
+      "market_path": [
+        [
+          "2026-10-26T01:51:10-04:00",
+          0.415
+        ],
+        [
+          "2026-10-26T05:39:05-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T07:26:25-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T08:30:28-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T09:02:16-04:00",
+          0.42
+        ],
+        [
+          "2026-10-26T10:00:00-04:00",
+          0.4175
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Silver Bulletin rejoins the pack at Tossup",
+    "what_happened": "Retrieved: Wikipedia's ratings table shows Silver Bulletin at Tossup as of Oct 25, down from Lean D (flip) as of Oct 21. Cook, DDHQ and 50+1 are Tossup. The Economist is Lean R. The two newest Iowa polls are InsiderAdvantage (R) Hinson +2, LV, ending Oct 22, and co/efficient (R) Hinson +3, LV, ending Oct 19. No new poll today. The feed had 12 Iowa articles, mostly rally and profile coverage.",
+    "why_it_moved": "Inferred: Silver's model likely took in the two late Republican-leaning polls, which pull its average toward Hinson. The earlier Lean D was the outlier among raters, so this is a reversion. Inferred from the poll dates, not from Silver's text, which is paywalled.",
+    "should_it_move_us": "No. The model already leaves both polls out as partisan and holds Turek at 41.0 with a Hinson margin of 0.8, close to the market at 41.8 and the run at 43.",
+    "trigger": "A nonpartisan Iowa poll fielded after Oct 15 showing either candidate up 3 or more.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections",
+      "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
+      "https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/",
+      "https://battlegrounds.coefficient.org/ia/"
     ],
     "label": "inferred"
   }

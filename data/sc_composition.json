@@ -1,12 +1,12 @@
 [
   {
     "state": "SC",
-    "as_of": "2026-10-22",
-    "days_out": 12,
-    "through_2022": "2022-10-27",
-    "statewide_2026": 363566,
-    "statewide_2022_same_point": 173107,
-    "ratio_2022": 2.1,
+    "as_of": "2026-10-24",
+    "days_out": 10,
+    "through_2022": "2022-10-29",
+    "statewide_2026": 501944,
+    "statewide_2022_same_point": 238761,
+    "ratio_2022": 2.102,
     "county_groups": [
       {
         "label": "Charleston, Richland and Greenville",
@@ -15,12 +15,12 @@
           "RICHLAND",
           "GREENVILLE"
         ],
-        "ballots_2026": 99036,
-        "share_2026": 27.24,
-        "ballots_2022_same_point": 45216,
-        "share_2022_same_point": 26.12,
-        "share_change": 1.12,
-        "ratio_2022": 2.19,
+        "ballots_2026": 140303,
+        "share_2026": 27.95,
+        "ballots_2022_same_point": 64887,
+        "share_2022_same_point": 27.18,
+        "share_change": 0.77,
+        "ratio_2022": 2.162,
         "label_kind": "retrieved"
       },
       {
@@ -39,12 +39,12 @@
           "SUMTER",
           "WILLIAMSBURG"
         ],
-        "ballots_2026": 87292,
-        "share_2026": 24.01,
-        "ballots_2022_same_point": 41784,
-        "share_2022_same_point": 24.14,
-        "share_change": -0.13,
-        "ratio_2022": 2.089,
+        "ballots_2026": 121347,
+        "share_2026": 24.18,
+        "ballots_2022_same_point": 59095,
+        "share_2022_same_point": 24.75,
+        "share_change": -0.57,
+        "ratio_2022": 2.053,
         "label_kind": "retrieved"
       },
       {
@@ -65,12 +65,12 @@
           "SUMTER",
           "WILLIAMSBURG"
         ],
-        "ballots_2026": 100175,
-        "share_2026": 27.55,
-        "ballots_2022_same_point": 48028,
-        "share_2022_same_point": 27.74,
-        "share_change": -0.19,
-        "ratio_2022": 2.086,
+        "ballots_2026": 138840,
+        "share_2026": 27.66,
+        "ballots_2022_same_point": 67492,
+        "share_2022_same_point": 28.27,
+        "share_change": -0.61,
+        "ratio_2022": 2.057,
         "label_kind": "retrieved"
       },
       {
@@ -87,12 +87,12 @@
           "SUMTER",
           "CLARENDON"
         ],
-        "ballots_2026": 32468,
-        "share_2026": 8.93,
-        "ballots_2022_same_point": 15584,
-        "share_2022_same_point": 9.0,
-        "share_change": -0.07,
-        "ratio_2022": 2.083,
+        "ballots_2026": 43826,
+        "share_2026": 8.73,
+        "ballots_2022_same_point": 20735,
+        "share_2022_same_point": 8.68,
+        "share_change": 0.05,
+        "ratio_2022": 2.114,
         "label_kind": "retrieved"
       }
     ],
@@ -110,27 +110,27 @@
     "geography": {
       "by_2024_lean": {
         "now_2026": {
-          "d_two_party": 41.92,
-          "ballots_weighted": 363566
+          "d_two_party": 42.0,
+          "ballots_weighted": 501944
         },
         "same_point_2022": {
-          "d_two_party": 41.72,
-          "ballots_weighted": 171390
+          "d_two_party": 41.91,
+          "ballots_weighted": 236442
         },
         "weights": "each county's 2024 presidential two-party Democratic share",
-        "swing": 0.2
+        "swing": 0.09
       },
       "by_primary_2026": {
         "now_2026": {
-          "d_two_party": 55.45,
-          "ballots_weighted": 330186
+          "d_two_party": 55.51,
+          "ballots_weighted": 455046
         },
         "same_point_2022": {
-          "d_two_party": 54.74,
-          "ballots_weighted": 152794
+          "d_two_party": 54.91,
+          "ballots_weighted": 209691
         },
         "weights": "each county's Democratic share of June 2026 primary participation",
-        "swing": 0.71
+        "swing": 0.6
       },
       "label": "modeled",
       "in_number": false,
@@ -138,11 +138,11 @@
     },
     "sources": {
       "ev_2026": {
-        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-24T1347-EV-Totals-10-22-26.csv",
+        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-26T0911-EV-Totals-10-25-26.csv",
         "source_url": "https://scvotes.gov/elections-statistics/voter-participation/"
       },
       "archive_2022": {
-        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-24T1347-2022-Historical-Absentee-EV-Reports.zip",
+        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-26T0911-2022-Historical-Absentee-EV-Reports.zip",
         "source_url": "https://scvotes.gov/wp-content/uploads/2022/12/2022-Historical-Absentee-EV-Reports.zip"
       },
       "race_2026": {

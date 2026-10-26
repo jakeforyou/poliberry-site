@@ -1,23 +1,5 @@
 [
   {
-    "key": "SC",
-    "office": "senate",
-    "state": "SC",
-    "label": "Senate · SC",
-    "item_id": "senate_sc",
-    "ours": 5.0,
-    "consensus": 30.0,
-    "category": "Lean R",
-    "favored": "Republican",
-    "score": 5.5,
-    "flags": "raters, ddhq, markets",
-    "n_flags": 3,
-    "reading": "The Republican is favored (5% by us), but we are 25 points below the raters' consensus (Lean R); Decision Desk says 30, 25 above us; the markets moved 5 points against the favorite this week. What flips our call: A nonpartisan likely-voter poll with Andrews within 5, or the Harris counties' share of ballots 3 points above 2022's same point by the close of early voting on Oct 31.",
-    "cand_d": "Annie Andrews",
-    "cand_r": "Darline Graham",
-    "label_kind": "inferred"
-  },
-  {
     "key": "IA",
     "office": "governor",
     "state": "IA",
@@ -72,6 +54,24 @@
     "label_kind": "inferred"
   },
   {
+    "key": "SC",
+    "office": "senate",
+    "state": "SC",
+    "label": "Senate · SC",
+    "item_id": "senate_sc",
+    "ours": 5.0,
+    "consensus": 30.0,
+    "category": "Lean R",
+    "favored": "Republican",
+    "score": 3.5,
+    "flags": "raters, ddhq",
+    "n_flags": 2,
+    "reading": "The Republican is favored (5% by us), but we are 25 points below the raters' consensus (Lean R); Decision Desk says 30, 25 above us. What flips our call: A nonpartisan likely-voter poll with Andrews within 5, or the Harris counties' share of ballots 3 points above 2022's same point by the close of early voting on Oct 31.",
+    "cand_d": "Annie Andrews",
+    "cand_r": "Darline Graham",
+    "label_kind": "inferred"
+  },
+  {
     "key": "GA",
     "office": "senate",
     "state": "GA",
@@ -102,7 +102,7 @@
     "score": 2.5,
     "flags": "markets, swing",
     "n_flags": 2,
-    "reading": "The Republican is favored (47% by us), but the markets moved 12 points against the favorite this week; we are 32 from the 2024 even-swing baseline (79%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
+    "reading": "The Republican is favored (47% by us), but the markets moved 11 points against the favorite this week; we are 32 from the 2024 even-swing baseline (79%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": null,
     "cand_r": null,
     "label_kind": "inferred"
@@ -120,7 +120,7 @@
     "score": 2.5,
     "flags": "markets, swing",
     "n_flags": 2,
-    "reading": "The Republican is favored (46% by us), but the markets moved 12 points against the favorite this week; we are 30 from the 2024 even-swing baseline (76%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
+    "reading": "The Republican is favored (46% by us), but the markets moved 11 points against the favorite this week; we are 30 from the 2024 even-swing baseline (76%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": null,
     "cand_r": null,
     "label_kind": "inferred"
@@ -312,13 +312,13 @@
     "label": "NC-01",
     "item_id": null,
     "ours": null,
-    "consensus": 60.0,
-    "category": "Tilt D",
+    "consensus": 70.0,
+    "category": "Lean D",
     "favored": "Democrat",
     "score": 1.0,
     "flags": "swing",
     "n_flags": 1,
-    "reading": "The Democrat is favored (60% by the raters), but the raters are 26 from the 2024 even-swing baseline (34%). Not on our scorecard, so no trigger is set; the disagreement is between the raters, the markets and the 2024 baseline.",
+    "reading": "The Democrat is favored (70% by the raters), but the raters are 36 from the 2024 even-swing baseline (34%). Not on our scorecard, so no trigger is set; the disagreement is between the raters, the markets and the 2024 baseline.",
     "cand_d": "Don Davis",
     "cand_r": "Laurie Buckhout",
     "label_kind": "inferred"

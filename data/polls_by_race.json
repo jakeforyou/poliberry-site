@@ -2,6 +2,24 @@
   {
     "race_id": "senate_me",
     "kind": "poll",
+    "pollster": "Trafalgar Group",
+    "sponsor": null,
+    "start_date": "2026-10-21",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 1077,
+    "moe": 2.9,
+    "d": 47.0,
+    "r": 47.0,
+    "other": null,
+    "undecided": 7.0,
+    "margin_d": 0.0,
+    "aggregate": false,
+    "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
     "pollster": "Beacon Research/ Shaw & Co. Research",
     "sponsor": null,
     "start_date": "2026-10-16",
@@ -506,8 +524,8 @@
   {
     "race_id": "senate_me",
     "kind": "average",
-    "average_margin_d": 2.0,
-    "n_polls": 5,
+    "average_margin_d": 1.67,
+    "n_polls": 6,
     "candidates": {
       "D": [
         "Troy Jackson"
@@ -516,10 +534,10 @@
         "Susan Collins"
       ]
     },
-    "newest_end_date": "2026-10-20",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine#Polling_4",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -719,24 +737,6 @@
     "margin_d": 10.0,
     "aggregate": false,
     "source_url": "https://www.commoncause.org/north-carolina/wp-content/uploads/2026/09/CCNC-Sep-2026-Poll-Release-1.pdf"
-  },
-  {
-    "race_id": "senate_nc",
-    "kind": "poll",
-    "pollster": "Harper Polling",
-    "sponsor": null,
-    "start_date": "2026-09-18",
-    "end_date": "2026-09-20",
-    "population": "LV",
-    "sample": 608,
-    "moe": 4.0,
-    "d": 49.0,
-    "r": 34.0,
-    "other": 5.0,
-    "undecided": 12.0,
-    "margin_d": 15.0,
-    "aggregate": false,
-    "source_url": "https://www.carolinajournal.com/polls/october-2026-coopers-lead-over-whatley-narrows-to-10-points-in-nc-senate-race/"
   },
   {
     "race_id": "senate_nc",
@@ -1551,8 +1551,8 @@
   {
     "race_id": "senate_nc",
     "kind": "average",
-    "average_margin_d": 10.86,
-    "n_polls": 7,
+    "average_margin_d": 11.5,
+    "n_polls": 6,
     "candidates": {
       "D": [
         "Roy Cooper"
@@ -1564,7 +1564,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -1579,8 +1579,8 @@
     "moe": 2.8,
     "d": 47.0,
     "r": 44.0,
-    "other": null,
-    "undecided": null,
+    "other": 3.0,
+    "undecided": 6.0,
     "margin_d": 3.0,
     "aggregate": false,
     "source_url": "https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/"
@@ -2357,7 +2357,7 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Ohio#Polling",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -3618,7 +3618,7 @@
     "newest_end_date": "2026-10-21",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas#Polling_4",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -4092,7 +4092,7 @@
   {
     "race_id": "senate_ak",
     "kind": "average",
-    "average_margin_d": 3.33,
+    "average_margin_d": 3.0,
     "n_polls": 3,
     "candidates": {
       "D": [
@@ -4107,7 +4107,7 @@
     "newest_end_date": "2026-10-16",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alaska#Polling_2",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -4797,8 +4797,8 @@
   {
     "race_id": "senate_ia",
     "kind": "average",
-    "average_margin_d": -0.4,
-    "n_polls": 10,
+    "average_margin_d": -0.89,
+    "n_polls": 9,
     "candidates": {
       "R": [
         "Ashley Hinson"
@@ -4810,8 +4810,26 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Iowa#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "RedBox Research",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 2696,
+    "moe": 3.5,
+    "d": 49.0,
+    "r": 44.0,
+    "other": 4.0,
+    "undecided": 3.0,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://afightworthhaving.com/polling/2026/michigan"
   },
   {
     "race_id": "senate_mi",
@@ -5878,7 +5896,7 @@
   {
     "race_id": "senate_mi",
     "kind": "average",
-    "average_margin_d": 1.0,
+    "average_margin_d": 1.57,
     "n_polls": 7,
     "candidates": {
       "D": [
@@ -5888,10 +5906,10 @@
         "Mike Rogers"
       ]
     },
-    "newest_end_date": "2026-10-22",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -6342,7 +6360,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -6865,7 +6883,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Hampshire#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -7082,7 +7100,7 @@
     "newest_end_date": "2026-10-21",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina#Polling_5",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -7466,8 +7484,8 @@
   {
     "race_id": "senate_fl",
     "kind": "average",
-    "average_margin_d": -6.5,
-    "n_polls": 8,
+    "average_margin_d": -6.0,
+    "n_polls": 7,
     "candidates": {
       "R": [
         "Ashley Moody"
@@ -7479,7 +7497,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida#Polling_2",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -7719,8 +7737,8 @@
   {
     "race_id": "senate_ks",
     "kind": "average",
-    "average_margin_d": 2.0,
-    "n_polls": 4,
+    "average_margin_d": 0.0,
+    "n_polls": 2,
     "candidates": {
       "R": [
         "Roger Marshall"
@@ -7732,7 +7750,7 @@
     "newest_end_date": "2026-10-14",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas#Polling_2",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -8080,8 +8098,8 @@
   {
     "race_id": "senate_mn",
     "kind": "average",
-    "average_margin_d": 4.17,
-    "n_polls": 6,
+    "average_margin_d": 3.2,
+    "n_polls": 5,
     "candidates": {
       "D": [
         "Peggy Flanagan"
@@ -8093,7 +8111,7 @@
     "newest_end_date": "2026-10-21",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -8454,7 +8472,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -8977,7 +8995,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -8997,6 +9015,24 @@
     "margin_d": -1.0,
     "aggregate": false,
     "source_url": "https://data.ddhq.io/polls/2026/10/19/Global-Strategy-Group/Aaron-Ford-Nevada-2026-10-08-2026-10-13"
+  },
+  {
+    "race_id": "gov_nv",
+    "kind": "poll",
+    "pollster": "Concord Public Opinion Partners",
+    "sponsor": null,
+    "start_date": "2026-09-26",
+    "end_date": "2026-09-30",
+    "population": "LV",
+    "sample": 565,
+    "moe": 4.1,
+    "d": 42.0,
+    "r": 43.0,
+    "other": 7.0,
+    "undecided": 8.0,
+    "margin_d": -1.0,
+    "aggregate": false,
+    "source_url": "https://concordpublicopinionpartners.org/polls/nevada-ge-2026"
   },
   {
     "race_id": "gov_nv",
@@ -9248,7 +9284,7 @@
     "newest_end_date": "2026-10-13",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Nevada_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -9501,7 +9537,7 @@
     "newest_end_date": "2026-10-09",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Wisconsin_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -10101,8 +10137,8 @@
   {
     "race_id": "gov_mi",
     "kind": "average",
-    "average_margin_d": 4.5,
-    "n_polls": 2,
+    "average_margin_d": 6.0,
+    "n_polls": 1,
     "candidates": {
       "D": [
         "Jocelyn Benson"
@@ -10114,7 +10150,7 @@
     "newest_end_date": "2026-10-18",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -10763,7 +10799,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Ohio_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -11183,8 +11219,8 @@
   {
     "race_id": "gov_ia",
     "kind": "average",
-    "average_margin_d": 7.25,
-    "n_polls": 8,
+    "average_margin_d": 6.57,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Rob Sand"
@@ -11196,7 +11232,7 @@
     "newest_end_date": "2026-10-19",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Iowa_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -11292,8 +11328,8 @@
   {
     "race_id": "gov_sc",
     "kind": "average",
-    "average_margin_d": -12.0,
-    "n_polls": 3,
+    "average_margin_d": -13.0,
+    "n_polls": 2,
     "candidates": {
       "D": [
         "Jermaine Johnson"
@@ -11305,7 +11341,7 @@
     "newest_end_date": "2026-10-18",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_South_Carolina_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -11437,8 +11473,8 @@
   {
     "race_id": "gov_ks",
     "kind": "average",
-    "average_margin_d": -1.5,
-    "n_polls": 2,
+    "average_margin_d": 0.0,
+    "n_polls": 1,
     "candidates": {
       "D": [
         "Cindy Holscher"
@@ -11450,7 +11486,7 @@
     "newest_end_date": "2026-10-21",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Kansas_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -11703,7 +11739,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -11799,8 +11835,8 @@
   {
     "race_id": "sc01",
     "kind": "average",
-    "average_margin_d": 2.5,
-    "n_polls": 2,
+    "average_margin_d": 2.0,
+    "n_polls": 1,
     "candidates": {
       "R": [
         "Jenny Honeycutt"
@@ -11812,7 +11848,7 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_South_Carolina#Polling_3",
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -11824,7 +11860,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   },
   {
@@ -11836,7 +11872,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-10-24T13:50:12-04:00",
+    "retrieved_at": "2026-10-26T09:14:41-04:00",
     "label": "retrieved"
   }
 ]
