@@ -2,6 +2,42 @@
   {
     "race_id": "senate_me",
     "kind": "poll",
+    "pollster": "Marist University",
+    "sponsor": null,
+    "start_date": "2026-10-22",
+    "end_date": "2026-10-25",
+    "population": "LV",
+    "sample": null,
+    "moe": 6.6,
+    "d": 49.0,
+    "r": 47.0,
+    "other": 1.0,
+    "undecided": 3.0,
+    "margin_d": 2.0,
+    "aggregate": false,
+    "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_Maine-NOS-and-Tables_202610261228-3_43sjl2.pdf"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
+    "pollster": "Marist University",
+    "sponsor": null,
+    "start_date": "2026-10-22",
+    "end_date": "2026-10-25",
+    "population": "RV",
+    "sample": 1449,
+    "moe": 4.1,
+    "d": 53.0,
+    "r": 44.0,
+    "other": null,
+    "undecided": 2.0,
+    "margin_d": 9.0,
+    "aggregate": false,
+    "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_Maine-NOS-and-Tables_202610261228-3_43sjl2.pdf"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
     "pollster": "Trafalgar Group",
     "sponsor": null,
     "start_date": "2026-10-21",
@@ -16,6 +52,24 @@
     "margin_d": 0.0,
     "aggregate": false,
     "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 413,
+    "moe": 6.3,
+    "d": 51.0,
+    "r": 44.0,
+    "other": null,
+    "undecided": 4.0,
+    "margin_d": 7.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "senate_me",
@@ -524,8 +578,8 @@
   {
     "race_id": "senate_me",
     "kind": "average",
-    "average_margin_d": 1.67,
-    "n_polls": 6,
+    "average_margin_d": 2.14,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Troy Jackson"
@@ -534,11 +588,47 @@
         "Susan Collins"
       ]
     },
-    "newest_end_date": "2026-10-23",
+    "newest_end_date": "2026-10-25",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine#Polling_4",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_nc",
+    "kind": "poll",
+    "pollster": "Quantus Insights",
+    "sponsor": null,
+    "start_date": "2026-10-24",
+    "end_date": "2026-10-25",
+    "population": "LV",
+    "sample": 722,
+    "moe": 4.0,
+    "d": 51.0,
+    "r": 43.0,
+    "other": 2.0,
+    "undecided": 3.0,
+    "margin_d": 8.0,
+    "aggregate": false,
+    "source_url": "https://quantusinsights.org/polling/f/north-carolina-senate-cooper-holds-a-9-point-lead-over-whatley"
+  },
+  {
+    "race_id": "senate_nc",
+    "kind": "poll",
+    "pollster": "Quantus Insights",
+    "sponsor": null,
+    "start_date": "2026-10-24",
+    "end_date": "2026-10-25",
+    "population": "LV",
+    "sample": 702,
+    "moe": 4.0,
+    "d": 53.0,
+    "r": 44.0,
+    "other": null,
+    "undecided": 3.0,
+    "margin_d": 9.0,
+    "aggregate": false,
+    "source_url": "https://quantusinsights.org/polling/f/north-carolina-senate-cooper-holds-a-9-point-lead-over-whatley"
   },
   {
     "race_id": "senate_nc",
@@ -1551,8 +1641,8 @@
   {
     "race_id": "senate_nc",
     "kind": "average",
-    "average_margin_d": 11.5,
-    "n_polls": 6,
+    "average_margin_d": 11.0,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Roy Cooper"
@@ -1561,11 +1651,47 @@
         "Michael Whatley"
       ]
     },
-    "newest_end_date": "2026-10-20",
+    "newest_end_date": "2026-10-25",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "RedBox Research",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 2998,
+    "moe": 4.6,
+    "d": 47.0,
+    "r": 44.0,
+    "other": 4.0,
+    "undecided": 4.0,
+    "margin_d": 3.0,
+    "aggregate": false,
+    "source_url": "https://afightworthhaving.com/polling/2026/ohio"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 508,
+    "moe": 5.2,
+    "d": 47.0,
+    "r": 47.0,
+    "other": 3.0,
+    "undecided": 3.0,
+    "margin_d": 0.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "senate_oh",
@@ -2344,8 +2470,8 @@
   {
     "race_id": "senate_oh",
     "kind": "average",
-    "average_margin_d": 3.1,
-    "n_polls": 10,
+    "average_margin_d": 2.55,
+    "n_polls": 11,
     "candidates": {
       "D": [
         "Sherrod Brown"
@@ -2354,11 +2480,29 @@
         "Jon Husted"
       ]
     },
-    "newest_end_date": "2026-10-22",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Ohio#Polling",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_tx",
+    "kind": "poll",
+    "pollster": "Univision / YouGov",
+    "sponsor": null,
+    "start_date": "2026-10-13",
+    "end_date": "2026-10-21",
+    "population": "RV",
+    "sample": 1000,
+    "moe": 3.8,
+    "d": 50.0,
+    "r": 45.0,
+    "other": 1.0,
+    "undecided": 5.0,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://www.univision.com/noticias/politica/poll-univision-texas-latinos"
   },
   {
     "race_id": "senate_tx",
@@ -3605,8 +3749,8 @@
   {
     "race_id": "senate_tx",
     "kind": "average",
-    "average_margin_d": 2.35,
-    "n_polls": 17,
+    "average_margin_d": 2.07,
+    "n_polls": 15,
     "candidates": {
       "D": [
         "James Talarico"
@@ -3618,7 +3762,7 @@
     "newest_end_date": "2026-10-21",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas#Polling_4",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -4107,8 +4251,26 @@
     "newest_end_date": "2026-10-16",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alaska#Polling_2",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_ia",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 403,
+    "moe": 6.5,
+    "d": 45.0,
+    "r": 43.0,
+    "other": 7.0,
+    "undecided": 3.0,
+    "margin_d": 2.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "senate_ia",
@@ -4797,7 +4959,7 @@
   {
     "race_id": "senate_ia",
     "kind": "average",
-    "average_margin_d": -0.89,
+    "average_margin_d": -0.44,
     "n_polls": 9,
     "candidates": {
       "R": [
@@ -4807,10 +4969,10 @@
         "Josh Turek"
       ]
     },
-    "newest_end_date": "2026-10-22",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Iowa#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -4840,14 +5002,68 @@
     "end_date": "2026-10-22",
     "population": "LV",
     "sample": 1200,
-    "moe": 2.83,
+    "moe": 2.8,
     "d": 47.0,
     "r": 46.0,
-    "other": null,
-    "undecided": null,
+    "other": 4.0,
+    "undecided": 3.0,
     "margin_d": 1.0,
     "aggregate": false,
     "source_url": "https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "Glengariff Group",
+    "sponsor": null,
+    "start_date": "2026-10-19",
+    "end_date": "2026-10-22",
+    "population": "LV",
+    "sample": 600,
+    "moe": 4.0,
+    "d": 51.0,
+    "r": 45.0,
+    "other": 0.0,
+    "undecided": 4.0,
+    "margin_d": 6.0,
+    "aggregate": false,
+    "source_url": "https://www.clickondetroit.com/news/local/2026/10/27/democratic-candidate-el-sayed-leads-michigan-us-senate-race-new-poll-finds/"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "Michigan State University / YouGov",
+    "sponsor": null,
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-19",
+    "population": "LV",
+    "sample": 836,
+    "moe": 4.4,
+    "d": 48.0,
+    "r": 46.0,
+    "other": 7.0,
+    "undecided": 7.0,
+    "margin_d": 2.0,
+    "aggregate": false,
+    "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "Michigan State University / YouGov",
+    "sponsor": null,
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-19",
+    "population": "A",
+    "sample": 1000,
+    "moe": 4.1,
+    "d": 45.0,
+    "r": 41.0,
+    "other": 14.0,
+    "undecided": 14.0,
+    "margin_d": 4.0,
+    "aggregate": false,
+    "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf"
   },
   {
     "race_id": "senate_mi",
@@ -5896,8 +6112,8 @@
   {
     "race_id": "senate_mi",
     "kind": "average",
-    "average_margin_d": 1.57,
-    "n_polls": 7,
+    "average_margin_d": 2.11,
+    "n_polls": 9,
     "candidates": {
       "D": [
         "Abdul El-Sayed"
@@ -5909,8 +6125,26 @@
     "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_ga",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 508,
+    "moe": 5.2,
+    "d": 55.0,
+    "r": 40.0,
+    "other": 3.0,
+    "undecided": 2.0,
+    "margin_d": 15.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "senate_ga",
@@ -6347,8 +6581,8 @@
   {
     "race_id": "senate_ga",
     "kind": "average",
-    "average_margin_d": 7.75,
-    "n_polls": 4,
+    "average_margin_d": 9.2,
+    "n_polls": 5,
     "candidates": {
       "D": [
         "Jon Ossoff"
@@ -6357,11 +6591,29 @@
         "Mike Collins"
       ]
     },
-    "newest_end_date": "2026-10-20",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_nh",
+    "kind": "poll",
+    "pollster": "Rasmussen Reports",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 970,
+    "moe": 3.0,
+    "d": 50.0,
+    "r": 44.0,
+    "other": 4.0,
+    "undecided": 2.0,
+    "margin_d": 6.0,
+    "aggregate": false,
+    "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_new_hampshire_senate"
   },
   {
     "race_id": "senate_nh",
@@ -6416,6 +6668,24 @@
     "margin_d": 8.0,
     "aggregate": false,
     "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_nh_20260921_lv.pdf"
+  },
+  {
+    "race_id": "senate_nh",
+    "kind": "poll",
+    "pollster": "Rasmussen Reports",
+    "sponsor": null,
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-04",
+    "population": "LV",
+    "sample": 979,
+    "moe": 3.0,
+    "d": 49.0,
+    "r": 44.0,
+    "other": 3.0,
+    "undecided": 4.0,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://www.rasmussenreports.com/public_content/archive/election_2026/n_h_senate_lead_narrows_for_democrat_pappas"
   },
   {
     "race_id": "senate_nh",
@@ -6870,7 +7140,7 @@
   {
     "race_id": "senate_nh",
     "kind": "average",
-    "average_margin_d": 6.67,
+    "average_margin_d": 6.0,
     "n_polls": 3,
     "candidates": {
       "D": [
@@ -6880,11 +7150,29 @@
         "John Sununu"
       ]
     },
-    "newest_end_date": "2026-10-20",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Hampshire#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_sc",
+    "kind": "poll",
+    "pollster": "Targoz Media Research",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-25",
+    "population": "LV",
+    "sample": 895,
+    "moe": 2.77,
+    "d": 46.0,
+    "r": 47.0,
+    "other": 3.0,
+    "undecided": 4.0,
+    "margin_d": -1.0,
+    "aggregate": false,
+    "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
   },
   {
     "race_id": "senate_sc",
@@ -7087,8 +7375,8 @@
   {
     "race_id": "senate_sc",
     "kind": "average",
-    "average_margin_d": -2.0,
-    "n_polls": 3,
+    "average_margin_d": -1.75,
+    "n_polls": 4,
     "candidates": {
       "R": [
         "Darline Graham"
@@ -7097,11 +7385,65 @@
         "Annie Andrews"
       ]
     },
-    "newest_end_date": "2026-10-21",
+    "newest_end_date": "2026-10-25",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina#Polling_5",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_fl",
+    "kind": "poll",
+    "pollster": "ActiVote",
+    "sponsor": null,
+    "start_date": "2026-10-17",
+    "end_date": "2026-10-27",
+    "population": "LV",
+    "sample": 400,
+    "moe": 4.9,
+    "d": 47.0,
+    "r": 53.0,
+    "other": null,
+    "undecided": null,
+    "margin_d": -6.0,
+    "aggregate": false,
+    "source_url": "https://www.activote.net/polls/2026/fl-u-s-senate/"
+  },
+  {
+    "race_id": "senate_fl",
+    "kind": "poll",
+    "pollster": "RedBox Research",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 4832,
+    "moe": 2.5,
+    "d": 43.0,
+    "r": 50.0,
+    "other": 3.0,
+    "undecided": 4.0,
+    "margin_d": -7.0,
+    "aggregate": false,
+    "source_url": "https://afightworthhaving.com/polling/2026/florida"
+  },
+  {
+    "race_id": "senate_fl",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 515,
+    "moe": 5.0,
+    "d": 43.0,
+    "r": 51.0,
+    "other": 3.0,
+    "undecided": 4.0,
+    "margin_d": -8.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "senate_fl",
@@ -7484,8 +7826,8 @@
   {
     "race_id": "senate_fl",
     "kind": "average",
-    "average_margin_d": -6.0,
-    "n_polls": 7,
+    "average_margin_d": -6.44,
+    "n_polls": 9,
     "candidates": {
       "R": [
         "Ashley Moody"
@@ -7494,11 +7836,29 @@
         "Angie Nixon"
       ]
     },
-    "newest_end_date": "2026-10-20",
+    "newest_end_date": "2026-10-27",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida#Polling_2",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_ks",
+    "kind": "poll",
+    "pollster": "RedBox Research",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 1301,
+    "moe": 3.2,
+    "d": 45.0,
+    "r": 46.0,
+    "other": 3.0,
+    "undecided": 4.0,
+    "margin_d": -1.0,
+    "aggregate": false,
+    "source_url": "https://afightworthhaving.com/polling/2026/kansas"
   },
   {
     "race_id": "senate_ks",
@@ -7548,7 +7908,7 @@
     "moe": 3.2,
     "d": 48.0,
     "r": 45.0,
-    "other": null,
+    "other": 2.0,
     "undecided": 5.0,
     "margin_d": 3.0,
     "aggregate": false,
@@ -7602,7 +7962,7 @@
     "moe": 4.6,
     "d": 45.0,
     "r": 45.0,
-    "other": null,
+    "other": 0.0,
     "undecided": 6.0,
     "margin_d": 0.0,
     "aggregate": false,
@@ -7737,8 +8097,8 @@
   {
     "race_id": "senate_ks",
     "kind": "average",
-    "average_margin_d": 0.0,
-    "n_polls": 2,
+    "average_margin_d": -0.33,
+    "n_polls": 3,
     "candidates": {
       "R": [
         "Roger Marshall"
@@ -7747,10 +8107,10 @@
         "Adam Hamilton"
       ]
     },
-    "newest_end_date": "2026-10-14",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas#Polling_2",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -8111,8 +8471,26 @@
     "newest_end_date": "2026-10-21",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_ga",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 508,
+    "moe": 5.2,
+    "d": 49.0,
+    "r": 48.0,
+    "other": null,
+    "undecided": 3.0,
+    "margin_d": 1.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "gov_ga",
@@ -8459,8 +8837,8 @@
   {
     "race_id": "gov_ga",
     "kind": "average",
-    "average_margin_d": -1.75,
-    "n_polls": 4,
+    "average_margin_d": -1.2,
+    "n_polls": 5,
     "candidates": {
       "D": [
         "Keisha Lance Bottoms"
@@ -8469,10 +8847,10 @@
         "Rick Jackson"
       ]
     },
-    "newest_end_date": "2026-10-20",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -8492,24 +8870,6 @@
     "margin_d": 6.0,
     "aggregate": false,
     "source_url": "https://data.ddhq.io/polls/2026/10/23/GrayHouse-Arizona"
-  },
-  {
-    "race_id": "gov_az",
-    "kind": "poll",
-    "pollster": "HighGround, Inc.",
-    "sponsor": null,
-    "start_date": "2026-10-06",
-    "end_date": "2026-10-08",
-    "population": "LV",
-    "sample": 400,
-    "moe": 4.9,
-    "d": 51.0,
-    "r": 34.0,
-    "other": 5.0,
-    "undecided": 10.0,
-    "margin_d": 17.0,
-    "aggregate": false,
-    "source_url": "https://azhighground.com/hurricane-season-for-arizona-republicans/"
   },
   {
     "race_id": "gov_az",
@@ -8982,8 +9342,8 @@
   {
     "race_id": "gov_az",
     "kind": "average",
-    "average_margin_d": 7.8,
-    "n_polls": 5,
+    "average_margin_d": 6.0,
+    "n_polls": 3,
     "candidates": {
       "D": [
         "Katie Hobbs"
@@ -8995,8 +9355,44 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_nv",
+    "kind": "poll",
+    "pollster": "Hart Research",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-25",
+    "population": "LV",
+    "sample": 950,
+    "moe": 3.5,
+    "d": 49.0,
+    "r": 45.0,
+    "other": null,
+    "undecided": 6.0,
+    "margin_d": 4.0,
+    "aggregate": false,
+    "source_url": "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
+  },
+  {
+    "race_id": "gov_nv",
+    "kind": "poll",
+    "pollster": "RedBox Research",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 1407,
+    "moe": 3.6,
+    "d": 46.0,
+    "r": 43.0,
+    "other": 8.0,
+    "undecided": 4.0,
+    "margin_d": 3.0,
+    "aggregate": false,
+    "source_url": "https://afightworthhaving.com/polling/2026/nevada"
   },
   {
     "race_id": "gov_nv",
@@ -9271,8 +9667,8 @@
   {
     "race_id": "gov_nv",
     "kind": "average",
-    "average_margin_d": -1.0,
-    "n_polls": 1,
+    "average_margin_d": 2.0,
+    "n_polls": 3,
     "candidates": {
       "D": [
         "Aaron Ford"
@@ -9281,10 +9677,10 @@
         "Joe Lombardo"
       ]
     },
-    "newest_end_date": "2026-10-13",
+    "newest_end_date": "2026-10-25",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Nevada_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -9537,8 +9933,44 @@
     "newest_end_date": "2026-10-09",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Wisconsin_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_mi",
+    "kind": "poll",
+    "pollster": "Michigan State University / YouGov",
+    "sponsor": null,
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-19",
+    "population": "LV",
+    "sample": 836,
+    "moe": 4.4,
+    "d": 52.0,
+    "r": 40.0,
+    "other": 9.0,
+    "undecided": 9.0,
+    "margin_d": 12.0,
+    "aggregate": false,
+    "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf"
+  },
+  {
+    "race_id": "gov_mi",
+    "kind": "poll",
+    "pollster": "Michigan State University / YouGov",
+    "sponsor": null,
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-19",
+    "population": "A",
+    "sample": 1000,
+    "moe": 4.1,
+    "d": 44.0,
+    "r": 35.0,
+    "other": 21.0,
+    "undecided": 21.0,
+    "margin_d": 9.0,
+    "aggregate": false,
+    "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf"
   },
   {
     "race_id": "gov_mi",
@@ -10137,8 +10569,8 @@
   {
     "race_id": "gov_mi",
     "kind": "average",
-    "average_margin_d": 6.0,
-    "n_polls": 1,
+    "average_margin_d": 9.0,
+    "n_polls": 2,
     "candidates": {
       "D": [
         "Jocelyn Benson"
@@ -10147,11 +10579,47 @@
         "John James"
       ]
     },
-    "newest_end_date": "2026-10-18",
+    "newest_end_date": "2026-10-19",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_oh",
+    "kind": "poll",
+    "pollster": "RedBox Research",
+    "sponsor": null,
+    "start_date": "2026-10-20",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 2998,
+    "moe": 4.6,
+    "d": 48.0,
+    "r": 44.0,
+    "other": 3.0,
+    "undecided": 3.0,
+    "margin_d": 4.0,
+    "aggregate": false,
+    "source_url": "https://afightworthhaving.com/polling/2026/ohio"
+  },
+  {
+    "race_id": "gov_oh",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 508,
+    "moe": 5.2,
+    "d": 45.0,
+    "r": 47.0,
+    "other": 4.0,
+    "undecided": 3.0,
+    "margin_d": -2.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "gov_oh",
@@ -10786,8 +11254,8 @@
   {
     "race_id": "gov_oh",
     "kind": "average",
-    "average_margin_d": 3.25,
-    "n_polls": 8,
+    "average_margin_d": 2.22,
+    "n_polls": 9,
     "candidates": {
       "D": [
         "Amy Acton"
@@ -10796,11 +11264,29 @@
         "Vivek Ramaswamy"
       ]
     },
-    "newest_end_date": "2026-10-20",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Ohio_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_ia",
+    "kind": "poll",
+    "pollster": "Echelon Insights",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23",
+    "population": "LV",
+    "sample": 403,
+    "moe": 6.5,
+    "d": 50.0,
+    "r": 46.0,
+    "other": null,
+    "undecided": 3.0,
+    "margin_d": 4.0,
+    "aggregate": false,
+    "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
   },
   {
     "race_id": "gov_ia",
@@ -11219,7 +11705,7 @@
   {
     "race_id": "gov_ia",
     "kind": "average",
-    "average_margin_d": 6.57,
+    "average_margin_d": 5.86,
     "n_polls": 7,
     "candidates": {
       "D": [
@@ -11229,11 +11715,29 @@
         "Zach Lahn"
       ]
     },
-    "newest_end_date": "2026-10-19",
+    "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Iowa_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_sc",
+    "kind": "poll",
+    "pollster": "Targoz Media Research",
+    "sponsor": null,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-25",
+    "population": "LV",
+    "sample": 895,
+    "moe": 2.77,
+    "d": 41.0,
+    "r": 51.0,
+    "other": 2.0,
+    "undecided": 5.0,
+    "margin_d": -10.0,
+    "aggregate": false,
+    "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
   },
   {
     "race_id": "gov_sc",
@@ -11328,8 +11832,8 @@
   {
     "race_id": "gov_sc",
     "kind": "average",
-    "average_margin_d": -13.0,
-    "n_polls": 2,
+    "average_margin_d": -12.0,
+    "n_polls": 3,
     "candidates": {
       "D": [
         "Jermaine Johnson"
@@ -11338,10 +11842,10 @@
         "Alan Wilson"
       ]
     },
-    "newest_end_date": "2026-10-18",
+    "newest_end_date": "2026-10-25",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_South_Carolina_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -11486,7 +11990,7 @@
     "newest_end_date": "2026-10-21",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Kansas_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -11726,8 +12230,8 @@
   {
     "race_id": "gov_nh",
     "kind": "average",
-    "average_margin_d": -11.0,
-    "n_polls": 3,
+    "average_margin_d": -12.0,
+    "n_polls": 2,
     "candidates": {
       "D": [
         "Cinde Warmington"
@@ -11739,7 +12243,7 @@
     "newest_end_date": "2026-10-20",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -11848,7 +12352,7 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_South_Carolina#Polling_3",
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -11860,7 +12364,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   },
   {
@@ -11872,7 +12376,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-10-26T09:14:41-04:00",
+    "retrieved_at": "2026-10-27T17:03:23-04:00",
     "label": "retrieved"
   }
 ]

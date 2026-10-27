@@ -1008,5 +1008,102 @@
     "delta": "Error found",
     "conclusion": "The lock reported no fall Maine poll. Seven October Maine polls existed before the lock (Suffolk, Marist, WaPo-Schar and others). That was a retrieval gap at lock time.",
     "as_of": "2026-10-26"
+  },
+  {
+    "n": 1,
+    "kind": "inference",
+    "delta": "South Carolina Senate: Democratic chance 19 to 5, the margin item R+6 to R+10.",
+    "mechanisms": "The county early vote posted and shows an electorate shaped like 2022's: Harris's counties 24.4 percent of ballots against 24.2 at the same point, the three big counties 27.2 against 26.1, the Pee Dee 9.3 against 9.2; only the Black share of mail ballots is up, 27.1 against 24.2 at 2022's close. | The only polls are three Republican firms at R+1 to R+4 in a state where public polls understated Graham by ten in 2020. | The national environment near D+7.5 is worth about nine points of swing from 2024, landing near R+9 before anything about Graham.",
+    "evidence": "A 2022-shaped electorate against a national environment that favors Democrats.",
+    "conclusion": "Graham by about 10, 54.0 to 44.5, Andrews at 5 percent.",
+    "confidence": 0.6,
+    "falsifier": "A nonpartisan likely-voter poll with Andrews within 5, or the Harris counties' share of ballots 3 points above 2022's same point by Oct 31.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 2,
+    "kind": "inference",
+    "delta": "Inference 2 of the lock shaded Texas, Ohio, Alaska and Iowa toward Republicans. Markets sit 4 to 11 points above our new numbers in TX, OH and AK.",
+    "mechanisms": "Red-state polls overstate Democrats again, as in 2018 (IN, MO, TN), 2020, 2022 (smaller) and 2024 | A midterm without Trump turnout means the polls are right this time | Polls understate Democrats in a wave midterm, as O'Rourke beat his Texas polls in 2018",
+    "evidence": "Early-vote party mix against 2022. NC Republicans 20.7 vs 30.7, IA 29.4 vs 33.2, CO 24.2 vs 29.8. That is against a Republican turnout lift. But the 2022 red-state polls still missed toward Republicans by 1 to 3 points (inferred), and Ohio, Texas and Alaska have no party-coded early vote at all.",
+    "conclusion": "Shading reduced from about 3 to 4 points to about 2 to 2.5, not dropped. The lock's counter-case (2022 polls underrated Democrats) applied to swing states, not to these four.",
+    "confidence": "low to moderate",
+    "falsifier": "Democrats win Ohio and Texas by more than 3 points each. Then even the reduced shading was wrong for midterms.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 3,
+    "kind": "inference",
+    "delta": "Iowa's Democratic share of early ballots was 53.8 vs 50.5 on the Oct 19 file. At 14 days out it is 53.6 vs 53.6.",
+    "mechanisms": "2022's Democratic share rose fast in the days after 15 out, so the Oct 19 edge was timing | Democrats bank early every cycle in Iowa",
+    "evidence": "Same-point comparison one day later. The Democratic edge closed exactly as the 2022 curve predicts. The Republican shortfall shrank from 6.9 to 3.8 points but did not close.",
+    "conclusion": "Only the Republican shortfall is evidence, and it is weak. It moved Iowa by about a point.",
+    "confidence": "moderate",
+    "falsifier": "If the Iowa Republican share reaches 33 or more by 7 days out, the shortfall was timing too and the Iowa move reverses.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 4,
+    "kind": "inference",
+    "delta": "Maine Senate markets rose about 8 points since the lock (to 63.5 on both venues). We are at 54.",
+    "mechanisms": "A poll or internal we did not retrieve | Late news about Collins | Market momentum without new information",
+    "evidence": "The polls agent searched for Maine polls released Oct 16 to 20 and found none. The newest is Suffolk Oct 14, Jackson +2, which predates the lock. The independence agent found an undated paywalled report of an 8M SLF add in Maine, which would mean Republicans think they need to defend it.",
+    "conclusion": "No change on market movement alone. Inertia is not evidence, and neither is a price move with no source.",
+    "confidence": "low",
+    "falsifier": "A nonpartisan poll released after Oct 16 with Jackson ahead by 4 or more.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 5,
+    "kind": "inference",
+    "delta": "North Carolina at 14 days out: 728,718 accepted ballots, 1.09 times 2022. Republicans 20.7 percent against 30.7 in 2022 and 33.9 in 2024.",
+    "mechanisms": "Republicans returned to Election Day voting after the 2024 push to vote early | Fewer Republicans voting | Unaffiliated growth absorbing Republican-leaning voters",
+    "evidence": "First-time voters are 3.94 percent and 2022 Election Day voters now voting early are 12.13 percent, both close to day-one 2022. Unaffiliated share is 34.4 against 29.2 in 2022.",
+    "conclusion": "The lock's falsifier (Republican share above 30 by Oct 25) is far from met. Timing still cannot be ruled out. No change to North Carolina, already at the 95 ceiling.",
+    "confidence": "low",
+    "falsifier": "Republican share of accepted ballots above 30 percent by Oct 25.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 6,
+    "kind": "red_team",
+    "delta": "The opposite reading",
+    "conclusion": "The opposite reading is that this run moved toward the markets on evidence that does not test the thing it was shaded for. Early-vote composition says who votes early. The red-state poll misses of 2020 and 2024 came from Election Day voters that no early file sees. Texas has no party data at all. Ohio's polls have missed toward Republicans four cycles running, including Brown himself twice. Republicans have a 2-to-1 dollar edge in September Senate TV. A 3-point poll lead in Texas, Ohio and Alaska is inside one ordinary red-state miss, and that miss is correlated across all three. In that world Republicans hold 50 or 51 seats. On the House: a D+4 popular vote puts it near 218. To believe Republicans hold the House I would need to see: a final-week likely-voter generic ballot under D+4, DCCC or House Majority PAC cuts in Trump +5 to +10 seats, a Republican share of North Carolina's accepted early ballots at or above its 2022 level by Oct 30, and Democrats running behind the 2024 baseline in any remaining special election.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 7,
+    "kind": "cable",
+    "delta": "What cable will say and why it is wrong",
+    "conclusion": "Cable will say Iowa's early vote shows Democrats surging. At 14 days out the Democratic share is exactly its 2022 level. Republicans are 4 points short, and Grassley won by 12 from a similar early mix.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 8,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The scheduled-task brief quoted Iowa's Democratic early-vote edge (53.8 vs 50.5) from the Oct 19 file. One day later the same-point comparison shows no Democratic edge (53.6 vs 53.6). The brief's caution about 2022 timing was correct.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 9,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The brief quoted Texas as a 57,342-ballot first day. The state app now shows 496,045 through Oct 20 (partial), including 419,343 in-person votes on Oct 19. The 57,342 figure predated the first in-person day.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 10,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The Iowa Secretary of State PDF the ev_more fetcher reads is dated Oct 16 (33,418 received), while UF's compilation is Oct 20 (93,169). The two series measure different things and should not be mixed.",
+    "as_of": "2026-10-27"
+  },
+  {
+    "n": 11,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The lock reported no fall Maine poll. Seven October Maine polls existed before the lock (Suffolk, Marist, WaPo-Schar and others). That was a retrieval gap at lock time.",
+    "as_of": "2026-10-27"
   }
 ]

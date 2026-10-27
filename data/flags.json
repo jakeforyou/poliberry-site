@@ -794,121 +794,14 @@
     "source_url": "https://polymarket.com/event/maine-senate-election-winner",
     "kind": "market",
     "why": {
-      "events": [
-        {
-          "title": "Matthew Horwood",
-          "url": "https://www.theepochtimes.com/author/matthew-horwood",
-          "domain": "theepochtimes.com",
-          "seendate": "2026-10-26T05:00:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Barack Obama mocks President Trump tariff war with Canada",
-          "url": "https://toronto.citynews.ca/2026/10/25/well-known-evil-empire-barack-obama-mocks-president-trumps-tariff-war-with-canada/",
-          "domain": "toronto.citynews.ca",
-          "seendate": "2026-10-25T19:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "GNR Sunday 10 / 25 ☀️ Good News Roundup ☀️ 53 Pips from Bill and Jess ☀️ Poll : Are you helping to Get Out The Vote ?",
-          "url": "https://www.dailykos.com/stories/2026/10/25/800117338/community/gnr-sunday-10-25-%E2%98%80%EF%B8%8F-good-news-roundup-%E2%98%80%EF%B8%8F-53-pips-from-bill-and-jess-%E2%98%80%EF%B8%8F-poll/",
-          "domain": "dailykos.com",
-          "seendate": "2026-10-25T12:30:00Z",
-          "kinds": [
-            "poll"
-          ]
-        },
-        {
-          "title": "What Toronto mayoral race tells us about partisanship",
-          "url": "https://www.niagarafallsreview.ca/opinion/contributors/what-toronto-s-mayoral-race-tells-us-about-partisanship/article_f5562fe8-9977-56e9-bf24-37363b63f526.html",
-          "domain": "niagarafallsreview.ca",
-          "seendate": "2026-10-25T10:45:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Why Democrats could find it hard to win the Senate despite their strong polls",
-          "url": "https://www.westhawaiitoday.com/2026/10/25/top-news/why-democrats-could-find-it-hard-to-win-the-senate-despite-their-strong-polls/",
-          "domain": "westhawaiitoday.com",
-          "seendate": "2026-10-25T10:30:00Z",
-          "kinds": [
-            "poll"
-          ]
-        },
-        {
-          "title": "Once adrift , Graham Platner fleet of volunteers finds new purpose",
-          "url": "https://www.pressherald.com/2026/10/25/once-adrift-graham-platners-volunteer-fleet-finds-purpose-in-self-organizing/",
-          "domain": "pressherald.com",
-          "seendate": "2026-10-25T09:45:00Z",
-          "kinds": [
-            "other"
-          ]
-        }
-      ],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 3,
-        "legal": 1,
-        "scandal": 0,
-        "money": 0,
-        "other": 24
-      },
-      "polls": [
-        {
-          "pollster": "Trafalgar Group",
-          "sponsor": null,
-          "start_date": "2026-10-21",
-          "end_date": "2026-10-23",
-          "population": "LV",
-          "sample": 1077,
-          "d": 47.0,
-          "r": 47.0,
-          "margin_d": 0.0,
-          "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 1.67,
-        "n": 6,
-        "newest": "2026-10-23"
-      },
-      "market_path": [
-        [
-          "2026-10-26T01:51:10-04:00",
-          0.595
-        ],
-        [
-          "2026-10-26T05:39:05-04:00",
-          0.5975
-        ],
-        [
-          "2026-10-26T07:26:25-04:00",
-          0.5975
-        ],
-        [
-          "2026-10-26T08:30:28-04:00",
-          0.595
-        ],
-        [
-          "2026-10-26T09:02:16-04:00",
-          0.5975
-        ],
-        [
-          "2026-10-26T10:00:00-04:00",
-          0.5975
-        ]
-      ],
-      "events_window_hours": 48
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
-    "reading": "Flagged: markets moved -3.5 points since the last pull (Polymarket 63.5 to 60.0%). News in the last 48 hours: 28 articles (3 poll, 1 legal, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 scandal, 0 money). Polls just in: Trafalgar Group D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved -3.5 points since the last pull (Polymarket 63.5 to 60.0%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -926,57 +819,730 @@
     "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
     "kind": "rating",
     "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "reading": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "kinds": [
+      "market",
+      "poll",
+      "alert"
+    ],
+    "triggers": [
+      "markets moved +9.5 points since the last pull (Polymarket 69.0 to 79.0; Kalshi 67.5 to 76.5%)",
+      "Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days",
+      "moved +7.5 points since the day's open by 17:00"
+    ],
+    "weight": 20.0,
+    "source_url": "https://polymarket.com/event/nevada-governor-winner-2026",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Hart Research",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 950,
+          "d": 49.0,
+          "r": 45.0,
+          "margin_d": 4.0,
+          "source_url": "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.0,
+        "n": 3,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.7025
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.7125
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.7125
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.715
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.715
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.715
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.7175
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.725
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.745
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.76
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.78
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.78
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.7775
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: markets moved +9.5 points since the last pull (Polymarket 69.0 to 79.0; Kalshi 67.5 to 76.5%); Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days; moved +7.5 points since the day's open by 17:00. News in the last 48 hours: 0 articles. Polls just in: Hart Research D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "kinds": [
+      "rating",
+      "market",
+      "alert"
+    ],
+    "triggers": [
+      "Cook changed its rating, Lean R (flip) to Tossup",
+      "markets moved +4.0 points since the last pull (Polymarket 22.5 to 27.5; Kalshi 23.5 to 26.5%)",
+      "moved +3.5 points since the day's open by 17:00"
+    ],
+    "weight": 10.5,
+    "source_url": "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 0.0,
+        "n": 1,
+        "newest": "2026-10-21"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.235
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.235
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.235
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.235
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.235
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.235
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.23
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.265
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.2625
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.275
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.28
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.275
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.27
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Cook changed its rating, Lean R (flip) to Tossup; markets moved +4.0 points since the last pull (Polymarket 22.5 to 27.5; Kalshi 23.5 to 26.5%); moved +3.5 points since the day's open by 17:00. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "kinds": [
+      "market",
+      "alert"
+    ],
+    "triggers": [
+      "markets moved -3.8 points since the last pull (Polymarket 82.5 to 79.0; Kalshi 81.5 to 77.5%)",
+      "moved -4.2 points since the day's open by 17:00"
+    ],
+    "weight": 8.0,
+    "source_url": "https://polymarket.com/event/ohio-governor-winner-2026",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.22,
+        "n": 9,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.825
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.825
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.83
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.83
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.83
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.83
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.8325
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.83
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.825
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.785
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.785
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.785
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.7825
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: markets moved -3.8 points since the last pull (Polymarket 82.5 to 79.0; Kalshi 81.5 to 77.5%); moved -4.2 points since the day's open by 17:00. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "kinds": [
+      "rating",
+      "market"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Likely R to Lean R",
+      "markets moved +3.0 points since the last pull (Kalshi 20.5 to 23.5%)"
+    ],
+    "weight": 6.0,
+    "source_url": "https://centerforpolitics.org/crystalball/2026-senate/",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Targoz Media Research",
+          "sponsor": null,
+          "start_date": "2026-10-16",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 895,
+          "d": 46.0,
+          "r": 47.0,
+          "margin_d": -1.0,
+          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -1.75,
+        "n": 4,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.23
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.2275
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.2275
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.23
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.23
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.23
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.22
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.225
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.225
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.22
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.22
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.22
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.2225
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Sabato changed its rating, Likely R to Lean R; markets moved +3.0 points since the last pull (Kalshi 20.5 to 23.5%). News in the last 48 hours: 0 articles. Polls just in: Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "senate_nc",
+    "item": "Senate · NC",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Lean D (flip) to Likely D (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://centerforpolitics.org/crystalball/2026-senate/",
+    "kind": "rating",
+    "why": {
       "events": [
         {
-          "title": "Iowa U . S . Senate candidates disagree on range of issues",
-          "url": "http://www.wataugademocrat.com/news/national/iowa-u-s-senate-candidates-disagree-on-range-of-issues/article_17b6dd4e-b213-5f07-b0d8-de3ca5f6c778.html",
-          "domain": "wataugademocrat.com",
-          "seendate": "2026-10-25T18:00:00Z",
+          "title": "Trump Accuses Democrats of Paying Protesters $250 as Woman Is Removed Minutes Into Michigan Rally",
+          "url": "https://www.ibtimes.co.uk/trump-claims-protesters-paid-250-no-evidence-1827703",
+          "domain": "ibtimes.co.uk",
+          "seendate": "2026-10-26T07:15:00Z",
+          "kinds": [
+            "rally",
+            "scandal"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 1,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 1,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "Quantus Insights",
+          "sponsor": null,
+          "start_date": "2026-10-24",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 722,
+          "d": 51.0,
+          "r": 43.0,
+          "margin_d": 8.0,
+          "source_url": "https://quantusinsights.org/polling/f/north-carolina-senate-cooper-holds-a-9-point-lead-over-whatley"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 11.0,
+        "n": 7,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.9692
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.9683
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.9677
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.968
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.9683
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.9683
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.968
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.968
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.9683
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.9677
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.9672
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.967
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.9692
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Sabato changed its rating, Lean D (flip) to Likely D (flip). News in the last 48 hours: 2 articles (1 rally, 1 scandal, 0 ad, 0 debate, 0 endorsement, 0 poll, 0 legal, 0 money). Polls just in: Quantus Insights D+8 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "senate_fl",
+    "item": "Senate · FL special",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Safe R to Likely R"
+    ],
+    "weight": 3.0,
+    "source_url": "https://centerforpolitics.org/crystalball/2026-senate/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "ActiVote",
+          "sponsor": null,
+          "start_date": "2026-10-17",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 400,
+          "d": 47.0,
+          "r": 53.0,
+          "margin_d": -6.0,
+          "source_url": "https://www.activote.net/polls/2026/fl-u-s-senate/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -6.44,
+        "n": 9,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.1075
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.105
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.1075
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.1075
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.105
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Sabato changed its rating, Safe R to Likely R. News in the last 48 hours: 0 articles. Polls just in: ActiVote D-6 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Lean D to Likely D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://centerforpolitics.org/crystalball/2026-governor/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 6.0,
+        "n": 3,
+        "newest": "2026-10-20"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.8925
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.895
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.8975
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.8975
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.8975
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.8975
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.9
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.8975
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.9
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.9025
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.905
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.905
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.905
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Sabato changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "AL-02",
+    "item": "AL-02",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Sabato changed its rating, Lean R (flip) to Tossup"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.wvtm13.com/article/alabama-special-primary-election-2026-congressional-map/73394722",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Sabato changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Polymarket 64.5 to 67.5%)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://polymarket.com/event/texas-senate-election-winner",
+    "kind": "market",
+    "why": {
+      "events": [
+        {
+          "title": "Talarico works FOR More of the Asian - American Vote in Texas Also …..",
+          "url": "https://politicaldog101.com/2026/10/talarico-works-for-more-of-the-asian-american-vote-in-texas-also/",
+          "domain": "politicaldog101.com",
+          "seendate": "2026-10-27T05:15:00Z",
           "kinds": [
             "other"
           ]
         },
         {
-          "title": "Talking to every single person matter :  prairie populist canvass the rural US heartland to win in midterms | US midterm elections 2026",
-          "url": "https://www.theguardian.com/us-news/2026/oct/25/prairie-populists-midwest-prairie-states-midterm-elections",
-          "domain": "theguardian.com",
-          "seendate": "2026-10-25T12:45:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Josh Turek , the Paralympic gold medalist seeking a US Senate seat from Iowa",
-          "url": "https://www.hindustantimes.com/world-news/us-news/josh-turek-the-paralympic-gold-medalist-seeking-a-us-senate-seat-from-iowa-101792611170895.html",
-          "domain": "hindustantimes.com",
-          "seendate": "2026-10-25T10:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Trump hits midterm rally trail as Republicans defend home turf : five takeaways",
-          "url": "https://www.hindustantimes.com/world-news/trump-hits-midterm-rally-trail-as-republicans-defend-home-turf-five-takeaways-101792843262862.html",
-          "domain": "hindustantimes.com",
-          "seendate": "2026-10-24T16:15:00Z",
-          "kinds": [
-            "rally"
-          ]
-        },
-        {
-          "title": "AOC rebukes anti - trans Democrats , calling them  Shameful  and  wrong  for  scaring so easily  – Lake County Record - Bee",
-          "url": "https://www.record-bee.com/2026/10/24/aoc-rebukes-anti-trans-democrats-calling-them-shameful-and-wrong-for-scaring-so-easily/",
-          "domain": "record-bee.com",
-          "seendate": "2026-10-24T16:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Election 2026 : What to know about the November midterm key races",
-          "url": "https://www.fox13news.com/news/election-2026-questions-key-races",
-          "domain": "fox13news.com",
-          "seendate": "2026-10-24T15:00:00Z",
+          "title": "Howerton calls Zach Lambert a  heretic  but welcomes Bo French – Baptist News Global",
+          "url": "https://baptistnews.com/article/howerton-calls-zach-lambert-a-heretic-but-welcomes-bo-french/",
+          "domain": "baptistnews.com",
+          "seendate": "2026-10-26T07:15:00Z",
           "kinds": [
             "other"
           ]
@@ -986,48 +1552,171 @@
         "ad": 0,
         "debate": 0,
         "endorsement": 0,
-        "rally": 5,
+        "rally": 0,
         "poll": 0,
         "legal": 0,
         "scandal": 0,
         "money": 0,
-        "other": 7
+        "other": 2
       },
       "polls": [],
       "poll_average": {
-        "margin_d": -0.89,
-        "n": 9,
-        "newest": "2026-10-22"
+        "margin_d": 2.07,
+        "n": 15,
+        "newest": "2026-10-21"
       },
       "market_path": [
         [
-          "2026-10-26T01:51:10-04:00",
-          0.415
+          "2026-10-27T00:02:39-04:00",
+          0.66
         ],
         [
-          "2026-10-26T05:39:05-04:00",
-          0.42
+          "2026-10-27T02:12:19-04:00",
+          0.66
         ],
         [
-          "2026-10-26T07:26:25-04:00",
-          0.42
+          "2026-10-27T05:24:59-04:00",
+          0.66
         ],
         [
-          "2026-10-26T08:30:28-04:00",
-          0.42
+          "2026-10-27T06:14:12-04:00",
+          0.66
         ],
         [
-          "2026-10-26T09:02:16-04:00",
-          0.42
+          "2026-10-27T07:07:56-04:00",
+          0.66
         ],
         [
-          "2026-10-26T10:00:00-04:00",
-          0.4175
+          "2026-10-27T08:01:44-04:00",
+          0.66
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.6625
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.66
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.665
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.665
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.665
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.6675
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.665
         ]
       ],
       "events_window_hours": 48
     },
-    "reading": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Tossup. News in the last 48 hours: 12 articles (5 rally, 0 ad, 0 debate, 0 endorsement, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +3.0 points since the last pull (Polymarket 64.5 to 67.5%). News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-27",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "kinds": [
+      "poll"
+    ],
+    "triggers": [
+      "Targoz Media Research (LV, through 2026-10-25) shows D-10 in a race with 2 other polls in 21 days"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/",
+    "kind": "poll",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Targoz Media Research",
+          "sponsor": null,
+          "start_date": "2026-10-16",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 895,
+          "d": 41.0,
+          "r": 51.0,
+          "margin_d": -10.0,
+          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -12.0,
+        "n": 3,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-27T00:02:39-04:00",
+          0.055
+        ],
+        [
+          "2026-10-27T02:12:19-04:00",
+          0.054
+        ],
+        [
+          "2026-10-27T05:24:59-04:00",
+          0.0542
+        ],
+        [
+          "2026-10-27T06:14:12-04:00",
+          0.0533
+        ],
+        [
+          "2026-10-27T07:07:56-04:00",
+          0.054
+        ],
+        [
+          "2026-10-27T08:01:44-04:00",
+          0.0568
+        ],
+        [
+          "2026-10-27T09:00:00-04:00",
+          0.0558
+        ],
+        [
+          "2026-10-27T10:00:43-04:00",
+          0.056
+        ],
+        [
+          "2026-10-27T11:41:26-04:00",
+          0.057
+        ],
+        [
+          "2026-10-27T13:07:21-04:00",
+          0.054
+        ],
+        [
+          "2026-10-27T15:36:37-04:00",
+          0.0535
+        ],
+        [
+          "2026-10-27T16:08:19-04:00",
+          0.0535
+        ],
+        [
+          "2026-10-27T17:00:00-04:00",
+          0.052
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "reading": "Flagged: Targoz Media Research (LV, through 2026-10-25) shows D-10 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Targoz Media Research D-10 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   }

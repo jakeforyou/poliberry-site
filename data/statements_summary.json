@@ -1,17 +1,41 @@
 [
   {
-    "as_of": null,
+    "as_of": "2026-10-26",
     "days": 7,
-    "this_period": null,
-    "prior_period": null,
-    "change_pct": null,
-    "direction": "none",
-    "top_kind": null,
-    "top_kind_articles": 0,
-    "top_speaker": null,
-    "top_speaker_articles": 0,
-    "counts_source": null,
-    "sentence": "No coverage of election-legitimacy statements was retrieved.",
+    "this_period": {
+      "start": "2026-10-20",
+      "end": "2026-10-26",
+      "articles": 1321,
+      "usable_days": 5,
+      "skipped_days": [
+        "2026-10-25",
+        "2026-10-26"
+      ]
+    },
+    "prior_period": {
+      "start": "2026-10-13",
+      "end": "2026-10-19",
+      "articles": 1383,
+      "usable_days": 5,
+      "skipped_days": [
+        "2026-10-13",
+        "2026-10-14"
+      ]
+    },
+    "change_pct": -4.5,
+    "direction": "flat",
+    "top_kind": "noncitizen voting",
+    "top_kind_articles": 8,
+    "top_speaker": "Donald Trump",
+    "top_speaker_articles": 1212,
+    "counts_source": "daily",
+    "baseline": {
+      "usable_days": 29,
+      "per_day": 233.1,
+      "this_per_day": 264.2,
+      "change_pct": 13.3
+    },
+    "sentence": "Coverage of election-legitimacy statements is flat this week (1321 articles on 5 days against 1383 on 5), led by Trump on noncitizen voting.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",
