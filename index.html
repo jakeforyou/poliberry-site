@@ -162,13 +162,16 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     setLink: (n) => { try { history.replaceState(null, '', '#' + n); } catch (e) { /* ignore */ } },
     params: () => ({}), setParams: () => {}, resetParams: () => {}, refresh: () => {}, calc: () => {}, loader: () => {},
   };
+  // 'no-cache' asks the server whether each file changed before using a stored copy, so a refresh after a
+  // republish shows the new data. GitHub Pages lets browsers keep files for ten minutes without asking.
+  const FRESH = { cache: 'no-cache' };
   async function loadAll() {
-    manifest = await fetch(BASE + 'manifest.json').then((r) => r.json());
+    manifest = await fetch(BASE + 'manifest.json', FRESH).then((r) => r.json());
     window.__dashManifest = manifest;
     const ids = Object.keys(manifest.datasets);
     const banner = document.getElementById('lx-synthetic');
     if (manifest.synthetic) { banner.hidden = false; banner.querySelector('span').textContent = manifest.synthetic_note || 'Synthetic data.'; document.body.dataset.synthetic = 'true'; }
-    const fetchOne = (id) => fetch(BASE + id + '.json').then((r) => r.json())
+    const fetchOne = (id) => fetch(BASE + id + '.json', FRESH).then((r) => r.json())
       .then((d) => { cache[id] = { status: 'ok', data: d, columns: d.length ? Object.keys(d[0]) : [] }; })
       .catch((e) => { cache[id] = { status: 'error', data: [], message: String(e) }; });
     // datasets the manifest marks lazy (the full trends file) wait for dash.load(id) from the page
