@@ -1,7 +1,7 @@
 {
   "run_id": "2026-10-21T2145",
   "kind": "run",
-  "built_at": "2026-10-28T10:07:31-04:00",
+  "built_at": "2026-10-28T10:26:57-04:00",
   "datasets": {
     "scorecard": {
       "file": "data/dashboard/scorecard.json",
@@ -234,7 +234,7 @@
     },
     "events_by_race": {
       "file": "data/dashboard/events_by_race.json",
-      "rows": 51,
+      "rows": 17,
       "title": "Campaign news by race",
       "description": "The top articles from the last 48 hours per race from the event feed, classified by kind, plus one summary row per race. Absence of an article is not absence of an event."
     },

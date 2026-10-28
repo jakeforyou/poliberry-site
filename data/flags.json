@@ -1078,17 +1078,7 @@
     "kind": "alert",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -1136,7 +1126,7 @@
       ],
       "events_window_hours": 48
     },
-    "reading": "Flagged: markets moved +5.2 points since the last pull (Polymarket 85.5 to 90.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.0 points since the day's open by 10:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +5.2 points since the last pull (Polymarket 85.5 to 90.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.0 points since the day's open by 10:00. News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1156,37 +1146,8 @@
     "source_url": "https://polymarket.com/event/south-carolina-senate-election-winner",
     "kind": "alert",
     "why": {
-      "events": [
-        {
-          "title": "Trump campaigns in Mississippi",
-          "url": "https://www.gulfcoastnewsnow.com/article/trump-campaigns-mississippi-midterms/74254270",
-          "domain": "gulfcoastnewsnow.com",
-          "seendate": "2026-10-27T05:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Last Minute Speed Candidating",
-          "url": "https://www.southcarolinapublicradio.org/podcast/south-carolina-lede/2026-10-27/last-minute-speed-candidating",
-          "domain": "southcarolinapublicradio.org",
-          "seendate": "2026-10-27T05:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        }
-      ],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 2
-      },
+      "events": [],
+      "events_by_kind": {},
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -1258,7 +1219,7 @@
       ],
       "events_window_hours": 48
     },
-    "reading": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +4.8 points since the day's open by 10:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +4.8 points since the day's open by 10:00. News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1341,17 +1302,7 @@
     "kind": "poll",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [
         {
           "pollster": "Hart Research",
@@ -1399,7 +1350,7 @@
       ],
       "events_window_hours": 48
     },
-    "reading": "Flagged: Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Hart Research D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Hart Research D+4 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   }
