@@ -5,7 +5,7 @@
     "this_period": {
       "start": "2026-10-21",
       "end": "2026-10-27",
-      "articles": 1035,
+      "articles": 1025,
       "usable_days": 4,
       "skipped_days": [
         "2026-10-25",
@@ -16,7 +16,7 @@
     "prior_period": {
       "start": "2026-10-14",
       "end": "2026-10-20",
-      "articles": 1695,
+      "articles": 1679,
       "usable_days": 6,
       "skipped_days": [
         "2026-10-14"
@@ -24,18 +24,18 @@
     },
     "change_pct": -8.4,
     "direction": "flat",
-    "top_kind": "mail ballots",
-    "top_kind_articles": 2,
+    "top_kind": "other",
+    "top_kind_articles": 5,
     "top_speaker": "Donald Trump",
     "top_speaker_articles": 962,
     "counts_source": "daily",
     "baseline": {
       "usable_days": 30,
-      "per_day": 238.1,
-      "this_per_day": 258.8,
-      "change_pct": 8.7
+      "per_day": 235.2,
+      "this_per_day": 256.2,
+      "change_pct": 8.9
     },
-    "sentence": "Coverage of election-legitimacy statements is flat this week (1035 articles on 4 days against 1695 on 6), led by Trump on mail ballots.",
+    "sentence": "Coverage of election-legitimacy statements is flat this week (1025 articles on 4 days against 1679 on 6), led by Trump on other topics.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",

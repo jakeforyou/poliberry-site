@@ -1,7 +1,7 @@
 {
   "run_id": "2026-10-28T1027",
   "kind": "run",
-  "built_at": "2026-10-28T10:38:41-04:00",
+  "built_at": "2026-10-28T11:19:09-04:00",
   "datasets": {
     "scorecard": {
       "file": "data/dashboard/scorecard.json",
@@ -150,13 +150,13 @@
     },
     "statements": {
       "file": "data/dashboard/statements.json",
-      "rows": 467,
+      "rows": 440,
       "title": "Election-legitimacy statements, coverage",
       "description": "News articles matching an election-legitimacy query for each tracked speaker (the president and his allies), from the GDELT news index, newest first, with a keyword kind (scripts/fetch_statements.py, scripts/statements.py). Articles are retrieved; the kind is inferred from the headline. Coverage, not truth; never a forecast."
     },
     "statements_daily": {
       "file": "data/dashboard/statements_daily.json",
-      "rows": 287,
+      "rows": 205,
       "title": "Election-legitimacy statements, by day",
       "description": "Articles per day per tracked speaker, and a total, from GDELT's daily volume."
     },
@@ -174,13 +174,13 @@
     },
     "flags": {
       "file": "data/dashboard/flags.json",
-      "rows": 46,
+      "rows": 49,
       "title": "Flagged moves",
       "description": "Every move that cleared a fixed threshold (3 points in a market in a day, a rating change, a 5-point Decision Desk move, a poll 5 points off its 21-day average or in a thin race, 3 points intraday), with the news, polls and price path the scripts could gather beside it. A flag is a question, not a reading."
     },
     "brief": {
       "file": "data/dashboard/brief.json",
-      "rows": 80,
+      "rows": 83,
       "title": "The morning brief",
       "description": "One lead and one entry per flagged item: what happened, why it moved, whether it should move us, and what would change the answer. Facts are retrieved by scripts. The reading is written each morning by /brief and labeled inferred. A day without a brief shows the facts alone."
     },
@@ -234,7 +234,7 @@
     },
     "events_by_race": {
       "file": "data/dashboard/events_by_race.json",
-      "rows": 28,
+      "rows": 37,
       "title": "Campaign news by race",
       "description": "The top articles from the last 48 hours per race from the event feed, classified by kind, plus one summary row per race. Absence of an article is not absence of an event."
     },

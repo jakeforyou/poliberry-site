@@ -195,7 +195,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> A pre-registered forecast of the 2026 midterms, kept by Jake Berry with Claude. Every chance is the model's probability that the Democrat wins, printed raw. Beside it: the lock, a judgment frozen on Oct 16, and the latest run. Since lock compares the model with its own lock-day figure. Early-vote and modeled lines never enter a number. Every figure is labeled, and a marked number opens its source. Markets are benchmarks, not inputs. A record to be graded after Nov 3, not advice.</p></section>
 <div class="lx-bar" role="region" aria-label="About this copy">
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-10-28 10:38</b></span>
+  <span>Data built <b id="lx-built">2026-10-28 11:19</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Republished each morning, and after a repull.</span>
@@ -649,8 +649,13 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-read { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cds-gap-xl); margin-top: var(--cds-gap-lg); padding-top: var(--cds-gap-md); border-top: 1px solid var(--color-border-line); }
 @media (max-width: 64rem) { .ms-read { grid-template-columns: minmax(0, 1fr); } }
 .ms-read.ms-read1 { grid-template-columns: minmax(0, 1fr); }
+.ms-read.ms-read2 { grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); }
+@media (max-width: 64rem) { .ms-read.ms-read2 { grid-template-columns: minmax(0, 1fr); } }
+.ms-read2 .ms-todaylead { max-width: 68ch; }
+.ms-read2 #brief-flagcol[hidden] { display: none; }
 .ms-read1 .ms-todaylead { max-width: 78ch; }
-.ms-readcol { display: grid; gap: .4rem; align-content: start; min-width: 0; }
+.ms-readcol { display: grid; grid-template-columns: minmax(0, 1fr); gap: .4rem; align-content: start; min-width: 0; }
+#brief-alerts { white-space: normal; }
 .ms-readcol h2 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 1.05rem; color: var(--color-fg-muted); margin: 0; }
 .ms-readcol .ms-lead2 { font-size: 1.15rem; line-height: 1.5; max-width: 62ch; }
 .ms-today { border-top: 0; margin-top: 0; padding-top: 0; }
@@ -735,12 +740,62 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-flagline[open] > summary::after { content: " less"; }
 .ms-flagline > .m { margin: .25rem 0 0; }
 .ms-moving td.race .why { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 400; font-size: 10.5px; line-height: 1.35; color: var(--color-fg-muted); max-width: 24rem; margin-top: .1rem; cursor: help; }
-.ms-headline { display: grid; gap: .4rem; padding: var(--cds-gap-md) 0 var(--cds-gap-sm); border-bottom: 1px solid var(--color-border-line); }
+.ms-headline { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 38rem); gap: var(--cds-gap-xl); align-items: center; padding: var(--cds-gap-md) 0; border-bottom: 1px solid var(--color-border-line); }
+.ms-hlread { display: grid; gap: .4rem; align-content: start; min-width: 0; }
+.ms-hlread[hidden] { display: none; }
+.ms-headline > .ms-instrip { padding: 0 0 0 var(--cds-gap-xl); border-bottom: 0; border-left: 1px solid var(--color-border-line); }
+.ms-hlread[hidden] + .ms-instrip { grid-column: 1 / -1; border-left: 0; padding-left: 0; }
+@media (max-width: 70rem) {
+  .ms-headline { grid-template-columns: minmax(0, 1fr); gap: var(--cds-gap-md); }
+  .ms-headline > .ms-instrip { padding: var(--cds-gap-md) 0 0; border-left: 0; border-top: 1px solid var(--color-border-line); }
+}
 .ms-hl { font-family: var(--font-anthropic-serif); font-size: 1.65rem; line-height: 1.22; margin: 0; max-width: 36ch; text-wrap: balance; }
 .ms-hl-vibe { margin: 0; font-size: var(--cds-font-size-body); line-height: 1.5; max-width: 72ch; }
 .ms-hl-meta { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
 .ms-hl-meta a { color: inherit; }
-@media (max-width: 48rem) { .ms-hl { font-size: 1.3rem; } }
+@media (max-width: 48rem) {
+  .ms-hl { font-size: 1.3rem; }
+  .ms-headline > .ms-instrip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cds-gap-md); }
+  .ms-headline .ms-inst .big { font-size: 2.2rem; }
+  .ms-headline .ms-inst .seats { font-size: 1.05rem; }
+  .ms-headline .ms-inst .seats .m { display: block; margin-left: 0; }
+  .ms-headline .ms-inst .bar { height: 1.8rem; }
+}
+/* the early vote under the map (2026-10-28): the national count, then each state with a close race */
+.ms-evpanel { display: grid; gap: .45rem; margin-top: var(--cds-gap-md); padding-top: var(--cds-gap-md); border-top: 1px solid var(--color-border-line); min-width: 0; }
+.ms-evpanel[hidden] { display: none; }
+.ms-evpanel h2 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 1.15rem; margin: 0; }
+.ms-evpanel .tot { font-family: var(--font-anthropic-serif); font-size: 1.6rem; line-height: 1.15; margin: 0; font-variant-numeric: tabular-nums; }
+.ms-evpanel .tot small { font-family: var(--font-anthropic-sans); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-left: .35rem; }
+.ms-evgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cds-gap-lg); align-items: start; }
+@media (max-width: 48rem) { .ms-evgrid { grid-template-columns: minmax(0, 1fr); } }
+.ms-evpanel table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.ms-evpanel th { text-align: left; font-weight: 400; color: var(--color-fg-muted); padding: .25rem .5rem .25rem 0; border-bottom: 1px solid var(--color-border-line); vertical-align: bottom; }
+.ms-evpanel td { padding: .22rem .5rem .22rem 0; border-bottom: 1px solid var(--color-border-line); vertical-align: baseline; }
+.ms-evpanel th.num, .ms-evpanel td.num { text-align: right; }
+.ms-evpanel td.st { font-weight: 600; white-space: nowrap; }
+.ms-evpanel td .m { color: var(--color-fg-muted); font-size: .92em; }
+.ms-evpanel td.num, .ms-evpanel th.num { white-space: nowrap; }
+.ms-evpanel td.st .ms-chip { margin-left: .35rem; font-weight: 400; }
+.ms-evpanel .foot { margin: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.45; max-width: 72ch; }
+@media (max-width: 48rem) {
+  .ms-evpanel .tot { font-size: 1.35rem; }
+  .ms-evpanel td.gap { white-space: normal; }
+  .ms-evpanel td.gap .m { display: block; white-space: nowrap; }
+  .ms-evpanel th.num { white-space: normal; }
+}
+/* safe races fold into one strip under each group's cards (2026-10-28) */
+.ms-fold { display: grid; gap: .45rem; margin-top: var(--cds-gap-md); }
+.ms-fold .lbl { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+.ms-foldchips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.ms-foldchip { all: unset; cursor: pointer; font-size: var(--cds-font-size-caption); line-height: 1.3; padding: .35rem .7rem; border: 1px solid var(--color-border-line); border-radius: 999px; color: var(--color-fg); font-variant-numeric: tabular-nums; }
+.ms-foldchip b { font-weight: 600; }
+.ms-foldchip .p { margin-left: .3rem; color: var(--color-fg-muted); }
+.ms-foldchip:hover, .ms-foldchip:focus-visible { border-color: var(--color-fg-muted); }
+.ms-foldchip:focus-visible { outline: 2px solid var(--color-fg-muted); outline-offset: 2px; }
+.ms-foldchip[aria-expanded="true"] { border-color: var(--color-fg); }
+.ms-foldslot { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); }
+.ms-foldslot:empty { display: none; }
 </style>
 
 <div class="ms">
@@ -759,16 +814,18 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     <p class="ms-note" id="signals-note" hidden></p>
   </header>
 
-  <section class="ms-headline" id="headline" hidden aria-label="Today's read">
-    <p class="ms-hl" id="hl-text"></p>
-    <p class="ms-hl-vibe" id="hl-vibe"></p>
-    <p class="ms-sub ms-hl-meta"><span class="ms-chip" id="hl-chip">today's read</span> <span id="hl-meta"></span><span id="help-headline"></span></p>
+  <section class="ms-headline" id="headline" aria-label="Today's read and the two chambers">
+    <div class="ms-hlread" id="hl-read" hidden>
+      <p class="ms-hl" id="hl-text"></p>
+      <p class="ms-hl-vibe" id="hl-vibe"></p>
+      <p class="ms-sub ms-hl-meta"><span class="ms-chip" id="hl-chip">today's read</span> <span id="hl-meta"></span><span id="help-headline"></span></p>
+    </div>
+    <div class="ms-instrip" id="instruments" data-source="scorecard"></div>
   </section>
   <nav class="ms-tabs" id="tabs" role="tablist" aria-label="Sections"></nav>
   <nav class="ms-tabs ms-subtabs" id="ref-tabs" role="tablist" aria-label="Reference sections" hidden></nav>
 
   <section class="ms-panel" data-panel="forecast" hidden>
-    <div class="ms-instrip" id="instruments" data-source="scorecard"></div>
     <div class="ms-hero">
       <div class="ms-mapwrap">
         <div class="ms-toolbar">
@@ -786,15 +843,19 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         </div>
         <div class="ms-chart ms-map" id="mapchart" data-source="battlefield"></div>
         <div class="ms-cat-legend" id="map-legend"></div>
+        <section class="ms-evpanel" id="ev-panel" data-source="early_vote_readings" aria-label="Early vote" hidden></section>
       </div>
       <section class="ms-moving" id="moving" data-source="race_summary"></section>
     </div>
     <div class="ms-nums ms-compact" id="nums" hidden></div>
-    <div class="ms-read ms-read1">
+    <div class="ms-read ms-read2">
       <div class="ms-readcol">
         <h2>Today</h2>
         <p class="ms-todaylead" id="brief-lead">—</p>
         <p class="ms-sub"><span id="brief-date"></span> <span class="ms-chip" id="brief-alerts" data-tone="warn" hidden></span><span id="help-brief" hidden></span></p>
+      </div>
+      <div class="ms-readcol" id="brief-flagcol">
+        <h2 id="brief-flaghead">What the brief explained</h2>
         <div class="ms-flaglines" id="brief-flags" data-source="brief"></div>
       </div>
     </div>
@@ -1226,9 +1287,11 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const sc = at('scorecard'), run = at('run'), ev = at('early_vote');
     const idx = trendIndex();
     if (sc && run) drawBand(sc, run, ev || [], idx); else if (D('scorecard').status === 'error') fail($('#nums'));
+    // the band under the title, on every tab: the day's read and the two chambers (2026-10-28)
+    if (typeof drawHeadline === 'function') drawHeadline(D('brief').data || []);
+    if (sc && typeof drawInstruments === 'function') drawInstruments(sc);
     if (state.tab === 'forecast') {
       const br = at('brief'); if (br) drawBrief(br); else if (D('brief').status === 'error') fail($('#brief-flags'));
-      if (typeof drawHeadline === 'function') drawHeadline(D('brief').data || []);
       if (sc) { state.mapMode = 'ours'; drawMap(sc); drawForecast(sc, run || [], idx); }
     } else {
       const ch = at('changes'); if (ch) drawChanges(ch); else if (D('changes').status === 'error') fail($('#changes'));
@@ -1320,7 +1383,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   }
   // the day's read: the brief's headline and one sentence, written under the voice guide; falls back to the latest earlier day
   function drawHeadline(rows) {
-    const box = $('#headline'); if (!box) return;
+    const box = $('#hl-read'); if (!box) return;
     const hs = (rows || []).filter((r) => r.kind === 'headline' && r.headline && r.as_of <= state.snap).sort((a, b) => a.as_of.localeCompare(b.as_of));
     const h = hs[hs.length - 1];
     if (!h) { box.hidden = true; return; }
@@ -1345,13 +1408,16 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (lead && lead.text) { lp.textContent = lead.text; mark(lp, 'brief', 'text', Wh('kind=lead')); }
     else { lp.classList.add('ms-muted'); lp.textContent = items.length ? `No brief written for ${nice(state.snap)} yet; ${items.length} item${items.length === 1 ? '' : 's'} cleared a threshold.` : `Nothing cleared a threshold on ${nice(state.snap)}.`; }
     const box = $('#brief-flags');
+    const fc = $('#brief-flagcol'); if (fc) fc.hidden = !items.length;
+    const fh = $('#brief-flaghead'); if (fh) fh.textContent = `What moved today (${items.length})`;
     box.replaceChildren(...items.map((r) => {
       // the verdict and the headline show; the reading opens on a click
       const p = el('details', { class: 'ms-flagline' });
       const sm = el('summary');
       const v = r.explained ? verdict(r.should_it_move_us) : null;
       sm.append(el('span', { class: 'ms-chip', 'data-tone': r.explained ? (v ? v.tone : null) : 'warn' }, r.explained ? (v ? v.word : 'Read') : 'Unexplained'), document.createTextNode(' '));
-      const b = el('b', {}, r.headline || r.item);
+      // an unexplained early-vote flag names what happened, not the race it is attached to
+      const b = el('b', {}, r.headline || (r.flag_kind === 'ballots' && (r.triggers || [])[0] ? r.triggers[0].split(':')[0] : r.item));
       if (r.item_id) b.addEventListener('click', (e) => { e.preventDefault(); select(r.item_id, true); });
       sm.append(b);
       p.append(sm, el('p', { class: 'm' }, r.explained ? (r.should_it_move_us || '') : (r.facts || '')));
@@ -1436,8 +1502,10 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (r.run != null) svg.append('circle').attr('cx', x(r.run)).attr('cy', 16).attr('r', 5).attr('fill', 'none').attr('stroke', 'var(--ms-ours)').attr('stroke-width', 1.5).attr('stroke-dasharray', '2 2').append('title').text('The run');
     svg.append('circle').attr('cx', x(r.ours)).attr('cy', 16).attr('r', 6).attr('fill', 'var(--ms-ours)').attr('stroke', 'var(--color-panel)').attr('stroke-width', 2);
     svg.append('text').attr('class', 'ms-tick').attr('x', x(majority)).attr('y', H - 2).attr('text-anchor', 'middle').text(`${majority} to control`);
-    svg.append('text').attr('class', 'ms-tick').attr('x', x(domain[0])).attr('y', H - 2).attr('text-anchor', 'start').text(domain[0]);
-    svg.append('text').attr('class', 'ms-tick').attr('x', x(domain[1])).attr('y', H - 2).attr('text-anchor', 'end').text(domain[1]);
+    // an end number shows only where it clears the majority label (on a phone-width bar 195 ran into "218 to control")
+    const half = (`${majority} to control`.length * 6.2) / 2, gap = (v) => String(v).length * 7 + 6;
+    if (x(majority) - half > 10 + gap(domain[0])) svg.append('text').attr('class', 'ms-tick').attr('x', x(domain[0])).attr('y', H - 2).attr('text-anchor', 'start').text(domain[0]);
+    if (x(majority) + half < W - 10 - gap(domain[1])) svg.append('text').attr('class', 'ms-tick').attr('x', x(domain[1])).attr('y', H - 2).attr('text-anchor', 'end').text(domain[1]);
     box.replaceChildren(svg.node());
   }
   function drawInstruments(sc) {
@@ -1874,8 +1942,76 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && _popSt) closeStatePop(); });
   document.addEventListener('click', (e) => { if (!_popSt) return; const p = $('#state-pop'); if (p && !p.contains(e.target) && !e.target.closest('#mapchart')) closeStatePop(); });
+  // the early vote under the map (2026-10-28): the national count, then each state with a race between 5 and 95
+  const isClose = (x) => { const c = x.model && x.model.chance != null ? x.model.chance : x.ours; return c != null && c >= 5 && c <= 95; };
+  function drawEvPanel(rows) {
+    const box = $('#ev-panel'); if (!box) return;
+    const bc = ballotsCounted();
+    if (!bc.total) { box.hidden = true; return; }
+    const by = {};
+    // a state shows when it has a race between 5 and 95, or a 2022 party baseline to compare against (NC, PA, CO, IA)
+    for (const r of rows) if (r.state && r.early_vote && r.early_vote.total != null && (isClose(r) || r.early_vote.gap_2022 != null)) by[r.state] = by[r.state] || r.early_vote;
+    const ev = Object.fromEntries((D('early_vote_readings').data || []).map((x) => [x.state, x]));
+    for (const x of D('ev_swing').data || []) if (!by[x.state] && ev[x.state]) by[x.state] = { total: x.total_2026, share_of_2022_turnout: ev[x.state].share_of_2022_turnout, gap_2026: x.gap_2026, gap_2022: x.gap_2022, swing: x.swing };
+    const flagged = new Set((D('flags').data || []).filter((f) => f.as_of === state.snap && (f.kinds || []).includes('ballots')).flatMap((f) => ((f.why || {}).early_vote || []).map((e) => e.state)));
+    const sts = Object.keys(by).sort((a, b) => SN(a).localeCompare(SN(b)));
+    const head = el('h2', {}, 'Early vote'); head.append(help('evpanel', 'Ballots cast before Election Day, by mail or in person, from the states\' own files where we read them and the UF Election Lab tracker elsewhere. The party gap is the party registration of the people who voted, not how they voted. Where a state published the same count in 2022, the comparison is at the same number of days before the election. None of this is in the forecast.'));
+    const tot = el('p', { class: 'tot' }, `${compact(bc.total)} ballots`); tot.append(el('small', {}, `in ${bc.states} states, through ${bc.through ? nice(bc.through) : 'the latest file'}`));
+    const kids = [head, tot];
+    if (sts.length) {
+      // two short tables side by side on a wide screen, one on a phone
+      const one = (part) => {
+        const t = el('table'); const hr = el('tr');
+        hr.append(el('th', {}, 'State'), el('th', { class: 'num' }, 'Ballots'), el('th', { class: 'num' }, 'Of 2022 total'), el('th', { class: 'num' }, 'D minus R'));
+        t.append(hr);
+        for (const st of part) {
+          const e = by[st]; const tr = el('tr');
+          const name = el('td', { class: 'st' }, SN(st)); if (flagged.has(st)) name.append(el('span', { class: 'ms-chip', 'data-tone': 'warn' }, 'flagged'));
+          const gap = el('td', { class: 'num gap' });
+          if (e.gap_2026 != null) { gap.textContent = signed(e.gap_2026); if (e.gap_2022 != null) gap.append(el('span', { class: 'm' }, ` (2022 ${signed(e.gap_2022)})`)); }
+          else gap.append(el('span', { class: 'm' }, 'not published'));
+          tr.append(name, mark(el('td', { class: 'num' }, compact(e.total)), 'early_vote_readings', 'total_2026', Wh('state=' + enc(st))),
+            el('td', { class: 'num' }, e.share_of_2022_turnout != null ? Math.round(e.share_of_2022_turnout) + '%' : '—'), gap);
+          t.append(tr);
+        }
+        return t;
+      };
+      const half = narrow() ? sts.length : Math.ceil(sts.length / 2);
+      const grid = el('div', { class: 'ms-evgrid' }); grid.append(one(sts.slice(0, half))); if (half < sts.length) grid.append(one(sts.slice(half)));
+      kids.push(grid);
+    }
+    const notes = ["States with a close race or a 2022 count by party. Of 2022 total is the share of everything the state cast in 2022. D minus R is the registration of who has voted, not how: plus means more Democrats, in points, with 2022 at the same point where the state published it."];
+    const sc = (by.SC || {}).composition; const hg = sc && (sc.groups || []).find((g) => /^Counties Harris won/.test(g.label || ''));
+    if (hg) notes.push(`South Carolina publishes no party. Counties Harris won cast ${d3.format('.1f')(hg.share_2026)} percent of its ballots, against ${d3.format('.1f')(hg.share_2022)} at this point in 2022.`);
+    if (bc.through && state.snap < bc.through) notes.push(`This is the latest count, newer than ${nice(state.snap)}.`);
+    kids.push(el('p', { class: 'foot' }, notes.join(' ')));
+    box.replaceChildren(...kids); box.hidden = false;
+  }
+  function favored(r) {
+    const c = r.model && r.model.chance != null ? r.model.chance : r.ours;
+    const d = c >= 50;
+    return { name: surname(cleanName(d ? r.cand_d : r.cand_r) || (d ? 'Democrat' : 'Republican')), p: d ? c : 100 - c, party: d ? 'D' : 'R' };
+  }
+  function foldStrip(rs, ctx) {
+    const wrap = el('div', { class: 'ms-fold' });
+    const lbl = el('p', { class: 'lbl' }, `Not close: ${rs.length} race${rs.length === 1 ? '' : 's'} where the model gives the leader more than 95 percent. Open one for its card.`);
+    const chips = el('div', { class: 'ms-foldchips' }), slot = el('div', { class: 'ms-foldslot' });
+    for (const r of rs) {
+      const f = favored(r);
+      const b = el('button', { type: 'button', class: 'ms-foldchip', id: 'fold-' + r.id, 'data-state': r.state || '', 'aria-expanded': 'false' });
+      b.append(el('b', {}, raceTitle(r)), el('span', { class: 'p' }, `${f.name} ${pct2(f.p)}%`));
+      b.addEventListener('click', () => {
+        const open = b.getAttribute('aria-expanded') === 'true';
+        const card = $('#race-' + r.id);
+        if (open) { if (card) card.remove(); b.setAttribute('aria-expanded', 'false'); return; }
+        slot.append(raceCard(r, ctx)); b.setAttribute('aria-expanded', 'true');
+      });
+      chips.append(b);
+    }
+    wrap.append(lbl, chips, slot);
+    return wrap;
+  }
   function drawForecast(sc, run, idx) {
-    drawInstruments(sc);
     drawMoving(idx);
     const rows = (D('race_summary').data || []).filter((r) => r.office !== 'control');
     const exp = Object.fromEntries((D('expected_rows').data || []).map((e) => [e.id, e]));
@@ -1890,9 +2026,11 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       if (!rs.length) return null;
       const g = el('section', { class: 'ms-group', id: 'group-' + office });
       g.append(el('h2', {}, title), el('p', { class: 'ms-sub' }, sub));
+      const close = rs.filter(isClose), safe = rs.filter((r) => !isClose(r));
       const cards = el('div', { class: 'ms-cards' });
-      for (const r of rs) cards.append(raceCard(r, ctx));
-      g.append(cards);
+      for (const r of close) cards.append(raceCard(r, ctx));
+      if (close.length) g.append(cards);
+      if (safe.length) g.append(foldStrip(safe, ctx));
       return g;
     }).filter(Boolean);
     const house = sc.filter((r) => r.type === 'margin' && /^sc0\d_margin$/.test(r.id));
@@ -1905,16 +2043,18 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       g.append(cards); groups.push(g);
     }
     box.replaceChildren(...groups);
+    drawEvPanel(rows);
     if (state.stSel) focusState(state.stSel, false);
   }
   function focusState(st, scroll = true) {
+    if (scroll && st) document.querySelectorAll(`#race-groups .ms-foldchip[data-state="${st}"][aria-expanded="false"]`).forEach((c) => c.click());
     const blocks = [...document.querySelectorAll('#race-groups .ms-race')];
     let first = null;
     for (const b of blocks) { const on = b.dataset.state === st; b.classList.toggle('is-focus', on); if (on && !first) first = b; }
     if (first && scroll) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (!first && st) { const note = $('#map-note'); if (note) note.textContent = `${SN(st)}: no race we forecast. The whole-country list on the Evidence page has every rated race.`; }
   }
-  function focusBlock(id) { const b = $('#race-' + id); if (!b) return false; document.querySelectorAll('#race-groups .ms-race').forEach((x) => x.classList.toggle('is-focus', x === b)); b.scrollIntoView({ behavior: 'smooth', block: 'start' }); return true; }
+  function focusBlock(id) { if (!$('#race-' + id)) { const c = $('#fold-' + id); if (c && c.getAttribute('aria-expanded') !== 'true') c.click(); } const b = $('#race-' + id); if (!b) return false; document.querySelectorAll('#race-groups .ms-race').forEach((x) => x.classList.toggle('is-focus', x === b)); b.scrollIntoView({ behavior: 'smooth', block: 'start' }); return true; }
 
 // races.js: the Races section (map, balance of power, the race table) and the race panel. Phase 2 of the rework.
   // ---------------- the race table
