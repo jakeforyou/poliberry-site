@@ -2857,7 +2857,7 @@
     "flag_triggers": [
       "markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%)",
       "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls)",
-      "moved +5.5 points since the day's open by 11:00"
+      "moved +5.5 points since the day's open by 12:00"
     ],
     "verdict_today": "Yes",
     "brief_headline": "NYT/Siena has Flanagan up 14 in Minnesota",
@@ -3210,7 +3210,7 @@
     "flag_today": "alert",
     "flag_triggers": [
       "markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%)",
-      "moved +5.0 points since the day's open by 11:00"
+      "moved +5.0 points since the day's open by 12:00"
     ],
     "verdict_today": "Yes",
     "brief_headline": "Three nonpartisan South Carolina polls in four days, all close",
@@ -4315,8 +4315,8 @@
     "flag_triggers": [
       "North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022"
     ],
-    "verdict_today": null,
-    "brief_headline": null,
+    "verdict_today": "No",
+    "brief_headline": "North Carolina passes half its 2022 vote, Republicans still lagging",
     "upset": null,
     "incumbent_party": "R",
     "cand_d": "Roy Cooper",
@@ -7763,8 +7763,10 @@
       "named_weakest": false,
       "label": "inferred"
     },
-    "flag_today": null,
-    "flag_triggers": [],
+    "flag_today": "alert",
+    "flag_triggers": [
+      "moved +4.2 points since the day's open by 12:00"
+    ],
     "verdict_today": null,
     "brief_headline": null,
     "upset": null,

@@ -1791,8 +1791,8 @@
     "item_id": null,
     "text": "South Carolina Senate now has three nonpartisan likely-voter polls in four days: NYT/Siena tied at 48, The Citadel Graham +4, Targoz Graham +1. The model counts all three, and after two late-morning changes it reads 17.5, still under the markets near 26: a fixed error removed an incumbency term the model should never have given an appointed senator, and a /where run moved the call from 5 to 14 percent. NYT/Siena also has Flanagan up 14 in Minnesota, 11 points above the earlier average, and the model rose to 97.9. Arizona governor is back at 97.2 because the source table restored the HighGround poll it dropped yesterday and added a new one at Hobbs +13, while Alaska and Kansas Senate kept sliding as early-October NYT/Siena polls fade out of the window. The 09:30 snapshot started on time but the Mac slept until 09:55, so it committed at 10:04 and these are mid-morning prices.",
     "written_at": "2026-10-28T10:07:24-04:00",
-    "n_flags": 7,
-    "n_explained": 4,
+    "n_flags": 8,
+    "n_explained": 7,
     "stale": null,
     "label": "inferred"
   },
@@ -1820,9 +1820,9 @@
     "triggers": [
       "markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%)",
       "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls)",
-      "moved +5.5 points since the day's open by 11:00"
+      "moved +5.5 points since the day's open by 12:00"
     ],
-    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.5 points since the day's open by 11:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.5 points since the day's open by 12:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {
@@ -1883,6 +1883,10 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.9078
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.9078
         ]
       ],
       "events_window_hours": 48,
@@ -1907,9 +1911,9 @@
     "flag_kind": "alert",
     "triggers": [
       "markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%)",
-      "moved +5.0 points since the day's open by 11:00"
+      "moved +5.0 points since the day's open by 12:00"
     ],
-    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +5.0 points since the day's open by 11:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +5.0 points since the day's open by 12:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [
         {
@@ -2013,6 +2017,10 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.265
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.265
         ]
       ],
       "events_window_hours": 48,
@@ -2030,6 +2038,108 @@
       "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "flag_kind": "alert",
+    "triggers": [
+      "moved +4.2 points since the day's open by 12:00"
+    ],
+    "facts": "Flagged: moved +4.2 points since the day's open by 12:00. News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D-7 (LV); The Citadel D-11 (LV); Targoz Media Research D-10 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 707,
+          "d": 44.0,
+          "r": 51.0,
+          "margin_d": -7.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
+        },
+        {
+          "pollster": "The Citadel",
+          "sponsor": null,
+          "start_date": "2026-10-14",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 890,
+          "d": 31.0,
+          "r": 42.0,
+          "margin_d": -11.0,
+          "source_url": "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf"
+        },
+        {
+          "pollster": "Targoz Media Research",
+          "sponsor": null,
+          "start_date": "2026-10-16",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 895,
+          "d": 41.0,
+          "r": 51.0,
+          "margin_d": -10.0,
+          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -10.8,
+        "n": 5,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-28T00:05:30-04:00",
+          0.0365
+        ],
+        [
+          "2026-10-28T01:17:56-04:00",
+          0.0365
+        ],
+        [
+          "2026-10-28T04:54:49-04:00",
+          0.0365
+        ],
+        [
+          "2026-10-28T08:01:51-04:00",
+          0.0395
+        ],
+        [
+          "2026-10-28T09:00:01-04:00",
+          0.039
+        ],
+        [
+          "2026-10-28T10:00:00-04:00",
+          0.039
+        ],
+        [
+          "2026-10-28T11:00:00-04:00",
+          0.0635
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.079
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
   },
   {
     "as_of": "2026-10-28",
@@ -2087,6 +2197,10 @@
         ],
         [
           "2026-10-28T11:00:00-04:00",
+          0.44
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
           0.44
         ]
       ],
@@ -2172,6 +2286,10 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.78
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.78
         ]
       ],
       "events_window_hours": 48,
@@ -2197,7 +2315,7 @@
     "triggers": [
       "Montana passed half its 2022 turnout: 234,756 ballots through Oct 28, against 468,326 votes cast in all of 2022"
     ],
-    "facts": "Flagged: Montana passed half its 2022 turnout: 234,756 ballots through Oct 28, against 468,326 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in MT: 234,756 through None. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Montana passed half its 2022 turnout: 234,756 ballots through Oct 28, against 468,326 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in MT: 234,756 through Oct 28. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
@@ -2227,14 +2345,16 @@
         }
       ]
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Montana's ballots pass half its 2022 turnout",
+    "what_happened": "The UF Election Lab tracker counts 234,756 Montana ballots through Oct 28, up from 209,134 on Oct 27, past half of the 468,326 votes cast in 2022 (retrieved). Montana does not register voters by party and the tracker gives no county split, so the board has no party gap for Montana and no 2022 count at the same point. No news in the feed.",
+    "why_it_moved": "A threshold set in advance, crossed by a steady count, inferred. Most Montanans vote absentee, so much of the total lands before Election Day in any year. Without a 2022 count at the same point the board cannot say whether this is a fast year or the usual path.",
+    "should_it_move_us": "No. Montana has no item on the scorecard, and a statewide count with no party or county says how many voted, not who. The board's close Montana race is the 1st district, a toss-up, and nothing here speaks to it.",
+    "trigger": "A county split of Montana's ballots, which would show whether the 1st district's counties are keeping pace with the rest of the state.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-28",
@@ -2245,7 +2365,7 @@
     "triggers": [
       "North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022"
     ],
-    "facts": "Flagged: North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Quantus Insights D+8 (LV). Ballots in NC: 1,953,575 through None, party gap D+15.6 against D+7.5 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Quantus Insights D+8 (LV). Ballots in NC: 1,953,575 through Oct 27, party gap D+15.6 against D+7.5 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {
@@ -2306,6 +2426,10 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.969
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.9665
         ]
       ],
       "events_window_hours": 48,
@@ -2331,14 +2455,19 @@
         }
       ]
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "North Carolina passes half its 2022 vote, Republicans still lagging",
+    "what_happened": "The state's absentee file counts 1,953,575 accepted early and mail ballots through Oct 27, past half of the 3,790,202 votes cast in 2022. By party registration the ballots are 40.4 percent Democratic, about 35 unaffiliated and 24.8 Republican. At the same point in 2022 the party gap was D+7.5 with Republicans at 31.4. Today it is D+15.6, a swing of 8.1 toward Democrats, from 8.7 a day earlier (all retrieved, NC State Board of Elections). On Point Politics' tracker shows the same split, and Axios reported Democrats casting twice as many ballots as Republicans in the first days. One new poll, Quantus Insights, Oct 24 to 25, 722 likely voters: Cooper 51, Whatley 43. No news in the feed in 48 hours.",
+    "why_it_moved": "A threshold set in advance, crossed by a steady count, inferred. Early voting runs through Oct 31, so passing half of 2022's turnout was a question of when. The party gap is the part worth reading, and it is a reading of who voted, not how. In 2022 the early ballots closed 38.2 Democratic to 31.1 Republican by registration and Budd won by 3.2. In 2024 they closed 32.4 to 33.2 and Trump won by 3.2. Unaffiliated voters and Election Day voters have leaned Republican both times. The Republican share has climbed since the first days, which fits Republicans voting later rather than not at all.",
+    "should_it_move_us": "No. The model does not read the early vote, and it left out the Quantus poll as marked Republican by the source table. It holds Cooper at 99.7 on fundamentals and four polls, D+9.5 with 80 percent from D+5.0 to D+13.9.",
+    "trigger": "Whether the Republican share of North Carolina's ballots reaches its 2022 level by Oct 30, the line the Oct 16 call's red team set. It is 6.5 points short.",
+    "sources": [
+      "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
+      "https://onpointpolitics.us/maps/early-vote/north-carolina",
+      "https://www.axios.com/local/charlotte/2026/10/19/north-carolina-early-voting-2026-democrats-gop",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_North_Carolina"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-28",
@@ -2349,7 +2478,7 @@
     "triggers": [
       "Tennessee passed half its 2022 turnout: 913,512 ballots through Oct 27, against 1,756,397 votes cast in all of 2022"
     ],
-    "facts": "Flagged: Tennessee passed half its 2022 turnout: 913,512 ballots through Oct 27, against 1,756,397 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in TN: 913,512 through None. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Tennessee passed half its 2022 turnout: 913,512 ballots through Oct 27, against 1,756,397 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in TN: 913,512 through Oct 27. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
@@ -2379,14 +2508,17 @@
         }
       ]
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Tennessee passes half its 2022 turnout, two early days left",
+    "what_happened": "The UF Election Lab tracker counts 913,512 Tennessee ballots through Oct 27, up from 815,354 on Oct 25, past half of the 1,756,397 votes cast in 2022 (retrieved). Early voting runs Oct 14 through Oct 29 (WSMV). Tennessee does not register voters by party, so the board has no party gap and no 2022 count at the same point. No news in the feed. The same reading was on Oct 27's board: this is the one repeat the new rule allows on its first day.",
+    "why_it_moved": "A threshold set in advance, inferred. Tennessee votes heavily in person before Election Day, and a count this size with two days left is that habit, not news about the race.",
+    "should_it_move_us": "No. The scorecard has no Tennessee item. The board's Tennessee races are safe, the redrawn 9th district included, which every rater calls a Republican pickup, and a statewide count says nothing about one district.",
+    "trigger": "A 2022 count for Tennessee at the same point, the only thing that would say whether this pace is unusual.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+      "https://www.wsmv.com/2026/10/14/election-2026-early-voting-tennessees-november-3-general-election-is-underway/"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-10-28",

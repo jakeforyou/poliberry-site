@@ -1113,7 +1113,7 @@
     "triggers": [
       "markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%)",
       "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls)",
-      "moved +5.5 points since the day's open by 11:00"
+      "moved +5.5 points since the day's open by 12:00"
     ],
     "weight": 22.0,
     "source_url": "https://polymarket.com/event/minnesota-senate-election-winner",
@@ -1178,12 +1178,16 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.9078
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.9078
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.5 points since the day's open by 11:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.5 points since the day's open by 12:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1197,7 +1201,7 @@
     ],
     "triggers": [
       "markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%)",
-      "moved +5.0 points since the day's open by 11:00"
+      "moved +5.0 points since the day's open by 12:00"
     ],
     "weight": 9.0,
     "source_url": "https://polymarket.com/event/south-carolina-senate-election-winner",
@@ -1305,12 +1309,116 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.265
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.265
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +5.0 points since the day's open by 11:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +5.0 points since the day's open by 12:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-28",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "kinds": [
+      "alert"
+    ],
+    "triggers": [
+      "moved +4.2 points since the day's open by 12:00"
+    ],
+    "weight": 4.2,
+    "source_url": "https://polymarket.com/event/south-carolina-governor-winner-2026",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 707,
+          "d": 44.0,
+          "r": 51.0,
+          "margin_d": -7.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
+        },
+        {
+          "pollster": "The Citadel",
+          "sponsor": null,
+          "start_date": "2026-10-14",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 890,
+          "d": 31.0,
+          "r": 42.0,
+          "margin_d": -11.0,
+          "source_url": "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf"
+        },
+        {
+          "pollster": "Targoz Media Research",
+          "sponsor": null,
+          "start_date": "2026-10-16",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 895,
+          "d": 41.0,
+          "r": 51.0,
+          "margin_d": -10.0,
+          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -10.8,
+        "n": 5,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-28T00:05:30-04:00",
+          0.0365
+        ],
+        [
+          "2026-10-28T01:17:56-04:00",
+          0.0365
+        ],
+        [
+          "2026-10-28T04:54:49-04:00",
+          0.0365
+        ],
+        [
+          "2026-10-28T08:01:51-04:00",
+          0.0395
+        ],
+        [
+          "2026-10-28T09:00:01-04:00",
+          0.039
+        ],
+        [
+          "2026-10-28T10:00:00-04:00",
+          0.039
+        ],
+        [
+          "2026-10-28T11:00:00-04:00",
+          0.0635
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.079
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: moved +4.2 points since the day's open by 12:00. News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D-7 (LV); The Citadel D-11 (LV); Targoz Media Research D-10 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1373,6 +1481,10 @@
         ],
         [
           "2026-10-28T11:00:00-04:00",
+          0.44
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
           0.44
         ]
       ],
@@ -1456,6 +1568,10 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.78
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.78
         ]
       ],
       "events_window_hours": 48,
@@ -1507,7 +1623,7 @@
         }
       ]
     },
-    "reading": "Flagged: Montana passed half its 2022 turnout: 234,756 ballots through Oct 28, against 468,326 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in MT: 234,756 through None. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Montana passed half its 2022 turnout: 234,756 ballots through Oct 28, against 468,326 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in MT: 234,756 through Oct 28. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1584,6 +1700,10 @@
         [
           "2026-10-28T11:00:00-04:00",
           0.969
+        ],
+        [
+          "2026-10-28T12:00:00-04:00",
+          0.9665
         ]
       ],
       "events_window_hours": 48,
@@ -1609,7 +1729,7 @@
         }
       ]
     },
-    "reading": "Flagged: North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Quantus Insights D+8 (LV). Ballots in NC: 1,953,575 through None, party gap D+15.6 against D+7.5 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Quantus Insights D+8 (LV). Ballots in NC: 1,953,575 through Oct 27, party gap D+15.6 against D+7.5 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1655,7 +1775,7 @@
         }
       ]
     },
-    "reading": "Flagged: Tennessee passed half its 2022 turnout: 913,512 ballots through Oct 27, against 1,756,397 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in TN: 913,512 through None. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Tennessee passed half its 2022 turnout: 913,512 ballots through Oct 27, against 1,756,397 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in TN: 913,512 through Oct 27. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   }
