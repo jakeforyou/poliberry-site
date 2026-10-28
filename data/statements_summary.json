@@ -1,41 +1,41 @@
 [
   {
-    "as_of": "2026-10-26",
+    "as_of": "2026-10-27",
     "days": 7,
     "this_period": {
-      "start": "2026-10-20",
-      "end": "2026-10-26",
-      "articles": 1321,
-      "usable_days": 5,
+      "start": "2026-10-21",
+      "end": "2026-10-27",
+      "articles": 1035,
+      "usable_days": 4,
       "skipped_days": [
         "2026-10-25",
-        "2026-10-26"
+        "2026-10-26",
+        "2026-10-27"
       ]
     },
     "prior_period": {
-      "start": "2026-10-13",
-      "end": "2026-10-19",
-      "articles": 1383,
-      "usable_days": 5,
+      "start": "2026-10-14",
+      "end": "2026-10-20",
+      "articles": 1695,
+      "usable_days": 6,
       "skipped_days": [
-        "2026-10-13",
         "2026-10-14"
       ]
     },
-    "change_pct": -4.5,
+    "change_pct": -8.4,
     "direction": "flat",
-    "top_kind": "noncitizen voting",
-    "top_kind_articles": 8,
+    "top_kind": "mail ballots",
+    "top_kind_articles": 2,
     "top_speaker": "Donald Trump",
-    "top_speaker_articles": 1212,
+    "top_speaker_articles": 962,
     "counts_source": "daily",
     "baseline": {
-      "usable_days": 29,
-      "per_day": 233.1,
-      "this_per_day": 264.2,
-      "change_pct": 13.3
+      "usable_days": 30,
+      "per_day": 238.1,
+      "this_per_day": 258.8,
+      "change_pct": 8.7
     },
-    "sentence": "Coverage of election-legitimacy statements is flat this week (1321 articles on 5 days against 1383 on 5), led by Trump on noncitizen voting.",
+    "sentence": "Coverage of election-legitimacy statements is flat this week (1035 articles on 4 days against 1695 on 6), led by Trump on mail ballots.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",

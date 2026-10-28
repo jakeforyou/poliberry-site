@@ -460,5 +460,47 @@
     "delta": "not re-retrieved this run. Value as of 2026-10-16.",
     "source_url": "https://democrats.org/dnc-votes-to-officially-select-early-states-for-2028-democratic-presidential-nominating-calendar/",
     "as_of": "2026-10-27"
+  },
+  {
+    "variable": "trump approval avg",
+    "value": "Silver Bulletin net -22.3 (Oct 20). Wikipedia compilation Oct 19: DDHQ 38.6 approve 59.8 disapprove net -21.2, published average of nine aggregators net -24.2.",
+    "delta": "DDHQ average net -20.7 on Oct 13 to -21.2 on Oct 19. Not computed by script. Both values retrieved.",
+    "source_url": "https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin",
+    "as_of": "2026-10-28"
+  },
+  {
+    "variable": "real disposable income growth",
+    "value": "August 2026 real DPI 0.0 percent month over month (July +0.3). Year over year not published.",
+    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
+    "source_url": "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+    "as_of": "2026-10-28"
+  },
+  {
+    "variable": "fed funds target",
+    "value": "3.75 to 4.00 percent. Next FOMC Oct 27 to 28.",
+    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+    "as_of": "2026-10-28"
+  },
+  {
+    "variable": "trump 2028 endorsement signal",
+    "value": "public endorsements: 0. Credibly reported private signals in the last 60 days: 1 (a restatement on Oct 14 of an Aug 6 report).",
+    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
+    "source_url": "https://www.ms.now/news/marco-rubio-president-2028-jd-vance",
+    "as_of": "2026-10-28"
+  },
+  {
+    "variable": "formal 2028 announcements",
+    "value": "FEC 2028 presidential filers: 473. Statutory candidates (status C): 11. Exploratory committees reported: 2.",
+    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
+    "source_url": "https://api.open.fec.gov/v1/candidates/?election_year=2028&office=P",
+    "as_of": "2026-10-28"
+  },
+  {
+    "variable": "dnc calendar status",
+    "value": "Approved by the full DNC Aug 15, 2026. Six early states.",
+    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
+    "source_url": "https://democrats.org/dnc-votes-to-officially-select-early-states-for-2028-democratic-presidential-nominating-calendar/",
+    "as_of": "2026-10-28"
   }
 ]

@@ -1397,8 +1397,8 @@
     "item_id": null,
     "text": "The first nonpartisan likely-voter poll of the South Carolina Senate race, Targoz for the South Carolina Policy Council, has Graham 47, Andrews 46, and the model counted it and rose from 0.5 to 3.2. That meets the poll half of the Oct 21 run's trigger for revisiting its 5 percent call, which is a /where run's job, not the brief's. Nevada's governor markets jumped about nine points on Hart Ford +4 and RedBox Ford +3, both Democratic firms the model leaves out, and the model has no unmarked Nevada poll in its window. Today's build counts Fox News's two-party polling team for the first time, which moved Maine Senate from 85 to 77 and Ohio Senate from 78 to 84, a fixed classification and not news, and Arizona governor fell from 97 to 90 because the source table dropped its only counted poll. The snapshot ran at 17:00 instead of 09:30 because of a scheduler bug, now fixed, so these are late-afternoon prices, and the news feed returned nothing for the last 48 hours.",
     "written_at": "2026-10-27T17:15:02-04:00",
-    "n_flags": 10,
-    "n_explained": 10,
+    "n_flags": 9,
+    "n_explained": 9,
     "stale": null,
     "label": "inferred"
   },
@@ -1421,90 +1421,18 @@
     "kind": "item",
     "item_id": "gov_nv",
     "item": "Governor · NV",
-    "flag_kind": "alert",
+    "flag_kind": "market",
     "triggers": [
-      "markets moved +9.5 points since the last pull (Polymarket 69.0 to 79.0; Kalshi 67.5 to 76.5%)",
-      "Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days",
-      "moved +7.5 points since the day's open by 17:00"
+      "markets moved +9.5 points since the last pull (Polymarket 69.0 to 79.0; Kalshi 67.5 to 76.5%)"
     ],
-    "facts": "Flagged: markets moved +9.5 points since the last pull (Polymarket 69.0 to 79.0; Kalshi 67.5 to 76.5%); Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days; moved +7.5 points since the day's open by 17:00. News in the last 48 hours: 0 articles. Polls just in: Hart Research D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +9.5 points since the last pull (Polymarket 69.0 to 79.0; Kalshi 67.5 to 76.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Hart Research",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 950,
-          "d": 49.0,
-          "r": 45.0,
-          "margin_d": 4.0,
-          "source_url": "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.0,
-        "n": 3,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.7025
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.7125
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.7125
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.715
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.715
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.715
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.7175
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.725
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.745
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.76
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.78
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.78
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.7775
-        ]
-      ],
-      "events_window_hours": 48
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Nevada governor markets jump on two Democratic-firm polls",
@@ -1523,77 +1451,19 @@
     "kind": "item",
     "item_id": "gov_ks",
     "item": "Governor · KS",
-    "flag_kind": "alert",
+    "flag_kind": "market",
     "triggers": [
       "Cook changed its rating, Lean R (flip) to Tossup",
-      "markets moved +4.0 points since the last pull (Polymarket 22.5 to 27.5; Kalshi 23.5 to 26.5%)",
-      "moved +3.5 points since the day's open by 17:00"
+      "markets moved +4.0 points since the last pull (Polymarket 22.5 to 27.5; Kalshi 23.5 to 26.5%)"
     ],
-    "facts": "Flagged: Cook changed its rating, Lean R (flip) to Tossup; markets moved +4.0 points since the last pull (Polymarket 22.5 to 27.5; Kalshi 23.5 to 26.5%); moved +3.5 points since the day's open by 17:00. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Cook changed its rating, Lean R (flip) to Tossup; markets moved +4.0 points since the last pull (Polymarket 22.5 to 27.5; Kalshi 23.5 to 26.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 0.0,
-        "n": 1,
-        "newest": "2026-10-21"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.235
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.235
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.235
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.235
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.235
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.235
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.23
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.265
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.2625
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.275
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.28
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.275
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.27
-        ]
-      ],
-      "events_window_hours": 48
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Cook calls Kansas governor a Toss-up",
@@ -1609,93 +1479,6 @@
   {
     "as_of": "2026-10-27",
     "kind": "item",
-    "item_id": "gov_oh",
-    "item": "Governor · OH",
-    "flag_kind": "alert",
-    "triggers": [
-      "markets moved -3.8 points since the last pull (Polymarket 82.5 to 79.0; Kalshi 81.5 to 77.5%)",
-      "moved -4.2 points since the day's open by 17:00"
-    ],
-    "facts": "Flagged: markets moved -3.8 points since the last pull (Polymarket 82.5 to 79.0; Kalshi 81.5 to 77.5%); moved -4.2 points since the day's open by 17:00. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": {
-        "margin_d": 2.22,
-        "n": 9,
-        "newest": "2026-10-23"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.825
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.825
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.83
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.83
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.83
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.83
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.8325
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.83
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.825
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.785
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.785
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.785
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.7825
-        ]
-      ],
-      "events_window_hours": 48
-    },
-    "explained": true,
-    "headline": "Ohio governor market gives back four points",
-    "what_happened": "Polymarket fell from 82.5 to 79.0 and Kalshi from 81.5 to 77.5. The newest polls are Echelon Insights for NetChoice, Ramaswamy +2, marked Republican, and RedBox, Acton +4, marked Democratic, both ending Oct 23. No news retrieved.",
-    "why_it_moved": "The Echelon poll, inferred. No event was found.",
-    "should_it_move_us": "No. Both new polls are marked partisan and left out. The model moved from 70.6 to 69.5 because the Fox News poll, Acton +2, now counts after today's classification fix.",
-    "trigger": "A nonpartisan poll ending after Oct 23.",
-    "sources": [
-      "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-27",
-    "kind": "item",
     "item_id": "senate_sc",
     "item": "Senate · SC",
     "flag_kind": "market",
@@ -1703,84 +1486,14 @@
       "Sabato changed its rating, Likely R to Lean R",
       "markets moved +3.0 points since the last pull (Kalshi 20.5 to 23.5%)"
     ],
-    "facts": "Flagged: Sabato changed its rating, Likely R to Lean R; markets moved +3.0 points since the last pull (Kalshi 20.5 to 23.5%). News in the last 48 hours: 0 articles. Polls just in: Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Sabato changed its rating, Likely R to Lean R; markets moved +3.0 points since the last pull (Kalshi 20.5 to 23.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Targoz Media Research",
-          "sponsor": null,
-          "start_date": "2026-10-16",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 895,
-          "d": 46.0,
-          "r": 47.0,
-          "margin_d": -1.0,
-          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -1.75,
-        "n": 4,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.23
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.2275
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.2275
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.23
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.23
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.23
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.22
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.225
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.225
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.22
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.22
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.22
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.2225
-        ]
-      ],
-      "events_window_hours": 48
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "First nonpartisan South Carolina poll has Graham up one",
@@ -1797,111 +1510,49 @@
   {
     "as_of": "2026-10-27",
     "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -3.8 points since the last pull (Polymarket 82.5 to 79.0; Kalshi 81.5 to 77.5%)"
+    ],
+    "facts": "Flagged: markets moved -3.8 points since the last pull (Polymarket 82.5 to 79.0; Kalshi 81.5 to 77.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
+    },
+    "explained": true,
+    "headline": "Ohio governor market gives back four points",
+    "what_happened": "Polymarket fell from 82.5 to 79.0 and Kalshi from 81.5 to 77.5. The newest polls are Echelon Insights for NetChoice, Ramaswamy +2, marked Republican, and RedBox, Acton +4, marked Democratic, both ending Oct 23. No news retrieved.",
+    "why_it_moved": "The Echelon poll, inferred. No event was found.",
+    "should_it_move_us": "No. Both new polls are marked partisan and left out. The model moved from 70.6 to 69.5 because the Fox News poll, Acton +2, now counts after today's classification fix.",
+    "trigger": "A nonpartisan poll ending after Oct 23.",
+    "sources": [
+      "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-27",
+    "kind": "item",
     "item_id": "senate_nc",
     "item": "Senate · NC",
     "flag_kind": "rating",
     "triggers": [
       "Sabato changed its rating, Lean D (flip) to Likely D (flip)"
     ],
-    "facts": "Flagged: Sabato changed its rating, Lean D (flip) to Likely D (flip). News in the last 48 hours: 2 articles (1 rally, 1 scandal, 0 ad, 0 debate, 0 endorsement, 0 poll, 0 legal, 0 money). Polls just in: Quantus Insights D+8 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Sabato changed its rating, Lean D (flip) to Likely D (flip). No reading yet. The morning brief explains every flagged item.",
     "why": {
-      "events": [
-        {
-          "title": "Trump Accuses Democrats of Paying Protesters $250 as Woman Is Removed Minutes Into Michigan Rally",
-          "url": "https://www.ibtimes.co.uk/trump-claims-protesters-paid-250-no-evidence-1827703",
-          "domain": "ibtimes.co.uk",
-          "seendate": "2026-10-26T07:15:00Z",
-          "kinds": [
-            "rally",
-            "scandal"
-          ]
-        }
-      ],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 1,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 1,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "Quantus Insights",
-          "sponsor": null,
-          "start_date": "2026-10-24",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 722,
-          "d": 51.0,
-          "r": 43.0,
-          "margin_d": 8.0,
-          "source_url": "https://quantusinsights.org/polling/f/north-carolina-senate-cooper-holds-a-9-point-lead-over-whatley"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 11.0,
-        "n": 7,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.9692
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.9683
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.9677
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.968
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.9683
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.9683
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.968
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.968
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.9683
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.9677
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.9672
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.967
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.9692
-        ]
-      ],
-      "events_window_hours": 48
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Sabato moves North Carolina Senate to Likely D",
@@ -1924,84 +1575,14 @@
     "triggers": [
       "Sabato changed its rating, Safe R to Likely R"
     ],
-    "facts": "Flagged: Sabato changed its rating, Safe R to Likely R. News in the last 48 hours: 0 articles. Polls just in: ActiVote D-6 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Sabato changed its rating, Safe R to Likely R. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "ActiVote",
-          "sponsor": null,
-          "start_date": "2026-10-17",
-          "end_date": "2026-10-27",
-          "population": "LV",
-          "sample": 400,
-          "d": 47.0,
-          "r": 53.0,
-          "margin_d": -6.0,
-          "source_url": "https://www.activote.net/polls/2026/fl-u-s-senate/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -6.44,
-        "n": 9,
-        "newest": "2026-10-27"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.1075
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.105
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.1075
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.1075
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.105
-        ]
-      ],
-      "events_window_hours": 48
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Sabato moves the Florida Senate special to Likely R",
@@ -2024,71 +1605,14 @@
     "triggers": [
       "Sabato changed its rating, Lean D to Likely D"
     ],
-    "facts": "Flagged: Sabato changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Sabato changed its rating, Lean D to Likely D. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 6.0,
-        "n": 3,
-        "newest": "2026-10-20"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.8925
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.895
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.8975
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.8975
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.8975
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.8975
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.9
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.8975
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.9
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.9025
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.905
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.905
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.905
-        ]
-      ],
-      "events_window_hours": 48
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Arizona governor falls when the source table drops a poll",
@@ -2111,14 +1635,14 @@
     "triggers": [
       "Sabato changed its rating, Lean R (flip) to Tossup"
     ],
-    "facts": "Flagged: Sabato changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Sabato changed its rating, Lean R (flip) to Tossup. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Sabato moves AL-02 to Toss-up",
@@ -2140,100 +1664,14 @@
     "triggers": [
       "markets moved +3.0 points since the last pull (Polymarket 64.5 to 67.5%)"
     ],
-    "facts": "Flagged: markets moved +3.0 points since the last pull (Polymarket 64.5 to 67.5%). News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Polymarket 64.5 to 67.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
-      "events": [
-        {
-          "title": "Talarico works FOR More of the Asian - American Vote in Texas Also …..",
-          "url": "https://politicaldog101.com/2026/10/talarico-works-for-more-of-the-asian-american-vote-in-texas-also/",
-          "domain": "politicaldog101.com",
-          "seendate": "2026-10-27T05:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Howerton calls Zach Lambert a  heretic  but welcomes Bo French – Baptist News Global",
-          "url": "https://baptistnews.com/article/howerton-calls-zach-lambert-a-heretic-but-welcomes-bo-french/",
-          "domain": "baptistnews.com",
-          "seendate": "2026-10-26T07:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        }
-      ],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 2
-      },
+      "events": [],
+      "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 2.07,
-        "n": 15,
-        "newest": "2026-10-21"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.66
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.66
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.66
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.66
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.66
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.66
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.6625
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.66
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.665
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.665
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.665
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.6675
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.665
-        ]
-      ],
-      "events_window_hours": 48
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null
     },
     "explained": true,
     "headline": "Polymarket lifts Texas Senate three points on no news",
@@ -2242,105 +1680,6 @@
     "should_it_move_us": "Wait. Nothing the model reads changed. It moved 0.7 toward Paxton as the counted polls age.",
     "trigger": "A poll ending after Oct 21.",
     "sources": [],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-27",
-    "kind": "item",
-    "item_id": "gov_sc",
-    "item": "Governor · SC",
-    "flag_kind": "poll",
-    "triggers": [
-      "Targoz Media Research (LV, through 2026-10-25) shows D-10 in a race with 2 other polls in 21 days"
-    ],
-    "facts": "Flagged: Targoz Media Research (LV, through 2026-10-25) shows D-10 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Targoz Media Research D-10 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Targoz Media Research",
-          "sponsor": null,
-          "start_date": "2026-10-16",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 895,
-          "d": 41.0,
-          "r": 51.0,
-          "margin_d": -10.0,
-          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -12.0,
-        "n": 3,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-27T00:02:39-04:00",
-          0.055
-        ],
-        [
-          "2026-10-27T02:12:19-04:00",
-          0.054
-        ],
-        [
-          "2026-10-27T05:24:59-04:00",
-          0.0542
-        ],
-        [
-          "2026-10-27T06:14:12-04:00",
-          0.0533
-        ],
-        [
-          "2026-10-27T07:07:56-04:00",
-          0.054
-        ],
-        [
-          "2026-10-27T08:01:44-04:00",
-          0.0568
-        ],
-        [
-          "2026-10-27T09:00:00-04:00",
-          0.0558
-        ],
-        [
-          "2026-10-27T10:00:43-04:00",
-          0.056
-        ],
-        [
-          "2026-10-27T11:41:26-04:00",
-          0.057
-        ],
-        [
-          "2026-10-27T13:07:21-04:00",
-          0.054
-        ],
-        [
-          "2026-10-27T15:36:37-04:00",
-          0.0535
-        ],
-        [
-          "2026-10-27T16:08:19-04:00",
-          0.0535
-        ],
-        [
-          "2026-10-27T17:00:00-04:00",
-          0.052
-        ]
-      ],
-      "events_window_hours": 48
-    },
-    "explained": true,
-    "headline": "Targoz has Wilson up ten for governor",
-    "what_happened": "Targoz for the South Carolina Policy Council, Oct 16 to 25, 895 likely or already-voted voters: Wilson 51, Johnson 41 (Fox Carolina, retrieved).",
-    "why_it_moved": "A thin race got another poll, inferred.",
-    "should_it_move_us": "No. It matches the counted average near Wilson +10, and the model holds at 5.2.",
-    "trigger": "A poll with Johnson within 5.",
-    "sources": [
-      "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
-    ],
     "label": "inferred"
   },
   {
@@ -2382,6 +1721,464 @@
     "sources": [
       "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-15-19-2026_ohio_topline_october-21-release.pdf"
     ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-27",
+    "kind": "item",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Targoz has Wilson up ten for governor",
+    "what_happened": "Targoz for the South Carolina Policy Council, Oct 16 to 25, 895 likely or already-voted voters: Wilson 51, Johnson 41 (Fox Carolina, retrieved).",
+    "why_it_moved": "A thin race got another poll, inferred.",
+    "should_it_move_us": "No. It matches the counted average near Wilson +10, and the model holds at 5.2.",
+    "trigger": "A poll with Johnson within 5.",
+    "sources": [
+      "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "lead",
+    "item_id": null,
+    "text": "South Carolina Senate now has three nonpartisan likely-voter polls in four days: NYT/Siena tied at 48, The Citadel Graham +4, Targoz Graham +1. The model counts all three and rose from 3.2 to 7.6, still far under the markets near 26, because the 2024 result and Graham's incumbency carry most of the weight against about two effective polls. NYT/Siena also has Flanagan up 14 in Minnesota, 11 points above the earlier average, and the model rose to 97.9. Arizona governor is back at 97.2 because the source table restored the HighGround poll it dropped yesterday and added a new one at Hobbs +13, while Alaska and Kansas Senate kept sliding as early-October NYT/Siena polls fade out of the window. The 09:30 snapshot started on time but the Mac slept until 09:55, so it committed at 10:04 and these are mid-morning prices.",
+    "written_at": "2026-10-28T10:07:24-04:00",
+    "n_flags": 4,
+    "n_explained": 4,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Three new South Carolina Senate polls. Graham leads by four at most.",
+    "vibe": "NYT/Siena has Graham and Andrews tied at 48, The Citadel has Graham up four, Targoz has him up one, and the markets added six points for Andrews by morning.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
+      "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf",
+      "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+    ],
+    "written_at": "2026-10-28T10:07:24-04:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
+    "flag_kind": "alert",
+    "triggers": [
+      "markets moved +5.2 points since the last pull (Polymarket 85.5 to 90.5; Kalshi 84.5 to 90.0%)",
+      "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls)",
+      "moved +5.0 points since the day's open by 10:00"
+    ],
+    "facts": "Flagged: markets moved +5.2 points since the last pull (Polymarket 85.5 to 90.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.0 points since the day's open by 10:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 752,
+          "d": 54.0,
+          "r": 40.0,
+          "margin_d": 14.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 5.0,
+        "n": 6,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-28T00:05:30-04:00",
+          0.8525
+        ],
+        [
+          "2026-10-28T01:17:56-04:00",
+          0.8525
+        ],
+        [
+          "2026-10-28T04:54:49-04:00",
+          0.8525
+        ],
+        [
+          "2026-10-28T08:01:51-04:00",
+          0.89
+        ],
+        [
+          "2026-10-28T09:00:01-04:00",
+          0.9032
+        ],
+        [
+          "2026-10-28T10:00:00-04:00",
+          0.9027
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "NYT/Siena has Flanagan up 14 in Minnesota",
+    "what_happened": "NYT/Siena, Oct 19 to 26, 752 likely voters: Flanagan 54, Tafoya 40, 11 points above the prior average of D+3 across six polls (retrieved). Polymarket rose from 85.5 to 90.5 and Kalshi from 84.5 to 90.0.",
+    "why_it_moved": "The NYT/Siena poll, inferred.",
+    "should_it_move_us": "Yes, toward the Democrat. The model counted it and rose from 95.0 to 97.9. It is one poll against four counted polls near D+3 to D+4, so its weight is about a quarter.",
+    "trigger": "A second nonpartisan poll near D+14, or one back near D+3.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "alert",
+    "triggers": [
+      "markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%)",
+      "moved +4.8 points since the day's open by 10:00"
+    ],
+    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +4.8 points since the day's open by 10:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Trump campaigns in Mississippi",
+          "url": "https://www.gulfcoastnewsnow.com/article/trump-campaigns-mississippi-midterms/74254270",
+          "domain": "gulfcoastnewsnow.com",
+          "seendate": "2026-10-27T05:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Last Minute Speed Candidating",
+          "url": "https://www.southcarolinapublicradio.org/podcast/south-carolina-lede/2026-10-27/last-minute-speed-candidating",
+          "domain": "southcarolinapublicradio.org",
+          "seendate": "2026-10-27T05:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 2
+      },
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 707,
+          "d": 48.0,
+          "r": 48.0,
+          "margin_d": 0.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
+        },
+        {
+          "pollster": "The Citadel",
+          "sponsor": null,
+          "start_date": "2026-10-14",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 890,
+          "d": 39.0,
+          "r": 43.0,
+          "margin_d": -4.0,
+          "source_url": "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf"
+        },
+        {
+          "pollster": "Targoz Media Research",
+          "sponsor": null,
+          "start_date": "2026-10-16",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 895,
+          "d": 46.0,
+          "r": 47.0,
+          "margin_d": -1.0,
+          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -1.83,
+        "n": 6,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-28T00:05:30-04:00",
+          0.215
+        ],
+        [
+          "2026-10-28T01:17:56-04:00",
+          0.215
+        ],
+        [
+          "2026-10-28T04:54:49-04:00",
+          0.21
+        ],
+        [
+          "2026-10-28T08:01:51-04:00",
+          0.275
+        ],
+        [
+          "2026-10-28T09:00:01-04:00",
+          0.27
+        ],
+        [
+          "2026-10-28T10:00:00-04:00",
+          0.2625
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Three nonpartisan South Carolina polls in four days, all close",
+    "what_happened": "NYT/Siena, Oct 19 to 26, 707 likely voters: Graham 48, Andrews 48. The Citadel, Oct 14 to 25, 890 likely voters: Graham 43, Andrews 39 (among 1,009 registered voters, Andrews 40, Graham 35). Targoz for the South Carolina Policy Council, Oct 16 to 25: Graham 47, Andrews 46 (all retrieved). Polymarket rose from 21.0 to 27.0 and Kalshi from 23.5 to 25.5.",
+    "why_it_moved": "The NYT/Siena tie first, then The Citadel, inferred. Both landed overnight.",
+    "should_it_move_us": "Yes, toward the Democrat. The model counts all three and moved from 3.2 to 7.6. The Oct 21 run's trigger, a nonpartisan likely-voter poll with Andrews within 5, is now met three times, so the run's 5 percent is due for a /where run.",
+    "trigger": "A /where run on the three polls, or a nonpartisan poll with Graham up 6 or more.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
+      "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf",
+      "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Kalshi 41.5 to 44.5%)"
+    ],
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 41.5 to 44.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": -0.25,
+        "n": 8,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-28T00:05:30-04:00",
+          0.43
+        ],
+        [
+          "2026-10-28T01:17:56-04:00",
+          0.435
+        ],
+        [
+          "2026-10-28T04:54:49-04:00",
+          0.435
+        ],
+        [
+          "2026-10-28T08:01:51-04:00",
+          0.435
+        ],
+        [
+          "2026-10-28T09:00:01-04:00",
+          0.435
+        ],
+        [
+          "2026-10-28T10:00:00-04:00",
+          0.44
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Kalshi nudges Iowa Senate up three on no new poll",
+    "what_happened": "Kalshi rose from 41.5 to 44.5 and Polymarket from 42.0 to 43.5. No Iowa Senate poll has ended since Oct 22, and the news feed returned nothing for the race.",
+    "why_it_moved": "Unexplained after checking the feed and the polls",
+    "should_it_move_us": "Wait. Nothing the model reads changed, and it holds at 43.5.",
+    "trigger": "A poll ending after Oct 22.",
+    "sources": [],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "flag_kind": "poll",
+    "triggers": [
+      "Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days"
+    ],
+    "facts": "Flagged: Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Hart Research D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "Hart Research",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-25",
+          "population": "LV",
+          "sample": 950,
+          "d": 49.0,
+          "r": 45.0,
+          "margin_d": 4.0,
+          "source_url": "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.0,
+        "n": 3,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-28T00:05:30-04:00",
+          0.78
+        ],
+        [
+          "2026-10-28T01:17:56-04:00",
+          0.78
+        ],
+        [
+          "2026-10-28T04:54:49-04:00",
+          0.78
+        ],
+        [
+          "2026-10-28T08:01:51-04:00",
+          0.7825
+        ],
+        [
+          "2026-10-28T09:00:01-04:00",
+          0.78
+        ],
+        [
+          "2026-10-28T10:00:00-04:00",
+          0.78
+        ]
+      ],
+      "events_window_hours": 48
+    },
+    "explained": true,
+    "headline": "Hart's Nevada poll flags again, still left out",
+    "what_happened": "Hart Research, Oct 20 to 25, 950 likely voters, Ford 49, Lombardo 45, flagged again as a poll in a thin race (retrieved). No new Nevada governor poll since.",
+    "why_it_moved": "The same poll as yesterday, inferred.",
+    "should_it_move_us": "No. Hart is marked Democratic and left out, and the model still has no unmarked Nevada governor poll. It holds at 45.2.",
+    "trigger": "A nonpartisan likely-voter poll of the race.",
+    "sources": [
+      "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Arizona's dropped poll is back, with a new one beside it",
+    "what_happened": "The source table for the race restored the HighGround poll of Oct 6 to 8, Hobbs 51, Biggs 34, removed yesterday, and added a new HighGround poll, Oct 21 to 25, 400 likely voters, Hobbs 52, Biggs 39 (retrieved). RedBox, Hobbs +5, is marked Democratic and left out.",
+    "why_it_moved": "The table edit and the new HighGround poll, retrieved.",
+    "should_it_move_us": "Yes, toward the Democrat, back where it was. The model rose from 89.6 to 97.2. Yesterday's drop was the table edit, not news.",
+    "trigger": "A nonpartisan poll from a pollster other than HighGround.",
+    "sources": [
+      "https://azhighground.com/trailing-republicans-gain-ground-in-latest-survey/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska keeps sliding as an old poll fades out",
+    "what_happened": "No new Alaska poll. NYT/Siena's Oct 1 poll, Peltola +7, is fading out of the window and carries 12 percent of the poll weight today. That leaves Alaska Survey Research's Oct 3 poll, Peltola +2, against fundamentals near Sullivan +12. The polls left out as partisan run from a tie to Peltola +5.",
+    "why_it_moved": "The calendar, retrieved. Nothing happened in the race.",
+    "should_it_move_us": "Yes, toward the Republican, on the window alone. The model fell from 21.5 to 16.6 with no event, and every poll it leaves out points the other way.",
+    "trigger": "Any new nonpartisan Alaska poll.",
+    "sources": [],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas Senate slips as NYT/Siena's poll ages out",
+    "what_happened": "No new Kansas Senate poll. NYT/Siena's Sep 30 poll, a tie, has faded out of the window, leaving YouGov's Oct 4 poll, Hamilton +3, as the only counted poll against fundamentals near Marshall +14.",
+    "why_it_moved": "The calendar, retrieved.",
+    "should_it_move_us": "Yes, toward the Republican, on the window alone. The model fell from 8.9 to 6.2 with no event.",
+    "trigger": "Any new nonpartisan Kansas Senate poll.",
+    "sources": [],
     "label": "inferred"
   }
 ]
