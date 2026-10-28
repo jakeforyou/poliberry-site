@@ -6879,7 +6879,7 @@
     "old": null,
     "new": null,
     "delta_text": "",
-    "reading": "29 changes since 2026-10-27 (23 vote, 6 market). No forecast number changed. Biggest: Markets: Senate · MN; North Carolina: Accepted early and mail ballots by registration (2026 so far); Pennsylvania: Mail ballots returned by party (2026 so far).",
+    "reading": "31 changes since 2026-10-27 (23 vote, 5 market, 3 forecast). A forecast run happened; its reading is listed first. Biggest: New run 2026-10-28T1027; Senate · SC; SC Senate margin.",
     "tone": null,
     "magnitude": 1000,
     "source_url": null,
@@ -6894,18 +6894,63 @@
     "old": null,
     "new": null,
     "delta_text": "House 90 · Senate 55",
-    "reading": "The outcome signals lean Democratic: 4 moved toward Democrats and 2 toward Republicans (weighted D 71, R 20). Early-vote composition shifted in 18 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 24.8 against the 30 percent trigger by Oct 25 (5.2 away); our widest gap to the markets is Governor · NV at 32 points. The outlook stands at House 90, Senate 55.",
+    "reading": "The outcome signals lean Democratic: 4 moved toward Democrats and 1 toward Republicans (weighted D 74, R 10). Early-vote composition shifted in 18 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. A run changed 3 forecasts: New run 2026-10-28T1027 new forecast run; Senate · SC 5.0 to 14.0%; SC Senate margin -10.0 to -6.0 pts. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 24.8 against the 30 percent trigger by Oct 25 (5.2 away); our widest gap to the markets is Governor · NV at 32 points. The outlook stands at House 90, Senate 55.",
     "tone": "D",
     "magnitude": 999,
     "source_url": null,
     "lean": "Democratic",
-    "weight_d": 71.2,
-    "weight_r": 20.0,
-    "forecast_changes": 0,
+    "weight_d": 73.8,
+    "weight_r": 10.0,
+    "forecast_changes": 3,
     "flags_reached": 0,
     "house": 90.0,
     "senate": 55.0,
     "n": 1
+  },
+  {
+    "as_of": "2026-10-28",
+    "prev_as_of": "2026-10-27",
+    "category": "forecast",
+    "item": "New run 2026-10-28T1027",
+    "item_id": "run",
+    "old": "2026-10-21T2145",
+    "new": "2026-10-28T1027",
+    "delta_text": "new forecast run",
+    "reading": "The run's own reading: Quick run: South Carolina Senate re-derived after three nonpartisan likely-voter polls landed in four days, the trigger the Oct 21 run named. Andrews 5 to 14 percent, the margin Graham +10 to Graham +6. Every other item carries the 2026-10-21T2145 run's number unchanged and was not re-derived.",
+    "tone": null,
+    "magnitude": 100,
+    "source_url": null,
+    "n": 2
+  },
+  {
+    "as_of": "2026-10-28",
+    "prev_as_of": "2026-10-27",
+    "category": "forecast",
+    "item": "Senate · SC",
+    "item_id": "senate_sc",
+    "old": 5.0,
+    "new": 14.0,
+    "delta_text": "5.0 to 14.0%",
+    "reading": "Our number moved. Reason in the run report.",
+    "tone": null,
+    "magnitude": 95,
+    "source_url": null,
+    "n": 3
+  },
+  {
+    "as_of": "2026-10-28",
+    "prev_as_of": "2026-10-27",
+    "category": "forecast",
+    "item": "SC Senate margin",
+    "item_id": "sc_senate_margin",
+    "old": -10.0,
+    "new": -6.0,
+    "delta_text": "-10.0 to -6.0 pts",
+    "reading": "Our number moved. Reason in the run report.",
+    "tone": null,
+    "magnitude": 95,
+    "source_url": null,
+    "n": 4
   },
   {
     "as_of": "2026-10-28",
@@ -6915,13 +6960,13 @@
     "item_id": "senate_mn",
     "old": null,
     "new": null,
-    "delta_text": "Polymarket 85.5 to 90.5; Kalshi 84.5 to 90.0%",
-    "reading": "Both markets moved +5.2 toward the Democrat. Our number is 85.0; gap to the market now -5.2. ",
+    "delta_text": "Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%",
+    "reading": "Both markets moved +5.8 toward the Democrat. Our number is 85.0; gap to the market now -5.8. ",
     "tone": "D",
-    "magnitude": 26.2,
+    "magnitude": 28.8,
     "source_url": "https://polymarket.com/event/minnesota-senate-election-winner",
-    "move": 5.2,
-    "n": 2
+    "move": 5.8,
+    "n": 5
   },
   {
     "as_of": "2026-10-28",
@@ -6936,7 +6981,7 @@
     "tone": "R",
     "magnitude": 25.8,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
-    "n": 3
+    "n": 6
   },
   {
     "as_of": "2026-10-28",
@@ -6951,7 +6996,7 @@
     "tone": "R",
     "magnitude": 23.5,
     "source_url": "https://data.pa.gov/d/nbwd-pfn4",
-    "n": 4
+    "n": 7
   },
   {
     "as_of": "2026-10-28",
@@ -6966,7 +7011,7 @@
     "tone": "D",
     "magnitude": 21.6,
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
-    "n": 5
+    "n": 8
   },
   {
     "as_of": "2026-10-28",
@@ -6977,12 +7022,12 @@
     "old": null,
     "new": null,
     "delta_text": "Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%",
-    "reading": "Both markets moved +4.0 toward the Democrat. Our number is 5.0; gap to the market now -21.2. ",
+    "reading": "Both markets moved +4.0 toward the Democrat. Our number is 14.0; gap to the market now -12.2. ",
     "tone": "D",
     "magnitude": 20.0,
     "source_url": "https://polymarket.com/event/south-carolina-senate-election-winner",
     "move": 4.0,
-    "n": 6
+    "n": 9
   },
   {
     "as_of": "2026-10-28",
@@ -6997,7 +7042,7 @@
     "tone": "R",
     "magnitude": 18.9,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 7
+    "n": 10
   },
   {
     "as_of": "2026-10-28",
@@ -7012,7 +7057,7 @@
     "tone": "R",
     "magnitude": 16.6,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 8
+    "n": 11
   },
   {
     "as_of": "2026-10-28",
@@ -7027,7 +7072,7 @@
     "tone": null,
     "magnitude": 15.4,
     "source_url": "https://www.ohiosos.gov/data",
-    "n": 9
+    "n": 12
   },
   {
     "as_of": "2026-10-28",
@@ -7042,7 +7087,7 @@
     "tone": "R",
     "magnitude": 15.1,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 10
+    "n": 13
   },
   {
     "as_of": "2026-10-28",
@@ -7058,7 +7103,7 @@
     "magnitude": 15.0,
     "source_url": "https://kalshi.com/markets/senateia",
     "move": 3.0,
-    "n": 11
+    "n": 14
   },
   {
     "as_of": "2026-10-28",
@@ -7073,7 +7118,7 @@
     "tone": null,
     "magnitude": 14.4,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
-    "n": 12
+    "n": 15
   },
   {
     "as_of": "2026-10-28",
@@ -7088,7 +7133,7 @@
     "tone": "R",
     "magnitude": 14.1,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 13
+    "n": 16
   },
   {
     "as_of": "2026-10-28",
@@ -7103,7 +7148,7 @@
     "tone": "R",
     "magnitude": 13.8,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 14
+    "n": 17
   },
   {
     "as_of": "2026-10-28",
@@ -7118,7 +7163,7 @@
     "tone": "R",
     "magnitude": 13.7,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 15
+    "n": 18
   },
   {
     "as_of": "2026-10-28",
@@ -7133,7 +7178,7 @@
     "tone": "R",
     "magnitude": 13.3,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 16
+    "n": 19
   },
   {
     "as_of": "2026-10-28",
@@ -7148,7 +7193,7 @@
     "tone": "R",
     "magnitude": 13.2,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 17
+    "n": 20
   },
   {
     "as_of": "2026-10-28",
@@ -7163,7 +7208,7 @@
     "tone": "R",
     "magnitude": 13.0,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 18
+    "n": 21
   },
   {
     "as_of": "2026-10-28",
@@ -7178,7 +7223,7 @@
     "tone": "R",
     "magnitude": 12.0,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 19
+    "n": 22
   },
   {
     "as_of": "2026-10-28",
@@ -7193,7 +7238,7 @@
     "tone": "R",
     "magnitude": 10.7,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 20
+    "n": 23
   },
   {
     "as_of": "2026-10-28",
@@ -7208,7 +7253,7 @@
     "tone": null,
     "magnitude": 10.2,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 21
+    "n": 24
   },
   {
     "as_of": "2026-10-28",
@@ -7224,7 +7269,7 @@
     "magnitude": 10.0,
     "source_url": "https://polymarket.com/event/new-hampshire-senate-election-winner",
     "move": -2.0,
-    "n": 22
+    "n": 25
   },
   {
     "as_of": "2026-10-28",
@@ -7240,23 +7285,7 @@
     "magnitude": 10.0,
     "source_url": "https://kalshi.com/markets/govpartyia",
     "move": 2.0,
-    "n": 23
-  },
-  {
-    "as_of": "2026-10-28",
-    "prev_as_of": "2026-10-27",
-    "category": "market",
-    "item": "Markets: Governor · SC",
-    "item_id": "gov_sc",
-    "old": null,
-    "new": null,
-    "delta_text": "Polymarket 5.5 to 3.5%",
-    "reading": "Polymarket moved -2.0 toward the Republican. Our number is 5.0; gap to the market now +1.5. ",
-    "tone": "R",
-    "magnitude": 10.0,
-    "source_url": "https://polymarket.com/event/south-carolina-governor-winner-2026",
-    "move": -2.0,
-    "n": 24
+    "n": 26
   },
   {
     "as_of": "2026-10-28",
@@ -7271,7 +7300,7 @@
     "tone": "R",
     "magnitude": 9.7,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 25
+    "n": 27
   },
   {
     "as_of": "2026-10-28",
@@ -7286,7 +7315,7 @@
     "tone": null,
     "magnitude": 9.4,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
-    "n": 26
+    "n": 28
   },
   {
     "as_of": "2026-10-28",
@@ -7301,7 +7330,7 @@
     "tone": "D",
     "magnitude": 9.0,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 27
+    "n": 29
   },
   {
     "as_of": "2026-10-28",
@@ -7316,7 +7345,7 @@
     "tone": "D",
     "magnitude": 8.8,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 28
+    "n": 30
   },
   {
     "as_of": "2026-10-28",
@@ -7331,7 +7360,7 @@
     "tone": "D",
     "magnitude": 8.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 29
+    "n": 31
   },
   {
     "as_of": "2026-10-28",
@@ -7346,6 +7375,6 @@
     "tone": null,
     "magnitude": 8.3,
     "source_url": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
-    "n": 30
+    "n": 32
   }
 ]

@@ -1747,7 +1747,7 @@
     "as_of": "2026-10-28",
     "kind": "lead",
     "item_id": null,
-    "text": "South Carolina Senate now has three nonpartisan likely-voter polls in four days: NYT/Siena tied at 48, The Citadel Graham +4, Targoz Graham +1. The model counts all three and rose from 3.2 to 7.6, still far under the markets near 26, because the 2024 result and Graham's incumbency carry most of the weight against about two effective polls. NYT/Siena also has Flanagan up 14 in Minnesota, 11 points above the earlier average, and the model rose to 97.9. Arizona governor is back at 97.2 because the source table restored the HighGround poll it dropped yesterday and added a new one at Hobbs +13, while Alaska and Kansas Senate kept sliding as early-October NYT/Siena polls fade out of the window. The 09:30 snapshot started on time but the Mac slept until 09:55, so it committed at 10:04 and these are mid-morning prices.",
+    "text": "South Carolina Senate now has three nonpartisan likely-voter polls in four days: NYT/Siena tied at 48, The Citadel Graham +4, Targoz Graham +1. The model counts all three, and after two late-morning changes it reads 17.5, still under the markets near 26: a fixed error removed an incumbency term the model should never have given an appointed senator, and a /where run moved the call from 5 to 14 percent. NYT/Siena also has Flanagan up 14 in Minnesota, 11 points above the earlier average, and the model rose to 97.9. Arizona governor is back at 97.2 because the source table restored the HighGround poll it dropped yesterday and added a new one at Hobbs +13, while Alaska and Kansas Senate kept sliding as early-October NYT/Siena polls fade out of the window. The 09:30 snapshot started on time but the Mac slept until 09:55, so it committed at 10:04 and these are mid-morning prices.",
     "written_at": "2026-10-28T10:07:24-04:00",
     "n_flags": 4,
     "n_explained": 4,
@@ -1758,7 +1758,7 @@
     "as_of": "2026-10-28",
     "kind": "headline",
     "item_id": null,
-    "headline": "Thirty-five million ballots in, and the Senate is where it was last week.",
+    "headline": "Thirty-five million ballots in. The Senate is where it was last week.",
     "vibe": "NYT/Siena put Flanagan up 14 in Minnesota and tied South Carolina, Arizona got back the poll its source table dropped, Alaska kept fading, and Senate control held near 65.",
     "sources": [
       "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html",
@@ -1776,14 +1776,24 @@
     "item": "Senate · MN",
     "flag_kind": "alert",
     "triggers": [
-      "markets moved +5.2 points since the last pull (Polymarket 85.5 to 90.5; Kalshi 84.5 to 90.0%)",
+      "markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%)",
       "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls)",
       "moved +5.0 points since the day's open by 10:00"
     ],
-    "facts": "Flagged: markets moved +5.2 points since the last pull (Polymarket 85.5 to 90.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.0 points since the day's open by 10:00. News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.0 points since the day's open by 10:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -1852,10 +1862,39 @@
       "markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%)",
       "moved +4.8 points since the day's open by 10:00"
     ],
-    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +4.8 points since the day's open by 10:00. News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +4.8 points since the day's open by 10:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
-      "events": [],
-      "events_by_kind": {},
+      "events": [
+        {
+          "title": "Trump campaigns in Mississippi",
+          "url": "https://www.gulfcoastnewsnow.com/article/trump-campaigns-mississippi-midterms/74254270",
+          "domain": "gulfcoastnewsnow.com",
+          "seendate": "2026-10-27T05:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Last Minute Speed Candidating",
+          "url": "https://www.southcarolinapublicradio.org/podcast/south-carolina-lede/2026-10-27/last-minute-speed-candidating",
+          "domain": "southcarolinapublicradio.org",
+          "seendate": "2026-10-27T05:15:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 2
+      },
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -1931,8 +1970,8 @@
     "headline": "Three nonpartisan South Carolina polls in four days, all close",
     "what_happened": "NYT/Siena, Oct 19 to 26, 707 likely voters: Graham 48, Andrews 48. The Citadel, Oct 14 to 25, 890 likely voters: Graham 43, Andrews 39 (among 1,009 registered voters, Andrews 40, Graham 35). Targoz for the South Carolina Policy Council, Oct 16 to 25: Graham 47, Andrews 46 (all retrieved). Polymarket rose from 21.0 to 27.0 and Kalshi from 23.5 to 25.5.",
     "why_it_moved": "The NYT/Siena tie first, then The Citadel, inferred. Both landed overnight.",
-    "should_it_move_us": "Yes, toward the Democrat. The model counts all three and moved from 3.2 to 7.6. The Oct 21 run's trigger, a nonpartisan likely-voter poll with Andrews within 5, is now met three times, so the run's 5 percent is due for a /where run.",
-    "trigger": "A /where run on the three polls, or a nonpartisan poll with Graham up 6 or more.",
+    "should_it_move_us": "Yes, toward the Democrat. The model counts all three. A late-morning fix removed the eight-point incumbency term it had given Darline Graham, an appointee the rule treats as an open seat, and run 2026-10-28T1027 moved the call from 5 to 14 percent. The model now reads 17.5.",
+    "trigger": "A nonpartisan likely-voter poll with Andrews ahead.",
     "sources": [
       "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
       "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf",

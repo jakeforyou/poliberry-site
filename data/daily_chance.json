@@ -13865,8 +13865,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "ME",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 54.0,
@@ -13875,7 +13875,7 @@
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 2,
+    "n_polls": 1,
     "polls": [
       {
         "pollster": "Beacon Research/ Shaw & Co. Research",
@@ -13885,17 +13885,7 @@
         "moe": 2.5,
         "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf",
         "error": 3.242,
-        "weight": 0.5318
-      },
-      {
-        "pollster": "Marist University",
-        "end_date": "2026-10-25",
-        "population": "LV",
-        "margin_d": 2.0,
-        "moe": 6.6,
-        "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_Maine-NOS-and-Tables_202610261228-3_43sjl2.pdf",
-        "error": 7.025,
-        "weight": 0.1133
+        "weight": 0.5998
       }
     ],
     "seen": [
@@ -13907,26 +13897,35 @@
         "moe": 4.4,
         "source_url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_14_2026_maine_press_release.pdf",
         "token": "Suffolk"
+      },
+      {
+        "pollster": "Marist University",
+        "end_date": "2026-10-25",
+        "population": "LV",
+        "margin_d": 2.0,
+        "moe": 6.6,
+        "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_Maine-NOS-and-Tables_202610261228-3_43sjl2.pdf",
+        "token": "Marist"
       }
     ],
     "posterior": {
-      "mean": 0.4404,
-      "sd_now": 2.3643,
-      "sd_total": 5.0833,
-      "chance": 53.45,
-      "margin": 0.44,
-      "margin_lo": -6.07,
-      "margin_hi": 6.96,
-      "prior_weight": 0.3549
+      "mean": 0.2412,
+      "sd_now": 2.5107,
+      "sd_total": 5.153,
+      "chance": 51.87,
+      "margin": 0.24,
+      "margin_lo": -6.36,
+      "margin_hi": 6.85,
+      "prior_weight": 0.4002
     },
-    "chance": 53.45,
-    "margin": 0.44,
-    "margin_lo": -6.07,
-    "margin_hi": 6.96,
+    "chance": 51.87,
+    "margin": 0.24,
+    "margin_lo": -6.36,
+    "margin_hi": 6.85,
     "run_chance": 54.0,
     "lock_chance": 55.0,
-    "d_run": -0.55,
-    "d_lock": -1.55,
+    "d_run": -2.13,
+    "d_lock": -3.13,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -13938,8 +13937,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "NC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 95.0,
@@ -14011,8 +14010,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "OH",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 58.0,
@@ -14114,8 +14113,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "TX",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 58.0,
@@ -14307,8 +14306,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "AK",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 64.0,
@@ -14349,8 +14348,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "IA",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 43.0,
@@ -14432,8 +14431,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "MI",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 72.0,
@@ -14505,8 +14504,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "GA",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 95.0,
@@ -14568,8 +14567,8 @@
     "kind": "margin",
     "office": "senate",
     "state": "GA",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "margin",
       "point_run": 8.0,
@@ -14631,8 +14630,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "NH",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 87.0,
@@ -14684,18 +14683,19 @@
     "kind": "chance",
     "office": "senate",
     "state": "SC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
-      "p_run": 5.0,
-      "mean": -9.8691,
+      "p_run": 14.0,
+      "mean": -6.4819,
       "tau": 3.9686,
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 3,
-    "polls": [
+    "n_polls": 0,
+    "polls": [],
+    "seen": [
       {
         "pollster": "Targoz Media Research",
         "end_date": "2026-10-25",
@@ -14703,8 +14703,7 @@
         "margin_d": -1.0,
         "moe": 2.8,
         "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/",
-        "error": 3.488,
-        "weight": 0.3274
+        "token": "Targoz"
       },
       {
         "pollster": "The Citadel",
@@ -14713,8 +14712,7 @@
         "margin_d": -4.0,
         "moe": 3.4,
         "source_url": "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf",
-        "error": 4.005,
-        "weight": 0.2483
+        "token": "Citadel"
       },
       {
         "pollster": "New York Times / Siena University",
@@ -14723,29 +14721,27 @@
         "margin_d": 0.0,
         "moe": 4.3,
         "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
-        "error": 4.822,
-        "weight": 0.1713
+        "token": "Siena"
       }
     ],
-    "seen": [],
     "posterior": {
-      "mean": -3.8169,
-      "sd_now": 1.9959,
-      "sd_total": 4.9227,
-      "chance": 21.91,
-      "margin": -3.82,
-      "margin_lo": -10.13,
-      "margin_hi": 2.49,
-      "prior_weight": 0.2529
+      "mean": -6.4819,
+      "sd_now": 3.9686,
+      "sd_total": 6.0,
+      "chance": 14.0,
+      "margin": -6.48,
+      "margin_lo": -14.17,
+      "margin_hi": 1.21,
+      "prior_weight": 1.0
     },
-    "chance": 21.91,
-    "margin": -3.82,
-    "margin_lo": -10.13,
-    "margin_hi": 2.49,
-    "run_chance": 5.0,
+    "chance": 14.0,
+    "margin": -6.48,
+    "margin_lo": -14.17,
+    "margin_hi": 1.21,
+    "run_chance": 14.0,
     "lock_chance": 20.0,
-    "d_run": 16.91,
-    "d_lock": 1.91,
+    "d_run": 0.0,
+    "d_lock": -6.0,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -14757,18 +14753,19 @@
     "kind": "margin",
     "office": "senate",
     "state": "SC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "margin",
-      "point_run": -10.0,
-      "mean": -10.0,
-      "tau": 3.0966,
-      "s": 3.5112,
-      "sigma": 4.6816
+      "point_run": -6.0,
+      "mean": -6.0,
+      "tau": 3.6127,
+      "s": 4.0964,
+      "sigma": 5.4619
     },
-    "n_polls": 3,
-    "polls": [
+    "n_polls": 0,
+    "polls": [],
+    "seen": [
       {
         "pollster": "Targoz Media Research",
         "end_date": "2026-10-25",
@@ -14776,8 +14773,7 @@
         "margin_d": -1.0,
         "moe": 2.8,
         "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/",
-        "error": 3.488,
-        "weight": 0.2817
+        "token": "Targoz"
       },
       {
         "pollster": "The Citadel",
@@ -14786,8 +14782,7 @@
         "margin_d": -4.0,
         "moe": 3.4,
         "source_url": "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf",
-        "error": 4.005,
-        "weight": 0.2136
+        "token": "Citadel"
       },
       {
         "pollster": "New York Times / Siena University",
@@ -14796,29 +14791,27 @@
         "margin_d": 0.0,
         "moe": 4.3,
         "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
-        "error": 4.822,
-        "weight": 0.1474
+        "token": "Siena"
       }
     ],
-    "seen": [],
     "posterior": {
-      "mean": -4.7097,
-      "sd_now": 1.8511,
-      "sd_total": 3.9693,
-      "chance": 11.77,
-      "margin": -4.71,
-      "margin_lo": -9.8,
-      "margin_hi": 0.38,
-      "prior_weight": 0.3574
+      "mean": -6.0,
+      "sd_now": 3.6127,
+      "sd_total": 5.4619,
+      "chance": 13.6,
+      "margin": -6.0,
+      "margin_lo": -13.0,
+      "margin_hi": 1.0,
+      "prior_weight": 1.0
     },
-    "chance": 11.77,
-    "margin": -4.71,
-    "margin_lo": -9.8,
-    "margin_hi": 0.38,
-    "run_point": -10.0,
+    "chance": 13.6,
+    "margin": -6.0,
+    "margin_lo": -13.0,
+    "margin_hi": 1.0,
+    "run_point": -6.0,
     "lock_point": -6.0,
-    "d_run": 5.29,
-    "d_lock": 1.29,
+    "d_run": 0.0,
+    "d_lock": 0.0,
     "sigma_label": "from the lock's range",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -14830,8 +14823,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "FL",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 10.0,
@@ -14943,8 +14936,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "KS",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 33.0,
@@ -14985,8 +14978,8 @@
     "kind": "chance",
     "office": "senate",
     "state": "MN",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 85.0,
@@ -15068,8 +15061,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "GA",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 47.0,
@@ -15131,8 +15124,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "AZ",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 83.0,
@@ -15141,8 +15134,18 @@
       "s": 5.25,
       "sigma": 7.0
     },
-    "n_polls": 1,
+    "n_polls": 2,
     "polls": [
+      {
+        "pollster": "HighGround, Inc.",
+        "end_date": "2026-10-08",
+        "population": "LV",
+        "margin_d": 17.0,
+        "moe": 4.9,
+        "source_url": "https://azhighground.com/hurricane-season-for-arizona-republicans/",
+        "error": 5.385,
+        "weight": 0.2983
+      },
       {
         "pollster": "HighGround, Inc.",
         "end_date": "2026-10-25",
@@ -15151,38 +15154,28 @@
         "moe": 4.9,
         "source_url": "https://azhighground.com/trailing-republicans-gain-ground-in-latest-survey/",
         "error": 5.385,
-        "weight": 0.425
+        "weight": 0.2983
       }
     ],
-    "seen": [
-      {
-        "pollster": "HighGround, Inc.",
-        "end_date": "2026-10-08",
-        "population": "LV",
-        "margin_d": 17.0,
-        "moe": 4.9,
-        "source_url": "https://azhighground.com/hurricane-season-for-arizona-republicans/",
-        "token": "HighGround"
-      }
-    ],
+    "seen": [],
     "posterior": {
-      "mean": 9.3659,
-      "sd_now": 3.5108,
-      "sd_total": 6.3157,
-      "chance": 93.1,
-      "margin": 9.37,
-      "margin_lo": 1.27,
-      "margin_hi": 17.46,
-      "prior_weight": 0.575
+      "mean": 11.6429,
+      "sd_now": 2.941,
+      "sd_total": 6.0176,
+      "chance": 95.0,
+      "margin": 11.64,
+      "margin_lo": 3.93,
+      "margin_hi": 19.36,
+      "prior_weight": 0.4035
     },
-    "chance": 93.1,
-    "margin": 9.37,
-    "margin_lo": 1.27,
-    "margin_hi": 17.46,
+    "chance": 95.0,
+    "margin": 11.64,
+    "margin_lo": 3.93,
+    "margin_hi": 19.36,
     "run_chance": 83.0,
     "lock_chance": 80.0,
-    "d_run": 10.1,
-    "d_lock": 13.1,
+    "d_run": 12.0,
+    "d_lock": 15.0,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -15194,8 +15187,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "NV",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 46.0,
@@ -15236,8 +15229,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "WI",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 70.0,
@@ -15289,8 +15282,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "MI",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 86.0,
@@ -15362,8 +15355,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "OH",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 63.0,
@@ -15465,8 +15458,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "IA",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 80.0,
@@ -15548,8 +15541,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "SC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 5.0,
@@ -15631,8 +15624,8 @@
     "kind": "margin",
     "office": "governor",
     "state": "SC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "margin",
       "point_run": -13.0,
@@ -15714,8 +15707,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "KS",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 25.0,
@@ -15756,8 +15749,8 @@
     "kind": "chance",
     "office": "governor",
     "state": "NH",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "chance",
       "p_run": 6.0,
@@ -15809,8 +15802,8 @@
     "kind": "margin",
     "office": "house",
     "state": "SC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "margin",
       "point_run": -6.0,
@@ -15851,8 +15844,8 @@
     "kind": "margin",
     "office": "house",
     "state": "SC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "margin",
       "point_run": -18.0,
@@ -15893,8 +15886,8 @@
     "kind": "margin",
     "office": "house",
     "state": "SC",
-    "run_id": "2026-10-21T2145",
-    "run_date": "2026-10-21",
+    "run_id": "2026-10-28T1027",
+    "run_date": "2026-10-28",
     "prior": {
       "kind": "margin",
       "point_run": 28.0,
