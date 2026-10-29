@@ -1791,8 +1791,8 @@
     "item_id": null,
     "text": "South Carolina Senate now has three nonpartisan likely-voter polls in four days: NYT/Siena tied at 48, The Citadel Graham +4, Targoz Graham +1. The model counts all three, and after two late-morning changes it reads 17.5, still under the markets near 26: a fixed error removed an incumbency term the model should never have given an appointed senator, and a /where run moved the call from 5 to 14 percent. NYT/Siena also has Flanagan up 14 in Minnesota, 11 points above the earlier average, and the model rose to 97.9. Arizona governor is back at 97.2 because the source table restored the HighGround poll it dropped yesterday and added a new one at Hobbs +13, while Alaska and Kansas Senate kept sliding as early-October NYT/Siena polls fade out of the window. The 09:30 snapshot started on time but the Mac slept until 09:55, so it committed at 10:04 and these are mid-morning prices.",
     "written_at": "2026-10-28T10:07:24-04:00",
-    "n_flags": 8,
-    "n_explained": 7,
+    "n_flags": 3,
+    "n_explained": 3,
     "stale": null,
     "label": "inferred"
   },
@@ -1816,80 +1816,18 @@
     "kind": "item",
     "item_id": "senate_mn",
     "item": "Senate · MN",
-    "flag_kind": "alert",
+    "flag_kind": "market",
     "triggers": [
-      "markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%)",
-      "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls)",
-      "moved +5.5 points since the day's open by 12:00"
+      "markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%)"
     ],
-    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%); New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (6 polls); moved +5.5 points since the day's open by 12:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 85.5 to 91.5; Kalshi 84.5 to 90.0%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 752,
-          "d": 54.0,
-          "r": 40.0,
-          "margin_d": 14.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 5.0,
-        "n": 6,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-28T00:05:30-04:00",
-          0.8525
-        ],
-        [
-          "2026-10-28T01:17:56-04:00",
-          0.8525
-        ],
-        [
-          "2026-10-28T04:54:49-04:00",
-          0.8525
-        ],
-        [
-          "2026-10-28T08:01:51-04:00",
-          0.89
-        ],
-        [
-          "2026-10-28T09:00:01-04:00",
-          0.9032
-        ],
-        [
-          "2026-10-28T10:00:00-04:00",
-          0.9027
-        ],
-        [
-          "2026-10-28T11:00:00-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-28T12:00:00-04:00",
-          0.9078
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -1908,122 +1846,18 @@
     "kind": "item",
     "item_id": "senate_sc",
     "item": "Senate · SC",
-    "flag_kind": "alert",
+    "flag_kind": "market",
     "triggers": [
-      "markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%)",
-      "moved +5.0 points since the day's open by 12:00"
+      "markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%)"
     ],
-    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%); moved +5.0 points since the day's open by 12:00. News in the last 48 hours: 2 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV); The Citadel D-4 (LV); Targoz Media Research D-1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +4.0 points since the last pull (Polymarket 21.0 to 27.0; Kalshi 23.5 to 25.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
-      "events": [
-        {
-          "title": "Trump campaigns in Mississippi",
-          "url": "https://www.gulfcoastnewsnow.com/article/trump-campaigns-mississippi-midterms/74254270",
-          "domain": "gulfcoastnewsnow.com",
-          "seendate": "2026-10-27T05:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        },
-        {
-          "title": "Last Minute Speed Candidating",
-          "url": "https://www.southcarolinapublicradio.org/podcast/south-carolina-lede/2026-10-27/last-minute-speed-candidating",
-          "domain": "southcarolinapublicradio.org",
-          "seendate": "2026-10-27T05:15:00Z",
-          "kinds": [
-            "other"
-          ]
-        }
-      ],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 2
-      },
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 707,
-          "d": 48.0,
-          "r": 48.0,
-          "margin_d": 0.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
-        },
-        {
-          "pollster": "The Citadel",
-          "sponsor": null,
-          "start_date": "2026-10-14",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 890,
-          "d": 39.0,
-          "r": 43.0,
-          "margin_d": -4.0,
-          "source_url": "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf"
-        },
-        {
-          "pollster": "Targoz Media Research",
-          "sponsor": null,
-          "start_date": "2026-10-16",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 895,
-          "d": 46.0,
-          "r": 47.0,
-          "margin_d": -1.0,
-          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -1.83,
-        "n": 6,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-28T00:05:30-04:00",
-          0.215
-        ],
-        [
-          "2026-10-28T01:17:56-04:00",
-          0.215
-        ],
-        [
-          "2026-10-28T04:54:49-04:00",
-          0.21
-        ],
-        [
-          "2026-10-28T08:01:51-04:00",
-          0.275
-        ],
-        [
-          "2026-10-28T09:00:01-04:00",
-          0.27
-        ],
-        [
-          "2026-10-28T10:00:00-04:00",
-          0.2625
-        ],
-        [
-          "2026-10-28T11:00:00-04:00",
-          0.265
-        ],
-        [
-          "2026-10-28T12:00:00-04:00",
-          0.265
-        ]
-      ],
-      "events_window_hours": 48,
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2042,169 +1876,20 @@
   {
     "as_of": "2026-10-28",
     "kind": "item",
-    "item_id": "gov_sc",
-    "item": "Governor · SC",
-    "flag_kind": "alert",
-    "triggers": [
-      "moved +4.2 points since the day's open by 12:00"
-    ],
-    "facts": "Flagged: moved +4.2 points since the day's open by 12:00. News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D-7 (LV); The Citadel D-11 (LV); Targoz Media Research D-10 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 707,
-          "d": 44.0,
-          "r": 51.0,
-          "margin_d": -7.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
-        },
-        {
-          "pollster": "The Citadel",
-          "sponsor": null,
-          "start_date": "2026-10-14",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 890,
-          "d": 31.0,
-          "r": 42.0,
-          "margin_d": -11.0,
-          "source_url": "https://poll.citadel.edu/wp-content/uploads/2026/10/The-Citadel-Poll-Oct2026.pdf"
-        },
-        {
-          "pollster": "Targoz Media Research",
-          "sponsor": null,
-          "start_date": "2026-10-16",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 895,
-          "d": 41.0,
-          "r": 51.0,
-          "margin_d": -10.0,
-          "source_url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -10.8,
-        "n": 5,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-28T00:05:30-04:00",
-          0.0365
-        ],
-        [
-          "2026-10-28T01:17:56-04:00",
-          0.0365
-        ],
-        [
-          "2026-10-28T04:54:49-04:00",
-          0.0365
-        ],
-        [
-          "2026-10-28T08:01:51-04:00",
-          0.0395
-        ],
-        [
-          "2026-10-28T09:00:01-04:00",
-          0.039
-        ],
-        [
-          "2026-10-28T10:00:00-04:00",
-          0.039
-        ],
-        [
-          "2026-10-28T11:00:00-04:00",
-          0.0635
-        ],
-        [
-          "2026-10-28T12:00:00-04:00",
-          0.079
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-10-28",
-    "kind": "item",
     "item_id": "senate_ia",
     "item": "Senate · IA",
     "flag_kind": "market",
     "triggers": [
       "markets moved +3.0 points since the last pull (Kalshi 41.5 to 44.5%)"
     ],
-    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 41.5 to 44.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 41.5 to 44.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": -0.25,
-        "n": 8,
-        "newest": "2026-10-23"
-      },
-      "market_path": [
-        [
-          "2026-10-28T00:05:30-04:00",
-          0.43
-        ],
-        [
-          "2026-10-28T01:17:56-04:00",
-          0.435
-        ],
-        [
-          "2026-10-28T04:54:49-04:00",
-          0.435
-        ],
-        [
-          "2026-10-28T08:01:51-04:00",
-          0.435
-        ],
-        [
-          "2026-10-28T09:00:01-04:00",
-          0.435
-        ],
-        [
-          "2026-10-28T10:00:00-04:00",
-          0.44
-        ],
-        [
-          "2026-10-28T11:00:00-04:00",
-          0.44
-        ],
-        [
-          "2026-10-28T12:00:00-04:00",
-          0.44
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2214,310 +1899,6 @@
     "should_it_move_us": "Wait. Nothing the model reads changed, and it holds at 43.5.",
     "trigger": "A poll ending after Oct 22.",
     "sources": [],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-28",
-    "kind": "item",
-    "item_id": "gov_nv",
-    "item": "Governor · NV",
-    "flag_kind": "poll",
-    "triggers": [
-      "Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days"
-    ],
-    "facts": "Flagged: Hart Research (LV, through 2026-10-25) shows D+4 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Hart Research D+4 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "Hart Research",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 950,
-          "d": 49.0,
-          "r": 45.0,
-          "margin_d": 4.0,
-          "source_url": "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.0,
-        "n": 3,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-28T00:05:30-04:00",
-          0.78
-        ],
-        [
-          "2026-10-28T01:17:56-04:00",
-          0.78
-        ],
-        [
-          "2026-10-28T04:54:49-04:00",
-          0.78
-        ],
-        [
-          "2026-10-28T08:01:51-04:00",
-          0.7825
-        ],
-        [
-          "2026-10-28T09:00:01-04:00",
-          0.78
-        ],
-        [
-          "2026-10-28T10:00:00-04:00",
-          0.78
-        ],
-        [
-          "2026-10-28T11:00:00-04:00",
-          0.78
-        ],
-        [
-          "2026-10-28T12:00:00-04:00",
-          0.78
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "explained": true,
-    "headline": "Hart's Nevada poll flags again, still left out",
-    "what_happened": "Hart Research, Oct 20 to 25, 950 likely voters, Ford 49, Lombardo 45, flagged again as a poll in a thin race (retrieved). No new Nevada governor poll since.",
-    "why_it_moved": "The same poll as yesterday, inferred.",
-    "should_it_move_us": "No. Hart is marked Democratic and left out, and the model still has no unmarked Nevada governor poll. It holds at 45.2.",
-    "trigger": "A nonpartisan likely-voter poll of the race.",
-    "sources": [
-      "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-28",
-    "kind": "item",
-    "item_id": "ev_mt",
-    "item": "Early vote · Montana",
-    "flag_kind": "ballots",
-    "triggers": [
-      "Montana passed half its 2022 turnout: 234,756 ballots through Oct 28, against 468,326 votes cast in all of 2022"
-    ],
-    "facts": "Flagged: Montana passed half its 2022 turnout: 234,756 ballots through Oct 28, against 468,326 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in MT: 234,756 through Oct 28. No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": null,
-      "market_path": [],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "MT",
-          "date": "2026-10-28",
-          "days_before": 6,
-          "total": 234756,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-27",
-          "total_prev": 209134,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 234163,
-          "turnout_2022_total": 468326
-        }
-      ]
-    },
-    "explained": true,
-    "headline": "Montana's ballots pass half its 2022 turnout",
-    "what_happened": "The UF Election Lab tracker counts 234,756 Montana ballots through Oct 28, up from 209,134 on Oct 27, past half of the 468,326 votes cast in 2022 (retrieved). Montana does not register voters by party and the tracker gives no county split, so the board has no party gap for Montana and no 2022 count at the same point. No news in the feed.",
-    "why_it_moved": "A threshold set in advance, crossed by a steady count, inferred. Most Montanans vote absentee, so much of the total lands before Election Day in any year. Without a 2022 count at the same point the board cannot say whether this is a fast year or the usual path.",
-    "should_it_move_us": "No. Montana has no item on the scorecard, and a statewide count with no party or county says how many voted, not who. The board's close Montana race is the 1st district, a toss-up, and nothing here speaks to it.",
-    "trigger": "A county split of Montana's ballots, which would show whether the 1st district's counties are keeping pace with the rest of the state.",
-    "sources": [
-      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-28",
-    "kind": "item",
-    "item_id": "senate_nc",
-    "item": "Senate · NC",
-    "flag_kind": "ballots",
-    "triggers": [
-      "North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022"
-    ],
-    "facts": "Flagged: North Carolina passed half its 2022 turnout: 1,953,575 ballots through Oct 27, against 3,790,202 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Quantus Insights D+8 (LV). Ballots in NC: 1,953,575 through Oct 27, party gap D+15.6 against D+7.5 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "Quantus Insights",
-          "sponsor": null,
-          "start_date": "2026-10-24",
-          "end_date": "2026-10-25",
-          "population": "LV",
-          "sample": 722,
-          "d": 51.0,
-          "r": 43.0,
-          "margin_d": 8.0,
-          "source_url": "https://quantusinsights.org/polling/f/north-carolina-senate-cooper-holds-a-9-point-lead-over-whatley"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 11.0,
-        "n": 7,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-28T00:05:30-04:00",
-          0.9688
-        ],
-        [
-          "2026-10-28T01:17:56-04:00",
-          0.9692
-        ],
-        [
-          "2026-10-28T04:54:49-04:00",
-          0.969
-        ],
-        [
-          "2026-10-28T08:01:51-04:00",
-          0.9683
-        ],
-        [
-          "2026-10-28T09:00:01-04:00",
-          0.9675
-        ],
-        [
-          "2026-10-28T10:00:00-04:00",
-          0.9685
-        ],
-        [
-          "2026-10-28T11:00:00-04:00",
-          0.969
-        ],
-        [
-          "2026-10-28T12:00:00-04:00",
-          0.9665
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "NC",
-          "date": "2026-10-27",
-          "days_before": 7,
-          "total": 1953575,
-          "gap": 15.55,
-          "gap_2022": 7.47,
-          "swing": 8.08,
-          "r_vs_2022": -6.53,
-          "r_share": 24.82,
-          "r_share_2022": 31.35,
-          "prev_date": "2026-10-26",
-          "total_prev": 1770440,
-          "swing_prev": 8.71,
-          "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
-          "kind": "passed_half_2022_turnout",
-          "line": 1895101,
-          "turnout_2022_total": 3790202
-        }
-      ]
-    },
-    "explained": true,
-    "headline": "North Carolina passes half its 2022 vote, Republicans still lagging",
-    "what_happened": "The state's absentee file counts 1,953,575 accepted early and mail ballots through Oct 27, past half of the 3,790,202 votes cast in 2022. By party registration the ballots are 40.4 percent Democratic, about 35 unaffiliated and 24.8 Republican. At the same point in 2022 the party gap was D+7.5 with Republicans at 31.4. Today it is D+15.6, a swing of 8.1 toward Democrats, from 8.7 a day earlier (all retrieved, NC State Board of Elections). On Point Politics' tracker shows the same split, and Axios reported Democrats casting twice as many ballots as Republicans in the first days. One new poll, Quantus Insights, Oct 24 to 25, 722 likely voters: Cooper 51, Whatley 43. No news in the feed in 48 hours.",
-    "why_it_moved": "A threshold set in advance, crossed by a steady count, inferred. Early voting runs through Oct 31, so passing half of 2022's turnout was a question of when. The party gap is the part worth reading, and it is a reading of who voted, not how. In 2022 the early ballots closed 38.2 Democratic to 31.1 Republican by registration and Budd won by 3.2. In 2024 they closed 32.4 to 33.2 and Trump won by 3.2. Unaffiliated voters and Election Day voters have leaned Republican both times. The Republican share has climbed since the first days, which fits Republicans voting later rather than not at all.",
-    "should_it_move_us": "No. The model does not read the early vote, and it left out the Quantus poll as marked Republican by the source table. It holds Cooper at 99.7 on fundamentals and four polls, D+9.5 with 80 percent from D+5.0 to D+13.9.",
-    "trigger": "Whether the Republican share of North Carolina's ballots reaches its 2022 level by Oct 30, the line the Oct 16 call's red team set. It is 6.5 points short.",
-    "sources": [
-      "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
-      "https://onpointpolitics.us/maps/early-vote/north-carolina",
-      "https://www.axios.com/local/charlotte/2026/10/19/north-carolina-early-voting-2026-democrats-gop",
-      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_North_Carolina"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-28",
-    "kind": "item",
-    "item_id": "ev_tn",
-    "item": "Early vote · Tennessee",
-    "flag_kind": "ballots",
-    "triggers": [
-      "Tennessee passed half its 2022 turnout: 913,512 ballots through Oct 27, against 1,756,397 votes cast in all of 2022"
-    ],
-    "facts": "Flagged: Tennessee passed half its 2022 turnout: 913,512 ballots through Oct 27, against 1,756,397 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in TN: 913,512 through Oct 27. No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": null,
-      "market_path": [],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "TN",
-          "date": "2026-10-27",
-          "days_before": 7,
-          "total": 913512,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-25",
-          "total_prev": 815354,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 878198,
-          "turnout_2022_total": 1756397
-        }
-      ]
-    },
-    "explained": true,
-    "headline": "Tennessee passes half its 2022 turnout, two early days left",
-    "what_happened": "The UF Election Lab tracker counts 913,512 Tennessee ballots through Oct 27, up from 815,354 on Oct 25, past half of the 1,756,397 votes cast in 2022 (retrieved). Early voting runs Oct 14 through Oct 29 (WSMV). Tennessee does not register voters by party, so the board has no party gap and no 2022 count at the same point. No news in the feed. The same reading was on Oct 27's board: this is the one repeat the new rule allows on its first day.",
-    "why_it_moved": "A threshold set in advance, inferred. Tennessee votes heavily in person before Election Day, and a count this size with two days left is that habit, not news about the race.",
-    "should_it_move_us": "No. The scorecard has no Tennessee item. The board's Tennessee races are safe, the redrawn 9th district included, which every rater calls a Republican pickup, and a statewide count says nothing about one district.",
-    "trigger": "A 2022 count for Tennessee at the same point, the only thing that would say whether this pace is unusual.",
-    "sources": [
-      "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-      "https://www.wsmv.com/2026/10/14/election-2026-early-voting-tennessees-november-3-general-election-is-underway/"
-    ],
     "label": "inferred"
   },
   {
@@ -2574,6 +1955,1308 @@
     "should_it_move_us": "Yes, toward the Republican, on the window alone. The model fell from 8.9 to 6.2 with no event.",
     "trigger": "Any new nonpartisan Kansas Senate poll.",
     "sources": [],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Hart's Nevada poll flags again, still left out",
+    "what_happened": "Hart Research, Oct 20 to 25, 950 likely voters, Ford 49, Lombardo 45, flagged again as a poll in a thin race (retrieved). No new Nevada governor poll since.",
+    "why_it_moved": "The same poll as yesterday, inferred.",
+    "should_it_move_us": "No. Hart is marked Democratic and left out, and the model still has no unmarked Nevada governor poll. It holds at 45.2.",
+    "trigger": "A nonpartisan likely-voter poll of the race.",
+    "sources": [
+      "https://hub.nationaljournal.com/wednesday-morning-quarterbacking"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "senate_nc",
+    "item": "Senate · NC",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "North Carolina passes half its 2022 vote, Republicans still lagging",
+    "what_happened": "The state's absentee file counts 1,953,575 accepted early and mail ballots through Oct 27, past half of the 3,790,202 votes cast in 2022. By party registration the ballots are 40.4 percent Democratic, about 35 unaffiliated and 24.8 Republican. At the same point in 2022 the party gap was D+7.5 with Republicans at 31.4. Today it is D+15.6, a swing of 8.1 toward Democrats, from 8.7 a day earlier (all retrieved, NC State Board of Elections). On Point Politics' tracker shows the same split, and Axios reported Democrats casting twice as many ballots as Republicans in the first days. One new poll, Quantus Insights, Oct 24 to 25, 722 likely voters: Cooper 51, Whatley 43. No news in the feed in 48 hours.",
+    "why_it_moved": "A threshold set in advance, crossed by a steady count, inferred. Early voting runs through Oct 31, so passing half of 2022's turnout was a question of when. The party gap is the part worth reading, and it is a reading of who voted, not how. In 2022 the early ballots closed 38.2 Democratic to 31.1 Republican by registration and Budd won by 3.2. In 2024 they closed 32.4 to 33.2 and Trump won by 3.2. Unaffiliated voters and Election Day voters have leaned Republican both times. The Republican share has climbed since the first days, which fits Republicans voting later rather than not at all.",
+    "should_it_move_us": "No. The model does not read the early vote, and it left out the Quantus poll as marked Republican by the source table. It holds Cooper at 99.7 on fundamentals and four polls, D+9.5 with 80 percent from D+5.0 to D+13.9.",
+    "trigger": "Whether the Republican share of North Carolina's ballots reaches its 2022 level by Oct 30, the line the Oct 16 call's red team set. It is 6.5 points short.",
+    "sources": [
+      "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
+      "https://onpointpolitics.us/maps/early-vote/north-carolina",
+      "https://www.axios.com/local/charlotte/2026/10/19/north-carolina-early-voting-2026-democrats-gop",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_North_Carolina"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "ev_mt",
+    "item": "Early vote · Montana",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Montana's ballots pass half its 2022 turnout",
+    "what_happened": "The UF Election Lab tracker counts 234,756 Montana ballots through Oct 28, up from 209,134 on Oct 27, past half of the 468,326 votes cast in 2022 (retrieved). Montana does not register voters by party and the tracker gives no county split, so the board has no party gap for Montana and no 2022 count at the same point. No news in the feed.",
+    "why_it_moved": "A threshold set in advance, crossed by a steady count, inferred. Most Montanans vote absentee, so much of the total lands before Election Day in any year. Without a 2022 count at the same point the board cannot say whether this is a fast year or the usual path.",
+    "should_it_move_us": "No. Montana has no item on the scorecard, and a statewide count with no party or county says how many voted, not who. The board's close Montana race is the 1st district, a toss-up, and nothing here speaks to it.",
+    "trigger": "A county split of Montana's ballots, which would show whether the 1st district's counties are keeping pace with the rest of the state.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-28",
+    "kind": "item",
+    "item_id": "ev_tn",
+    "item": "Early vote · Tennessee",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Tennessee passes half its 2022 turnout, two early days left",
+    "what_happened": "The UF Election Lab tracker counts 913,512 Tennessee ballots through Oct 27, up from 815,354 on Oct 25, past half of the 1,756,397 votes cast in 2022 (retrieved). Early voting runs Oct 14 through Oct 29 (WSMV). Tennessee does not register voters by party, so the board has no party gap and no 2022 count at the same point. No news in the feed. The same reading was on Oct 27's board: this is the one repeat the new rule allows on its first day.",
+    "why_it_moved": "A threshold set in advance, inferred. Tennessee votes heavily in person before Election Day, and a count this size with two days left is that habit, not news about the race.",
+    "should_it_move_us": "No. The scorecard has no Tennessee item. The board's Tennessee races are safe, the redrawn 9th district included, which every rater calls a Republican pickup, and a statewide count says nothing about one district.",
+    "trigger": "A 2022 count for Tennessee at the same point, the only thing that would say whether this pace is unusual.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+      "https://www.wsmv.com/2026/10/14/election-2026-early-voting-tennessees-november-3-general-election-is-underway/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Markets moved most today. Kansas Senate went from 40.5 to 48 by mid-morning after CNN/SSRS put Hamilton up 4, and the model counts that poll and reads 15.8. Decision Desk, per the Wikipedia ratings table, cut Ohio governor to Tossup and raised Arizona to Likely D. The Ohio change runs against a new Suffolk Acton +4 and is unconfirmed at the source. No forecast number changed. The snapshot ran late again and committed at 10:53, so these are late-morning prices.",
+    "written_at": "2026-10-29T12:04:55-04:00",
+    "n_flags": 14,
+    "n_explained": 14,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Kansas climbed eight points by ten, with Trump due in Salina.",
+    "vibe": "Markets did today's moving. Kansas Senate rose from 40.5 to 48 on CNN's Hamilton-plus-four, Decision Desk handed Ohio a Tossup nobody else sees, and Florida and Nevada passed half their 2022 turnout.",
+    "sources": [
+      "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/",
+      "https://polymarket.com/event/kansas-senate-election-winner",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "written_at": "2026-10-29T12:04:55-04:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "flag_kind": "alert",
+    "triggers": [
+      "markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%)",
+      "moved +8.0 points since the day's open by 12:02"
+    ],
+    "facts": "Flagged: markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%); moved +8.0 points since the day's open by 12:02. News in the last 48 hours: 0 articles. Polls just in: SSRS D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 838,
+          "d": 49.0,
+          "r": 45.0,
+          "margin_d": 4.0,
+          "source_url": "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 0.75,
+        "n": 4,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.405
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.405
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.405
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.44
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.4475
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.4725
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.485
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.48
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.485
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Kansas prices climb eight points after CNN has Hamilton up four",
+    "what_happened": "Retrieved: CNN/SSRS (LV, Oct 20 to 26, n=838) has Hamilton 49, Marshall 45. Retrieved: the market opened at 40.5 and reached 48.5 by 10:03, with the climb starting between 04:37 and 06:59 (Polymarket 47.5, Kalshi 49.5 at the morning pull). Retrieved: the hourly check flagged it. Retrieved: the feed carries a Trump rally announced for Salina on Saturday (Great Bend Post).",
+    "why_it_moved": "Inferred: the CNN poll is the only new public fact in the window, and it is the best Hamilton number from a nonpartisan pollster. The rally is a Marshall-side event and did not stop the climb.",
+    "should_it_move_us": "No. The model counts CNN/SSRS at weight 0.62 and already sits at 15.8, up from 6.2. One poll does not beat the fundamentals in a Trump-won state, and the markets near 48 are pricing the poll, not new information.",
+    "trigger": "A second nonpartisan likely-voter poll in Kansas showing Hamilton ahead.",
+    "sources": [
+      "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/",
+      "https://polymarket.com/event/kansas-senate-election-winner",
+      "https://greatbendpost.com/posts/4cc12d6a-b1fc-44a2-950a-c3383a032fd1"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "market",
+    "triggers": [
+      "Decision Desk moved -20.0 (70.0 to 50.0%)",
+      "markets moved +4.0 points since the last pull (Polymarket 79.5 to 83.5; Kalshi 76.5 to 80.5%)"
+    ],
+    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%); markets moved +4.0 points since the last pull (Polymarket 79.5 to 83.5; Kalshi 76.5 to 80.5%). News in the last 48 hours: 0 articles. Polls just in: Suffolk University D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Suffolk University",
+          "sponsor": null,
+          "start_date": "2026-10-21",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 500,
+          "d": 48.0,
+          "r": 44.0,
+          "margin_d": 4.0,
+          "source_url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.89,
+        "n": 9,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.805
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.805
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.805
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.81
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.815
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.815
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.815
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.82
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.82
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Decision Desk drops Ohio governor to Tossup, on Wikipedia's transcription",
+    "what_happened": "Retrieved: the Wikipedia ratings table now lists Decision Desk for Ohio governor as Tossup as of Oct 28, down from Lean D (flip) as of Oct 23. Retrieved: our Decision Desk fetcher cannot read DDHQ's governor page directly, so this is open reporting, not checked at the source. Retrieved: Suffolk (LV, Oct 21 to 26) has Acton up 4. Retrieved: markets rose from 79.5 to 83.5 on Polymarket. No news in the feed for 48 hours.",
+    "why_it_moved": "Inferred: the rating change runs against the new Suffolk poll and the markets. Nothing in the feed explains it. It may be a DDHQ model update or a transcription error in the table.",
+    "should_it_move_us": "Wait. The model counts Suffolk and reads 70.5. A single rating change that nothing else confirms is not evidence until it is seen on DDHQ's own page.",
+    "trigger": "DDHQ's governor page showing Ohio as Tossup, or a nonpartisan poll with Ramaswamy ahead.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://votes.decisiondeskhq.com/forecast/governor",
+      "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
+    "flag_kind": "poll",
+    "triggers": [
+      "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (4 polls)"
+    ],
+    "facts": "Flagged: New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (4 polls). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 752,
+          "d": 54.0,
+          "r": 40.0,
+          "margin_d": 14.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 5.4,
+        "n": 5,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.9052
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.9078
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.9078
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.9078
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.9078
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.9078
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.9078
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.9078
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.9078
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "NYT/Siena still has Flanagan up 14",
+    "what_happened": "Retrieved: NYT/Siena (LV, Oct 19 to 26) has Flanagan 54, Tafoya 40. It first flagged yesterday and stays on today's list against the prior average of D+3.",
+    "why_it_moved": "Inferred: this is the same poll as yesterday. Nothing new happened in Minnesota.",
+    "should_it_move_us": "No. The model counts it at weight 0.26 and reads 98.1. It already moved on this poll yesterday.",
+    "trigger": "A nonpartisan poll with the race inside 5.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "flag_kind": "benchmark",
+    "triggers": [
+      "Decision Desk moved +15.0 (70.0 to 85.0%)"
+    ],
+    "facts": "Flagged: Decision Desk moved +15.0 (70.0 to 85.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 9.4,
+        "n": 5,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.9083
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.9103
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.91
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.9095
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.9095
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.9153
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.914
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.9143
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.9093
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Decision Desk moves Arizona governor to Likely D",
+    "what_happened": "Retrieved: the Wikipedia ratings table lists Decision Desk for Arizona as Likely D as of Oct 28, up from Lean D as of Oct 23. No new poll. The only feed item is a tornado emergency request to Hobbs.",
+    "why_it_moved": "Inferred: rating catch-up to the HighGround polls at Hobbs +13 and +17.",
+    "should_it_move_us": "No. The model reads 97.6 and was already well above the raters.",
+    "trigger": "A nonpartisan poll with Biggs within 5.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://votes.decisiondeskhq.com/forecast/governor",
+      "https://azhighground.com/trailing-republicans-gain-ground-in-latest-survey/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +5.8 points since the last pull (Polymarket 3.9 to 10.7; Kalshi 5.3 to 10.0%)"
+    ],
+    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 3.9 to 10.7; Kalshi 5.3 to 10.0%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D-7 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 707,
+          "d": 44.0,
+          "r": 51.0,
+          "margin_d": -7.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -10.8,
+        "n": 5,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.0925
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.0955
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.1133
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.1138
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.1067
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.1115
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.1115
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.103
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.1033
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "South Carolina governor prices double off a low base",
+    "what_happened": "Retrieved: NYT/Siena (LV, Oct 19 to 26) has Wilson 51, Johnson 44, a closer race than the prior average of R+10.8. Retrieved: markets rose from 3.9 to 10.7 on Polymarket and 5.3 to 10.0 on Kalshi.",
+    "why_it_moved": "Inferred: the NYT/Siena poll, 4 points better for Johnson than the average, priced into a thin market.",
+    "should_it_move_us": "No. The model counts the poll and reads 4.6. A 7-point deficit five days out is still a 7-point deficit.",
+    "trigger": "A nonpartisan poll with Wilson under 5.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
+      "https://polymarket.com/event/south-carolina-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "flag_kind": "poll",
+    "triggers": [
+      "YouGov Blue (RV, through 2026-10-26) shows D+8, 5 points from the prior average of D+3 (20 polls)"
+    ],
+    "facts": "Flagged: YouGov Blue (RV, through 2026-10-26) shows D+8, 5 points from the prior average of D+3 (20 polls). News in the last 48 hours: 0 articles. Polls just in: SSRS D+6 (LV); YouGov Blue D+8 (RV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 923,
+          "d": 49.0,
+          "r": 43.0,
+          "margin_d": 6.0,
+          "source_url": "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
+        },
+        {
+          "pollster": "YouGov Blue",
+          "sponsor": null,
+          "start_date": "2026-10-21",
+          "end_date": "2026-10-26",
+          "population": "RV",
+          "sample": 1000,
+          "d": 51.0,
+          "r": 43.0,
+          "margin_d": 8.0,
+          "source_url": "https://254labs.io/news/2026-10-tx"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.39,
+        "n": 18,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.685
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.685
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.685
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.685
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.6875
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.685
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.69
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.69
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.69
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Two new Talarico leads, one of them counted",
+    "what_happened": "Retrieved: YouGov Blue (RV, Oct 21 to 26) has Talarico up 8. Retrieved: CNN/SSRS (LV, Oct 20 to 27) has Talarico up 6. The average is D+2.4 over 18 polls.",
+    "why_it_moved": "Inferred: the flag is the YouGov Blue poll, which is 5 points above the average. The CNN poll is the one with weight.",
+    "should_it_move_us": "No. The model leaves YouGov Blue out as partisan (D) and counts CNN/SSRS. It reads 69.9, up from 68.2, and the markets at 69 already agree.",
+    "trigger": "A nonpartisan likely-voter poll with Paxton ahead.",
+    "sources": [
+      "https://254labs.io/news/2026-10-tx",
+      "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "gov_wi",
+    "item": "Governor · WI",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +4.8 points since the last pull (Polymarket 80.0 to 85.5; Kalshi 79.5 to 83.5%)"
+    ],
+    "facts": "Flagged: markets moved +4.8 points since the last pull (Polymarket 80.0 to 85.5; Kalshi 79.5 to 83.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 5.0,
+        "n": 2,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.845
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.8475
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.845
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.845
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.845
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.845
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.845
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.845
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.845
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Wisconsin governor prices follow Marquette",
+    "what_happened": "Retrieved: Marquette (LV, through Oct 22, released Oct 28) has Crowley up 7. Retrieved: markets rose from 80.0 to 85.5 on Polymarket. Retrieved: the feed has Harris campaigning for Crowley and Tiffany touring the state.",
+    "why_it_moved": "Inferred: the Marquette release, the benchmark Wisconsin poll. The campaign stops are routine.",
+    "should_it_move_us": "No. The model counts Marquette at full weight and already reads 84.0, up from 78.6.",
+    "trigger": "A nonpartisan poll with Tiffany within 3.",
+    "sources": [
+      "https://law.marquette.edu/poll/2026/10/28/mlsp92-press-release/",
+      "https://www.channel3000.com/news/harris-campaigns-for-crowley-as-tiffany-tours-wisconsin-in-governors-race/article_ac6ce846-2010-4893-be75-a9264b0984cc.html"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -4.0 points since the last pull (Polymarket 74.5 to 71.5; Kalshi 73.5 to 68.5%)"
+    ],
+    "facts": "Flagged: markets moved -4.0 points since the last pull (Polymarket 74.5 to 71.5; Kalshi 73.5 to 68.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 3.33,
+        "n": 3,
+        "newest": "2026-10-16"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.6925
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.695
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.695
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.695
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.695
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.7
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.7
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.7
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.695
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Alaska slips in the markets with no news",
+    "what_happened": "Retrieved: markets fell from 74.5 to 71.5 on Polymarket and 73.5 to 68.5 on Kalshi since the last pull. No new poll. The only feed item is a national legal story. Retrieved: the model reads 7.2, down from 16.6.",
+    "why_it_moved": "Unexplained after checking the feed and the polls. Inferred for the model only: its one counted poll (Alaska Survey Research, Oct 3) keeps fading, so fundamentals now carry 0.74 of the weight.",
+    "should_it_move_us": "Wait. Nothing new is known. The model's drop is a decaying poll, not new information, and that gap to the markets is the board's widest.",
+    "trigger": "Any nonpartisan Alaska Senate poll fielded after Oct 20.",
+    "sources": [
+      "https://polymarket.com/event/alaska-senate-election-winner",
+      "https://x.com/The_Real_ASR/status/2107851752464884167"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "flag_kind": "rating",
+    "triggers": [
+      "Silver Bulletin changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: Silver Bulletin changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 0 articles. Polls just in: State Navigate D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "State Navigate",
+          "sponsor": null,
+          "start_date": "2026-10-23",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 679,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.5,
+        "n": 6,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.62
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.6175
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.6175
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.615
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.6125
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.6125
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.6125
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.615
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.6125
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Silver moves Georgia governor to Lean D",
+    "what_happened": "Retrieved: Silver Bulletin changed Georgia governor from Tossup to Lean D (flip). Retrieved: State Navigate (LV, Oct 23 to 27) has Bottoms 50, Jackson 47.",
+    "why_it_moved": "Inferred: the State Navigate poll and the early vote. Silver's model reads the same polls ours does.",
+    "should_it_move_us": "No further. The model counts State Navigate and rose from 49.9 to 55.0. The rating adds no independent information.",
+    "trigger": "A nonpartisan poll with Jackson ahead.",
+    "sources": [
+      "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
+      "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_dem_control",
+    "item": "Senate control",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Kalshi 63.5 to 66.5%)"
+    ],
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 63.5 to 66.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.67
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.67
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Kalshi Senate control up three overnight, flat all day",
+    "what_happened": "Retrieved: Kalshi rose from 63.5 to 66.5 since the last pull and sat at 67 from midnight on. No news in the feed.",
+    "why_it_moved": "Inferred: the sum of yesterday's state polls, Texas and Kansas most of all. Not a separate event.",
+    "should_it_move_us": "No. The run reads 55 and the chamber number follows the states, not the other way round.",
+    "trigger": "Kansas or Alaska moving in a nonpartisan poll.",
+    "sources": [
+      "https://kalshi.com/markets/controls"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%)"
+    ],
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-19",
+          "end_date": "2026-10-26",
+          "population": "LV",
+          "sample": 707,
+          "d": 48.0,
+          "r": 48.0,
+          "margin_d": 0.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -1.83,
+        "n": 6,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.28
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.28
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Kalshi nudges South Carolina Senate up on the Siena tie",
+    "what_happened": "Retrieved: Kalshi rose from 25.5 to 28.5. Retrieved: NYT/Siena (LV, Oct 19 to 26) has Andrews and Graham tied at 48.",
+    "why_it_moved": "Inferred: a late price-in of the Siena tie that flagged yesterday.",
+    "should_it_move_us": "No. The model counts Siena, The Citadel and Targoz and reads 17.4, unchanged.",
+    "trigger": "A nonpartisan poll with Andrews ahead.",
+    "sources": [
+      "https://kalshi.com/markets/senatesc",
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_fl",
+    "item": "Senate · FL special",
+    "flag_kind": "ballots",
+    "triggers": [
+      "Florida passed half its 2022 turnout: 3,905,292 ballots through Oct 29, against 7,796,916 votes cast in all of 2022"
+    ],
+    "facts": "Flagged: Florida passed half its 2022 turnout: 3,905,292 ballots through Oct 29, against 7,796,916 votes cast in all of 2022. News in the last 48 hours: 0 articles. Polls just in: St. Pete Polls D-4 (LV); ActiVote D-6 (LV). Ballots in FL: 3,905,292 through Oct 29. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "St. Pete Polls",
+          "sponsor": null,
+          "start_date": "2026-10-25",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 916,
+          "d": 45.0,
+          "r": 49.0,
+          "margin_d": -4.0,
+          "source_url": "https://data.ddhq.io/polls/2026/10/28/St.-Pete-Polls-Florida"
+        },
+        {
+          "pollster": "ActiVote",
+          "sponsor": null,
+          "start_date": "2026-10-17",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 400,
+          "d": 47.0,
+          "r": 53.0,
+          "margin_d": -6.0,
+          "source_url": "https://www.activote.net/polls/2026/fl-u-s-senate/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -6.6,
+        "n": 10,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.105
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.1025
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.1025
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.0975
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.0975
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.1
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.1
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.1
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.1
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": [
+        {
+          "state": "FL",
+          "date": "2026-10-29",
+          "days_before": 5,
+          "total": 3905292,
+          "gap": -1.29,
+          "gap_2022": null,
+          "swing": null,
+          "r_vs_2022": null,
+          "r_share": 40.2,
+          "r_share_2022": null,
+          "prev_date": "2026-10-28",
+          "total_prev": 3531109,
+          "swing_prev": null,
+          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+          "kind": "passed_half_2022_turnout",
+          "line": 3898458,
+          "turnout_2022_total": 7796916
+        }
+      ]
+    },
+    "explained": true,
+    "headline": "Florida passes half its 2022 turnout",
+    "what_happened": "Retrieved: 3,905,292 ballots through Oct 29 against 7,796,916 votes in all of 2022 (UF Election Lab). Party registration of ballots is R+1.3. There is no 2022 same-day comparison on the board. Retrieved: St. Pete Polls R+4 and ActiVote R+6, both counted.",
+    "why_it_moved": "Inferred: steady early voting. This is a reading of who has voted, by party registration, not how they voted.",
+    "should_it_move_us": "No. Turnout volume says nothing about the margin. The model reads 5.7.",
+    "trigger": "A 2022 same-day composition baseline for Florida.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+      "https://data.ddhq.io/polls/2026/10/28/St.-Pete-Polls-Florida"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "ballots",
+    "triggers": [
+      "Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022"
+    ],
+    "facts": "Flagged: Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022. News in the last 48 hours: 0 articles. Ballots in IA: 373,386 through Oct 29, party gap D+14.4 against D+21.1 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": -0.25,
+        "n": 8,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.455
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.46
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.455
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.455
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.455
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.455
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.4625
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.465
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.47
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": [
+        {
+          "state": "IA",
+          "date": "2026-10-29",
+          "days_before": 5,
+          "total": 373386,
+          "gap": 14.44,
+          "gap_2022": 21.1,
+          "swing": -6.66,
+          "r_vs_2022": 1.29,
+          "r_share": 33.41,
+          "r_share_2022": 32.12,
+          "prev_date": "2026-10-28",
+          "total_prev": 338739,
+          "swing_prev": -6.38,
+          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+          "kind": "passed_2022_early",
+          "line": 370546
+        }
+      ]
+    },
+    "explained": true,
+    "headline": "Iowa passes its whole 2022 early vote, with a smaller Democratic edge",
+    "what_happened": "Retrieved: 373,386 ballots through Oct 29 against 370,546 early ballots by Election Day 2022. Party registration of ballots is D+14.4 against D+21.1 at the same point in 2022, a swing of 6.7 toward registered Republicans (6.4 the day before).",
+    "why_it_moved": "Inferred: more Republicans voting early than in 2022. That is a change in habit as much as in support.",
+    "should_it_move_us": "No. Early-vote composition is not a vote margin and does not enter the model, which reads 43.3.",
+    "trigger": "A nonpartisan Iowa poll fielded after Oct 23.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "flag_kind": "ballots",
+    "triggers": [
+      "Nevada passed half its 2022 turnout: 563,881 ballots through Oct 29, against 1,023,617 votes cast in all of 2022"
+    ],
+    "facts": "Flagged: Nevada passed half its 2022 turnout: 563,881 ballots through Oct 29, against 1,023,617 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in NV: 563,881 through Oct 29. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.0,
+        "n": 3,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-29T00:35:13-04:00",
+          0.785
+        ],
+        [
+          "2026-10-29T03:16:07-04:00",
+          0.785
+        ],
+        [
+          "2026-10-29T04:36:58-04:00",
+          0.785
+        ],
+        [
+          "2026-10-29T06:59:11-04:00",
+          0.785
+        ],
+        [
+          "2026-10-29T08:06:22-04:00",
+          0.7875
+        ],
+        [
+          "2026-10-29T09:27:57-04:00",
+          0.79
+        ],
+        [
+          "2026-10-29T10:03:58-04:00",
+          0.79
+        ],
+        [
+          "2026-10-29T11:10:46-04:00",
+          0.79
+        ],
+        [
+          "2026-10-29T12:02:52-04:00",
+          0.79
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": [
+        {
+          "state": "NV",
+          "date": "2026-10-29",
+          "days_before": 5,
+          "total": 563881,
+          "gap": 5.99,
+          "gap_2022": null,
+          "swing": null,
+          "r_vs_2022": null,
+          "r_share": 34.15,
+          "r_share_2022": null,
+          "prev_date": "2026-10-27",
+          "total_prev": 495447,
+          "swing_prev": null,
+          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+          "kind": "passed_half_2022_turnout",
+          "line": 511808,
+          "turnout_2022_total": 1023617
+        }
+      ]
+    },
+    "explained": true,
+    "headline": "Nevada passes half its 2022 turnout",
+    "what_happened": "Retrieved: 563,881 ballots through Oct 29 against 1,023,617 votes in all of 2022. Party registration of ballots is D+6.0. There is no 2022 same-day comparison on the board.",
+    "why_it_moved": "Inferred: steady mail and in-person returns. It is a reading of who has voted, by party registration.",
+    "should_it_move_us": "No. The model has no counted Nevada governor poll and reads 45.0. Its three Nevada polls are all left out as partisan.",
+    "trigger": "A nonpartisan Nevada governor poll.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
     "label": "inferred"
   }
 ]
