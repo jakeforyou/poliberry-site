@@ -198,7 +198,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> A pre-registered forecast of the 2026 midterms, kept by Jake Berry with Claude. Every chance is the model's probability that the Democrat wins, printed raw. Beside it: the lock, a judgment frozen on Oct 16, and the latest run. Since lock compares the model with its own lock-day figure. Early-vote and modeled lines never enter a number. Every figure is labeled, and a marked number opens its source. Markets are benchmarks, not inputs. A record to be graded after Nov 3, not advice.</p></section>
 <div class="lx-bar" role="region" aria-label="About this copy">
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-10-29 13:05</b></span>
+  <span>Data built <b id="lx-built">2026-10-29 13:27</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Republished each morning, and after a repull.</span>
@@ -1053,7 +1053,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     glance: 'Every rated race, by the raters’ consensus. Our scorecard covers the close ones; the rest are context.',
     map: 'Overview shows every state: who holds its offices now and what is on the 2026 ballot. Senate, Governor and House color each race, by our forecast where we have one, else by the raters’ consensus, faded.',
     comp: 'Competitive means the raters call it toss-up, tilt or lean, or it is on our scorecard.',
-    trends: 'The thick ink line is our number: it moves only at a run. Thin lines are the benchmarks. Lines stop at the day shown in the band.',
+    trends: 'The thick ink line is our number: it moves only at a run. The model line is today’s model re-run on what was known each day, so it moves with the news and not with a change of method. The dotted line is what the board published that day. Thin lines are the benchmarks. Lines stop at the day shown in the band.',
     board: 'Each row is a race we forecast. The big dot is our chance the Democrat wins. Small marks are Decision Desk and the markets. A long line means we disagree with the markets.',
     redrawn: 'Seats redrawn for 2026 to favor Republicans. If Democrats win many, the new maps backfired.',
     votes: 'Composition only. Early voters skew toward whichever party votes early in that state, and a shift says nothing about the result on its own.',
@@ -1174,7 +1174,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (!_tidx.full || _tidx.full.rows !== t.data || _tidx.full.day !== state.day) _tidx.full = { rows: t.data, day: state.day, idx: buildTrendIndex(t.data) };
     return _tidx.full.idx;
   }
-  const SRC = { ours: ['Our forecast', 'var(--ms-ours)', 2.6, null, 1], model: ['The model', 'var(--ms-ours)', 2.4, null, 1], run: ['The run', 'var(--ms-ours)', 1.3, '3 3', 0.7], ddhq: ['Decision Desk', 'var(--ms-ddhq)', 1.3, '5 3', 0.85], polymarket: ['Polymarket', 'var(--ms-bench)', 1.1, null, 0.6], kalshi: ['Kalshi', 'var(--ms-bench)', 1.1, '2 2', 0.6] };
+  const SRC = { ours: ['Our forecast', 'var(--ms-ours)', 2.6, null, 1], model: ['The model, today’s method', 'var(--ms-ours)', 2.4, null, 1], model_published: ['The model as published', 'var(--ms-ours)', 1.1, '1 3', 0.55], run: ['The run', 'var(--ms-ours)', 1.3, '3 3', 0.7], ddhq: ['Decision Desk', 'var(--ms-ddhq)', 1.3, '5 3', 0.85], polymarket: ['Polymarket', 'var(--ms-bench)', 1.1, null, 0.6], kalshi: ['Kalshi', 'var(--ms-bench)', 1.1, '2 2', 0.6] };
   function lineChart(box, series, opts) {
     const W = Math.max(120, box.clientWidth), H = opts.H || 120;
     const m = opts.axes ? { l: 34, r: 8, t: 8, b: 20 } : { l: 2, r: 2, t: 4, b: 2 };
@@ -1222,7 +1222,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
           const last = (s) => { const le = series[s].filter((p) => p.date <= day); return le.length ? le[le.length - 1] : null; };
           const f = (v) => (opts.unit === '%' ? pctTxt(v) + '%' : fmt1(v));
           const o = last('ours');
-          const lines = [nice(day), o ? `We said ${f(o.value)}.` : null];
+          const md = last('model'), mp = last('model_published');
+          const lines = [nice(day), o ? `We said ${f(o.value)}.` : null, md ? `The model, today’s method: ${f(md.value)}` + (mp && mp.date === md.date && Math.abs(mp.value - md.value) >= 0.05 ? `. As published that day: ${f(mp.value)}.` : '.') : null];
           const bench = ['ddhq', 'polymarket', 'kalshi'].map((s) => { const p = last(s); return p ? `${SRC[s][0]} ${f(p.value)}` : null; }).filter(Boolean);
           if (bench.length) lines.push(bench.join(' · ') + '.');
           tip.show(e, lines);
@@ -1260,7 +1261,10 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const changed = state.tab !== tab;
     state.tab = tab;
     if (sub) { if (tab === 'forecast') state.stSel = String(sub).toUpperCase(); else if (tab === 'evidence' && REF_TABS.some(([k]) => k === sub)) state.ref = sub; }
-    try { history.replaceState(null, '', '#' + tab + (subOf(tab) ? '/' + subOf(tab) : '')); } catch (e) { /* ignore */ }
+    // the forecast address names a state only when one came in with the link (a click on the forecast map writes its own);
+    // a state picked on another tab stays off it, so a refresh does not scroll to it (2026-10-29)
+    const part = tab === 'forecast' ? (sub ? subOf(tab) : null) : subOf(tab);
+    try { history.replaceState(null, '', '#' + tab + (part ? '/' + part : '')); } catch (e) { /* ignore */ }
     redraw();
     if (changed) window.scrollTo({ top: Math.min(window.scrollY, $('#tabs').offsetTop), behavior: 'auto' });
     if (tab === 'evidence' && state.ref) { const p = document.querySelector(`.ms-panel[data-panel="${state.ref}"]`); if (p && (changed || sub)) p.scrollIntoView({ behavior: 'auto', block: 'start' }); }
@@ -1788,7 +1792,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   let _movingIdx = null;
   const MOVING_COLS = [['race', 'Race', ''], ['chance', 'Chance', 'num'], ['d_lock', 'Since Oct 16', 'num'], ['d_5d', 'Past 5 days', 'num'], ['d_day', 'Since yesterday', 'num'], ['ballots', 'Ballots (+ day)', 'num'], ['pace', 'Pace', 'num'], ['swing', 'Gap swing (Δ day)', 'num']];
   const movingKey = (r, k) => { const m = r.move || {}, ev = r.early_vote || {}, d = ev.day || {}; return k === 'race' ? raceTitle(r) : k === 'chance' ? m.chance : k === 'd_lock' ? m.d_lock : k === 'd_5d' ? m.d_5d : k === 'd_day' ? m.d_day : k === 'ballots' ? ev.total : k === 'pace' ? (ev.ratio_2022 ?? (ev.share_of_2022_turnout != null ? ev.share_of_2022_turnout / 100 : null)) : k === 'swing' ? (ev.swing ?? d.swing) : null; };
-  const MOVING_NOTE = (prevDay, day5) => `Since Oct 16 compares today's model with the model on Oct 16, built the same way. Our Oct 16 call, and any later change of method, is shown beside the figure and never inside it. Click a figure for every step. Past 5 days compares with the model five days earlier${day5 ? ` (${nice(day5)})` : ''}, built the same way. Since yesterday compares with the day before${prevDay ? ` (${nice(prevDay)})` : ''}. A reason appears under a race when a poll entered or aged out of the window (21 days, then a 7-day fade to nothing). Pace is ballots as a multiple of 2022 at this point, or the share of 2022's total where no same-point count exists. Gap swing is the Democratic minus Republican share of ballots against 2022 at this point, in points, with its change since yesterday in brackets. ${TERMS}`;
+  const MOVING_NOTE = (prevDay, day5) => `Every change compares today's model with the same model re-run on what was known that day: each poll from the day it first appeared, that day's ratings and that day's call. So a change is the news, not a change of method. What the board published each day is in the date picker, in each figure's tooltip and as the dotted line in a race's chart. Since Oct 16 compares with Oct 16; our Oct 16 call is shown beside the figure and never inside it. Click a figure for every step. Past 5 days compares with five days earlier${day5 ? ` (${nice(day5)})` : ''}. Since yesterday compares with the day before${prevDay ? ` (${nice(prevDay)})` : ''}. A reason appears under a race when a poll entered or aged out of the window (21 days, then a 7-day fade to nothing). Pace is ballots as a multiple of 2022 at this point, or the share of 2022's total where no same-point count exists. Gap swing is the Democratic minus Republican share of ballots against 2022 at this point, in points, with its change since yesterday in brackets. ${TERMS}`;
+  // a tooltip for a past figure: today's method on that day's information, and what the board published then
+  const asOf = (day, rerun, published) => `today's model on what was known ${nice(day)}: ${pct2(rerun)}` + (published != null ? `. Published that day: ${pct2(published)}` : '');
   function drawMoving(idx) {
     if (idx !== undefined) _movingIdx = idx; else idx = _movingIdx;
     const box = $('#moving'); if (!box) return;
@@ -1818,7 +1824,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       const p = chPrev[c.chamber];
       const tr = el('tr', { class: 'chamber' + (c === chNow[chNow.length - 1] ? ' sep' : '') });
       tr.append(td([el('b', {}, c.chamber === 'house' ? 'House control' : 'Senate control'), el('span', { class: 'm' }, ` · ${fmt2(c.seats_mean)} seats`)], 'race'),
-        td([pct2(c.chance_d) + '%'], 'num'), (() => { const cell = td([dsign(c.d_model_lock ?? c.d_lock)], 'num'); cell.title = (c.model_lock_chance != null ? `the model on Oct 16: ${pct2(c.model_lock_chance)}. Our Oct 16 call said ${pct2(c.lock_judgment)}. The gap of ${signed2(c.method_gap)} is the method, not an event` : '') + (c.lock_note ? `. ${c.lock_note}` : ''); return cell; })(), (() => { const c5 = td([dsign(c.d_5d)], 'num'); if (c.day_5d) c5.title = `against ${c.five_from === 'stored row' ? 'the stored row' : 'the reconstruction'} for ${nice(c.day_5d)}: ${pct2(c.model_5d_chance)}`; return c5; })(), (() => { const cd = td([dsign(c.d_day ?? (p ? c.chance_d - p.chance_d : null))], 'num'); if (c.prev_from) cd.title = `against ${c.prev_from === 'stored row' ? "yesterday's stored row" : c.prev_from}: ${pct2(c.model_prev_chance)}`; return cd; })(), td([''], 'num'), td([''], 'num'), td([''], 'num'));
+        td([pct2(c.chance_d) + '%'], 'num'), (() => { const cell = td([dsign(c.d_model_lock ?? c.d_lock)], 'num'); cell.title = (c.model_lock_chance != null ? `the model on Oct 16: ${pct2(c.model_lock_chance)}. Our Oct 16 call said ${pct2(c.lock_judgment)}. The gap of ${signed2(c.method_gap)} is the method, not an event` : '') + (c.lock_note ? `. ${c.lock_note}` : ''); return cell; })(), (() => { const c5 = td([dsign(c.d_5d)], 'num'); if (c.day_5d) c5.title = asOf(c.day_5d, c.model_5d_chance, c.published_5d_chance); return c5; })(), (() => { const cd = td([dsign(c.d_day ?? (p ? c.chance_d - p.chance_d : null))], 'num'); if (c.prev_from) cd.title = asOf(c.day_prev || prevDay, c.model_prev_chance, c.published_prev_chance); return cd; })(), td([''], 'num'), td([''], 'num'), td([''], 'num'));
       t.append(tr);
     }
     const key = (r) => [Math.abs((r.move || {}).d_day ?? 0), Math.abs((r.move || {}).d_lock ?? 0)];
@@ -1866,8 +1872,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         btn.append(dsign(m.d_lock)); btn.addEventListener('click', (e) => { e.stopPropagation(); showSinceLock(r, btn); });
         tr.append(td([btn], 'num'));
       } else tr.append(td([dsign(m.d_lock)], 'num'));
-      const c5 = td([dsign(m.d_5d)], 'num'); if (m.day_5d) c5.title = `against the model on ${nice(m.day_5d)}: ${pct2(m.chance_5d)}${m.reconstructed_5d ? ' (reconstructed)' : ''}`;
-      tr.append(c5, td([dsign(m.d_day)], 'num'));
+      const c5 = td([dsign(m.d_5d)], 'num'); if (m.day_5d) c5.title = asOf(m.day_5d, m.chance_5d, m.chance_5d_published);
+      const c1 = td([dsign(m.d_day)], 'num'); if (m.prev_day && m.chance_prev != null) c1.title = asOf(m.prev_day, m.chance_prev, m.chance_prev_published);
+      tr.append(c5, c1);
       const bal = ev.total != null ? [compact(ev.total), el('span', { class: 'm' }, d.added != null ? ` (+${compact(d.added)})` : '')] : ['—'];
       const sw = ev.swing != null ? [dsign(ev.swing), el('span', { class: 'm' }, ' ('), dsign(d.swing_day), el('span', { class: 'm' }, ')')] : [el('span', { class: 'm', title: ev.has_party ? 'no 2022 baseline at this point' : 'the state publishes no party data' }, ev.has_party ? 'no base' : 'no party')];
       tr.append(td(bal, 'num ev'), td([ev.ratio_2022 != null ? fmt2(ev.ratio_2022) + '×' : ev.share_of_2022_turnout != null ? fmt1(ev.share_of_2022_turnout) + '%' : '—'], 'num ev'), td(sw, 'num ev'));
@@ -1882,7 +1889,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   function removeBackdrop() { const b = $('#sheet-backdrop'); if (b) b.remove(); }
   function addBackdrop(onClose) { removeBackdrop(); if (!narrow()) return; const b = el('div', { class: 'ms-backdrop', id: 'sheet-backdrop' }); b.addEventListener('click', onClose); document.body.append(b); }
   function closeSinceLock() { const p = $('#sl-pop'); if (p) p.remove(); _slOpen = null; removeBackdrop(); }
-  const STEP_LBL = { window: 'Polls aging out of the window, and days out', generic: 'National mood (generic ballot)', judgment: 'Our call' };
+  const STEP_LBL = { ratings: 'Ratings since Oct 16 (they count only where no poll is in the window)', window: 'Polls aging out of the window, and days out', generic: 'National mood (generic ballot)', judgment: 'Our call' };
   const plainDetail = (t) => t.replace('dropped out of the 21-day window:', 'aged out:').replace('the lock said', 'Oct 16 call').replace('the run says', 'our call now').replace('at the lock', 'on Oct 16');
   function sinceLockNodes(r) {
     const sl = r.model.since_lock, out = [];
@@ -2299,7 +2306,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     if (s.confidence_ceiling) { dl.append(el('dt', {}, 'Confidence ceiling'), mark(el('dd', {}, String(s.confidence_ceiling)), 'scorecard', 'confidence_ceiling', where)); }
     if (s.weakest_component) { dl.append(el('dt', {}, 'Weakest component'), mark(el('dd', {}, s.weakest_component), 'scorecard', 'weakest_component', where)); }
     if (r.conviction && r.conviction.named_weakest) dl.append(el('dt', {}, 'Conviction'), el('dd', {}, 'The run names this race as its weakest component.'));
-    if (r.model && typeof modelText === 'function') kids.push(rpDetails(`The model: ${r.model.chance != null ? pct2(r.model.chance) + ' percent' : 'no number'}, how it is built`, el('p', { class: 'ms-sub' }, modelText(r.model)), ...(r.model.since_lock && r.model.since_lock.steps && r.model.since_lock.steps.length && typeof sinceLockNodes === 'function' ? [el('p', { class: 'ms-sub' }, el('b', {}, 'Since the lock, step by step.')), ...sinceLockNodes(r)] : [])));
+    if (r.model && typeof modelText === 'function') kids.push(rpDetails(`The model: ${r.model.chance != null ? pct2(r.model.chance) + ' percent' : 'no number'}, how it is built`, el('p', { class: 'ms-sub' }, modelText(r.model)), ...(r.model.since_lock && r.model.since_lock.steps && r.model.since_lock.steps.length && typeof sinceLockNodes === 'function' ? [(() => { const h = el('p', { class: 'ms-sub' }); h.append(el('b', {}, 'Since the lock, step by step.')); return h; })(), ...sinceLockNodes(r)] : [])));
     if (dl.childElementCount) kids.push(rpDetails("Why we say this, the case against, and what flips it", dl));
     // polls
     const polls = (D('polls_by_race').data || []).filter((p) => p.race_id === r.id);

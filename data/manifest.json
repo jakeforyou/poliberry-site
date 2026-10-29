@@ -1,7 +1,7 @@
 {
   "run_id": "2026-10-28T1027",
   "kind": "run",
-  "built_at": "2026-10-29T13:05:58-04:00",
+  "built_at": "2026-10-29T13:27:05-04:00",
   "datasets": {
     "scorecard": {
       "file": "data/dashboard/scorecard.json",
@@ -89,13 +89,13 @@
     },
     "model_history": {
       "file": "data/dashboard/model_history.json",
-      "rows": 130,
-      "title": "The model's series, reconstructed",
-      "description": "The core model recomputed for each day from the lock day to the day before the first stored core rows: polls by the day their fieldwork ended, the generic ballot as of that day, the run in force that day, sigma by days out. Labeled reconstructed; the stored rows take over from the first day they exist. This is what since-lock and last-day compare against."
+      "rows": 338,
+      "title": "The model's series, re-run with today's method",
+      "description": "Every day from the lock day to yesterday re-run with today's model: each poll from the day it first appeared in our pulls (from its end date for polls already in the first pull, 2026-10-21), the generic ballot from the polls known that day, that day's ratings, the run in force that day, sigma by days out. Labeled re-run. Since Oct 16, the five-day and the last-day changes compare against it, so a change is the news and not a change of method. What the board published each day stays in the snapshots and the model_published trend line."
     },
     "trends": {
       "file": "data/dashboard/trends.json",
-      "rows": 9210,
+      "rows": 9417,
       "title": "Benchmarks over time",
       "description": "One row per item, source and day: our number on every snapshot day (a run day where the run changed), DDHQ's chamber series from its own page, and daily Polymarket and Kalshi prices (scripts/fetch_history.py). Percent for binary items. Snapshot-day values fill in where no daily series exists.",
       "lazy": true
@@ -234,13 +234,13 @@
     },
     "events_by_race": {
       "file": "data/dashboard/events_by_race.json",
-      "rows": 10,
+      "rows": 19,
       "title": "Campaign news by race",
       "description": "The top articles from the last 48 hours per race from the event feed, classified by kind, plus one summary row per race. Absence of an article is not absence of an event."
     },
     "trends_recent": {
       "file": "data/dashboard/trends_recent.json",
-      "rows": 5328,
+      "rows": 5535,
       "title": "Trend lines, last 75 days",
       "description": "The same rows as trends, limited to the last 75 days, for sparklines. The full trends file loads only when a race panel opens."
     }
