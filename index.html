@@ -198,7 +198,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> A pre-registered forecast of the 2026 midterms, kept by Jake Berry with Claude. Every chance is the model's probability that the Democrat wins, printed raw. Beside it: the lock, a judgment frozen on Oct 16, and the latest run. Since lock compares the model with its own lock-day figure. Early-vote and modeled lines never enter a number. Every figure is labeled, and a marked number opens its source. Markets are benchmarks, not inputs. A record to be graded after Nov 3, not advice.</p></section>
 <div class="lx-bar" role="region" aria-label="About this copy">
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-10-29 12:05</b></span>
+  <span>Data built <b id="lx-built">2026-10-29 13:05</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Republished each morning, and after a repull.</span>
@@ -596,7 +596,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-moving h2 { font-family: var(--font-anthropic-serif); font-size: 1.15rem; margin: 0 0 .1rem; }
 .ms-moving .ms-sub { margin: 0 0 .5rem; }
 .ms-moving table { width: 100%; border-collapse: collapse; font-size: 11.5px; font-variant-numeric: tabular-nums; }
-.ms-moving th { text-align: left; font-weight: 500; color: var(--color-fg-muted); padding: .3rem .5rem .3rem 0; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.ms-moving th { text-align: left; font-weight: 500; color: var(--color-fg-muted); padding: .3rem .5rem .3rem 0; border-bottom: 1px solid var(--color-border-line); white-space: normal; vertical-align: bottom; }
+/* headers wrap to two lines so the table fits its column at desktop width with the five-day column (2026-10-29) */
+.ms-moving th:last-child, .ms-moving td:last-child { padding-right: 0; }
 .ms-moving th.num, .ms-moving td.num { text-align: right; }
 .ms-moving td { padding: .26rem .4rem .26rem 0; border-bottom: 1px solid var(--color-border-line); vertical-align: middle; white-space: nowrap; }
 .ms-moving tr.chamber td { font-weight: 600; }
@@ -608,7 +610,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .ms-moving .ev { color: var(--color-fg); }
 .ms-moving .evhead th { border-bottom: 0; padding-bottom: 0; font-size: 10.5px; }
 .ms-moving th.sortable { padding: 0 .4rem 0 0; }
-.ms-moving .ms-sort { border: 0; background: transparent; color: var(--color-fg-muted); font: inherit; padding: .3rem 0; cursor: pointer; white-space: nowrap; }
+.ms-moving .ms-sort { border: 0; background: transparent; color: var(--color-fg-muted); font: inherit; padding: .3rem 0; cursor: pointer; white-space: normal; }
 .ms-moving .ms-sort:hover, .ms-moving .ms-sort:focus-visible { color: var(--color-fg); outline: none; }
 .ms-moving .ms-sort.on { color: var(--color-fg); font-weight: 600; }
 .ms-moving th.num .ms-sort { text-align: right; width: 100%; }
@@ -711,7 +713,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   .ms-hero #moving { order: -1; }
   .ms-mapwrap .ms-map { min-height: 0; }
   .ms-moving table { font-size: 12.5px; }
-  .ms-moving .evhead, .ms-moving th:nth-child(n+5), .ms-moving td:nth-child(n+5) { display: none; }
+  /* a phone keeps the race, the chance and the three changes (Oct 16, five days, yesterday); the early-vote columns hide */
+  .ms-moving .evhead, .ms-moving th:nth-child(n+6), .ms-moving td:nth-child(n+6) { display: none; }
   .ms-moving td.race { white-space: normal; min-width: 7.5rem; max-width: 8.5rem; }
   .ms-moving td.race .why { max-width: 8.5rem; }
   .ms-moving th { white-space: normal; line-height: 1.2; }
@@ -1736,6 +1739,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       .on('mouseleave', () => tip.hide());
     svg.append('path').attr('d', path(geo.mesh)).attr('fill', 'none').attr('stroke', bg).attr('stroke-width', 1.1).attr('pointer-events', 'none');
     svg.append('g').selectAll('path').data(geo.feats.filter((d) => isOurs(d.st) || d.st === state.stSel)).join('path').attr('d', path).attr('fill', 'none')
+      .attr('data-st', (d) => d.st).attr('data-ours', (d) => (isOurs(d.st) ? '1' : null))
       .attr('stroke', (d) => (d.st === state.stSel ? '#fff' : 'rgba(255,255,255,.5)')).attr('stroke-width', (d) => (d.st === state.stSel ? 2 : 1)).attr('pointer-events', 'none');
     // labels: only the states with a race we forecast (or, in an office view, with that race), so the rest of the map stays quiet
     const lab = svg.append('g').attr('pointer-events', 'none');
@@ -1772,6 +1776,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const bar = el('span', { class: 'ms-geo-legend' }); bar.append(el('span', { class: 'end' }, 'Republican'), el('i', { style: `background: linear-gradient(90deg, ${stops})` }), el('span', { class: 'end' }, 'Democratic'));
     const sw = (c, txt) => { const sp = el('span'); sp.append(el('i', { style: c }), document.createTextNode(txt)); return sp; };
     lg.append(bar, el('span', { class: 'ms-sub' }, overview ? '' : office === 'house' ? 'states with rated districts, count shown from three up' : 'our chance for the Democrat; faded states are the raters’ consensus, not ours'), sw(`background:${NONE}`, 'no race we forecast'));
+    delete $('#map-note').dataset.base;
     $('#map-note').textContent = overview ? `Click a state.`
       : office === 'house' ? `${bf.filter((r) => r.office === 'house').length} rated districts. The whole-country list on the Evidence page has each one.`
       : `${bf.filter((r) => r.office === office).length} ${office === 'senate' ? 'Senate' : 'governor'} races this year, ${rs.filter((r) => r.office === office).length} on our board.`;
@@ -1781,9 +1786,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   // ---------------- what's moving: the chance since the lock and in the last day, beside the votes being cast
   const dsign = (v, unit = '') => (v == null ? el('span', { class: 'm' }, '—') : el('span', { class: v > 0 ? 'pos' : v < 0 ? 'neg' : 'm' }, (v > 0 ? '+' : v < 0 ? '−' : '') + fmt2(Math.abs(v)) + unit));
   let _movingIdx = null;
-  const MOVING_COLS = [['race', 'Race', ''], ['chance', 'Chance', 'num'], ['d_lock', 'Since Oct 16', 'num'], ['d_day', 'Since yesterday', 'num'], ['ballots', 'Ballots (+ day)', 'num'], ['pace', 'Pace', 'num'], ['swing', 'Gap swing (Δ day)', 'num']];
-  const movingKey = (r, k) => { const m = r.move || {}, ev = r.early_vote || {}, d = ev.day || {}; return k === 'race' ? raceTitle(r) : k === 'chance' ? m.chance : k === 'd_lock' ? m.d_lock : k === 'd_day' ? m.d_day : k === 'ballots' ? ev.total : k === 'pace' ? (ev.ratio_2022 ?? (ev.share_of_2022_turnout != null ? ev.share_of_2022_turnout / 100 : null)) : k === 'swing' ? (ev.swing ?? d.swing) : null; };
-  const MOVING_NOTE = (prevDay) => `Since Oct 16 compares today's model with the model on Oct 16, built the same way. Our Oct 16 call, and any later change of method, is shown beside the figure and never inside it. Click a figure for every step. Since yesterday compares with the day before${prevDay ? ` (${nice(prevDay)})` : ''}. A reason appears under a race when a poll entered or aged out of the window (21 days, then a 7-day fade to nothing). Pace is ballots as a multiple of 2022 at this point, or the share of 2022's total where no same-point count exists. Gap swing is the Democratic minus Republican share of ballots against 2022 at this point, in points, with its change since yesterday in brackets. ${TERMS}`;
+  const MOVING_COLS = [['race', 'Race', ''], ['chance', 'Chance', 'num'], ['d_lock', 'Since Oct 16', 'num'], ['d_5d', 'Past 5 days', 'num'], ['d_day', 'Since yesterday', 'num'], ['ballots', 'Ballots (+ day)', 'num'], ['pace', 'Pace', 'num'], ['swing', 'Gap swing (Δ day)', 'num']];
+  const movingKey = (r, k) => { const m = r.move || {}, ev = r.early_vote || {}, d = ev.day || {}; return k === 'race' ? raceTitle(r) : k === 'chance' ? m.chance : k === 'd_lock' ? m.d_lock : k === 'd_5d' ? m.d_5d : k === 'd_day' ? m.d_day : k === 'ballots' ? ev.total : k === 'pace' ? (ev.ratio_2022 ?? (ev.share_of_2022_turnout != null ? ev.share_of_2022_turnout / 100 : null)) : k === 'swing' ? (ev.swing ?? d.swing) : null; };
+  const MOVING_NOTE = (prevDay, day5) => `Since Oct 16 compares today's model with the model on Oct 16, built the same way. Our Oct 16 call, and any later change of method, is shown beside the figure and never inside it. Click a figure for every step. Past 5 days compares with the model five days earlier${day5 ? ` (${nice(day5)})` : ''}, built the same way. Since yesterday compares with the day before${prevDay ? ` (${nice(prevDay)})` : ''}. A reason appears under a race when a poll entered or aged out of the window (21 days, then a 7-day fade to nothing). Pace is ballots as a multiple of 2022 at this point, or the share of 2022's total where no same-point count exists. Gap swing is the Democratic minus Republican share of ballots against 2022 at this point, in points, with its change since yesterday in brackets. ${TERMS}`;
   function drawMoving(idx) {
     if (idx !== undefined) _movingIdx = idx; else idx = _movingIdx;
     const box = $('#moving'); if (!box) return;
@@ -1794,7 +1799,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const today = days[days.length - 1], prevDay = days[days.length - 2];
     const chNow = chs.filter((c) => c.as_of === today), chPrev = Object.fromEntries(chs.filter((c) => c.as_of === prevDay).map((c) => [c.chamber, c]));
     box.replaceChildren();
-    const h2 = el('h2', {}, "What's moving "); h2.append(help('moving', MOVING_NOTE(prevDay))); box.append(h2);
+    const day5 = (chNow.find((c) => c.day_5d) || {}).day_5d || ((rows.find((r) => r.move && r.move.day_5d) || {}).move || {}).day_5d;
+    const h2 = el('h2', {}, "What's moving "); h2.append(help('moving', MOVING_NOTE(prevDay, day5))); box.append(h2);
     const t = el('table');
     const head = el('tr');
     for (const [key, txt, cls] of MOVING_COLS) {
@@ -1805,14 +1811,14 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
       b.addEventListener('click', () => { state.movingSort = !on ? { key, dir: key === 'race' ? 'asc' : 'desc' } : sort.dir === (key === 'race' ? 'asc' : 'desc') ? { key, dir: key === 'race' ? 'desc' : 'asc' } : null; drawMoving(); });
       th.append(b); head.append(th);
     }
-    const grp = el('tr', { class: 'evhead' }); grp.append(el('th', { colspan: '4' }, ''), el('th', { colspan: '3' }, 'Early vote, not in the forecast'));
+    const grp = el('tr', { class: 'evhead' }); grp.append(el('th', { colspan: '5' }, ''), el('th', { colspan: '3' }, 'Early vote, not in the forecast'));
     t.append(grp, head);
     const td = (kids, cls) => { const c = el('td', cls ? { class: cls } : {}); for (const k of kids) c.append(typeof k === 'string' ? document.createTextNode(k) : k); return c; };
     for (const c of chNow) {
       const p = chPrev[c.chamber];
       const tr = el('tr', { class: 'chamber' + (c === chNow[chNow.length - 1] ? ' sep' : '') });
       tr.append(td([el('b', {}, c.chamber === 'house' ? 'House control' : 'Senate control'), el('span', { class: 'm' }, ` · ${fmt2(c.seats_mean)} seats`)], 'race'),
-        td([pct2(c.chance_d) + '%'], 'num'), (() => { const cell = td([dsign(c.d_model_lock ?? c.d_lock)], 'num'); cell.title = (c.model_lock_chance != null ? `the model on Oct 16: ${pct2(c.model_lock_chance)}. Our Oct 16 call said ${pct2(c.lock_judgment)}. The gap of ${signed2(c.method_gap)} is the method, not an event` : '') + (c.lock_note ? `. ${c.lock_note}` : ''); return cell; })(), (() => { const cd = td([dsign(c.d_day ?? (p ? c.chance_d - p.chance_d : null))], 'num'); if (c.prev_from) cd.title = `against ${c.prev_from === 'stored row' ? "yesterday's stored row" : c.prev_from}: ${pct2(c.model_prev_chance)}`; return cd; })(), td([''], 'num'), td([''], 'num'), td([''], 'num'));
+        td([pct2(c.chance_d) + '%'], 'num'), (() => { const cell = td([dsign(c.d_model_lock ?? c.d_lock)], 'num'); cell.title = (c.model_lock_chance != null ? `the model on Oct 16: ${pct2(c.model_lock_chance)}. Our Oct 16 call said ${pct2(c.lock_judgment)}. The gap of ${signed2(c.method_gap)} is the method, not an event` : '') + (c.lock_note ? `. ${c.lock_note}` : ''); return cell; })(), (() => { const c5 = td([dsign(c.d_5d)], 'num'); if (c.day_5d) c5.title = `against ${c.five_from === 'stored row' ? 'the stored row' : 'the reconstruction'} for ${nice(c.day_5d)}: ${pct2(c.model_5d_chance)}`; return c5; })(), (() => { const cd = td([dsign(c.d_day ?? (p ? c.chance_d - p.chance_d : null))], 'num'); if (c.prev_from) cd.title = `against ${c.prev_from === 'stored row' ? "yesterday's stored row" : c.prev_from}: ${pct2(c.model_prev_chance)}`; return cd; })(), td([''], 'num'), td([''], 'num'), td([''], 'num'));
       t.append(tr);
     }
     const key = (r) => [Math.abs((r.move || {}).d_day ?? 0), Math.abs((r.move || {}).d_lock ?? 0)];
@@ -1860,7 +1866,8 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
         btn.append(dsign(m.d_lock)); btn.addEventListener('click', (e) => { e.stopPropagation(); showSinceLock(r, btn); });
         tr.append(td([btn], 'num'));
       } else tr.append(td([dsign(m.d_lock)], 'num'));
-      tr.append(td([dsign(m.d_day)], 'num'));
+      const c5 = td([dsign(m.d_5d)], 'num'); if (m.day_5d) c5.title = `against the model on ${nice(m.day_5d)}: ${pct2(m.chance_5d)}${m.reconstructed_5d ? ' (reconstructed)' : ''}`;
+      tr.append(c5, td([dsign(m.d_day)], 'num'));
       const bal = ev.total != null ? [compact(ev.total), el('span', { class: 'm' }, d.added != null ? ` (+${compact(d.added)})` : '')] : ['—'];
       const sw = ev.swing != null ? [dsign(ev.swing), el('span', { class: 'm' }, ' ('), dsign(d.swing_day), el('span', { class: 'm' }, ')')] : [el('span', { class: 'm', title: ev.has_party ? 'no 2022 baseline at this point' : 'the state publishes no party data' }, ev.has_party ? 'no base' : 'no party')];
       tr.append(td(bal, 'num ev'), td([ev.ratio_2022 != null ? fmt2(ev.ratio_2022) + '×' : ev.share_of_2022_turnout != null ? fmt1(ev.share_of_2022_turnout) + '%' : '—'], 'num ev'), td(sw, 'num ev'));
@@ -1920,6 +1927,18 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
   document.addEventListener('click', (e) => { if (!_slOpen) return; const p = $('#sl-pop'); if (p && !p.contains(e.target) && !e.target.closest('.ms-why')) closeSinceLock(); });
   let _fctx = null, _popSt = null;
   function closeStatePop() { const p = $('#state-pop'); if (p) p.remove(); _popSt = null; removeBackdrop(); }
+  // Closing the popup by hand lets the state go, from the link too, so a refresh does not scroll to a state the reader
+  // closed (2026-10-29). "Show in the list below" keeps it: that is a link to the state on purpose.
+  function releaseState() {
+    const st = state.stSel; if (!st) return;
+    state.stSel = null;
+    if (state.tab === 'forecast') { try { history.replaceState(null, '', '#forecast'); } catch (e) { /* ignore */ } }
+    document.querySelectorAll('#race-groups .ms-race.is-focus').forEach((b) => b.classList.remove('is-focus'));
+    document.querySelectorAll(`#mapchart path[data-st="${st}"]`).forEach((p) => { if (p.dataset.ours) { p.setAttribute('stroke', 'rgba(255,255,255,.5)'); p.setAttribute('stroke-width', '1'); } else p.remove(); });
+    const note = $('#map-note'); if (note && note.dataset.base != null) { note.textContent = note.dataset.base; delete note.dataset.base; }
+  }
+  function dismissStatePop() { closeStatePop(); releaseState(); }
+  function statePopOpen(st) { return _popSt === st; }
   function showStatePop(st) {
     if (!_fctx || !st) return false;
     if (_popSt === st) { closeStatePop(); return true; }
@@ -1931,7 +1950,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     const n = rs.length + hs.length;
     const pop = el('div', { class: 'ms-pop', id: 'state-pop', role: 'dialog', 'aria-label': SN(st) });
     const head = el('div', { class: 'ph' });
-    const close = el('button', { type: 'button', class: 'ms-x', 'aria-label': 'Close' }, '×'); close.addEventListener('click', closeStatePop);
+    const close = el('button', { type: 'button', class: 'ms-x', 'aria-label': 'Close' }, '×'); close.addEventListener('click', dismissStatePop);
     head.append(el('b', {}, SN(st)), el('span', { class: 'm' }, n ? `${n} race${n === 1 ? '' : 's'} we forecast` : 'no race we forecast'), close);
     pop.append(head);
     if (!n) pop.append(el('p', { class: 'ms-sub' }, `The whole-country list on the Evidence page has every rated race in ${SN(st)}.`));
@@ -1939,12 +1958,12 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     for (const s of hs) pop.append(houseCard(s, 'pop-'));
     if (n) { const a = el('a', { href: '#forecast/' + st.toLowerCase(), class: 'ms-sub' }, 'Show in the list below'); a.addEventListener('click', (e) => { e.preventDefault(); closeStatePop(); focusState(st, true); }); pop.append(a); }
     if (narrow()) close.textContent = 'Close';
-    wrap.append(pop); _popSt = st; addBackdrop(closeStatePop);
+    wrap.append(pop); _popSt = st; addBackdrop(dismissStatePop);
     close.focus({ preventScroll: true });
     return true;
   }
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && _popSt) closeStatePop(); });
-  document.addEventListener('click', (e) => { if (!_popSt) return; const p = $('#state-pop'); if (p && !p.contains(e.target) && !e.target.closest('#mapchart')) closeStatePop(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && _popSt) dismissStatePop(); });
+  document.addEventListener('click', (e) => { if (!_popSt) return; const p = $('#state-pop'); if (p && !p.contains(e.target) && !e.target.closest('#mapchart')) dismissStatePop(); });
   // the early vote under the map (2026-10-28): the national count, then each state with a race between 5 and 95
   const isClose = (x) => { const c = x.model && x.model.chance != null ? x.model.chance : x.ours; return c != null && c >= 5 && c <= 95; };
   function drawEvPanel(rows) {
@@ -2055,7 +2074,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     let first = null;
     for (const b of blocks) { const on = b.dataset.state === st; b.classList.toggle('is-focus', on); if (on && !first) first = b; }
     if (first && scroll) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (!first && st) { const note = $('#map-note'); if (note) note.textContent = `${SN(st)}: no race we forecast. The whole-country list on the Evidence page has every rated race.`; }
+    if (!first && st) { const note = $('#map-note'); if (note && note.dataset.base == null) note.dataset.base = note.textContent; if (note) note.textContent = `${SN(st)}: no race we forecast. The whole-country list on the Evidence page has every rated race.`; }
   }
   function focusBlock(id) { if (!$('#race-' + id)) { const c = $('#fold-' + id); if (c && c.getAttribute('aria-expanded') !== 'true') c.click(); } const b = $('#race-' + id); if (!b) return false; document.querySelectorAll('#race-groups .ms-race').forEach((x) => x.classList.toggle('is-focus', x === b)); b.scrollIntoView({ behavior: 'smooth', block: 'start' }); return true; }
 
@@ -2491,7 +2510,10 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
     redraw();
     if (scroll) $('#bf-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
-  function pickState(st) { state.stSel = st; state.bfSel = null; if (state.tab === 'forecast') { try { history.replaceState(null, '', '#forecast/' + st.toLowerCase()); } catch (e) { /* ignore */ } if (typeof showStatePop === 'function') showStatePop(st); focusState(st, false); return; } redraw(); }
+  function pickState(st) {
+    // a second click on the state whose popup is open lets it go, as closing the popup does
+    if (state.tab === 'forecast' && typeof statePopOpen === 'function' && statePopOpen(st)) { dismissStatePop(); return; }
+    state.stSel = st; state.bfSel = null; if (state.tab === 'forecast') { try { history.replaceState(null, '', '#forecast/' + st.toLowerCase()); } catch (e) { /* ignore */ } if (typeof showStatePop === 'function') showStatePop(st); focusState(st, false); return; } redraw(); }
   function drawTileMap(sc) {
     const box = $('#mapchart');
     const office = officeKey();

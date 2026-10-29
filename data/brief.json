@@ -2075,9 +2075,9 @@
     "flag_kind": "alert",
     "triggers": [
       "markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%)",
-      "moved +8.0 points since the day's open by 12:02"
+      "moved +8.0 points since the day's open by 13:00"
     ],
-    "facts": "Flagged: markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%); moved +8.0 points since the day's open by 12:02. News in the last 48 hours: 0 articles. Polls just in: SSRS D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%); moved +8.0 points since the day's open by 13:00. News in the last 48 hours: 0 articles. Polls just in: SSRS D+4 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
@@ -2135,6 +2135,10 @@
         ],
         [
           "2026-10-29T12:02:52-04:00",
+          0.485
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
           0.485
         ]
       ],
@@ -2223,6 +2227,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.82
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.82
         ]
       ],
       "events_window_hours": 48,
@@ -2309,6 +2317,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.9078
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.9078
         ]
       ],
       "events_window_hours": 48,
@@ -2380,6 +2392,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.9093
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.9133
         ]
       ],
       "events_window_hours": 48,
@@ -2466,6 +2482,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.1033
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.103
         ]
       ],
       "events_window_hours": 48,
@@ -2563,6 +2583,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.69
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.69
         ]
       ],
       "events_window_hours": 48,
@@ -2635,6 +2659,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.845
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.845
         ]
       ],
       "events_window_hours": 48,
@@ -2706,6 +2734,10 @@
         ],
         [
           "2026-10-29T12:02:52-04:00",
+          0.695
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
           0.695
         ]
       ],
@@ -2792,6 +2824,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.6125
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.6125
         ]
       ],
       "events_window_hours": 48,
@@ -2860,6 +2896,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.67
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.68
         ]
       ],
       "events_window_hours": 48,
@@ -2885,10 +2925,20 @@
     "triggers": [
       "markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%)"
     ],
-    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -2944,6 +2994,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.28
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.285
         ]
       ],
       "events_window_hours": 48,
@@ -3041,6 +3095,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.1
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.1
         ]
       ],
       "events_window_hours": 48,
@@ -3087,10 +3145,20 @@
     "triggers": [
       "Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022"
     ],
-    "facts": "Flagged: Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022. News in the last 48 hours: 0 articles. Ballots in IA: 373,386 through Oct 29, party gap D+14.4 against D+21.1 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Ballots in IA: 373,386 through Oct 29, party gap D+14.4 against D+21.1 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [],
       "poll_average": {
         "margin_d": -0.25,
@@ -3133,6 +3201,10 @@
         [
           "2026-10-29T12:02:52-04:00",
           0.47
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
+          0.4725
         ]
       ],
       "events_window_hours": 48,
@@ -3222,6 +3294,10 @@
         ],
         [
           "2026-10-29T12:02:52-04:00",
+          0.79
+        ],
+        [
+          "2026-10-29T13:00:00-04:00",
           0.79
         ]
       ],
