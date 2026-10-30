@@ -1181,92 +1181,6 @@
   },
   {
     "as_of": "2026-10-29",
-    "item_id": "senate_ks",
-    "item": "Senate · KS",
-    "kinds": [
-      "market",
-      "alert"
-    ],
-    "triggers": [
-      "markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%)",
-      "moved +8.0 points since the day's open by 13:00"
-    ],
-    "weight": 17.0,
-    "source_url": "https://polymarket.com/event/kansas-senate-election-winner",
-    "kind": "alert",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "SSRS",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 838,
-          "d": 49.0,
-          "r": 45.0,
-          "margin_d": 4.0,
-          "source_url": "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 0.75,
-        "n": 4,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.405
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.405
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.405
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.44
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.4475
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.4725
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.485
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.48
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.485
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.485
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "reading": "Flagged: markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%); moved +8.0 points since the day's open by 13:00. News in the last 48 hours: 0 articles. Polls just in: SSRS D+4 (LV). No reading yet. The morning brief explains every flagged item.",
-    "needs_why": true,
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-10-29",
     "item_id": "gov_oh",
     "item": "Governor · OH",
     "kinds": [
@@ -1282,176 +1196,40 @@
     "kind": "market",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "Suffolk University",
-          "sponsor": null,
-          "start_date": "2026-10-21",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 500,
-          "d": 48.0,
-          "r": 44.0,
-          "margin_d": 4.0,
-          "source_url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.89,
-        "n": 9,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.805
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.805
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.805
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.81
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.815
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.815
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.815
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.82
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.82
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.82
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%); markets moved +4.0 points since the last pull (Polymarket 79.5 to 83.5; Kalshi 76.5 to 80.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Suffolk University D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%); markets moved +4.0 points since the last pull (Polymarket 79.5 to 83.5; Kalshi 76.5 to 80.5%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
     "as_of": "2026-10-29",
-    "item_id": "senate_mn",
-    "item": "Senate · MN",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
     "kinds": [
-      "poll"
+      "market"
     ],
     "triggers": [
-      "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (4 polls)"
+      "markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%)"
     ],
-    "weight": 10.8,
-    "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html",
-    "kind": "poll",
+    "weight": 9.0,
+    "source_url": "https://polymarket.com/event/kansas-senate-election-winner",
+    "kind": "market",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 752,
-          "d": 54.0,
-          "r": 40.0,
-          "margin_d": 14.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 5.4,
-        "n": 5,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.9052
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.9078
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (4 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1470,69 +1248,14 @@
     "kind": "benchmark",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 9.4,
-        "n": 5,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.9083
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.9103
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.91
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.9095
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.9095
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.9153
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.914
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.9143
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.9093
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.9133
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: Decision Desk moved +15.0 (70.0 to 85.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved +15.0 (70.0 to 85.0%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1552,167 +1275,13 @@
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 707,
-          "d": 44.0,
-          "r": 51.0,
-          "margin_d": -7.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -10.8,
-        "n": 5,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.0925
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.0955
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.1133
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.1138
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.1067
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.1115
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.1115
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.103
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.1033
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.103
-        ]
-      ],
-      "events_window_hours": 48,
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +5.8 points since the last pull (Polymarket 3.9 to 10.7; Kalshi 5.3 to 10.0%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D-7 (LV). No reading yet. The morning brief explains every flagged item.",
-    "needs_why": true,
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-10-29",
-    "item_id": "senate_tx",
-    "item": "Senate · TX",
-    "kinds": [
-      "poll"
-    ],
-    "triggers": [
-      "YouGov Blue (RV, through 2026-10-26) shows D+8, 5 points from the prior average of D+3 (20 polls)"
-    ],
-    "weight": 5.4,
-    "source_url": "https://254labs.io/news/2026-10-tx",
-    "kind": "poll",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "SSRS",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-27",
-          "population": "LV",
-          "sample": 923,
-          "d": 49.0,
-          "r": 43.0,
-          "margin_d": 6.0,
-          "source_url": "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
-        },
-        {
-          "pollster": "YouGov Blue",
-          "sponsor": null,
-          "start_date": "2026-10-21",
-          "end_date": "2026-10-26",
-          "population": "RV",
-          "sample": 1000,
-          "d": 51.0,
-          "r": 43.0,
-          "margin_d": 8.0,
-          "source_url": "https://254labs.io/news/2026-10-tx"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.39,
-        "n": 18,
-        "newest": "2026-10-27"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.6875
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.69
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.69
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.69
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.69
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "reading": "Flagged: YouGov Blue (RV, through 2026-10-26) shows D+8, 5 points from the prior average of D+3 (20 polls). News in the last 48 hours: 0 articles. Polls just in: SSRS D+6 (LV); YouGov Blue D+8 (RV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +5.8 points since the last pull (Polymarket 3.9 to 10.7; Kalshi 5.3 to 10.0%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1731,69 +1300,14 @@
     "kind": "market",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 5.0,
-        "n": 2,
-        "newest": "2026-10-23"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.8475
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.845
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +4.8 points since the last pull (Polymarket 80.0 to 85.5; Kalshi 79.5 to 83.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +4.8 points since the last pull (Polymarket 80.0 to 85.5; Kalshi 79.5 to 83.5%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1814,57 +1328,12 @@
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 3.33,
-        "n": 3,
-        "newest": "2026-10-16"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.6925
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.7
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.7
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.7
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.695
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved -4.0 points since the last pull (Polymarket 74.5 to 71.5; Kalshi 73.5 to 68.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved -4.0 points since the last pull (Polymarket 74.5 to 71.5; Kalshi 73.5 to 68.5%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1883,82 +1352,14 @@
     "kind": "rating",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "State Navigate",
-          "sponsor": null,
-          "start_date": "2026-10-23",
-          "end_date": "2026-10-27",
-          "population": "LV",
-          "sample": 679,
-          "d": 50.0,
-          "r": 47.0,
-          "margin_d": 3.0,
-          "source_url": "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -0.5,
-        "n": 6,
-        "newest": "2026-10-27"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.62
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.6175
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.6175
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.615
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.615
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.6125
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: Silver Bulletin changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: State Navigate D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Tossup to Lean D (flip). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -1980,52 +1381,11 @@
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.68
-        ]
-      ],
-      "events_window_hours": 48,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +3.0 points since the last pull (Kalshi 63.5 to 66.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +3.0 points since the last pull (Kalshi 63.5 to 66.5%). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2044,6 +1404,792 @@
     "kind": "market",
     "why": {
       "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "kinds": [
+      "benchmark",
+      "rating"
+    ],
+    "triggers": [
+      "Decision Desk moved +20.0 (50.0 to 70.0%)",
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)"
+    ],
+    "weight": 13.0,
+    "source_url": "https://votes.decisiondeskhq.com/forecast/governor",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.89,
+        "n": 9,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.8175
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.8175
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.81
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.8125
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.81
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.81
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%); Inside Elections changed its rating, Tossup to Tilt D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "kinds": [
+      "rating",
+      "market",
+      "alert"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tilt R to Tossup",
+      "markets moved +4.0 points since the last pull (Polymarket 47.5 to 53.5; Kalshi 49.5 to 51.5%)",
+      "moved +4.2 points since the day's open by 14:02"
+    ],
+    "weight": 11.2,
+    "source_url": "https://www.insideelections.com/ratings/senate",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Emerson College",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 800,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.5,
+        "n": 6,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.485
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.49
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.49
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.49
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.5125
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.5325
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.5375
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.535
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.525
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.5275
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt R to Tossup; markets moved +4.0 points since the last pull (Polymarket 47.5 to 53.5; Kalshi 49.5 to 51.5%); moved +4.2 points since the day's open by 14:02. News in the last 48 hours: 0 articles. Polls just in: Emerson College D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "kinds": [
+      "market",
+      "alert"
+    ],
+    "triggers": [
+      "markets moved +5.8 points since the last pull (Polymarket 63.5 to 69.0; Kalshi 61.5 to 67.5%)",
+      "moved +3.5 points since the day's open by 14:02"
+    ],
+    "weight": 9.3,
+    "source_url": "https://polymarket.com/event/maine-senate-election-winner",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": null,
+        "n": 0,
+        "newest": null
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.65
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.65
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.65
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.655
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.675
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.6825
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.685
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.685
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved +5.8 points since the last pull (Polymarket 63.5 to 69.0; Kalshi 61.5 to 67.5%); moved +3.5 points since the day's open by 14:02. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "kinds": [
+      "rating",
+      "market"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)",
+      "markets moved +4.5 points since the last pull (Polymarket 61.5 to 65.5; Kalshi 61.5 to 66.5%)"
+    ],
+    "weight": 7.5,
+    "source_url": "https://insideelections.com/ratings/governor",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "State Navigate",
+          "sponsor": null,
+          "start_date": "2026-10-23",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 679,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.5,
+        "n": 6,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.6625
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.66
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.6575
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.6575
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.655
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.6525
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tossup to Tilt D (flip); markets moved +4.5 points since the last pull (Polymarket 61.5 to 65.5; Kalshi 61.5 to 66.5%). News in the last 48 hours: 0 articles. Polls just in: State Navigate D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_dem_control",
+    "item": "Senate control",
+    "kinds": [
+      "market",
+      "alert"
+    ],
+    "triggers": [
+      "markets moved +3.5 points since the last pull (Polymarket 67.5 to 71.5; Kalshi 66.5 to 69.5%)",
+      "moved +3.0 points since the day's open by 14:02"
+    ],
+    "weight": 6.5,
+    "source_url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.685
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.685
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.71
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved +3.5 points since the last pull (Polymarket 67.5 to 71.5; Kalshi 66.5 to 69.5%); moved +3.0 points since the day's open by 14:02. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "OH-09",
+    "item": "OH-09",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Tossup to Lean D",
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "weight": 6.0,
+    "source_url": "https://www.ellisinsight.com/house/ohio-redistricts/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Cook changed its rating, Tossup to Lean D; Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_mi",
+    "item": "Senate · MI",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +4.5 points since the last pull (Polymarket 72.5 to 77.5; Kalshi 70.5 to 74.5%)"
+    ],
+    "weight": 4.5,
+    "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Upswing Research",
+          "sponsor": null,
+          "start_date": "2026-10-24",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 505,
+          "d": 50.0,
+          "r": 45.0,
+          "margin_d": 5.0,
+          "source_url": "https://x.com/joshorton/status/2115883461076545615"
+        },
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 768,
+          "d": 49.0,
+          "r": 42.0,
+          "margin_d": 7.0,
+          "source_url": "https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/"
+        },
+        {
+          "pollster": "Mitchell Research & Communications",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 636,
+          "d": 51.0,
+          "r": 44.0,
+          "margin_d": 7.0,
+          "source_url": "https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 4.27,
+        "n": 11,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.755
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.76
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.7625
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.76
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.76
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.76
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved +4.5 points since the last pull (Polymarket 72.5 to 77.5; Kalshi 70.5 to 74.5%). News in the last 48 hours: 0 articles. Polls just in: Upswing Research D+5 (LV); SSRS D+7 (LV); Mitchell Research & Communications D+7 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "kinds": [
+      "alert"
+    ],
+    "triggers": [
+      "moved +4.0 points since the day's open by 14:02"
+    ],
+    "weight": 4.0,
+    "source_url": "https://polymarket.com/event/kansas-governor-winner-2026",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Emerson College",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 800,
+          "d": 46.0,
+          "r": 50.0,
+          "margin_d": -4.0,
+          "source_url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.75,
+        "n": 4,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.24
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.235
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.235
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.235
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.2825
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.2825
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.2825
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.2775
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.28
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.28
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: moved +4.0 points since the day's open by 14:02. News in the last 48 hours: 0 articles. Polls just in: Emerson College D-4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved -3.3 points since the last pull (Polymarket 10.7 to 7.4%)"
+    ],
+    "weight": 3.3,
+    "source_url": "https://polymarket.com/event/south-carolina-governor-winner-2026",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": -10.8,
+        "n": 5,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.069
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.0688
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.0683
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.0703
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.07
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.0795
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.0795
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.0757
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.0722
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.0718
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved -3.3 points since the last pull (Polymarket 10.7 to 7.4%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.insideelections.com/ratings/senate",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.91,
+        "n": 11,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.705
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tossup to Tilt D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.insideelections.com/ratings/senate",
+    "kind": "rating",
+    "why": {
+      "events": [],
       "events_by_kind": {
         "ad": 0,
         "debate": 0,
@@ -2057,18 +2203,280 @@
       },
       "polls": [
         {
-          "pollster": "New York Times / Siena University",
+          "pollster": "Quantus Insights",
           "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-28",
           "population": "LV",
-          "sample": 707,
+          "sample": 1221,
           "d": 48.0,
+          "r": 49.0,
+          "margin_d": -1.0,
+          "source_url": "https://quantusinsights.org/polling/f/texas-survey-paxton-up-one-abbott-ahead-by-five"
+        },
+        {
+          "pollster": "ActiVote",
+          "sponsor": null,
+          "start_date": "2026-10-22",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 400,
+          "d": 52.0,
           "r": 48.0,
-          "margin_d": 0.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
+          "margin_d": 4.0,
+          "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/"
+        },
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 923,
+          "d": 49.0,
+          "r": 43.0,
+          "margin_d": 6.0,
+          "source_url": "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
+        },
+        {
+          "pollster": "A2 Insights",
+          "sponsor": null,
+          "start_date": "2026-10-23",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 631,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://drive.google.com/file/d/1UACnmnM84Dd1hU0l6iqHNgXkyh5oCelO/view"
         }
       ],
+      "poll_average": {
+        "margin_d": 2.21,
+        "n": 19,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.715
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tossup to Tilt D (flip). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Quantus Insights D-1 (LV); ActiVote D+4 (LV); SSRS D+6 (LV); A2 Insights D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tilt R to Tossup"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.insideelections.com/ratings/senate",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "co/efficient",
+          "sponsor": null,
+          "start_date": "2026-10-28",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 1020,
+          "d": 46.0,
+          "r": 48.0,
+          "margin_d": -2.0,
+          "source_url": "https://battlegrounds.coefficient.org/ia/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.44,
+        "n": 9,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.46
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.46
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.46
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.455
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.4625
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.4625
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.45
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.445
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.4475
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.445
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt R to Tossup. News in the last 48 hours: 0 articles. Polls just in: co/efficient D-2 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_ga",
+    "item": "Senate · GA",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Lean D to Likely D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.insideelections.com/ratings/senate",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 9.2,
+        "n": 5,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.9652
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.9637
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.9645
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.9645
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.9665
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.9675
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.9675
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.9695
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.9692
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.9685
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Lean R to Tilt R"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.insideelections.com/ratings/senate",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
       "poll_average": {
         "margin_d": -1.83,
         "n": 6,
@@ -2076,66 +2484,66 @@
       },
       "market_path": [
         [
-          "2026-10-29T00:35:13-04:00",
-          0.28
+          "2026-10-30T01:06:26-04:00",
+          0.27
         ],
         [
-          "2026-10-29T03:16:07-04:00",
-          0.28
+          "2026-10-30T03:02:16-04:00",
+          0.27
         ],
         [
-          "2026-10-29T04:36:58-04:00",
-          0.28
+          "2026-10-30T05:09:56-04:00",
+          0.265
         ],
         [
-          "2026-10-29T06:59:11-04:00",
-          0.28
+          "2026-10-30T07:53:12-04:00",
+          0.2625
         ],
         [
-          "2026-10-29T08:06:22-04:00",
-          0.28
+          "2026-10-30T09:09:09-04:00",
+          0.265
         ],
         [
-          "2026-10-29T09:27:57-04:00",
-          0.28
+          "2026-10-30T10:13:58-04:00",
+          0.27
         ],
         [
-          "2026-10-29T10:03:58-04:00",
-          0.28
+          "2026-10-30T11:05:48-04:00",
+          0.27
         ],
         [
-          "2026-10-29T11:10:46-04:00",
-          0.28
+          "2026-10-30T12:00:14-04:00",
+          0.27
         ],
         [
-          "2026-10-29T12:02:52-04:00",
-          0.28
+          "2026-10-30T13:30:19-04:00",
+          0.27
         ],
         [
-          "2026-10-29T13:00:00-04:00",
-          0.285
+          "2026-10-30T14:02:46-04:00",
+          0.27
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Inside Elections changed its rating, Lean R to Tilt R. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-29",
+    "as_of": "2026-10-30",
     "item_id": "senate_fl",
     "item": "Senate · FL special",
     "kinds": [
-      "ballots"
+      "rating"
     ],
     "triggers": [
-      "Florida passed half its 2022 turnout: 3,905,292 ballots through Oct 29, against 7,796,916 votes cast in all of 2022"
+      "Cook changed its rating, Solid R to Likely R"
     ],
     "weight": 3.0,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "kind": "ballots",
+    "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections",
+    "kind": "rating",
     "why": {
       "events": [],
       "events_by_kind": {},
@@ -2166,205 +2574,146 @@
         }
       ],
       "poll_average": {
-        "margin_d": -6.6,
-        "n": 10,
+        "margin_d": -6.18,
+        "n": 11,
         "newest": "2026-10-27"
       },
       "market_path": [
         [
-          "2026-10-29T00:35:13-04:00",
+          "2026-10-30T01:06:26-04:00",
+          0.1
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.1
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
           0.105
         ],
         [
-          "2026-10-29T03:16:07-04:00",
-          0.1025
+          "2026-10-30T07:53:12-04:00",
+          0.105
         ],
         [
-          "2026-10-29T04:36:58-04:00",
-          0.1025
+          "2026-10-30T09:09:09-04:00",
+          0.105
         ],
         [
-          "2026-10-29T06:59:11-04:00",
-          0.0975
+          "2026-10-30T10:13:58-04:00",
+          0.105
         ],
         [
-          "2026-10-29T08:06:22-04:00",
-          0.0975
+          "2026-10-30T11:05:48-04:00",
+          0.105
         ],
         [
-          "2026-10-29T09:27:57-04:00",
-          0.1
+          "2026-10-30T12:00:14-04:00",
+          0.105
         ],
         [
-          "2026-10-29T10:03:58-04:00",
-          0.1
+          "2026-10-30T13:30:19-04:00",
+          0.105
         ],
         [
-          "2026-10-29T11:10:46-04:00",
-          0.1
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.1
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.1
+          "2026-10-30T14:02:46-04:00",
+          0.105
         ]
       ],
       "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "FL",
-          "date": "2026-10-29",
-          "days_before": 5,
-          "total": 3905292,
-          "gap": -1.29,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": 40.2,
-          "r_share_2022": null,
-          "prev_date": "2026-10-28",
-          "total_prev": 3531109,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 3898458,
-          "turnout_2022_total": 7796916
-        }
-      ]
+      "early_vote": []
     },
-    "reading": "Flagged: Florida passed half its 2022 turnout: 3,905,292 ballots through Oct 29, against 7,796,916 votes cast in all of 2022. News in the last 48 hours: 0 articles. Polls just in: St. Pete Polls D-4 (LV); ActiVote D-6 (LV). Ballots in FL: 3,905,292 through Oct 29. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Cook changed its rating, Solid R to Likely R. News in the last 48 hours: 0 articles. Polls just in: St. Pete Polls D-4 (LV); ActiVote D-6 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-29",
-    "item_id": "senate_ia",
-    "item": "Senate · IA",
+    "as_of": "2026-10-30",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
     "kinds": [
-      "ballots"
+      "rating"
     ],
     "triggers": [
-      "Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022"
+      "Sabato changed its rating, Lean D to Likely D"
     ],
     "weight": 3.0,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "kind": "ballots",
+    "source_url": "https://centerforpolitics.org/crystalball/2026-senate/",
+    "kind": "rating",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
-        "margin_d": -0.25,
-        "n": 8,
-        "newest": "2026-10-23"
+        "margin_d": 5.4,
+        "n": 5,
+        "newest": "2026-10-26"
       },
       "market_path": [
         [
-          "2026-10-29T00:35:13-04:00",
-          0.455
+          "2026-10-30T01:06:26-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T03:16:07-04:00",
-          0.46
+          "2026-10-30T03:02:16-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T04:36:58-04:00",
-          0.455
+          "2026-10-30T05:09:56-04:00",
+          0.9052
         ],
         [
-          "2026-10-29T06:59:11-04:00",
-          0.455
+          "2026-10-30T07:53:12-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T08:06:22-04:00",
-          0.455
+          "2026-10-30T09:09:09-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T09:27:57-04:00",
-          0.455
+          "2026-10-30T10:13:58-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T10:03:58-04:00",
-          0.4625
+          "2026-10-30T11:05:48-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T11:10:46-04:00",
-          0.465
+          "2026-10-30T12:00:14-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T12:02:52-04:00",
-          0.47
+          "2026-10-30T13:30:19-04:00",
+          0.9103
         ],
         [
-          "2026-10-29T13:00:00-04:00",
-          0.4725
+          "2026-10-30T14:02:46-04:00",
+          0.9078
         ]
       ],
       "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "IA",
-          "date": "2026-10-29",
-          "days_before": 5,
-          "total": 373386,
-          "gap": 14.44,
-          "gap_2022": 21.1,
-          "swing": -6.66,
-          "r_vs_2022": 1.29,
-          "r_share": 33.41,
-          "r_share_2022": 32.12,
-          "prev_date": "2026-10-28",
-          "total_prev": 338739,
-          "swing_prev": -6.38,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_2022_early",
-          "line": 370546
-        }
-      ]
+      "early_vote": []
     },
-    "reading": "Flagged: Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Ballots in IA: 373,386 through Oct 29, party gap D+14.4 against D+21.1 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Sabato changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-29",
+    "as_of": "2026-10-30",
     "item_id": "gov_nv",
     "item": "Governor · NV",
     "kinds": [
-      "ballots"
+      "rating"
     ],
     "triggers": [
-      "Nevada passed half its 2022 turnout: 563,881 ballots through Oct 29, against 1,023,617 votes cast in all of 2022"
+      "Inside Elections changed its rating, Tilt R to Tossup"
     ],
     "weight": 3.0,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "kind": "ballots",
+    "source_url": "https://insideelections.com/ratings/governor",
+    "kind": "rating",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
         "margin_d": 2.0,
@@ -2373,70 +2722,678 @@
       },
       "market_path": [
         [
-          "2026-10-29T00:35:13-04:00",
+          "2026-10-30T01:06:26-04:00",
+          0.79
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
           0.785
         ],
         [
-          "2026-10-29T03:16:07-04:00",
+          "2026-10-30T05:09:56-04:00",
           0.785
         ],
         [
-          "2026-10-29T04:36:58-04:00",
-          0.785
+          "2026-10-30T07:53:12-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T06:59:11-04:00",
-          0.785
+          "2026-10-30T09:09:09-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T08:06:22-04:00",
-          0.7875
+          "2026-10-30T10:13:58-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T09:27:57-04:00",
-          0.79
+          "2026-10-30T11:05:48-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T10:03:58-04:00",
-          0.79
+          "2026-10-30T12:00:14-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T11:10:46-04:00",
-          0.79
+          "2026-10-30T13:30:19-04:00",
+          0.78
         ],
         [
-          "2026-10-29T12:02:52-04:00",
-          0.79
+          "2026-10-30T14:02:46-04:00",
+          0.78
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt R to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_wi",
+    "item": "Governor · WI",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://insideelections.com/ratings/governor",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 5.0,
+        "n": 2,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.845
         ],
         [
-          "2026-10-29T13:00:00-04:00",
-          0.79
+          "2026-10-30T03:02:16-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.835
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.835
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D to Lean D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://insideelections.com/ratings/governor",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 768,
+          "d": 53.0,
+          "r": 41.0,
+          "margin_d": 12.0,
+          "source_url": "https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/"
+        },
+        {
+          "pollster": "Mitchell Research & Communications",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 636,
+          "d": 49.0,
+          "r": 44.0,
+          "margin_d": 5.0,
+          "source_url": "https://www.cbsnews.com/detroit/news/jocelyn-benson-john-james-october-michigan-gubernatorial-poll/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 8.2,
+        "n": 5,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.9367
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.937
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.9395
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.9403
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.9405
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.9417
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.9417
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.9417
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.941
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.941
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt D to Lean D. News in the last 48 hours: 0 articles. Polls just in: SSRS D+12 (LV); Mitchell Research & Communications D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_ia",
+    "item": "Governor · IA",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D (flip) to Lean D (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://insideelections.com/ratings/governor",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "co/efficient",
+          "sponsor": null,
+          "start_date": "2026-10-28",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 1020,
+          "d": 50.0,
+          "r": 45.0,
+          "margin_d": 5.0,
+          "source_url": "https://battlegrounds.coefficient.org/ia/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 6.0,
+        "n": 7,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.8525
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.855
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.855
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.865
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.8625
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt D (flip) to Lean D (flip). News in the last 48 hours: 0 articles. Polls just in: co/efficient D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "TX-09",
+    "item": "TX-09",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Likely R (flip) to Lean R (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Likely R (flip) to Lean R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "TX-28",
+    "item": "TX-28",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D to Lean D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt D to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "TX-35",
+    "item": "TX-35",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Lean R (flip) to Tossup"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "NC-01",
+    "item": "NC-01",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://rollcall.com/2025/10/22/north-carolina-congressional-map-republicans-election/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "OH-01",
+    "item": "OH-01",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D to Lean D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.ellisinsight.com/house/ohio-redistricts/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt D to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "FL-09",
+    "item": "FL-09",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Cook changed its rating, Likely R (flip) to Lean R (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2026_Florida_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Cook changed its rating, Likely R (flip) to Lean R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "FL-14",
+    "item": "FL-14",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2026_Florida_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "FL-22",
+    "item": "FL-22",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tilt R (flip) to Tossup"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2026_Florida_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tilt R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "FL-25",
+    "item": "FL-25",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "weight": 3.0,
+    "source_url": "https://en.wikipedia.org/wiki/2026_Florida_redistricting",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "TN-09",
+    "item": "TN-09",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Solid R (flip) to Likely R (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://news.ballotpedia.org/2026/06/29/four-republicans-run-in-tennessees-redrawn-9th-congressional-district-democratic-incumbent-retiring/",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Solid R (flip) to Likely R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "AL-02",
+    "item": "AL-02",
+    "kinds": [
+      "rating"
+    ],
+    "triggers": [
+      "Inside Elections changed its rating, Lean R (flip) to Tilt R (flip)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://www.wvtm13.com/article/alabama-special-primary-election-2026-congressional-map/73394722",
+    "kind": "rating",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Inside Elections changed its rating, Lean R (flip) to Tilt R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-30",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "kinds": [
+      "ballots"
+    ],
+    "triggers": [
+      "Arizona passed half its 2022 turnout: 1,457,053 ballots through Oct 30, against 2,592,313 votes cast in all of 2022"
+    ],
+    "weight": 3.0,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "kind": "ballots",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 8.0,
+        "n": 3,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.919
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.9243
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.9253
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.9263
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.922
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.9215
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.9187
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.9167
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.9178
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.9173
         ]
       ],
       "events_window_hours": 48,
       "early_vote": [
         {
-          "state": "NV",
-          "date": "2026-10-29",
-          "days_before": 5,
-          "total": 563881,
-          "gap": 5.99,
+          "state": "AZ",
+          "date": "2026-10-30",
+          "days_before": 4,
+          "total": 1457053,
+          "gap": -1.13,
           "gap_2022": null,
           "swing": null,
           "r_vs_2022": null,
-          "r_share": 34.15,
+          "r_share": 38.39,
           "r_share_2022": null,
-          "prev_date": "2026-10-27",
-          "total_prev": 495447,
+          "prev_date": "2026-10-29",
+          "total_prev": 1295955,
           "swing_prev": null,
           "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
           "kind": "passed_half_2022_turnout",
-          "line": 511808,
-          "turnout_2022_total": 1023617
+          "line": 1296156,
+          "turnout_2022_total": 2592313
         }
       ]
     },
-    "reading": "Flagged: Nevada passed half its 2022 turnout: 563,881 ballots through Oct 29, against 1,023,617 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Ballots in NV: 563,881 through Oct 29. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Arizona passed half its 2022 turnout: 1,457,053 ballots through Oct 30, against 2,592,313 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in AZ: 1,457,053 through Oct 30. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   }

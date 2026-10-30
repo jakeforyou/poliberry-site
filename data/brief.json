@@ -2047,8 +2047,8 @@
     "item_id": null,
     "text": "Markets moved most today. Kansas Senate went from 40.5 to 48 by mid-morning after CNN/SSRS put Hamilton up 4, and the model counts that poll and reads 15.8. Decision Desk, per the Wikipedia ratings table, cut Ohio governor to Tossup and raised Arizona to Likely D. The Ohio change runs against a new Suffolk Acton +4 and is unconfirmed at the source. No forecast number changed. The snapshot ran late again and committed at 10:53, so these are late-morning prices.",
     "written_at": "2026-10-29T12:04:55-04:00",
-    "n_flags": 14,
-    "n_explained": 14,
+    "n_flags": 9,
+    "n_explained": 9,
     "stale": null,
     "label": "inferred"
   },
@@ -2070,97 +2070,6 @@
   {
     "as_of": "2026-10-29",
     "kind": "item",
-    "item_id": "senate_ks",
-    "item": "Senate · KS",
-    "flag_kind": "alert",
-    "triggers": [
-      "markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%)",
-      "moved +8.0 points since the day's open by 13:00"
-    ],
-    "facts": "Flagged: markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%); moved +8.0 points since the day's open by 13:00. News in the last 48 hours: 0 articles. Polls just in: SSRS D+4 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "SSRS",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 838,
-          "d": 49.0,
-          "r": 45.0,
-          "margin_d": 4.0,
-          "source_url": "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 0.75,
-        "n": 4,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.405
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.405
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.405
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.44
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.4475
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.4725
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.485
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.48
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.485
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.485
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "explained": true,
-    "headline": "Kansas prices climb eight points after CNN has Hamilton up four",
-    "what_happened": "Retrieved: CNN/SSRS (LV, Oct 20 to 26, n=838) has Hamilton 49, Marshall 45. Retrieved: the market opened at 40.5 and reached 48.5 by 10:03, with the climb starting between 04:37 and 06:59 (Polymarket 47.5, Kalshi 49.5 at the morning pull). Retrieved: the hourly check flagged it. Retrieved: the feed carries a Trump rally announced for Salina on Saturday (Great Bend Post).",
-    "why_it_moved": "Inferred: the CNN poll is the only new public fact in the window, and it is the best Hamilton number from a nonpartisan pollster. The rally is a Marshall-side event and did not stop the climb.",
-    "should_it_move_us": "No. The model counts CNN/SSRS at weight 0.62 and already sits at 15.8, up from 6.2. One poll does not beat the fundamentals in a Trump-won state, and the markets near 48 are pricing the poll, not new information.",
-    "trigger": "A second nonpartisan likely-voter poll in Kansas showing Hamilton ahead.",
-    "sources": [
-      "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/",
-      "https://polymarket.com/event/kansas-senate-election-winner",
-      "https://greatbendpost.com/posts/4cc12d6a-b1fc-44a2-950a-c3383a032fd1"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-29",
-    "kind": "item",
     "item_id": "gov_oh",
     "item": "Governor · OH",
     "flag_kind": "market",
@@ -2168,82 +2077,14 @@
       "Decision Desk moved -20.0 (70.0 to 50.0%)",
       "markets moved +4.0 points since the last pull (Polymarket 79.5 to 83.5; Kalshi 76.5 to 80.5%)"
     ],
-    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%); markets moved +4.0 points since the last pull (Polymarket 79.5 to 83.5; Kalshi 76.5 to 80.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Suffolk University D+4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%); markets moved +4.0 points since the last pull (Polymarket 79.5 to 83.5; Kalshi 76.5 to 80.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "Suffolk University",
-          "sponsor": null,
-          "start_date": "2026-10-21",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 500,
-          "d": 48.0,
-          "r": 44.0,
-          "margin_d": 4.0,
-          "source_url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.89,
-        "n": 9,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.805
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.805
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.805
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.81
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.815
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.815
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.815
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.82
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.82
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.82
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2262,98 +2103,32 @@
   {
     "as_of": "2026-10-29",
     "kind": "item",
-    "item_id": "senate_mn",
-    "item": "Senate · MN",
-    "flag_kind": "poll",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "flag_kind": "market",
     "triggers": [
-      "New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (4 polls)"
+      "markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%)"
     ],
-    "facts": "Flagged: New York Times / Siena University (LV, through 2026-10-26) shows D+14, 11 points from the prior average of D+3 (4 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+14 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +9.0 points since the last pull (Polymarket 39.5 to 47.5; Kalshi 39.5 to 49.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 752,
-          "d": 54.0,
-          "r": 40.0,
-          "margin_d": 14.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 5.4,
-        "n": 5,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.9052
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.9078
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.9078
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
-    "headline": "NYT/Siena still has Flanagan up 14",
-    "what_happened": "Retrieved: NYT/Siena (LV, Oct 19 to 26) has Flanagan 54, Tafoya 40. It first flagged yesterday and stays on today's list against the prior average of D+3.",
-    "why_it_moved": "Inferred: this is the same poll as yesterday. Nothing new happened in Minnesota.",
-    "should_it_move_us": "No. The model counts it at weight 0.26 and reads 98.1. It already moved on this poll yesterday.",
-    "trigger": "A nonpartisan poll with the race inside 5.",
+    "headline": "Kansas prices climb eight points after CNN has Hamilton up four",
+    "what_happened": "Retrieved: CNN/SSRS (LV, Oct 20 to 26, n=838) has Hamilton 49, Marshall 45. Retrieved: the market opened at 40.5 and reached 48.5 by 10:03, with the climb starting between 04:37 and 06:59 (Polymarket 47.5, Kalshi 49.5 at the morning pull). Retrieved: the hourly check flagged it. Retrieved: the feed carries a Trump rally announced for Salina on Saturday (Great Bend Post).",
+    "why_it_moved": "Inferred: the CNN poll is the only new public fact in the window, and it is the best Hamilton number from a nonpartisan pollster. The rally is a Marshall-side event and did not stop the climb.",
+    "should_it_move_us": "No. The model counts CNN/SSRS at weight 0.62 and already sits at 15.8, up from 6.2. One poll does not beat the fundamentals in a Trump-won state, and the markets near 48 are pricing the poll, not new information.",
+    "trigger": "A second nonpartisan likely-voter poll in Kansas showing Hamilton ahead.",
     "sources": [
-      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
+      "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/",
+      "https://polymarket.com/event/kansas-senate-election-winner",
+      "https://greatbendpost.com/posts/4cc12d6a-b1fc-44a2-950a-c3383a032fd1"
     ],
     "label": "inferred"
   },
@@ -2366,69 +2141,14 @@
     "triggers": [
       "Decision Desk moved +15.0 (70.0 to 85.0%)"
     ],
-    "facts": "Flagged: Decision Desk moved +15.0 (70.0 to 85.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Decision Desk moved +15.0 (70.0 to 85.0%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 9.4,
-        "n": 5,
-        "newest": "2026-10-25"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.9083
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.9103
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.91
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.9095
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.9095
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.9153
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.914
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.9143
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.9093
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.9133
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2453,72 +2173,14 @@
     "triggers": [
       "markets moved +5.8 points since the last pull (Polymarket 3.9 to 10.7; Kalshi 5.3 to 10.0%)"
     ],
-    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 3.9 to 10.7; Kalshi 5.3 to 10.0%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D-7 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 3.9 to 10.7; Kalshi 5.3 to 10.0%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 707,
-          "d": 44.0,
-          "r": 51.0,
-          "margin_d": -7.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -10.8,
-        "n": 5,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.0925
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.0955
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.1133
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.1138
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.1067
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.1115
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.1115
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.103
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.1033
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.103
-        ]
-      ],
-      "events_window_hours": 48,
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2536,176 +2198,20 @@
   {
     "as_of": "2026-10-29",
     "kind": "item",
-    "item_id": "senate_tx",
-    "item": "Senate · TX",
-    "flag_kind": "poll",
-    "triggers": [
-      "YouGov Blue (RV, through 2026-10-26) shows D+8, 5 points from the prior average of D+3 (20 polls)"
-    ],
-    "facts": "Flagged: YouGov Blue (RV, through 2026-10-26) shows D+8, 5 points from the prior average of D+3 (20 polls). News in the last 48 hours: 0 articles. Polls just in: SSRS D+6 (LV); YouGov Blue D+8 (RV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "SSRS",
-          "sponsor": null,
-          "start_date": "2026-10-20",
-          "end_date": "2026-10-27",
-          "population": "LV",
-          "sample": 923,
-          "d": 49.0,
-          "r": 43.0,
-          "margin_d": 6.0,
-          "source_url": "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
-        },
-        {
-          "pollster": "YouGov Blue",
-          "sponsor": null,
-          "start_date": "2026-10-21",
-          "end_date": "2026-10-26",
-          "population": "RV",
-          "sample": 1000,
-          "d": 51.0,
-          "r": 43.0,
-          "margin_d": 8.0,
-          "source_url": "https://254labs.io/news/2026-10-tx"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.39,
-        "n": 18,
-        "newest": "2026-10-27"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.6875
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.685
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.69
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.69
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.69
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.69
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "explained": true,
-    "headline": "Two new Talarico leads, one of them counted",
-    "what_happened": "Retrieved: YouGov Blue (RV, Oct 21 to 26) has Talarico up 8. Retrieved: CNN/SSRS (LV, Oct 20 to 27) has Talarico up 6. The average is D+2.4 over 18 polls.",
-    "why_it_moved": "Inferred: the flag is the YouGov Blue poll, which is 5 points above the average. The CNN poll is the one with weight.",
-    "should_it_move_us": "No. The model leaves YouGov Blue out as partisan (D) and counts CNN/SSRS. It reads 69.9, up from 68.2, and the markets at 69 already agree.",
-    "trigger": "A nonpartisan likely-voter poll with Paxton ahead.",
-    "sources": [
-      "https://254labs.io/news/2026-10-tx",
-      "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-29",
-    "kind": "item",
     "item_id": "gov_wi",
     "item": "Governor · WI",
     "flag_kind": "market",
     "triggers": [
       "markets moved +4.8 points since the last pull (Polymarket 80.0 to 85.5; Kalshi 79.5 to 83.5%)"
     ],
-    "facts": "Flagged: markets moved +4.8 points since the last pull (Polymarket 80.0 to 85.5; Kalshi 79.5 to 83.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +4.8 points since the last pull (Polymarket 80.0 to 85.5; Kalshi 79.5 to 83.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 5.0,
-        "n": 2,
-        "newest": "2026-10-23"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.8475
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.845
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.845
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2729,59 +2235,14 @@
     "triggers": [
       "markets moved -4.0 points since the last pull (Polymarket 74.5 to 71.5; Kalshi 73.5 to 68.5%)"
     ],
-    "facts": "Flagged: markets moved -4.0 points since the last pull (Polymarket 74.5 to 71.5; Kalshi 73.5 to 68.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved -4.0 points since the last pull (Polymarket 74.5 to 71.5; Kalshi 73.5 to 68.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": 3.33,
-        "n": 3,
-        "newest": "2026-10-16"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.6925
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.7
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.7
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.7
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.695
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.695
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2805,82 +2266,14 @@
     "triggers": [
       "Silver Bulletin changed its rating, Tossup to Lean D (flip)"
     ],
-    "facts": "Flagged: Silver Bulletin changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: State Navigate D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Silver Bulletin changed its rating, Tossup to Lean D (flip). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "State Navigate",
-          "sponsor": null,
-          "start_date": "2026-10-23",
-          "end_date": "2026-10-27",
-          "population": "LV",
-          "sample": 679,
-          "d": 50.0,
-          "r": 47.0,
-          "margin_d": 3.0,
-          "source_url": "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -0.5,
-        "n": 6,
-        "newest": "2026-10-27"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.62
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.6175
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.6175
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.615
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.615
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.6125
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.6125
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2904,55 +2297,14 @@
     "triggers": [
       "markets moved +3.0 points since the last pull (Kalshi 63.5 to 66.5%)"
     ],
-    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 63.5 to 66.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 63.5 to 66.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.67
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.68
-        ]
-      ],
-      "events_window_hours": 48,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -2975,82 +2327,14 @@
     "triggers": [
       "markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%)"
     ],
-    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Kalshi 25.5 to 28.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-19",
-          "end_date": "2026-10-26",
-          "population": "LV",
-          "sample": 707,
-          "d": 48.0,
-          "r": 48.0,
-          "margin_d": 0.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -1.83,
-        "n": 6,
-        "newest": "2026-10-26"
-      },
-      "market_path": [
-        [
-          "2026-10-29T00:35:13-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T03:16:07-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T04:36:58-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T06:59:11-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T08:06:22-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T09:27:57-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T10:03:58-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T11:10:46-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.28
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.285
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -3068,13 +2352,1319 @@
   {
     "as_of": "2026-10-29",
     "kind": "item",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "NYT/Siena still has Flanagan up 14",
+    "what_happened": "Retrieved: NYT/Siena (LV, Oct 19 to 26) has Flanagan 54, Tafoya 40. It first flagged yesterday and stays on today's list against the prior average of D+3.",
+    "why_it_moved": "Inferred: this is the same poll as yesterday. Nothing new happened in Minnesota.",
+    "should_it_move_us": "No. The model counts it at weight 0.26 and reads 98.1. It already moved on this poll yesterday.",
+    "trigger": "A nonpartisan poll with the race inside 5.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Two new Talarico leads, one of them counted",
+    "what_happened": "Retrieved: YouGov Blue (RV, Oct 21 to 26) has Talarico up 8. Retrieved: CNN/SSRS (LV, Oct 20 to 27) has Talarico up 6. The average is D+2.4 over 18 polls.",
+    "why_it_moved": "Inferred: the flag is the YouGov Blue poll, which is 5 points above the average. The CNN poll is the one with weight.",
+    "should_it_move_us": "No. The model leaves YouGov Blue out as partisan (D) and counts CNN/SSRS. It reads 69.9, up from 68.2, and the markets at 69 already agree.",
+    "trigger": "A nonpartisan likely-voter poll with Paxton ahead.",
+    "sources": [
+      "https://254labs.io/news/2026-10-tx",
+      "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
     "item_id": "senate_fl",
     "item": "Senate · FL special",
-    "flag_kind": "ballots",
-    "triggers": [
-      "Florida passed half its 2022 turnout: 3,905,292 ballots through Oct 29, against 7,796,916 votes cast in all of 2022"
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Florida passes half its 2022 turnout",
+    "what_happened": "Retrieved: 3,905,292 ballots through Oct 29 against 7,796,916 votes in all of 2022 (UF Election Lab). Party registration of ballots is R+1.3. There is no 2022 same-day comparison on the board. Retrieved: St. Pete Polls R+4 and ActiVote R+6, both counted.",
+    "why_it_moved": "Inferred: steady early voting. This is a reading of who has voted, by party registration, not how they voted.",
+    "should_it_move_us": "No. Turnout volume says nothing about the margin. The model reads 5.7.",
+    "trigger": "A 2022 same-day composition baseline for Florida.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+      "https://data.ddhq.io/polls/2026/10/28/St.-Pete-Polls-Florida"
     ],
-    "facts": "Flagged: Florida passed half its 2022 turnout: 3,905,292 ballots through Oct 29, against 7,796,916 votes cast in all of 2022. News in the last 48 hours: 0 articles. Polls just in: St. Pete Polls D-4 (LV); ActiVote D-6 (LV). Ballots in FL: 3,905,292 through Oct 29. No reading yet. The morning brief explains every flagged item.",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Iowa passes its whole 2022 early vote, with a smaller Democratic edge",
+    "what_happened": "Retrieved: 373,386 ballots through Oct 29 against 370,546 early ballots by Election Day 2022. Party registration of ballots is D+14.4 against D+21.1 at the same point in 2022, a swing of 6.7 toward registered Republicans (6.4 the day before).",
+    "why_it_moved": "Inferred: more Republicans voting early than in 2022. That is a change in habit as much as in support.",
+    "should_it_move_us": "No. Early-vote composition is not a vote margin and does not enter the model, which reads 43.3.",
+    "trigger": "A nonpartisan Iowa poll fielded after Oct 23.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-29",
+    "kind": "item",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Nevada passes half its 2022 turnout",
+    "what_happened": "Retrieved: 563,881 ballots through Oct 29 against 1,023,617 votes in all of 2022. Party registration of ballots is D+6.0. There is no 2022 same-day comparison on the board.",
+    "why_it_moved": "Inferred: steady mail and in-person returns. It is a reading of who has voted, by party registration.",
+    "should_it_move_us": "No. The model has no counted Nevada governor poll and reads 45.0. Its three Nevada polls are all left out as partisan.",
+    "trigger": "A nonpartisan Nevada governor poll.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Raters did most of the moving today. Inside Elections changed about two dozen ratings in one pass, nearly all toward Democrats, and Cook moved a handful the same way. The one new fact about voters came from Kansas: a Washington Post poll with Hamilton up nine, which took our Senate model there from 15.8 to 52.0 and markets to 52.8. Maine and Senate control rose with no visible news. The news feed was rate-limited and returned nothing, so every race reads as quiet when it may not be.",
+    "written_at": "2026-10-30T15:00:09-04:00",
+    "n_flags": 32,
+    "n_explained": 32,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Inside Elections redraws the map, and Kansas gets a real poll.",
+    "vibe": "Two dozen rating changes landed in one pass, almost all toward Democrats. The only new voter reading was a Post poll with Hamilton up nine, and Kansas Senate prices crossed fifty on it.",
+    "sources": [
+      "https://insideelections.com/ratings/senate",
+      "https://www.washingtonpost.com/politics/2026/10/30/we-polled-kansas-democrats-wanted-talk-republicans-not-so-much/",
+      "https://polymarket.com/event/kansas-senate-election-winner",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "written_at": "2026-10-30T15:00:09-04:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "rating",
+    "triggers": [
+      "Decision Desk moved +20.0 (50.0 to 70.0%)",
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)"
+    ],
+    "facts": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%); Inside Elections changed its rating, Tossup to Tilt D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.89,
+        "n": 9,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.8175
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.8175
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.815
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.81
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.8125
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.81
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.81
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Decision Desk and Inside Elections both tilt Ohio to Acton",
+    "what_happened": "Retrieved: Inside Elections moved the Ohio governor race from Tossup to Tilt D (Wikipedia ratings table, column dated Oct 29). Retrieved: the Decision Desk figure on the board went from 50 to 70, which matches a rating step from Tossup to Lean D. No new Ohio poll since Oct 26. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: two raters catching up to a poll average that already favored Acton (margin 2.89 across 9 polls). No new fact is visible in the window.",
+    "should_it_move_us": "No. Our model sits at 70.88 on the same polls the raters read, and ratings carry no new information about voters.",
+    "trigger": "A nonpartisan likely-voter Ohio poll fielded after Oct 26.",
+    "sources": [
+      "https://insideelections.com/ratings/governor",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://votes.decisiondeskhq.com/forecast/governor"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "flag_kind": "alert",
+    "triggers": [
+      "Inside Elections changed its rating, Tilt R to Tossup",
+      "markets moved +4.0 points since the last pull (Polymarket 47.5 to 53.5; Kalshi 49.5 to 51.5%)",
+      "moved +4.2 points since the day's open by 14:02"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tilt R to Tossup; markets moved +4.0 points since the last pull (Polymarket 47.5 to 53.5; Kalshi 49.5 to 51.5%); moved +4.2 points since the day's open by 14:02. News in the last 48 hours: 0 articles. Polls just in: Emerson College D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Emerson College",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 800,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.5,
+        "n": 6,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.485
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.49
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.49
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.49
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.5125
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.5325
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.5375
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.535
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.525
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.5275
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Washington Post poll has Hamilton up nine, markets follow",
+    "what_happened": "Retrieved: the Washington Post with SSPG (LV, ending Oct 26, published Oct 30) has Hamilton ahead by 9. Retrieved: Emerson (LV, ending Oct 28) has Hamilton up 3. Retrieved: Inside Elections moved the race from Tilt R to Tossup. Retrieved: markets opened at 48.5 and the climb began between 07:53 and 09:09, reaching 52.8 by 14:02 (hourly check flagged it). The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: the Post poll is the largest Hamilton margin from a nonpartisan pollster, and its morning release lines up with the start of the climb. Emerson and the rating change add weight in the same direction.",
+    "should_it_move_us": "Wait. Our model already moved from 15.8 to 52.04 as both polls entered and the poll weight rose from 0.56 to 0.77. The base rate for a Democrat winning a state Trump carried by 16 is low, and four polls are carrying the number.",
+    "trigger": "Whether a second nonpartisan poll fielded after Oct 26 shows Hamilton ahead by more than the Emerson three.",
+    "sources": [
+      "https://www.washingtonpost.com/politics/2026/10/30/we-polled-kansas-democrats-wanted-talk-republicans-not-so-much/",
+      "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/",
+      "https://polymarket.com/event/kansas-senate-election-winner",
+      "https://insideelections.com/ratings/senate"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "flag_kind": "alert",
+    "triggers": [
+      "markets moved +5.8 points since the last pull (Polymarket 63.5 to 69.0; Kalshi 61.5 to 67.5%)",
+      "moved +3.5 points since the day's open by 14:02"
+    ],
+    "facts": "Flagged: markets moved +5.8 points since the last pull (Polymarket 63.5 to 69.0; Kalshi 61.5 to 67.5%); moved +3.5 points since the day's open by 14:02. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": null,
+        "n": 0,
+        "newest": null
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.65
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.65
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.65
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.655
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.675
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.6825
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.685
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.685
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Maine prices rise on no visible news",
+    "what_happened": "Retrieved: markets moved from 63.5 to 69.0 on Polymarket and 61.5 to 67.5 on Kalshi since the last pull. The hourly check flagged a 3.5-point rise since the open. Retrieved: the newest public poll found by search is Fox News on Oct 22, a tie. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Unexplained after checking the feed and the polls.",
+    "should_it_move_us": "Wait. Our model reads fundamentals and ratings only here and sits at 80.9. Nothing it reads changed today.",
+    "trigger": "A Maine poll released Oct 29 or 30 that the feed missed.",
+    "sources": [
+      "https://polymarket.com/event/maine-senate-election-winner",
+      "https://www.foxnews.com/politics/fox-news-poll-nail-biter-maine-senate-race.print"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "flag_kind": "market",
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)",
+      "markets moved +4.5 points since the last pull (Polymarket 61.5 to 65.5; Kalshi 61.5 to 66.5%)"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tossup to Tilt D (flip); markets moved +4.5 points since the last pull (Polymarket 61.5 to 65.5; Kalshi 61.5 to 66.5%). News in the last 48 hours: 0 articles. Polls just in: State Navigate D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "State Navigate",
+          "sponsor": null,
+          "start_date": "2026-10-23",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 679,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.5,
+        "n": 6,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.625
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.6625
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.66
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.6575
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.6575
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.655
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.6525
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections tilts Georgia governor to Bottoms",
+    "what_happened": "Retrieved: Inside Elections moved the race from Tossup to Tilt D. Retrieved: markets rose from 61.5 to 65.5 on Polymarket and 61.5 to 66.5 on Kalshi. Retrieved: the newest poll is State Navigate (LV, ending Oct 27), Bottoms up 3. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: the rating change is the only new fact. Markets moved with it and with the broad Democratic drift in prices today.",
+    "should_it_move_us": "No. Our model is at 55.43 with the State Navigate poll counted. A rating is not a new voter reading.",
+    "trigger": "A nonpartisan Georgia governor poll fielded after Oct 27.",
+    "sources": [
+      "https://insideelections.com/ratings/governor",
+      "https://polymarket.com/event/georgia-governor-winner-2026",
+      "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_dem_control",
+    "item": "Senate control",
+    "flag_kind": "alert",
+    "triggers": [
+      "markets moved +3.5 points since the last pull (Polymarket 67.5 to 71.5; Kalshi 66.5 to 69.5%)",
+      "moved +3.0 points since the day's open by 14:02"
+    ],
+    "facts": "Flagged: markets moved +3.5 points since the last pull (Polymarket 67.5 to 71.5; Kalshi 66.5 to 69.5%); moved +3.0 points since the day's open by 14:02. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.68
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.685
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.685
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.71
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Senate control prices rise with Kansas and Maine",
+    "what_happened": "Retrieved: markets moved from 67.5 to 71.5 on Polymarket and 66.5 to 69.5 on Kalshi since the last pull, up 3.0 since the open. Retrieved: Decision Desk has Senate control at 56.",
+    "why_it_moved": "Inferred: the chamber price is following the Kansas and Maine seat prices, both up today.",
+    "should_it_move_us": "No. The chamber number is built from the seats, and the seat-level reasons are above.",
+    "trigger": "Whether the Kansas gain holds once a second post-Oct 26 poll lands.",
+    "sources": [
+      "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+      "https://votes.decisiondeskhq.com/forecast/senate"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "OH-09",
+    "item": "OH-09",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Tossup to Lean D",
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "facts": "Flagged: Cook changed its rating, Tossup to Lean D; Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Cook changed its rating, Tossup to Lean D",
+    "what_happened": "Retrieved: Cook changed its rating, Tossup to Lean D. Inside Elections changed its rating, Tossup to Tilt D (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_mi",
+    "item": "Senate · MI",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +4.5 points since the last pull (Polymarket 72.5 to 77.5; Kalshi 70.5 to 74.5%)"
+    ],
+    "facts": "Flagged: markets moved +4.5 points since the last pull (Polymarket 72.5 to 77.5; Kalshi 70.5 to 74.5%). News in the last 48 hours: 0 articles. Polls just in: Upswing Research D+5 (LV); SSRS D+7 (LV); Mitchell Research & Communications D+7 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Upswing Research",
+          "sponsor": null,
+          "start_date": "2026-10-24",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 505,
+          "d": 50.0,
+          "r": 45.0,
+          "margin_d": 5.0,
+          "source_url": "https://x.com/joshorton/status/2115883461076545615"
+        },
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 768,
+          "d": 49.0,
+          "r": 42.0,
+          "margin_d": 7.0,
+          "source_url": "https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/"
+        },
+        {
+          "pollster": "Mitchell Research & Communications",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 636,
+          "d": 51.0,
+          "r": 44.0,
+          "margin_d": 7.0,
+          "source_url": "https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 4.27,
+        "n": 11,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.755
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.76
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.7625
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.76
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.765
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.76
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.76
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Michigan prices catch up to a run of El-Sayed polls",
+    "what_happened": "Retrieved: markets moved from 72.5 to 77.5 on Polymarket and 70.5 to 74.5 on Kalshi. Retrieved: recent polls have El-Sayed ahead, including Upswing (+5, Oct 28), SSRS (+7, Oct 27) and Mitchell (+7, Oct 27). The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: prices closing part of the gap to a poll average of 4.27 that has favored El-Sayed for a week.",
+    "should_it_move_us": "No. Our model already counts these polls and sits at 93.92.",
+    "trigger": "A nonpartisan Michigan poll showing Rogers ahead.",
+    "sources": [
+      "https://polymarket.com/event/michigan-senate-election-winner",
+      "https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "alert",
+    "triggers": [
+      "moved +4.0 points since the day's open by 14:02"
+    ],
+    "facts": "Flagged: moved +4.0 points since the day's open by 14:02. News in the last 48 hours: 0 articles. Polls just in: Emerson College D-4 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Emerson College",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 800,
+          "d": 46.0,
+          "r": 50.0,
+          "margin_d": -4.0,
+          "source_url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.75,
+        "n": 4,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.24
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.235
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.235
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.235
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.2825
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.2825
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.2825
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.2775
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.28
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.28
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Same Post poll lifts Holscher, Emerson still has Masterson ahead",
+    "what_happened": "Retrieved: the Washington Post with SSPG has Holscher ahead by 6. Retrieved: Emerson (ending Oct 28) has Masterson ahead by 4. Retrieved: markets rose from 24 at the open to 28 by 14:02. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: the Post poll, released the same morning as the Senate number, is the only new Holscher-side fact.",
+    "should_it_move_us": "No. Our model counts both polls and sits at 34.19. The two newest polls disagree by ten points, so the average barely moves.",
+    "trigger": "A third nonpartisan Kansas governor poll that breaks the Post versus Emerson split.",
+    "sources": [
+      "https://www.washingtonpost.com/politics/2026/10/30/we-polled-kansas-democrats-wanted-talk-republicans-not-so-much/",
+      "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/",
+      "https://polymarket.com/event/kansas-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -3.3 points since the last pull (Polymarket 10.7 to 7.4%)"
+    ],
+    "facts": "Flagged: markets moved -3.3 points since the last pull (Polymarket 10.7 to 7.4%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": -10.8,
+        "n": 5,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.069
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.0688
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.0683
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.0703
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.07
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.0795
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.0795
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.0757
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.0722
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.0718
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "South Carolina governor price slips further for Johnson",
+    "what_happened": "Retrieved: Polymarket fell from 10.7 to 7.4. No new poll since Oct 26. No Kalshi price.",
+    "why_it_moved": "Inferred: thin trading in a single market at a low price. No event found.",
+    "should_it_move_us": "No. Our model sits at 4.07 and nothing it reads changed.",
+    "trigger": "Any nonpartisan South Carolina poll inside ten points.",
+    "sources": [
+      "https://polymarket.com/event/south-carolina-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tossup to Tilt D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.91,
+        "n": 11,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.705
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tossup to Tilt D (flip)",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tossup to Tilt D (flip) (rater table on Wikipedia, since the raters block scripted reads). The poll average is 2.91 on 11 polls, newest 2026-10-26. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 83.51, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D (flip)"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tossup to Tilt D (flip). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Quantus Insights D-1 (LV); ActiVote D+4 (LV); SSRS D+6 (LV); A2 Insights D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "Quantus Insights",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 1221,
+          "d": 48.0,
+          "r": 49.0,
+          "margin_d": -1.0,
+          "source_url": "https://quantusinsights.org/polling/f/texas-survey-paxton-up-one-abbott-ahead-by-five"
+        },
+        {
+          "pollster": "ActiVote",
+          "sponsor": null,
+          "start_date": "2026-10-22",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 400,
+          "d": 52.0,
+          "r": 48.0,
+          "margin_d": 4.0,
+          "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/"
+        },
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 923,
+          "d": 49.0,
+          "r": 43.0,
+          "margin_d": 6.0,
+          "source_url": "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
+        },
+        {
+          "pollster": "A2 Insights",
+          "sponsor": null,
+          "start_date": "2026-10-23",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 631,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://drive.google.com/file/d/1UACnmnM84Dd1hU0l6iqHNgXkyh5oCelO/view"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.21,
+        "n": 19,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.7
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.705
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.715
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.715
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tossup to Tilt D (flip)",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tossup to Tilt D (flip) (rater table on Wikipedia, since the raters block scripted reads). The poll average is 2.21 on 19 polls, newest 2026-10-28. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 68.9, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tilt R to Tossup"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tilt R to Tossup. News in the last 48 hours: 0 articles. Polls just in: co/efficient D-2 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "co/efficient",
+          "sponsor": null,
+          "start_date": "2026-10-28",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 1020,
+          "d": 46.0,
+          "r": 48.0,
+          "margin_d": -2.0,
+          "source_url": "https://battlegrounds.coefficient.org/ia/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.44,
+        "n": 9,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.46
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.46
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.46
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.455
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.4625
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.4625
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.45
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.445
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.4475
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.445
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tilt R to Tossup",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tilt R to Tossup (rater table on Wikipedia, since the raters block scripted reads). The poll average is -0.44 on 9 polls, newest 2026-10-28. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 43.4, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_ga",
+    "item": "Senate · GA",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Lean D to Likely D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 9.2,
+        "n": 5,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.9652
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.9637
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.9645
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.9645
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.9665
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.9675
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.9675
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.9695
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.9692
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.9685
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Lean D to Likely D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Lean D to Likely D (rater table on Wikipedia, since the raters block scripted reads). The poll average is 9.2 on 5 polls, newest 2026-10-23. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 99.65, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Lean R to Tilt R"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Lean R to Tilt R. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": -1.83,
+        "n": 6,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.27
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.27
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.265
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.2625
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.265
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.27
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.27
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.27
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.27
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.27
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Lean R to Tilt R",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Lean R to Tilt R (rater table on Wikipedia, since the raters block scripted reads). The poll average is -1.83 on 6 polls, newest 2026-10-26. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 16.64, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "senate_fl",
+    "item": "Senate · FL special",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Solid R to Likely R"
+    ],
+    "facts": "Flagged: Cook changed its rating, Solid R to Likely R. News in the last 48 hours: 0 articles. Polls just in: St. Pete Polls D-4 (LV); ActiVote D-6 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
@@ -3105,214 +3695,154 @@
         }
       ],
       "poll_average": {
-        "margin_d": -6.6,
-        "n": 10,
+        "margin_d": -6.18,
+        "n": 11,
         "newest": "2026-10-27"
       },
       "market_path": [
         [
-          "2026-10-29T00:35:13-04:00",
+          "2026-10-30T01:06:26-04:00",
+          0.1
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.1
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
           0.105
         ],
         [
-          "2026-10-29T03:16:07-04:00",
-          0.1025
+          "2026-10-30T07:53:12-04:00",
+          0.105
         ],
         [
-          "2026-10-29T04:36:58-04:00",
-          0.1025
+          "2026-10-30T09:09:09-04:00",
+          0.105
         ],
         [
-          "2026-10-29T06:59:11-04:00",
-          0.0975
+          "2026-10-30T10:13:58-04:00",
+          0.105
         ],
         [
-          "2026-10-29T08:06:22-04:00",
-          0.0975
+          "2026-10-30T11:05:48-04:00",
+          0.105
         ],
         [
-          "2026-10-29T09:27:57-04:00",
-          0.1
+          "2026-10-30T12:00:14-04:00",
+          0.105
         ],
         [
-          "2026-10-29T10:03:58-04:00",
-          0.1
+          "2026-10-30T13:30:19-04:00",
+          0.105
         ],
         [
-          "2026-10-29T11:10:46-04:00",
-          0.1
-        ],
-        [
-          "2026-10-29T12:02:52-04:00",
-          0.1
-        ],
-        [
-          "2026-10-29T13:00:00-04:00",
-          0.1
+          "2026-10-30T14:02:46-04:00",
+          0.105
         ]
       ],
       "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "FL",
-          "date": "2026-10-29",
-          "days_before": 5,
-          "total": 3905292,
-          "gap": -1.29,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": 40.2,
-          "r_share_2022": null,
-          "prev_date": "2026-10-28",
-          "total_prev": 3531109,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 3898458,
-          "turnout_2022_total": 7796916
-        }
-      ]
+      "early_vote": []
     },
     "explained": true,
-    "headline": "Florida passes half its 2022 turnout",
-    "what_happened": "Retrieved: 3,905,292 ballots through Oct 29 against 7,796,916 votes in all of 2022 (UF Election Lab). Party registration of ballots is R+1.3. There is no 2022 same-day comparison on the board. Retrieved: St. Pete Polls R+4 and ActiVote R+6, both counted.",
-    "why_it_moved": "Inferred: steady early voting. This is a reading of who has voted, by party registration, not how they voted.",
-    "should_it_move_us": "No. Turnout volume says nothing about the margin. The model reads 5.7.",
-    "trigger": "A 2022 same-day composition baseline for Florida.",
+    "headline": "Cook changed its rating, Solid R to Likely R",
+    "what_happened": "Retrieved: Cook changed its rating, Solid R to Likely R (rater table on Wikipedia, since the raters block scripted reads). The poll average is -6.18 on 11 polls, newest 2026-10-27. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 5.69, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
     "sources": [
-      "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-      "https://data.ddhq.io/polls/2026/10/28/St.-Pete-Polls-Florida"
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
     ],
     "label": "inferred"
   },
   {
-    "as_of": "2026-10-29",
+    "as_of": "2026-10-30",
     "kind": "item",
-    "item_id": "senate_ia",
-    "item": "Senate · IA",
-    "flag_kind": "ballots",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
+    "flag_kind": "rating",
     "triggers": [
-      "Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022"
+      "Sabato changed its rating, Lean D to Likely D"
     ],
-    "facts": "Flagged: Iowa passed its whole 2022 early vote: 373,386 ballots through Oct 29 against 370,546 by Election Day 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Ballots in IA: 373,386 through Oct 29, party gap D+14.4 against D+21.1 in 2022 at the same point. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Sabato changed its rating, Lean D to Likely D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
-        "margin_d": -0.25,
-        "n": 8,
-        "newest": "2026-10-23"
+        "margin_d": 5.4,
+        "n": 5,
+        "newest": "2026-10-26"
       },
       "market_path": [
         [
-          "2026-10-29T00:35:13-04:00",
-          0.455
+          "2026-10-30T01:06:26-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T03:16:07-04:00",
-          0.46
+          "2026-10-30T03:02:16-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T04:36:58-04:00",
-          0.455
+          "2026-10-30T05:09:56-04:00",
+          0.9052
         ],
         [
-          "2026-10-29T06:59:11-04:00",
-          0.455
+          "2026-10-30T07:53:12-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T08:06:22-04:00",
-          0.455
+          "2026-10-30T09:09:09-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T09:27:57-04:00",
-          0.455
+          "2026-10-30T10:13:58-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T10:03:58-04:00",
-          0.4625
+          "2026-10-30T11:05:48-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T11:10:46-04:00",
-          0.465
+          "2026-10-30T12:00:14-04:00",
+          0.9078
         ],
         [
-          "2026-10-29T12:02:52-04:00",
-          0.47
+          "2026-10-30T13:30:19-04:00",
+          0.9103
         ],
         [
-          "2026-10-29T13:00:00-04:00",
-          0.4725
+          "2026-10-30T14:02:46-04:00",
+          0.9078
         ]
       ],
       "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "IA",
-          "date": "2026-10-29",
-          "days_before": 5,
-          "total": 373386,
-          "gap": 14.44,
-          "gap_2022": 21.1,
-          "swing": -6.66,
-          "r_vs_2022": 1.29,
-          "r_share": 33.41,
-          "r_share_2022": 32.12,
-          "prev_date": "2026-10-28",
-          "total_prev": 338739,
-          "swing_prev": -6.38,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_2022_early",
-          "line": 370546
-        }
-      ]
+      "early_vote": []
     },
     "explained": true,
-    "headline": "Iowa passes its whole 2022 early vote, with a smaller Democratic edge",
-    "what_happened": "Retrieved: 373,386 ballots through Oct 29 against 370,546 early ballots by Election Day 2022. Party registration of ballots is D+14.4 against D+21.1 at the same point in 2022, a swing of 6.7 toward registered Republicans (6.4 the day before).",
-    "why_it_moved": "Inferred: more Republicans voting early than in 2022. That is a change in habit as much as in support.",
-    "should_it_move_us": "No. Early-vote composition is not a vote margin and does not enter the model, which reads 43.3.",
-    "trigger": "A nonpartisan Iowa poll fielded after Oct 23.",
+    "headline": "Sabato changed its rating, Lean D to Likely D",
+    "what_happened": "Retrieved: Sabato changed its rating, Lean D to Likely D (rater table on Wikipedia, since the raters block scripted reads). The poll average is 5.4 on 5 polls, newest 2026-10-26. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 98.41, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
     "sources": [
-      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
     ],
     "label": "inferred"
   },
   {
-    "as_of": "2026-10-29",
+    "as_of": "2026-10-30",
     "kind": "item",
     "item_id": "gov_nv",
     "item": "Governor · NV",
-    "flag_kind": "ballots",
+    "flag_kind": "rating",
     "triggers": [
-      "Nevada passed half its 2022 turnout: 563,881 ballots through Oct 29, against 1,023,617 votes cast in all of 2022"
+      "Inside Elections changed its rating, Tilt R to Tossup"
     ],
-    "facts": "Flagged: Nevada passed half its 2022 turnout: 563,881 ballots through Oct 29, against 1,023,617 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Ballots in NV: 563,881 through Oct 29. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Inside Elections changed its rating, Tilt R to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
         "margin_d": 2.0,
@@ -3321,75 +3851,743 @@
       },
       "market_path": [
         [
-          "2026-10-29T00:35:13-04:00",
+          "2026-10-30T01:06:26-04:00",
+          0.79
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
           0.785
         ],
         [
-          "2026-10-29T03:16:07-04:00",
+          "2026-10-30T05:09:56-04:00",
           0.785
         ],
         [
-          "2026-10-29T04:36:58-04:00",
-          0.785
+          "2026-10-30T07:53:12-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T06:59:11-04:00",
-          0.785
+          "2026-10-30T09:09:09-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T08:06:22-04:00",
-          0.7875
+          "2026-10-30T10:13:58-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T09:27:57-04:00",
-          0.79
+          "2026-10-30T11:05:48-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T10:03:58-04:00",
-          0.79
+          "2026-10-30T12:00:14-04:00",
+          0.7825
         ],
         [
-          "2026-10-29T11:10:46-04:00",
-          0.79
+          "2026-10-30T13:30:19-04:00",
+          0.78
         ],
         [
-          "2026-10-29T12:02:52-04:00",
-          0.79
+          "2026-10-30T14:02:46-04:00",
+          0.78
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tilt R to Tossup",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tilt R to Tossup (rater table on Wikipedia, since the raters block scripted reads). The poll average is 2.0 on 3 polls, newest 2026-10-25. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 45.31, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_wi",
+    "item": "Governor · WI",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 5.0,
+        "n": 2,
+        "newest": "2026-10-23"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.845
         ],
         [
-          "2026-10-29T13:00:00-04:00",
-          0.79
+          "2026-10-30T03:02:16-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.845
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.835
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.835
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tossup to Tilt D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tossup to Tilt D (rater table on Wikipedia, since the raters block scripted reads). The poll average is 5.0 on 2 polls, newest 2026-10-23. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 84.96, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D to Lean D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tilt D to Lean D. News in the last 48 hours: 0 articles. Polls just in: SSRS D+12 (LV); Mitchell Research & Communications D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "SSRS",
+          "sponsor": null,
+          "start_date": "2026-10-20",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 768,
+          "d": 53.0,
+          "r": 41.0,
+          "margin_d": 12.0,
+          "source_url": "https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/"
+        },
+        {
+          "pollster": "Mitchell Research & Communications",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-27",
+          "population": "LV",
+          "sample": 636,
+          "d": 49.0,
+          "r": 44.0,
+          "margin_d": 5.0,
+          "source_url": "https://www.cbsnews.com/detroit/news/jocelyn-benson-john-james-october-michigan-gubernatorial-poll/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 8.2,
+        "n": 5,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.9367
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.937
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.9395
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.9403
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.9405
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.9417
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.9417
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.9417
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.941
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.941
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tilt D to Lean D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tilt D to Lean D (rater table on Wikipedia, since the raters block scripted reads). The poll average is 8.2 on 5 polls, newest 2026-10-27. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 91.22, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_ia",
+    "item": "Governor · IA",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D (flip) to Lean D (flip)"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tilt D (flip) to Lean D (flip). News in the last 48 hours: 0 articles. Polls just in: co/efficient D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "co/efficient",
+          "sponsor": null,
+          "start_date": "2026-10-28",
+          "end_date": "2026-10-28",
+          "population": "LV",
+          "sample": 1020,
+          "d": 50.0,
+          "r": 45.0,
+          "margin_d": 5.0,
+          "source_url": "https://battlegrounds.coefficient.org/ia/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 6.0,
+        "n": 7,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.8525
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.855
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.855
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.865
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.8625
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.8625
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tilt D (flip) to Lean D (flip)",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tilt D (flip) to Lean D (flip) (rater table on Wikipedia, since the raters block scripted reads). The poll average is 6.0 on 7 polls, newest 2026-10-28. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. Our model sits at 85.94, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "TX-09",
+    "item": "TX-09",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Likely R (flip) to Lean R (flip)"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Likely R (flip) to Lean R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Likely R (flip) to Lean R (flip)",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Likely R (flip) to Lean R (flip) (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "TX-28",
+    "item": "TX-28",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D to Lean D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tilt D to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tilt D to Lean D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tilt D to Lean D (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "TX-35",
+    "item": "TX-35",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Lean R (flip) to Tossup"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Lean R (flip) to Tossup",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Lean R (flip) to Tossup (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "NC-01",
+    "item": "NC-01",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tossup to Tilt D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tossup to Tilt D (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "OH-01",
+    "item": "OH-01",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tilt D to Lean D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tilt D to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tilt D to Lean D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tilt D to Lean D (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "FL-09",
+    "item": "FL-09",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Likely R (flip) to Lean R (flip)"
+    ],
+    "facts": "Flagged: Cook changed its rating, Likely R (flip) to Lean R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Cook changed its rating, Likely R (flip) to Lean R (flip)",
+    "what_happened": "Retrieved: Cook changed its rating, Likely R (flip) to Lean R (flip) (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "FL-14",
+    "item": "FL-14",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tossup to Tilt D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tossup to Tilt D (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "FL-22",
+    "item": "FL-22",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tilt R (flip) to Tossup"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tilt R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tilt R (flip) to Tossup",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tilt R (flip) to Tossup (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "FL-25",
+    "item": "FL-25",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Tossup to Tilt D"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Tossup to Tilt D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Tossup to Tilt D",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Tossup to Tilt D (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "TN-09",
+    "item": "TN-09",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Solid R (flip) to Likely R (flip)"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Solid R (flip) to Likely R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Solid R (flip) to Likely R (flip)",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Solid R (flip) to Likely R (flip) (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "AL-02",
+    "item": "AL-02",
+    "flag_kind": "rating",
+    "triggers": [
+      "Inside Elections changed its rating, Lean R (flip) to Tilt R (flip)"
+    ],
+    "facts": "Flagged: Inside Elections changed its rating, Lean R (flip) to Tilt R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Inside Elections changed its rating, Lean R (flip) to Tilt R (flip)",
+    "what_happened": "Retrieved: Inside Elections changed its rating, Lean R (flip) to Tilt R (flip) (rater table on Wikipedia, since the raters block scripted reads). No public poll on the board for this race. The news feed returned no articles for this race in the 48-hour window. GDELT rate-limited the pull, so this is a missing feed, not a quiet race.",
+    "why_it_moved": "Inferred: part of a broad late update. Inside Elections moved about two dozen races in one pass, nearly all toward Democrats. No race-level event found.",
+    "should_it_move_us": "No. The board has no model number for this seat, and a rating is not a new reading of voters.",
+    "trigger": "A nonpartisan poll in this race fielded after the rating change.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-30",
+    "kind": "item",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "flag_kind": "ballots",
+    "triggers": [
+      "Arizona passed half its 2022 turnout: 1,457,053 ballots through Oct 30, against 2,592,313 votes cast in all of 2022"
+    ],
+    "facts": "Flagged: Arizona passed half its 2022 turnout: 1,457,053 ballots through Oct 30, against 2,592,313 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in AZ: 1,457,053 through Oct 30. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 8.0,
+        "n": 3,
+        "newest": "2026-10-25"
+      },
+      "market_path": [
+        [
+          "2026-10-30T01:06:26-04:00",
+          0.919
+        ],
+        [
+          "2026-10-30T03:02:16-04:00",
+          0.9243
+        ],
+        [
+          "2026-10-30T05:09:56-04:00",
+          0.9253
+        ],
+        [
+          "2026-10-30T07:53:12-04:00",
+          0.9263
+        ],
+        [
+          "2026-10-30T09:09:09-04:00",
+          0.922
+        ],
+        [
+          "2026-10-30T10:13:58-04:00",
+          0.9215
+        ],
+        [
+          "2026-10-30T11:05:48-04:00",
+          0.9187
+        ],
+        [
+          "2026-10-30T12:00:14-04:00",
+          0.9167
+        ],
+        [
+          "2026-10-30T13:30:19-04:00",
+          0.9178
+        ],
+        [
+          "2026-10-30T14:02:46-04:00",
+          0.9173
         ]
       ],
       "events_window_hours": 48,
       "early_vote": [
         {
-          "state": "NV",
-          "date": "2026-10-29",
-          "days_before": 5,
-          "total": 563881,
-          "gap": 5.99,
+          "state": "AZ",
+          "date": "2026-10-30",
+          "days_before": 4,
+          "total": 1457053,
+          "gap": -1.13,
           "gap_2022": null,
           "swing": null,
           "r_vs_2022": null,
-          "r_share": 34.15,
+          "r_share": 38.39,
           "r_share_2022": null,
-          "prev_date": "2026-10-27",
-          "total_prev": 495447,
+          "prev_date": "2026-10-29",
+          "total_prev": 1295955,
           "swing_prev": null,
           "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
           "kind": "passed_half_2022_turnout",
-          "line": 511808,
-          "turnout_2022_total": 1023617
+          "line": 1296156,
+          "turnout_2022_total": 2592313
         }
       ]
     },
     "explained": true,
-    "headline": "Nevada passes half its 2022 turnout",
-    "what_happened": "Retrieved: 563,881 ballots through Oct 29 against 1,023,617 votes in all of 2022. Party registration of ballots is D+6.0. There is no 2022 same-day comparison on the board.",
-    "why_it_moved": "Inferred: steady mail and in-person returns. It is a reading of who has voted, by party registration.",
-    "should_it_move_us": "No. The model has no counted Nevada governor poll and reads 45.0. Its three Nevada polls are all left out as partisan.",
-    "trigger": "A nonpartisan Nevada governor poll.",
+    "headline": "Arizona passes half its 2022 turnout",
+    "what_happened": "Retrieved: 1,457,053 ballots through Oct 30, against 2,592,313 cast in all of 2022 (UF Election Lab). By party registration of ballots, Republicans lead Democrats by 1.13 points. There is no 2022 same-point comparison on the board, so there is no swing.",
+    "why_it_moved": "Inferred: a turnout line crossed, not a change in who leads. This says who has voted, not how they voted.",
+    "should_it_move_us": "No. Our model sits at 97.98 and the early vote does not enter it.",
+    "trigger": "A 2022 same-point registration split for Arizona, which would turn the gap into a swing.",
     "sources": [
       "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
     ],

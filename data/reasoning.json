@@ -1183,5 +1183,44 @@
     "delta": "Error found",
     "conclusion": "The core model's appointee list (core_model.APPOINTED) named Ohio and Florida but not South Carolina, so Darline Graham, appointed July 13, carried an eight-point incumbency term the frozen rule reserves for elected incumbents. Fixed on 2026-10-28: the model's South Carolina fundamentals move from Graham +16.3 to Graham +8.3.",
     "as_of": "2026-10-29"
+  },
+  {
+    "n": 1,
+    "kind": "inference",
+    "delta": "South Carolina Senate: Andrews 5 to 14 percent, the margin Graham +10 to Graham +6.",
+    "mechanisms": "Three nonpartisan likely-voter polls average about Graham +1.7, with the partisan polls in the same band. | South Carolina's 2020 polls missed toward the Democrat by 6.5 points. Half of that is carried, on one cycle of evidence. | The baseline after the national swing is near R+8.3, with no incumbency for an appointed senator. | The early electorate is 2022-shaped: Harris counties 24.3 percent of ballots against 24.8 at the same point.",
+    "evidence": "Whether the state's polls miss toward the Democrat in a midterm without Trump on the ballot.",
+    "conclusion": "Graham by about 6, 51.5 to 45.5, Andrews at 14 percent.",
+    "confidence": 0.55,
+    "falsifier": "A nonpartisan likely-voter poll with Andrews ahead, or the Harris counties' share at or above 2022's same point by Oct 31.",
+    "as_of": "2026-10-30"
+  },
+  {
+    "n": 2,
+    "kind": "red_team",
+    "delta": "The opposite reading",
+    "conclusion": "The opposite reading is that carrying half of 2020's miss is the same inertia this run is meant to avoid. One cycle, with Trump on the ballot, is the whole evidence for it, and the 2022 midterm polls were not far off nationally. Three independent polls with different methods all land within four points, The Citadel's registered voters favor Andrews by five, and the markets near 26 price the race as live. If the polls are right, 14 percent is too low by half. To believe Republicans hold the House I would need to see: a final-week likely-voter generic ballot under D+4, DCCC or House Majority PAC cuts in Trump +5 to +10 seats, a Republican share of North Carolina's accepted early ballots at or above its 2022 level by Oct 30, and Democrats running behind the 2024 baseline in any remaining special election.",
+    "as_of": "2026-10-30"
+  },
+  {
+    "n": 3,
+    "kind": "cable",
+    "delta": "What cable will say and why it is wrong",
+    "conclusion": "Cable will say South Carolina is a toss-up. Three polls say close. In 2020 the state's polls also said close, and the Republican won by ten.",
+    "as_of": "2026-10-30"
+  },
+  {
+    "n": 4,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The 2026-10-21T2145 run said public polls understated the Republican by ten in South Carolina in 2020. The final average had the Republican up 3.7 and the result was +10.2, a 6.5-point miss (270toWin, Wikipedia). Ten was the gap to the tied polls, not to the average.",
+    "as_of": "2026-10-30"
+  },
+  {
+    "n": 5,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The core model's appointee list (core_model.APPOINTED) named Ohio and Florida but not South Carolina, so Darline Graham, appointed July 13, carried an eight-point incumbency term the frozen rule reserves for elected incumbents. Fixed on 2026-10-28: the model's South Carolina fundamentals move from Graham +16.3 to Graham +8.3.",
+    "as_of": "2026-10-30"
   }
 ]
