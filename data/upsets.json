@@ -12,7 +12,7 @@
     "score": 5.5,
     "flags": "raters, ddhq, markets",
     "n_flags": 3,
-    "reading": "The Republican is favored (14% by us), but we are 16 points below the raters' consensus (Lean R); Decision Desk says 30, 16 above us; the markets moved 8 points against the favorite this week. What flips our call: A nonpartisan likely-voter poll with Andrews ahead, or the county early-vote file showing the Harris counties' share at or above 2022's same point by the close of early voting on Oct 31.",
+    "reading": "The Republican is favored (14% by us), but we are 16 points below the raters' consensus (Lean R); Decision Desk says 30, 16 above us; the markets moved 7 points against the favorite this week. What flips our call: A nonpartisan likely-voter poll with Andrews ahead, or the county early-vote file showing the Harris counties' share at or above 2022's same point by the close of early voting on Oct 31.",
     "cand_d": "Annie Andrews",
     "cand_r": "Darline Graham",
     "label_kind": "inferred"
@@ -30,7 +30,7 @@
     "score": 5.0,
     "flags": "raters, markets, swing",
     "n_flags": 3,
-    "reading": "The Democrat is favored (64% by us), but we are 14 points above the raters' consensus (Toss-up); the markets moved 6 points against the favorite this week; we are 30 from the 2024 even-swing baseline (34%). We set no explicit trigger for this race; the why panel has the case against.",
+    "reading": "The Democrat is favored (64% by us), but we are 14 points above the raters' consensus (Toss-up); the markets moved 5 points against the favorite this week; we are 30 from the 2024 even-swing baseline (34%). We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": "Mary Peltola",
     "cand_r": "Daniel J. Sullivan Jr., Dan Sullivan, Gerald Heikes",
     "label_kind": "inferred"
@@ -66,7 +66,7 @@
     "score": 4.0,
     "flags": "raters, markets",
     "n_flags": 2,
-    "reading": "The Republican is favored (33% by us), but we are 17 points below the raters' consensus (Toss-up); the markets moved 10 points against the favorite this week. We set no explicit trigger for this race; the why panel has the case against.",
+    "reading": "The Republican is favored (33% by us), but we are 17 points below the raters' consensus (Toss-up); the markets moved 13 points against the favorite this week. We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": "Adam Hamilton",
     "cand_r": "Roger Marshall",
     "label_kind": "inferred"
@@ -108,6 +108,24 @@
     "label_kind": "inferred"
   },
   {
+    "key": "GA",
+    "office": "governor",
+    "state": "GA",
+    "label": "Governor · GA",
+    "item_id": "gov_ga",
+    "ours": 47.0,
+    "consensus": 50.0,
+    "category": "Toss-up",
+    "favored": "Republican",
+    "score": 2.5,
+    "flags": "markets, swing",
+    "n_flags": 2,
+    "reading": "The Republican is favored (47% by us), but the markets moved 6 points against the favorite this week; we are 32 from the 2024 even-swing baseline (79%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
+    "cand_d": null,
+    "cand_r": null,
+    "label_kind": "inferred"
+  },
+  {
     "key": "NV",
     "office": "governor",
     "state": "NV",
@@ -120,7 +138,7 @@
     "score": 2.5,
     "flags": "markets, swing",
     "n_flags": 2,
-    "reading": "The Republican is favored (46% by us), but the markets moved 12 points against the favorite this week; we are 30 from the 2024 even-swing baseline (76%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
+    "reading": "The Republican is favored (46% by us), but the markets moved 10 points against the favorite this week; we are 30 from the 2024 even-swing baseline (76%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": null,
     "cand_r": null,
     "label_kind": "inferred"
@@ -177,24 +195,6 @@
     "reading": "The Republican is favored (6% by us), but Decision Desk says 30, 24 above us; we are 85 from the 2024 even-swing baseline (91%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": null,
     "cand_r": null,
-    "label_kind": "inferred"
-  },
-  {
-    "key": "IA",
-    "office": "senate",
-    "state": "IA",
-    "label": "Senate · IA",
-    "item_id": "senate_ia",
-    "ours": 43.0,
-    "consensus": 50.0,
-    "category": "Toss-up",
-    "favored": "Republican",
-    "score": 2.0,
-    "flags": "markets",
-    "n_flags": 1,
-    "reading": "The Republican is favored (43% by us), but the markets moved 4 points against the favorite this week. We set no explicit trigger for this race; the why panel has the case against.",
-    "cand_d": "Josh Turek",
-    "cand_r": "Ashley Hinson",
     "label_kind": "inferred"
   },
   {
@@ -427,24 +427,6 @@
     "flags": "swing",
     "n_flags": 1,
     "reading": "The Democrat is favored (70% by the raters), but the raters are 36 from the 2024 even-swing baseline (34%, which tracks governor races only loosely). Not on our scorecard, so no trigger is set; the disagreement is between the raters, the markets and the 2024 baseline.",
-    "cand_d": null,
-    "cand_r": null,
-    "label_kind": "inferred"
-  },
-  {
-    "key": "GA",
-    "office": "governor",
-    "state": "GA",
-    "label": "Governor · GA",
-    "item_id": "gov_ga",
-    "ours": 47.0,
-    "consensus": 50.0,
-    "category": "Toss-up",
-    "favored": "Republican",
-    "score": 0.5,
-    "flags": "swing",
-    "n_flags": 1,
-    "reading": "The Republican is favored (47% by us), but we are 32 from the 2024 even-swing baseline (79%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": null,
     "cand_r": null,
     "label_kind": "inferred"
