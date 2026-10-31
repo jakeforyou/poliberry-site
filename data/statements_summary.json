@@ -5,7 +5,7 @@
     "this_period": {
       "start": "2026-10-21",
       "end": "2026-10-27",
-      "articles": 874,
+      "articles": 1025,
       "usable_days": 4,
       "skipped_days": [
         "2026-10-25",
@@ -16,13 +16,13 @@
     "prior_period": {
       "start": "2026-10-14",
       "end": "2026-10-20",
-      "articles": 1386,
+      "articles": 1679,
       "usable_days": 6,
       "skipped_days": [
         "2026-10-14"
       ]
     },
-    "change_pct": -5.4,
+    "change_pct": -8.4,
     "direction": "flat",
     "top_kind": null,
     "top_kind_articles": 0,
@@ -31,11 +31,11 @@
     "counts_source": "daily",
     "baseline": {
       "usable_days": 30,
-      "per_day": 197.3,
-      "this_per_day": 218.5,
-      "change_pct": 10.8
+      "per_day": 235.2,
+      "this_per_day": 256.2,
+      "change_pct": 8.9
     },
-    "sentence": "Coverage of election-legitimacy statements is flat this week (874 articles on 4 days against 1386 on 6), led by Trump.",
+    "sentence": "Coverage of election-legitimacy statements is flat this week (1025 articles on 4 days against 1679 on 6), led by Trump.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",

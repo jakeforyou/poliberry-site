@@ -2,6 +2,24 @@
   {
     "race_id": "senate_me",
     "kind": "poll",
+    "pollster": "Data for Progress",
+    "sponsor": null,
+    "start_date": "2026-10-23",
+    "end_date": "2026-10-27",
+    "population": "LV",
+    "sample": 652,
+    "moe": 4.5,
+    "d": 50.0,
+    "r": 45.0,
+    "other": null,
+    "undecided": 4.0,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
     "pollster": "SSRS",
     "sponsor": null,
     "start_date": "2026-10-20",
@@ -596,8 +614,8 @@
   {
     "race_id": "senate_me",
     "kind": "average",
-    "average_margin_d": 2.43,
-    "n_polls": 7,
+    "average_margin_d": 2.75,
+    "n_polls": 8,
     "candidates": {
       "D": [
         "Troy Jackson"
@@ -606,10 +624,10 @@
         "Susan Collins"
       ]
     },
-    "newest_end_date": "2026-10-26",
+    "newest_end_date": "2026-10-27",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine#Polling_4",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -1690,7 +1708,7 @@
     "newest_end_date": "2026-10-25",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -2555,8 +2573,26 @@
     "newest_end_date": "2026-10-26",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Ohio#Polling",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_tx",
+    "kind": "poll",
+    "pollster": "KStrat",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-10-30",
+    "population": "LV",
+    "sample": 900,
+    "moe": 3.3,
+    "d": 48.0,
+    "r": 45.0,
+    "other": 0.0,
+    "undecided": 6.0,
+    "margin_d": 3.0,
+    "aggregate": false,
+    "source_url": "https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october"
   },
   {
     "race_id": "senate_tx",
@@ -3965,8 +4001,8 @@
   {
     "race_id": "senate_tx",
     "kind": "average",
-    "average_margin_d": 2.3,
-    "n_polls": 20,
+    "average_margin_d": 2.33,
+    "n_polls": 21,
     "candidates": {
       "D": [
         "James Talarico"
@@ -3975,10 +4011,10 @@
         "Ken Paxton"
       ]
     },
-    "newest_end_date": "2026-10-28",
+    "newest_end_date": "2026-10-30",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas#Polling_4",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -4503,7 +4539,7 @@
     "newest_end_date": "2026-10-29",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alaska#Polling_2",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -5242,7 +5278,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Iowa#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -6485,7 +6521,7 @@
     "newest_end_date": "2026-10-29",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -6954,7 +6990,7 @@
     "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -7513,7 +7549,7 @@
     "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Hampshire#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -7838,7 +7874,7 @@
     "newest_end_date": "2026-10-29",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina#Polling_5",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -8343,7 +8379,7 @@
     "newest_end_date": "2026-10-27",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida#Polling_2",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -8668,7 +8704,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas#Polling_2",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -9083,7 +9119,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -9480,7 +9516,7 @@
     "newest_end_date": "2026-10-27",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -10075,7 +10111,7 @@
     "newest_end_date": "2026-10-29",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -10418,7 +10454,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Nevada_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -10725,7 +10761,7 @@
     "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Wisconsin_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -11446,7 +11482,7 @@
     "newest_end_date": "2026-10-27",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -12167,7 +12203,7 @@
     "newest_end_date": "2026-10-26",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Ohio_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -12636,7 +12672,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Iowa_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -12817,7 +12853,7 @@
     "newest_end_date": "2026-10-26",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_South_Carolina_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -13016,7 +13052,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Kansas_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -13305,7 +13341,7 @@
     "newest_end_date": "2026-10-23",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -13414,7 +13450,7 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_South_Carolina#Polling_3",
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -13426,7 +13462,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   },
   {
@@ -13438,7 +13474,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-10-31T09:33:22-04:00",
+    "retrieved_at": "2026-10-31T12:22:43-04:00",
     "label": "retrieved"
   }
 ]

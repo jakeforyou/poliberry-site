@@ -1,7 +1,7 @@
 {
   "run_id": "2026-10-28T1027",
   "kind": "run",
-  "built_at": "2026-10-31T10:05:18-04:00",
+  "built_at": "2026-10-31T12:28:56-04:00",
   "datasets": {
     "scorecard": {
       "file": "data/dashboard/scorecard.json",
@@ -83,7 +83,7 @@
     },
     "changes": {
       "file": "data/dashboard/changes.json",
-      "rows": 642,
+      "rows": 646,
       "title": "What changed since the last pull",
       "description": "Every difference between a snapshot and the one before it (forecast runs, DDHQ, markets, ratings, votes counted, FEC cash, gate events, signals, 2028 variables), each with a rule-based reading written in advance (scripts/changes.py). Readings say what moved and what the lock said would make it matter. They never forecast."
     },
@@ -144,19 +144,19 @@
     },
     "early_vote_daily": {
       "file": "data/dashboard/early_vote_daily.json",
-      "rows": 2293,
+      "rows": 2304,
       "title": "Early vote by day",
       "description": "Ballots counted per day by registration, cumulative, for 2026 and for 2022 at the same number of days before Election Day. Built from the states' own files (scripts/fetch_early_vote.py, scripts/fetch_ev_more.py) or the UF Election Lab tracker. A state's 2026 series comes from one source at a time: the state's own file when it is dated within two days of the run, the tracker otherwise, never both. Each row names its source."
     },
     "statements": {
       "file": "data/dashboard/statements.json",
-      "rows": 250,
+      "rows": 434,
       "title": "Election-legitimacy statements, coverage",
       "description": "News articles matching an election-legitimacy query for each tracked speaker (the president and his allies), from the GDELT news index, newest first, with a keyword kind (scripts/fetch_statements.py, scripts/statements.py). Articles are retrieved; the kind is inferred from the headline. Coverage, not truth; never a forecast."
     },
     "statements_daily": {
       "file": "data/dashboard/statements_daily.json",
-      "rows": 82,
+      "rows": 205,
       "title": "Election-legitimacy statements, by day",
       "description": "Articles per day per tracked speaker, and a total, from GDELT's daily volume."
     },
@@ -174,13 +174,13 @@
     },
     "flags": {
       "file": "data/dashboard/flags.json",
-      "rows": 91,
+      "rows": 92,
       "title": "Flagged moves",
       "description": "Every move that cleared a fixed threshold (3 points in a market in a day, a rating change, a 5-point Decision Desk move, a poll 5 points off its 21-day average or in a thin race, 3 points intraday), with the news, polls and price path the scripts could gather beside it. A flag is a question, not a reading."
     },
     "brief": {
       "file": "data/dashboard/brief.json",
-      "rows": 141,
+      "rows": 142,
       "title": "The morning brief",
       "description": "One lead and one entry per flagged item: what happened, why it moved, whether it should move us, and what would change the answer. Facts are retrieved by scripts. The reading is written each morning by /brief and labeled inferred. A day without a brief shows the facts alone."
     },
@@ -228,13 +228,13 @@
     },
     "polls_by_race": {
       "file": "data/dashboard/polls_by_race.json",
-      "rows": 746,
+      "rows": 748,
       "title": "Polls by race",
       "description": "Every public poll in a tracked race from the daily pull (pollster, dates, population, D, R, margin), plus one average row per race over the last 21 days. Read by the race panel."
     },
     "events_by_race": {
       "file": "data/dashboard/events_by_race.json",
-      "rows": 16,
+      "rows": 24,
       "title": "Campaign news by race",
       "description": "The top articles from the last 48 hours per race from the event feed, classified by kind, plus one summary row per race. Absence of an article is not absence of an event."
     },

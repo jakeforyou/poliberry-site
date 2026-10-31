@@ -9519,7 +9519,7 @@
     "old": null,
     "new": null,
     "delta_text": "",
-    "reading": "19 changes since 2026-10-30 (14 vote, 5 market). No forecast number changed. Biggest: North Carolina: Accepted early and mail ballots by registration (2026 so far); Pennsylvania: Mail ballots returned by party (2026 so far); Florida: Vote-by-mail ballots returned by party (2026 so far).",
+    "reading": "23 changes since 2026-10-30 (18 vote, 5 market). No forecast number changed. Biggest: North Carolina: Accepted early and mail ballots by registration (2026 so far); Markets: Senate · MI; Pennsylvania: Mail ballots returned by party (2026 so far).",
     "tone": null,
     "magnitude": 1000,
     "source_url": null,
@@ -9534,13 +9534,13 @@
     "old": null,
     "new": null,
     "delta_text": "House 90 · Senate 55",
-    "reading": "The outcome signals lean Democratic: 4 moved toward Democrats and 1 toward Republicans (weighted D 58, R 12). Early-vote composition shifted in 10 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 26.0 against the 30 percent trigger by Oct 25 (4.0 away); our widest gap to the markets is Governor · NV at 30 points. The outlook stands at House 90, Senate 55.",
+    "reading": "The outcome signals lean Democratic: 4 moved toward Democrats and 1 toward Republicans (weighted D 62, R 5). Early-vote composition shifted in 13 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 26.0 against the 30 percent trigger by Oct 25 (4.0 away); our widest gap to the markets is Governor · NV at 30 points. The outlook stands at House 90, Senate 55.",
     "tone": "D",
     "magnitude": 999,
     "source_url": null,
     "lean": "Democratic",
-    "weight_d": 57.5,
-    "weight_r": 12.5,
+    "weight_d": 62.5,
+    "weight_r": 5.0,
     "forecast_changes": 0,
     "flags_reached": 0,
     "house": 90.0,
@@ -9565,6 +9565,22 @@
   {
     "as_of": "2026-10-31",
     "prev_as_of": "2026-10-30",
+    "category": "market",
+    "item": "Markets: Senate · MI",
+    "item_id": "senate_mi",
+    "old": null,
+    "new": null,
+    "delta_text": "Polymarket 76.5 to 81.5%",
+    "reading": "Polymarket moved +5.0 toward the Democrat. Our number is 72.0; gap to the market now -9.5. ",
+    "tone": "D",
+    "magnitude": 25.0,
+    "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
+    "move": 5.0,
+    "n": 3
+  },
+  {
+    "as_of": "2026-10-31",
+    "prev_as_of": "2026-10-30",
     "category": "votes",
     "item": "Pennsylvania: Mail ballots returned by party (2026 so far)",
     "item_id": "ev_PA",
@@ -9575,7 +9591,7 @@
     "tone": "R",
     "magnitude": 21.7,
     "source_url": "https://data.pa.gov/d/nbwd-pfn4",
-    "n": 3
+    "n": 4
   },
   {
     "as_of": "2026-10-31",
@@ -9590,7 +9606,7 @@
     "tone": null,
     "magnitude": 21.4,
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
-    "n": 4
+    "n": 5
   },
   {
     "as_of": "2026-10-31",
@@ -9605,7 +9621,7 @@
     "tone": "R",
     "magnitude": 20.4,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 5
+    "n": 6
   },
   {
     "as_of": "2026-10-31",
@@ -9620,23 +9636,37 @@
     "tone": "R",
     "magnitude": 20.1,
     "source_url": "https://data.pa.gov/d/nbwd-pfn4",
-    "n": 6
+    "n": 7
   },
   {
     "as_of": "2026-10-31",
     "prev_as_of": "2026-10-30",
-    "category": "market",
-    "item": "Markets: Senate · MI",
-    "item_id": "senate_mi",
-    "old": null,
-    "new": null,
-    "delta_text": "Polymarket 76.5 to 80.5%",
-    "reading": "Polymarket moved +4.0 toward the Democrat. Our number is 72.0; gap to the market now -8.5. ",
-    "tone": "D",
-    "magnitude": 20.0,
-    "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
-    "move": 4.0,
-    "n": 7
+    "category": "votes",
+    "item": "KS: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_KS",
+    "old": "375,937",
+    "new": "422,143",
+    "delta_text": "D 42.2 to 41.2; R 43.0 to 43.6; Other 14.8 to 15.2",
+    "reading": "The share moved -1.0 points to 41.2 percent of early voters (422,143 voters).",
+    "tone": "R",
+    "magnitude": 18.3,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 8
+  },
+  {
+    "as_of": "2026-10-31",
+    "prev_as_of": "2026-10-30",
+    "category": "votes",
+    "item": "OH: Ballots voted (mail accepted plus in person), by last primary ballot (2026 so far)",
+    "item_id": "ev_OH",
+    "old": "2,939,570",
+    "new": "3,153,698",
+    "delta_text": "D 29.0 to 28.2; Other 0.2 to 0.2; R 25.9 to 25.7; Unaffiliated 44.9 to 45.9; All — to —",
+    "reading": "The share moved +1.0 points to 45.9 percent of early voters (3,153,698 voters).",
+    "tone": null,
+    "magnitude": 18.1,
+    "source_url": "https://www.ohiosos.gov/data",
+    "n": 9
   },
   {
     "as_of": "2026-10-31",
@@ -9651,7 +9681,7 @@
     "tone": null,
     "magnitude": 15.9,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
-    "n": 8
+    "n": 10
   },
   {
     "as_of": "2026-10-31",
@@ -9667,7 +9697,22 @@
     "magnitude": 15.0,
     "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
     "move": 3.0,
-    "n": 9
+    "n": 11
+  },
+  {
+    "as_of": "2026-10-31",
+    "prev_as_of": "2026-10-30",
+    "category": "votes",
+    "item": "CT: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_CT",
+    "old": "394,385",
+    "new": "438,386",
+    "delta_text": "D 49.2 to 48.5; R 19.2 to 19.4; Other 31.6 to 32.0",
+    "reading": "The share moved -0.6 points to 48.5 percent of early voters (438,386 voters).",
+    "tone": "R",
+    "magnitude": 14.3,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 12
   },
   {
     "as_of": "2026-10-31",
@@ -9682,7 +9727,7 @@
     "tone": "R",
     "magnitude": 14.3,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 10
+    "n": 13
   },
   {
     "as_of": "2026-10-31",
@@ -9697,7 +9742,7 @@
     "tone": "R",
     "magnitude": 13.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 11
+    "n": 14
   },
   {
     "as_of": "2026-10-31",
@@ -9707,29 +9752,13 @@
     "item_id": "gov_ga",
     "old": null,
     "new": null,
-    "delta_text": "Polymarket 65.0 to 67.5%",
-    "reading": "Polymarket moved +2.5 toward the Democrat. Our number is 47.0; gap to the market now -20.5. ",
+    "delta_text": "Polymarket 65.0 to 68.0; Kalshi 65.5 to 67.5%",
+    "reading": "Both markets moved +2.5 toward the Democrat. Our number is 47.0; gap to the market now -20.8. ",
     "tone": "D",
     "magnitude": 12.5,
     "source_url": "https://polymarket.com/event/georgia-governor-winner-2026",
     "move": 2.5,
-    "n": 12
-  },
-  {
-    "as_of": "2026-10-31",
-    "prev_as_of": "2026-10-30",
-    "category": "market",
-    "item": "Markets: Governor · IA",
-    "item_id": "gov_ia",
-    "old": null,
-    "new": null,
-    "delta_text": "Polymarket 87.0 to 84.5%",
-    "reading": "Polymarket moved -2.5 toward the Republican. Our number is 80.0; gap to the market now -4.5. ",
-    "tone": "R",
-    "magnitude": 12.5,
-    "source_url": "https://polymarket.com/event/iowa-governor-winner-2026",
-    "move": -2.5,
-    "n": 13
+    "n": 15
   },
   {
     "as_of": "2026-10-31",
@@ -9744,7 +9773,7 @@
     "tone": null,
     "magnitude": 10.9,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
-    "n": 14
+    "n": 16
   },
   {
     "as_of": "2026-10-31",
@@ -9760,7 +9789,7 @@
     "magnitude": 10.0,
     "source_url": "https://polymarket.com/event/alaska-senate-election-winner",
     "move": 2.0,
-    "n": 15
+    "n": 17
   },
   {
     "as_of": "2026-10-31",
@@ -9775,7 +9804,22 @@
     "tone": "D",
     "magnitude": 9.7,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 16
+    "n": 18
+  },
+  {
+    "as_of": "2026-10-31",
+    "prev_as_of": "2026-10-30",
+    "category": "votes",
+    "item": "MD: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_MD",
+    "old": "962,046",
+    "new": "981,363",
+    "delta_text": "D 63.8 to 63.9; R 21.1 to 21.0; Other 15.0 to 15.1",
+    "reading": "The share moved -0.2 points to 21.0 percent of early voters (981,363 voters).",
+    "tone": "D",
+    "magnitude": 9.7,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 19
   },
   {
     "as_of": "2026-10-31",
@@ -9790,7 +9834,22 @@
     "tone": "R",
     "magnitude": 9.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 17
+    "n": 20
+  },
+  {
+    "as_of": "2026-10-31",
+    "prev_as_of": "2026-10-30",
+    "category": "votes",
+    "item": "Florida: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_FL",
+    "old": "4,723,052",
+    "new": "4,824,734",
+    "delta_text": "D 38.1 to 38.0; R 40.6 to 40.6; Other 21.4 to 21.4",
+    "reading": "The share moved -0.1 points to 38.0 percent of early voters (4,824,734 voters).",
+    "tone": "R",
+    "magnitude": 8.9,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 21
   },
   {
     "as_of": "2026-10-31",
@@ -9805,22 +9864,7 @@
     "tone": "D",
     "magnitude": 8.6,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 18
-  },
-  {
-    "as_of": "2026-10-31",
-    "prev_as_of": "2026-10-30",
-    "category": "votes",
-    "item": "Florida: ballots voted (mail accepted plus in person) (2026 so far)",
-    "item_id": "ev_FL",
-    "old": "4,723,052",
-    "new": "4,743,216",
-    "delta_text": "D 38.1 to 38.1; R 40.6 to 40.5; Other 21.4 to 21.4",
-    "reading": "The share moved -0.0 points to 40.5 percent of early voters (4,743,216 voters).",
-    "tone": "D",
-    "magnitude": 8.3,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 19
+    "n": 22
   },
   {
     "as_of": "2026-10-31",
@@ -9835,6 +9879,22 @@
     "tone": null,
     "magnitude": 8.1,
     "source_url": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
-    "n": 20
+    "n": 23
+  },
+  {
+    "as_of": "2026-10-31",
+    "prev_as_of": "2026-10-30",
+    "category": "market",
+    "item": "Markets: Georgia Senate margin",
+    "item_id": "ga_senate_margin",
+    "old": null,
+    "new": null,
+    "delta_text": "Polymarket 12.2 to 11.2 pts",
+    "reading": "Polymarket moved -1.0 toward the Republican. Our number is 8.0; gap to the market now -3.2. ",
+    "tone": "R",
+    "magnitude": 5.0,
+    "source_url": "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495",
+    "move": -1.0,
+    "n": 24
   }
 ]

@@ -53663,6 +53663,14 @@
       ],
       "excluded": [
         {
+          "pollster": "Data for Progress",
+          "end_date": "2026-10-27",
+          "margin_d": 5.0,
+          "population": "LV",
+          "reason": "partisan (D)",
+          "source_url": "https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas"
+        },
+        {
           "pollster": "Trafalgar Group",
           "end_date": "2026-10-23",
           "margin_d": 0.0,
@@ -54410,10 +54418,22 @@
       "source": "state_overview"
     },
     "polls": {
-      "margin": 1.95,
-      "n_eff": 21.912,
-      "n": 22,
+      "margin": 2.01,
+      "n_eff": 23.247,
+      "n": 23,
       "used": [
+        {
+          "pollster": "KStrat",
+          "end_date": "2026-10-30",
+          "population": "LV",
+          "margin_d": 3.0,
+          "moe": 3.3,
+          "source_url": "https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october",
+          "fade": null,
+          "house_effect": null,
+          "partisan_mark": null,
+          "weight": 0.0574
+        },
         {
           "pollster": "Quantus Insights",
           "end_date": "2026-10-28",
@@ -54424,7 +54444,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0626
+          "weight": 0.059
         },
         {
           "pollster": "ActiVote",
@@ -54436,7 +54456,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0317
+          "weight": 0.0298
         },
         {
           "pollster": "SSRS",
@@ -54448,7 +54468,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0407
+          "weight": 0.0383
         },
         {
           "pollster": "A2 Insights",
@@ -54460,7 +54480,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0314
+          "weight": 0.0296
         },
         {
           "pollster": "Texas Southern University",
@@ -54472,7 +54492,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0989
+          "weight": 0.0932
         },
         {
           "pollster": "Univision / YouGov",
@@ -54484,7 +54504,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0453
+          "weight": 0.0427
         },
         {
           "pollster": "Rasmussen Reports",
@@ -54496,7 +54516,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0645
+          "weight": 0.0608
         },
         {
           "pollster": "ActiVote",
@@ -54508,7 +54528,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0297
+          "weight": 0.028
         },
         {
           "pollster": "Verasight /VoteHub",
@@ -54520,7 +54540,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0368
+          "weight": 0.0346
         },
         {
           "pollster": "Emerson College",
@@ -54532,7 +54552,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0633
+          "weight": 0.0597
         },
         {
           "pollster": "Beacon Research/ Shaw & Co. Research",
@@ -54544,7 +54564,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0806
+          "weight": 0.076
         },
         {
           "pollster": "Pollfinity Research",
@@ -54556,7 +54576,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0175
+          "weight": 0.0165
         },
         {
           "pollster": "CBS News / YouGov",
@@ -54568,7 +54588,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0492
+          "weight": 0.0464
         },
         {
           "pollster": "University of Houston",
@@ -54580,7 +54600,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0896
+          "weight": 0.0845
         },
         {
           "pollster": "InsiderAdvantage",
@@ -54592,7 +54612,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0666
+          "weight": 0.0628
         },
         {
           "pollster": "ActiVote",
@@ -54604,7 +54624,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0279
+          "weight": 0.0263
         },
         {
           "pollster": "GS Strategy Group/ New River Strategies",
@@ -54616,7 +54636,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0389
+          "weight": 0.0366
         },
         {
           "pollster": "Quantus Insights",
@@ -54628,7 +54648,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0451
+          "weight": 0.0425
         },
         {
           "pollster": "Marist University",
@@ -54640,7 +54660,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0272
+          "weight": 0.0256
         },
         {
           "pollster": "ReconMR/ Siena University",
@@ -54652,7 +54672,7 @@
           "fade": 0.71,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0227
+          "weight": 0.0214
         },
         {
           "pollster": "YouGov",
@@ -54664,7 +54684,7 @@
           "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.016
+          "weight": 0.0151
         },
         {
           "pollster": "University of Texas /Texas Politics Project",
@@ -54676,7 +54696,7 @@
           "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0139
+          "weight": 0.0131
         }
       ],
       "excluded": [
@@ -54733,19 +54753,19 @@
     "sigma_source": "2022, 12 competitive races, leave-one-out",
     "label": "inferred",
     "rule": "fundamentals plus polls, 2022 constants, the run's judgment capped; polls fade over 7 days after the 21-day window (amendment 2026-10-23)",
-    "core_margin": 1.7,
+    "core_margin": 1.77,
     "core_rule": "w_f 0.25, w_p 0.25 per effective poll, w_r 0.0",
     "weights": {
-      "fundamentals": 0.044,
-      "polls": 0.956
+      "fundamentals": 0.041,
+      "polls": 0.959
     },
-    "core_chance": 68.86,
+    "core_chance": 69.59,
     "chance_at_cap": false,
     "core_chance_at_cap": false,
     "judgment": {
       "run_margin": 0.7,
-      "raw": -1.0,
-      "share": 0.0418,
+      "raw": -1.07,
+      "share": 0.0396,
       "applied": -0.04,
       "capped": false,
       "weight": 0.25,
@@ -54753,30 +54773,30 @@
     },
     "run_chance": 58.0,
     "run_point": null,
-    "margin": 1.66,
-    "margin_lo": -2.77,
-    "margin_hi": 6.08,
-    "chance": 68.45,
+    "margin": 1.73,
+    "margin_lo": -2.69,
+    "margin_hi": 6.15,
+    "chance": 69.18,
     "lock_chance": 52.0,
     "lock_point": null,
-    "d_run": 10.45,
-    "d_lock": 16.45,
+    "d_run": 11.18,
+    "d_lock": 17.18,
     "posterior": {
-      "mean": 1.6578,
+      "mean": 1.7295,
       "sd_total": 3.452
     },
-    "margin_source_text": "core model: fundamentals and 22 polls, run judgment -0.04",
+    "margin_source_text": "core model: fundamentals and 23 polls, run judgment -0.04",
     "since_lock": {
       "lock_date": "2026-10-16",
       "as_of": "2026-10-31",
       "lock_chance": 52.0,
       "model_at_lock": 68.83,
-      "chance": 68.45,
-      "total": 16.45,
+      "chance": 69.18,
+      "total": 17.18,
       "method_gap": 16.83,
-      "since_lock": -0.38,
-      "world": -0.38,
-      "n_new_polls": 13,
+      "since_lock": 0.35,
+      "world": 0.35,
+      "n_new_polls": 14,
       "n_polls_at_lock": 38,
       "generic_lock": 7.56,
       "generic_now": 8.42,
@@ -54925,12 +54945,21 @@
           "source_url": "https://quantusinsights.org/polling/f/texas-survey-paxton-up-one-abbott-ahead-by-five"
         },
         {
+          "kind": "poll",
+          "label": "KStrat through 2026-10-30",
+          "detail": "D+3.0 among LV voters",
+          "chance": 68.98,
+          "margin": 1.71,
+          "delta": 0.74,
+          "source_url": "https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october"
+        },
+        {
           "kind": "judgment",
           "label": "The run's judgment",
           "detail": "the lock said 52.0, the run says 58.0",
-          "chance": 68.45,
-          "margin": 1.66,
-          "delta": 0.21
+          "chance": 69.18,
+          "margin": 1.73,
+          "delta": 0.2
         }
       ],
       "label": "inferred"
@@ -57082,7 +57111,7 @@
       "recency": 112.0
     },
     "ratings": {
-      "consensus_p": 85.0,
+      "consensus_p": 77.5,
       "m_r": 10.0
     },
     "sigma": 3.452,
