@@ -18100,27 +18100,67 @@
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 0,
-    "polls": [],
-    "seen": [],
+    "n_polls": 2,
+    "polls": [
+      {
+        "pollster": "Beacon Research/ Shaw & Co. Research",
+        "end_date": "2026-10-20",
+        "population": "LV",
+        "margin_d": 0.0,
+        "moe": 2.5,
+        "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf",
+        "error": 3.242,
+        "weight": 0.4793
+      },
+      {
+        "pollster": "SSRS",
+        "end_date": "2026-10-26",
+        "population": "LV",
+        "margin_d": 4.0,
+        "moe": 4.5,
+        "source_url": "https://www.documentcloud.org/documents/28856725-cnn-poll-conducted-by-ssrs-maine-october/",
+        "error": 5.008,
+        "weight": 0.2009
+      }
+    ],
+    "seen": [
+      {
+        "pollster": "Suffolk University",
+        "end_date": "2026-10-11",
+        "population": "LV",
+        "margin_d": 2.0,
+        "moe": 4.4,
+        "source_url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_14_2026_maine_press_release.pdf",
+        "token": "Suffolk"
+      },
+      {
+        "pollster": "Marist University",
+        "end_date": "2026-10-25",
+        "population": "LV",
+        "margin_d": 2.0,
+        "moe": 6.6,
+        "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_Maine-NOS-and-Tables_202610261228-3_43sjl2.pdf",
+        "token": "Marist"
+      }
+    ],
     "posterior": {
-      "mean": 0.6026,
-      "sd_now": 3.9686,
-      "sd_total": 6.0,
-      "chance": 54.0,
-      "margin": 0.6,
-      "margin_lo": -7.09,
-      "margin_hi": 8.29,
-      "prior_weight": 1.0
+      "mean": 0.9962,
+      "sd_now": 2.2445,
+      "sd_total": 5.0287,
+      "chance": 57.85,
+      "margin": 1.0,
+      "margin_lo": -5.45,
+      "margin_hi": 7.44,
+      "prior_weight": 0.3199
     },
-    "chance": 54.0,
-    "margin": 0.6,
-    "margin_lo": -7.09,
-    "margin_hi": 8.29,
+    "chance": 57.85,
+    "margin": 1.0,
+    "margin_lo": -5.45,
+    "margin_hi": 7.44,
     "run_chance": 54.0,
     "lock_chance": 55.0,
-    "d_run": 0.0,
-    "d_lock": -1.0,
+    "d_run": 3.85,
+    "d_lock": 2.85,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -19321,7 +19361,7 @@
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 2,
+    "n_polls": 3,
     "polls": [
       {
         "pollster": "KSTP / SurveyUSA",
@@ -19331,7 +19371,7 @@
         "moe": 4.2,
         "source_url": "https://kstp.com/kstp-news/top-news/kstp-surveyusa-poll-swing-in-senate-and-ag-races-klobuchar-up-slightly-on-demuth/",
         "error": 4.729,
-        "weight": 0.289
+        "weight": 0.2242
       },
       {
         "pollster": "New York Times / Siena University",
@@ -19341,28 +19381,38 @@
         "moe": 4.1,
         "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-mn-poll-toplines.html",
         "error": 4.637,
-        "weight": 0.3006
+        "weight": 0.2332
+      },
+      {
+        "pollster": "KSTP / SurveyUSA",
+        "end_date": "2026-10-28",
+        "population": "LV",
+        "margin_d": 7.0,
+        "moe": 4.2,
+        "source_url": "https://kstp.com/kstp-news/top-news/kstp-surveyusa-minnesota-statewide-races-inch-left-in-final-poll-before-election-day/",
+        "error": 4.729,
+        "weight": 0.2242
       }
     ],
     "seen": [],
     "posterior": {
-      "mean": 7.6275,
-      "sd_now": 2.5423,
-      "sd_total": 5.1685,
-      "chance": 93.0,
-      "margin": 7.63,
-      "margin_lo": 1.0,
-      "margin_hi": 14.25,
-      "prior_weight": 0.4104
+      "mean": 7.4868,
+      "sd_now": 2.2392,
+      "sd_total": 5.0264,
+      "chance": 93.18,
+      "margin": 7.49,
+      "margin_lo": 1.04,
+      "margin_hi": 13.93,
+      "prior_weight": 0.3184
     },
-    "chance": 93.0,
-    "margin": 7.63,
-    "margin_lo": 1.0,
-    "margin_hi": 14.25,
+    "chance": 93.18,
+    "margin": 7.49,
+    "margin_lo": 1.04,
+    "margin_hi": 13.93,
     "run_chance": 85.0,
     "lock_chance": 86.0,
-    "d_run": 8.0,
-    "d_lock": 7.0,
+    "d_run": 8.18,
+    "d_lock": 7.18,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -19457,7 +19507,7 @@
       "s": 5.25,
       "sigma": 7.0
     },
-    "n_polls": 1,
+    "n_polls": 2,
     "polls": [
       {
         "pollster": "HighGround, Inc.",
@@ -19467,28 +19517,38 @@
         "moe": 4.9,
         "source_url": "https://azhighground.com/trailing-republicans-gain-ground-in-latest-survey/",
         "error": 5.385,
-        "weight": 0.425
+        "weight": 0.2778
+      },
+      {
+        "pollster": "Noble Predictive Insights",
+        "end_date": "2026-10-28",
+        "population": "LV",
+        "margin_d": 6.0,
+        "moe": 4.3,
+        "source_url": "https://www.noblepredictiveinsights.com/post/az-poll-of-record-hobbs-6-yee-bucks-the-trend",
+        "error": 4.822,
+        "weight": 0.3464
       }
     ],
     "seen": [],
     "posterior": {
-      "mean": 9.3659,
-      "sd_now": 3.5108,
-      "sd_total": 6.3157,
-      "chance": 93.1,
-      "margin": 9.37,
-      "margin_lo": 1.27,
-      "margin_hi": 17.46,
-      "prior_weight": 0.575
+      "mean": 8.1998,
+      "sd_now": 2.8382,
+      "sd_total": 5.9681,
+      "chance": 91.53,
+      "margin": 8.2,
+      "margin_lo": 0.55,
+      "margin_hi": 15.85,
+      "prior_weight": 0.3758
     },
-    "chance": 93.1,
-    "margin": 9.37,
-    "margin_lo": 1.27,
-    "margin_hi": 17.46,
+    "chance": 91.53,
+    "margin": 8.2,
+    "margin_lo": 0.55,
+    "margin_hi": 15.85,
     "run_chance": 83.0,
     "lock_chance": 80.0,
-    "d_run": 10.1,
-    "d_lock": 13.1,
+    "d_run": 8.53,
+    "d_lock": 11.53,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -19512,7 +19572,17 @@
     },
     "n_polls": 0,
     "polls": [],
-    "seen": [],
+    "seen": [
+      {
+        "pollster": "Noble Predictive Insights",
+        "end_date": "2026-10-28",
+        "population": "LV",
+        "margin_d": 0.0,
+        "moe": 4.4,
+        "source_url": "https://www.noblepredictiveinsights.com/post/nevada-poll-of-record-lombardo-ford-deadlocked-at-47",
+        "token": "Noble"
+      }
+    ],
     "posterior": {
       "mean": -0.703,
       "sd_now": 4.6301,
@@ -19604,7 +19674,7 @@
       "s": 5.25,
       "sigma": 7.0
     },
-    "n_polls": 5,
+    "n_polls": 6,
     "polls": [
       {
         "pollster": "Marist University",
@@ -19614,7 +19684,7 @@
         "moe": 4.3,
         "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_MI-NOS-and-Tables_202610191238FFx09@Jal.pdf",
         "error": 4.822,
-        "weight": 0.1611
+        "weight": 0.1271
       },
       {
         "pollster": "Michigan State University / YouGov",
@@ -19624,7 +19694,7 @@
         "moe": 4.4,
         "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf",
         "error": 4.915,
-        "weight": 0.1551
+        "weight": 0.1224
       },
       {
         "pollster": "Glengariff Group",
@@ -19634,7 +19704,17 @@
         "moe": 4.0,
         "source_url": "https://www.detroitnews.com/story/news/politics/2026/10/27/jocelyn-bensons-lead-over-john-james-grows-in-michigan-governor-race/92441176007/",
         "error": 4.545,
-        "weight": 0.1814
+        "weight": 0.1431
+      },
+      {
+        "pollster": "Michigan State University /Verasight",
+        "end_date": "2026-10-23",
+        "population": "LV",
+        "margin_d": 9.0,
+        "moe": 3.1,
+        "source_url": "https://polisci.msu.edu/news-events/news/smidt-poll102926.html",
+        "error": 3.742,
+        "weight": 0.2111
       },
       {
         "pollster": "Mitchell Research & Communications",
@@ -19644,7 +19724,7 @@
         "moe": 3.9,
         "source_url": "https://www.cbsnews.com/detroit/news/jocelyn-benson-john-james-october-michigan-gubernatorial-poll/",
         "error": 4.454,
-        "weight": 0.1889
+        "weight": 0.149
       },
       {
         "pollster": "SSRS",
@@ -19654,28 +19734,28 @@
         "moe": 4.7,
         "source_url": "https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/",
         "error": 5.196,
-        "weight": 0.1388
+        "weight": 0.1095
       }
     ],
     "seen": [],
     "posterior": {
-      "mean": 7.8474,
-      "sd_now": 1.9356,
-      "sd_total": 5.5955,
-      "chance": 91.96,
-      "margin": 7.85,
-      "margin_lo": 0.68,
-      "margin_hi": 15.02,
-      "prior_weight": 0.1748
+      "mean": 8.0907,
+      "sd_now": 1.7192,
+      "sd_total": 5.5243,
+      "chance": 92.85,
+      "margin": 8.09,
+      "margin_lo": 1.01,
+      "margin_hi": 15.17,
+      "prior_weight": 0.1379
     },
-    "chance": 91.96,
-    "margin": 7.85,
-    "margin_lo": 0.68,
-    "margin_hi": 15.02,
+    "chance": 92.85,
+    "margin": 8.09,
+    "margin_lo": 1.01,
+    "margin_hi": 15.17,
     "run_chance": 86.0,
     "lock_chance": 85.0,
-    "d_run": 5.96,
-    "d_lock": 6.96,
+    "d_run": 6.85,
+    "d_lock": 7.85,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"

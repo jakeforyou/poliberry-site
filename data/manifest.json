@@ -1,7 +1,7 @@
 {
   "run_id": "2026-10-28T1027",
   "kind": "run",
-  "built_at": "2026-10-30T15:00:18-04:00",
+  "built_at": "2026-10-30T21:05:44-04:00",
   "datasets": {
     "scorecard": {
       "file": "data/dashboard/scorecard.json",
@@ -41,7 +41,7 @@
     },
     "early_vote": {
       "file": "data/dashboard/early_vote.json",
-      "rows": 2268,
+      "rows": 2267,
       "title": "Early-vote composition",
       "description": "Who has voted so far by registration, with PA's 2022 same-point baseline and NC's voter-history join (scripts/fetch_early_vote.py, latest pull). Composition only, never a forecast."
     },
@@ -83,7 +83,7 @@
     },
     "changes": {
       "file": "data/dashboard/changes.json",
-      "rows": 610,
+      "rows": 621,
       "title": "What changed since the last pull",
       "description": "Every difference between a snapshot and the one before it (forecast runs, DDHQ, markets, ratings, votes counted, FEC cash, gate events, signals, 2028 variables), each with a rule-based reading written in advance (scripts/changes.py). Readings say what moved and what the lock said would make it matter. They never forecast."
     },
@@ -95,14 +95,14 @@
     },
     "trends": {
       "file": "data/dashboard/trends.json",
-      "rows": 9593,
+      "rows": 9618,
       "title": "Benchmarks over time",
       "description": "One row per item, source and day: our number on every snapshot day (a run day where the run changed), DDHQ's chamber series from its own page, and daily Polymarket and Kalshi prices (scripts/fetch_history.py). Percent for binary items. Snapshot-day values fill in where no daily series exists.",
       "lazy": true
     },
     "battlefield": {
       "file": "data/dashboard/battlefield.json",
-      "rows": 213,
+      "rows": 214,
       "title": "Every rated race",
       "description": "Every Senate, governor and rated House race in Wikipedia's prediction tables: each rater's rating, the median rater probability, a category from it, the inferred incumbent party, and our number where the race is on the scorecard. The map and the battlefield list draw this. Ratings are retrieved, never ours."
     },
@@ -144,7 +144,7 @@
     },
     "early_vote_daily": {
       "file": "data/dashboard/early_vote_daily.json",
-      "rows": 2266,
+      "rows": 2253,
       "title": "Early vote by day",
       "description": "Ballots counted per day by registration, cumulative, for 2026 and for 2022 at the same number of days before Election Day. Built from the states' own files (scripts/fetch_early_vote.py, scripts/fetch_ev_more.py) or the UF Election Lab tracker. A state's 2026 series comes from one source at a time: the state's own file when it is dated within two days of the run, the tracker otherwise, never both. Each row names its source."
     },
@@ -174,13 +174,13 @@
     },
     "flags": {
       "file": "data/dashboard/flags.json",
-      "rows": 86,
+      "rows": 91,
       "title": "Flagged moves",
       "description": "Every move that cleared a fixed threshold (3 points in a market in a day, a rating change, a 5-point Decision Desk move, a poll 5 points off its 21-day average or in a thin race, 3 points intraday), with the news, polls and price path the scripts could gather beside it. A flag is a question, not a reading."
     },
     "brief": {
       "file": "data/dashboard/brief.json",
-      "rows": 133,
+      "rows": 138,
       "title": "The morning brief",
       "description": "One lead and one entry per flagged item: what happened, why it moved, whether it should move us, and what would change the answer. Facts are retrieved by scripts. The reading is written each morning by /brief and labeled inferred. A day without a brief shows the facts alone."
     },
@@ -228,19 +228,19 @@
     },
     "polls_by_race": {
       "file": "data/dashboard/polls_by_race.json",
-      "rows": 704,
+      "rows": 743,
       "title": "Polls by race",
       "description": "Every public poll in a tracked race from the daily pull (pollster, dates, population, D, R, margin), plus one average row per race over the last 21 days. Read by the race panel."
     },
     "events_by_race": {
       "file": "data/dashboard/events_by_race.json",
-      "rows": 5,
+      "rows": 26,
       "title": "Campaign news by race",
       "description": "The top articles from the last 48 hours per race from the event feed, classified by kind, plus one summary row per race. Absence of an article is not absence of an event."
     },
     "trends_recent": {
       "file": "data/dashboard/trends_recent.json",
-      "rows": 5661,
+      "rows": 5686,
       "title": "Trend lines, last 75 days",
       "description": "The same rows as trends, limited to the last 75 days, for sparklines. The full trends file loads only when a race panel opens."
     }

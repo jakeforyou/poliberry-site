@@ -66,7 +66,7 @@
     "score": 4.0,
     "flags": "raters, markets",
     "n_flags": 2,
-    "reading": "The Republican is favored (33% by us), but we are 17 points below the raters' consensus (Toss-up); the markets moved 12 points against the favorite this week. We set no explicit trigger for this race; the why panel has the case against.",
+    "reading": "The Republican is favored (33% by us), but we are 17 points below the raters' consensus (Toss-up); the markets moved 10 points against the favorite this week. We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": "Adam Hamilton",
     "cand_r": "Roger Marshall",
     "label_kind": "inferred"
@@ -144,24 +144,6 @@
     "label_kind": "inferred"
   },
   {
-    "key": "AZ",
-    "office": "governor",
-    "state": "AZ",
-    "label": "Governor · AZ",
-    "item_id": "gov_az",
-    "ours": 83.0,
-    "consensus": 70.0,
-    "category": "Lean D",
-    "favored": "Democrat",
-    "score": 2.0,
-    "flags": "raters",
-    "n_flags": 1,
-    "reading": "The Democrat is favored (83% by us), but we are 13 points above the raters' consensus (Lean D). We set no explicit trigger for this race; the why panel has the case against.",
-    "cand_d": null,
-    "cand_r": null,
-    "label_kind": "inferred"
-  },
-  {
     "key": "MI",
     "office": "governor",
     "state": "MI",
@@ -195,6 +177,24 @@
     "reading": "The Republican is favored (6% by us), but Decision Desk says 30, 24 above us; we are 85 from the 2024 even-swing baseline (91%, which tracks governor races only loosely). We set no explicit trigger for this race; the why panel has the case against.",
     "cand_d": null,
     "cand_r": null,
+    "label_kind": "inferred"
+  },
+  {
+    "key": "IA",
+    "office": "senate",
+    "state": "IA",
+    "label": "Senate · IA",
+    "item_id": "senate_ia",
+    "ours": 43.0,
+    "consensus": 50.0,
+    "category": "Toss-up",
+    "favored": "Republican",
+    "score": 2.0,
+    "flags": "markets",
+    "n_flags": 1,
+    "reading": "The Republican is favored (43% by us), but the markets moved 4 points against the favorite this week. We set no explicit trigger for this race; the why panel has the case against.",
+    "cand_d": "Josh Turek",
+    "cand_r": "Ashley Hinson",
     "label_kind": "inferred"
   },
   {
