@@ -2268,16 +2268,66 @@
     "item_id": "senate_mi",
     "item": "Senate · MI",
     "kinds": [
-      "market",
-      "alert"
+      "market"
     ],
     "triggers": [
-      "markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%)",
-      "moved +5.5 points since the day's open by 12:06"
+      "markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%)"
     ],
-    "weight": 10.5,
+    "weight": 5.0,
     "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
-    "kind": "alert",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-10-31",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "kinds": [
+      "market"
+    ],
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%)"
+    ],
+    "weight": 3.0,
+    "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
+    "kind": "market",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-01",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "kinds": [
+      "benchmark"
+    ],
+    "triggers": [
+      "Decision Desk moved +20.0 (50.0 to 70.0%)"
+    ],
+    "weight": 10.0,
+    "source_url": "https://votes.decisiondeskhq.com/forecast/governor",
+    "kind": "benchmark",
     "why": {
       "events": [],
       "events_by_kind": {
@@ -2291,96 +2341,114 @@
         "money": 0,
         "other": 0
       },
-      "polls": [
-        {
-          "pollster": "Rasmussen Reports",
-          "sponsor": null,
-          "start_date": "2026-10-28",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 745,
-          "d": 49.0,
-          "r": 44.0,
-          "margin_d": 5.0,
-          "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_michigan_senate"
-        },
-        {
-          "pollster": "Upswing Research",
-          "sponsor": null,
-          "start_date": "2026-10-24",
-          "end_date": "2026-10-28",
-          "population": "LV",
-          "sample": 505,
-          "d": 50.0,
-          "r": 45.0,
-          "margin_d": 5.0,
-          "source_url": "https://x.com/joshorton/status/2115883461076545615"
-        }
-      ],
+      "polls": [],
       "poll_average": {
-        "margin_d": 4.33,
-        "n": 12,
-        "newest": "2026-10-29"
+        "margin_d": -0.5,
+        "n": 6,
+        "newest": "2026-10-27"
       },
       "market_path": [
         [
-          "2026-10-31T01:10:16-04:00",
-          0.735
+          "2026-11-01T00:30:01-04:00",
+          0.6875
         ],
         [
-          "2026-10-31T03:51:56-04:00",
-          0.76
+          "2026-11-01T02:34:05-05:00",
+          0.69
         ],
         [
-          "2026-10-31T06:33:53-04:00",
-          0.775
+          "2026-11-01T04:13:12-05:00",
+          0.69
         ],
         [
-          "2026-10-31T07:18:55-04:00",
-          0.78
+          "2026-11-01T07:03:03-05:00",
+          0.695
         ],
         [
-          "2026-10-31T08:00:00-04:00",
-          0.7725
-        ],
-        [
-          "2026-10-31T09:14:34-04:00",
-          0.775
-        ],
-        [
-          "2026-10-31T10:00:00-04:00",
-          0.78
-        ],
-        [
-          "2026-10-31T11:14:59-04:00",
-          0.7825
-        ],
-        [
-          "2026-10-31T12:06:50-04:00",
-          0.79
+          "2026-11-01T08:54:38-05:00",
+          0.695
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%); moved +5.5 points since the day's open by 12:06. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Rasmussen Reports D+5 (LV); Upswing Research D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-31",
+    "as_of": "2026-11-01",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "kinds": [
+      "benchmark"
+    ],
+    "triggers": [
+      "Decision Desk moved -20.0 (70.0 to 50.0%)"
+    ],
+    "weight": 10.0,
+    "source_url": "https://votes.decisiondeskhq.com/forecast/governor",
+    "kind": "benchmark",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.5,
+        "n": 8,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-11-01T00:30:01-04:00",
+          0.805
+        ],
+        [
+          "2026-11-01T02:34:05-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T04:13:12-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T07:03:03-05:00",
+          0.8
+        ],
+        [
+          "2026-11-01T08:54:38-05:00",
+          0.8
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-01",
     "item_id": "senate_sc",
     "item": "Senate · SC",
     "kinds": [
-      "poll",
-      "ballots"
+      "poll"
     ],
     "triggers": [
-      "Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls)",
-      "South Carolina passed half its 2022 turnout: 948,592 ballots through Oct 30, against 1,718,626 votes cast in all of 2022"
+      "Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls)"
     ],
-    "weight": 9.8,
-    "source_url": "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4c78764ecea053693b5e4/1793378183635/PRS.SCStatewidePoll.Toplines.103026.pdf",
+    "weight": 6.8,
+    "source_url": "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf",
     "kind": "poll",
     "why": {
       "events": [],
@@ -2406,7 +2474,7 @@
           "d": 48.0,
           "r": 43.0,
           "margin_d": 5.0,
-          "source_url": "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4c78764ecea053693b5e4/1793378183635/PRS.SCStatewidePoll.Toplines.103026.pdf"
+          "source_url": "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf"
         }
       ],
       "poll_average": {
@@ -2416,82 +2484,46 @@
       },
       "market_path": [
         [
-          "2026-10-31T01:10:16-04:00",
-          0.27
-        ],
-        [
-          "2026-10-31T03:51:56-04:00",
+          "2026-11-01T00:30:01-04:00",
           0.265
         ],
         [
-          "2026-10-31T06:33:53-04:00",
+          "2026-11-01T02:34:05-05:00",
           0.265
         ],
         [
-          "2026-10-31T07:18:55-04:00",
+          "2026-11-01T04:13:12-05:00",
           0.265
         ],
         [
-          "2026-10-31T08:00:00-04:00",
+          "2026-11-01T07:03:03-05:00",
           0.265
         ],
         [
-          "2026-10-31T09:14:34-04:00",
+          "2026-11-01T08:54:38-05:00",
           0.265
-        ],
-        [
-          "2026-10-31T10:00:00-04:00",
-          0.27
-        ],
-        [
-          "2026-10-31T11:14:59-04:00",
-          0.27
-        ],
-        [
-          "2026-10-31T12:06:50-04:00",
-          0.27
         ]
       ],
       "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "SC",
-          "date": "2026-10-30",
-          "days_before": 4,
-          "total": 948592,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-29",
-          "total_prev": 838420,
-          "swing_prev": null,
-          "source_url": "https://scvotes.gov/wp-content/uploads/2026/10/EV-Totals-10-30-26.csv",
-          "kind": "passed_half_2022_turnout",
-          "line": 859313,
-          "turnout_2022_total": 1718626
-        }
-      ]
+      "early_vote": []
     },
-    "reading": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls); South Carolina passed half its 2022 turnout: 948,592 ballots through Oct 30, against 1,718,626 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Patinkin Research Strategies D+5 (LV). Ballots in SC: 948,592 through Oct 30. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Patinkin Research Strategies D+5 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-31",
-    "item_id": "senate_oh",
-    "item": "Senate · OH special",
+    "as_of": "2026-11-01",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
     "kinds": [
-      "market"
+      "rating"
     ],
     "triggers": [
-      "markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%)"
+      "Silver Bulletin changed its rating, Likely D to Solid D"
     ],
     "weight": 3.0,
-    "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
-    "kind": "market",
+    "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
+    "kind": "rating",
     "why": {
       "events": [],
       "events_by_kind": {
@@ -2507,64 +2539,48 @@
       },
       "polls": [],
       "poll_average": {
-        "margin_d": 2.6,
-        "n": 10,
-        "newest": "2026-10-26"
+        "margin_d": 7.71,
+        "n": 7,
+        "newest": "2026-10-27"
       },
       "market_path": [
         [
-          "2026-10-31T01:10:16-04:00",
-          0.71
+          "2026-11-01T00:30:01-04:00",
+          0.9318
         ],
         [
-          "2026-10-31T03:51:56-04:00",
-          0.7125
+          "2026-11-01T02:34:05-05:00",
+          0.9295
         ],
         [
-          "2026-10-31T06:33:53-04:00",
-          0.715
+          "2026-11-01T04:13:12-05:00",
+          0.9298
         ],
         [
-          "2026-10-31T07:18:55-04:00",
-          0.715
+          "2026-11-01T07:03:03-05:00",
+          0.93
         ],
         [
-          "2026-10-31T08:00:00-04:00",
-          0.715
-        ],
-        [
-          "2026-10-31T09:14:34-04:00",
-          0.72
-        ],
-        [
-          "2026-10-31T10:00:00-04:00",
-          0.72
-        ],
-        [
-          "2026-10-31T11:14:59-04:00",
-          0.72
-        ],
-        [
-          "2026-10-31T12:06:50-04:00",
-          0.72
+          "2026-11-01T08:54:38-05:00",
+          0.93
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-31",
-    "item_id": "ev_va",
-    "item": "Early vote · Virginia",
+    "as_of": "2026-11-01",
+    "item_id": "ev_hi",
+    "item": "Early vote · Hawaii",
     "kinds": [
       "ballots"
     ],
     "triggers": [
-      "Virginia passed half its 2022 turnout: 1,512,402 ballots through Oct 31, against 3,021,956 votes cast in all of 2022"
+      "Hawaii passed half its 2022 turnout: 230,805 ballots through Oct 31, against 423,443 votes cast in all of 2022"
     ],
     "weight": 3.0,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
@@ -2578,10 +2594,10 @@
       "events_window_hours": 48,
       "early_vote": [
         {
-          "state": "VA",
+          "state": "HI",
           "date": "2026-10-31",
           "days_before": 3,
-          "total": 1512402,
+          "total": 230805,
           "gap": null,
           "gap_2022": null,
           "swing": null,
@@ -2589,108 +2605,16 @@
           "r_share": null,
           "r_share_2022": null,
           "prev_date": "2026-10-30",
-          "total_prev": 1408954,
+          "total_prev": 210302,
           "swing_prev": null,
           "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
           "kind": "passed_half_2022_turnout",
-          "line": 1510978,
-          "turnout_2022_total": 3021956
+          "line": 211722,
+          "turnout_2022_total": 423443
         }
       ]
     },
-    "reading": "Flagged: Virginia passed half its 2022 turnout: 1,512,402 ballots through Oct 31, against 3,021,956 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in VA: 1,512,402 through Oct 31. No reading yet. The morning brief explains every flagged item.",
-    "needs_why": true,
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-10-31",
-    "item_id": "ev_vt",
-    "item": "Early vote · Vermont",
-    "kinds": [
-      "ballots"
-    ],
-    "triggers": [
-      "Vermont passed half its 2022 turnout: 146,298 ballots through Oct 31, against 291,955 votes cast in all of 2022"
-    ],
-    "weight": 3.0,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "kind": "ballots",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": null,
-      "market_path": [],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "VT",
-          "date": "2026-10-31",
-          "days_before": 3,
-          "total": 146298,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-30",
-          "total_prev": 139565,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 145978,
-          "turnout_2022_total": 291955
-        }
-      ]
-    },
-    "reading": "Flagged: Vermont passed half its 2022 turnout: 146,298 ballots through Oct 31, against 291,955 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in VT: 146,298 through Oct 31. No reading yet. The morning brief explains every flagged item.",
-    "needs_why": true,
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-10-31",
-    "item_id": "ev_wa",
-    "item": "Early vote · Washington",
-    "kinds": [
-      "ballots"
-    ],
-    "triggers": [
-      "Washington passed half its 2022 turnout: 1,658,115 ballots through Oct 30, against 3,067,686 votes cast in all of 2022"
-    ],
-    "weight": 3.0,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "kind": "ballots",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": null,
-      "market_path": [],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "WA",
-          "date": "2026-10-30",
-          "days_before": 4,
-          "total": 1658115,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-29",
-          "total_prev": 1513547,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 1533843,
-          "turnout_2022_total": 3067686
-        }
-      ]
-    },
-    "reading": "Flagged: Washington passed half its 2022 turnout: 1,658,115 ballots through Oct 30, against 3,067,686 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in WA: 1,658,115 through Oct 30. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Hawaii passed half its 2022 turnout: 230,805 ballots through Oct 31, against 423,443 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in HI: 230,805 through Oct 31. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   }

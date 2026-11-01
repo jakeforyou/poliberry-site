@@ -3483,8 +3483,8 @@
     "item_id": null,
     "text": "Markets did the moving and polls gave them little to work with. Michigan Senate rose four points on Polymarket overnight after Rasmussen and Upswing both put El-Sayed up five, two polls our model leaves out as partisan, and Ohio, Georgia and Alaska drifted the same way while Iowa governor slipped. South Carolina's one new poll is a Patinkin Research Strategies survey with Andrews up five that the model also leaves out, and the four nonpartisan polls there still have Graham ahead on average. South Carolina, Virginia and Washington passed half their 2022 turnout, South Carolina at almost twice its 2022 pace on the last day of its early voting. The GDELT events pull started at 09:38 and was still running at the brief, so every race reads as quiet and may not be.",
     "written_at": "2026-10-31T10:05:13-04:00",
-    "n_flags": 6,
-    "n_explained": 5,
+    "n_flags": 2,
+    "n_explained": 2,
     "stale": null,
     "label": "inferred"
   },
@@ -3508,95 +3508,18 @@
     "kind": "item",
     "item_id": "senate_mi",
     "item": "Senate · MI",
-    "flag_kind": "alert",
+    "flag_kind": "market",
     "triggers": [
-      "markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%)",
-      "moved +5.5 points since the day's open by 12:06"
+      "markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%)"
     ],
-    "facts": "Flagged: markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%); moved +5.5 points since the day's open by 12:06. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Rasmussen Reports D+5 (LV); Upswing Research D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +5.0 points since the last pull (Polymarket 76.5 to 81.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "Rasmussen Reports",
-          "sponsor": null,
-          "start_date": "2026-10-28",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 745,
-          "d": 49.0,
-          "r": 44.0,
-          "margin_d": 5.0,
-          "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_michigan_senate"
-        },
-        {
-          "pollster": "Upswing Research",
-          "sponsor": null,
-          "start_date": "2026-10-24",
-          "end_date": "2026-10-28",
-          "population": "LV",
-          "sample": 505,
-          "d": 50.0,
-          "r": 45.0,
-          "margin_d": 5.0,
-          "source_url": "https://x.com/joshorton/status/2115883461076545615"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 4.33,
-        "n": 12,
-        "newest": "2026-10-29"
-      },
-      "market_path": [
-        [
-          "2026-10-31T01:10:16-04:00",
-          0.735
-        ],
-        [
-          "2026-10-31T03:51:56-04:00",
-          0.76
-        ],
-        [
-          "2026-10-31T06:33:53-04:00",
-          0.775
-        ],
-        [
-          "2026-10-31T07:18:55-04:00",
-          0.78
-        ],
-        [
-          "2026-10-31T08:00:00-04:00",
-          0.7725
-        ],
-        [
-          "2026-10-31T09:14:34-04:00",
-          0.775
-        ],
-        [
-          "2026-10-31T10:00:00-04:00",
-          0.78
-        ],
-        [
-          "2026-10-31T11:14:59-04:00",
-          0.7825
-        ],
-        [
-          "2026-10-31T12:06:50-04:00",
-          0.79
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -3615,14 +3538,245 @@
   {
     "as_of": "2026-10-31",
     "kind": "item",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%)"
+    ],
+    "facts": "Flagged: markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Ohio prices drift up a third day with no new poll",
+    "what_happened": "Retrieved: Polymarket moved from 70.5 to 73.5 since the last pull. The blended price went 71.0 to 72.0 between 01:10 and 10:00, under the intraday threshold. Retrieved: the market is up from 68.2 on Oct 29 to 72.2 today. Retrieved: no poll since Suffolk (LV, Oct 26, Brown plus 3). Retrieved: Inside Elections moved the race to Tilt D on Oct 30. The news feed had no articles because the events pull was still running.",
+    "why_it_moved": "Inferred: a continuation of the move that began with the Oct 30 rating change, alongside the same-direction overnight move in Michigan. No new reading of voters.",
+    "should_it_move_us": "No. Our model sits at 83.12 on eight nonpartisan polls and nothing it reads changed today.",
+    "trigger": "Whether a nonpartisan likely-voter poll fielded after Oct 26 shows Husted ahead.",
+    "sources": [
+      "https://polymarket.com/event/ohio-senate-election-winner",
+      "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf",
+      "https://insideelections.com/ratings/senate"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-31",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "A Democratic-firm poll has Andrews up five, early vote at 1.87 times 2022",
+    "what_happened": "Retrieved: Patinkin Research Strategies (LV, 500, Oct 27 to 29, toplines dated Oct 30) has Andrews 48, Graham 43. The PDF's sponsor line could not be read by script and a web search found no coverage of the poll. The model's pollster table marks Patinkin as partisan (D). Retrieved: the four nonpartisan polls the model counts run from a tie (NYT/Siena, Oct 26) to Graham plus 4 (Citadel and East Carolina), and the model margin is Graham plus 3.3. Retrieved: Polymarket held at 26.5 to 27 all morning. Retrieved: 948,592 ballots through Oct 30, 1.87 times the 2022 count four days out and 55.2 percent of everything cast in 2022. South Carolina does not register voters by party, so the board has no party gap for it. In-person early voting ends Oct 31. The news feed had no articles because the events pull was still running.",
+    "why_it_moved": "Inferred: the flag is the poll's 7-point gap to the prior average, and the poll is a Democratic-firm survey released the day before early voting ends. The early-vote flag is a turnout line crossed, not a new reading of who is ahead. Who has voted is not how they voted.",
+    "should_it_move_us": "No. Our model sits at 16.77, it left the Patinkin poll out as partisan (D), and the four nonpartisan polls it counts did not change.",
+    "trigger": "Whether the county early-vote file at the close of early voting shows the Harris counties' share at or above 2022's same point, or a nonpartisan likely-voter poll puts Andrews ahead.",
+    "sources": [
+      "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4c78764ecea053693b5e4/1793378183635/PRS.SCStatewidePoll.Toplines.103026.pdf",
+      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
+      "https://scvotes.gov/wp-content/uploads/2026/10/EV-Totals-10-30-26.csv",
+      "https://polymarket.com/event/south-carolina-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-31",
+    "kind": "item",
+    "item_id": "ev_va",
+    "item": "Early vote · Virginia",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Virginia passes half its 2022 turnout",
+    "what_happened": "Retrieved: 1,512,402 ballots through Oct 31 against 3,021,956 votes cast in all of 2022, 50.0 percent, from the UF Election Lab tracker. Retrieved: the line was 1,510,978 and the day added 103,448 ballots. Virginia does not register voters by party, so the board has no party gap or swing for it. There is no 2022 same-day count in the tracker, so no pace ratio.",
+    "why_it_moved": "Inferred: a turnout line crossed on the normal end-of-period climb, three days out. Who has voted is not how they voted.",
+    "should_it_move_us": "No. The board has no model number for a Virginia race and the early vote does not enter the model.",
+    "trigger": "Whether the final Virginia early-vote count exceeds the 2022 same-point count, if the tracker publishes one.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-10-31",
+    "kind": "item",
+    "item_id": "ev_wa",
+    "item": "Early vote · Washington",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Washington passes half its 2022 turnout",
+    "what_happened": "Retrieved: 1,658,115 ballots through Oct 30 against 3,067,686 votes cast in all of 2022, 54.1 percent, from the UF Election Lab tracker. Retrieved: the line was 1,533,843 and the day added 144,568 ballots. Washington votes entirely by mail and does not register voters by party, so the board has no party gap for it.",
+    "why_it_moved": "Inferred: a turnout line crossed in an all-mail state where returns rise fastest in the last week. Who has voted is not how they voted.",
+    "should_it_move_us": "No. The board has no model number for a Washington race and the early vote does not enter the model.",
+    "trigger": "Whether the final Washington return count exceeds the 2022 same-point count, if the tracker publishes one.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-01",
+    "kind": "lead",
+    "item_id": null,
+    "text": null,
+    "written_at": null,
+    "n_flags": 5,
+    "n_explained": 0,
+    "stale": "No brief written for this day yet.",
+    "label": null
+  },
+  {
+    "as_of": "2026-11-01",
+    "kind": "item",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "flag_kind": "benchmark",
+    "triggers": [
+      "Decision Desk moved +20.0 (50.0 to 70.0%)"
+    ],
+    "facts": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": -0.5,
+        "n": 6,
+        "newest": "2026-10-27"
+      },
+      "market_path": [
+        [
+          "2026-11-01T00:30:01-04:00",
+          0.6875
+        ],
+        [
+          "2026-11-01T02:34:05-05:00",
+          0.69
+        ],
+        [
+          "2026-11-01T04:13:12-05:00",
+          0.69
+        ],
+        [
+          "2026-11-01T07:03:03-05:00",
+          0.695
+        ],
+        [
+          "2026-11-01T08:54:38-05:00",
+          0.695
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-01",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "benchmark",
+    "triggers": [
+      "Decision Desk moved -20.0 (70.0 to 50.0%)"
+    ],
+    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.5,
+        "n": 8,
+        "newest": "2026-10-26"
+      },
+      "market_path": [
+        [
+          "2026-11-01T00:30:01-04:00",
+          0.805
+        ],
+        [
+          "2026-11-01T02:34:05-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T04:13:12-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T07:03:03-05:00",
+          0.8
+        ],
+        [
+          "2026-11-01T08:54:38-05:00",
+          0.8
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-01",
+    "kind": "item",
     "item_id": "senate_sc",
     "item": "Senate · SC",
     "flag_kind": "poll",
     "triggers": [
-      "Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls)",
-      "South Carolina passed half its 2022 turnout: 948,592 ballots through Oct 30, against 1,718,626 votes cast in all of 2022"
+      "Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls)"
     ],
-    "facts": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls); South Carolina passed half its 2022 turnout: 948,592 ballots through Oct 30, against 1,718,626 votes cast in all of 2022. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Patinkin Research Strategies D+5 (LV). Ballots in SC: 948,592 through Oct 30. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Patinkin Research Strategies D+5 (LV). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {
@@ -3647,7 +3801,7 @@
           "d": 48.0,
           "r": 43.0,
           "margin_d": 5.0,
-          "source_url": "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4c78764ecea053693b5e4/1793378183635/PRS.SCStatewidePoll.Toplines.103026.pdf"
+          "source_url": "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf"
         }
       ],
       "poll_average": {
@@ -3657,89 +3811,48 @@
       },
       "market_path": [
         [
-          "2026-10-31T01:10:16-04:00",
-          0.27
-        ],
-        [
-          "2026-10-31T03:51:56-04:00",
+          "2026-11-01T00:30:01-04:00",
           0.265
         ],
         [
-          "2026-10-31T06:33:53-04:00",
+          "2026-11-01T02:34:05-05:00",
           0.265
         ],
         [
-          "2026-10-31T07:18:55-04:00",
+          "2026-11-01T04:13:12-05:00",
           0.265
         ],
         [
-          "2026-10-31T08:00:00-04:00",
+          "2026-11-01T07:03:03-05:00",
           0.265
         ],
         [
-          "2026-10-31T09:14:34-04:00",
+          "2026-11-01T08:54:38-05:00",
           0.265
-        ],
-        [
-          "2026-10-31T10:00:00-04:00",
-          0.27
-        ],
-        [
-          "2026-10-31T11:14:59-04:00",
-          0.27
-        ],
-        [
-          "2026-10-31T12:06:50-04:00",
-          0.27
         ]
       ],
       "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "SC",
-          "date": "2026-10-30",
-          "days_before": 4,
-          "total": 948592,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-29",
-          "total_prev": 838420,
-          "swing_prev": null,
-          "source_url": "https://scvotes.gov/wp-content/uploads/2026/10/EV-Totals-10-30-26.csv",
-          "kind": "passed_half_2022_turnout",
-          "line": 859313,
-          "turnout_2022_total": 1718626
-        }
-      ]
+      "early_vote": []
     },
-    "explained": true,
-    "headline": "A Democratic-firm poll has Andrews up five, early vote at 1.87 times 2022",
-    "what_happened": "Retrieved: Patinkin Research Strategies (LV, 500, Oct 27 to 29, toplines dated Oct 30) has Andrews 48, Graham 43. The PDF's sponsor line could not be read by script and a web search found no coverage of the poll. The model's pollster table marks Patinkin as partisan (D). Retrieved: the four nonpartisan polls the model counts run from a tie (NYT/Siena, Oct 26) to Graham plus 4 (Citadel and East Carolina), and the model margin is Graham plus 3.3. Retrieved: Polymarket held at 26.5 to 27 all morning. Retrieved: 948,592 ballots through Oct 30, 1.87 times the 2022 count four days out and 55.2 percent of everything cast in 2022. South Carolina does not register voters by party, so the board has no party gap for it. In-person early voting ends Oct 31. The news feed had no articles because the events pull was still running.",
-    "why_it_moved": "Inferred: the flag is the poll's 7-point gap to the prior average, and the poll is a Democratic-firm survey released the day before early voting ends. The early-vote flag is a turnout line crossed, not a new reading of who is ahead. Who has voted is not how they voted.",
-    "should_it_move_us": "No. Our model sits at 16.77, it left the Patinkin poll out as partisan (D), and the four nonpartisan polls it counts did not change.",
-    "trigger": "Whether the county early-vote file at the close of early voting shows the Harris counties' share at or above 2022's same point, or a nonpartisan likely-voter poll puts Andrews ahead.",
-    "sources": [
-      "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4c78764ecea053693b5e4/1793378183635/PRS.SCStatewidePoll.Toplines.103026.pdf",
-      "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html",
-      "https://scvotes.gov/wp-content/uploads/2026/10/EV-Totals-10-30-26.csv",
-      "https://polymarket.com/event/south-carolina-senate-election-winner"
-    ],
-    "label": "inferred"
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
   },
   {
-    "as_of": "2026-10-31",
+    "as_of": "2026-11-01",
     "kind": "item",
-    "item_id": "senate_oh",
-    "item": "Senate · OH special",
-    "flag_kind": "market",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
+    "flag_kind": "rating",
     "triggers": [
-      "markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%)"
+      "Silver Bulletin changed its rating, Likely D to Solid D"
     ],
-    "facts": "Flagged: markets moved +3.0 points since the last pull (Polymarket 70.5 to 73.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {
@@ -3755,152 +3868,34 @@
       },
       "polls": [],
       "poll_average": {
-        "margin_d": 2.6,
-        "n": 10,
-        "newest": "2026-10-26"
+        "margin_d": 7.71,
+        "n": 7,
+        "newest": "2026-10-27"
       },
       "market_path": [
         [
-          "2026-10-31T01:10:16-04:00",
-          0.71
+          "2026-11-01T00:30:01-04:00",
+          0.9318
         ],
         [
-          "2026-10-31T03:51:56-04:00",
-          0.7125
+          "2026-11-01T02:34:05-05:00",
+          0.9295
         ],
         [
-          "2026-10-31T06:33:53-04:00",
-          0.715
+          "2026-11-01T04:13:12-05:00",
+          0.9298
         ],
         [
-          "2026-10-31T07:18:55-04:00",
-          0.715
+          "2026-11-01T07:03:03-05:00",
+          0.93
         ],
         [
-          "2026-10-31T08:00:00-04:00",
-          0.715
-        ],
-        [
-          "2026-10-31T09:14:34-04:00",
-          0.72
-        ],
-        [
-          "2026-10-31T10:00:00-04:00",
-          0.72
-        ],
-        [
-          "2026-10-31T11:14:59-04:00",
-          0.72
-        ],
-        [
-          "2026-10-31T12:06:50-04:00",
-          0.72
+          "2026-11-01T08:54:38-05:00",
+          0.93
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
-    },
-    "explained": true,
-    "headline": "Ohio prices drift up a third day with no new poll",
-    "what_happened": "Retrieved: Polymarket moved from 70.5 to 73.5 since the last pull. The blended price went 71.0 to 72.0 between 01:10 and 10:00, under the intraday threshold. Retrieved: the market is up from 68.2 on Oct 29 to 72.2 today. Retrieved: no poll since Suffolk (LV, Oct 26, Brown plus 3). Retrieved: Inside Elections moved the race to Tilt D on Oct 30. The news feed had no articles because the events pull was still running.",
-    "why_it_moved": "Inferred: a continuation of the move that began with the Oct 30 rating change, alongside the same-direction overnight move in Michigan. No new reading of voters.",
-    "should_it_move_us": "No. Our model sits at 83.12 on eight nonpartisan polls and nothing it reads changed today.",
-    "trigger": "Whether a nonpartisan likely-voter poll fielded after Oct 26 shows Husted ahead.",
-    "sources": [
-      "https://polymarket.com/event/ohio-senate-election-winner",
-      "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf",
-      "https://insideelections.com/ratings/senate"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-31",
-    "kind": "item",
-    "item_id": "ev_va",
-    "item": "Early vote · Virginia",
-    "flag_kind": "ballots",
-    "triggers": [
-      "Virginia passed half its 2022 turnout: 1,512,402 ballots through Oct 31, against 3,021,956 votes cast in all of 2022"
-    ],
-    "facts": "Flagged: Virginia passed half its 2022 turnout: 1,512,402 ballots through Oct 31, against 3,021,956 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in VA: 1,512,402 through Oct 31. No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": null,
-      "market_path": [],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "VA",
-          "date": "2026-10-31",
-          "days_before": 3,
-          "total": 1512402,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-30",
-          "total_prev": 1408954,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 1510978,
-          "turnout_2022_total": 3021956
-        }
-      ]
-    },
-    "explained": true,
-    "headline": "Virginia passes half its 2022 turnout",
-    "what_happened": "Retrieved: 1,512,402 ballots through Oct 31 against 3,021,956 votes cast in all of 2022, 50.0 percent, from the UF Election Lab tracker. Retrieved: the line was 1,510,978 and the day added 103,448 ballots. Virginia does not register voters by party, so the board has no party gap or swing for it. There is no 2022 same-day count in the tracker, so no pace ratio.",
-    "why_it_moved": "Inferred: a turnout line crossed on the normal end-of-period climb, three days out. Who has voted is not how they voted.",
-    "should_it_move_us": "No. The board has no model number for a Virginia race and the early vote does not enter the model.",
-    "trigger": "Whether the final Virginia early-vote count exceeds the 2022 same-point count, if the tracker publishes one.",
-    "sources": [
-      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-10-31",
-    "kind": "item",
-    "item_id": "ev_vt",
-    "item": "Early vote · Vermont",
-    "flag_kind": "ballots",
-    "triggers": [
-      "Vermont passed half its 2022 turnout: 146,298 ballots through Oct 31, against 291,955 votes cast in all of 2022"
-    ],
-    "facts": "Flagged: Vermont passed half its 2022 turnout: 146,298 ballots through Oct 31, against 291,955 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in VT: 146,298 through Oct 31. No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": null,
-      "market_path": [],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "VT",
-          "date": "2026-10-31",
-          "days_before": 3,
-          "total": 146298,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-30",
-          "total_prev": 139565,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 145978,
-          "turnout_2022_total": 291955
-        }
-      ]
     },
     "explained": false,
     "headline": null,
@@ -3912,15 +3907,15 @@
     "label": "retrieved"
   },
   {
-    "as_of": "2026-10-31",
+    "as_of": "2026-11-01",
     "kind": "item",
-    "item_id": "ev_wa",
-    "item": "Early vote · Washington",
+    "item_id": "ev_hi",
+    "item": "Early vote · Hawaii",
     "flag_kind": "ballots",
     "triggers": [
-      "Washington passed half its 2022 turnout: 1,658,115 ballots through Oct 30, against 3,067,686 votes cast in all of 2022"
+      "Hawaii passed half its 2022 turnout: 230,805 ballots through Oct 31, against 423,443 votes cast in all of 2022"
     ],
-    "facts": "Flagged: Washington passed half its 2022 turnout: 1,658,115 ballots through Oct 30, against 3,067,686 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in WA: 1,658,115 through Oct 30. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Hawaii passed half its 2022 turnout: 230,805 ballots through Oct 31, against 423,443 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in HI: 230,805 through Oct 31. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
@@ -3930,35 +3925,33 @@
       "events_window_hours": 48,
       "early_vote": [
         {
-          "state": "WA",
-          "date": "2026-10-30",
-          "days_before": 4,
-          "total": 1658115,
+          "state": "HI",
+          "date": "2026-10-31",
+          "days_before": 3,
+          "total": 230805,
           "gap": null,
           "gap_2022": null,
           "swing": null,
           "r_vs_2022": null,
           "r_share": null,
           "r_share_2022": null,
-          "prev_date": "2026-10-29",
-          "total_prev": 1513547,
+          "prev_date": "2026-10-30",
+          "total_prev": 210302,
           "swing_prev": null,
           "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
           "kind": "passed_half_2022_turnout",
-          "line": 1533843,
-          "turnout_2022_total": 3067686
+          "line": 211722,
+          "turnout_2022_total": 423443
         }
       ]
     },
-    "explained": true,
-    "headline": "Washington passes half its 2022 turnout",
-    "what_happened": "Retrieved: 1,658,115 ballots through Oct 30 against 3,067,686 votes cast in all of 2022, 54.1 percent, from the UF Election Lab tracker. Retrieved: the line was 1,533,843 and the day added 144,568 ballots. Washington votes entirely by mail and does not register voters by party, so the board has no party gap for it.",
-    "why_it_moved": "Inferred: a turnout line crossed in an all-mail state where returns rise fastest in the last week. Who has voted is not how they voted.",
-    "should_it_move_us": "No. The board has no model number for a Washington race and the early vote does not enter the model.",
-    "trigger": "Whether the final Washington return count exceeds the 2022 same-point count, if the tracker publishes one.",
-    "sources": [
-      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
-    ],
-    "label": "inferred"
+    "explained": false,
+    "headline": null,
+    "what_happened": null,
+    "why_it_moved": null,
+    "should_it_move_us": null,
+    "trigger": null,
+    "sources": [],
+    "label": "retrieved"
   }
 ]
