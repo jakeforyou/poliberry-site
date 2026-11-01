@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_ks",
     "item": "Governor · KS",
     "open": 27.5,
@@ -32,6 +32,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.255
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.255
       ]
     ],
     "source_url": "https://polymarket.com/event/kansas-governor-winner-2026",
@@ -40,7 +44,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_mi",
     "item": "Senate · MI",
     "open": 77.2,
@@ -71,6 +75,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.79
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.79
       ]
     ],
     "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
@@ -79,7 +87,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_me",
     "item": "Senate · ME",
     "open": 69.0,
@@ -110,6 +118,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.68
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.68
       ]
     ],
     "source_url": "https://polymarket.com/event/maine-senate-election-winner",
@@ -118,16 +130,59 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "open": 42.5,
+    "open_at": "2026-11-01T00:30:01-04:00",
+    "now": 43.5,
+    "polymarket": 0.435,
+    "kalshi": 0.435,
+    "move": 1.0,
+    "largest_move_today": 1.0,
+    "flagged": false,
+    "path": [
+      [
+        "2026-11-01T00:30:01-04:00",
+        0.425
+      ],
+      [
+        "2026-11-01T02:34:05-05:00",
+        0.425
+      ],
+      [
+        "2026-11-01T04:13:12-05:00",
+        0.425
+      ],
+      [
+        "2026-11-01T07:03:03-05:00",
+        0.425
+      ],
+      [
+        "2026-11-01T08:54:38-05:00",
+        0.425
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.435
+      ]
+    ],
+    "source_url": "https://polymarket.com/event/iowa-senate-election-winner",
+    "label": "retrieved",
+    "not_retrieved": null
+  },
+  {
+    "date": "2026-11-01",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_nv",
     "item": "Governor · NV",
     "open": 77.0,
     "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 76.2,
-    "polymarket": 0.78,
+    "now": 76.0,
+    "polymarket": 0.775,
     "kalshi": 0.745,
-    "move": -0.8,
-    "largest_move_today": 0.8,
+    "move": -1.0,
+    "largest_move_today": 1.0,
     "flagged": false,
     "path": [
       [
@@ -149,6 +204,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.7625
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.76
       ]
     ],
     "source_url": "https://polymarket.com/event/nevada-governor-winner-2026",
@@ -157,7 +216,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_ia",
     "item": "Governor · IA",
     "open": 84.5,
@@ -188,6 +247,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.8525
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.8525
       ]
     ],
     "source_url": "https://polymarket.com/event/iowa-governor-winner-2026",
@@ -196,7 +259,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_ga",
     "item": "Governor · GA",
     "open": 68.8,
@@ -227,6 +290,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.695
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.695
       ]
     ],
     "source_url": "https://polymarket.com/event/georgia-governor-winner-2026",
@@ -235,7 +302,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_dem_control",
     "item": "Senate control",
     "open": 71.5,
@@ -266,6 +333,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.72
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.72
       ]
     ],
     "source_url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
@@ -274,7 +345,136 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "open": 72.5,
+    "open_at": "2026-11-01T00:30:01-04:00",
+    "now": 72.0,
+    "polymarket": 0.735,
+    "kalshi": 0.705,
+    "move": -0.5,
+    "largest_move_today": 0.5,
+    "flagged": false,
+    "path": [
+      [
+        "2026-11-01T00:30:01-04:00",
+        0.725
+      ],
+      [
+        "2026-11-01T02:34:05-05:00",
+        0.725
+      ],
+      [
+        "2026-11-01T04:13:12-05:00",
+        0.725
+      ],
+      [
+        "2026-11-01T07:03:03-05:00",
+        0.725
+      ],
+      [
+        "2026-11-01T08:54:38-05:00",
+        0.725
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.72
+      ]
+    ],
+    "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
+    "label": "retrieved",
+    "not_retrieved": null
+  },
+  {
+    "date": "2026-11-01",
+    "at": "2026-11-01T10:00:00-05:00",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "open": 51.0,
+    "open_at": "2026-11-01T00:30:01-04:00",
+    "now": 51.5,
+    "polymarket": 0.525,
+    "kalshi": 0.505,
+    "move": 0.5,
+    "largest_move_today": 0.5,
+    "flagged": false,
+    "path": [
+      [
+        "2026-11-01T00:30:01-04:00",
+        0.51
+      ],
+      [
+        "2026-11-01T02:34:05-05:00",
+        0.515
+      ],
+      [
+        "2026-11-01T04:13:12-05:00",
+        0.51
+      ],
+      [
+        "2026-11-01T07:03:03-05:00",
+        0.51
+      ],
+      [
+        "2026-11-01T08:54:38-05:00",
+        0.51
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.515
+      ]
+    ],
+    "source_url": "https://polymarket.com/event/kansas-senate-election-winner",
+    "label": "retrieved",
+    "not_retrieved": null
+  },
+  {
+    "date": "2026-11-01",
+    "at": "2026-11-01T10:00:00-05:00",
+    "item_id": "gov_wi",
+    "item": "Governor · WI",
+    "open": 84.0,
+    "open_at": "2026-11-01T00:30:01-04:00",
+    "now": 83.5,
+    "polymarket": 0.845,
+    "kalshi": 0.825,
+    "move": -0.5,
+    "largest_move_today": 0.5,
+    "flagged": false,
+    "path": [
+      [
+        "2026-11-01T00:30:01-04:00",
+        0.84
+      ],
+      [
+        "2026-11-01T02:34:05-05:00",
+        0.84
+      ],
+      [
+        "2026-11-01T04:13:12-05:00",
+        0.84
+      ],
+      [
+        "2026-11-01T07:03:03-05:00",
+        0.84
+      ],
+      [
+        "2026-11-01T08:54:38-05:00",
+        0.8375
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.835
+      ]
+    ],
+    "source_url": "https://polymarket.com/event/wisconsin-governor-winner-2026",
+    "label": "retrieved",
+    "not_retrieved": null
+  },
+  {
+    "date": "2026-11-01",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_oh",
     "item": "Governor · OH",
     "open": 80.5,
@@ -305,6 +505,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.8
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.8
       ]
     ],
     "source_url": "https://polymarket.com/event/ohio-governor-winner-2026",
@@ -313,7 +517,50 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "open": 5.7,
+    "open_at": "2026-11-01T00:30:01-04:00",
+    "now": 6.2,
+    "polymarket": 0.0525,
+    "kalshi": 0.071,
+    "move": 0.5,
+    "largest_move_today": 0.5,
+    "flagged": false,
+    "path": [
+      [
+        "2026-11-01T00:30:01-04:00",
+        0.0565
+      ],
+      [
+        "2026-11-01T02:34:05-05:00",
+        0.0548
+      ],
+      [
+        "2026-11-01T04:13:12-05:00",
+        0.054
+      ],
+      [
+        "2026-11-01T07:03:03-05:00",
+        0.0532
+      ],
+      [
+        "2026-11-01T08:54:38-05:00",
+        0.059
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.0617
+      ]
+    ],
+    "source_url": "https://polymarket.com/event/south-carolina-governor-winner-2026",
+    "label": "retrieved",
+    "not_retrieved": null
+  },
+  {
+    "date": "2026-11-01",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_az",
     "item": "Governor · AZ",
     "open": 91.9,
@@ -344,6 +591,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.9163
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.9163
       ]
     ],
     "source_url": "https://polymarket.com/event/arizona-governor-winner-2026",
@@ -352,7 +603,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_ak",
     "item": "Senate · AK",
     "open": 71.8,
@@ -383,6 +634,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.72
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.72
       ]
     ],
     "source_url": "https://polymarket.com/event/alaska-senate-election-winner",
@@ -391,46 +646,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
-    "item_id": "gov_wi",
-    "item": "Governor · WI",
-    "open": 84.0,
-    "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 83.8,
-    "polymarket": 0.85,
-    "kalshi": 0.825,
-    "move": -0.2,
-    "largest_move_today": 0.2,
-    "flagged": false,
-    "path": [
-      [
-        "2026-11-01T00:30:01-04:00",
-        0.84
-      ],
-      [
-        "2026-11-01T02:34:05-05:00",
-        0.84
-      ],
-      [
-        "2026-11-01T04:13:12-05:00",
-        0.84
-      ],
-      [
-        "2026-11-01T07:03:03-05:00",
-        0.84
-      ],
-      [
-        "2026-11-01T08:54:38-05:00",
-        0.8375
-      ]
-    ],
-    "source_url": "https://polymarket.com/event/wisconsin-governor-winner-2026",
-    "label": "retrieved",
-    "not_retrieved": null
-  },
-  {
-    "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_mi",
     "item": "Governor · MI",
     "open": 93.2,
@@ -461,6 +677,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.93
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.93
       ]
     ],
     "source_url": "https://polymarket.com/event/michigan-governor-winner-2026",
@@ -469,53 +689,14 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
-    "item_id": "gov_sc",
-    "item": "Governor · SC",
-    "open": 5.7,
-    "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 5.9,
-    "polymarket": 0.0525,
-    "kalshi": 0.0655,
-    "move": 0.2,
-    "largest_move_today": 0.3,
-    "flagged": false,
-    "path": [
-      [
-        "2026-11-01T00:30:01-04:00",
-        0.0565
-      ],
-      [
-        "2026-11-01T02:34:05-05:00",
-        0.0548
-      ],
-      [
-        "2026-11-01T04:13:12-05:00",
-        0.054
-      ],
-      [
-        "2026-11-01T07:03:03-05:00",
-        0.0532
-      ],
-      [
-        "2026-11-01T08:54:38-05:00",
-        0.059
-      ]
-    ],
-    "source_url": "https://polymarket.com/event/south-carolina-governor-winner-2026",
-    "label": "retrieved",
-    "not_retrieved": null
-  },
-  {
-    "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "gov_nh",
     "item": "Governor · NH",
     "open": 7.2,
     "open_at": "2026-11-01T00:30:01-04:00",
     "now": 7.3,
     "polymarket": 0.0765,
-    "kalshi": 0.07,
+    "kalshi": 0.0705,
     "move": 0.2,
     "largest_move_today": 0.3,
     "flagged": false,
@@ -539,6 +720,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.0733
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.0735
       ]
     ],
     "source_url": "https://polymarket.com/event/new-hampshire-governor-winner-2026",
@@ -547,52 +732,56 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
-    "item_id": "senate_nc",
-    "item": "Senate · NC",
-    "open": 97.4,
+    "at": "2026-11-01T10:00:00-05:00",
+    "item_id": "house_dem_majority",
+    "item": "House majority",
+    "open": 93.8,
     "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 97.3,
-    "polymarket": 0.977,
-    "kalshi": 0.9695,
-    "move": -0.1,
+    "now": 93.9,
+    "polymarket": 0.945,
+    "kalshi": 0.933,
+    "move": 0.1,
     "largest_move_today": 0.1,
     "flagged": false,
     "path": [
       [
         "2026-11-01T00:30:01-04:00",
-        0.974
+        0.9383
       ],
       [
         "2026-11-01T02:34:05-05:00",
-        0.9745
+        0.9383
       ],
       [
         "2026-11-01T04:13:12-05:00",
-        0.9745
+        0.9383
       ],
       [
         "2026-11-01T07:03:03-05:00",
-        0.9732
+        0.9387
       ],
       [
         "2026-11-01T08:54:38-05:00",
-        0.9732
+        0.9385
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.939
       ]
     ],
-    "source_url": "https://polymarket.com/event/north-carolina-senate-election-winner",
+    "source_url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
     "label": "retrieved",
     "not_retrieved": null
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_ga",
     "item": "Senate · GA",
     "open": 97.2,
     "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 97.2,
-    "polymarket": 0.9745,
+    "now": 97.3,
+    "polymarket": 0.975,
     "kalshi": 0.9705,
     "move": 0.1,
     "largest_move_today": 0.1,
@@ -617,6 +806,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.9725
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.9728
       ]
     ],
     "source_url": "https://polymarket.com/event/georgia-senate-election-winner",
@@ -625,7 +818,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_nh",
     "item": "Senate · NH",
     "open": 93.1,
@@ -656,6 +849,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.9305
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.9305
       ]
     ],
     "source_url": "https://polymarket.com/event/new-hampshire-senate-election-winner",
@@ -664,7 +861,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_mn",
     "item": "Senate · MN",
     "open": 91.6,
@@ -695,6 +892,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.9178
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.9178
       ]
     ],
     "source_url": "https://polymarket.com/event/minnesota-senate-election-winner",
@@ -703,85 +904,50 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
-    "item_id": "house_dem_majority",
-    "item": "House majority",
-    "open": 93.8,
+    "at": "2026-11-01T10:00:00-05:00",
+    "item_id": "senate_nc",
+    "item": "Senate · NC",
+    "open": 97.4,
     "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 93.8,
-    "polymarket": 0.945,
-    "kalshi": 0.932,
-    "move": 0.0,
-    "largest_move_today": 0.0,
+    "now": 97.4,
+    "polymarket": 0.9765,
+    "kalshi": 0.9705,
+    "move": -0.0,
+    "largest_move_today": 0.1,
     "flagged": false,
     "path": [
       [
         "2026-11-01T00:30:01-04:00",
-        0.9383
+        0.974
       ],
       [
         "2026-11-01T02:34:05-05:00",
-        0.9383
+        0.9745
       ],
       [
         "2026-11-01T04:13:12-05:00",
-        0.9383
+        0.9745
       ],
       [
         "2026-11-01T07:03:03-05:00",
-        0.9387
+        0.9732
       ],
       [
         "2026-11-01T08:54:38-05:00",
-        0.9385
+        0.9732
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.9735
       ]
     ],
-    "source_url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
+    "source_url": "https://polymarket.com/event/north-carolina-senate-election-winner",
     "label": "retrieved",
     "not_retrieved": null
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
-    "item_id": "senate_oh",
-    "item": "Senate · OH special",
-    "open": 72.5,
-    "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 72.5,
-    "polymarket": 0.735,
-    "kalshi": 0.715,
-    "move": 0.0,
-    "largest_move_today": 0.0,
-    "flagged": false,
-    "path": [
-      [
-        "2026-11-01T00:30:01-04:00",
-        0.725
-      ],
-      [
-        "2026-11-01T02:34:05-05:00",
-        0.725
-      ],
-      [
-        "2026-11-01T04:13:12-05:00",
-        0.725
-      ],
-      [
-        "2026-11-01T07:03:03-05:00",
-        0.725
-      ],
-      [
-        "2026-11-01T08:54:38-05:00",
-        0.725
-      ]
-    ],
-    "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
-    "label": "retrieved",
-    "not_retrieved": null
-  },
-  {
-    "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_tx",
     "item": "Senate · TX",
     "open": 70.0,
@@ -812,6 +978,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.7
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.7
       ]
     ],
     "source_url": "https://polymarket.com/event/texas-senate-election-winner",
@@ -820,46 +990,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
-    "item_id": "senate_ia",
-    "item": "Senate · IA",
-    "open": 42.5,
-    "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 42.5,
-    "polymarket": 0.415,
-    "kalshi": 0.435,
-    "move": 0.0,
-    "largest_move_today": 0.0,
-    "flagged": false,
-    "path": [
-      [
-        "2026-11-01T00:30:01-04:00",
-        0.425
-      ],
-      [
-        "2026-11-01T02:34:05-05:00",
-        0.425
-      ],
-      [
-        "2026-11-01T04:13:12-05:00",
-        0.425
-      ],
-      [
-        "2026-11-01T07:03:03-05:00",
-        0.425
-      ],
-      [
-        "2026-11-01T08:54:38-05:00",
-        0.425
-      ]
-    ],
-    "source_url": "https://polymarket.com/event/iowa-senate-election-winner",
-    "label": "retrieved",
-    "not_retrieved": null
-  },
-  {
-    "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_sc",
     "item": "Senate · SC",
     "open": 26.5,
@@ -890,6 +1021,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.265
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.265
       ]
     ],
     "source_url": "https://polymarket.com/event/south-carolina-senate-election-winner",
@@ -898,7 +1033,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "senate_fl",
     "item": "Senate · FL special",
     "open": 10.5,
@@ -929,6 +1064,10 @@
       [
         "2026-11-01T08:54:38-05:00",
         0.105
+      ],
+      [
+        "2026-11-01T10:00:00-05:00",
+        0.105
       ]
     ],
     "source_url": "https://polymarket.com/event/florida-senate-election-winner",
@@ -937,46 +1076,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
-    "item_id": "senate_ks",
-    "item": "Senate · KS",
-    "open": 51.0,
-    "open_at": "2026-11-01T00:30:01-04:00",
-    "now": 51.0,
-    "polymarket": 0.515,
-    "kalshi": 0.505,
-    "move": 0.0,
-    "largest_move_today": 0.5,
-    "flagged": false,
-    "path": [
-      [
-        "2026-11-01T00:30:01-04:00",
-        0.51
-      ],
-      [
-        "2026-11-01T02:34:05-05:00",
-        0.515
-      ],
-      [
-        "2026-11-01T04:13:12-05:00",
-        0.51
-      ],
-      [
-        "2026-11-01T07:03:03-05:00",
-        0.51
-      ],
-      [
-        "2026-11-01T08:54:38-05:00",
-        0.51
-      ]
-    ],
-    "source_url": "https://polymarket.com/event/kansas-senate-election-winner",
-    "label": "retrieved",
-    "not_retrieved": null
-  },
-  {
-    "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "ga_senate_margin",
     "item": "Georgia Senate margin",
     "open": null,
@@ -989,7 +1089,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "ga_margin_above_4",
     "item": "Ossoff wins GA by more than 4",
     "open": null,
@@ -1002,7 +1102,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "sc_senate_margin",
     "item": "SC Senate margin",
     "open": null,
@@ -1015,7 +1115,7 @@
   },
   {
     "date": "2026-11-01",
-    "at": "2026-11-01T08:54:38-05:00",
+    "at": "2026-11-01T10:00:00-05:00",
     "item_id": "sc_governor_margin",
     "item": "SC governor margin",
     "open": null,

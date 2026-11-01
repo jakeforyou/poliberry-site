@@ -2367,6 +2367,10 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.695
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.695
         ]
       ],
       "events_window_hours": 48,
@@ -2391,17 +2395,7 @@
     "kind": "benchmark",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
         "margin_d": 2.5,
@@ -2428,12 +2422,16 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.8
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.8
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2502,6 +2500,10 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.265
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.265
         ]
       ],
       "events_window_hours": 48,
@@ -2526,17 +2528,7 @@
     "kind": "rating",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
         "margin_d": 7.71,
@@ -2563,12 +2555,16 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.93
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.93
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },

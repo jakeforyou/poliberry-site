@@ -9906,7 +9906,7 @@
     "old": null,
     "new": null,
     "delta_text": "",
-    "reading": "27 changes since 2026-10-31 (20 vote, 4 market, 2 DDHQ, 1 rating). No forecast number changed. Biggest: DDHQ: Governor · GA; DDHQ: Governor · OH; Silver Bulletin: Governor · MI.",
+    "reading": "26 changes since 2026-10-31 (20 vote, 3 market, 2 DDHQ, 1 rating). No forecast number changed. Biggest: DDHQ: Governor · GA; DDHQ: Governor · OH; Silver Bulletin: Governor · MI.",
     "tone": null,
     "magnitude": 1000,
     "source_url": null,
@@ -9921,12 +9921,12 @@
     "old": null,
     "new": null,
     "delta_text": "House 90 · Senate 55",
-    "reading": "The outcome signals are a wash: 4 moved toward Democrats and 2 toward Republicans, with no net lean; the biggest single move was DDHQ: Governor · GA, 50.0 to 70.0%, toward Democrats. Early-vote composition shifted in 13 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 26.2 against the 30 percent trigger by Oct 25 (3.8 away); our widest gap to the markets is Governor · NV at 30 points. The outlook stands at House 90, Senate 55.",
+    "reading": "The outcome signals are a wash: 3 moved toward Democrats and 2 toward Republicans, with no net lean; the biggest single move was DDHQ: Governor · GA, 50.0 to 70.0%, toward Democrats. Early-vote composition shifted in 13 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 26.2 against the 30 percent trigger by Oct 25 (3.8 away); our widest gap to the markets is Governor · NV at 30 points. The outlook stands at House 90, Senate 55.",
     "tone": null,
     "magnitude": 999,
     "source_url": null,
     "lean": "neither party",
-    "weight_d": 162.5,
+    "weight_d": 152.5,
     "weight_r": 140.0,
     "forecast_changes": 0,
     "flags_reached": 0,
@@ -10242,22 +10242,6 @@
     "as_of": "2026-11-01",
     "prev_as_of": "2026-10-31",
     "category": "market",
-    "item": "Markets: Governor · NV",
-    "item_id": "gov_nv",
-    "old": null,
-    "new": null,
-    "delta_text": "Polymarket 76.5 to 78.5%",
-    "reading": "Polymarket moved +2.0 toward the Democrat. Our number is 46.0; gap to the market now -32.5. ",
-    "tone": "D",
-    "magnitude": 10.0,
-    "source_url": "https://polymarket.com/event/nevada-governor-winner-2026",
-    "move": 2.0,
-    "n": 22
-  },
-  {
-    "as_of": "2026-11-01",
-    "prev_as_of": "2026-10-31",
-    "category": "market",
     "item": "Markets: Governor · KS",
     "item_id": "gov_ks",
     "old": null,
@@ -10268,7 +10252,7 @@
     "magnitude": 10.0,
     "source_url": "https://polymarket.com/event/kansas-governor-winner-2026",
     "move": -2.0,
-    "n": 23
+    "n": 22
   },
   {
     "as_of": "2026-11-01",
@@ -10283,7 +10267,7 @@
     "tone": "R",
     "magnitude": 9.8,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 24
+    "n": 23
   },
   {
     "as_of": "2026-11-01",
@@ -10298,7 +10282,7 @@
     "tone": "R",
     "magnitude": 9.3,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 25
+    "n": 24
   },
   {
     "as_of": "2026-11-01",
@@ -10313,7 +10297,7 @@
     "tone": "D",
     "magnitude": 8.3,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 26
+    "n": 25
   },
   {
     "as_of": "2026-11-01",
@@ -10328,7 +10312,7 @@
     "tone": "D",
     "magnitude": 8.1,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 27
+    "n": 26
   },
   {
     "as_of": "2026-11-01",
@@ -10343,6 +10327,6 @@
     "tone": null,
     "magnitude": 8.1,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 28
+    "n": 27
   }
 ]

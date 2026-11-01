@@ -3634,12 +3634,27 @@
     "as_of": "2026-11-01",
     "kind": "lead",
     "item_id": null,
-    "text": null,
-    "written_at": null,
+    "text": "Decision Desk's governor column swapped two races overnight. Georgia went from Toss-up to Lean D and Ohio from Lean D to Toss-up, both logged on Wikipedia's ratings table at 18:52 on Oct 31, and Decision Desk's own pages returned errors to every fetch this morning, so the change is retrieved secondhand. No new poll in either state explains it, and Ohio now sits a step below every other rater while Georgia joins Silver Bulletin as the second Lean D. Polymarket followed in Georgia, up 2.5 to 70.5, and did not move in Ohio. Silver Bulletin moved Michigan governor to Solid D, Texas finished early voting at 93.4 percent of its whole 2022 vote, Hawaii passed half, and the GDELT events pull was still running at the brief, so every race reads as quiet and may not be.",
+    "written_at": "2026-11-01T10:05:11-05:00",
     "n_flags": 5,
-    "n_explained": 0,
-    "stale": "No brief written for this day yet.",
-    "label": null
+    "n_explained": 5,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-01",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Decision Desk swapped Georgia and Ohio, and no one polled either.",
+    "vibe": "Decision Desk moved Georgia up to Lean D and Ohio down to Toss-up with no new poll in either, Polymarket followed in Georgia only, and Texas closed early voting at 93.4 percent of its entire 2022 vote.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://polymarket.com/event/georgia-governor-winner-2026",
+      "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "written_at": "2026-11-01T10:05:11-05:00",
+    "label": "inferred"
   },
   {
     "as_of": "2026-11-01",
@@ -3690,19 +3705,27 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.695
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.695
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Decision Desk moves Georgia to Lean D, market follows",
+    "what_happened": "Wikipedia's 2026 governor ratings table changed the Decision Desk column for Georgia from Toss-up to Lean D, dated Oct 31 and logged in the page history at 18:52 on Oct 31 (retrieved). Decision Desk's own ratings and forecast pages returned 404 and 429 to this morning's fetches, so the move is not confirmed at the source (retrieved). The other raters are unchanged: Cook, Fox, NBC, RCP and Sabato Toss-up, Inside Elections Tilt D, Silver Bulletin Lean D (retrieved). No Georgia poll has ended since State Navigate on Oct 27, Bottoms up 3 (retrieved). Polymarket rose from 68.0 to 70.5 overnight, with the intraday path flat at 69.5 since 07:03 (retrieved).",
+    "why_it_moved": "The flag is the rating change itself, worth 20 points on the fixed table. Nothing in the polls or the feed changed, so this reads as Decision Desk's final pass, or a table correction, not a reaction to news (inferred). The market's 2.5 points followed the rating (inferred).",
+    "should_it_move_us": "No. Our model sits at 55.84 on fundamentals and three nonpartisan polls (State Navigate, ActiVote, University of Georgia), leaves out Echelon, Quantus and InsiderAdvantage as partisan (R), and none of what it reads changed today.",
+    "trigger": "Decision Desk's own page showing Georgia at Lean D, or a nonpartisan Georgia poll with Bottoms ahead by more than the 3 points State Navigate found.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_gubernatorial_elections&action=history",
+      "https://polymarket.com/event/georgia-governor-winner-2026"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-11-01",
@@ -3713,20 +3736,10 @@
     "triggers": [
       "Decision Desk moved -20.0 (70.0 to 50.0%)"
     ],
-    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
         "margin_d": 2.5,
@@ -3753,19 +3766,27 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.8
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.8
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Decision Desk drops Ohio to Toss-up, alone among raters",
+    "what_happened": "The same Wikipedia edit at 18:52 on Oct 31 changed the Decision Desk column for Ohio from Lean D to Toss-up (retrieved). Decision Desk's own pages were unreachable to scripts this morning (retrieved). Every other rater on the table has Acton ahead: Cook, Fox, NBC and Sabato Lean D, Inside Elections Tilt D, Silver Bulletin Likely D, RCP Toss-up (retrieved). The Decision Desk Ohio column read Toss-up once before, on the Oct 28 dated pull, and went back to Lean D the next day (retrieved). No Ohio poll has ended since Suffolk on Oct 26, Acton up 4 (retrieved). Polymarket sat at 80.0 all night and did not react (retrieved).",
+    "why_it_moved": "A rating change with no poll or event behind it, moving against every other rater and against the market. Either Decision Desk's closing call or a table edit, and the Oct 28 wobble says the column has been unstable (inferred).",
+    "should_it_move_us": "No. Our model sits at 70.93 on fundamentals and eight nonpartisan polls, leaves out RedBox, Echelon and co/efficient as partisan, and nothing it reads changed. Ohio is still the race where our number and the market disagree most, and this rating lands between them.",
+    "trigger": "Decision Desk's own Ohio page showing Toss-up with a stated reason, or a nonpartisan Ohio poll with Ramaswamy ahead.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_gubernatorial_elections&action=history",
+      "https://polymarket.com/event/ohio-governor-winner-2026"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-11-01",
@@ -3829,19 +3850,26 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.265
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.265
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "The Patinkin poll flags a second day, nothing else moved",
+    "what_happened": "The flag is the same Patinkin Research Strategies poll as yesterday: Oct 27 to 29, 500 likely voters, Andrews 48 Graham 43, released Oct 30 for Project VOTE (retrieved). It flags again because its end date is now inside the average window, 7 points from the prior nonpartisan average (retrieved). No new South Carolina poll ended on Oct 30 or 31 (retrieved). Polymarket held at 26.5 through the night (retrieved). The feed for South Carolina returned no articles (retrieved).",
+    "why_it_moved": "A repeat flag on one Democratic-sponsored poll. Nothing new since yesterday's reading (inferred).",
+    "should_it_move_us": "No. Our model sits at 16.23 on four nonpartisan polls (NYT/Siena even, Citadel R+4, Targoz R+1, East Carolina R+4) and left the Patinkin poll out as partisan (D), the same as yesterday.",
+    "trigger": "A nonpartisan South Carolina poll ending after Oct 29 with Andrews ahead.",
+    "sources": [
+      "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf",
+      "https://polymarket.com/event/south-carolina-senate-election-winner"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-11-01",
@@ -3852,20 +3880,10 @@
     "triggers": [
       "Silver Bulletin changed its rating, Likely D to Solid D"
     ],
-    "facts": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
         "margin_d": 7.71,
@@ -3892,19 +3910,26 @@
         [
           "2026-11-01T08:54:38-05:00",
           0.93
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.93
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Silver Bulletin calls Michigan governor Solid D",
+    "what_happened": "Wikipedia's ratings table changed the Silver Bulletin column for Michigan from Likely D to Solid D, dated Oct 31, in the same 18:52 edit (retrieved). The other raters are unchanged: Sabato and Decision Desk Likely D, Cook, Fox, NBC, RCP and Inside Elections Lean D (retrieved). No Michigan governor poll has ended since SSRS and Mitchell on Oct 27, Benson up 12 and up 5 (retrieved). Polymarket sat at 93.0, down a few tenths overnight (retrieved).",
+    "why_it_moved": "A rater's closing upgrade on the existing polls, which average Benson ahead by about 8 across the six the model counts. No new information (inferred).",
+    "should_it_move_us": "No. Our model sits at 94.34 on six nonpartisan polls and leaves out Data for Progress as partisan (D), and it already reads the race about where Silver Bulletin now does.",
+    "trigger": "A nonpartisan Michigan poll with James within 3.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+      "https://polymarket.com/event/michigan-governor-winner-2026"
+    ],
+    "label": "inferred"
   },
   {
     "as_of": "2026-11-01",
@@ -3945,13 +3970,15 @@
         }
       ]
     },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
+    "explained": true,
+    "headline": "Hawaii passes half its 2022 turnout",
+    "what_happened": "Hawaii had 230,805 ballots through Oct 31, three days out, against 423,443 votes cast in all of 2022, so it crossed the half line of 211,722 (retrieved, University of Florida Election Lab). The day before it had 210,302, just under the line (retrieved). Hawaii votes almost entirely by mail and does not register voters by party, so the board shows no party gap for it (retrieved).",
+    "why_it_moved": "The count crossed a fixed line. This is a reading of how many have voted, not of how they voted, and Hawaii has no party registration to read even that (inferred).",
+    "should_it_move_us": "No. The board has no model number for a Hawaii race and the early vote does not enter the model.",
+    "trigger": "None for the board. A Hawaii total above the whole 2022 count before Election Day would be a turnout story, not a forecast one.",
+    "sources": [
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
   }
 ]
