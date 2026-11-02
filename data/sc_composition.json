@@ -97,13 +97,13 @@
       }
     ],
     "race": {
-      "black_ballots_2026": 10242,
-      "all_ballots_2026": 37868,
-      "black_share_2026": 27.05,
+      "black_ballots_2026": 11143,
+      "all_ballots_2026": 40732,
+      "black_share_2026": 27.36,
       "black_ballots_2022_final": 14166,
       "all_ballots_2022_final": 58583,
       "black_share_2022_final": 24.18,
-      "white_share_2026": 70.21,
+      "white_share_2026": 69.84,
       "note": "mail ballots returned only; the in-person early vote carries no race; 2022 is the final report, not the same point",
       "label_kind": "retrieved"
     },
@@ -138,15 +138,15 @@
     },
     "sources": {
       "ev_2026": {
-        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-11-01T1918-EV-Totals-10-30-26.csv",
+        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-11-02T0930-EV-Totals-10-30-26.csv",
         "source_url": "https://scvotes.gov/elections-statistics/voter-participation/"
       },
       "archive_2022": {
-        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-11-01T1918-2022-Historical-Absentee-EV-Reports.zip",
+        "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-11-02T0930-2022-Historical-Absentee-EV-Reports.zip",
         "source_url": "https://scvotes.gov/wp-content/uploads/2022/12/2022-Historical-Absentee-EV-Reports.zip"
       },
       "race_2026": {
-        "source_url": "https://scvotes.gov/wp-content/uploads/2026/10/2026-10-30-Absentee-Statistics-by-Race-for-Election.xlsx"
+        "source_url": "https://scvotes.gov/wp-content/uploads/2026/11/2026-11-2-Absentee-Statistics-by-Race-for-Election.xlsx"
       },
       "primary_participation_2026": {
         "file": "/Users/jakeberry/Desktop/poliberry/data/raw/early_vote_sc/2026-10-21T2100-Political-Party-Participation-Through-060526.csv",

@@ -3636,8 +3636,8 @@
     "item_id": null,
     "text": "Decision Desk's governor column swapped two races overnight. Georgia went from Toss-up to Lean D and Ohio from Lean D to Toss-up, both logged on Wikipedia's ratings table at 18:52 on Oct 31, and Decision Desk's own pages returned errors to every fetch this morning, so the change is retrieved secondhand. No new poll in either state explains it, and Ohio now sits a step below every other rater while Georgia joins Silver Bulletin as the second Lean D. Polymarket followed in Georgia, up 2.5 to 70.5, and did not move in Ohio. Silver Bulletin moved Michigan governor to Solid D, Texas finished early voting at 93.4 percent of its whole 2022 vote, Hawaii passed half, and the GDELT events pull was still running at the brief, so every race reads as quiet and may not be.",
     "written_at": "2026-11-01T10:05:11-05:00",
-    "n_flags": 7,
-    "n_explained": 5,
+    "n_flags": 4,
+    "n_explained": 3,
     "stale": null,
     "label": "inferred"
   },
@@ -3665,93 +3665,14 @@
     "triggers": [
       "Decision Desk moved +20.0 (50.0 to 70.0%)"
     ],
-    "facts": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
-      "poll_average": {
-        "margin_d": -0.5,
-        "n": 6,
-        "newest": "2026-10-27"
-      },
-      "market_path": [
-        [
-          "2026-11-01T00:30:01-04:00",
-          0.6875
-        ],
-        [
-          "2026-11-01T02:34:05-05:00",
-          0.69
-        ],
-        [
-          "2026-11-01T04:13:12-05:00",
-          0.69
-        ],
-        [
-          "2026-11-01T07:03:03-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T08:54:38-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T10:00:00-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T11:00:00-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T12:07:14-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T13:21:21-05:00",
-          0.69
-        ],
-        [
-          "2026-11-01T14:12:05-05:00",
-          0.6975
-        ],
-        [
-          "2026-11-01T15:16:33-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T16:09:42-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T17:01:19-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T18:24:33-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T19:17:49-05:00",
-          0.695
-        ],
-        [
-          "2026-11-01T20:00:00-05:00",
-          0.695
-        ]
-      ],
-      "events_window_hours": 48,
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -3776,130 +3697,14 @@
     "triggers": [
       "Decision Desk moved -20.0 (70.0 to 50.0%)"
     ],
-    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: ActiVote D+2 (LV); InsiderAdvantage D+3 (LV); YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "ActiVote",
-          "sponsor": null,
-          "start_date": "2026-10-16",
-          "end_date": "2026-10-31",
-          "population": "LV",
-          "sample": 400,
-          "d": 51.0,
-          "r": 49.0,
-          "margin_d": 2.0,
-          "source_url": "https://www.activote.net/polls/2026/oh-governor/"
-        },
-        {
-          "pollster": "InsiderAdvantage",
-          "sponsor": null,
-          "start_date": "2026-10-29",
-          "end_date": "2026-10-30",
-          "population": "LV",
-          "sample": 1200,
-          "d": 49.0,
-          "r": 46.0,
-          "margin_d": 3.0,
-          "source_url": "https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/"
-        },
-        {
-          "pollster": "YouGov",
-          "sponsor": null,
-          "start_date": "2026-10-26",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 2090,
-          "d": 52.0,
-          "r": 46.0,
-          "margin_d": 6.0,
-          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.82,
-        "n": 11,
-        "newest": "2026-10-31"
-      },
-      "market_path": [
-        [
-          "2026-11-01T00:30:01-04:00",
-          0.805
-        ],
-        [
-          "2026-11-01T02:34:05-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T04:13:12-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T07:03:03-05:00",
-          0.8
-        ],
-        [
-          "2026-11-01T08:54:38-05:00",
-          0.8
-        ],
-        [
-          "2026-11-01T10:00:00-05:00",
-          0.8
-        ],
-        [
-          "2026-11-01T11:00:00-05:00",
-          0.8
-        ],
-        [
-          "2026-11-01T12:07:14-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T13:21:21-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T14:12:05-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T15:16:33-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T16:09:42-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T17:01:19-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T18:24:33-05:00",
-          0.8
-        ],
-        [
-          "2026-11-01T19:17:49-05:00",
-          0.805
-        ],
-        [
-          "2026-11-01T20:00:00-05:00",
-          0.805
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -3920,366 +3725,18 @@
     "kind": "item",
     "item_id": "senate_mi",
     "item": "Senate · MI",
-    "flag_kind": "alert",
+    "flag_kind": "market",
     "triggers": [
-      "markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%)",
-      "moved -3.2 points since the day's open by 20:00"
+      "markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%)"
     ],
-    "facts": "Flagged: markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%); moved -3.2 points since the day's open by 20:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+4 (LV); Rasmussen Reports D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "YouGov",
-          "sponsor": null,
-          "start_date": "2026-10-26",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 2093,
-          "d": 51.0,
-          "r": 47.0,
-          "margin_d": 4.0,
-          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf"
-        },
-        {
-          "pollster": "Rasmussen Reports",
-          "sponsor": null,
-          "start_date": "2026-10-28",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 745,
-          "d": 49.0,
-          "r": 44.0,
-          "margin_d": 5.0,
-          "source_url": "https://www.rasmussenreports.com/public_content/politics/public_surveys/toplines_michigan_senate_october_28_29_2026"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 4.46,
-        "n": 13,
-        "newest": "2026-10-29"
-      },
-      "market_path": [
-        [
-          "2026-11-01T00:30:01-04:00",
-          0.7725
-        ],
-        [
-          "2026-11-01T02:34:05-05:00",
-          0.78
-        ],
-        [
-          "2026-11-01T04:13:12-05:00",
-          0.79
-        ],
-        [
-          "2026-11-01T07:03:03-05:00",
-          0.79
-        ],
-        [
-          "2026-11-01T08:54:38-05:00",
-          0.79
-        ],
-        [
-          "2026-11-01T10:00:00-05:00",
-          0.79
-        ],
-        [
-          "2026-11-01T11:00:00-05:00",
-          0.79
-        ],
-        [
-          "2026-11-01T12:07:14-05:00",
-          0.7475
-        ],
-        [
-          "2026-11-01T13:21:21-05:00",
-          0.715
-        ],
-        [
-          "2026-11-01T14:12:05-05:00",
-          0.72
-        ],
-        [
-          "2026-11-01T15:16:33-05:00",
-          0.725
-        ],
-        [
-          "2026-11-01T16:09:42-05:00",
-          0.735
-        ],
-        [
-          "2026-11-01T17:01:19-05:00",
-          0.73
-        ],
-        [
-          "2026-11-01T18:24:33-05:00",
-          0.73
-        ],
-        [
-          "2026-11-01T19:17:49-05:00",
-          0.735
-        ],
-        [
-          "2026-11-01T20:00:00-05:00",
-          0.74
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "explained": false,
-    "headline": null,
-    "what_happened": null,
-    "why_it_moved": null,
-    "should_it_move_us": null,
-    "trigger": null,
-    "sources": [],
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-11-01",
-    "kind": "item",
-    "item_id": "senate_sc",
-    "item": "Senate · SC",
-    "flag_kind": "poll",
-    "triggers": [
-      "Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls)"
-    ],
-    "facts": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Patinkin Research Strategies D+5 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "Patinkin Research Strategies",
-          "sponsor": null,
-          "start_date": "2026-10-27",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 500,
-          "d": 48.0,
-          "r": 43.0,
-          "margin_d": 5.0,
-          "source_url": "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": -0.86,
-        "n": 7,
-        "newest": "2026-10-29"
-      },
-      "market_path": [
-        [
-          "2026-11-01T00:30:01-04:00",
-          0.265
-        ],
-        [
-          "2026-11-01T02:34:05-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T04:13:12-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T07:03:03-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T08:54:38-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T10:00:00-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T11:00:00-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T12:07:14-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T13:21:21-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T14:12:05-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T15:16:33-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T16:09:42-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T17:01:19-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T18:24:33-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T19:17:49-05:00",
-          0.265
-        ],
-        [
-          "2026-11-01T20:00:00-05:00",
-          0.265
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "explained": true,
-    "headline": "The Patinkin poll flags a second day, nothing else moved",
-    "what_happened": "The flag is the same Patinkin Research Strategies poll as yesterday: Oct 27 to 29, 500 likely voters, Andrews 48 Graham 43, released Oct 30 for Project VOTE (retrieved). It flags again because its end date is now inside the average window, 7 points from the prior nonpartisan average (retrieved). No new South Carolina poll ended on Oct 30 or 31 (retrieved). Polymarket held at 26.5 through the night (retrieved). The feed for South Carolina returned no articles (retrieved).",
-    "why_it_moved": "A repeat flag on one Democratic-sponsored poll. Nothing new since yesterday's reading (inferred).",
-    "should_it_move_us": "No. Our model sits at 16.23 on four nonpartisan polls (NYT/Siena even, Citadel R+4, Targoz R+1, East Carolina R+4) and left the Patinkin poll out as partisan (D), the same as yesterday.",
-    "trigger": "A nonpartisan South Carolina poll ending after Oct 29 with Andrews ahead.",
-    "sources": [
-      "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf",
-      "https://polymarket.com/event/south-carolina-senate-election-winner"
-    ],
-    "label": "inferred"
-  },
-  {
-    "as_of": "2026-11-01",
-    "kind": "item",
-    "item_id": "senate_ks",
-    "item": "Senate · KS",
-    "flag_kind": "alert",
-    "triggers": [
-      "moved +3.5 points since the day's open by 20:00"
-    ],
-    "facts": "Flagged: moved +3.5 points since the day's open by 20:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+1 (LV). No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "YouGov",
-          "sponsor": null,
-          "start_date": "2026-10-26",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 2092,
-          "d": 50.0,
-          "r": 49.0,
-          "margin_d": 1.0,
-          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 2.5,
-        "n": 6,
-        "newest": "2026-10-29"
-      },
-      "market_path": [
-        [
-          "2026-11-01T00:30:01-04:00",
-          0.51
-        ],
-        [
-          "2026-11-01T02:34:05-05:00",
-          0.515
-        ],
-        [
-          "2026-11-01T04:13:12-05:00",
-          0.51
-        ],
-        [
-          "2026-11-01T07:03:03-05:00",
-          0.51
-        ],
-        [
-          "2026-11-01T08:54:38-05:00",
-          0.51
-        ],
-        [
-          "2026-11-01T10:00:00-05:00",
-          0.515
-        ],
-        [
-          "2026-11-01T11:00:00-05:00",
-          0.515
-        ],
-        [
-          "2026-11-01T12:07:14-05:00",
-          0.52
-        ],
-        [
-          "2026-11-01T13:21:21-05:00",
-          0.52
-        ],
-        [
-          "2026-11-01T14:12:05-05:00",
-          0.52
-        ],
-        [
-          "2026-11-01T15:16:33-05:00",
-          0.52
-        ],
-        [
-          "2026-11-01T16:09:42-05:00",
-          0.52
-        ],
-        [
-          "2026-11-01T17:01:19-05:00",
-          0.5275
-        ],
-        [
-          "2026-11-01T18:24:33-05:00",
-          0.525
-        ],
-        [
-          "2026-11-01T19:17:49-05:00",
-          0.525
-        ],
-        [
-          "2026-11-01T20:00:00-05:00",
-          0.545
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": false,
@@ -4300,106 +3757,14 @@
     "triggers": [
       "Silver Bulletin changed its rating, Likely D to Solid D"
     ],
-    "facts": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
-      "polls": [
-        {
-          "pollster": "YouGov",
-          "sponsor": null,
-          "start_date": "2026-10-26",
-          "end_date": "2026-10-29",
-          "population": "LV",
-          "sample": 2093,
-          "d": 52.0,
-          "r": 46.0,
-          "margin_d": 6.0,
-          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 7.5,
-        "n": 8,
-        "newest": "2026-10-29"
-      },
-      "market_path": [
-        [
-          "2026-11-01T00:30:01-04:00",
-          0.9318
-        ],
-        [
-          "2026-11-01T02:34:05-05:00",
-          0.9295
-        ],
-        [
-          "2026-11-01T04:13:12-05:00",
-          0.9298
-        ],
-        [
-          "2026-11-01T07:03:03-05:00",
-          0.93
-        ],
-        [
-          "2026-11-01T08:54:38-05:00",
-          0.93
-        ],
-        [
-          "2026-11-01T10:00:00-05:00",
-          0.93
-        ],
-        [
-          "2026-11-01T11:00:00-05:00",
-          0.931
-        ],
-        [
-          "2026-11-01T12:07:14-05:00",
-          0.9327
-        ],
-        [
-          "2026-11-01T13:21:21-05:00",
-          0.93
-        ],
-        [
-          "2026-11-01T14:12:05-05:00",
-          0.929
-        ],
-        [
-          "2026-11-01T15:16:33-05:00",
-          0.9292
-        ],
-        [
-          "2026-11-01T16:09:42-05:00",
-          0.9343
-        ],
-        [
-          "2026-11-01T17:01:19-05:00",
-          0.9367
-        ],
-        [
-          "2026-11-01T18:24:33-05:00",
-          0.9383
-        ],
-        [
-          "2026-11-01T19:17:49-05:00",
-          0.94
-        ],
-        [
-          "2026-11-01T20:00:00-05:00",
-          0.938
-        ]
-      ],
-      "events_window_hours": 48,
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -4417,42 +3782,33 @@
   {
     "as_of": "2026-11-01",
     "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "The Patinkin poll flags a second day, nothing else moved",
+    "what_happened": "The flag is the same Patinkin Research Strategies poll as yesterday: Oct 27 to 29, 500 likely voters, Andrews 48 Graham 43, released Oct 30 for Project VOTE (retrieved). It flags again because its end date is now inside the average window, 7 points from the prior nonpartisan average (retrieved). No new South Carolina poll ended on Oct 30 or 31 (retrieved). Polymarket held at 26.5 through the night (retrieved). The feed for South Carolina returned no articles (retrieved).",
+    "why_it_moved": "A repeat flag on one Democratic-sponsored poll. Nothing new since yesterday's reading (inferred).",
+    "should_it_move_us": "No. Our model sits at 16.23 on four nonpartisan polls (NYT/Siena even, Citadel R+4, Targoz R+1, East Carolina R+4) and left the Patinkin poll out as partisan (D), the same as yesterday.",
+    "trigger": "A nonpartisan South Carolina poll ending after Oct 29 with Andrews ahead.",
+    "sources": [
+      "https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf",
+      "https://polymarket.com/event/south-carolina-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-01",
+    "kind": "item",
     "item_id": "ev_hi",
     "item": "Early vote · Hawaii",
-    "flag_kind": "ballots",
-    "triggers": [
-      "Hawaii passed half its 2022 turnout: 230,805 ballots through Oct 31, against 423,443 votes cast in all of 2022"
-    ],
-    "facts": "Flagged: Hawaii passed half its 2022 turnout: 230,805 ballots through Oct 31, against 423,443 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in HI: 230,805 through Oct 31. No reading yet. The morning brief explains every flagged item.",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [],
-      "poll_average": null,
-      "market_path": [],
-      "events_window_hours": 48,
-      "early_vote": [
-        {
-          "state": "HI",
-          "date": "2026-10-31",
-          "days_before": 3,
-          "total": 230805,
-          "gap": null,
-          "gap_2022": null,
-          "swing": null,
-          "r_vs_2022": null,
-          "r_share": null,
-          "r_share_2022": null,
-          "prev_date": "2026-10-30",
-          "total_prev": 210302,
-          "swing_prev": null,
-          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-          "kind": "passed_half_2022_turnout",
-          "line": 211722,
-          "turnout_2022_total": 423443
-        }
-      ]
-    },
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
     "explained": true,
     "headline": "Hawaii passes half its 2022 turnout",
     "what_happened": "Hawaii had 230,805 ballots through Oct 31, three days out, against 423,443 votes cast in all of 2022, so it crossed the half line of 211,722 (retrieved, University of Florida Election Lab). The day before it had 210,302, just under the line (retrieved). Hawaii votes almost entirely by mail and does not register voters by party, so the board shows no party gap for it (retrieved).",
@@ -4461,6 +3817,1149 @@
     "trigger": "None for the board. A Hawaii total above the whole 2022 count before Election Day would be a turnout story, not a forecast one.",
     "sources": [
       "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Markets moved most today, and polls moved them. The New York Times and Siena released final likely-voter polls on Nov 1 in Texas, Kansas, Iowa, Michigan and Maine, every one at or above the Democrat's prior average, and Polymarket and Kalshi rose in each of those Senate races overnight (retrieved). UNH added New Hampshire and Maine, with a tie in the governor race against a prior average of R+10 (retrieved). One pollster's final wave is one house effect counted five times, so the agreement is not five confirmations (inferred). South Carolina Senate rose 4.5 on the markets with no new poll, and the GDELT news pull for today had not run when this was written, so every race reads as quiet in the feed and may not be (retrieved). No forecast number changed. That is a /where run's job.",
+    "written_at": "2026-11-02T10:15:00-05:00",
+    "n_flags": 11,
+    "n_explained": 11,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Siena's last wave landed in five states, and the markets followed.",
+    "vibe": "Times/Siena put Talarico up 7 in Texas and Hamilton up 5 in Kansas, Kansas Senate rose 9.5 on the markets overnight, and a UNH poll called the New Hampshire governor race a tie.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-tx-poll-toplines.html",
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html",
+      "https://polymarket.com/event/kansas-senate-election-winner",
+      "https://scholars.unh.edu/survey_center_polls/1011/"
+    ],
+    "written_at": "2026-11-02T10:15:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "gov_nh",
+    "item": "Governor · NH",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +7.3 points since the last pull (Polymarket 7.6 to 15.4; Kalshi 7.7 to 14.5%)",
+      "University of New Hampshire (LV, through 2026-10-31) shows D+0, 10 points from the prior average of D-10 (4 polls)"
+    ],
+    "facts": "Flagged: markets moved +7.3 points since the last pull (Polymarket 7.6 to 15.4; Kalshi 7.7 to 14.5%); University of New Hampshire (LV, through 2026-10-31) shows D+0, 10 points from the prior average of D-10 (4 polls). News in the last 48 hours: 0 articles. Polls just in: University of New Hampshire D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "University of New Hampshire",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-10-31",
+          "population": "LV",
+          "sample": 2040,
+          "d": 48.0,
+          "r": 48.0,
+          "margin_d": 0.0,
+          "source_url": "https://scholars.unh.edu/survey_center_polls/1011/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -8.0,
+        "n": 5,
+        "newest": "2026-10-31"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.1695
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.1645
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.1653
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.1648
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.1653
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.1565
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.1565
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.1565
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.1598
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.1598
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.1497
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "UNH calls it a tie, markets double Warmington's price",
+    "what_happened": "University of New Hampshire, Oct 27 to 31, 2,040 likely voters, Warmington 48 Ayotte 48 (retrieved, scholars.unh.edu). The prior average was R+10 over 4 polls (retrieved). Polymarket rose from 7.6 to 15.4 and Kalshi from 7.7 to 14.5 since the last pull, and the intraday path drifted from 17.0 down to 15.0 by 10:00 (retrieved). The GDELT feed for today had not run (retrieved).",
+    "why_it_moved": "The UNH poll, the only new input (inferred). The market gave back part of the jump overnight, which reads as traders weighting one poll against four (inferred).",
+    "should_it_move_us": "Yes, toward the Democrat, a little. The model counted the UNH poll at normal weight, and one tie against four Republican leads is an outlier until a second poll agrees.",
+    "trigger": "A second nonpartisan poll ending after Oct 28 that shows the race within 3.",
+    "sources": [
+      "https://scholars.unh.edu/survey_center_polls/1011/",
+      "https://polymarket.com/event/new-hampshire-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "flag_kind": "market",
+    "triggers": [
+      "Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip)",
+      "markets moved +4.0 points since the last pull (Polymarket 70.5 to 74.5; Kalshi 68.5 to 72.5%)",
+      "University of New Hampshire (LV, through 2026-10-31) shows D+9, 6 points from the prior average of D+3 (9 polls)"
+    ],
+    "facts": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip); markets moved +4.0 points since the last pull (Polymarket 70.5 to 74.5; Kalshi 68.5 to 72.5%); University of New Hampshire (LV, through 2026-10-31) shows D+9, 6 points from the prior average of D+3 (9 polls). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+6 (LV); University of New Hampshire D+9 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 714,
+          "d": 51.0,
+          "r": 45.0,
+          "margin_d": 6.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-me-poll-toplines.html"
+        },
+        {
+          "pollster": "University of New Hampshire",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-10-31",
+          "population": "LV",
+          "sample": 1654,
+          "d": 54.0,
+          "r": 45.0,
+          "margin_d": 9.0,
+          "source_url": "https://scholars.unh.edu/survey_center_polls/1013/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 4.0,
+        "n": 10,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.735
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Two final polls and Silver Bulletin all move toward Jackson",
+    "what_happened": "Times/Siena, Oct 27 to Nov 1, 714 LV, Jackson 51 Collins 45. UNH, Oct 27 to 31, 1,654 LV, Jackson 54 Collins 45 (retrieved). Silver Bulletin moved the race from Lean D to Likely D (retrieved, Wikipedia ratings table). Markets rose 4.0 since the last pull (retrieved).",
+    "why_it_moved": "The two polls, then the rating, which follows from the same polls (inferred). They are not independent.",
+    "should_it_move_us": "Yes, toward the Democrat. The model counted both polls, and Collins's history of beating her polls is the reason the run sits below the model.",
+    "trigger": "Whether Collins outruns her final polls again, as she did by double digits in 2020. Only the count settles it.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-me-poll-toplines.html",
+      "https://scholars.unh.edu/survey_center_polls/1013/",
+      "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "senate_mi",
+    "item": "Senate · MI",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +5.0 points since the last pull (Polymarket 74.5 to 79.5; Kalshi 72.5 to 77.5%)",
+      "New York Times / Siena University (LV, through 2026-11-01) shows D+11, 7 points from the prior average of D+4 (14 polls)"
+    ],
+    "facts": "Flagged: markets moved +5.0 points since the last pull (Polymarket 74.5 to 79.5; Kalshi 72.5 to 77.5%); New York Times / Siena University (LV, through 2026-11-01) shows D+11, 7 points from the prior average of D+4 (14 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Research Co. D+2 (LV); New York Times / Siena University D+11 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "Research Co.",
+          "sponsor": null,
+          "start_date": "2026-10-30",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 450,
+          "d": 48.0,
+          "r": 46.0,
+          "margin_d": 2.0,
+          "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
+        },
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-23",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 1011,
+          "d": 53.0,
+          "r": 42.0,
+          "margin_d": 11.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 4.73,
+        "n": 15,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.78
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.78
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.79
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.79
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.79
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.8
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.79
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.7925
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.785
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Siena has El-Sayed up 11, Research Co. up 2",
+    "what_happened": "Times/Siena, Oct 23 to Nov 1, 1,011 LV, El-Sayed 53 Rogers 42. Research Co., Oct 30 to Nov 1, 450 LV, El-Sayed 48 Rogers 46 (retrieved). Prior average D+4 over 14 polls. Markets rose 5.0 (retrieved).",
+    "why_it_moved": "The Siena poll (inferred). The two new polls disagree by 9 points, so the average moved less than the headline number.",
+    "should_it_move_us": "Yes, toward the Democrat, modestly. The model counted both polls, and the spread between them is the honest read of the uncertainty.",
+    "trigger": "Wayne County turnout on the night against 2022.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html",
+      "https://researchco.ca/2026/11/01/midterms-2026-one/",
+      "https://polymarket.com/event/michigan-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +9.5 points since the last pull (Polymarket 52.5 to 61.5; Kalshi 52.5 to 62.5%)"
+    ],
+    "facts": "Flagged: markets moved +9.5 points since the last pull (Polymarket 52.5 to 61.5; Kalshi 52.5 to 62.5%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 736,
+          "d": 49.0,
+          "r": 44.0,
+          "margin_d": 5.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.86,
+        "n": 7,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.605
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.605
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.605
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.61
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.61
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.615
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.61
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.615
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.615
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.6225
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.62
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Siena has Hamilton up 5, the biggest market jump today",
+    "what_happened": "Times/Siena, Oct 27 to Nov 1, 736 LV, Hamilton 49 Marshall 44 (retrieved). Prior average D+3 over 7 polls. Polymarket rose 52.5 to 61.5 and Kalshi 52.5 to 62.5 (retrieved). No news in the feed, which had not run today (retrieved).",
+    "why_it_moved": "The Siena poll (inferred). It is the first high-quality nonpartisan read near the end of the race.",
+    "should_it_move_us": "Yes, toward the Democrat. The model counted it. Kansas has not elected a Democratic senator since 1932, so the base rate is the counter-case and the polls carry the whole read.",
+    "trigger": "Whether Kansas polls miss toward Republicans as Midwestern polls did in 2020 and 2024.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html",
+      "https://polymarket.com/event/kansas-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +6.0 points since the last pull (Polymarket 70.5 to 75.5; Kalshi 68.5 to 75.5%)",
+      "Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip)"
+    ],
+    "facts": "Flagged: markets moved +6.0 points since the last pull (Polymarket 70.5 to 75.5; Kalshi 68.5 to 75.5%); Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Trafalgar Group D+0 (LV); New York Times / Siena University D+7 (LV); AtlasIntel D+6 (A); Kreate Strategies D+3 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "Trafalgar Group",
+          "sponsor": null,
+          "start_date": "2026-10-31",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 1089,
+          "d": 48.0,
+          "r": 48.0,
+          "margin_d": 0.0,
+          "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/TX-Midterms-Report-1101.pdf"
+        },
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 1215,
+          "d": 50.0,
+          "r": 43.0,
+          "margin_d": 7.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-tx-poll-toplines.html"
+        },
+        {
+          "pollster": "AtlasIntel",
+          "sponsor": null,
+          "start_date": "2026-10-28",
+          "end_date": "2026-11-01",
+          "population": "A",
+          "sample": 1678,
+          "d": 51.0,
+          "r": 45.0,
+          "margin_d": 6.0,
+          "source_url": "https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf"
+        },
+        {
+          "pollster": "Kreate Strategies",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-10-30",
+          "population": "LV",
+          "sample": 900,
+          "d": 48.0,
+          "r": 45.0,
+          "margin_d": 3.0,
+          "source_url": "https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.64,
+        "n": 22,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.745
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.745
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.745
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.75
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.75
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.755
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Siena and AtlasIntel at Talarico +7 and +6, Trafalgar tied",
+    "what_happened": "Times/Siena, Oct 27 to Nov 1, 1,215 LV, Talarico 50 Paxton 43. AtlasIntel, Oct 28 to Nov 1, all adults, 51 to 45. Trafalgar, Oct 31 to Nov 1, 48 to 48 (retrieved). Silver Bulletin moved the race from Lean D to Likely D (retrieved). Markets rose 6.0, and the hourly check shows a steady 2-point climb through the morning, not flagged (retrieved).",
+    "why_it_moved": "The Siena and AtlasIntel polls, then the rating that follows them (inferred).",
+    "should_it_move_us": "Yes, toward the Democrat. The model counted Siena and AtlasIntel and left Trafalgar out as Republican-partisan, and Texas polls missed toward Republicans in 2018, 2020 and 2022.",
+    "trigger": "Whether the Texas polls miss toward Republicans again. Nothing before Tuesday night settles it.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-tx-poll-toplines.html",
+      "https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf",
+      "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/TX-Midterms-Report-1101.pdf"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "senate_nh",
+    "item": "Senate · NH",
+    "flag_kind": "poll",
+    "triggers": [
+      "University of New Hampshire (LV, through 2026-10-31) shows D+12, 6 points from the prior average of D+6 (3 polls)"
+    ],
+    "facts": "Flagged: University of New Hampshire (LV, through 2026-10-31) shows D+12, 6 points from the prior average of D+6 (3 polls). News in the last 48 hours: 0 articles. Polls just in: University of New Hampshire D+12 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "University of New Hampshire",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-10-31",
+          "population": "LV",
+          "sample": 2040,
+          "d": 54.0,
+          "r": 42.0,
+          "margin_d": 12.0,
+          "source_url": "https://scholars.unh.edu/survey_center_polls/1011/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 7.5,
+        "n": 4,
+        "newest": "2026-10-31"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.9427
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.9447
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.9385
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.9443
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.9443
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.9392
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.9392
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.9397
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.94
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.9397
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.94
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "UNH has Pappas up 12",
+    "what_happened": "UNH, Oct 27 to 31, 2,040 LV, Pappas 54 Sununu 42 (retrieved). Prior average D+6 over 3 polls. Markets flat near 94 (retrieved).",
+    "why_it_moved": "It did not move. The flag is the poll alone (inferred).",
+    "should_it_move_us": "No. The model counted it, and the race was already well out of reach on every measure.",
+    "trigger": "A nonpartisan poll with Sununu within 4.",
+    "sources": [
+      "https://scholars.unh.edu/survey_center_polls/1011/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +5.0 points since the last pull (Polymarket 42.5 to 47.5; Kalshi 44.5 to 49.5%)"
+    ],
+    "facts": "Flagged: markets moved +5.0 points since the last pull (Polymarket 42.5 to 47.5; Kalshi 44.5 to 49.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 705,
+          "d": 48.0,
+          "r": 47.0,
+          "margin_d": 1.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.5,
+        "n": 10,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.475
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.475
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.48
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.485
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Siena has Turek up 1, markets near even",
+    "what_happened": "Times/Siena, Oct 26 to Nov 1, 705 LV, Turek 48 Hinson 47 (retrieved). Prior average R+0.5 over 10 polls. Markets rose 5.0 to just under even (retrieved). Iowa's registered-party early-vote gap is running 8.2 points less Democratic than 2022, which says who voted, not how (retrieved).",
+    "why_it_moved": "The Siena poll, plus the national drift from the same wave (inferred).",
+    "should_it_move_us": "Yes, toward the Democrat, slightly. The model counted it, and a 1-point lead in a state that missed toward Republicans in 2020 and 2024 is a toss-up.",
+    "trigger": "Whether Iowa polls miss toward Republicans again.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html",
+      "https://polymarket.com/event/iowa-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +5.0 points since the last pull (Polymarket 26.5 to 30.5; Kalshi 25.5 to 31.5%)"
+    ],
+    "facts": "Flagged: markets moved +5.0 points since the last pull (Polymarket 26.5 to 30.5; Kalshi 25.5 to 31.5%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 736,
+          "d": 48.0,
+          "r": 47.0,
+          "margin_d": 1.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": -0.67,
+        "n": 6,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.295
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.2975
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.315
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.31
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Siena has Holscher up 1, markets add 5",
+    "what_happened": "Times/Siena, Oct 27 to Nov 1, 736 LV, Holscher 48 Masterson 47 (retrieved). Prior average R+0.7 over 6 polls. Markets rose 5.0 and gave back about a point after 04:00 (retrieved).",
+    "why_it_moved": "The Siena poll (inferred).",
+    "should_it_move_us": "Yes, toward the Democrat, slightly. The model counted it, and it sits inside the prior range.",
+    "trigger": "Johnson County turnout on the night.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html",
+      "https://polymarket.com/event/kansas-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
+    "flag_kind": "poll",
+    "triggers": [
+      "New York Times / Siena University (LV, through 2026-11-01) shows D+13, 5 points from the prior average of D+8 (9 polls)"
+    ],
+    "facts": "Flagged: New York Times / Siena University (LV, through 2026-11-01) shows D+13, 5 points from the prior average of D+8 (9 polls). News in the last 48 hours: 0 articles. Polls just in: Research Co. D+12 (LV); New York Times / Siena University D+13 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Research Co.",
+          "sponsor": null,
+          "start_date": "2026-10-30",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 450,
+          "d": 53.0,
+          "r": 41.0,
+          "margin_d": 12.0,
+          "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
+        },
+        {
+          "pollster": "New York Times / Siena University",
+          "sponsor": null,
+          "start_date": "2026-10-23",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 1011,
+          "d": 52.0,
+          "r": 39.0,
+          "margin_d": 13.0,
+          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 8.5,
+        "n": 10,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.9435
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.9443
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.9427
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.9432
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.9432
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.943
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.943
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.9425
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.9425
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.9445
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.9447
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Two polls have Benson up 12 and 13",
+    "what_happened": "Times/Siena, Benson 52 James 39. Research Co., 53 to 41 (retrieved). Prior average D+8 over 9 polls. Markets flat near 94 (retrieved).",
+    "why_it_moved": "It did not move. The flag is the polls alone (inferred).",
+    "should_it_move_us": "No. The model counted both, and the race was already settled on every measure.",
+    "trigger": "A nonpartisan poll with James within 5.",
+    "sources": [
+      "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html",
+      "https://researchco.ca/2026/11/01/midterms-2026-one/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +4.5 points since the last pull (Polymarket 25.5 to 31.5; Kalshi 27.5 to 30.5%)"
+    ],
+    "facts": "Flagged: markets moved +4.5 points since the last pull (Polymarket 25.5 to 31.5; Kalshi 27.5 to 30.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": -0.86,
+        "n": 7,
+        "newest": "2026-10-29"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.3075
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.31
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Markets add 4.5 with no poll and no news",
+    "what_happened": "Polymarket rose 25.5 to 31.5 and Kalshi 27.5 to 30.5 since the last pull (retrieved). No South Carolina poll has ended since Oct 29 (retrieved). The GDELT feed for today had not run (retrieved).",
+    "why_it_moved": "Unexplained after checking the feed and the polls. The likeliest cause is spillover from the Siena wave elsewhere, which is not evidence about South Carolina (inferred).",
+    "should_it_move_us": "Wait. Nothing about this race changed that the board can see.",
+    "trigger": "Any South Carolina poll or news item from the last 48 hours.",
+    "sources": [
+      "https://polymarket.com/event/south-carolina-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-02",
+    "kind": "item",
+    "item_id": "gov_wi",
+    "item": "Governor · WI",
+    "flag_kind": "poll",
+    "triggers": [
+      "Research Co. (LV, through 2026-11-01) shows D+5 in a race with 2 other polls in 21 days"
+    ],
+    "facts": "Flagged: Research Co. (LV, through 2026-11-01) shows D+5 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Research Co. D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [
+        {
+          "pollster": "Research Co.",
+          "sponsor": null,
+          "start_date": "2026-10-30",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 450,
+          "d": 50.0,
+          "r": 45.0,
+          "margin_d": 5.0,
+          "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 5.0,
+        "n": 3,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.835
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.84
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.84
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.84
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Research Co. has Crowley up 5 in a thin race",
+    "what_happened": "Research Co., Oct 30 to Nov 1, 450 LV, Crowley 50 Tiffany 45 (retrieved). Only 2 other polls in 21 days. Markets flat near 84 (retrieved).",
+    "why_it_moved": "It did not move. The flag is a thin-polling flag (inferred).",
+    "should_it_move_us": "No. The model counted it, and it matches the existing average.",
+    "trigger": "A second nonpartisan poll in the final days.",
+    "sources": [
+      "https://researchco.ca/2026/11/01/midterms-2026-one/"
     ],
     "label": "inferred"
   }
