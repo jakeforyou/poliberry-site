@@ -139,8 +139,8 @@
     "label": "A state misses certification",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 8.0,
-    "kind": "snapshot",
+    "value": 12.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -283,8 +283,8 @@
     "label": "Ossoff wins GA by more than 4",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 75.0,
-    "kind": "snapshot",
+    "value": 84.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -427,7 +427,7 @@
     "label": "Ossoff wins GA by more than 4",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 90.6,
+    "value": 89.4,
     "kind": "snapshot",
     "unit": "%"
   },
@@ -715,8 +715,8 @@
     "label": "Georgia Senate margin",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 8.0,
-    "kind": "snapshot",
+    "value": 8.5,
+    "kind": "run",
     "unit": "pts"
   },
   {
@@ -859,7 +859,7 @@
     "label": "Georgia Senate margin",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 11.3,
+    "value": 11.4,
     "kind": "snapshot",
     "unit": "pts"
   },
@@ -1831,8 +1831,8 @@
     "label": "Governor · AZ",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 83.0,
-    "kind": "snapshot",
+    "value": 90.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -2497,7 +2497,16 @@
     "label": "Governor · AZ",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 92.5,
+    "value": 93.5,
+    "kind": "snapshot",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_az",
+    "label": "Governor · AZ",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 93.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -3469,8 +3478,8 @@
     "label": "Governor · GA",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 47.0,
-    "kind": "snapshot",
+    "value": 50.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -4153,6 +4162,15 @@
     "label": "Governor · GA",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 67.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_ga",
+    "label": "Governor · GA",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 70.5,
     "kind": "daily",
     "unit": "%"
@@ -5125,8 +5143,8 @@
     "label": "Governor · IA",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 80.0,
-    "kind": "snapshot",
+    "value": 72.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -5810,6 +5828,15 @@
     "source": "polymarket",
     "date": "2026-11-01",
     "value": 86.0,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_ia",
+    "label": "Governor · IA",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 86.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -6781,8 +6808,8 @@
     "label": "Governor · KS",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 25.0,
-    "kind": "snapshot",
+    "value": 30.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -7438,7 +7465,16 @@
     "label": "Governor · KS",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 25.5,
+    "value": 26.5,
+    "kind": "snapshot",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_ks",
+    "label": "Governor · KS",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 26.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -8410,8 +8446,8 @@
     "label": "Governor · MI",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 86.0,
-    "kind": "snapshot",
+    "value": 90.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -9095,6 +9131,15 @@
     "source": "polymarket",
     "date": "2026-11-01",
     "value": 93.8,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_mi",
+    "label": "Governor · MI",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 95.0,
     "kind": "daily",
     "unit": "%"
   },
@@ -10048,8 +10093,8 @@
     "label": "Governor · NH",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 6.0,
-    "kind": "snapshot",
+    "value": 8.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -10732,6 +10777,15 @@
     "label": "Governor · NH",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 7.7,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_nh",
+    "label": "Governor · NH",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 7.6,
     "kind": "daily",
     "unit": "%"
@@ -11704,8 +11758,8 @@
     "label": "Governor · NV",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 46.0,
-    "kind": "snapshot",
+    "value": 42.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -12388,6 +12442,15 @@
     "label": "Governor · NV",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 77.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_nv",
+    "label": "Governor · NV",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 78.5,
     "kind": "daily",
     "unit": "%"
@@ -13360,8 +13423,8 @@
     "label": "Governor · OH",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 63.0,
-    "kind": "snapshot",
+    "value": 60.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -14044,6 +14107,15 @@
     "label": "Governor · OH",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 80.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_oh",
+    "label": "Governor · OH",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 80.5,
     "kind": "daily",
     "unit": "%"
@@ -15016,8 +15088,8 @@
     "label": "Governor · SC",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 5.0,
-    "kind": "snapshot",
+    "value": 4.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -15700,7 +15772,16 @@
     "label": "Governor · SC",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 5.2,
+    "value": 5.4,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_sc",
+    "label": "Governor · SC",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 4.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -16672,8 +16753,8 @@
     "label": "Governor · WI",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 70.0,
-    "kind": "snapshot",
+    "value": 75.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -17338,6 +17419,15 @@
     "label": "Governor · WI",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 85.0,
+    "kind": "snapshot",
+    "unit": "%"
+  },
+  {
+    "item_id": "gov_wi",
+    "label": "Governor · WI",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 85.0,
     "kind": "daily",
     "unit": "%"
@@ -18715,8 +18805,8 @@
     "label": "House majority",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 90.0,
-    "kind": "snapshot",
+    "value": 88.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -19399,6 +19489,15 @@
     "label": "House majority",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 94.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "house_dem_majority",
+    "label": "House majority",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 94.5,
     "kind": "daily",
     "unit": "%"
@@ -20092,7 +20191,7 @@
     "label": "House seats",
     "source": "kalshi",
     "date": "2026-11-01",
-    "value": 241.5,
+    "value": 241.6,
     "kind": "snapshot",
     "unit": "seats"
   },
@@ -20236,8 +20335,8 @@
     "label": "House seats",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 235,
-    "kind": "snapshot",
+    "value": 232,
+    "kind": "run",
     "unit": "seats"
   },
   {
@@ -20524,8 +20623,8 @@
     "label": "House popular vote",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 8.0,
-    "kind": "snapshot",
+    "value": 7.5,
+    "kind": "run",
     "unit": "pts"
   },
   {
@@ -20812,8 +20911,8 @@
     "label": "Seating dispute on Jan 3",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 22.0,
-    "kind": "snapshot",
+    "value": 30.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -20956,8 +21055,8 @@
     "label": "Court reverses a called race",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 3.0,
-    "kind": "snapshot",
+    "value": 5.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -21245,7 +21344,7 @@
     "source": "ours",
     "date": "2026-11-01",
     "value": -6.0,
-    "kind": "snapshot",
+    "kind": "run",
     "unit": "pts"
   },
   {
@@ -21533,7 +21632,7 @@
     "source": "ours",
     "date": "2026-11-01",
     "value": -18.0,
-    "kind": "snapshot",
+    "kind": "run",
     "unit": "pts"
   },
   {
@@ -21821,7 +21920,7 @@
     "source": "ours",
     "date": "2026-11-01",
     "value": 28.0,
-    "kind": "snapshot",
+    "kind": "run",
     "unit": "pts"
   },
   {
@@ -21964,8 +22063,8 @@
     "label": "SC governor margin",
     "source": "ours",
     "date": "2026-11-01",
-    "value": -13.0,
-    "kind": "snapshot",
+    "value": -11.0,
+    "kind": "run",
     "unit": "pts"
   },
   {
@@ -22108,7 +22207,7 @@
     "label": "SC governor margin",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": -12.1,
+    "value": -11.8,
     "kind": "snapshot",
     "unit": "pts"
   },
@@ -22397,7 +22496,7 @@
     "source": "ours",
     "date": "2026-11-01",
     "value": -6.0,
-    "kind": "snapshot",
+    "kind": "run",
     "unit": "pts"
   },
   {
@@ -23512,8 +23611,8 @@
     "label": "Senate · AK",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 64.0,
-    "kind": "snapshot",
+    "value": 55.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -24196,7 +24295,16 @@
     "label": "Senate · AK",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 73.5,
+    "value": 72.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_ak",
+    "label": "Senate · AK",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 74.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -25573,8 +25681,8 @@
     "label": "Senate control",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 55.0,
-    "kind": "snapshot",
+    "value": 56.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -26257,7 +26365,16 @@
     "label": "Senate control",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 72.5,
+    "value": 71.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_dem_control",
+    "label": "Senate control",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 71.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -27095,7 +27212,7 @@
     "source": "ours",
     "date": "2026-11-01",
     "value": 51,
-    "kind": "snapshot",
+    "kind": "run",
     "unit": "seats"
   },
   {
@@ -28066,8 +28183,8 @@
     "label": "Senate · FL special",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 10.0,
-    "kind": "snapshot",
+    "value": 6.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -28750,6 +28867,15 @@
     "label": "Senate · FL special",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 9.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_fl",
+    "label": "Senate · FL special",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 9.5,
     "kind": "daily",
     "unit": "%"
@@ -29722,8 +29848,8 @@
     "label": "Senate · GA",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 95.0,
-    "kind": "snapshot",
+    "value": 96.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -30388,8 +30514,17 @@
     "label": "Senate · GA",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 97.5,
+    "value": 97.0,
     "kind": "snapshot",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_ga",
+    "label": "Senate · GA",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 97.0,
+    "kind": "daily",
     "unit": "%"
   },
   {
@@ -31360,8 +31495,8 @@
     "label": "Senate · IA",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 43.0,
-    "kind": "snapshot",
+    "value": 34.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -32044,7 +32179,16 @@
     "label": "Senate · IA",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 43.5,
+    "value": 44.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_ia",
+    "label": "Senate · IA",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 42.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -33016,8 +33160,8 @@
     "label": "Senate · KS",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 33.0,
-    "kind": "snapshot",
+    "value": 40.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -33682,6 +33826,15 @@
     "label": "Senate · KS",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 52.5,
+    "kind": "snapshot",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_ks",
+    "label": "Senate · KS",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 52.5,
     "kind": "daily",
     "unit": "%"
@@ -34654,8 +34807,8 @@
     "label": "Senate · ME",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 54.0,
-    "kind": "snapshot",
+    "value": 70.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -35338,7 +35491,16 @@
     "label": "Senate · ME",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 67.5,
+    "value": 68.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_me",
+    "label": "Senate · ME",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 70.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -36310,8 +36472,8 @@
     "label": "Senate · MI",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 72.0,
-    "kind": "snapshot",
+    "value": 70.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -36994,7 +37156,16 @@
     "label": "Senate · MI",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 81.5,
+    "value": 78.0,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_mi",
+    "label": "Senate · MI",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 74.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -37966,8 +38137,8 @@
     "label": "Senate · MN",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 85.0,
-    "kind": "snapshot",
+    "value": 93.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -38650,7 +38821,16 @@
     "label": "Senate · MN",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 93.0,
+    "value": 92.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_mn",
+    "label": "Senate · MN",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 93.5,
     "kind": "daily",
     "unit": "%"
   },
@@ -39622,8 +39802,8 @@
     "label": "Senate · NC",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 95.0,
-    "kind": "snapshot",
+    "value": 96.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -40306,7 +40486,16 @@
     "label": "Senate · NC",
     "source": "polymarket",
     "date": "2026-11-01",
-    "value": 97.7,
+    "value": 97.8,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_nc",
+    "label": "Senate · NC",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 97.8,
     "kind": "daily",
     "unit": "%"
   },
@@ -41278,8 +41467,8 @@
     "label": "Senate · NH",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 87.0,
-    "kind": "snapshot",
+    "value": 94.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -41935,6 +42124,15 @@
     "label": "Senate · NH",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 93.5,
+    "kind": "snapshot",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_nh",
+    "label": "Senate · NH",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 93.5,
     "kind": "daily",
     "unit": "%"
@@ -42908,7 +43106,7 @@
     "source": "ours",
     "date": "2026-11-01",
     "value": 58.0,
-    "kind": "snapshot",
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -43591,6 +43789,15 @@
     "label": "Senate · OH special",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 73.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_oh",
+    "label": "Senate · OH special",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 73.5,
     "kind": "daily",
     "unit": "%"
@@ -44563,8 +44770,8 @@
     "label": "Senate · SC",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 14.0,
-    "kind": "snapshot",
+    "value": 13.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -45247,6 +45454,15 @@
     "label": "Senate · SC",
     "source": "polymarket",
     "date": "2026-11-01",
+    "value": 26.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
+    "item_id": "senate_sc",
+    "label": "Senate · SC",
+    "source": "polymarket",
+    "date": "2026-11-02",
     "value": 25.5,
     "kind": "daily",
     "unit": "%"
@@ -46219,8 +46435,8 @@
     "label": "Senate · TX",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 58.0,
-    "kind": "snapshot",
+    "value": 52.0,
+    "kind": "run",
     "unit": "%"
   },
   {
@@ -46908,6 +47124,15 @@
     "unit": "%"
   },
   {
+    "item_id": "senate_tx",
+    "label": "Senate · TX",
+    "source": "polymarket",
+    "date": "2026-11-02",
+    "value": 70.5,
+    "kind": "daily",
+    "unit": "%"
+  },
+  {
     "item_id": "southern_redrawn_gop_seats_flipped",
     "label": "Redrawn GOP seats Democrats win",
     "source": "ddhq",
@@ -47191,8 +47416,8 @@
     "label": "Redrawn GOP seats Democrats win",
     "source": "ours",
     "date": "2026-11-01",
-    "value": 6,
-    "kind": "snapshot",
+    "value": 7,
+    "kind": "run",
     "unit": "count"
   },
   {
@@ -47227,7 +47452,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-16",
-    "value": 68.83,
+    "value": 69.99,
     "kind": "binary",
     "unit": "%"
   },
@@ -47434,7 +47659,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-17",
-    "value": 68.67,
+    "value": 69.85,
     "kind": "binary",
     "unit": "%"
   },
@@ -47641,7 +47866,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-18",
-    "value": 68.38,
+    "value": 69.55,
     "kind": "binary",
     "unit": "%"
   },
@@ -47848,7 +48073,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-19",
-    "value": 68.35,
+    "value": 69.43,
     "kind": "binary",
     "unit": "%"
   },
@@ -48055,7 +48280,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-20",
-    "value": 68.59,
+    "value": 69.8,
     "kind": "binary",
     "unit": "%"
   },
@@ -48262,7 +48487,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-21",
-    "value": 68.59,
+    "value": 69.61,
     "kind": "binary",
     "unit": "%"
   },
@@ -48469,7 +48694,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-22",
-    "value": 68.24,
+    "value": 69.15,
     "kind": "binary",
     "unit": "%"
   },
@@ -48676,7 +48901,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-23",
-    "value": 68.81,
+    "value": 69.73,
     "kind": "binary",
     "unit": "%"
   },
@@ -48883,7 +49108,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-24",
-    "value": 68.15,
+    "value": 69.08,
     "kind": "binary",
     "unit": "%"
   },
@@ -49090,7 +49315,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-25",
-    "value": 68.03,
+    "value": 68.99,
     "kind": "binary",
     "unit": "%"
   },
@@ -49297,7 +49522,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-26",
-    "value": 67.95,
+    "value": 68.82,
     "kind": "binary",
     "unit": "%"
   },
@@ -49504,7 +49729,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-27",
-    "value": 68.99,
+    "value": 69.89,
     "kind": "binary",
     "unit": "%"
   },
@@ -49711,7 +49936,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-28",
-    "value": 68.23,
+    "value": 69.12,
     "kind": "binary",
     "unit": "%"
   },
@@ -49918,7 +50143,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-29",
-    "value": 69.92,
+    "value": 70.73,
     "kind": "binary",
     "unit": "%"
   },
@@ -50125,7 +50350,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-30",
-    "value": 68.9,
+    "value": 71.33,
     "kind": "binary",
     "unit": "%"
   },
@@ -50332,7 +50557,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-10-31",
-    "value": 69.18,
+    "value": 71.52,
     "kind": "binary",
     "unit": "%"
   },
@@ -50512,7 +50737,7 @@
     "label": "senate_me",
     "source": "model",
     "date": "2026-11-01",
-    "value": 76.84,
+    "value": 81.57,
     "kind": "binary",
     "unit": "%"
   },
@@ -50521,7 +50746,7 @@
     "label": "senate_nc",
     "source": "model",
     "date": "2026-11-01",
-    "value": 99.83,
+    "value": 99.88,
     "kind": "binary",
     "unit": "%"
   },
@@ -50530,7 +50755,7 @@
     "label": "senate_oh",
     "source": "model",
     "date": "2026-11-01",
-    "value": 82.31,
+    "value": 79.28,
     "kind": "binary",
     "unit": "%"
   },
@@ -50539,7 +50764,7 @@
     "label": "senate_tx",
     "source": "model",
     "date": "2026-11-01",
-    "value": 68.5,
+    "value": 72.04,
     "kind": "binary",
     "unit": "%"
   },
@@ -50548,7 +50773,7 @@
     "label": "senate_ak",
     "source": "model",
     "date": "2026-11-01",
-    "value": 27.1,
+    "value": 24.93,
     "kind": "binary",
     "unit": "%"
   },
@@ -50557,7 +50782,7 @@
     "label": "senate_ia",
     "source": "model",
     "date": "2026-11-01",
-    "value": 42.33,
+    "value": 44.88,
     "kind": "binary",
     "unit": "%"
   },
@@ -50566,7 +50791,7 @@
     "label": "senate_mi",
     "source": "model",
     "date": "2026-11-01",
-    "value": 94.66,
+    "value": 93.74,
     "kind": "binary",
     "unit": "%"
   },
@@ -50575,7 +50800,7 @@
     "label": "senate_ga",
     "source": "model",
     "date": "2026-11-01",
-    "value": 99.64,
+    "value": 99.67,
     "kind": "binary",
     "unit": "%"
   },
@@ -50584,7 +50809,7 @@
     "label": "senate_nh",
     "source": "model",
     "date": "2026-11-01",
-    "value": 98.6,
+    "value": 98.94,
     "kind": "binary",
     "unit": "%"
   },
@@ -50593,7 +50818,7 @@
     "label": "senate_sc",
     "source": "model",
     "date": "2026-11-01",
-    "value": 16.23,
+    "value": 16.09,
     "kind": "binary",
     "unit": "%"
   },
@@ -50602,7 +50827,7 @@
     "label": "senate_fl",
     "source": "model",
     "date": "2026-11-01",
-    "value": 5.59,
+    "value": 5.36,
     "kind": "binary",
     "unit": "%"
   },
@@ -50611,7 +50836,7 @@
     "label": "senate_ks",
     "source": "model",
     "date": "2026-11-01",
-    "value": 48.75,
+    "value": 53.06,
     "kind": "binary",
     "unit": "%"
   },
@@ -50620,7 +50845,7 @@
     "label": "senate_mn",
     "source": "model",
     "date": "2026-11-01",
-    "value": 98.72,
+    "value": 98.96,
     "kind": "binary",
     "unit": "%"
   },
@@ -50629,7 +50854,7 @@
     "label": "gov_ga",
     "source": "model",
     "date": "2026-11-01",
-    "value": 55.84,
+    "value": 56.57,
     "kind": "binary",
     "unit": "%"
   },
@@ -50638,7 +50863,7 @@
     "label": "gov_az",
     "source": "model",
     "date": "2026-11-01",
-    "value": 96.66,
+    "value": 97.31,
     "kind": "binary",
     "unit": "%"
   },
@@ -50647,7 +50872,7 @@
     "label": "gov_nv",
     "source": "model",
     "date": "2026-11-01",
-    "value": 45.5,
+    "value": 43.72,
     "kind": "binary",
     "unit": "%"
   },
@@ -50656,7 +50881,7 @@
     "label": "gov_wi",
     "source": "model",
     "date": "2026-11-01",
-    "value": 86.3,
+    "value": 87.77,
     "kind": "binary",
     "unit": "%"
   },
@@ -50665,7 +50890,7 @@
     "label": "gov_mi",
     "source": "model",
     "date": "2026-11-01",
-    "value": 94.34,
+    "value": 93.89,
     "kind": "binary",
     "unit": "%"
   },
@@ -50674,7 +50899,7 @@
     "label": "gov_oh",
     "source": "model",
     "date": "2026-11-01",
-    "value": 70.93,
+    "value": 73.86,
     "kind": "binary",
     "unit": "%"
   },
@@ -50683,7 +50908,7 @@
     "label": "gov_ia",
     "source": "model",
     "date": "2026-11-01",
-    "value": 86.38,
+    "value": 87.08,
     "kind": "binary",
     "unit": "%"
   },
@@ -50692,7 +50917,7 @@
     "label": "gov_sc",
     "source": "model",
     "date": "2026-11-01",
-    "value": 3.02,
+    "value": 2.89,
     "kind": "binary",
     "unit": "%"
   },
@@ -50701,7 +50926,7 @@
     "label": "gov_ks",
     "source": "model",
     "date": "2026-11-01",
-    "value": 31.46,
+    "value": 35.04,
     "kind": "binary",
     "unit": "%"
   },
@@ -50710,7 +50935,7 @@
     "label": "gov_nh",
     "source": "model",
     "date": "2026-11-01",
-    "value": 10.51,
+    "value": 11.2,
     "kind": "binary",
     "unit": "%"
   },
@@ -52996,7 +53221,7 @@
     "label": "senate_me",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 76.84,
+    "value": 81.57,
     "kind": "binary",
     "unit": "%"
   },
@@ -53005,7 +53230,7 @@
     "label": "senate_nc",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 99.83,
+    "value": 99.88,
     "kind": "binary",
     "unit": "%"
   },
@@ -53014,7 +53239,7 @@
     "label": "senate_oh",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 82.31,
+    "value": 79.28,
     "kind": "binary",
     "unit": "%"
   },
@@ -53023,7 +53248,7 @@
     "label": "senate_tx",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 68.5,
+    "value": 72.04,
     "kind": "binary",
     "unit": "%"
   },
@@ -53032,7 +53257,7 @@
     "label": "senate_ak",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 27.1,
+    "value": 24.93,
     "kind": "binary",
     "unit": "%"
   },
@@ -53041,7 +53266,7 @@
     "label": "senate_ia",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 42.33,
+    "value": 44.88,
     "kind": "binary",
     "unit": "%"
   },
@@ -53050,7 +53275,7 @@
     "label": "senate_mi",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 94.66,
+    "value": 93.74,
     "kind": "binary",
     "unit": "%"
   },
@@ -53059,7 +53284,7 @@
     "label": "senate_ga",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 99.64,
+    "value": 99.67,
     "kind": "binary",
     "unit": "%"
   },
@@ -53068,7 +53293,7 @@
     "label": "senate_nh",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 98.6,
+    "value": 98.94,
     "kind": "binary",
     "unit": "%"
   },
@@ -53077,7 +53302,7 @@
     "label": "senate_sc",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 16.23,
+    "value": 16.09,
     "kind": "binary",
     "unit": "%"
   },
@@ -53086,7 +53311,7 @@
     "label": "senate_fl",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 5.59,
+    "value": 5.36,
     "kind": "binary",
     "unit": "%"
   },
@@ -53095,7 +53320,7 @@
     "label": "senate_ks",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 48.75,
+    "value": 53.06,
     "kind": "binary",
     "unit": "%"
   },
@@ -53104,7 +53329,7 @@
     "label": "senate_mn",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 98.72,
+    "value": 98.96,
     "kind": "binary",
     "unit": "%"
   },
@@ -53113,7 +53338,7 @@
     "label": "gov_ga",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 55.84,
+    "value": 56.57,
     "kind": "binary",
     "unit": "%"
   },
@@ -53122,7 +53347,7 @@
     "label": "gov_az",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 96.66,
+    "value": 97.31,
     "kind": "binary",
     "unit": "%"
   },
@@ -53131,7 +53356,7 @@
     "label": "gov_nv",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 45.5,
+    "value": 43.72,
     "kind": "binary",
     "unit": "%"
   },
@@ -53140,7 +53365,7 @@
     "label": "gov_wi",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 86.3,
+    "value": 87.77,
     "kind": "binary",
     "unit": "%"
   },
@@ -53149,7 +53374,7 @@
     "label": "gov_mi",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 94.34,
+    "value": 93.89,
     "kind": "binary",
     "unit": "%"
   },
@@ -53158,7 +53383,7 @@
     "label": "gov_oh",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 70.93,
+    "value": 73.86,
     "kind": "binary",
     "unit": "%"
   },
@@ -53167,7 +53392,7 @@
     "label": "gov_ia",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 86.38,
+    "value": 87.08,
     "kind": "binary",
     "unit": "%"
   },
@@ -53176,7 +53401,7 @@
     "label": "gov_sc",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 3.02,
+    "value": 2.89,
     "kind": "binary",
     "unit": "%"
   },
@@ -53185,7 +53410,7 @@
     "label": "gov_ks",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 31.46,
+    "value": 35.04,
     "kind": "binary",
     "unit": "%"
   },
@@ -53194,7 +53419,7 @@
     "label": "gov_nh",
     "source": "model_published",
     "date": "2026-11-01",
-    "value": 10.51,
+    "value": 11.2,
     "kind": "binary",
     "unit": "%"
   }

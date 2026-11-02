@@ -2330,17 +2330,7 @@
     "kind": "benchmark",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [],
       "poll_average": {
         "margin_d": -0.5,
@@ -2371,12 +2361,48 @@
         [
           "2026-11-01T10:00:00-05:00",
           0.695
+        ],
+        [
+          "2026-11-01T11:00:00-05:00",
+          0.695
+        ],
+        [
+          "2026-11-01T12:07:14-05:00",
+          0.695
+        ],
+        [
+          "2026-11-01T13:21:21-05:00",
+          0.69
+        ],
+        [
+          "2026-11-01T14:12:05-05:00",
+          0.6975
+        ],
+        [
+          "2026-11-01T15:16:33-05:00",
+          0.695
+        ],
+        [
+          "2026-11-01T16:09:42-05:00",
+          0.695
+        ],
+        [
+          "2026-11-01T17:01:19-05:00",
+          0.695
+        ],
+        [
+          "2026-11-01T18:24:33-05:00",
+          0.695
+        ],
+        [
+          "2026-11-01T19:17:49-05:00",
+          0.695
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2396,11 +2422,48 @@
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [],
+      "polls": [
+        {
+          "pollster": "ActiVote",
+          "sponsor": null,
+          "start_date": "2026-10-16",
+          "end_date": "2026-10-31",
+          "population": "LV",
+          "sample": 400,
+          "d": 51.0,
+          "r": 49.0,
+          "margin_d": 2.0,
+          "source_url": "https://www.activote.net/polls/2026/oh-governor/"
+        },
+        {
+          "pollster": "InsiderAdvantage",
+          "sponsor": null,
+          "start_date": "2026-10-29",
+          "end_date": "2026-10-30",
+          "population": "LV",
+          "sample": 1200,
+          "d": 49.0,
+          "r": 46.0,
+          "margin_d": 3.0,
+          "source_url": "https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/"
+        },
+        {
+          "pollster": "YouGov",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-29",
+          "population": "LV",
+          "sample": 2090,
+          "d": 52.0,
+          "r": 46.0,
+          "margin_d": 6.0,
+          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf"
+        }
+      ],
       "poll_average": {
-        "margin_d": 2.5,
-        "n": 8,
-        "newest": "2026-10-26"
+        "margin_d": 2.82,
+        "n": 11,
+        "newest": "2026-10-31"
       },
       "market_path": [
         [
@@ -2426,12 +2489,176 @@
         [
           "2026-11-01T10:00:00-05:00",
           0.8
+        ],
+        [
+          "2026-11-01T11:00:00-05:00",
+          0.8
+        ],
+        [
+          "2026-11-01T12:07:14-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T13:21:21-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T14:12:05-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T15:16:33-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T16:09:42-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T17:01:19-05:00",
+          0.805
+        ],
+        [
+          "2026-11-01T18:24:33-05:00",
+          0.8
+        ],
+        [
+          "2026-11-01T19:17:49-05:00",
+          0.805
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles. Polls just in: ActiVote D+2 (LV); InsiderAdvantage D+3 (LV); YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-01",
+    "item_id": "senate_mi",
+    "item": "Senate · MI",
+    "kinds": [
+      "market",
+      "alert"
+    ],
+    "triggers": [
+      "markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%)",
+      "moved -3.7 points since the day's open by 19:17"
+    ],
+    "weight": 9.2,
+    "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "YouGov",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-29",
+          "population": "LV",
+          "sample": 2093,
+          "d": 51.0,
+          "r": 47.0,
+          "margin_d": 4.0,
+          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf"
+        },
+        {
+          "pollster": "Rasmussen Reports",
+          "sponsor": null,
+          "start_date": "2026-10-28",
+          "end_date": "2026-10-29",
+          "population": "LV",
+          "sample": 745,
+          "d": 49.0,
+          "r": 44.0,
+          "margin_d": 5.0,
+          "source_url": "https://www.rasmussenreports.com/public_content/politics/public_surveys/toplines_michigan_senate_october_28_29_2026"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 4.46,
+        "n": 13,
+        "newest": "2026-10-29"
+      },
+      "market_path": [
+        [
+          "2026-11-01T00:30:01-04:00",
+          0.7725
+        ],
+        [
+          "2026-11-01T02:34:05-05:00",
+          0.78
+        ],
+        [
+          "2026-11-01T04:13:12-05:00",
+          0.79
+        ],
+        [
+          "2026-11-01T07:03:03-05:00",
+          0.79
+        ],
+        [
+          "2026-11-01T08:54:38-05:00",
+          0.79
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.79
+        ],
+        [
+          "2026-11-01T11:00:00-05:00",
+          0.79
+        ],
+        [
+          "2026-11-01T12:07:14-05:00",
+          0.7475
+        ],
+        [
+          "2026-11-01T13:21:21-05:00",
+          0.715
+        ],
+        [
+          "2026-11-01T14:12:05-05:00",
+          0.72
+        ],
+        [
+          "2026-11-01T15:16:33-05:00",
+          0.725
+        ],
+        [
+          "2026-11-01T16:09:42-05:00",
+          0.735
+        ],
+        [
+          "2026-11-01T17:01:19-05:00",
+          0.73
+        ],
+        [
+          "2026-11-01T18:24:33-05:00",
+          0.73
+        ],
+        [
+          "2026-11-01T19:17:49-05:00",
+          0.735
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%); moved -3.7 points since the day's open by 19:17. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+4 (LV); Rasmussen Reports D+5 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2450,17 +2677,7 @@
     "kind": "poll",
     "why": {
       "events": [],
-      "events_by_kind": {
-        "ad": 0,
-        "debate": 0,
-        "endorsement": 0,
-        "rally": 0,
-        "poll": 0,
-        "legal": 0,
-        "scandal": 0,
-        "money": 0,
-        "other": 0
-      },
+      "events_by_kind": {},
       "polls": [
         {
           "pollster": "Patinkin Research Strategies",
@@ -2504,12 +2721,48 @@
         [
           "2026-11-01T10:00:00-05:00",
           0.265
+        ],
+        [
+          "2026-11-01T11:00:00-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T12:07:14-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T13:21:21-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T14:12:05-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T15:16:33-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T16:09:42-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T17:01:19-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T18:24:33-05:00",
+          0.265
+        ],
+        [
+          "2026-11-01T19:17:49-05:00",
+          0.265
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Patinkin Research Strategies D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls). News in the last 48 hours: 0 articles. Polls just in: Patinkin Research Strategies D+5 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2529,11 +2782,24 @@
     "why": {
       "events": [],
       "events_by_kind": {},
-      "polls": [],
+      "polls": [
+        {
+          "pollster": "YouGov",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-29",
+          "population": "LV",
+          "sample": 2093,
+          "d": 52.0,
+          "r": 46.0,
+          "margin_d": 6.0,
+          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf"
+        }
+      ],
       "poll_average": {
-        "margin_d": 7.71,
-        "n": 7,
-        "newest": "2026-10-27"
+        "margin_d": 7.5,
+        "n": 8,
+        "newest": "2026-10-29"
       },
       "market_path": [
         [
@@ -2559,12 +2825,48 @@
         [
           "2026-11-01T10:00:00-05:00",
           0.93
+        ],
+        [
+          "2026-11-01T11:00:00-05:00",
+          0.931
+        ],
+        [
+          "2026-11-01T12:07:14-05:00",
+          0.9327
+        ],
+        [
+          "2026-11-01T13:21:21-05:00",
+          0.93
+        ],
+        [
+          "2026-11-01T14:12:05-05:00",
+          0.929
+        ],
+        [
+          "2026-11-01T15:16:33-05:00",
+          0.9292
+        ],
+        [
+          "2026-11-01T16:09:42-05:00",
+          0.9343
+        ],
+        [
+          "2026-11-01T17:01:19-05:00",
+          0.9367
+        ],
+        [
+          "2026-11-01T18:24:33-05:00",
+          0.9383
+        ],
+        [
+          "2026-11-01T19:17:49-05:00",
+          0.94
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles. Polls just in: YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },

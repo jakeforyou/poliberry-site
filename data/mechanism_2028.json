@@ -631,44 +631,44 @@
   },
   {
     "variable": "trump approval avg",
-    "value": "Silver Bulletin net -22.3 (Oct 20). Wikipedia compilation Oct 19: DDHQ 38.6 approve 59.8 disapprove net -21.2, published average of nine aggregators net -24.2.",
-    "delta": "DDHQ average net -20.7 on Oct 13 to -21.2 on Oct 19. Not computed by script. Both values retrieved.",
-    "source_url": "https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin",
+    "value": "Our pull, 16 polls since Oct 20: approve 37.8, disapprove 59.8, net -22. Silver Bulletin free preview: {\"approve\": 37.3, \"disapprove\": null}. RealClearPolling, The Economist and the New York Times trackers returned 403 and were not bypassed.",
+    "delta": "Net -21 to -22 on Oct 20 (DDHQ -21.2, Silver -22.3) to about -22 on our own pull tonight. Not computed by script; both retrieved.",
+    "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_on_the_second_Trump_presidency#2026",
     "as_of": "2026-11-01"
   },
   {
     "variable": "real disposable income growth",
-    "value": "August 2026 real DPI 0.0 percent month over month (July +0.3). Year over year not published.",
-    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
-    "source_url": "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+    "value": "September 2026 real DPI -0.3 percent month over month (August 0.0, July +0.3). Released Oct 29. Next release (October) Nov 25.",
+    "delta": "August 0.0 to September -0.3. Both retrieved. Real income fell into the election.",
+    "source_url": "https://bea.gov/news/2026/personal-income-and-outlays-september-2026",
     "as_of": "2026-11-01"
   },
   {
     "variable": "fed funds target",
-    "value": "3.75 to 4.00 percent. Next FOMC Oct 27 to 28.",
-    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
-    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+    "value": "3.75 to 4.00 percent, held on Oct 28 by a 10 to 2 vote with both dissents preferring a quarter-point hike. Next meeting Dec 8 to 9.",
+    "delta": "Unchanged from the Sept 16 hike. The dissents point toward a December hike. Retrieved.",
+    "source_url": "https://federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
     "as_of": "2026-11-01"
   },
   {
     "variable": "trump 2028 endorsement signal",
-    "value": "public endorsements: 0. Credibly reported private signals in the last 60 days: 1 (a restatement on Oct 14 of an Aug 6 report).",
-    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
-    "source_url": "https://www.ms.now/news/marco-rubio-president-2028-jd-vance",
+    "value": "Public endorsements: 0. On the record Trump called it too early to endorse Vance. Reporting from August has him telling donors to back Vance and elevating Rubio as a rival. No new development found for October.",
+    "delta": "No change: 0 public endorsements. Search found nothing dated October.",
+    "source_url": "https://www.washingtonexaminer.com/?p=4678407",
     "as_of": "2026-11-01"
   },
   {
     "variable": "formal 2028 announcements",
-    "value": "FEC 2028 presidential filers: 473. Statutory candidates (status C): 11. Exploratory committees reported: 2.",
-    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
+    "value": "FEC 2028 presidential filers: 491. Statutory candidates (status C): 14.",
+    "delta": "473 to 491 filers and 11 to 14 statutory candidates since Oct 16. Retrieved from the API.",
     "source_url": "https://api.open.fec.gov/v1/candidates/?election_year=2028&office=P",
     "as_of": "2026-11-01"
   },
   {
     "variable": "dnc calendar status",
-    "value": "Approved by the full DNC Aug 15, 2026. Six early states.",
-    "delta": "not re-retrieved this run. Value as of 2026-10-16.",
-    "source_url": "https://democrats.org/dnc-votes-to-officially-select-early-states-for-2028-democratic-presidential-nominating-calendar/",
+    "value": "Approved by the full DNC Aug 15, 2026. Six early states: SC, NV, NH, NM, MI, VA. No change found since.",
+    "delta": "Unchanged.",
+    "source_url": "https://www.notus.org/democrats/dnc-2028-calendar-rules-and-bylaws",
     "as_of": "2026-11-01"
   }
 ]
