@@ -2330,7 +2330,17 @@
     "kind": "benchmark",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [],
       "poll_average": {
         "margin_d": -0.5,
@@ -2397,12 +2407,16 @@
         [
           "2026-11-01T19:17:49-05:00",
           0.695
+        ],
+        [
+          "2026-11-01T20:00:00-05:00",
+          0.695
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2421,7 +2435,17 @@
     "kind": "benchmark",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [
         {
           "pollster": "ActiVote",
@@ -2525,12 +2549,16 @@
         [
           "2026-11-01T19:17:49-05:00",
           0.805
+        ],
+        [
+          "2026-11-01T20:00:00-05:00",
+          0.805
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles. Polls just in: ActiVote D+2 (LV); InsiderAdvantage D+3 (LV); YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Decision Desk moved -20.0 (70.0 to 50.0%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: ActiVote D+2 (LV); InsiderAdvantage D+3 (LV); YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2544,9 +2572,9 @@
     ],
     "triggers": [
       "markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%)",
-      "moved -3.7 points since the day's open by 19:17"
+      "moved -3.2 points since the day's open by 20:00"
     ],
-    "weight": 9.2,
+    "weight": 8.7,
     "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
     "kind": "alert",
     "why": {
@@ -2653,12 +2681,16 @@
         [
           "2026-11-01T19:17:49-05:00",
           0.735
+        ],
+        [
+          "2026-11-01T20:00:00-05:00",
+          0.74
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%); moved -3.7 points since the day's open by 19:17. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+4 (LV); Rasmussen Reports D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved -5.5 points since the last pull (Polymarket 81.5 to 74.5; Kalshi 76.5 to 72.5%); moved -3.2 points since the day's open by 20:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+4 (LV); Rasmussen Reports D+5 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2677,7 +2709,17 @@
     "kind": "poll",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [
         {
           "pollster": "Patinkin Research Strategies",
@@ -2757,12 +2799,134 @@
         [
           "2026-11-01T19:17:49-05:00",
           0.265
+        ],
+        [
+          "2026-11-01T20:00:00-05:00",
+          0.265
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls). News in the last 48 hours: 0 articles. Polls just in: Patinkin Research Strategies D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Patinkin Research Strategies (LV, through 2026-10-29) shows D+5, 7 points from the prior average of D-2 (6 polls). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Patinkin Research Strategies D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-01",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "kinds": [
+      "alert"
+    ],
+    "triggers": [
+      "moved +3.5 points since the day's open by 20:00"
+    ],
+    "weight": 3.5,
+    "source_url": "https://polymarket.com/event/kansas-senate-election-winner",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
+      "polls": [
+        {
+          "pollster": "YouGov",
+          "sponsor": null,
+          "start_date": "2026-10-26",
+          "end_date": "2026-10-29",
+          "population": "LV",
+          "sample": 2092,
+          "d": 50.0,
+          "r": 49.0,
+          "margin_d": 1.0,
+          "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf"
+        }
+      ],
+      "poll_average": {
+        "margin_d": 2.5,
+        "n": 6,
+        "newest": "2026-10-29"
+      },
+      "market_path": [
+        [
+          "2026-11-01T00:30:01-04:00",
+          0.51
+        ],
+        [
+          "2026-11-01T02:34:05-05:00",
+          0.515
+        ],
+        [
+          "2026-11-01T04:13:12-05:00",
+          0.51
+        ],
+        [
+          "2026-11-01T07:03:03-05:00",
+          0.51
+        ],
+        [
+          "2026-11-01T08:54:38-05:00",
+          0.51
+        ],
+        [
+          "2026-11-01T10:00:00-05:00",
+          0.515
+        ],
+        [
+          "2026-11-01T11:00:00-05:00",
+          0.515
+        ],
+        [
+          "2026-11-01T12:07:14-05:00",
+          0.52
+        ],
+        [
+          "2026-11-01T13:21:21-05:00",
+          0.52
+        ],
+        [
+          "2026-11-01T14:12:05-05:00",
+          0.52
+        ],
+        [
+          "2026-11-01T15:16:33-05:00",
+          0.52
+        ],
+        [
+          "2026-11-01T16:09:42-05:00",
+          0.52
+        ],
+        [
+          "2026-11-01T17:01:19-05:00",
+          0.5275
+        ],
+        [
+          "2026-11-01T18:24:33-05:00",
+          0.525
+        ],
+        [
+          "2026-11-01T19:17:49-05:00",
+          0.525
+        ],
+        [
+          "2026-11-01T20:00:00-05:00",
+          0.545
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: moved +3.5 points since the day's open by 20:00. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+1 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2781,7 +2945,17 @@
     "kind": "rating",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [
         {
           "pollster": "YouGov",
@@ -2861,12 +3035,16 @@
         [
           "2026-11-01T19:17:49-05:00",
           0.94
+        ],
+        [
+          "2026-11-01T20:00:00-05:00",
+          0.938
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles. Polls just in: YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: YouGov D+6 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
