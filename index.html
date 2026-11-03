@@ -1450,11 +1450,18 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-map-h h2 { margin: 0; }
 .nt-map-h .nt-feedf { margin-left: 0; }
 .nt-map-svg { width: 100%; height: auto; max-height: 560px; }
+.nt-map-modes { display: flex; flex-wrap: wrap; gap: .3rem; }
+.nt-map-modes button { all: unset; cursor: pointer; padding: .3rem .75rem; min-height: 24px; border-radius: 999px; font-size: 12.5px; color: var(--color-fg-muted); background: var(--nt-wash); }
+.nt-map-modes button[aria-pressed="true"] { color: var(--color-fg); background: var(--nt-wash2); font-weight: 650; box-shadow: inset 0 0 0 1px var(--nt-rule); }
+.nt-map-modes button:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-map-how { margin: 0; font-size: 12.5px; color: var(--color-fg-muted); max-width: 78ch; line-height: 1.45; }
+.nt-map-h .nt-feedf button[disabled] { opacity: .45; cursor: default; }
+@media (max-width: 30rem) { .nt-map-modes { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: .2rem; } .nt-map-modes button { flex: none; min-height: 40px; display: inline-flex; align-items: center; padding-top: 0; padding-bottom: 0; } }
 .nt-map-st { stroke: var(--color-fg-muted); stroke-width: 1px; transition: opacity .15s; }  /* every state has an edge, so "not up" is seen against the page (accessibility review, item 9) */
 .nt-map-st.up { cursor: pointer; }
 .nt-map-st.up:hover { opacity: .8; }
 .nt-map-mesh { fill: none; stroke: var(--color-bg); stroke-width: 1; stroke-linejoin: round; }
-.nt-map-t { font: 700 12px var(--font-text); fill: #0c1220; pointer-events: none; }  /* dark on the party color: 7.2 or better */
+.nt-map-t { font: 700 12px var(--font-text); fill: #0c1220; pointer-events: none; } .nt-map-t.lt { fill: #eef1f7; }  /* dark on the party color: 7.2 or better */
 .nt-map-leg { display: flex; flex-wrap: wrap; gap: .3rem .9rem; font-size: 12.5px; color: var(--color-fg-muted); }
 .nt-map-sw { display: inline-flex; align-items: center; gap: .35rem; } .nt-map-sw i { width: 14px; height: 10px; border-radius: 2px; display: inline-block; outline: 1px solid color-mix(in srgb, var(--nt-rule) 70%, transparent); }
 @media (prefers-reduced-motion: reduce) { .nt-map-st { transition: none; } }
@@ -4065,62 +4072,177 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     cols.append(a, b); box.append(cols);
   }
 
-  // ---------- the results map (overnight run): every state's Senate or governor race, colored by where it stands now
-  let ntMapOff = 'senate';
-  try { ntMapOff = localStorage.getItem('nt-map-office') || 'senate'; } catch (e) { /* default */ }
+  // ---------- the results map (overnight run), with color modes (Nov 3, Jake: "different visualization color modes"). Every mode
+  // reads what the page already has: the every-race rows (public copy: NPR values already gone), the test tiles, the importance
+  // scores and the results batches file. Each mode answers one question, says so in a sentence, and keeps its own legend.
+  const NT_MAP_MODES = [
+    ['results', 'Results', 'Who has won or leads each race. Pale before any votes: our chance before the night.'],
+    ['forecast', 'Against our forecast', 'Each test state\'s count against our forecast: bluer, on our line, or redder. The tests were set before the night. Other states are not tests.'],
+    ['counting', 'Closing and counting', 'Before a state\'s polls close: the hour they close. After: how much of the expected vote is counted.'],
+    ['control', 'Decides control', 'How often the state\'s races hand a party control in our simulations. Senate is live through the night, House is set before votes. A called race stops mattering.'],
+    ['flips', 'Flips', 'Where a seat is changing party, called or leading. For the House, the net seats changing in the state.'],
+    ['batch', 'Newest votes', 'Which way the newest batch of counted votes broke in each state\'s race. Bright when it landed in the last 10 minutes, fading after 30.'],
+  ];
+  let ntMapOff = 'senate', ntMapMode = 'results';
+  try { ntMapOff = localStorage.getItem('nt-map-office') || 'senate'; ntMapMode = localStorage.getItem('nt-map-mode') || 'results'; } catch (e) { /* default */ }
+  if (!NT_MAP_MODES.some((m) => m[0] === ntMapMode)) ntMapMode = 'results';
+  const ntStOf = (x) => x.state || (/^[A-Z]{2}-/.test(x.key) ? x.key.slice(0, 2) : (/_([a-z]{2})$/.exec(x.key) || [])[1]?.toUpperCase());
+  function ntCloseMs(hhmm) {  // a state's first poll close in ET on election night; 00:00 and 01:00 are after midnight
+    if (!hhmm) return null;
+    const [h, m] = hhmm.split(':').map(Number);
+    return Date.parse(`2026-11-0${h < 6 ? 4 : 3}T${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:00-05:00`);
+  }
+  const ntHourText = (hhmm) => { const [h, m] = hhmm.split(':').map(Number); return `${h % 12 || 12}${m ? ':' + String(m).padStart(2, '0') : ''}${h < 12 ? 'am' : 'pm'}`; };
   function ntMap(d) {
     const box = $('#nt-map'); if (!box) return;
     if (!_geo) { box.hidden = true; return; }  // the shapes load with the page; the next refresh draws it
     box.hidden = false; box.replaceChildren();
-    const rows = (d.every || {})[ntMapOff] || [];
-    const by = {}; for (const x of rows) by[x.state] = x;
+    const mode = ntMapMode, office = mode === 'control' && ntMapOff === 'governor' ? 'senate' : ntMapOff;  // governors do not decide control
+    const ev = d.every || {}, rows = ev[office] || [];
+    const by = {}, byH = {};
+    for (const x of rows) { const st = ntStOf(x); if (!st) continue; if (office === 'house') (byH[st] = byH[st] || []).push(x); else by[st] = x; }
     const cs = getComputedStyle(document.documentElement);
     const css = (v, f) => (getComputedStyle($('#night')).getPropertyValue(v) || cs.getPropertyValue(v) || f).trim() || f;
-    const D = css('--nt-d', '#7da2f5'), R = css('--nt-r', '#f2806f'), I = css('--nt-jake', '#e3a548');
+    const D = css('--nt-d', '#7da2f5'), R = css('--nt-r', '#f2806f'), I = css('--nt-jake', '#e3a548'), OURS = css('--nt-ours', '#2fb3a6'), IMP = '#b48cf2';
     const mid = isDark() ? '#2a2f3d' : '#d9dbe3', none = isDark() ? '#161b27' : '#eef0f4';
-    const col = { D, R, I };
-    const statusOf = (x) => {
-      if (!x) return { k: 'none', fill: none, label: 'Not on the ballot this year' };
-      const s = ((x.pre || {}).side || {}).party === 'I' || (!x.cands || !x.cands.some((c) => c.party === 'D')) ? 'I' : 'D';
-      const w = (x.call || {}).winner;
-      if (w && w !== 'runoff') { const p = w === 'R' ? 'R' : w === 'D' ? 'D' : 'I'; return { k: 'called-' + p, fill: col[p], label: `Called for ${(x.call.name || '').split(',')[0] || p}` }; }
-      if (w === 'runoff') return { k: 'runoff', fill: mid, label: 'Going to a runoff' };
-      if (x.margin_d != null) { const p = x.margin_d > 0 ? s : 'R'; return { k: 'lead-' + p, fill: d3.interpolateLab(mid, col[p])(0.5), label: `${p === 'R' ? 'Republican' : s === 'I' ? 'Independent' : 'Democrat'} leads, ${ntPct(x.counted)} in` }; }
-      const ch = (x.pre || {}).chance_d; if (ch == null) return { k: 'wait', fill: mid, label: 'No votes yet' };
-      const lean = Math.min(1, Math.abs(ch - 50) / 50), p = ch >= 50 ? s : 'R';  // the pale pre-vote shade stops at .25 so it stays well apart from the .5 of a lead (accessibility review, item 9)
-      return { k: 'pre', fill: d3.interpolateLab(mid, col[p])(Math.min(0.25, 0.12 + 0.3 * lean)), label: `No votes yet. Before votes: ${ntAllPre({ ...x, st: x.state })}` };
+    const col = { D, R, I }, mix = (c, t) => d3.interpolateLab(mid, c)(Math.max(0, Math.min(1, t)));
+    const NOT = { fill: none, label: 'Not on the ballot this year' };
+    const sideOf = (x) => (((x.pre || {}).side || {}).party === 'I' || (!x.cands || !x.cands.some((c) => c.party === 'D')) ? 'I' : 'D');
+    const pName = (p, x) => (p === 'R' ? 'Republican' : p === 'I' || (x && sideOf(x) === 'I' && p !== 'D') ? 'Independent' : 'Democrat');
+    const now = (nightMode === 'practice' && Date.parse(d.now_et)) || Date.now(), imp = (d.story || {}).importance || {};  // practice runs on its own made-up clock
+    const tiles = {}; for (const t of d.tiles || []) if (t.state && t.state !== 'House') tiles[t.state] = t;
+    const band = ((d.thresholds || {}).band) || 2;
+    const results = (nightResults && nightResults.races) || {};
+    const open = (st, x) => () => { if (x) ntAllPop(d, { ...x, st }); else ntStatePop(d, st); };
+    const sum = [];  // facts for the sentence under the map, gathered as the states are colored
+    const statusOf = {
+      results(st) {
+        if (office === 'house') {
+          const hs = byH[st]; if (!hs) return NOT;
+          let cd = 0, cr = 0, ld = 0, lr = 0, exp = 0;
+          for (const x of hs) { const w = (x.call || {}).winner, a = x.ahead; if (w === 'D') cd++; else if (w === 'R') cr++; else if (a === 'D') ld++; else if (a === 'R') lr++; exp += ((x.pre || {}).chance_d ?? 50) / 100; }
+          const dn = cd + ld, rn = cr + lr, n = hs.length;
+          if (!dn && !rn) { const sh = exp / n; return { fill: mix(sh >= 0.5 ? D : R, Math.min(0.25, 0.1 + 0.3 * Math.abs(sh - 0.5) * 2)), label: `${n} House seat${n === 1 ? '' : 's'}, no votes yet. Democrats expected to win about ${Math.round(exp)} before votes`, up: true }; }
+          const share = dn / (dn + rn), all = cd + cr === n;
+          return { fill: mix(share >= 0.5 ? D : R, (all ? 0.55 : 0.3) + 0.45 * Math.abs(share - 0.5) * 2), label: `${n} House seats: Democrats ${cd} called and ${ld} leading, Republicans ${cr} called and ${lr} leading`, text: n >= 3 ? `${dn}-${rn}` : null, up: true };
+        }
+        const x = by[st]; if (!x) return NOT;
+        const s = sideOf(x), w = (x.call || {}).winner;
+        if (w && w !== 'runoff') { const p = w === 'R' ? 'R' : w === 'D' ? 'D' : 'I'; return { fill: col[p], label: `Called for ${(x.call.name || '').split(',')[0] || p}`, text: `${st} ${p}`, x }; }
+        if (w === 'runoff') return { fill: mid, label: 'Going to a runoff', x };
+        if (x.margin_d != null) { const p = x.margin_d > 0 ? s : 'R'; return { fill: mix(col[p], 0.5), label: `${pName(p, x)} leads, ${ntPct(x.counted)} in`, x }; }
+        const ch = (x.pre || {}).chance_d; if (ch == null) return { fill: mid, label: 'No votes yet', x };
+        const lean = Math.min(1, Math.abs(ch - 50) / 50), p = ch >= 50 ? s : 'R';  // the pale pre-vote shade stops at .25 so it stays well apart from the .5 of a lead (accessibility review, item 9)
+        return { fill: mix(col[p], Math.min(0.25, 0.12 + 0.3 * lean)), label: `No votes yet. Before votes: ${ntAllPre({ ...x, st })}`, x };
+      },
+      forecast(st) {
+        const t = tiles[st]; if (!t) return { fill: none, label: 'Not one of our test states' };
+        const o = t.offset;
+        if (o == null || t.pointer === 'none') return { fill: mid, label: `A test state. No reading yet${t.close_et ? `, polls close ${ntHourText(t.close_et)}` : ''}`, up: true };
+        sum.push([st, o]);
+        const k = Math.abs(o) <= band ? 'on' : o > 0 ? 'bluer' : 'redder';
+        return { fill: k === 'on' ? mix(OURS, 0.75) : mix(o > 0 ? D : R, 0.35 + 0.65 * Math.min(1, (Math.abs(o) - band) / 6)), label: `${k === 'on' ? 'On our line' : k === 'bluer' ? 'Running bluer than our forecast' : 'Running redder than our forecast'}: ${ntOff(o)} than our line${t.basis ? ` (${t.basis})` : ''}`, text: k === 'on' ? null : `${Math.round(Math.abs(o))}`, up: true };
+      },
+      counting(st) {
+        const xs = office === 'house' ? byH[st] : by[st] ? [by[st]] : null; if (!xs) return NOT;
+        const close = xs[0].close, cm = ntCloseMs(close);
+        if (cm && now < cm) { const hrs = (cm - Date.parse('2026-11-03T18:00:00-05:00')) / 3.6e6; sum.push(['wait', close]); return { fill: mix(isDark() ? '#9aa3b8' : '#5b6274', 0.75 - 0.08 * Math.max(0, hrs)), label: `Polls close at ${ntHourText(close)} ET`, text: ntHourText(close).replace(':00', '').replace(/(am|pm)$/, ''), up: true, x: xs.length === 1 ? xs[0] : null }; }
+        const cts = xs.map((x) => x.counted).filter((v) => v != null);
+        if (!cts.length) { sum.push(['closed', close]); return { fill: mid, label: `Polls closed${close ? ` at ${ntHourText(close)}` : ''}. Nothing counted yet`, text: '0', up: true, x: xs.length === 1 ? xs[0] : null }; }
+        const c = cts.reduce((a, b) => a + b, 0) / cts.length;
+        sum.push(['count', c]);
+        return { fill: mix(OURS, 0.2 + 0.8 * Math.min(1, c / 100)), label: `${ntPct(c)} of the expected vote counted${xs.length > 1 ? `, the average of ${xs.length} House seats` : ''}`, text: `${Math.round(c)}`, up: true, x: xs.length === 1 ? xs[0] : null };
+      },
+      control(st) {
+        const xs = office === 'house' ? byH[st] : by[st] ? [by[st]] : null; if (!xs) return NOT;
+        const p = xs.reduce((a, x) => a + ((imp[x.key] || {}).p || 0), 0);
+        if (!p) return { fill: mid, label: xs.some((x) => x.call) ? 'Called, so it no longer decides control' : 'Almost never decides control in our simulations', up: true, x: xs.length === 1 ? xs[0] : null };
+        sum.push([st, p]);
+        return { fill: mix(IMP, 0.18 + 0.82 * Math.min(1, p / 0.15)), label: `Decides control in ${(100 * p).toFixed(1)}% of our simulations${office === 'house' ? `, its ${xs.length} House seats together` : ''}`, text: p >= 0.03 ? `${Math.round(100 * p)}` : null, up: true, x: xs.length === 1 ? xs[0] : null };
+      },
+      flips(st) {
+        if (office === 'house') {
+          const hs = byH[st]; if (!hs) return NOT;
+          const g = { D: 0, R: 0, I: 0 }, cg = { D: 0, R: 0, I: 0 };
+          for (const x of hs) { if (!x.flip) continue; const p = ((x.call || {}).winner || x.ahead || '') === 'R' ? 'R' : ((x.call || {}).winner || x.ahead) === 'D' ? 'D' : 'I'; g[p]++; if (x.flip_called) cg[p]++; }
+          const net = g.D - g.R;
+          if (!g.D && !g.R && !g.I) return { fill: mid, label: hs.some((x) => x.counted != null || x.call) ? 'No House seat changing party' : 'No votes yet', up: true };
+          sum.push([st, g, cg]);
+          return { fill: net === 0 ? mix(I, 0.5) : mix(net > 0 ? D : R, 0.35 + 0.22 * Math.min(3, Math.abs(net))), label: `House seats changing party: ${g.D} to Democrats (${cg.D} called), ${g.R} to Republicans (${cg.R} called)${g.I ? `, ${g.I} to others` : ''}`, text: net ? `+${Math.abs(net)}${net > 0 ? 'D' : 'R'}` : null, up: true };
+        }
+        const x = by[st]; if (!x) return NOT;
+        const was = x.held_by || x.prev_party;
+        if (!x.flip) return { fill: mid, label: x.counted != null || x.call ? `Holding: ${pName(was, x)}s keep it so far` : 'No votes yet', x };
+        const w = (x.call || {}).winner || x.ahead, p = w === 'R' ? 'R' : w === 'D' ? 'D' : 'I';
+        sum.push([st, p, !!x.flip_called]);
+        return { fill: x.flip_called ? col[p] : mix(col[p], 0.5), label: `${x.flip_called ? 'Flipped' : 'Flipping, not called'}: ${pName(was, x)} seat to the ${pName(p, x)}`, text: x.flip_called ? `${st} ${p}` : null, x };
+      },
+      batch(st) {
+        const rs = Object.values(results).filter((r) => r && r.state === st && r.office === office && r.latest);
+        const xs = office === 'house' ? byH[st] : by[st] ? [by[st]] : null; if (!xs) return NOT;
+        if (!rs.length) return { fill: mid, label: 'No batches yet', up: true, x: xs.length === 1 ? xs[0] : null };
+        rs.sort((a, b) => String(b.latest.at).localeCompare(String(a.latest.at)));
+        const r = rs[0], L = r.latest, age = (now - Date.parse(L.at)) / 6e4;
+        const fresh = age <= 10 ? 1 : age <= 30 ? 0.7 : 0.4;
+        if (L.margin_d == null) return { fill: mid, label: `${r.name}, ${L.time_text}: not a batch (a correction or a new source)`, up: true, x: xs.find((x) => x.key === r.key) };
+        sum.push([st, r, age]);
+        const p = L.margin_d > 0 ? (r.sides && r.sides.a && r.sides.a.party === 'I' ? 'I' : 'D') : 'R';
+        return { fill: mix(col[p], (0.3 + 0.7 * Math.min(1, Math.abs(L.margin_d) / 20)) * fresh + 0.05), label: `${r.name}, ${L.time_text}: ${ntBtNum(L.votes)} votes, ${ntM(L.margin_d)}. Running ${ntM(L.run_margin_d)}${L.counted != null ? ` with ${Math.round(L.counted)}% counted` : ''}`, text: age <= 10 ? L.time_text.replace(/(am|pm)$/, '') : null, up: true, x: xs.find((x) => x.key === r.key) };
+      },
     };
     const W = Math.max(320, Math.min(box.clientWidth || 720, 900)), H = Math.round(W * 0.6);
     const proj = d3.geoAlbersUsa().fitExtent([[4, 4], [W - 4, H - 4]], { type: 'FeatureCollection', features: _geo.feats });
     const path = d3.geoPath(proj);
-    const tally = { called: 0, lead: 0, pre: 0 }, codes = [];
     const head = el('div', { class: 'nt-map-h' });
-    const h2 = el('h2', {}, 'The map');
     const tabs = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Which races' });
-    for (const [k, lab] of [['senate', 'Senate'], ['governor', 'Governor']]) {
-      const b = el('button', { type: 'button', 'aria-pressed': String(ntMapOff === k) }, lab);
+    for (const [k, lab] of [['senate', 'Senate'], ['governor', 'Governor'], ['house', 'House']]) {
+      const b = el('button', { type: 'button', 'aria-pressed': String(ntMapOff === k), 'data-fk': `mo:${k}`, disabled: mode === 'forecast' ? '' : null }, lab);
+      if (mode === 'forecast') b.disabled = true;
       b.addEventListener('click', () => { ntMapOff = k; try { localStorage.setItem('nt-map-office', k); } catch (er) { /* fine */ } ntKeepFocus(() => ntMap(d)); });
       tabs.append(b);
     }
-    head.append(ntHead(h2, 'map'), tabs);
+    head.append(ntHead(el('h2', {}, 'The map'), 'map'), tabs);
+    const modes = el('div', { class: 'nt-map-modes', role: 'group', 'aria-label': 'Color the map by' });
+    for (const [k, lab] of NT_MAP_MODES) {
+      const b = el('button', { type: 'button', 'aria-pressed': String(mode === k), 'data-fk': `mm:${k}` }, lab);
+      b.addEventListener('click', () => { ntMapMode = k; try { localStorage.setItem('nt-map-mode', k); } catch (er) { /* fine */ } ntKeepFocus(() => ntMap(d)); });
+      modes.append(b);
+    }
+    const how = NT_MAP_MODES.find((m) => m[0] === mode)[2] + (mode === 'control' && ntMapOff === 'governor' ? ' Governors do not decide control, so this shows the Senate.' : '');
     const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('class', 'nt-map-svg').attr('role', 'img');
+    const codes = [];
     for (const f of _geo.feats) {
-      const x = by[f.st], s = statusOf(x);
-      if (s.k.startsWith('called')) tally.called++; else if (s.k.startsWith('lead')) tally.lead++; else if (s.k === 'pre') tally.pre++;
-      const p = svg.append('path').attr('d', path(f)).attr('fill', s.fill).attr('class', 'nt-map-st' + (x ? ' up' : ''));
+      const s = statusOf[mode](f.st);
+      const p = svg.append('path').attr('d', path(f)).attr('fill', s.fill).attr('class', 'nt-map-st' + (s.x || s.up ? ' up' : ''));
       p.append('title').text(`${NT_STATE[f.st] || f.st}: ${s.label}`);
-      if (x) p.on('click', () => ntAllPop(d, { ...x, st: x.state }));
-      if (s.k.startsWith('called')) { const bb = path.bounds(f), c = path.centroid(f); if (bb[1][0] - bb[0][0] >= 30 && bb[1][1] - bb[0][1] >= 16 && !Number.isNaN(c[0])) codes.push([c, `${f.st} ${s.k.slice(-1)}`]); }
+      if (s.x || s.up) p.on('click', open(f.st, s.x));
+      if (s.text) { const bb = path.bounds(f), c = path.centroid(f); if (bb[1][0] - bb[0][0] >= 26 && bb[1][1] - bb[0][1] >= 14 && !Number.isNaN(c[0])) codes.push([c, s.text, s.fill]); }
     }
     svg.append('path').attr('d', path(_geo.mesh)).attr('class', 'nt-map-mesh');
-    // a called state also prints its code and its party letter, since color alone should not carry who won (amber and coral are close for some eyes)
-    for (const [c, t] of codes) svg.append('text').attr('x', c[0]).attr('y', c[1] + 4).attr('text-anchor', 'middle').attr('class', 'nt-map-t').text(t);
-    svg.attr('aria-label', `${ntMapOff === 'senate' ? 'Senate' : 'Governor'} map: ${tally.called} called, ${tally.lead} counting, ${tally.pre} with no votes yet. The full list is under All races.`);
+    // a state's code, count or hour prints on it, since color alone should not carry the meaning (amber and coral are close for some eyes)
+    for (const [c, t, fill] of codes) svg.append('text').attr('x', c[0]).attr('y', c[1] + 4).attr('text-anchor', 'middle').attr('class', 'nt-map-t' + (d3.lab(fill).l < 55 ? ' lt' : '')).text(t);  // light text on a dark fill
     const leg = el('div', { class: 'nt-map-leg' });
     const sw = (fill, lab) => { const s = el('span', { class: 'nt-map-sw' }); const i = el('i'); i.style.background = fill; s.append(i, document.createTextNode(lab)); return s; };
-    leg.append(sw(D, 'Called D'), sw(d3.interpolateLab(mid, D)(0.5), 'D leads'), sw(d3.interpolateLab(mid, D)(0.2), 'Leans D before votes'),
-      sw(d3.interpolateLab(mid, R)(0.2), 'Leans R before votes'), sw(d3.interpolateLab(mid, R)(0.5), 'R leads'), sw(R, 'Called R'), sw(I, 'Independent'), sw(none, 'Not up'));
-    box.append(head, svg.node(), leg, el('p', { class: 'nt-all-sum' }, `${tally.called} called, ${tally.lead} counting, ${tally.pre} with no votes yet. Tap a state for its race.`));
+    const L = {
+      results: office === 'house' ? [[mix(D, 0.9), 'Most seats D'], [mix(D, 0.4), 'Leaning D'], [mix(R, 0.4), 'Leaning R'], [mix(R, 0.9), 'Most seats R'], [none, 'No House seat']]
+        : [[D, 'Called D'], [mix(D, 0.5), 'D leads'], [mix(D, 0.2), 'Leans D before votes'], [mix(R, 0.2), 'Leans R before votes'], [mix(R, 0.5), 'R leads'], [R, 'Called R'], [I, 'Independent'], [none, 'Not up']],
+      forecast: [[mix(D, 1), 'Much bluer'], [mix(D, 0.4), 'Bluer'], [mix(OURS, 0.75), `On our line (within ${band} points)`], [mix(R, 0.4), 'Redder'], [mix(R, 1), 'Much redder'], [mid, 'No reading yet'], [none, 'Not a test state']],
+      counting: [[mix(isDark() ? '#9aa3b8' : '#5b6274', 0.75), 'Closes soon (the hour is on the state)'], [mid, 'Closed, nothing counted'], [mix(OURS, 0.35), 'Some counted'], [mix(OURS, 1), 'All counted']],
+      control: [[mix(IMP, 1), '15% or more'], [mix(IMP, 0.5), 'About 7%'], [mix(IMP, 0.2), 'Rarely'], [mid, 'Almost never, or called']],
+      flips: office === 'house' ? [[mix(D, 0.8), 'Net seats to D'], [mix(I, 0.5), 'Even swap'], [mix(R, 0.8), 'Net seats to R'], [mid, 'No change']] : [[D, 'Flipped to D'], [mix(D, 0.5), 'Flipping to D'], [mix(R, 0.5), 'Flipping to R'], [R, 'Flipped to R'], [I, 'To an independent'], [mid, 'Holding, or no votes']],
+      batch: [[mix(D, 1), 'Newest batch went D'], [mix(R, 1), 'Newest batch went R'], [mix(D, 0.35), 'Older than 30 minutes'], [mid, 'No batch yet']],
+    }[mode];
+    for (const [f, lab] of L) leg.append(sw(f, lab));
+    const say = {
+      results: () => { const xs = office === 'house' ? (ev.house || []) : rows; const c = xs.filter((x) => x.call).length, l = xs.filter((x) => !x.call && x.margin_d != null).length; return `${c} called, ${l} counting, ${xs.length - c - l} with no votes yet. Tap a state for its race.`; },
+      forecast: () => { if (!sum.length) return `None of the ${Object.keys(tiles).length} test states has a reading yet.`; const s2 = [...sum].sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])); const blu = sum.filter((x) => x[1] > band).length, red = sum.filter((x) => x[1] < -band).length; return `${sum.length} of ${Object.keys(tiles).length} test states read: ${blu} bluer, ${sum.length - blu - red} on our line, ${red} redder. Furthest: ${s2.slice(0, 3).map(([st, o]) => `${st} ${ntOff(o)}`).join(', ')}.`; },
+      counting: () => { const w = sum.filter((x) => x[0] === 'wait').map((x) => x[1]).sort((a, b) => ntCloseMs(a) - ntCloseMs(b)); const cnt = sum.filter((x) => x[0] === 'count'); return `${w.length ? `Next close: ${ntHourText(w[0])}, ${w.filter((x) => x === w[0]).length} state${w.filter((x) => x === w[0]).length === 1 ? '' : 's'}. ` : 'Every state has closed. '}${cnt.length} counting${cnt.filter((x) => x[1] >= 99).length ? `, ${cnt.filter((x) => x[1] >= 99).length} all but done` : ''}.`; },
+      control: () => (sum.length ? `Most decisive now: ${[...sum].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([st, p]) => `${st} ${(100 * p).toFixed(0)}%`).join(', ')}.` : 'No race decides control any more.'),
+      flips: () => { if (!sum.length) return 'No seat is changing party.'; if (office === 'house') { const t = sum.reduce((a, [, g]) => ({ D: a.D + g.D, R: a.R + g.R }), { D: 0, R: 0 }); return `House seats changing party: ${t.D} to Democrats, ${t.R} to Republicans, across ${sum.length} state${sum.length === 1 ? '' : 's'}.`; } return `Changing party: ${sum.map(([st, p, c]) => `${st} to ${p}${c ? '' : ' (leading)'}`).join(', ')}.`; },
+      batch: () => { if (!sum.length) return 'No batches yet. They start when the polls close and the count comes in.'; const s2 = [...sum].sort((a, b) => a[2] - b[2]); const [st, r] = s2[0]; return `Newest: ${r.name} at ${r.latest.time_text}, ${ntBtNum(r.latest.votes)} votes, ${ntM(r.latest.margin_d)}. ${s2.filter((x) => x[2] <= 10).length} state${s2.filter((x) => x[2] <= 10).length === 1 ? '' : 's'} had a batch in the last 10 minutes.`; },
+    }[mode]();
+    svg.attr('aria-label', `${NT_MAP_MODES.find((m) => m[0] === mode)[1]} map, ${office === 'house' ? 'House' : office === 'governor' ? 'governor' : 'Senate'}. ${say}`);
+    box.append(head, modes, el('p', { class: 'nt-map-how' }, how), svg.node(), leg, el('p', { class: 'nt-all-sum' }, say));
   }
 
   // ---------- my watchlist (overnight run): pin any race or county; pins live in this browser only, so each viewer has their own
@@ -5447,8 +5569,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Biggest surprises are races that went against our forecast (ranked by how unlikely we thought the winner was) and races whose live chance has moved 25 points or more from where we started.',
       'The chart shows Democrats\' chance of control through the night, the Senate and the House. The dots are the results in the list.'] },
     map: { title: 'The map', body: [
-      'Each state colored by its Senate or governor race. Solid is called. A lighter shade means that side leads the count. A pale shade means no votes yet, leaning the way our forecast does. Amber is an independent (Nebraska, Montana, Idaho, South Dakota). Gray means no race there this year.',
-      'Tap a state for its race. The House is in the All races list, seat by seat.'] },
+      'Pick what the colors mean with the row of buttons over the map, and the races with Senate, Governor or House. Every mode uses numbers already on this page, and the sentence under the map says what it shows right now.',
+      'Results: who has won or leads. Solid is called, lighter leads the count, pale is no votes yet, leaning the way our forecast does. Amber is an independent. For the House, each state by the seats each party has won or leads.',
+      'Against our forecast: the states we set tests in before the night, colored by how far their count runs from our forecast. Within 2 points is on our line. The number on a state is how many points off it is.',
+      'Closing and counting: the hour each state\'s polls close, then how much of the expected vote is counted. Decides control: how often a state\'s races hand a party control in our simulations. Flips: seats changing party. Newest votes: which way each state\'s latest batch of counted votes broke, bright when it is new.',
+      'Tap a state for its race or its races. Mode and races are remembered in this browser.'] },
     pins: { title: 'My watchlist', body: [
       'The races and counties you pinned, with where each stands right now. Tap one to open it, or the × to unpin it.',
       'Pin a key race with the star on its card. Pin any other race or a county from its pop-out. Pins are kept in this browser only, so each person watching has their own list.'] },
