@@ -4600,7 +4600,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (ntRO()) {  // the public copy says how fresh it is, nothing about the server behind it
       // How fresh the numbers are sits at the top of the page (ntGlance). This line only says the page keeps itself current.
       const fresh = nightLoadedAt && now - nightLoadedAt < 90000;
-      put(fresh ? 'ok' : 'idle', fresh ? 'This page checks for new numbers every 30 seconds. New numbers reach this link about every 6 minutes.' : 'This page has not reached the latest numbers for a minute or more. It keeps trying.', null);  // Jake, Nov 3 6:20pm: the old line overpromised, since the public copy is pushed every 6 minutes (serve.py share_watch)
+      put(fresh ? 'ok' : 'idle', fresh ? 'This page checks for new numbers every 30 seconds. New numbers reach this link about every 2 minutes.' : 'This page has not reached the latest numbers for a minute or more. It keeps trying.', null);  // Jake, Nov 3 6:20pm: the old line overpromised. The public copy is pushed every 2 minutes (serve.py share_watch)
       return;
     }
     const inWindow = now >= Date.parse('2026-11-03T17:45:00-05:00') && now < Date.parse('2026-11-11T00:00:00-05:00');
@@ -4674,7 +4674,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   var nightStaleSaid = false;
   // Minutes. The board is rebuilt every 5 minutes even when the votes sit still (scripts/night.py FAST_REBUILD_EVERY) and the public copy is pushed about
-  // every 6 minutes after that, so the limits sit above those cadences. After 6am the checks run every 30 minutes.
+  // every 2 minutes after that, so the limits sit above those cadences. After 6am the checks run every 30 minutes.
   const NT_STALE_MIN = { local: 8, public: 15, late: 75 };
   function ntStale(d) {  // M5: the band nobody can miss when CNN's numbers have stopped moving, from 6pm ET on election night
     const box = $('#nt-stale'); if (!box) return;
@@ -4707,7 +4707,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // times, story.call_times, story.ctl_hist). What the viewer last saw is kept in this browser only (localStorage, per browser, key nt-looked-at):
   // the viewer's own clock at the last look, which only says whether there was a gap, and the built_at of the board on screen then, which is
   // where the count starts. The events carry the server's clock, so counting from the viewer's clock would be off by the difference between the
-  // two clocks and by the age of the board the viewer had open (a board is up to 6 minutes behind the votes).
+  // two clocks and by the age of the board the viewer had open (a board is up to about 3 minutes behind the votes).
   const NT_GAP = 3 * 60000, NT_LOOK_KEY = 'nt-looked-at', NT_KEEP = 120;  // NT_KEEP: how many messages the board carries (night_story.py KEEP)
   var nightLook0 = ntLookRead(), nightLookedAt = nightLook0.at, nightLookedBoard = nightLook0.board, nightLookSaved = 0, nightLookBusy = false, nightLookFails = 0, nightLoadedAt = 0, nightSince = null, nightSinceWired = false;
   function ntLookRead() {  // {at, board}. An older copy of this page kept just the number
@@ -5856,7 +5856,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'A big, plain version of the board for a television or a screen across the room. It shows the Senate and the House: seats for each party and each side\'s chance to control.',
       'Under those: the last race called, the last big change in the count, and the next time polls close.',
       'The time at the top right is when we last read CNN. If it stops moving, or a pale blue banner shows up, the numbers are not fresh.',
-      (ntRO() ? 'It checks for new numbers every 30 seconds, and new numbers reach this link about every 6 minutes. ' : 'It updates by itself every 30 seconds. ') + 'Press Esc or Leave TV view to go back to the full board. A link ending in #night/tv opens this view straight away.',
+      (ntRO() ? 'It checks for new numbers every 30 seconds, and new numbers reach this link about every 2 minutes. ' : 'It updates by itself every 30 seconds. ') + 'Press Esc or Leave TV view to go back to the full board. A link ending in #night/tv opens this view straight away.',
       'Chances are our rough guide, not a call. Calls come from CNN.'] },
     sources: { title: 'Where the numbers come from', body: [
       'Official state results feeds first. CNN\'s results feed fills in where a state has none or is slow, and it supplies the calls.',
