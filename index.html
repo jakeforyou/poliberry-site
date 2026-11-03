@@ -1301,6 +1301,18 @@ button.nt-look:hover b, button.nt-look:focus-visible b { text-decoration: underl
 .nt-toast b { font-size: .95rem; line-height: 1.35; } .nt-toast span { font-size: 12.5px; color: var(--color-fg-muted); }
 @media (prefers-reduced-motion: no-preference) { .nt-toast { animation: nt-toast-in .35s ease-out; } @keyframes nt-toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } } }
 .nt-rcg { display: grid; gap: .5rem; }
+.nt-pins { display: grid; gap: .4rem; margin: 0 0 .7rem; }
+.nt-pins-h { display: flex; align-items: center; gap: .6rem; font-size: 13px; }
+.nt-pins-row { display: flex; gap: .45rem; overflow-x: auto; scrollbar-width: thin; padding-bottom: .2rem; }
+.nt-pinc { flex: none; display: flex; align-items: stretch; border-radius: 10px; background: var(--nt-wash); box-shadow: inset 3px 0 0 var(--nt-rule); }
+.nt-pinc[data-w="D"] { box-shadow: inset 3px 0 0 var(--nt-d); } .nt-pinc[data-w="R"] { box-shadow: inset 3px 0 0 var(--nt-r); } .nt-pinc[data-w="I"] { box-shadow: inset 3px 0 0 var(--nt-jake); }
+.nt-pinc-o { all: unset; cursor: pointer; display: grid; gap: .1rem; padding: .45rem .3rem .45rem .7rem; min-height: 36px; }
+.nt-pinc-o b { font-family: 'Big Shoulders', var(--font-sans, sans-serif); font-size: 15px; white-space: nowrap; }
+.nt-pinc-o small { font-size: 12px; color: var(--color-fg-muted); white-space: nowrap; }
+.nt-pinc-x { all: unset; cursor: pointer; padding: 0 .6rem; font-size: 18px; color: var(--color-fg-muted); display: grid; place-items: center; min-width: 32px; }
+.nt-pinc-o:focus-visible, .nt-pinc-x:focus-visible, .nt-pin:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: -2px; border-radius: 8px; }
+.nt-pin { all: unset; cursor: pointer; font-size: 17px; line-height: 1; padding: .15rem .25rem; color: var(--color-fg-muted); display: inline-grid; place-items: center; min-width: 28px; min-height: 28px; }
+.nt-pin[aria-pressed="true"] { color: var(--nt-jake); }
 .nt-sheet-link { all: unset; cursor: pointer; display: inline-block; margin-top: .25rem; font-size: 12.5px; text-decoration: underline; color: var(--color-fg-muted); }
 .nt-sheet-link:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-jump { position: sticky; top: 0; z-index: 20; display: flex; gap: .3rem; overflow-x: auto; scrollbar-width: none; padding: .45rem 0; margin: 0 0 .4rem;
@@ -1858,6 +1870,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     <nav class="nt-jump" id="nt-jump" aria-label="Jump to a part of the board">
       <button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-all">All races</button>
     </nav>
+    <section class="nt-pins" id="nt-pins" aria-label="My watchlist" hidden></section>
     <div class="nt-board2" id="nt-ctl" aria-label="Control of Congress and the night so far">
       <article class="nt-chamber" data-ch="senate"><div id="nt-ch-sen"></div><div class="nt-seat" id="nt-sen" data-source="night_tiles"></div></article>
       <article class="nt-chamber" data-ch="house"><div id="nt-ch-hou"></div><div class="nt-seat" id="nt-hou" data-source="night_tiles"></div></article>
@@ -3493,6 +3506,66 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     svg.append('path').attr('d', nightOutlines[k]);
     return svg.node();
   }
+  // ---------- my watchlist (overnight run): pin any race or county; pins live in this browser only, so each viewer has their own
+  let ntPinsL = [];
+  try { ntPinsL = JSON.parse(localStorage.getItem('nt-pins') || '[]') || []; } catch (e) { ntPinsL = []; }
+  const ntPinKey = (p) => `${p.t}:${p.k}`;
+  const ntPinned = (t, k) => ntPinsL.some((p) => p.t === t && p.k === k);
+  function ntPinToggle(t, k) {
+    ntPinsL = ntPinned(t, k) ? ntPinsL.filter((p) => !(p.t === t && p.k === k)) : [...ntPinsL, { t, k }];
+    try { localStorage.setItem('nt-pins', JSON.stringify(ntPinsL)); } catch (e) { /* storage blocked: pins last until the page reloads */ }
+    if (nightData) { ntPins(nightData); ntRaceCards(nightData); }
+  }
+  function ntPinButton(t, k, label) {  // a small pin toggle; it never opens the thing it sits on
+    const on = ntPinned(t, k);
+    const b = el('button', { type: 'button', class: 'nt-pin', 'aria-pressed': String(on), 'aria-label': `${on ? 'Unpin' : 'Pin'} ${label} ${on ? 'from' : 'to'} my watchlist`, title: on ? 'On your watchlist. Tap to remove.' : 'Pin to your watchlist' }, on ? '★' : '☆');
+    b.addEventListener('click', (e) => { e.stopPropagation(); ntPinToggle(t, k); b.setAttribute('aria-pressed', String(ntPinned(t, k))); b.textContent = ntPinned(t, k) ? '★' : '☆'; });
+    b.addEventListener('keydown', (e) => e.stopPropagation());
+    return b;
+  }
+  function ntPinRow(t, k, label) {  // the same toggle as a labeled button, for pop-outs
+    const b = el('button', { type: 'button', class: 'nt-sheet-link' }, ntPinned(t, k) ? 'On your watchlist (remove)' : 'Pin to my watchlist');
+    b.addEventListener('click', () => { ntPinToggle(t, k); b.textContent = ntPinned(t, k) ? 'On your watchlist (remove)' : 'Pin to my watchlist'; });
+    b.setAttribute('aria-label', `${ntPinned(t, k) ? 'Remove' : 'Pin'} ${label}`);
+    return b;
+  }
+  function ntWrapP(n) { const p = el('p'); p.append(n); return p; }  // el() takes text, so a node goes in with append
+  function ntPins(d) {
+    const box = $('#nt-pins'); if (!box) return;
+    const ev = d.every || {}, all = [...(ev.senate || []), ...(ev.governor || []), ...(ev.house || [])];
+    const items = ntPinsL.map((p) => {
+      if (p.t === 'race') {
+        const r = (d.races || []).find((x) => x.id === p.k); if (!r) return null;
+        const rd = r.reading || {}, w = (r.call || {}).winner;
+        const now = w ? `${ntLast(w === 'R' ? r.cand_r : r.cand_d) || w} won` : rd.margin_d != null ? `${ntM(rd.margin_d)}, ${ntPct(r.counted)} in` : `${r.closing_p >= 0.5 ? ntSL(r, 'D') : 'R'} ${Math.round(100 * Math.max(r.closing_p, 1 - r.closing_p))}% before votes`;
+        return { p, name: `${NT_STATE[r.state] || r.state} ${r.office === 'Senate' ? 'Sen' : 'Gov'}`, now, w: w || (rd.margin_d > 0 ? 'D' : rd.margin_d < 0 ? 'R' : ''), open: () => { const sp = ((d.story || {}).spotlight || {}).all || {}; if (sp[r.id]) { nightSpotPin = { id: r.id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); } else ntStatePop(d, r.state); } };
+      }
+      if (p.t === 'every') {
+        const x = all.find((y) => y.key === p.k); if (!x) return null;
+        const xx = { ...x, st: x.state || x.key.slice(0, 2) };
+        return { p, name: ntAllName(xx) + (x.key.startsWith('senate_') ? ' Sen' : x.key.startsWith('gov_') ? ' Gov' : ''), now: x.status === 'no votes' ? ntAllPre(xx) : ntAllNow(xx), w: x.call ? x.call.winner : '', open: () => ntAllPop(d, xx) };
+      }
+      if (p.t === 'county') {
+        const [st, name] = p.k.split('|'); const c = (d.counties || []).find((y) => y.state === st && y.county === name); if (!c) return null;
+        const rd = c.reading || {};
+        return { p, name: `${c.county}, ${c.state}`, now: rd.margin_d != null ? `${ntCM(c, rd.margin_d)}, ${ntPct(c.counted)} in` : `expected ${c.our_line != null ? ntCM(c, c.our_line) : c.bench ? ntRange(c.bench) : '—'}`, w: rd.margin_d > 0 ? 'D' : rd.margin_d < 0 ? 'R' : '', open: () => ntCountyPop(d, st, name) };
+      }
+      return null;
+    }).filter(Boolean);
+    box.hidden = !items.length;
+    box.replaceChildren();
+    if (!items.length) return;
+    const h = el('div', { class: 'nt-pins-h' }); h.append(el('b', {}, 'My watchlist'), el('span', { class: 'nt-mute' }, `${items.length} pinned, kept in this browser`), ntQ('pins'));
+    const row = el('div', { class: 'nt-pins-row' });
+    for (const it of items) {
+      const c = el('div', { class: 'nt-pinc', 'data-w': it.w || '' });
+      const o = el('button', { type: 'button', class: 'nt-pinc-o' }); o.append(el('b', {}, it.name), el('small', {}, it.now)); o.addEventListener('click', it.open);
+      const x = el('button', { type: 'button', class: 'nt-pinc-x', 'aria-label': `Unpin ${it.name}`, title: 'Unpin' }, '×'); x.addEventListener('click', () => ntPinToggle(it.p.t, it.p.k));
+      c.append(o, x); row.append(c);
+    }
+    box.append(h, row);
+  }
+
   // ---------- the jump bar and deep links (overnight run, Nov 2 to 3): jump between the board's parts, and open any race,
   // county or state from a link (#night/race/senate_ne, #night/county/NE/Douglas, #night/state/NE)
   let ntDeepDone = false;
@@ -3769,7 +3842,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const ntParty = (o) => (o < 0 ? 'Republican' : 'Democratic');
   function ntResults(d) {
     if (!$('#nt-results') || nightView !== 'results') return;
-    ntDesk(d); ntRaceCards(d); ntCtyLive(d); ntAll(d);
+    ntDesk(d); ntPins(d); ntRaceCards(d); ntCtyLive(d); ntAll(d);
   }
   // ---------- the live desk: scripts/night_story.py writes every word; this draws them
   const NT_EV = { close: 'Polls closed', first: 'First votes', lead: 'Lead change', batch: 'Big batch', call: 'Called', milestone: 'Milestone',
@@ -3861,6 +3934,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     lean: { title: 'Key counties against what we expected', body: [
       'How this state\'s key counties are voting compared with what we expected there: each county\'s 2024 result moved as far as our forecast moves the whole state.',
       'A state that runs several points off what we expected says the night may be moving that way everywhere.'] },
+    pins: { title: 'My watchlist', body: [
+      'The races and counties you pinned, with where each stands right now. Tap one to open it, or the × to unpin it.',
+      'Pin a key race with the star on its card. Pin any other race or a county from its pop-out. Pins are kept in this browser only, so each person watching has their own list.'] },
     countylive: { title: 'Key counties', body: [
       'The counties in each state that tell us the most, chosen before the election: 109 of them. Each shows what we expected there, the count, and how far apart they are.',
       'Just in puts the latest counts on top, then the counties next to close. Furthest off shows where the night is running hottest against our forecast. Most votes left shows where the big chunks still to come are. Tap any county for its story.'] },
@@ -3988,7 +4064,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     row('2022', ntMid22(c.midterm_2022));
     row('First results', first ? `In 2024: ${first}.` : '');
     row('Source', rd.source ? `${rd.source}, read ${ntT(rd.at)}` : '');
-    ntSheet(`${county}, ${NT_STATE[st] || st}`, NT_CKIND[c.kind] || 'Key county', [dl,
+    ntSheet(`${county}, ${NT_STATE[st] || st}`, NT_CKIND[c.kind] || 'Key county', [dl, ntWrapP(ntPinRow('county', `${st}|${county}`, `${county}, ${NT_STATE[st] || st}`)),
       ntLink(`Every key county in ${NT_STATE[st] || st}`, () => ntStatePop(d, st))], `county/${st}/${encodeURIComponent(county)}`);
   }
   let ntCtySort = 'list';
@@ -4426,7 +4502,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const h = el('div', { class: 'nt-rc-h' });
     const close = r.close_et ? clockIsoNight(d, r.close_et) : null;
     const ol = ntOutline(r.state, 26, 22); if (ol) h.append(ol);
-    h.append(el('b', {}, NT_STATE[r.state] || r.state), el('span', { class: 'o' }, r.office === 'Senate' ? 'Senate' : 'Governor'),
+    h.append(ntPinButton('race', r.id, name), el('b', {}, NT_STATE[r.state] || r.state), el('span', { class: 'o' }, r.office === 'Senate' ? 'Senate' : 'Governor'),
       el('span', { class: 's', 'data-k': call ? 'called' : '', title: !call && !has && close ? 'When the polls close' : '' }, call ? (call === 'runoff' ? 'Runoff' : 'Called') : has ? `${ntPct(r.counted)} in` : close ? ntT(close) : ''));
     c.append(h);
     for (const side of ['D', 'R']) {
@@ -4869,8 +4945,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const odds = ((d.story || {}).odds || {})[x.key];
     if (odds && odds.basis === 'count' && !x.call) row('Chance now', `${ntPct(100 * Math.max(odds.p_d, 1 - odds.p_d))} for the ${odds.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'Democrat' : 'Republican'}, from the count and the chance before votes. A rough guide, not a call.`);
     row('Sources', 'Count and call: CNN, with AP\'s numbers, and NPR\'s copy of AP\'s numbers as the backup and check. Candidates: CNN. Seat holder and lean: Wikipedia. Chance before votes: our final call, our Nov 2 call or our model (polls from Wikipedia\'s polling tables, 2024 results by district from The Downballot), with the raters\' consensus beside it.');
-    const nodes = [dl];
-    if (x.race_id) nodes.push(el('p', {}, ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
+    const nodes = [dl, ntWrapP(ntPinRow('every', x.key, ntAllName(x)))];
+    if (x.race_id) nodes.push(ntWrapP(ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
     ntSheet(`${ntAllName(x)}${x.key.startsWith('senate_') ? ' Senate' : x.key.startsWith('gov_') ? ' governor' : ''}`, x.key.startsWith('senate_') ? 'Senate race' : x.key.startsWith('gov_') ? 'Governor race' : 'House race', nodes, `race/${x.key}`);
   }
 
