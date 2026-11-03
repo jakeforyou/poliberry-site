@@ -199,10 +199,9 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 </script>
 </head>
 <body>
-<section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> Election night 2026, as the votes are counted. Kept by Jake Berry with Claude. Counts come from official state results and CNN, and the calls are CNN's. Each chance to win is a rough guide built from our final forecast, locked before any votes, and the count so far. Tap any ? for a plain-English explanation. Not advice.</p></section>
-<div class="lx-bar" role="region" aria-label="About this copy">
+<div class="lx-bar" role="region" aria-label="About this copy" hidden>
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-11-03 09:39</b></span>
+  <span>Forecast snapshot <b id="lx-built">2026-11-03 09:39</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Election night numbers update every few minutes.</span>
@@ -1451,6 +1450,13 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 }
 .nt-bt-cols { display: grid; gap: 1.2rem 2.4rem; min-width: 0; } .nt-bt-col { display: grid; gap: .65rem; align-content: start; min-width: 0; }
 @media (min-width: 64rem) { .nt-bt-cols { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); } }  /* Florida beside the country on a wide screen */
+.nt-bt-sig { display: grid; gap: .45rem; padding: .7rem .8rem; border-radius: 10px; background: var(--color-panel); min-width: 0; }
+.nt-bt-sigl { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; }
+.nt-bt-sigl li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: .55rem; align-items: baseline; font-size: 13px; line-height: 1.4; }
+.nt-bt-sigl .tag { font-size: 11.5px; font-weight: 700; text-align: center; padding: .05rem .35rem; border-radius: 999px; color: var(--color-fg-muted); background: var(--nt-wash2); }
+.nt-bt-sigl .tag[data-d="bluer"] { color: var(--nt-d); background: color-mix(in srgb, var(--nt-d) 16%, transparent); }
+.nt-bt-sigl .tag[data-d="redder"] { color: var(--nt-r); background: color-mix(in srgb, var(--nt-r) 16%, transparent); }
+.nt-bt-sigl .tx { color: var(--color-fg-muted); } .nt-bt-sigl .tx b { color: var(--color-fg); font-weight: 650; }
 .nt-bt-evl { margin: .3rem 0 0; padding-left: 1.1rem; display: grid; gap: .3rem; font-size: 13px; line-height: 1.4; max-width: 78ch; }
 .nt-bt-h4 { margin: .2rem 0 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; }
 .nt-bt-why { margin: 0; padding-left: 1.1rem; display: grid; gap: .25rem; font-size: 13.5px; line-height: 1.45; max-width: 78ch; }
@@ -5298,6 +5304,28 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return svg;
   }
 
+  // what turnout says so far (night_batches.signals): a verdict, one line per place with its direction against 2022, the caution
+  // and the next real test. Jake, Nov 3: "what do the results mean up to this point? still no indicators"
+  const NT_SIG = { bluer: 'Bluer', redder: 'Redder', same: 'Same', none: 'No read' };
+  function ntBtSignals(box, G, compact) {
+    const sec = el('div', { class: 'nt-bt-sig' });
+    sec.append(el('h3', { class: 'nt-bt-h' }, 'What turnout says so far'), ntKids('p', { class: 'nt-bt-lede' }, [el('b', {}, G.lines[0])]));
+    const list = el('ul', { class: 'nt-bt-sigl' });
+    for (const x of G.rows) {
+      const li = el('li', { 'data-d': x.dir });
+      li.append(el('span', { class: 'tag', 'data-d': x.dir }, NT_SIG[x.dir] || ''), ntKids('span', { class: 'tx' }, [el('b', {}, x.name + ' '), x.what]));
+      list.append(li);
+    }
+    if (compact) {
+      const det = el('details', { class: 'nt-bt-det', 'data-fk': 'bt:sig' });
+      det.append(el('summary', {}, `The ${G.rows.length} indicators`), list, ...G.lines.slice(1).map((l) => el('p', { class: 'nt-bt-sub' }, l)));
+      sec.append(det);
+    } else {
+      sec.append(el('p', { class: 'nt-bt-sub' }, G.lines[1] || ''), list);
+      for (const l of G.lines.slice(2)) sec.append(el('p', { class: 'nt-bt-sub' }, l));
+    }
+    box.append(sec);
+  }
   // every state's early vote in plain words (night_batches.early_vote): three short lines, every state folded under them
   function ntBtEarly(box, E, compact) {
     box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, 'Across the country: the early vote'), el('small', {}, E.as_of ? `counts as of ${E.as_of.slice(5).replace('-', '/')}` : '')]));
@@ -5386,6 +5414,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         }
         box.append(el('p', { class: 'nt-bt-src' }, `${R.label || ''} Pace is the trailing side's share of the newest ${3} batches against the share it needs of the votes left, on CNN's estimate of the expected vote.`));
       }
+      if (nightMode !== 'practice' && f && f.signals) ntBtSignals(box, f.signals, races.length > 0);
       if (nightMode !== 'practice' && (fl || (f && f.early_vote))) {  // Florida beside the country on a wide screen, one above the other on a phone
         const cols = el('div', { class: 'nt-bt-cols' }), ca = el('div', { class: 'nt-bt-col' }), cb = el('div', { class: 'nt-bt-col' });
         for (const s of tstates) ntBtTurnout(ca, s, f, races.length > 0);
