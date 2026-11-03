@@ -3460,6 +3460,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const ntWS = (r, w) => (w === 'D' || w === 'R' ? w : w === 'I' && r && r.d_party === 'I' ? 'D' : null);  // the card side a call lands on: Osborn or Bodnar winning is the D side
   const ntWN = (r, w) => { const s = ntWS(r, w); return (s ? ntLast(s === 'D' ? r.cand_d : r.cand_r) : ntLast(((r && r.call) || {}).name || '')) || w; };  // the winner's last name
   const NT_RUNOFF = { GA: 'Dec 1', LA: 'Dec 12' }, NT_RANKED = new Set(['AK', 'ME']);
+  const ntFiftyTxt = (x) => { const f = x.fifty, nx = f.rule === 'ranked' ? 'a ranked-choice count after all ballots arrive' : `a runoff${NT_RUNOFF[x.st] ? ' on ' + NT_RUNOFF[x.st] : ''}`;
+    return `${f.name} leads with ${fmt1(Math.round(f.pct * 10) / 10)}% of all votes. Over 50 wins outright. Under 50 means ${nx}.`; };
   const ntRunoffTxt = (st) => (NT_RANKED.has(st) ? 'Headed to a ranked-choice count.' : NT_RUNOFF[st] ? `Headed to a runoff on ${NT_RUNOFF[st]}.` : 'Headed to a runoff.');
   function ntManyR(d, r) {  // several Republicans on one ballot (Alaska): the card's R side adds them up, as in the last ranked-choice round
     const x = ((d.every || {})[r.office === 'Senate' ? 'senate' : 'governor'] || []).find((y) => y.key === r.id);
@@ -4711,7 +4713,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (call && call !== 'runoff') f.append(el('span', {}, `Called for ${ntWN(r, call)}${ct ? ` at ${ntT(ct)}` : ''}${r.call.source ? ` by ${/CNN/.test(r.call.source) ? 'CNN' : /^Wikipedia/.test(r.call.source) ? 'Wikipedia' : r.call.source}` : ''}.`));
     if (call === 'runoff') f.append(el('span', {}, ntRunoffTxt(r.state)));
     if (has) { const ld = el('span', {}, `${rd.margin_d < 0 && many ? 'Republicans' : ntLast(rd.margin_d > 0 ? r.cand_d : r.cand_r) || (rd.margin_d > 0 ? 'D' : 'R')} ${call ? 'won' : many && rd.margin_d < 0 ? 'lead' : 'leads'} by `); ld.append(el('b', {}, fmt1(Math.round(Math.abs(rd.margin_d) * 10) / 10))); f.append(ld); }
-    if (has && r.runoff && !r.runoff.above_50 && !call) f.append(el('span', { class: 'warn' }, 'Nobody over 50% yet: a runoff if it stays that way.'));
+    if (has && r.runoff && !r.runoff.above_50 && !call) f.append(el('span', { class: 'warn', title: r.runoff.text || '' }, `Nobody over 50% yet: ${r.runoff.rule === 'ranked' ? 'a ranked-choice count' : NT_RUNOFF[r.state] ? `a runoff on ${NT_RUNOFF[r.state]}` : 'a runoff'} if it stays that way.`));
     if (r.stale) f.append(el('span', { class: 'warn' }, 'Old data'));
     if (!has && !call && close && Date.parse(close) <= Date.now()) f.append(el('span', {}, 'Polls closed. Waiting for the first votes.'));
     if (f.childElementCount) c.append(f);
@@ -5143,6 +5145,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (x.src === 'NPR') now.append(el('small', { title: "CNN's numbers for this race are missing or stale, so these are AP's numbers through NPR." }, 'From NPR (AP)'));
       if (x.src === 'California') now.append(el('small', { title: "Neither CNN nor NPR has votes here yet, so this is California's own count. It gives no share counted: California counts mail ballots for weeks." }, "From California's count"));
       if (x.check) now.append(el('span', { class: 'nt-ar-chk', title: x.check }, 'Check: sources differ'));
+      if (x.fifty && !x.call && !x.fifty.over) now.append(el('span', { class: 'nt-ar-chk', title: ntFiftyTxt(x) }, x.fifty.rule === 'ranked' ? 'Under 50%: ranked choice' : 'Under 50%: runoff'));
       b.append(lab, pre, now);
       b.addEventListener('click', () => ntAllPop(d, x));
       list.append(b);
@@ -5168,6 +5171,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (p.ratings) row('Each rater', Object.entries(p.ratings).map(([k, v]) => `${RN[k] || k}: ${v}`).join('. ') + '.');
     row('The count', ntAllNow(x) === 'No votes yet' || x.call ? (x.margin_d != null || x.lead ? ntAllNow({ ...x, call: null }) : 'No votes yet.') : ntAllNow(x));
     row('Call', x.call ? (x.call.winner === 'runoff' ? ntRunoffTxt(x.st) : `${x.call.name || NT_PN[ntPK(x.call.winner)]} (${ntPK(x.call.winner)}) won, called by ${x.call.source || 'CNN'}.`) : 'Not called yet.');
+    if (x.fifty && !x.call) row('50 percent', ntFiftyTxt(x));
     if (x.check) row('Check', `${x.check}. Both carry AP's numbers, so one of them is behind or wrong. Trust the call more than either count until they agree.`);
     if (x.src === 'NPR') row('Where the count comes from', "NPR's copy of AP's numbers, because CNN's are missing or stale for this race.");
     if (x.withheld) row('Where the count comes from', "CNN's numbers for this race are missing right now. The backup source's numbers are kept off this public page, so the count and call show here once CNN has them.");
@@ -5176,7 +5180,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (x.flip_called) row('Flip', `Yes. ${NT_PNS[was] || was} held this seat${x.held_by ? '' : ' (the old seat with this number, as AP counts it)'}.`);
     else if (x.flip) row('Flip', x.held_by ? `Not called, but the ${NT_PN[was] ? NT_PN[was] : was} holding this seat is behind in the count.` : `Not called, but ${NT_PNS[was] || was}, who held the old seat with this number, are behind in the count.`);
     const odds = ((d.story || {}).odds || {})[x.key];
-    if (odds && odds.basis === 'count' && !x.call) row('Chance now', `${ntPct(100 * Math.max(odds.p_d, 1 - odds.p_d))} for the ${odds.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'Democrat' : 'Republican'}, from the count and the chance before votes. A rough guide, not a call.`);
+    if (odds && odds.basis === 'count' && !x.call) row('Chance now', `${ntPct(100 * Math.max(odds.p_d, 1 - odds.p_d))} for ${odds.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'the Democrat' : ((x.cands || []).find((c) => c.party === 'R') || {}).name || 'the Republican'}, from the count and the chance before votes. A rough guide, not a call.`);
     row('Sources', 'Count and call: CNN, with AP\'s numbers, and NPR\'s copy of AP\'s numbers as the backup and check. Candidates: CNN. Seat holder and lean: Wikipedia. Chance before votes: our final call, our Nov 2 call or our model (polls from Wikipedia\'s polling tables, 2024 results by district from The Downballot), with the raters\' consensus beside it.');
     const nodes = [dl, ntWrapP(ntPinRow('every', x.key, ntAllName(x)))];
     if (x.race_id) nodes.push(ntWrapP(ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
@@ -5393,7 +5397,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const cnt = el('td');
       if (r.reading && r.reading.margin_d != null) {
         cnt.append(ntMargin(r.reading.margin_d, 'mg'), el('small', { class: 'nt-sub', title: `${r.counted_kind || ''}. Source: ${r.reading.source || r.reading.label}. Read ${ntT(r.reading.at)}.` }, `${ntCounted(r.counted, r.counted_kind)}, ${ntSrc(r.reading)}`));
-        if (r.runoff) cnt.append(el('small', { class: 'nt-sub' + (r.runoff.above_50 ? '' : ' nt-warn'), title: r.runoff.text }, `${ntLast(r.runoff.leader_name) || r.runoff.leader} ${fmt1(Math.round(r.runoff.share * 10) / 10)}%. Over 50 avoids a runoff`));
+        if (r.runoff) cnt.append(el('small', { class: 'nt-sub' + (r.runoff.above_50 ? '' : ' nt-warn'), title: r.runoff.text }, `${ntLast(r.runoff.leader_name) || r.runoff.leader} ${fmt1(Math.round(r.runoff.share * 10) / 10)}%. Over 50 avoids ${r.runoff.rule === 'ranked' ? 'a ranked-choice count' : 'a runoff'}`));
         if (r.needs) cnt.append(el('small', { class: 'nt-sub', title: `Based on AP's estimate of the votes still to count. Simple arithmetic, not a forecast.` }, r.needs.possible ? `${ntLast(r.needs.trailer === 'D' ? r.cand_d : r.cand_r) || r.needs.trailer} needs ${fmt1(r.needs.needs_share)}% of the ${compact(r.needs.outstanding)} left` : "can't be caught on AP's count"));
       } else cnt.append(el('span', { class: 'nt-mute' }, r.close_et ? `closes ${ntT(clockIsoNight(d, r.close_et))}` : '—'));
       if (r.turnout && r.turnout.ratio != null) cnt.append(el('small', { class: 'nt-sub', title: `AP's implied turnout: about ${compact(r.turnout.est_total)} votes, from ${r.turnout.basis}, against ${compact(r.turnout.t2022)} in 2022. Arithmetic on AP's estimate.` }, `turnout ${ntPct(r.turnout.ratio * 100)} of 2022`));
