@@ -5204,7 +5204,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   function ntBtPlotKey() { return ntBtKey([['now', 'Now'], ['proj', 'If Election Day ends like 2022'], ['past', 'A past year'], ['band', 'What turnout implies'], ['ours', 'Our forecast']]); }
   function ntBtTurnout(box, s, f, compact) {  // one state's voters through the day: the reading first, the numbers folded under Details. Compact (once the count is in): the reading's first line only
     const reps = s.reports, L = s.latest, C = s.compare || {}, M = C.means;
-    box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, `${s.name}: who has voted today`), el('small', {}, `as of ${L.time_text} ET, ${ntBtNum(L.cum.total)} Election Day voters`)]));
+    box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, `${s.name}: who has voted today`), el('small', {}, `as of ${L.time_text} ET, ${ntBtNum(L.cum.total)} ${s.kind === 'returned' ? 'ballots returned' : 'Election Day voters'}`)]));
     const why = M ? el('div', { class: 'nt-bt-body' }) : null;
     if (M) {  // the reading in plain words up front; the picture and how it is worked out fold under Details
       box.append(ntKids('p', { class: 'nt-bt-lede' }, [el('b', {}, M.lines[0])]));
@@ -5223,7 +5223,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const inner = el('div', { class: 'nt-bt-body' });
     if (why) inner.append(why);
     const cmp = el('div', { class: 'nt-bt-cmp' });
-    cmp.append(ntBtShareRow('Today so far', L.run, `${ntBtNum(L.cum.total)} voters, Election Day`, true));
+    cmp.append(ntBtShareRow(s.kind === 'returned' ? 'So far' : 'Today so far', L.run, `${ntBtNum(L.cum.total)} ${s.kind === 'returned' ? 'ballots returned' : 'voters, Election Day'}`, true));
     for (const y of C.eday || []) cmp.append(ntBtShareRow(`${y.year}`, y, `the whole Election Day, ${ntBtNum(y.votes)} voters`));
     if (C.so_far) {
       cmp.append(el('p', { class: 'nt-bt-sub sep' }, 'Every vote so far, mail, early and today, beside each year\'s final'));
