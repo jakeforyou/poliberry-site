@@ -3,9 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="A pre-registered forecast of the 2026 midterms: the model's chance per race beside the lock and the latest run, with sources.">
+<meta name="description" content="Live results from the 2026 midterm elections: every Senate, House and governor race, read against our forecast. Counts from official state results and CNN, kept by Jake Berry with Claude.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="2026 Midterm Election Night Results">
+<meta property="og:description" content="Live results from the 2026 midterm elections: every Senate, House and governor race, read against our forecast. Counts from official state results and CNN, kept by Jake Berry with Claude.">
+<meta name="twitter:card" content="summary">
 <meta name="robots" content="noindex">
-<title>2026 Midterm Scorecard</title>
+<title>2026 Midterm Election Night Results</title>
 <style>
 html { color-scheme: light dark; }
 body { font-family: var(--font-anthropic-sans); font-size: 14px; }
@@ -1043,7 +1047,8 @@ th.ms-th-sort[aria-sort="ascending"], th.ms-th-sort[aria-sort="descending"] { co
 .nt-desk { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(19rem, 1fr); gap: .8rem; align-items: start; }
 @media (max-width: 62rem) {  /* narrow screens: the spotlight, then every race, then the feed and the rest */
   .nt-results { display: grid; gap: .8rem; } .nt-desk { display: contents; }
-  .nt-desk .nt-spot { order: 1; } .nt-rcs { order: 2; } .nt-rail { order: 3; position: static; } }
+  /* the key counties and every race follow the feed (they had no order and came before the spotlight; Nov 3), the House line follows the key races */
+  .nt-desk .nt-spot { order: 1; } .nt-rcs { order: 2; } .nt-results > .nt-hl { order: 3; } .nt-rail { order: 4; position: static; } .nt-results > #nt-cty { order: 5; } .nt-results > #nt-all { order: 6; } }
 .nt-rail { position: sticky; top: .6rem; display: grid; gap: .55rem; align-content: start; }
 .nt-railtabs { display: flex; gap: .25rem; padding: .2rem; border-radius: 999px; background: var(--nt-wash); }
 .nt-railtabs button { all: unset; cursor: pointer; flex: 1; text-align: center; font-size: 12.5px; font-weight: 600; padding: .3rem .5rem; border-radius: 999px; color: var(--color-fg-muted); white-space: nowrap; }
@@ -1432,10 +1437,6 @@ button.nt-ar[data-w="D"] { box-shadow: inset 3px 0 0 var(--nt-d); } button.nt-ar
 .nt-ar-n b { font-family: 'Big Shoulders', var(--font-sans, sans-serif); font-size: 16px; letter-spacing: .01em; }
 .nt-ar-chk { justify-self: start; margin-top: .15rem; padding: .05rem .5rem; border-radius: 999px; font-size: 11.5px; font-weight: 600; outline: 1px solid var(--nt-r); }
 .nt-ar-flip { justify-self: start; margin-top: .15rem; padding: .05rem .5rem; border-radius: 999px; font-size: 11.5px; font-weight: 600; background: color-mix(in srgb, var(--nt-jake) 28%, transparent); }
-@media (max-width: 640px) {
-  button.nt-ar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .nt-ar-n { grid-column: 1 / -1; }
-}
 .nt-rcg h2 small { font-weight: 400; }
 .nt-rcl { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .55rem; }
 .nt-rc { display: grid; gap: .35rem; padding: .65rem .75rem; border-radius: 10px; background: var(--nt-wash); cursor: pointer; align-content: start; }
@@ -1672,6 +1673,133 @@ button.nt-rr[data-early="true"] .nt-rr-v { opacity: .85; }
 .nt-feeds li > span:nth-child(2) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .nt-void td { text-decoration: line-through; opacity: .55; }
 .nt-rules { font-size: 12.5px; color: var(--color-fg-muted); margin: 0; line-height: 1.45; max-width: 80ch; }
+
+/* Nov 3 front-end pass (Jake: the public link on a phone "may be the primary way users interface with our project").
+   The glance, what to expect, the House line, importance, the stale band, and a phone page that is shorter. */
+.nt-glance { display: grid; gap: .5rem; min-width: 0; }
+.nt-gl-what { margin: 0; font-size: 1rem; line-height: 1.4; font-weight: 500; max-width: 62ch; }
+.nt-gl-asof { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--color-fg-muted); }
+.nt-gl-asof b { color: var(--color-fg); font-weight: 600; }
+.nt-stale { padding: .55rem .75rem; border-radius: 8px; font-size: 13.5px; font-weight: 600; line-height: 1.4; background: color-mix(in srgb, var(--nt-jake) 20%, transparent); outline: 1px solid color-mix(in srgb, var(--nt-jake) 65%, transparent); }
+.nt-stale[hidden] { display: none; }
+.nt-gl-ch { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+.nt-gl-t { display: grid; gap: .2rem; align-content: start; padding: .55rem .7rem .65rem; border-radius: 12px; background: var(--nt-wash); min-width: 0; }
+.nt-gl-h { display: flex; align-items: center; }
+.nt-gl-h .nm { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.05; }
+.nt-gl-n { display: flex; justify-content: space-between; align-items: baseline; gap: .3rem; }
+.nt-gl-n b { font-family: var(--nt-num); font-stretch: 80%; font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.9rem; line-height: 1; }
+.nt-gl-n small { font-size: 12px; color: var(--color-fg-muted); text-align: center; }
+.nt-gl-c { font-size: 12px; color: var(--color-fg-muted); margin-top: .15rem; }
+@media (min-width: 641px) {  /* a wide screen shows both chambers right below, so the glance is one slim row */
+  .nt-gl-ch { display: none; }
+  .nt-glance { grid-template-columns: minmax(0, 1fr) auto; column-gap: 1.4rem; row-gap: .2rem; align-items: baseline; }
+  .nt-glance .nt-next { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .nt-stale { grid-column: 1 / -1; }
+}
+/* what to expect */
+.nt-expect { display: grid; gap: .5rem; padding: .85rem 1rem; border-radius: 14px; background: var(--nt-wash); min-width: 0; }
+.nt-expect[hidden], .nt-hl[hidden] { display: none; }
+.nt-x-t { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; line-height: 1.15; text-wrap: balance; }
+.nt-x-n { margin: 0; font-size: 13px; line-height: 1.45; color: var(--color-fg-muted); max-width: 70ch; }
+.nt-x-g { display: grid; gap: .4rem; padding-top: .6rem; margin-top: .1rem; border-top: 1px solid var(--nt-rule); }
+.nt-x-gh { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; line-height: 1.1; }
+.nt-x-list { display: grid; gap: .3rem; }
+@media (min-width: 60rem) { .nt-x-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nt-xr[data-s="outside"] { grid-column: 1 / -1; } }  /* two across on a wide screen, never in the sheet */
+.nt-sheet .nt-x-list { grid-template-columns: minmax(0, 1fr); }
+.nt-x-act { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+.nt-x-src { margin: 0; font-size: 12px; line-height: 1.4; color: var(--color-fg-muted); }
+button.nt-xr { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 3.7rem minmax(0, 1fr) auto; gap: .05rem .55rem; align-items: baseline; min-height: 40px;
+  padding: .4rem .55rem; border-radius: 8px; background: var(--nt-wash); border-left: 3px solid var(--nt-rule); font-size: 13.5px; line-height: 1.35; }
+button.nt-xr:hover, button.nt-xn:hover { background: var(--nt-wash2); }
+button.nt-xr:focus-visible, button.nt-xn:focus-visible, button.nt-hs:focus-visible, button.nt-hl-w:focus-visible, .nt-rc-dive:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+button.nt-xr[data-s="redder"] { border-left-color: var(--nt-r); } button.nt-xr[data-s="bluer"] { border-left-color: var(--nt-d); }
+button.nt-xr[data-s="on"] { border-left-color: var(--nt-ours); } button.nt-xr[data-s="outside"] { border-left-color: var(--nt-jake); }
+.nt-xr .nm { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; line-height: 1.1; }
+.nt-xr .mid { display: flex; flex-wrap: wrap; gap: 0 .65rem; min-width: 0; } .nt-xr .mid b { font-weight: 650; }
+.nt-xr .chip { font-size: 12px; font-weight: 600; padding: .02rem .5rem; border-radius: 999px; white-space: nowrap; color: var(--color-fg-muted); background: var(--nt-wash2); }
+.nt-xr .chip[data-s="redder"] { color: var(--nt-r); background: color-mix(in srgb, var(--nt-r) 16%, transparent); }
+.nt-xr .chip[data-s="bluer"] { color: var(--nt-d); background: color-mix(in srgb, var(--nt-d) 16%, transparent); }
+.nt-xr .chip[data-s="on"] { color: var(--nt-ours); background: color-mix(in srgb, var(--nt-ours) 16%, transparent); }
+.nt-xr .chip[data-s="outside"] { color: var(--nt-jake); background: color-mix(in srgb, var(--nt-jake) 16%, transparent); }
+.nt-xr .call { grid-column: 2 / -1; font-size: 12.5px; color: var(--nt-ours); font-weight: 600; }
+.nt-xr .why, .nt-xr .det { grid-column: 1 / -1; font-size: 12.5px; color: var(--color-fg-muted); line-height: 1.4; } .nt-xr .why b { color: var(--color-fg); font-weight: 600; }
+button.nt-xn { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .05rem .6rem; align-items: baseline; min-height: 40px;
+  padding: .4rem .55rem; border-radius: 8px; background: var(--nt-wash); border-left: 3px solid var(--nt-rule); font-size: 13.5px; line-height: 1.35; }
+.nt-xn .nm { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; line-height: 1.1; }
+.nt-xn .k { font-size: 12px; font-weight: 600; color: var(--color-fg-muted); }
+.nt-xn .w { grid-column: 1 / -1; font-size: 12.5px; color: var(--color-fg-muted); line-height: 1.4; }
+/* the House line */
+.nt-hl { display: grid; gap: .5rem; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--nt-rule); min-width: 0; }
+.nt-hl-s { margin: 0; font-size: 1rem; line-height: 1.4; font-weight: 500; max-width: 62ch; }
+.nt-hl-n, .nt-hl-src { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--color-fg-muted); max-width: 70ch; }
+.nt-hl-g { display: grid; grid-auto-flow: column; grid-template-rows: repeat(var(--n, 9), auto); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .3rem .5rem; max-width: 46rem; }
+button.nt-hs { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; gap: 0 .4rem; align-items: baseline; min-height: 44px; min-width: 0;
+  padding: .3rem .5rem; border-radius: 8px; background: var(--nt-wash); border-left: 3px solid var(--nt-rule); }
+button.nt-hs:hover { background: var(--nt-wash2); }
+.nt-hs .rk { color: var(--color-fg-muted); font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; }
+.nt-hs .nm { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; line-height: 1.1; }
+.nt-hs .pc { font-size: 12.5px; color: var(--color-fg-muted); white-space: nowrap; }
+.nt-hs .st { grid-column: 2 / -1; font-size: 12.5px; color: var(--color-fg-muted); line-height: 1.35; }
+.nt-hs .ln { grid-column: 1 / -1; font-size: 11.5px; font-weight: 700; letter-spacing: .02em; color: var(--nt-jake); }
+button.nt-hs[data-line="true"] { outline: 2px solid var(--nt-jake); outline-offset: -2px; }
+button.nt-hs[data-s="called"][data-w="D"] { background: color-mix(in srgb, var(--nt-d) 22%, var(--nt-wash)); border-left-color: var(--nt-d); }
+button.nt-hs[data-s="called"][data-w="R"] { background: color-mix(in srgb, var(--nt-r) 22%, var(--nt-wash)); border-left-color: var(--nt-r); }
+button.nt-hs[data-s="called"][data-w="I"] { background: color-mix(in srgb, var(--nt-jake) 22%, var(--nt-wash)); border-left-color: var(--nt-jake); }
+button.nt-hs[data-s="counting"][data-w="D"] { background: color-mix(in srgb, var(--nt-d) 9%, var(--nt-wash)); border-left-color: color-mix(in srgb, var(--nt-d) 55%, transparent); }
+button.nt-hs[data-s="counting"][data-w="R"] { background: color-mix(in srgb, var(--nt-r) 9%, var(--nt-wash)); border-left-color: color-mix(in srgb, var(--nt-r) 55%, transparent); }
+.nt-hl-w { all: unset; box-sizing: border-box; cursor: pointer; justify-self: start; padding: .3rem .9rem; border-radius: 999px; font-size: 13px; outline: 1px solid var(--nt-rule); color: var(--color-fg-muted); }
+.nt-hl-w[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); font-weight: 600; outline-color: var(--color-fg); }
+/* importance, and the visible deep-dive link on a key race card */
+.nt-imp { display: flex; flex-wrap: wrap; align-items: center; font-size: 12.5px; color: var(--color-fg); line-height: 1.35; }
+.nt-rc .nt-imp { padding-top: .2rem; }
+.nt-rc-dive { all: unset; cursor: pointer; box-sizing: border-box; justify-self: start; display: inline-flex; align-items: center; min-height: 28px; padding: 0 .1rem; font-size: 13px; font-weight: 600; color: var(--nt-ours); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.nt-rc-dive:hover { color: var(--color-fg); }
+.nt-sheet-dive { min-height: 40px; display: inline-flex; align-items: center; box-sizing: border-box; }
+.nt-feed-moreli { list-style: none; padding: .2rem 0; }
+/* All races and key counties rows, two lines on a phone (Jake: too much scrolling; a row was 95px, a county 113px) */
+.nt-ar-l { display: block; }
+.nt-cr .ex { grid-column: 3; font-size: 12px; color: var(--color-fg-muted); overflow-wrap: anywhere; }
+.nt-ar small.ex { font-size: 12px; color: var(--color-fg); }
+@media (max-width: 640px) {
+  .nt-ar-l { display: inline; margin-right: .35em; }
+  /* a race row, two lines: the name and where the count stands, then the candidates and our chance before votes (a long list of candidates or a long
+     basis ends in an ellipsis; the whole of it is one tap away). The "Now" label is dropped, the text says counted, called or no votes, and an early
+     count says so after its numbers. */
+  button.nt-ar { grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: .05rem .5rem; padding: .45rem .55rem; align-items: baseline; }
+  button.nt-ar .nt-ar-n { display: contents; }
+  button.nt-ar .nt-ar-n > b { grid-column: 1; grid-row: 1; }
+  button.nt-ar .nt-ar-n > small { grid-column: 1; grid-row: 2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  button.nt-ar .nt-ar-c { grid-column: 2; grid-row: 1; display: block; text-align: right; }
+  button.nt-ar .nt-ar-c > .nt-ar-l { display: none; }
+  button.nt-ar .nt-ar-c .t { font-weight: 600; color: var(--color-fg); }
+  button.nt-ar[data-early="true"] .nt-ar-c .t::after { content: " (early)"; font-weight: 400; color: var(--color-fg-muted); }
+  button.nt-ar .nt-ar-p { grid-column: 2; grid-row: 2; display: block; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  button.nt-ar .nt-ar-p .nt-ar-l { margin-right: .25em; }
+  button.nt-ar .nt-ar-c > small:not(.nt-ar-l), button.nt-ar .nt-ar-c > .nt-ar-flip, button.nt-ar .nt-ar-c > .nt-ar-chk { display: block; margin-left: auto; width: fit-content; text-align: right; }
+  /* a county row: name and count, the why, what we expected, then the one line of extras */
+  button.nt-cr { grid-template-columns: minmax(0, 1fr) auto; }
+  button.nt-cr .nt-ar-n > b { grid-column: 1; grid-row: 1; }
+  button.nt-cr .nt-ar-c { grid-column: 2; grid-row: 1; }
+  button.nt-cr .nt-ar-n > small { grid-column: 1 / -1; grid-row: 2; }
+  button.nt-cr .nt-ar-p { grid-column: 1 / -1; grid-row: 3; text-align: left; white-space: normal; }
+  button.nt-cr .ex { grid-column: 1 / -1; grid-row: 4; text-align: left; }
+  .nt-looks { grid-template-columns: repeat(2, minmax(0, 1fr)); }  /* the counties to watch first, before the polls close: two across, a column of eight was 650px */
+  .nt-rc-dive { min-height: 40px; }
+  /* the top strip: the clock and the pause button share a line */
+  .nt-top { padding-bottom: .4rem; }
+  .nt-live { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: .2rem .8rem; }
+  .nt-live .nt-time { grid-area: 1 / 1; } .nt-live .nt-pause { grid-area: 1 / 2; justify-self: end; }
+  .nt-live .nt-status { grid-area: 2 / 1 / 3 / -1; } .nt-live .nt-pause-note { grid-area: 3 / 1 / 4 / -1; }
+  /* what comes first on a phone: what this is and the numbers, the map, what to expect, then the rest */
+  #night > .nt-glance { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
+  #night > .nt-mapsec { order: 5; } #night > .nt-expect { order: 6; } #night > .nt-top { order: 7; } #night > .nt-prac { order: 8; }
+  #night > .nt-board2 { order: 9; } #night > .nt-impact { order: 10; } #night > .nt-results { order: 11; }
+  /* the build notes of the shared copy go to the foot of the page: the glance says what the page is */
+  body:has(> .lx-note) { display: flex; flex-direction: column; }
+  body:has(> .lx-note) > main { order: 1; }
+  body:has(> .lx-note) > .lx-note, body:has(> .lx-note) > .lx-bar { order: 2; }
+  body:has(> .lx-note) > .lx-note { margin-top: 1.5rem; border-top: 1px solid var(--color-border-line); }
+}
 
 /* the forecast band folds to its title line while the Night tab is open */
 /* election night is a night scene: deep navy instead of the neutral dark gray, the panels lifted off it (2026-11-02 sweep) */
@@ -1920,10 +2048,16 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   </section>
 
   <section class="ms-panel nt" data-panel="night" id="night" hidden aria-label="Election night">
+    <section class="nt-glance" id="nt-glance" aria-label="What this page is, and where the night stands">
+      <p class="nt-gl-what" id="nt-gl-what">Live 2026 midterm results: every Senate, House and governor race, read against our forecast.</p>
+      <p class="nt-gl-asof" id="nt-gl-asof"></p>
+      <div class="nt-stale" id="nt-stale" hidden></div>
+      <div class="nt-gl-ch" id="nt-gl-ch"></div>
+      <div class="nt-next" id="nt-next"></div>
+    </section>
     <div class="nt-top">
       <div class="nt-live">
         <p class="nt-status" id="nt-status">Loading the board…</p>
-        <div class="nt-next" id="nt-next"></div>
         <div class="nt-time" role="group" aria-label="Eastern time"><span class="nt-clock" id="nt-clock">—</span><span class="nt-ampm" id="nt-ampm"></span> <span class="nt-tz">ET</span></div>
         <button type="button" class="nt-pause" id="nt-pause" aria-pressed="false" title="Stop the board from updating while you read it. The count keeps coming in.">Pause updates</button>
         <span class="nt-pause-note" id="nt-pause-note"></span>
@@ -1956,7 +2090,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <p class="nt-prac-s">Made-up results, to see how the board behaves before the real night. Pick how far every state ends from our forecast and how much of the vote is counted, then press Show it, or load a sample night that plays out poll by poll. Races get a made-up call once 90 percent is in. Nothing here reaches the real board.</p>
     </details>
     <nav class="nt-jump" id="nt-jump" aria-label="Jump to a part of the board">
-      <button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-all">All races</button>
+      <button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-all">All races</button>
     </nav>
     <section class="nt-pins" id="nt-pins" aria-label="My watchlist" hidden></section>
     <div class="nt-board2" id="nt-ctl" role="group" aria-label="Control of Congress and the night so far">
@@ -1964,6 +2098,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <article class="nt-chamber" data-ch="house"><div id="nt-ch-hou"></div><div class="nt-seat" id="nt-hou" data-source="night_tiles"></div></article>
       <div class="nt-vibe" id="nt-vibe"></div>
     </div>
+    <section class="nt-expect" id="nt-expect" aria-label="What to expect" hidden></section>
     <section class="nt-impact" id="nt-impact" aria-label="Most impactful so far"></section>
     <section class="nt-mapsec" id="nt-map" aria-label="The map" hidden></section>
     <section class="nt-results" id="nt-results" aria-label="Results">
@@ -1984,6 +2119,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         </aside>
       </div>
       <div class="nt-rcs" id="nt-rcs" role="group" aria-label="Key races"></div>
+      <section class="nt-hl" id="nt-hl" aria-label="The House line" hidden></section>
       <section class="nt-all" id="nt-cty" aria-label="Key counties" hidden></section>
       <section class="nt-all" id="nt-all" aria-label="All races" hidden></section>
     </section>
@@ -3567,6 +3703,43 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return svg.node();
   }
 
+  // ---------- clock helpers for the Nov 3 pass: every race's poll close (not only the 19 key states), the as-of time, a plain "ago"
+  // A close is "HH:MM" ET. Before 6am it is after midnight (Alaska's 00:00 is the end of election day), so it lands on the next day.
+  // Nov 3 2026 is after daylight time ended (Nov 1), so Eastern is UTC-5 all night.
+  function ntAtIso(d, hhmm) {
+    const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm || ''); if (!m) return null;
+    const h = +m[1], day = (d && d.election_day) || '2026-11-03', base = Date.parse(`${day}T${String(h % 24).padStart(2, '0')}:${m[2]}:00-05:00`);
+    return isNaN(base) ? null : new Date(base + (h >= 24 || h < 6 ? 86400000 : 0)).toISOString();
+  }
+  const nightCloseCache = new WeakMap();
+  function ntCloseMap(d) {  // [{iso, ms, states}] for every distinct close of any race on the ballot, soonest first
+    if (!d || typeof d !== 'object') return [];
+    if (nightCloseCache.has(d)) return nightCloseCache.get(d);
+    const m = new Map(), add = (iso, st) => {
+      const t = Date.parse(iso || ''); if (isNaN(t)) return;
+      const k = new Date(t).toISOString(); if (!m.has(k)) m.set(k, new Set()); if (st) m.get(k).add(st);
+    };
+    for (const r of d.timeline || []) { add(r.close_iso, r.state); add(r.close_last_iso, r.state); }
+    const e = d.every || {};
+    for (const x of [...(e.senate || []), ...(e.governor || []), ...(e.house || [])]) add(ntAtIso(d, x.close), x.state || String(x.key || '').slice(0, 2));
+    const out = [...m.entries()].map(([iso, s]) => ({ iso, ms: Date.parse(iso), states: [...s].sort() })).sort((a, b) => a.ms - b.ms);
+    nightCloseCache.set(d, out); return out;
+  }
+  const ntStates = (s) => (!s.length ? 'polls' : s.length <= 5 ? s.join(', ') : `${s.slice(0, 5).join(', ')} and ${s.length - 5} more`);
+  function ntAgo(iso) {
+    const t = Date.parse(iso || ''); if (isNaN(t)) return '';
+    const m = Math.floor((Date.now() - t) / 60000); if (m < 1) return 'just now';
+    if (m < 60) return `${m} minute${m === 1 ? '' : 's'} ago`;
+    const h = Math.floor(m / 60), r = m % 60;
+    return `${h} hour${h === 1 ? '' : 's'}${r ? ` ${r} minute${r === 1 ? '' : 's'}` : ''} ago`;
+  }
+  function ntAsOf(d) {  // the last CNN read when the board has one, else when the board was built, and which it is
+    const cnn = ((d.every || {}).read_at || {}).CNN;
+    return cnn ? { at: cnn, label: 'CNN' } : { at: d.built_at, label: 'board' };
+  }
+  const ntKids = (tag, attrs, kids) => { const n = el(tag, attrs); n.append(...kids); return n; };  // el() sets text only; this one takes text and nodes together
+  const ntLastKey = (k) => (/^[A-Z]{2}-\d+$/.test(k) ? `${k.slice(0, 2)}-${+k.slice(3)}` : k);  // VA-01 reads VA-1, as everywhere on the board
+
   function registerNight(d) {
     const c = window.__dashCache; if (!c) return;
     for (const [k, rows] of [['night_races', d.races], ['night_house', d.house], ['night_counties', d.counties], ['night_tiles', d.tiles], ['night_log', d.log]]) c[k] = { status: 'ok', data: rows || [] };
@@ -3828,7 +4001,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         const cur = [...nav.querySelectorAll('button')].map((b) => b.dataset.to).find((id) => seen.get(id));
         nav.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.to === cur)));
       }, { rootMargin: '-60px 0px -55% 0px' });
-      ['nt-ctl', 'nt-impact', 'nt-map', 'nt-desk', 'nt-rcs', 'nt-cty', 'nt-all'].forEach((id) => { const s = document.getElementById(id); if (s) io.observe(s); });
+      ['nt-ctl', 'nt-expect', 'nt-impact', 'nt-map', 'nt-desk', 'nt-rcs', 'nt-hl', 'nt-cty', 'nt-all'].forEach((id) => { const s = document.getElementById(id); if (s) io.observe(s); });
     }
     window.addEventListener('hashchange', () => { if (nightData) ntOpenDeep(nightData); });
   }
@@ -3887,7 +4060,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (Object.values(nightMoves).some((m) => m.at && now - m.at < 5 * 60000 + 31000)) return true;  // a chance-moved arrow is up or just lapsed
     if (nightSpotPin && now < nightSpotPin.until + 31000) return true;  // a pinned spotlight is about to lapse
     if (NT_EDGES.some((t) => last < t && now >= t)) return true;
-    return (d.timeline || []).some((r) => [r.close_iso, r.close_last_iso].some((iso) => { const t = Date.parse(iso); return t > last && t <= now; }));  // a poll close has passed
+    return ntCloseMap(d).some((c) => c.ms > last && c.ms <= now);  // a poll close has passed, in any race (what to expect moves on to the next tests)
   }
   function drawNight() { return ntKeepFocus(drawNightNow); }
   function drawNightNow() {
@@ -3899,6 +4072,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
     ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d);
+    ntGlance(d); ntExpect(d);
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
     nightDrawnAt = Date.now();
@@ -3911,18 +4085,18 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const now = new Date(), f = ntClock.format(now);
     $('#nt-clock').textContent = f.replace(' AM', '').replace(' PM', '');
     $('#nt-ampm').textContent = /PM/.test(f) ? 'pm' : 'am';
-    const rows = nightData.timeline || [];
-    const next = rows.map((r) => r.close_iso).filter((t) => Date.parse(t) > now.getTime()).sort()[0];
+    // The next close is read from every race's close time (M4, Nov 3): the 19 key states' times alone skipped the 11pm West Coast close after Nevada.
+    const nx = ntCloseMap(nightData).find((c) => c.ms > now.getTime()), next = nx ? nx.iso : null;
     const box = $('#nt-next');
     // The countdown is for the eye only (aria-hidden): a screen reader gets the static line and a minute count that changes once
     // a minute, never a clock that ticks every second (accessibility review, item 2). The line is built again only when the next close changes.
     if (next) {
-      const sts = rows.filter((r) => r.close_iso === next).map((r) => r.state);
+      const sts = nx.states;
       const s = Math.round((Date.parse(next) - now.getTime()) / 1000);
       const hh = Math.floor(s / 3600), mm = Math.floor((s % 3600) / 60), ss = s % 60;
       if (box.dataset.k !== next) {
         box.dataset.k = next;
-        box.replaceChildren(el('span', { class: 'nt-count', 'aria-hidden': 'true' }), el('span', { class: 'nt-next-l' }, `until ${sts.join(', ')} close${sts.length === 1 ? 's' : ''} at ${ntT(next)}`), el('span', { class: 'nt-sr' }));
+        box.replaceChildren(el('span', { class: 'nt-count', 'aria-hidden': 'true' }), el('span', { class: 'nt-next-l' }, `until ${ntStates(sts)} close${sts.length === 1 ? 's' : ''} at ${ntT(next)}`), el('span', { class: 'nt-sr' }));
       }
       box.firstChild.textContent = (hh ? hh + ':' + String(mm).padStart(2, '0') : mm) + ':' + String(ss).padStart(2, '0');
       const mins = Math.max(1, Math.ceil(s / 60)), say = box.lastChild;
@@ -3933,7 +4107,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     } else if (box.dataset.k !== 'none') { box.dataset.k = 'none'; box.replaceChildren(el('span', { class: 'nt-next-l' }, 'All polls have closed.')); }
     const cd = document.querySelector('#nt-spot [data-until]'); if (cd) cd.textContent = 'in ' + ntCd(cd.dataset.until);
     const minute = Math.floor(now.getTime() / 60000);
-    if (force || minute !== nightLastMinute) { nightLastMinute = minute; ntTimeline(nightData); }
+    if (force || minute !== nightLastMinute) { nightLastMinute = minute; ntTimeline(nightData); ntAsOfAge(nightData); }
   }
   function ntHealth(d) {
     const box = $('#nt-status'), warn = $('#nt-health'), h = nightHealth || {}, now = Date.now();
@@ -3945,7 +4119,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     };
     if (ntRO()) {  // the public copy says how fresh it is, nothing about the server behind it
       const age = d.built_at ? (now - Date.parse(d.built_at)) / 60000 : null;
-      put(age != null && age < 20 ? 'ok' : 'idle', `Numbers as of ${ntT(d.built_at)} ET. This page checks for new numbers every 30 seconds; they arrive every few minutes.`, null);
+      // The CNN read time sits at the top of the page now (ntGlance). This line says when the board was built and how the page refreshes.
+      put(age != null && age < 20 ? 'ok' : 'idle', `Board built ${ntT(d.built_at)} ET. This page checks every 30 seconds. New numbers arrive every few minutes.`, null);
       return;
     }
     const inWindow = now >= Date.parse('2026-11-03T17:45:00-05:00') && now < Date.parse('2026-11-11T00:00:00-05:00');
@@ -3972,9 +4147,235 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     put(msg ? 'bad' : last ? 'ok' : 'idle', parts.join('. ') + '.', msg);
   }
 
+  // ---------- the glance (Nov 3 pass, Jake: the public link on a phone "may be the primary way users interface with our project").
+  // The first thing a friend sees with no context: what this page is, when its numbers are from, the two chambers' seats, the next poll close.
+  function ntSeatNums(d) {
+    const sp = d.senate_path, hp = d.house_path;  // the same sums as the seat bars below: the Senate's 34 and 31 seats not up this year, plus called and leading
+    return {
+      senate: { name: 'Senate', maj: 51, d: 34 + (sp ? sp.called_D + sp.lead_D : 0), r: 31 + (sp ? sp.called_R + sp.lead_R : 0) },
+      house: { name: 'House', maj: 218, d: hp ? hp.called_D + hp.lead_D : 0, r: hp ? hp.called_R + hp.lead_R : 0 },
+    };
+  }
+  const ntDur = (m) => (m < 60 ? `${m} minute${m === 1 ? '' : 's'}` : `${Math.floor(m / 60)} hour${Math.floor(m / 60) === 1 ? '' : 's'}${m % 60 ? ` ${m % 60} minute${m % 60 === 1 ? '' : 's'}` : ''}`);
+  function ntGlance(d) {
+    const what = $('#nt-gl-what'), asof = $('#nt-gl-asof'), box = $('#nt-gl-ch'); if (!what || !asof || !box) return;
+    if (!what.querySelector('.nt-q')) { const q = ntQ('glance'); if (q) what.append(q); }
+    const a = ntAsOf(d);
+    asof.replaceChildren();
+    if (nightMode === 'practice') asof.append(document.createTextNode('Practice board with made-up results. Built '), el('b', {}, `${ntT(d.built_at)} ET`), document.createTextNode('.'));
+    else {
+      asof.append(document.createTextNode(a.label === 'CNN' ? 'Last CNN read ' : 'No CNN read yet. Board built '), el('b', {}, `${ntT(a.at)} ET`), document.createTextNode(', '),
+        el('span', { id: 'nt-gl-ago' }, ntAgo(a.at)), document.createTextNode(a.label === 'CNN' ? ". Calls are CNN's." : ". CNN's counts start when the polls close."));
+    }
+    // the two chambers as a pair of small scoreboards: Democrats on the left, Republicans on the right, the chance to control under them
+    const nums = ntSeatNums(d), co = (d.story || {}).control_odds || {};
+    box.replaceChildren();
+    for (const k of ['senate', 'house']) {
+      const n = nums[k], o = co[k];
+      const cnt = (cls, who, v) => { const b = el('b', { class: cls }); b.append(el('span', { class: 'nt-sr' }, who + ' '), document.createTextNode(String(v))); return b; };
+      const t = el('div', { class: 'nt-gl-t', role: 'group', 'aria-label': n.name, 'data-ch': k });
+      const h = el('div', { class: 'nt-gl-h' }); h.append(el('span', { class: 'nm' }, n.name), ntQ(k));
+      const s = el('div', { class: 'nt-gl-n' }); s.append(cnt('nt-d', 'Democrats', n.d), el('small', {}, `${n.maj} wins`), cnt('nt-r', 'Republicans', n.r));
+      t.append(h, s);
+      if (o && o.p_d != null) t.append(el('small', { class: 'nt-gl-c' }, 'Chance to control'), ntWinBar(o.p_d, 'sm'));
+      box.append(t);
+    }
+    ntAsOfAge(d);
+  }
+  var nightStaleSaid = false;
+  const NT_STALE_MIN = { local: 5, public: 12, late: 45 };  // minutes. The public copy is pushed every 6 minutes or so, so it gets room for that lag
+  function ntStale(d) {  // M5: the band nobody can miss when CNN's numbers have stopped moving, from 6pm ET on election night
+    const box = $('#nt-stale'); if (!box) return;
+    let msg = '';
+    const now = Date.now(), t6 = Date.parse('2026-11-03T18:00:00-05:00'), t6am = Date.parse('2026-11-04T06:00:00-05:00'), end = Date.parse('2026-11-11T00:00:00-05:00');
+    if (nightMode !== 'practice' && d && d.every && now >= t6 && now < end) {
+      const cnn = (d.every.read_at || {}).CNN, limit = now < t6am ? (ntRO() ? NT_STALE_MIN.public : NT_STALE_MIN.local) : NT_STALE_MIN.late;
+      if (!cnn) { if (now - t6 > 10 * 60000) msg = "No CNN read yet tonight. The count and calls will show here once there is one."; }
+      else { const age = Math.floor((now - Date.parse(cnn)) / 60000); if (age > limit) msg = `CNN's numbers are ${ntDur(age)} old. The last read was ${ntT(cnn)} ET. The count and calls below may be behind.${ntRO() ? ' This page keeps checking.' : ''}`; }
+    }
+    box.hidden = !msg; if (box.textContent !== msg) box.textContent = msg;
+    if (msg && !nightStaleSaid) { nightStaleSaid = true; ntSay(msg); } else if (!msg) nightStaleSaid = false;
+  }
+  function ntAsOfAge(d) {  // once a minute: the "2 minutes ago" beside the as-of time, and the stale band
+    if (!d) return;
+    const s = $('#nt-gl-ago'), a = ntAsOf(d); if (s) { const t = ntAgo(a.at); if (s.textContent !== t) s.textContent = t; }
+    ntStale(d);
+  }
+
+  // ---------- what to expect (Nov 3 pass): scripts/night_story.py expect(), drawn. The tests were set before the polls closed.
+  const NT_XCHIP = { redder: 'Redder', on: 'On our line', bluer: 'Bluer' };
+  const NT_XSAY = { redder: 'Running redder than our line.', on: 'On our line.', bluer: 'Running bluer than our line.' };
+  const NT_X_MAX = 5;  // four seats and an outside marker on the page. Every test is in All tests.
+  function ntXName(key) {
+    if (/^[A-Z]{2}-\d+$/.test(key)) return ntLastKey(key);
+    const m = /^(senate|gov)_([a-z]{2})$/.exec(key || ''); if (m) return `${NT_STATE[m[2].toUpperCase()] || m[2].toUpperCase()} ${m[1] === 'senate' ? 'Senate' : 'governor'}`;
+    return key || '';
+  }
+  function ntXSrc(s) {  // the source, in plain words (the file names are in the sheet's source line)
+    s = String(s || '');
+    if (/night_tells/.test(s)) return 'our frozen tell seats (set Oct 31)';
+    if (/forecast_addendum/.test(s)) return /ranked/.test(s) ? 'our Nov 2 forecast, which ranks every seat by our chance' : 'our Nov 2 forecast';
+    return s.replace(/\s*\(data\/[^)]*\)/g, '');
+  }
+  const ntAnd = (a) => (a.length < 2 ? a.join('') : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
+  function ntXOpen(d, key) {
+    const e = d.every || {}, x = [...(e.senate || []), ...(e.governor || []), ...(e.house || [])].find((y) => y.key === key);
+    if (x) ntAllPop(d, { ...x, st: x.state || String(x.key).slice(0, 2) });
+  }
+  function ntXOrder(items) {  // the frozen tell seats first, then outside markers, then the seats nearest the House line
+    const rank = (i) => (i.outside ? 1 : i.near_line ? 2 : 0);
+    return items.map((it, n) => [it, n]).sort((a, b) => rank(a[0]) - rank(b[0]) || a[1] - b[1]).map((x) => x[0]);
+  }
+  function ntXPick(d, tests) {  // the next close, or the latest one that has closed and is still being read
+    const now = Date.now();
+    const gs = (tests || []).map((g) => ({ g, ms: Date.parse(ntAtIso(d, g.at) || '') })).filter((x) => !isNaN(x.ms));
+    const reading = gs.filter((x) => x.ms <= now && now - x.ms <= 75 * 60000 && x.g.items.some((i) => !i.outside && i.status == null && !i.called)).pop();
+    if (reading) return { ...reading, mode: 'reading' };
+    const next = gs.find((x) => x.ms > now);
+    if (next) return { ...next, mode: 'next' };
+    const last = gs[gs.length - 1];
+    return last ? { ...last, mode: 'last' } : null;
+  }
+  function ntXRow(d, e, g, it, full) {
+    const name = ntXName(it.key), ours = it.ours != null ? ntM(it.ours) : null, red = it.red_below != null ? ntM(it.red_below) : null;
+    const has = it.now != null, cnt = it.counted != null ? ntPct(it.counted) + ' in' : '', wn = it.called && it.called !== 'runoff' ? it.called : null;
+    const src = ntXSrc(it.source);
+    const row = el('button', { type: 'button', class: 'nt-xr', 'data-s': it.status || (it.outside ? 'outside' : ''), 'data-fk': `xr:${full ? 's' : 'p'}:${g.at}:${it.key}`, title: `Source: ${it.source || 'not given'}` });
+    const mid = el('span', { class: 'mid' });
+    if (it.outside) {
+      mid.append(ours ? ntKids('span', {}, ['we expect ', el('b', {}, ours)]) : el('span', {}, 'no line of ours'));
+    } else if (has) {
+      mid.append(ntKids('span', {}, ['expect ', el('b', {}, ours || '—')]), ntKids('span', { class: 'nt-mute' }, ['now ', el('b', {}, ntM(it.now)), cnt ? ` (${cnt})` : '']));
+    } else mid.append(ntKids('span', {}, ['expect ', el('b', {}, ours || '—')]), el('span', { class: 'nt-mute' }, red ? `redder than ${red}` : ''));
+    row.append(el('b', { class: 'nm' }, name), mid);
+    const chip = it.status ? NT_XCHIP[it.status] : it.outside ? 'Outside marker' : has ? 'Too early' : '';
+    if (chip) row.append(el('span', { class: 'chip', 'data-s': it.status || (it.outside ? 'outside' : 'wait') }, chip));
+    if (wn) row.append(el('span', { class: 'call' }, `Called ${wn}`));
+    if (it.outside) {
+      const w = el('span', { class: 'why' }); w.append(el('b', {}, `Set by ${src}. `), document.createTextNode(`${it.why || ''}${it.chance_d != null ? ` Democrats ${Math.round(it.chance_d)}% before votes.` : ''}`)); row.append(w);
+    }
+    if (full) {
+      const bits = [it.matchup, it.near_line ? `Ranked ${it.near_line} of 435 by our chance, Democrats ${Math.round(it.chance_d)}%` : null, `Line from ${src}`].filter(Boolean);
+      row.append(el('small', { class: 'det' }, bits.join('. ') + '.'));
+    }
+    const say = it.outside
+      ? `${name} at ${g.at_text}. Outside marker, set by ${src}. ${it.why || ''}${ours ? ` We expect ${ours}.` : ''}`
+      : `${name} at ${g.at_text}: we expect ${ours}. Redder than ${red} means the night is running redder than our forecast.${it.status ? ` Now ${ntM(it.now)}${cnt ? ', ' + cnt : ''}. ${NT_XSAY[it.status]}` : has ? ` Counting at ${ntM(it.now)}${cnt ? ', ' + cnt : ''}. Too early to compare.` : ''}`;
+    row.setAttribute('aria-label', `${say}${wn ? ` Called for ${wn}.` : ''} Open this race.`);
+    row.addEventListener('click', () => ntXOpen(d, it.key));
+    return row;
+  }
+  function ntXNot(d, n, full) {  // a race or state that will not finish tonight, and why
+    const b = el('button', { type: 'button', class: 'nt-xn', 'data-fk': `xn:${full ? 's' : 'p'}:${n.key || n.state}`, 'aria-label': `${n.name}. ${n.why} ${n.kind ? 'Kind: ' + n.kind + '.' : ''} Open it.` });
+    b.append(el('b', { class: 'nm' }, n.name), el('span', { class: 'k' }, n.kind || ''), el('span', { class: 'w' }, n.why || ''));
+    b.addEventListener('click', () => { if (n.key && ((d.every || {}).senate || []).concat((d.every || {}).governor || [], (d.every || {}).house || []).some((y) => y.key === n.key)) ntXOpen(d, n.key); else if (n.state) ntStatePop(d, n.state); });
+    return b;
+  }
+  const ntXSources = (e) => [...new Set((e.tests || []).flatMap((g) => g.items.map((i) => (i.outside ? null : ntXSrc(i.source).replace(/, which ranks.*$/, '')))).filter(Boolean))];
+  function ntXExplain(e) { return `A seat counted more than ${fmt1(e.band == null ? 2 : e.band)} points redder than its line means the night is running redder than our forecast.`; }
+  function ntExpect(d) {
+    const box = $('#nt-expect'); if (!box) return;
+    const e = (d.story || {}).expect; box.hidden = !e; if (!e) return;
+    box.replaceChildren(ntHead(el('h2', {}, 'What to expect'), 'expect'), el('p', { class: 'nt-x-t' }, e.title || ''));
+    for (const l of e.lines || []) box.append(el('p', { class: 'nt-x-n' }, l));
+    const pick = ntXPick(d, e.tests), total = (e.tests || []).reduce((n, g) => n + g.items.length, 0);
+    if (pick) {
+      const g = pick.g, items = ntXOrder(g.items), sec = el('div', { class: 'nt-x-g' });
+      const lab = pick.mode === 'reading' ? `Reading now: the ${g.at_text} tests` : pick.mode === 'last' ? `Last tests: ${g.at_text}` : `Next tests: ${g.at_text}`;
+      sec.append(el('h3', { class: 'nt-x-gh' }, lab), el('p', { class: 'nt-x-n' }, ntXExplain(e)));
+      const list = el('div', { class: 'nt-x-list' });
+      const out = items.filter((i) => i.outside).slice(0, 2), reg = items.filter((i) => !i.outside), shown = [...reg.slice(0, NT_X_MAX - out.length), ...out];  // an outside marker always makes the short list
+      for (const it of shown) list.append(ntXRow(d, e, g, it, false));
+      sec.append(list);
+      if (items.length > shown.length) sec.append(el('p', { class: 'nt-x-n' }, `${items.length - shown.length} more at ${g.at_text}. They are in All tests.`));
+      box.append(sec);
+    }
+    const act = el('div', { class: 'nt-x-act' });
+    if (total) { const all = el('button', { type: 'button', class: 'nt-btn nt-btn-q', 'data-fk': 'xr:all' }, `All tests (${total})`); all.addEventListener('click', () => ntXSheet(d)); act.append(all); }
+    const nt = e.not_tonight || [];
+    if (nt.length) {
+      const sec = el('div', { class: 'nt-x-g' });
+      sec.append(el('h3', { class: 'nt-x-gh' }, 'Not finishing tonight'));
+      const list = el('div', { class: 'nt-x-list' });
+      for (const n of nt.slice(0, 3)) list.append(ntXNot(d, n, false));
+      sec.append(list);
+      if (nt.length > 3) sec.append(el('p', { class: 'nt-x-n' }, `${nt.length - 3} more are in All tests.`));
+      box.append(sec);
+    }
+    if (act.childElementCount) box.append(act);
+    const srcs = ntXSources(e);
+    if (total) box.append(el('p', { class: 'nt-x-src' }, `Lines: ${ntAnd(srcs) || 'our forecast'}. Our readings, not results and not a call.`));
+  }
+  function ntXSheet(d) {  // every close time, every test, and everything that will not finish tonight
+    const e = (d.story || {}).expect; if (!e) return;
+    const nodes = [el('p', { class: 'nt-sheet-lede' }, e.title || ''), el('p', { class: 'nt-mute' }, ntXExplain(e))];
+    for (const g of e.tests || []) {
+      nodes.push(el('h3', { class: 'nt-sheet-h3' }, `${g.at_text}, ${g.items.length} test${g.items.length === 1 ? '' : 's'}`));
+      const list = el('div', { class: 'nt-x-list' });
+      for (const it of ntXOrder(g.items)) list.append(ntXRow(d, e, g, it, true));
+      nodes.push(list);
+    }
+    if ((e.not_tonight || []).length) {
+      nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Not finishing tonight'));
+      const list = el('div', { class: 'nt-x-list' });
+      for (const n of e.not_tonight) list.append(ntXNot(d, n, true));
+      nodes.push(list);
+    }
+    nodes.push(el('p', { class: 'nt-mute' }, `Lines come from ${ntAnd(ntXSources(e)) || 'our forecast'} (data/night_tells.json and data/forecast_addendum.json). Outside markers say who set them. These are our readings, not results.`));
+    ntSheet('All tests', 'What to expect', nodes);
+  }
+
+  // ---------- the House line (Nov 3 pass): every seat ranked by our chance before votes, the 218th marked. Democrats hold the House
+  // if they win every seat down to that one.
+  var ntHlWide = false;
+  try { ntHlWide = localStorage.getItem('nt-hl-wide') === 'on'; } catch (e) { /* default */ }
+  function ntHouseLine(d) {
+    const box = $('#nt-hl'); if (!box) return;
+    const h = (d.story || {}).house_line, seats = (h || {}).seats || [];
+    box.hidden = !seats.length; if (box.hidden) return;
+    const lo = ntHlWide ? 200 : 210, hi = ntHlWide ? 240 : 226, rows = seats.filter((z) => z.rank >= lo && z.rank <= hi);
+    const tip = (h.tipping || {}).key, lost = (h.lost_above || []).length, won = (h.won_below || []).length;
+    box.replaceChildren(ntHead(el('h2', {}, 'The House line'), 'houseline'));
+    box.append(el('p', { class: 'nt-hl-s' }, `Democrats hold the House if they win every seat down to ${ntLastKey(tip || '')}. So far they have lost ${lost} above the line and won ${won} below it.`),
+      el('p', { class: 'nt-hl-n' }, `Our forecast favored Democrats in ${h.expected_d} of 435 seats. Called so far: Democrats ${h.won_d}, Republicans ${h.won_r}. Showing seats ${lo} to ${hi} of our ranking.`));
+    const tog = el('button', { type: 'button', class: 'nt-hl-w', 'aria-pressed': String(ntHlWide), 'data-fk': 'hl:wide' }, 'Show 200 to 240');
+    tog.addEventListener('click', () => { ntHlWide = !ntHlWide; try { localStorage.setItem('nt-hl-wide', ntHlWide ? 'on' : 'off'); } catch (er) { /* fine */ } ntKeepFocus(() => ntHouseLine(d)); });
+    const grid = el('div', { class: 'nt-hl-g' }); grid.style.setProperty('--n', String(Math.ceil(rows.length / 2)));
+    for (const z of rows) {
+      const call = z.winner && z.winner !== 'runoff' ? ntPK(z.winner) : '', side = call || (z.ahead ? ntPK(z.ahead) : ''), line = z.rank === (h.majority || 218);
+      const st = z.winner ? 'called' : z.margin_d != null ? 'counting' : 'later';
+      const word = { D: 'Democrats', R: 'Republicans', I: 'An independent' };
+      const status = z.winner === 'runoff' ? 'Going to a runoff' : call ? `${word[call]} won` : z.margin_d != null ? `${ntM(z.margin_d)}${z.counted != null ? `, ${ntPct(z.counted)} in` : ''}` : z.held_by ? `${z.held_by}-held` : 'New seat';
+      const chance = `${z.chance_d >= 50 ? 'D' : 'R'} ${Math.round(z.chance_d >= 50 ? z.chance_d : 100 - z.chance_d)}%`;
+      const b = el('button', { type: 'button', class: 'nt-hs', 'data-s': st, 'data-w': side, 'data-line': String(line), 'data-fk': 'hl:' + z.key,
+        'aria-label': `Seat ${z.rank} on our ranking: ${ntLastKey(z.key)}, our chance before votes ${chance.replace(/^D/, 'Democrats').replace(/^R/, 'Republicans')}${line ? ', the line' : ''}. ${status}. Open this seat.` });
+      b.append(el('span', { class: 'rk' }, String(z.rank)), el('b', { class: 'nm' }, ntLastKey(z.key)), el('span', { class: 'pc' }, chance), el('span', { class: 'st' }, status));
+      if (line) b.append(el('span', { class: 'ln' }, 'The line'));
+      b.addEventListener('click', () => ntXOpen(d, z.key));
+      grid.append(b);
+    }
+    box.append(grid, tog, el('p', { class: 'nt-hl-src' }, `Ranked by our chance before votes: our Nov 2 forecast. Counts and calls: CNN${ntAsOf(d).label === 'CNN' ? `, read ${ntT(ntAsOf(d).at)} ET` : ''}.`));
+  }
+
+  // ---------- how much a race matters for control (Nov 3 pass). d.story.importance, {id: {p, basis}}, comes from a script; absent means show nothing.
+  const nightImpScale = new WeakMap();
+  function ntImp(d, key) {
+    const m = (d && d.story || {}).importance; if (!m || typeof m !== 'object') return null;
+    if (!nightImpScale.has(m)) nightImpScale.set(m, Object.values(m).some((v) => v && v.p > 1) ? 0.01 : 1);  // a share (0 to 1) is the plan; a percent is tolerated
+    const v = m[key]; return v && typeof v.p === 'number' ? { p: v.p * nightImpScale.get(m), basis: v.basis || '' } : null;
+  }
+  const ntHasImp = (d) => !!((d && d.story || {}).importance && Object.keys(d.story.importance).length);
+  const ntImpTxt = (p) => `Decides control in ${p < 0.005 ? 'under 1%' : Math.round(p * 100) + '%'} of our simulations`;
+  function ntImpLine(d, key, cls, called) {  // a small labeled line with its "?"; races under 1% and called races say nothing on a card
+    const v = ntImp(d, key); if (!v || v.p < 0.01 || called) return null;
+    const l = el('div', { class: cls || 'nt-imp', title: v.basis || '' }); l.append(el('span', {}, ntImpTxt(v.p)), ntQ('importance'));
+    return l;
+  }
+
   // ---------- the two chambers: seats called (solid) and leading (light) from each end, the majority mark, the frozen calls
   function ntSeatBar(box, o) {
-    const W = Math.max(220, box.clientWidth || 320), H = 54, bx = (s) => 4 + (s / o.total) * (W - 8), y0 = 22, bh = 12;
+    // The 22px above the bar is room for the "our call" marker, which only the old deep view draws. Without it the bar is trimmed (Nov 3: 56px less on a phone, two bars).
+    const mk = !!(o.closing && o.closing.lo != null), W = Math.max(220, box.clientWidth || 320), H = mk ? 54 : 26, bx = (s) => 4 + (s / o.total) * (W - 8), y0 = mk ? 22 : 7, bh = 12;
     const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('width', '100%').attr('aria-hidden', 'true');
     svg.append('rect').attr('x', bx(0)).attr('y', y0).attr('width', bx(o.total) - bx(0)).attr('height', bh).attr('rx', 2).attr('class', 'seat-open');
     let a = 0;
@@ -4155,7 +4556,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const ntParty = (o) => (o < 0 ? 'Republican' : 'Democratic');
   function ntResults(d) {
     if (!$('#nt-results') || nightView !== 'results') return;
-    ntDesk(d); ntPins(d); ntImpact(d); ntMap(d); ntRaceCards(d); ntCtyLive(d); ntAll(d);
+    ntDesk(d); ntPins(d); ntImpact(d); ntMap(d); ntRaceCards(d); ntHouseLine(d); ntCtyLive(d); ntAll(d);
   }
   // ---------- the live desk: scripts/night_story.py writes every word; this draws them
   const NT_EV = { close: 'Polls closed', first: 'First votes', lead: 'Lead change', batch: 'Big batch', call: 'Called', milestone: 'Milestone',
@@ -4281,6 +4682,25 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Posts on X are not read directly. News coverage catches the big ones, 15 to 30 minutes late.'] },
     coming: { title: 'Coming up', body: [
       'The next poll closings and what will be on the board then. After midnight, the races that took days to call in 2022.'] },
+    glance: { title: 'What this page is', body: [
+      'Live results from the 2026 midterm elections: every Senate, House and governor race, read against our forecast. We locked our forecast before any votes, so you can see where the count agrees with it and where it does not.',
+      'Counts come from official state results and CNN. The calls, when a race is decided, are CNN\'s. The time above is the last time we read CNN.',
+      'The two boxes show seats for each party in the Senate and the House. Democrats are on the left and Republicans on the right. A chamber is won at 51 seats in the Senate and 218 in the House. The bar under each is our chance that Democrats control it.',
+      'Tap any ? to see what it means. This page is a record and a guide, not advice.'] },
+    expect: { title: 'What to expect', body: [
+      'Before the polls closed we picked seats to read the night by and set a line for each one: the margin we expect there.',
+      'A seat counted more than 2 points redder than its line says the night is running redder than our forecast. More than 2 points bluer says bluer. Within 2 points is on our line. One seat proves little, so the headline says it is too early until enough states in enough regions have counted.',
+      'Outside markers are tests someone else set. The row says who set it. They are not ours.',
+      'Not finishing tonight lists races likely to take days: slow counts, ranked-choice rounds and runoffs. Slow is normal and is not a sign of a problem.',
+      'This is our reading of the count against our own forecast. It is not a call. Calls come from CNN.'] },
+    houseline: { title: 'The House line', body: [
+      'Every House seat ranked by our chance Democrats win it before any votes, the likeliest first. A party needs 218 of 435 seats, so the 218th seat on this list is the line.',
+      'Democrats hold the House if they win every seat down to the line. Each seat they lose above it has to be made up by a win below it. The sentence at the top keeps that count.',
+      'Solid color is a called seat. A lighter color is a lead in the count. Gray has no votes yet. Tap a seat for its whole story. The button widens the list from seats 210 to 226 to seats 200 to 240.',
+      'Our chances are our Nov 2 forecast. Counts and calls come from CNN.'] },
+    importance: { title: 'Decides control', body: [
+      'Out of our simulations of the night, how often this race is the one that decides which party controls the chamber: the other races land so that this one is the tipping point.',
+      'A high number means the race matters a lot for control. It changes as races are called, and a called race stops mattering. It is our own estimate, not a call.'] },
     sources: { title: 'Where the numbers come from', body: [
       'Official state results feeds first. CNN\'s results feed fills in where a state has none or is slow, and it supplies the calls.',
       'Every number shows its source and when it was read. The full list is in Evidence.'], more: { label: 'See the data sources', ref: 'nightdetail' } },
@@ -4350,6 +4770,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   function ntExplain(key) {
     const h = NIGHT_HELP[key], nodes = h.body.map((p) => el('p', {}, p));
+    if (key === 'importance' && nightData && (nightData.story || {}).importance_note) nodes.push(el('p', {}, String(nightData.story.importance_note)));  // how the script worked it out, in its own words
     if (h.more) { const a = el('button', { type: 'button', class: 'nt-btn nt-btn-q' }, h.more.label); a.addEventListener('click', () => { ntSheetClose(); setTab('evidence', h.more.ref); }); nodes.push(a); }
     ntSheet(h.title, 'In plain English', nodes);
   }
@@ -4792,13 +5213,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const w of items) { const li = el('li'); li.append(el('span', { class: 't' }, w.at ? ntT(w.at) : 'Soon')); const x = el('span', {}, w.title); if (w.body) x.append(el('small', { class: 'nt-sub' }, w.body)); li.append(x); ul.append(li); }
     box.append(ul);
   }
+  var nightFeedShow = 12;
+  const NT_FEED_STEP = 12;
   function ntFeedList(d, st) {
     const f = $('#nt-feedf');
     if (!f.dataset.wired) {
       f.dataset.wired = '1';
       for (const [k, name] of [['all', 'Everything'], ['big', 'Big moments']]) {
         const b = el('button', { type: 'button', 'data-k': k }, name);
-        b.addEventListener('click', () => { nightFeedF = k; try { localStorage.setItem('nt-feed', k); } catch (e) { /* ignore */ } if (nightData) ntKeepFocus(() => ntFeedList(nightData, nightData.story)); });
+        b.addEventListener('click', () => { nightFeedF = k; nightFeedShow = NT_FEED_STEP; try { localStorage.setItem('nt-feed', k); } catch (e) { /* ignore */ } if (nightData) ntKeepFocus(() => ntFeedList(nightData, nightData.story)); });
         f.append(b);
       }
     }
@@ -4815,7 +5238,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     const fh = $('.nt-feed-h h2'); if (fh && !fh.parentElement.querySelector('.nt-q')) fh.after(ntQ('feed'));
     let group = null;
-    for (const e of evs) {
+    const cap = matchMedia('(max-width: 640px)').matches ? nightFeedShow : Infinity;  // a phone shows the newest few, a wide screen scrolls the whole list inside its box
+    for (const e of evs.slice(0, cap)) {
       const t = ntT(e.at);
       if (t !== group) { group = t; ol.append(el('li', { class: 'nt-fg' }, t)); }
       const li = el('li', { class: 'nt-ev', 'data-level': e.level, 'data-surprise': String(!!e.surprise), 'data-fresh': String(prevMax != null && e.id > prevMax) });
@@ -4842,6 +5266,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         li.addEventListener('click', open); li.addEventListener('keydown', (k) => { if (k.key === 'Enter' || k.key === ' ') { k.preventDefault(); open(); } });
       }
     }
+    if (evs.length > cap) {
+      const li = el('li', { class: 'nt-feed-moreli' }), more = el('button', { type: 'button', class: 'nt-cl-more', 'data-fk': 'feed:more' }, `Show ${Math.min(NT_FEED_STEP, evs.length - cap)} more updates (${evs.length - cap} older)`);
+      more.addEventListener('click', () => { nightFeedShow += NT_FEED_STEP; if (nightData) ntKeepFocus(() => ntFeedList(nightData, nightData.story)); });
+      li.append(more); ol.append(li);
+    }
   }
   // pop-up notices for big moments that arrive while the tab is open; the first load only remembers where it is
   function ntToasts(st) {
@@ -4866,6 +5295,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (e.body) t.append(el('span', {}, e.body.length > 140 ? e.body.slice(0, 137) + '…' : e.body));
       ntToastShow(box, t, e.surprise ? 15000 : 9000);
     }
+  }
+  // the full deep dive of a key race: its matchup in the spotlight when the count has one, else the race's whole story in a sheet
+  function ntDive(d, r) {
+    const sp = (d.story || {}).spotlight || {};
+    if (sp.all && sp.all[r.id]) { nightSpotPin = { id: r.id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); ntScrollTo($('#nt-spot')); return; }
+    const e = d.every || {}, x = [...(e.senate || []), ...(e.governor || [])].find((y) => y.key === r.id);
+    if (x) ntAllPop(d, { ...x, st: x.state || String(x.key).slice(0, 2) }); else ntStatePop(d, r.state);
   }
   function ntRaceCard(d, r) {
     const rd = r.reading || {}, has = rd.margin_d != null, call = r.call && r.call.winner, many = ntManyR(d, r);
@@ -4925,6 +5361,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         el('span', {}, ', getting '), el('b', {}, `${fmt1(pc.getting)}%`), el('span', {}, ' of the newest'), el('span', { class: 't' }, pc.tag));
       c.append(pl);
     }
+    const imp = ntImpLine(d, r.id, 'nt-imp', !!call); if (imp) c.append(imp);
+    // Jake's J2 (Nov 3): the full deep dive is a visible link, so it is reachable without guessing that the card itself can be tapped
+    const dive = el('button', { type: 'button', class: 'nt-rc-dive', 'data-fk': 'dive:' + r.id, title: "Open this race's full matchup: both candidates, the chance to win, the count and the key counties" }, 'Full deep dive ›');
+    dive.setAttribute('aria-label', `Full deep dive: ${name}`);
+    dive.addEventListener('click', (e) => { e.stopPropagation(); ntDive(d, r); });
+    dive.addEventListener('keydown', (e) => e.stopPropagation());
+    c.append(dive);
     // The label replaces the card's content for a screen reader, so it carries the numbers: the race, where it stands, each side's
     // share, the lead, and each side's chance (accessibility review, item 4, the stopgap; the card is still one button).
     const nD = ntLast(r.cand_d) || ntSN(r, 'D'), nR = many ? 'All Republicans' : ntLast(r.cand_r) || 'Republican', lab = [name];
@@ -4978,16 +5421,19 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const b = el('button', { type: 'button', class: 'nt-rr', 'data-fk': 'rr:' + r.id, 'data-w': w, 'data-s': call ? 'called' : has ? 'counting' : 'later', 'data-early': String(!call && has && r.counted != null && r.counted < 50),
       'aria-label': [name, `${ntLast(r.cand_d) || ntSN(r, 'D')} (${ntSL(r, 'D')}) against ${many ? 'Republicans' : ntLast(r.cand_r) || 'Republican'} (R)`, say.replace(/\.?\s*$/, '')].filter(Boolean).join('. ') + '. Open its card.' });
     const n = el('span', { class: 'nt-rr-n' }); n.append(el('b', {}, NT_STATE[r.state] || r.state), el('small', {}, r.office === 'Senate' ? ' Senate' : ' Governor'));
-    b.append(n, el('span', { class: 'nt-rr-v' }, v), el('span', { class: 'nt-rr-s' }, `${ntLast(r.cand_d) || ntSN(r, 'D')} (${ntSL(r, 'D')}) v ${many ? 'Republicans' : ntLast(r.cand_r) || 'Republican'} (R). ${sub}`));
+    const iv = ntImp(d, r.id), impTxt = iv && iv.p >= 0.01 && !call ? ` ${ntImpTxt(iv.p)}.` : '';  // how much the race matters for control, when the script has it
+    b.append(n, el('span', { class: 'nt-rr-v' }, v), el('span', { class: 'nt-rr-s' }, `${ntLast(r.cand_d) || ntSN(r, 'D')} (${ntSL(r, 'D')}) v ${many ? 'Republicans' : ntLast(r.cand_r) || 'Republican'} (R). ${sub}${impTxt}`));
+    if (impTxt) b.setAttribute('aria-label', b.getAttribute('aria-label').replace(/\. Open its card\.$/, `.${impTxt} Open its card.`));
     b.addEventListener('click', () => {
       const card = ntRaceCard(d, r).cloneNode(true);  // a copy without the card's own tap, which jumps to the spotlight
       for (const a of ['role', 'tabindex', 'aria-label', 'aria-description', 'data-fk']) card.removeAttribute(a);
       card.style.cursor = 'default';
-      const pin = card.querySelector('.nt-pin'); if (pin) pin.remove();
-      const nodes = [card, ntWrapP(ntPinRow('race', r.id, name))];
-      const sp = (d.story || {}).spotlight || {};
-      if (sp.all && sp.all[r.id]) nodes.push(ntWrapP(ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: r.id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
-      else nodes.push(ntWrapP(ntLink('Open its counties', () => { ntSheetClose(); ntStatePop(d, r.state); })));
+      for (const x of card.querySelectorAll('.nt-pin, .nt-rc-dive, .nt-imp')) x.remove();  // a copy keeps no taps: the sheet puts live ones below
+      const nodes = [card];
+      const il = ntImpLine(d, r.id, 'nt-imp', !!call); if (il) nodes.push(il);
+      const dv = el('button', { type: 'button', class: 'nt-btn nt-sheet-dive', title: "Open this race's full matchup: both candidates, the chance to win, the count and the key counties" }, 'Full deep dive');
+      dv.addEventListener('click', () => { ntSheetClose(); ntDive(d, r); });
+      nodes.push(ntWrapP(dv), ntWrapP(ntPinRow('race', r.id, name)));
       ntSheet(name, 'Key race', nodes, `race/${r.id}`);
     });
     return b;
@@ -5016,8 +5462,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ['counted', 'Most counted', () => (r) => [r.counted == null ? 1 : 0, -(r.counted || 0)]],
     ['offset', 'Bluer than forecast', () => (r) => [r.offset == null ? 1 : 0, -(r.offset ?? 0)]],
   ];
+  // "Most important" (Nov 3): only when the board carries d.story.importance. First in the list, so a phone's chip row shows it.
+  const ntRcSorts = (d) => (ntHasImp(d) ? [['imp', 'Most important', (dd) => (r) => { const v = ntImp(dd, r.id); return [v ? 0 : 1, -(v ? v.p : 0)]; }], ...NT_RC_SORTS] : NT_RC_SORTS);
   function ntRcCmp(d) {
-    const f = (NT_RC_SORTS.find((s) => s[0] === ntRcS.k) || NT_RC_SORTS[0])[2](d);
+    const f = (ntRcSorts(d).find((s) => s[0] === ntRcS.k) || NT_RC_SORTS[0])[2](d);
     return (a, b) => {
       const A = f(a), B = f(b);
       for (let i = 0; i < A.length; i++) {
@@ -5095,7 +5543,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     box.append(fp);
     const bar = el('div', { class: 'nt-rc-bar' });
     const so = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Sort the key races' }); so.append(el('span', { class: 'nt-mute' }, 'Sort'));
-    for (const [k, lab] of NT_RC_SORTS) {
+    for (const [k, lab] of ntRcSorts(d)) {
       const on = ntRcS.k === k;
       const b = el('button', { type: 'button', 'aria-pressed': String(on) }); ntSortMark(b, lab, on, ntRcS.dir);
       b.addEventListener('click', () => { ntRcS = ntRcS.k === k ? { k, dir: -ntRcS.dir } : { k, dir: 1 }; try { localStorage.setItem('nt-rc-sort', JSON.stringify(ntRcS)); } catch (er) { /* fine */ } redo(); });
@@ -5112,7 +5560,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     bar.append(so, gw); box.append(bar);
     const cmp = ntRcCmp(d);
     const newest = (a, b) => (b.call.at || '').localeCompare(a.call.at || '');
-    const sortLab = (NT_RC_SORTS.find((s) => s[0] === ntRcS.k) || NT_RC_SORTS[0])[1].toLowerCase();
+    const sortLab = (ntRcSorts(d).find((s) => s[0] === ntRcS.k) || NT_RC_SORTS[0])[1].toLowerCase();
     const rs = d.races.filter(keep);
     const groups = !ntRcG ? [['Key races', `sorted by ${sortLab}`, [...rs].sort(cmp)]] : [
       ['Counting now', 'tap a race for its full matchup', rs.filter((r) => !r.call && ntHas(r)).sort(cmp)],
@@ -5191,13 +5639,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const c of shown) {
       const rd = c.reading || {}, b = el('button', { type: 'button', class: 'nt-ar nt-cr', 'data-fk': `cr:${c.state}|${c.county}`, 'data-w': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R', 'data-early': String(rd.margin_d != null && c.counted != null && c.counted < 50) });
       const n = el('span', { class: 'nt-ar-n' }); n.append(el('b', {}, `${c.county}, ${c.state}`), el('small', {}, (ntCountyWhy(d, c.state, c.county) || '').split(/(?<=\.)\s+/)[0] || ''));
-      const exp = el('span', {}); exp.append(el('small', {}, 'What we expected'), document.createTextNode(c.our_line != null ? ntCM(c, c.our_line) : c.bench ? ntRange(c.bench) : c.pres_2024 != null ? `2024 ${ntM(c.pres_2024)}` : '—'));
-      const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', {}, has(c) ? 'Count' : 'Now'), document.createTextNode(has(c) ? `${ntCM(c, rd.margin_d)}, ${ntPct(c.counted)} in` : 'No votes yet'));
+      const exp = el('span', { class: 'nt-ar-p' }); exp.append(el('small', { class: 'nt-ar-l' }, 'What we expected'), el('span', { class: 't' }, c.our_line != null ? ntCM(c, c.our_line) : c.bench ? ntRange(c.bench) : c.pres_2024 != null ? `2024 ${ntM(c.pres_2024)}` : '—'));
+      const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', { class: 'nt-ar-l' }, has(c) ? 'Count' : 'Now'), el('span', { class: 't' }, has(c) ? `${ntCM(c, rd.margin_d)}, ${ntPct(c.counted)} in` : 'No votes yet'));
       const off = c.offset != null && c.pointer !== 'none' ? `${ntCO(c, c.offset)} than expected` : c.bench_gap != null ? (c.bench_gap === 0 ? 'inside the range that fits our forecast' : `${ntOff(c.bench_gap)} than the range`) : '';
-      if (off) now.append(el('small', {}, off));
-      const vl = ntVotesLeft(c); if (vl != null && vl >= 1000) now.append(el('small', {}, `about ${ntK(vl)} votes left`));
-      const tl = last(c); now.append(el('small', {}, tl ? `updated ${ntT(tl)}` : close[c.state] ? `polls close ${ntCloseT(d, close[c.state])}` : ''));
+      const vl = ntVotesLeft(c), tl = last(c);
+      // the extras are one line, not three (Nov 3: a county row was 113px tall on a phone)
+      const bits = [off, vl != null && vl >= 1000 ? `about ${ntK(vl)} votes left` : '', tl ? `updated ${ntT(tl)}` : close[c.state] ? `polls close ${ntCloseT(d, close[c.state])}` : ''].filter(Boolean);
       b.append(n, exp, now);
+      if (bits.length) b.append(el('small', { class: 'ex' }, bits.join(', ')));
       b.addEventListener('click', () => ntCountyPop(d, c.state, c.county));
       list.append(b);
     }
@@ -5227,8 +5676,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ['chance', 'Most Democratic', (x) => [((x.pre || {}).chance_d == null) ? 1 : 0, -(((x.pre || {}).chance_d) ?? 0)]],
     ['poll', 'Poll close', (x) => [!x.close ? '99' : x.close < '06:00' ? `${24 + Number(x.close.slice(0, 2))}${x.close.slice(2)}` : x.close, NT_STATE[x.st] || x.st]],  // after midnight sorts last
   ];
+  const NT_ALL_IMP = ['imp', 'Most important', (x) => { const v = ntImp(ntAllD, x.key); return [v ? 0 : 1, -(v ? v.p : 0)]; }];  // only offered when the board has d.story.importance
+  const ntAllSorts = () => (ntHasImp(ntAllD) ? [NT_ALL_IMP, ...NT_ALL_SORTS] : NT_ALL_SORTS);
   function ntAllCmp(a, b) {
-    const f = (NT_ALL_SORTS.find((s) => s[0] === ntAllS.k) || NT_ALL_SORTS[0])[2], A = f(a), B = f(b);
+    const f = (ntAllSorts().find((s) => s[0] === ntAllS.k) || NT_ALL_SORTS[0])[2], A = f(a), B = f(b);
     for (let i = 0; i < A.length; i++) {
       if (A[i] === B[i]) continue;
       const c = typeof A[i] === 'number' && typeof B[i] === 'number' ? A[i] - B[i] : String(A[i]).localeCompare(String(B[i]));
@@ -5302,11 +5753,23 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (x.withheld) return "Waiting on CNN's count";
     return 'No votes yet';
   }
+  const ntNorm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  // A search scores each race: 2 when the whole search, spaces and dashes aside, is in its name or key ("va 1" finds VA-1), 1 when every word is
+  // somewhere in its name, office, state, key or candidates ("georgia senate", "ossoff"). Races that score 2 are the whole answer when there are any.
+  function ntAllScore(x, q) {
+    const hay = [ntAllName(x), x.office, NT_STATE[x.st] || '', x.st, x.key, ...(x.cands || []).map((c) => c.name)].join(' ').toLowerCase(), hn = ntNorm(hay);
+    if (hn.includes(ntNorm(q)) && ntNorm(q)) return 2;
+    return q.toLowerCase().split(/\s+/).filter(Boolean).every((t) => hay.includes(t) || hn.includes(ntNorm(t))) ? 1 : 0;
+  }
+  var ntAllHits = null;
+  function ntAllSearch(all, q) {
+    const sc = all.map((x) => [x.key, ntAllScore(x, q)]), top = sc.some((z) => z[1] === 2) ? 2 : 1;
+    return new Set(sc.filter((z) => z[1] >= top).map((z) => z[0]));
+  }
   function ntAllKeep(x, skip) {  // every facet with a choice must match (any of its values); skip leaves one facet out, for its own counts
+    if (ntAllQ) return ntAllHits ? ntAllHits.has(x.key) : ntAllScore(x, ntAllQ) > 0;  // M3 (Nov 3): a search looks across all 506 races, whatever the filters say. The filters wait, unchanged, until it is cleared.
     for (const [k, , f] of NT_ALL_FACETS) { const on = ntAllFx[k] || []; if (k !== skip && on.length && !on.includes(f(x))) return false; }
-    if (!ntAllQ) return true;
-    const q = ntAllQ.toLowerCase();
-    return [ntAllName(x), NT_STATE[x.st] || '', x.st, x.key, ...(x.cands || []).map((c) => c.name)].some((s) => String(s).toLowerCase().includes(q));
+    return true;
   }
   function ntAll(d) {
     const box = $('#nt-all'); if (!box) return;
@@ -5324,7 +5787,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         b.addEventListener('click', () => {
           ntAllS = ntAllS.k === k ? { k, dir: -ntAllS.dir } : { k, dir: 1 };
           try { localStorage.setItem('nt-all-sort', JSON.stringify(ntAllS)); } catch (er) { /* fine */ }
-          so.querySelectorAll('button').forEach((x) => { const on = x.dataset.k === ntAllS.k; x.setAttribute('aria-pressed', String(on)); ntSortMark(x, NT_ALL_SORTS.find((s) => s[0] === x.dataset.k)[1], on, ntAllS.dir); });
+          so.querySelectorAll('button').forEach((x) => { const on = x.dataset.k === ntAllS.k; x.setAttribute('aria-pressed', String(on)); ntSortMark(x, ntAllSorts().find((s) => s[0] === x.dataset.k)[1], on, ntAllS.dir); });
           ntAllList();
         });
         so.append(b);
@@ -5333,6 +5796,20 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       q.addEventListener('input', () => { ntAllQ = q.value.trim(); ntAllList(); });
       const ctl = el('div', { class: 'nt-all-ctl' }); ctl.append(q, so);
       box.append(ntHead(h, 'all'), sum, fx, ctl, el('div', { class: 'nt-all-list', id: 'nt-all-list' }), el('p', { class: 'nt-all-src', id: 'nt-all-src' }));
+    }
+    const sortRow = box.querySelector('.nt-all-sort');
+    if (sortRow) {
+      const has = !!sortRow.querySelector('button[data-k="imp"]');
+      if (ntHasImp(d) && !has) {
+        const b = el('button', { type: 'button', 'data-k': 'imp', 'aria-pressed': String(ntAllS.k === 'imp') }); ntSortMark(b, NT_ALL_IMP[1], ntAllS.k === 'imp', ntAllS.dir);
+        b.addEventListener('click', () => {
+          ntAllS = ntAllS.k === 'imp' ? { k: 'imp', dir: -ntAllS.dir } : { k: 'imp', dir: 1 };
+          try { localStorage.setItem('nt-all-sort', JSON.stringify(ntAllS)); } catch (er) { /* fine */ }
+          sortRow.querySelectorAll('button').forEach((x) => { const on = x.dataset.k === ntAllS.k; x.setAttribute('aria-pressed', String(on)); ntSortMark(x, ntAllSorts().find((t) => t[0] === x.dataset.k)[1], on, ntAllS.dir); });
+          ntAllList();
+        });
+        const first = sortRow.querySelector('button'); if (first) sortRow.insertBefore(b, first); else sortRow.append(b);
+      } else if (!ntHasImp(d) && has) sortRow.querySelector('button[data-k="imp"]').remove();
     }
     const s = (e.summary || {}), ss = s.senate || {}, hs = s.house || {}, gs = s.governor || {};
     const flips = [...(ss.flips_called || []), ...(hs.flips_called || []), ...(gs.flips_called || [])].length;
@@ -5352,7 +5829,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const active = NT_ALL_FACETS.flatMap(([k]) => ntAllFx[k] || []);
     const tog = el('button', { type: 'button', class: 'nt-rc-ftoggle', 'aria-expanded': String(open), 'data-fk': 'all:toggle' }, open ? 'Hide filters' : 'Filters');
     tog.addEventListener('click', () => { $('#nt-all').classList.toggle('nt-fopen'); ntAllList(); });
-    fh.append(el('b', {}, 'Filter'), el('span', { class: 'nt-mute', role: 'status' }, nf || ntAllQ ? `showing ${shown} of ${all.length}${active.length ? ': ' + active.map((v) => NT_STATE[v] || v).join(', ') : ''}` : `all ${all.length} races`), tog);
+    if (ntAllQ) {  // M3: searching looks at every race and says so
+      fh.append(el('b', {}, 'Search'), el('span', { class: 'nt-mute', role: 'status' }, `${shown} match${shown === 1 ? '' : 'es'} among all ${all.length} races. Filters are paused while you search${nf ? ' and come back when you clear it' : ''}.`));
+      const cs = el('button', { type: 'button', class: 'nt-rc-clear', 'data-fk': 'all:clearq' }, 'Clear search');
+      cs.addEventListener('click', () => { ntAllQ = ''; const qi = document.querySelector('#nt-all .nt-all-q'); if (qi) { qi.value = ''; qi.focus(); } ntAllList(); });
+      fh.append(cs); box.replaceChildren(fh); return;
+    }
+    fh.append(el('b', {}, 'Filter'), el('span', { class: 'nt-mute', role: 'status' }, nf ? `showing ${shown} of ${all.length}${active.length ? ': ' + active.map((v) => NT_STATE[v] || v).join(', ') : ''}` : `all ${all.length} races`), tog);
     if (nf) { const cl = el('button', { type: 'button', class: 'nt-rc-clear', 'data-fk': 'all:clear' }, 'Clear'); cl.addEventListener('click', () => { ntAllFx = {}; ntAllSave(); ntAllList(); }); fh.append(cl); }
     const rows = [fh];
     for (const [k, lab, f, order] of NT_ALL_FACETS) {
@@ -5382,12 +5865,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const d = ntAllD, list = $('#nt-all-list'); if (!d || !list) return;
     const odds = (d.story || {}).odds || {};
     const all = ntAllRows(d);
+    ntAllHits = ntAllQ ? ntAllSearch(all, ntAllQ) : null;
     ntAllFacets(all);
     const rows = all.filter((x) => ntAllKeep(x)).sort(ntAllCmp);
     list.replaceChildren();
     if (!rows.length) {
-      const p = el('p', { class: 'nt-mute' }, 'No race matches these filters. ');
-      if (ntAllNF()) { const cl = el('button', { type: 'button', class: 'nt-rc-clear' }, 'Clear the filters'); cl.addEventListener('click', () => { ntAllFx = {}; ntAllSave(); ntAllList(); }); p.append(cl); }
+      const p = el('p', { class: 'nt-mute' }, ntAllQ ? 'No race matches that search. Try a state, a district like PA-7, or a candidate.' : 'No race matches these filters. ');
+      if (!ntAllQ && ntAllNF()) { const cl = el('button', { type: 'button', class: 'nt-rc-clear' }, 'Clear the filters'); cl.addEventListener('click', () => { ntAllFx = {}; ntAllSave(); ntAllList(); }); p.append(cl); }
       list.append(p); return;
     }
     let last = '';
@@ -5397,8 +5881,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const w = x.call ? ntPK(x.call.winner) : '';
       const b = el('button', { type: 'button', class: 'nt-ar', 'data-fk': 'ar:' + x.key, 'data-w': x.call && x.call.winner !== 'runoff' ? w : '', 'data-s': x.status || 'no votes', 'data-early': String(!x.call && x.counted != null && x.counted < 50 && x.margin_d != null) });
       const lab = el('span', { class: 'nt-ar-n' }); lab.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')), el('small', {}, ntAllCands(x)));
-      const pre = el('span', { class: 'nt-ar-p' }); pre.append(el('small', {}, 'Before votes'), document.createTextNode(ntAllPre(x)));
-      const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', {}, x.call ? 'Called' : x.status === 'counting' ? 'Counting' : 'Now'), document.createTextNode(ntAllNow(x)));
+      const pre = el('span', { class: 'nt-ar-p' }); pre.append(el('small', { class: 'nt-ar-l' }, 'Before votes'), el('span', { class: 't' }, ntAllPre(x)));
+      const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', { class: 'nt-ar-l' }, x.call ? 'Called' : x.status === 'counting' ? 'Counting' : 'Now'), el('span', { class: 't' }, ntAllNow(x)));
+      const iv = ntImp(d, x.key); if (iv && iv.p >= 0.01 && !x.call) now.append(el('small', { class: 'ex', title: iv.basis || '' }, ntImpTxt(iv.p)));
       const o = odds[x.key];
       if (o && !x.call && o.basis === 'count') {
         const sd = ntAllSide(x), dn = sd && sd.party !== 'D' ? (sd.last || sd.name) : 'D';
@@ -5444,9 +5929,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     else if (x.flip) row('Flip', x.held_by ? `Not called, but the ${NT_PN[was] ? NT_PN[was] : was} holding this seat is behind in the count.` : `Not called, but ${NT_PNS[was] || was}, who held the old seat with this number, are behind in the count.`);
     const odds = ((d.story || {}).odds || {})[x.key];
     if (odds && odds.basis === 'count' && !x.call) row('Chance now', `${ntPct(100 * Math.max(odds.p_d, 1 - odds.p_d))} for ${odds.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'the Democrat' : ((x.cands || []).find((c) => c.party === 'R') || {}).name || 'the Republican'}, from the count and the chance before votes. A rough guide, not a call.`);
+    { const iv = ntImp(d, x.key); if (iv && !x.call) row('Decides control', `${ntImpTxt(iv.p)}.${iv.basis ? ' ' + iv.basis : ''}`); }
     row('Sources', 'Count and call: CNN, with AP\'s numbers, and NPR\'s copy of AP\'s numbers as the backup and check. Candidates: CNN. Seat holder and lean: Wikipedia. Chance before votes: our final call, our Nov 2 call or our model (polls from Wikipedia\'s polling tables, 2024 results by district from The Downballot), with the raters\' consensus beside it.');
     const nodes = [dl, ntWrapP(ntPinRow('every', x.key, ntAllName(x)))];
-    if (x.race_id) nodes.push(ntWrapP(ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
+    if (x.race_id) {  // a key race: its matchup in the spotlight once the count has one (it does not before), its counties always
+      const sp = (d.story || {}).spotlight || {};
+      if (sp.all && sp.all[x.race_id]) nodes.push(ntWrapP(ntLink('Full deep dive', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); ntScrollTo($('#nt-spot')); })));
+      nodes.push(ntWrapP(ntLink(`Key counties in ${NT_STATE[x.st] || x.st}`, () => { ntSheetClose(); ntStatePop(d, x.st); })));
+    }
     ntSheet(`${ntAllName(x)}${x.key.startsWith('senate_') ? ' Senate' : x.key.startsWith('gov_') ? ' governor' : ''}`, x.key.startsWith('senate_') ? 'Senate race' : x.key.startsWith('gov_') ? 'Governor race' : 'House race', nodes, `race/${x.key}`);
   }
 
