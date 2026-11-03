@@ -4456,7 +4456,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return ntCloseMap(d).some((c) => c.ms > last && c.ms <= now);  // a poll close has passed, in any race (what to expect moves on to the next tests)
   }
   // ---------- on a phone, every section but the glance, the vote batch card and the map is one line that opens in place (Jake, Nov 3
-  // 4pm: "scale everything down so that way more fits on each screen ... we can trust users to click around more"; he chose these three
+  // 3:40pm: "scale everything down so that way more fits on each screen ... we can trust users to click around more"; he chose these three
   // open, each section opening on its own, remembered in this browser). The line carries a live summary in plain words. Nothing is
   // removed: the jump bar opens a section it lands on, focus inside opens it, and on a wider screen every section shows as before.
   const NT_ACC = [
@@ -5204,8 +5204,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   function ntBtPlotKey() { return ntBtKey([['now', 'Now'], ['proj', 'If Election Day ends like 2022'], ['past', 'A past year'], ['band', 'What turnout implies'], ['ours', 'Our forecast']]); }
   function ntBtTurnout(box, s, f, compact) {  // one state's voters through the day: the reading first, the numbers folded under Details. Compact (once the count is in): the reading's first line only
     const reps = s.reports, L = s.latest, C = s.compare || {}, M = C.means;
-    box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, `${s.name}: who has voted today`), el('small', {}, `as of ${L.time_text} ET, ${ntBtNum(L.cum.total)} ${s.kind === 'returned' ? 'ballots returned' : 'Election Day voters'}`)]));
-    const why = M ? el('div', { class: 'nt-bt-body' }) : null;
+    box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, s.title || `${s.name}: who has voted today`), el('small', {}, `as of ${L.time_text} ET, ${ntBtNum(L.cum.total)} ${s.kind === 'returned' ? 'ballots returned' : 'Election Day voters'}`)]));
+    const why = el('div', { class: 'nt-bt-body' });
     if (M) {  // the reading in plain words up front; the picture and how it is worked out fold under Details
       box.append(ntKids('p', { class: 'nt-bt-lede' }, [el('b', {}, M.lines[0])]));
       if (!compact) {
@@ -5214,14 +5214,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       }
       const how = el('ul', { class: 'nt-bt-why' }); for (const l of M.method || []) how.append(el('li', {}, l));
       why.append(el('h4', { class: 'nt-bt-h4' }, 'How this is worked out'), ntBtMeansPlot(M), ntBtPlotKey(), how);
-    } else if ((C.lines || []).length) {  // a state with no past baseline: who is voting, in plain words (night_batches.compare_plain)
+    } else if ((C.lines || []).length) {  // a state with no past baseline: who is voting, and the one contrast that gives it meaning; the rest folds under Details
       box.append(ntKids('p', { class: 'nt-bt-lede' }, [el('b', {}, C.lines[0])]));
-      if (!compact) for (const l of C.lines.slice(1)) box.append(el('p', { class: 'nt-bt-sub' }, l));
+      if (!compact && C.lines[1]) box.append(el('p', { class: 'nt-bt-sub' }, C.lines[1]));
+      for (const l of C.lines.slice(compact ? 1 : 2)) why.append(el('p', { class: 'nt-bt-sub' }, l));
     }
     const det = el('details', { class: 'nt-bt-det', 'data-fk': `bt:det:${s.state}` });
     det.append(el('summary', {}, 'Details: how this is worked out, and who voted report by report'));
     const inner = el('div', { class: 'nt-bt-body' });
-    if (why) inner.append(why);
+    if (why.childNodes.length) inner.append(why);
     const cmp = el('div', { class: 'nt-bt-cmp' });
     cmp.append(ntBtShareRow(s.kind === 'returned' ? 'So far' : 'Today so far', L.run, `${ntBtNum(L.cum.total)} ${s.kind === 'returned' ? 'ballots returned' : 'voters, Election Day'}`, true));
     for (const y of C.eday || []) cmp.append(ntBtShareRow(`${y.year}`, y, `the whole Election Day, ${ntBtNum(y.votes)} voters`));
