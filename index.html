@@ -4046,12 +4046,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     nightLoad = async (force) => {
       if (state.tab !== 'night' && state.tab !== 'evidence') return true;  // Evidence's Night details draws from the same board
       try {
-        const r = await fetch(ntBase() + (nightMode === 'practice' ? 'night_practice.json' : 'night.json'), { cache: 'no-store' });
+        const r = await fetch(ntBase() + (nightMode === 'practice' ? 'night_practice.json' : 'night.json'), { cache: 'no-cache' });  // revalidate every time: an unchanged board comes back as a 304, almost nothing over a phone's data (Nov 3, many viewers on the public link)
         if (!r.ok && nightMode === 'practice') { await ntPracticePost('/api/night/practice/reset'); return true; }  // first visit: build an empty practice board
         if (!r.ok) throw new Error('HTTP ' + r.status + '. Run scripts/night_board.py once.');
         const txt = await r.text();
         nightLoadedAt = Date.now();  // the board in hand is current as of now (the return summary asks)
-        let ctx = null; try { const c = await fetch(ntBase() + 'claims.json', { cache: 'no-store' }); ctx = c.ok ? await c.text() : null; } catch (e) { ctx = null; }
+        let ctx = null; try { const c = await fetch(ntBase() + 'claims.json', { cache: 'no-cache' }); ctx = c.ok ? await c.text() : null; } catch (e) { ctx = null; }
         // the vote batches file is its own file (not part of the board), so a report typed in lands without a poll
         // a failed read keeps the last good file, so a blip on the public site never hides the card. Only a missing file (404) clears it
         const ntSide = async (name, last) => { try { const c = await fetch(ntBase() + name, { cache: 'no-cache' });  // revalidate: an unchanged file comes back as a 304, almost free on a phone
