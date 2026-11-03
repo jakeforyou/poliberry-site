@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-02T21:37:01-05:00",
+  "built_at": "2026-11-02T21:58:38-05:00",
   "label": "retrieved; flags inferred from words",
   "note": "Public posts and press releases from Trump, his administration and allies, flagged when they pair an election subject with a claim or action word. Flags come from words, not judgment.",
   "crew": [
@@ -24,7 +24,7 @@
       "via": "trumpstruth.org, a public archive of Truth Social",
       "ok": true,
       "n": 100,
-      "retrieved_at": "2026-11-02T21:37:02-05:00",
+      "retrieved_at": "2026-11-02T21:58:39-05:00",
       "newest": "2026-11-02T18:16:26-05:00"
     },
     "whitehouse": {
@@ -33,7 +33,7 @@
       "via": null,
       "ok": true,
       "n": 30,
-      "retrieved_at": "2026-11-02T21:37:03-05:00",
+      "retrieved_at": "2026-11-02T21:58:40-05:00",
       "newest": "2026-11-02T17:03:21-05:00"
     },
     "speaker": {
@@ -42,7 +42,7 @@
       "via": null,
       "ok": true,
       "n": 10,
-      "retrieved_at": "2026-11-02T21:37:04-05:00",
+      "retrieved_at": "2026-11-02T21:58:40-05:00",
       "newest": "2026-10-30T15:52:18-04:00"
     },
     "doj": {
@@ -51,7 +51,7 @@
       "via": null,
       "ok": true,
       "n": 25,
-      "retrieved_at": "2026-11-02T21:37:05-05:00",
+      "retrieved_at": "2026-11-02T21:58:41-05:00",
       "newest": "2026-11-02T07:00:00-05:00"
     },
     "rnc": {
@@ -60,7 +60,7 @@
       "via": null,
       "ok": true,
       "n": 45,
-      "retrieved_at": "2026-11-02T21:37:06-05:00",
+      "retrieved_at": "2026-11-02T21:58:42-05:00",
       "newest": "2026-11-02T21:17:40-05:00"
     },
     "news": {
@@ -68,7 +68,7 @@
       "url": "https://api.gdeltproject.org/api/v2/doc/doc",
       "ok": false,
       "n": 0,
-      "retrieved_at": "2026-11-02T21:37:17-05:00",
+      "retrieved_at": "2026-11-02T21:53:38-05:00",
       "queries": [
         {
           "query": "check: election, last day",
@@ -1138,6 +1138,38 @@
       "first_seen": "2026-11-02T19:52:10-05:00"
     },
     {
+      "id": "db33e117f8a6b169",
+      "source": "trump",
+      "source_name": "Trump on Truth Social",
+      "who": "Donald Trump",
+      "at": "2026-11-02T16:29:57-05:00",
+      "title": "",
+      "text": "It is my Great Honor to endorse America First Patriot, Dr. John Cowan, who is running to represent the Wonderful People of Georgia's 11th Congressional District! A Proven Leader, John has served his Community well as a Highly Respected Neurosurgeon, Small Business Owner, and Civic Leader, prior to running for Congress. His opponent, Chris Harden, is a Radical Left Dumocrat who is opposed to NO TAX ON TIPS, NO TAX ON…",
+      "url": "https://www.trumpstruth.org/statuses/43267",
+      "kind": null,
+      "terms": [],
+      "flagged": false,
+      "action": false,
+      "label": "retrieved",
+      "first_seen": "2026-11-02T21:53:23-05:00"
+    },
+    {
+      "id": "c91f87bc834969f8",
+      "source": "trump",
+      "source_name": "Trump on Truth Social",
+      "who": "Donald Trump",
+      "at": "2026-11-02T16:28:36-05:00",
+      "title": "",
+      "text": "I am pleased to inform you that I will be doing the Great Sean Hannity Show tonight at 9 PM ET. This is the Golden Age of America with 25 Trillion Dollars of Growth and Wealth being created just since my Election — A very short period of time. There has never been anything like it in World History, nor has there been anything close. Additionally, NO TAX ON TIPS, NO TAX ON OVERTIME, NO TAX ON SOCIAL SECURITY FOR OUR…",
+      "url": "https://www.trumpstruth.org/statuses/43268",
+      "kind": null,
+      "terms": [],
+      "flagged": false,
+      "action": false,
+      "label": "retrieved",
+      "first_seen": "2026-11-02T21:53:23-05:00"
+    },
+    {
       "id": "c36c91b02e61908e",
       "source": "rnc",
       "source_name": "RNC",
@@ -1152,6 +1184,22 @@
       "action": false,
       "label": "retrieved",
       "first_seen": "2026-11-02T19:11:19-05:00"
+    },
+    {
+      "id": "d6052b51b3dc9bdb",
+      "source": "trump",
+      "source_name": "Trump on Truth Social",
+      "who": "Donald Trump",
+      "at": "2026-11-02T16:21:34-05:00",
+      "title": "",
+      "text": "Congressman Rick Allen is an incredible Representative of Georgia's 12th Congressional District! As a Member of the POWERFUL House Energy and Commerce Committee, Rick is working tirelessly to Promote MADE IN THE U.S.A., Advance American Energy DOMINANCE, Create GREAT Jobs, Cut Taxes and Regulations, and Champion our Nation's Golden Age. He is also relentlessly focused on helping us Keep our Border SECURE, Stop…",
+      "url": "https://www.trumpstruth.org/statuses/43269",
+      "kind": null,
+      "terms": [],
+      "flagged": false,
+      "action": false,
+      "label": "retrieved",
+      "first_seen": "2026-11-02T21:53:23-05:00"
     },
     {
       "id": "fe4b6340a463fc87",
@@ -3262,54 +3310,6 @@
       "title": "Justice Department Announces Issuance of Federal Registrations for Medical Marijuana Dispensaries",
       "text": "The U.S. Department of Justice today announced that the U.S. Drug Enforcement Administration (DEA) is moving forward with the initial issuance of hundreds of federal registrations to qualifying state-licensed medical marijuana dispensaries under the Attorney General’s order implementing Schedule III controls for certain medical marijuana activities.",
       "url": "https://www.justice.gov/opa/pr/justice-department-announces-issuance-federal-registrations-medical-marijuana-dispensaries",
-      "kind": null,
-      "terms": [],
-      "flagged": false,
-      "action": false,
-      "label": "retrieved",
-      "first_seen": "2026-11-02T19:11:19-05:00"
-    },
-    {
-      "id": "80f44bf7cf316bd7",
-      "source": "doj",
-      "source_name": "Justice Department",
-      "who": "Justice Department",
-      "at": "2026-10-30T08:00:00-04:00",
-      "title": "Justice Department Defends the Navy’s Actions to Address a Fuel Release at Joint Base Pearl Harbor-Hickam in Hawaii",
-      "text": "The U.S. District Court for the District of Hawaii earlier this week ruled that the U.S. Navy is not in violation of the Clean Water Act after it reviewed the Navy’s response to fuel releases in 2020 and 2021 at Joint Base Pearl Harbor-Hickam on Oahu, Hawaii, and other substantial improvements the Navy has made in the fueling infrastructure and operations. The ruling follows a bench trial that was held earlier this…",
-      "url": "https://www.justice.gov/opa/pr/justice-department-defends-navys-actions-address-fuel-release-joint-base-pearl-harbor-hickam",
-      "kind": null,
-      "terms": [],
-      "flagged": false,
-      "action": false,
-      "label": "retrieved",
-      "first_seen": "2026-11-02T19:11:19-05:00"
-    },
-    {
-      "id": "ce2d5a9137ab896b",
-      "source": "doj",
-      "source_name": "Justice Department",
-      "who": "Justice Department",
-      "at": "2026-10-30T08:00:00-04:00",
-      "title": "Former Correctional Officer Sentenced on Federal Civil Rights Charges in Connection with Conspiracy to Violate Inmates’ Rights at West Virginia Jail",
-      "text": "A former correctional officer from the Southern Regional Jail in Beaver, West Virginia, was sentenced today to 24 months in prison for his role in a conspiracy in which he and other correctional officers used unreasonable and unjustified force against inmates, including pretrial detainees, as a form of punishment and retaliation. Michael Pack, 40, pleaded guilty on March 30 before U.S. Magistrate Judge Omar J.…",
-      "url": "https://www.justice.gov/opa/pr/former-correctional-officer-sentenced-federal-civil-rights-charges-connection-conspiracy",
-      "kind": null,
-      "terms": [],
-      "flagged": false,
-      "action": false,
-      "label": "retrieved",
-      "first_seen": "2026-11-02T19:11:19-05:00"
-    },
-    {
-      "id": "f4458245fc7dc056",
-      "source": "doj",
-      "source_name": "Justice Department",
-      "who": "Justice Department",
-      "at": "2026-10-30T08:00:00-04:00",
-      "title": "Former U.S. Government Contractor Arrested for Allegedly Leaking National Defense Information and Stealing Night Vision Goggles",
-      "text": "James Thomas Ashbacher, 37, of Spring Lake, North Carolina, a former U.S. government contractor, was arrested by the FBI on Tuesday for allegedly leaking national defense information by posting the information on a popular social media site, unlawfully retaining other national defense information at his residence, and stealing night vision goggles from the U.S. Army’s Special Operations Command.",
-      "url": "https://www.justice.gov/opa/pr/former-us-government-contractor-arrested-allegedly-leaking-national-defense-information-and",
       "kind": null,
       "terms": [],
       "flagged": false,

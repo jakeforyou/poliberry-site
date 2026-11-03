@@ -1297,6 +1297,29 @@ button.nt-look:hover b, button.nt-look:focus-visible b { text-decoration: underl
 .nt-toast b { font-size: .95rem; line-height: 1.35; } .nt-toast span { font-size: 12.5px; color: var(--color-fg-muted); }
 @media (prefers-reduced-motion: no-preference) { .nt-toast { animation: nt-toast-in .35s ease-out; } @keyframes nt-toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } } }
 .nt-rcg { display: grid; gap: .5rem; }
+.nt-all { display: grid; gap: .6rem; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--nt-rule); }
+.nt-all h2 { margin: 0; }
+.nt-all-sum, .nt-all-src { margin: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.45; }
+.nt-all-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .8rem; }
+.nt-all-ctl .nt-feedf { margin-left: 0; flex-wrap: wrap; }
+.nt-all-tabs button { font-size: 13.5px; padding: .2rem .8rem; }
+.nt-all-q { flex: 1 1 14rem; min-width: 0; padding: .4rem .65rem; border-radius: 8px; border: 1px solid var(--nt-rule); background: transparent; color: var(--color-fg); font: inherit; font-size: 14px; }
+.nt-all-q:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 1px; }
+.nt-all-list { display: grid; }
+.nt-all-st { padding: .8rem .5rem .25rem; font-weight: 600; font-size: 12.5px; color: var(--color-fg-muted); border-bottom: 1px solid var(--nt-rule); }
+button.nt-ar { all: unset; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1.1fr); gap: .25rem 1rem; align-items: start;
+  padding: .5rem .55rem; border-bottom: 1px solid color-mix(in srgb, var(--nt-rule) 60%, transparent); cursor: pointer; font-size: 13.5px; line-height: 1.35; }
+button.nt-ar:hover { background: var(--nt-wash); }
+button.nt-ar:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: -2px; }
+button.nt-ar[data-w="D"] { box-shadow: inset 3px 0 0 var(--nt-d); } button.nt-ar[data-w="R"] { box-shadow: inset 3px 0 0 var(--nt-r); } button.nt-ar[data-w="I"] { box-shadow: inset 3px 0 0 var(--nt-jake); }
+.nt-ar > span { display: grid; gap: .1rem; min-width: 0; }
+.nt-ar small { font-size: 12px; color: var(--color-fg-muted); overflow-wrap: anywhere; }
+.nt-ar-n b { font-family: 'Big Shoulders', var(--font-sans, sans-serif); font-size: 16px; letter-spacing: .01em; }
+.nt-ar-flip { justify-self: start; margin-top: .15rem; padding: .05rem .5rem; border-radius: 999px; font-size: 11.5px; font-weight: 600; background: color-mix(in srgb, var(--nt-jake) 28%, transparent); }
+@media (max-width: 640px) {
+  button.nt-ar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .nt-ar-n { grid-column: 1 / -1; }
+}
 .nt-rcg h2 small { font-weight: 400; }
 .nt-rcl { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .55rem; }
 .nt-rc { display: grid; gap: .35rem; padding: .65rem .75rem; border-radius: 10px; background: var(--nt-wash); cursor: pointer; align-content: start; }
@@ -1812,6 +1835,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         </aside>
       </div>
       <div class="nt-rcs" id="nt-rcs"></div>
+      <section class="nt-all" id="nt-all" aria-label="All races" hidden></section>
     </section>
   </section>
   <div class="nt-toasts" id="nt-toasts" aria-live="polite"></div>
@@ -3585,12 +3609,16 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
 
   // ---------- Results, the default view: who is ahead in each race, and one box that compares
   const NT_STATE = { FL: 'Florida', GA: 'Georgia', NH: 'New Hampshire', SC: 'South Carolina', NC: 'North Carolina', OH: 'Ohio', KS: 'Kansas', ME: 'Maine',
-    MI: 'Michigan', TX: 'Texas', IA: 'Iowa', MN: 'Minnesota', AK: 'Alaska', AZ: 'Arizona', NV: 'Nevada', WI: 'Wisconsin', IN: 'Indiana', KY: 'Kentucky', VA: 'Virginia' };
+    MI: 'Michigan', TX: 'Texas', IA: 'Iowa', MN: 'Minnesota', AK: 'Alaska', AZ: 'Arizona', NV: 'Nevada', WI: 'Wisconsin', IN: 'Indiana', KY: 'Kentucky', VA: 'Virginia',
+    AL: 'Alabama', AR: 'Arkansas', CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois',
+    LA: 'Louisiana', MD: 'Maryland', MA: 'Massachusetts', MS: 'Mississippi', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NJ: 'New Jersey', NM: 'New Mexico',
+    NY: 'New York', ND: 'North Dakota', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SD: 'South Dakota', TN: 'Tennessee', UT: 'Utah',
+    VT: 'Vermont', WA: 'Washington', WV: 'West Virginia', WY: 'Wyoming' };
   function ntSetView() { /* one view now; kept so old callers do nothing */ }
   const ntParty = (o) => (o < 0 ? 'Republican' : 'Democratic');
   function ntResults(d) {
     if (!$('#nt-results') || nightView !== 'results') return;
-    ntDesk(d); ntRaceCards(d);
+    ntDesk(d); ntRaceCards(d); ntAll(d);
   }
   // ---------- the live desk: scripts/night_story.py writes every word; this draws them
   const NT_EV = { close: 'Polls closed', first: 'First votes', lead: 'Lead change', batch: 'Big batch', call: 'Called', milestone: 'Milestone',
@@ -3682,7 +3710,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     lean: { title: 'Key counties against what we expected', body: [
       'How this state\'s key counties are voting compared with what we expected there: each county\'s 2024 result moved as far as our forecast moves the whole state.',
       'A state that runs several points off what we expected says the night may be moving that way everywhere.'] },
-    cards: { title: 'Every race', body: [
+    all: { title: 'All 470 races', body: [
+      'Every Senate and House race on the ballot: 35 for the Senate, 435 for the House. Each shows the count and CNN\'s call as they come in.',
+      'Before votes: our final call for the 13 Senate races we forecast closely. Every other race shows the raters\' consensus chance, the number our seat model used for that race. House seats the raters leave off their lists are safe for the party that holds them, in our model too.',
+      'A flip is a seat won by a party that did not hold it. Tap any race for its full story.'] },
+    cards: { title: 'Key races', body: [
+      'The Senate and governor races we forecast closely, with the most detail on the night.',
       'Each card is one race: the vote count, each side\'s chance to win, how close it is to a call, and where it ends if the rest counts like 2024.',
       'Tap a counting race to see its full matchup at the top. Tap one with no votes to see its key counties.'] },
     feed: { title: 'Live feed', body: [
@@ -4177,9 +4210,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (e.next) { const n = el('div', { class: 'nt-ev-n' }); n.append(el('b', {}, 'Next: '), document.createTextNode(e.next)); body.append(n); }
       li.append(body); ol.append(li);
       const sp = st.spotlight || {}, goRace = e.race_id && sp.all && sp.all[e.race_id], goCounty = e.kind === 'county' && e.county;
-      if (goRace || goCounty) {  // an update about a race opens its matchup; one about a county opens the county
+      const ev = e.every && [...((d.every || {}).senate || []), ...((d.every || {}).house || [])].find((x) => x.key === e.every);
+      if (goRace || goCounty || ev) {  // an update about a race opens its matchup or its story; one about a county opens the county
         li.dataset.open = 'true'; li.tabIndex = 0; li.setAttribute('role', 'button');
-        const open = () => { if (goRace) { nightSpotPin = { id: e.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, st); $('#nt-spot').scrollIntoView({ block: 'start', behavior: 'smooth' }); } else ntCountyPop(d, e.state, e.county); };
+        const open = () => { if (goRace) { nightSpotPin = { id: e.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, st); $('#nt-spot').scrollIntoView({ block: 'start', behavior: 'smooth' }); } else if (ev) ntAllPop(d, { ...ev, st: ev.state || ev.key.slice(0, 2) }); else ntCountyPop(d, e.state, e.county); };
         li.addEventListener('click', open); li.addEventListener('keydown', (k) => { if (k.key === 'Enter' || k.key === ' ') { k.preventDefault(); open(); } });
       }
     }
@@ -4288,6 +4322,143 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       for (const r of rows) list.append(ntRaceCard(d, r));
       g.append(h, list); box.append(g);
     }
+  }
+
+  // ---------- all 470 races: every Senate and House race with the count and CNN's call (Jake, Nov 2 late)
+  let ntAllTab = 'senate', ntAllF = 'all', ntAllQ = '', ntAllD = null;
+  try { ntAllTab = localStorage.getItem('nt-all-tab') || 'senate'; } catch (e) { /* storage can be blocked; Senate first is fine */ }
+  const NT_PN = { D: 'Democrat', R: 'Republican', I: 'independent' };
+  const NT_PNS = { D: 'Democrats', R: 'Republicans', I: 'an independent' };
+  const ntPK = (p) => (p === 'D' || p === 'R' ? p : 'I');
+  function ntAllRows(d) {
+    const e = d.every || {};
+    if (ntAllTab === 'senate') return (e.senate || []).map((x) => ({ ...x, st: x.state }));
+    const n = {};
+    for (const x of e.house || []) n[x.key.slice(0, 2)] = (n[x.key.slice(0, 2)] || 0) + 1;
+    return (e.house || []).map((x) => ({ ...x, st: x.key.slice(0, 2), al: n[x.key.slice(0, 2)] === 1 }));
+  }
+  function ntAllName(x) {
+    if (x.office === 'senate' || x.key.startsWith('senate_')) return `${NT_STATE[x.st] || x.st}${x.special ? ' (special)' : ''}`;
+    return x.al ? `${NT_STATE[x.st] || x.st} at-large` : `${x.st}-${+x.key.slice(3)}`;
+  }
+  function ntAllCands(x) {
+    const cs = x.cands || [];
+    if (!cs.length) return 'Candidates not listed';
+    if (cs.length === 1 || x.uncontested) return `${cs[0].name} (${cs[0].party}), unopposed`;
+    return cs.slice(0, 3).map((c) => `${(c.last || c.name.split(' ').slice(-1)[0])} (${ntPK(c.party) === 'I' ? 'I' : c.party}${c.inc ? ', inc.' : ''})`).join(' v ');
+  }
+  function ntAllSide(x) {  // who the "D" chance and margin are about: the Democrat, or Nebraska's Osborn
+    const cs = x.cands || [];
+    return cs.find((c) => c.party === 'D') || cs.find((c) => c.party !== 'R') || null;
+  }
+  function ntAllPre(x) {
+    const p = x.pre || {};
+    if (p.chance_d == null) return p.category || 'Not rated';
+    const s = ntAllSide(x), dl = s && s.party !== 'D' ? (s.last || s.name.split(' ').slice(-1)[0]) : 'D';
+    const fav = p.chance_d >= 50 ? `${dl} ${Math.round(p.chance_d)}%` : `R ${Math.round(100 - p.chance_d)}%`;
+    return p.from === 'final' ? `${fav}, our call` : `${p.category ? p.category + ', ' : ''}${fav}`;
+  }
+  function ntAllNow(x) {
+    if (x.call) {
+      const w = x.call.winner, wc = (x.cands || []).find((c) => c.name === x.call.name), nm = wc ? (wc.last || wc.name) : (x.call.name || '').split(' ').slice(-1)[0];
+      return w === 'runoff' ? 'Runoff' : `${nm || NT_PN[ntPK(w)]} won${x.call.source ? ` (${x.call.source})` : ''}`;
+    }
+    if (x.margin_d != null) {
+      const s = ntAllSide(x), side = s && s.party !== 'D' ? (s.last || s.name.split(' ').slice(-1)[0]) : null;
+      const m = side && x.margin_d > 0 ? `${side} +${fmt1(Math.round(x.margin_d * 10) / 10)}` : ntM(x.margin_d);
+      return `${m}, ${x.counted != null ? ntPct(x.counted) + ' in' : 'share in not given'}`;
+    }
+    if (x.lead) return `${x.lead.name} +${fmt1(Math.round(x.lead.pts * 10) / 10)}, ${x.counted != null ? ntPct(x.counted) + ' in' : ''}`;
+    return 'No votes yet';
+  }
+  function ntAllKeep(x) {
+    const p = (x.pre || {}).chance_d;
+    if (ntAllF === 'close' && !(p != null && p > 10 && p < 90) && !x.flip) return false;
+    if (ntAllF === 'counting' && x.status !== 'counting') return false;
+    if (ntAllF === 'called' && !x.call) return false;
+    if (ntAllF === 'flips' && !x.flip) return false;
+    if (!ntAllQ) return true;
+    const q = ntAllQ.toLowerCase();
+    return [ntAllName(x), NT_STATE[x.st] || '', x.st, x.key, ...(x.cands || []).map((c) => c.name)].some((s) => String(s).toLowerCase().includes(q));
+  }
+  function ntAll(d) {
+    const box = $('#nt-all'); if (!box) return;
+    ntAllD = d;
+    const e = d.every;
+    if (!e) { box.hidden = true; return; }
+    box.hidden = false;
+    if (!box.firstChild) {  // the controls are built once, so typing in the search box survives each refresh
+      const h = el('h2', {}, 'All 470 races '); h.append(ntQ('all'));
+      const sum = el('p', { class: 'nt-all-sum', id: 'nt-all-sum' });
+      const tabs = el('div', { class: 'nt-feedf nt-all-tabs', role: 'group', 'aria-label': 'Chamber' });
+      for (const [k, lab] of [['senate', 'Senate, 35'], ['house', 'House, 435']]) {
+        const b = el('button', { type: 'button', 'data-k': k, 'aria-pressed': String(ntAllTab === k) }, lab);
+        b.addEventListener('click', () => { ntAllTab = k; try { localStorage.setItem('nt-all-tab', k); } catch (er) { /* fine */ } tabs.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.k === k))); ntAllList(); });
+        tabs.append(b);
+      }
+      const fl = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Show' });
+      for (const [k, lab] of [['all', 'All'], ['close', 'Competitive'], ['counting', 'Counting'], ['called', 'Called'], ['flips', 'Flips']]) {
+        const b = el('button', { type: 'button', 'data-k': k, 'aria-pressed': String(ntAllF === k) }, lab);
+        b.addEventListener('click', () => { ntAllF = k; fl.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.k === k))); ntAllList(); });
+        fl.append(b);
+      }
+      const q = el('input', { type: 'search', class: 'nt-all-q', placeholder: 'Find a state, district or candidate', 'aria-label': 'Find a race' });
+      q.addEventListener('input', () => { ntAllQ = q.value.trim(); ntAllList(); });
+      const ctl = el('div', { class: 'nt-all-ctl' }); ctl.append(tabs, fl, q);
+      box.append(h, sum, ctl, el('div', { class: 'nt-all-list', id: 'nt-all-list' }), el('p', { class: 'nt-all-src', id: 'nt-all-src' }));
+    }
+    const s = (e.summary || {}), ss = s.senate || {}, hs = s.house || {};
+    const flips = [...(ss.flips_called || []), ...(hs.flips_called || [])].length;
+    $('#nt-all-sum').textContent = `Senate: ${ss.called || 0} of ${ss.n || 35} called (${ss.called_D || 0} D, ${ss.called_R || 0} R${ss.called_other ? `, ${ss.called_other} other` : ''}). `
+      + `House: ${hs.called || 0} of ${hs.n || 435} called (${hs.called_D || 0} D, ${hs.called_R || 0} R${hs.called_other ? `, ${hs.called_other} other` : ''}). `
+      + (flips ? `${flips} seat${flips === 1 ? '' : 's'} flipped so far.` : 'No flips called yet.');
+    $('#nt-all-src').textContent = `Counts and calls: CNN (AP's numbers)${e.feed_at ? `, read ${ntT(e.feed_at)}` : ', from 6pm ET'}. Candidates, seat holders and leans: CNN and Wikipedia, ${e.roster_built_at ? 'read ' + ntT(e.roster_built_at) : ''}.`;
+    ntAllList();
+  }
+  function ntAllList() {
+    const d = ntAllD, list = $('#nt-all-list'); if (!d || !list) return;
+    const odds = (d.story || {}).odds || {};
+    const rows = ntAllRows(d).filter(ntAllKeep).sort((a, b) => (NT_STATE[a.st] || a.st).localeCompare(NT_STATE[b.st] || b.st) || (a.key > b.key ? 1 : -1));
+    list.replaceChildren();
+    if (!rows.length) { list.append(el('p', { class: 'nt-mute' }, ntAllF === 'flips' ? 'No seat has flipped yet.' : ntAllF === 'called' ? 'No race in this list is called yet.' : ntAllF === 'counting' ? 'No race in this list is counting yet.' : 'No race matches that.')); return; }
+    let last = '';
+    for (const x of rows) {
+      if (ntAllTab === 'house' && x.st !== last) { list.append(el('div', { class: 'nt-all-st' }, NT_STATE[x.st] || x.st)); last = x.st; }
+      const w = x.call ? ntPK(x.call.winner) : '';
+      const b = el('button', { type: 'button', class: 'nt-ar', 'data-w': x.call && x.call.winner !== 'runoff' ? w : '', 'data-s': x.status || 'no votes' });
+      const lab = el('span', { class: 'nt-ar-n' }); lab.append(el('b', {}, ntAllName(x)), el('small', {}, ntAllCands(x)));
+      const pre = el('span', { class: 'nt-ar-p' }); pre.append(el('small', {}, 'Before votes'), document.createTextNode(ntAllPre(x)));
+      const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', {}, x.call ? 'Called' : x.status === 'counting' ? 'Counting' : 'Now'), document.createTextNode(ntAllNow(x)));
+      const o = odds[x.key];
+      if (o && !x.call && o.basis === 'count') {
+        const sd = ntAllSide(x), dn = sd && sd.party !== 'D' ? (sd.last || sd.name) : 'D';
+        now.append(el('small', {}, `Chance now: ${o.p_d >= 0.5 ? dn : 'R'} ${ntPct(100 * Math.max(o.p_d, 1 - o.p_d))}`));
+      }
+      if (x.flip_called || (x.flip && !x.call)) now.append(el('span', { class: 'nt-ar-flip' }, x.flip_called ? `Flip from ${x.held_by}` : `${x.held_by}-held, trailing`));
+      b.append(lab, pre, now);
+      b.addEventListener('click', () => ntAllPop(d, x));
+      list.append(b);
+    }
+  }
+  function ntAllPop(d, x) {  // one race's whole story, any race on the ballot
+    const dl = el('dl', { class: 'nt-dl' }), row = (k, v) => { if (v) dl.append(el('dt', {}, k), el('dd', {}, v)); };
+    const p = x.pre || {}, cs = x.cands || [];
+    row('Candidates', cs.length ? cs.map((c) => `${c.name} (${NT_PN[ntPK(c.party)] || c.party}${c.inc ? ', the incumbent' : ''})`).join(', ') : 'Not listed in CNN\'s file.');
+    row('Held by', x.held_by ? `${NT_PNS[x.held_by] || x.held_by} now.` : x.new_seat ? 'Nobody: a new seat on this year\'s map.' : '');
+    if (x.pvi != null) row('How it leans', x.pvi === 0 ? 'Even with the country (Cook PVI on the 2026 map).' : `${x.pvi > 0 ? 'D' : 'R'}+${Math.abs(x.pvi)}: about ${Math.abs(x.pvi)} points more ${x.pvi > 0 ? 'Democratic' : 'Republican'} than the country (Cook PVI on the 2026 map).`);
+    if (p.from === 'final') row('Before votes', `Our final call: ${ntAllPre(x).replace(/, our call$/, '')}. One of the 13 Senate races we forecast closely.`);
+    else if (p.chance_d != null) row('Before votes', `${ntAllPre(x)}. That is the raters' consensus${p.n_raters ? ` across ${p.n_raters} raters` : ''}, and the chance our seat model used for this race.${p.ratings ? ' ' + Object.entries(p.ratings).map(([k, v]) => `${{ cook: 'Cook', sabato: 'Sabato', inside_elections: 'Inside Elections', ddhq: 'Decision Desk', silver: 'Silver', economist: 'Economist', split_ticket: 'Split Ticket', fox: 'Fox', rcp: 'RCP', fifty_plus_one: '50+1' }[k] || k}: ${v}`).join('. ') + '.' : ''}`);
+    else row('Before votes', `${p.category || 'Not rated'}. No rater lists it as competitive, and our seat model counts it for the party that holds it.`);
+    row('The count', ntAllNow(x) === 'No votes yet' || x.call ? (x.margin_d != null || x.lead ? ntAllNow({ ...x, call: null }) : 'No votes yet.') : ntAllNow(x));
+    row('Call', x.call ? (x.call.winner === 'runoff' ? 'Headed to a runoff.' : `${x.call.name || NT_PN[ntPK(x.call.winner)]} (${ntPK(x.call.winner)}) won, called by ${x.call.source || 'CNN'}.`) : 'Not called yet.');
+    if (x.flip_called) row('Flip', `Yes. ${NT_PNS[x.held_by] || x.held_by} held this seat.`);
+    else if (x.flip) row('Flip', `Not called, but the ${NT_PN[x.held_by] ? NT_PN[x.held_by] : x.held_by} holding this seat is behind in the count.`);
+    const odds = ((d.story || {}).odds || {})[x.key];
+    if (odds && odds.basis === 'count' && !x.call) row('Chance now', `${ntPct(100 * Math.max(odds.p_d, 1 - odds.p_d))} for the ${odds.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'Democrat' : 'Republican'}, from the count and the chance before votes. A rough guide, not a call.`);
+    row('Sources', 'Count and call: CNN, with AP\'s numbers. Candidates: CNN. Seat holder and lean: Wikipedia. Chance before votes: our final call or the raters\' consensus (Wikipedia\'s ratings tables, Nov 2).');
+    const nodes = [dl];
+    if (x.race_id) nodes.push(el('p', {}, ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
+    ntSheet(`${ntAllName(x)}${x.office === 'house' || !x.key.startsWith('senate_') ? '' : ' Senate'}`, x.key.startsWith('senate_') ? 'Senate race' : 'House race', nodes);
   }
 
   // ---------- against the polls: the count beside the final poll averages, the claim the night is really about
