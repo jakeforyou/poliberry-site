@@ -2,6 +2,24 @@
   {
     "race_id": "senate_me",
     "kind": "poll",
+    "pollster": "Rasmussen Reports",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-11-02",
+    "population": "LV",
+    "sample": 896,
+    "moe": 3.0,
+    "d": 49.0,
+    "r": 46.0,
+    "other": null,
+    "undecided": 5.0,
+    "margin_d": 3.0,
+    "aggregate": false,
+    "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_maine_senate"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
     "pollster": "Survey 160",
     "sponsor": null,
     "start_date": "2026-10-27",
@@ -52,6 +70,42 @@
     "margin_d": 6.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-me-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 600,
+    "moe": 4.0,
+    "d": 49.0,
+    "r": 51.0,
+    "other": null,
+    "undecided": null,
+    "margin_d": -2.0,
+    "aggregate": false,
+    "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
+  },
+  {
+    "race_id": "senate_me",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 967,
+    "moe": 3.0,
+    "d": 53.0,
+    "r": 44.0,
+    "other": 2.0,
+    "undecided": 1.0,
+    "margin_d": 9.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-maine-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_me",
@@ -704,8 +758,8 @@
   {
     "race_id": "senate_me",
     "kind": "average",
-    "average_margin_d": 3.91,
-    "n_polls": 11,
+    "average_margin_d": 3.79,
+    "n_polls": 14,
     "candidates": {
       "D": [
         "Troy Jackson"
@@ -714,11 +768,29 @@
         "Susan Collins"
       ]
     },
-    "newest_end_date": "2026-11-01",
+    "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine#Polling_4",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_nc",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1459,
+    "moe": 3.0,
+    "d": 56.0,
+    "r": 42.0,
+    "other": 1.0,
+    "undecided": 0.0,
+    "margin_d": 14.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-north-carolina-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_nc",
@@ -1839,8 +1911,8 @@
   {
     "race_id": "senate_nc",
     "kind": "average",
-    "average_margin_d": 10.43,
-    "n_polls": 7,
+    "average_margin_d": 10.88,
+    "n_polls": 8,
     "candidates": {
       "D": [
         "Roy Cooper"
@@ -1849,10 +1921,10 @@
         "Michael Whatley"
       ]
     },
-    "newest_end_date": "2026-10-29",
+    "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -1872,6 +1944,42 @@
     "margin_d": 2.0,
     "aggregate": false,
     "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/OH-Midterms-Report-1102.pdf"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "Survey 160",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1122,
+    "moe": 5.4,
+    "d": 50.0,
+    "r": 46.0,
+    "other": 4.0,
+    "undecided": 1.0,
+    "margin_d": 4.0,
+    "aggregate": false,
+    "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "Survey 160",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-11-01",
+    "population": "RV",
+    "sample": 1159,
+    "moe": 5.4,
+    "d": 50.0,
+    "r": 45.0,
+    "other": 4.0,
+    "undecided": 2.0,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
   },
   {
     "race_id": "senate_oh",
@@ -1908,6 +2016,60 @@
     "margin_d": 5.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-oh-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 930,
+    "moe": 3.2,
+    "d": 46.0,
+    "r": 48.0,
+    "other": 6.0,
+    "undecided": null,
+    "margin_d": -2.0,
+    "aggregate": false,
+    "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1801,
+    "moe": 2.0,
+    "d": 51.0,
+    "r": 44.0,
+    "other": 4.0,
+    "undecided": 1.0,
+    "margin_d": 7.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-ohio-atlaspollstergraph-poll-2026-11-02"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "Rasmussen Reports",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-10-31",
+    "population": "LV",
+    "sample": 1119,
+    "moe": 3.0,
+    "d": 46.0,
+    "r": 46.0,
+    "other": 5.0,
+    "undecided": 3.0,
+    "margin_d": 0.0,
+    "aggregate": false,
+    "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_ohio_senate"
   },
   {
     "race_id": "senate_oh",
@@ -2830,8 +2992,8 @@
   {
     "race_id": "senate_oh",
     "kind": "average",
-    "average_margin_d": 2.47,
-    "n_polls": 17,
+    "average_margin_d": 2.43,
+    "n_polls": 21,
     "candidates": {
       "D": [
         "Sherrod Brown"
@@ -2843,8 +3005,26 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Ohio#Polling",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_tx",
+    "kind": "poll",
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-02",
+    "population": "LV",
+    "sample": 450,
+    "moe": 4.6,
+    "d": 49.0,
+    "r": 46.0,
+    "other": null,
+    "undecided": 4.0,
+    "margin_d": 3.0,
+    "aggregate": false,
+    "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
   },
   {
     "race_id": "senate_tx",
@@ -2885,11 +3065,29 @@
   {
     "race_id": "senate_tx",
     "kind": "poll",
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 500,
+    "moe": null,
+    "d": 50.0,
+    "r": 48.0,
+    "other": null,
+    "undecided": null,
+    "margin_d": 2.0,
+    "aggregate": false,
+    "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
+  },
+  {
+    "race_id": "senate_tx",
+    "kind": "poll",
     "pollster": "AtlasIntel",
     "sponsor": null,
     "start_date": "2026-10-28",
     "end_date": "2026-11-01",
-    "population": "A",
+    "population": "LV",
     "sample": 1678,
     "moe": 2.0,
     "d": 51.0,
@@ -4343,8 +4541,8 @@
   {
     "race_id": "senate_tx",
     "kind": "average",
-    "average_margin_d": 2.64,
-    "n_polls": 22,
+    "average_margin_d": 2.76,
+    "n_polls": 25,
     "candidates": {
       "D": [
         "James Talarico"
@@ -4353,10 +4551,10 @@
         "Ken Paxton"
       ]
     },
-    "newest_end_date": "2026-11-01",
+    "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas#Polling_4",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -4376,6 +4574,24 @@
     "margin_d": 0.0,
     "aggregate": false,
     "source_url": "https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/"
+  },
+  {
+    "race_id": "senate_ak",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 522,
+    "moe": 4.0,
+    "d": 50.0,
+    "r": 45.0,
+    "other": 2.0,
+    "undecided": null,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-alaska-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_ak",
@@ -4902,8 +5118,8 @@
   {
     "race_id": "senate_ak",
     "kind": "average",
-    "average_margin_d": 1.8,
-    "n_polls": 5,
+    "average_margin_d": 2.33,
+    "n_polls": 6,
     "candidates": {
       "D": [
         "Mary Peltola"
@@ -4917,7 +5133,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alaska#Polling_2",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -4937,6 +5153,24 @@
     "margin_d": 1.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_ia",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1219,
+    "moe": 3.0,
+    "d": 51.0,
+    "r": 46.0,
+    "other": 3.0,
+    "undecided": 0.0,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-iowa-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_ia",
@@ -5715,8 +5949,8 @@
   {
     "race_id": "senate_ia",
     "kind": "average",
-    "average_margin_d": -0.67,
-    "n_polls": 12,
+    "average_margin_d": -0.09,
+    "n_polls": 11,
     "candidates": {
       "R": [
         "Ashley Hinson"
@@ -5728,8 +5962,26 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Iowa#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "John Zogby Strategies",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-02",
+    "population": "LV",
+    "sample": 1001,
+    "moe": 3.2,
+    "d": 51.0,
+    "r": 49.0,
+    "other": null,
+    "undecided": null,
+    "margin_d": 2.0,
+    "aggregate": false,
+    "source_url": "https://johnzogbystrategies.com/el-sayed-leads-rogers-51-49-new-john-zogby-strategies-eve-of-election-day-poll/"
   },
   {
     "race_id": "senate_mi",
@@ -5766,6 +6018,60 @@
     "margin_d": 11.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 500,
+    "moe": 4.4,
+    "d": 51.0,
+    "r": 45.0,
+    "other": 3.0,
+    "undecided": null,
+    "margin_d": 6.0,
+    "aggregate": false,
+    "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "Concord Public Opinion Partners",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 510,
+    "moe": 4.3,
+    "d": 51.0,
+    "r": 41.0,
+    "other": 3.0,
+    "undecided": 5.0,
+    "margin_d": 10.0,
+    "aggregate": false,
+    "source_url": "https://concordpublicopinionpartners.org/blog/michigan-ge-2026"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1316,
+    "moe": 3.0,
+    "d": 54.0,
+    "r": 46.0,
+    "other": 0.0,
+    "undecided": 0.0,
+    "margin_d": 8.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-michigan-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_mi",
@@ -7030,8 +7336,8 @@
   {
     "race_id": "senate_mi",
     "kind": "average",
-    "average_margin_d": 4.73,
-    "n_polls": 15,
+    "average_margin_d": 5.11,
+    "n_polls": 19,
     "candidates": {
       "D": [
         "Abdul El-Sayed"
@@ -7040,11 +7346,29 @@
         "Mike Rogers"
       ]
     },
-    "newest_end_date": "2026-11-01",
+    "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_ga",
+    "kind": "poll",
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-02",
+    "population": "LV",
+    "sample": 450,
+    "moe": 4.6,
+    "d": 52.0,
+    "r": 42.0,
+    "other": null,
+    "undecided": 6.0,
+    "margin_d": 10.0,
+    "aggregate": false,
+    "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
   },
   {
     "race_id": "senate_ga",
@@ -7517,8 +7841,8 @@
   {
     "race_id": "senate_ga",
     "kind": "average",
-    "average_margin_d": 9.0,
-    "n_polls": 5,
+    "average_margin_d": 9.17,
+    "n_polls": 6,
     "candidates": {
       "D": [
         "Jon Ossoff"
@@ -7530,8 +7854,26 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_nh",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1057,
+    "moe": 3.0,
+    "d": 52.0,
+    "r": 44.0,
+    "other": 2.0,
+    "undecided": 2.0,
+    "margin_d": 8.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-new-hampshire-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_nh",
@@ -7604,6 +7946,24 @@
     "margin_d": 7.0,
     "aggregate": false,
     "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
+  },
+  {
+    "race_id": "senate_nh",
+    "kind": "poll",
+    "pollster": "UMass Lowell / YouGov",
+    "sponsor": null,
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-19",
+    "population": "LV",
+    "sample": 600,
+    "moe": 5.0,
+    "d": 48.0,
+    "r": 41.0,
+    "other": 4.0,
+    "undecided": 7.0,
+    "margin_d": 7.0,
+    "aggregate": false,
+    "source_url": "https://www.uml.edu/news/press-releases/2026/102826-new-england-polls.aspx"
   },
   {
     "race_id": "senate_nh",
@@ -8112,8 +8472,8 @@
   {
     "race_id": "senate_nh",
     "kind": "average",
-    "average_margin_d": 7.2,
-    "n_polls": 5,
+    "average_margin_d": 7.67,
+    "n_polls": 6,
     "candidates": {
       "D": [
         "Chris Pappas"
@@ -8122,11 +8482,65 @@
         "John Sununu"
       ]
     },
-    "newest_end_date": "2026-10-31",
+    "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Hampshire#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_sc",
+    "kind": "poll",
+    "pollster": "Trafalgar Group",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1091,
+    "moe": 2.9,
+    "d": 46.0,
+    "r": 48.0,
+    "other": 3.0,
+    "undecided": 4.0,
+    "margin_d": -2.0,
+    "aggregate": false,
+    "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf"
+  },
+  {
+    "race_id": "senate_sc",
+    "kind": "poll",
+    "pollster": "Rasmussen Reports",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-10-31",
+    "population": "LV",
+    "sample": 1028,
+    "moe": 3.0,
+    "d": 47.0,
+    "r": 50.0,
+    "other": null,
+    "undecided": 6.0,
+    "margin_d": -3.0,
+    "aggregate": false,
+    "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_south_carolina_senate"
+  },
+  {
+    "race_id": "senate_sc",
+    "kind": "poll",
+    "pollster": "Resonance Media Services",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-10-30",
+    "population": "LV",
+    "sample": 600,
+    "moe": 4.0,
+    "d": 46.0,
+    "r": 45.0,
+    "other": 3.0,
+    "undecided": 7.0,
+    "margin_d": 1.0,
+    "aggregate": false,
+    "source_url": "https://www.fitsnews.com/wp-content/uploads/securepdfs/2026/11/Resonance-final-SC-Poll-Memo-11-02-2026.pdf"
   },
   {
     "race_id": "senate_sc",
@@ -8437,8 +8851,8 @@
   {
     "race_id": "senate_sc",
     "kind": "average",
-    "average_margin_d": -0.86,
-    "n_polls": 7,
+    "average_margin_d": -1.0,
+    "n_polls": 10,
     "candidates": {
       "R": [
         "Darline Graham"
@@ -8447,11 +8861,29 @@
         "Annie Andrews"
       ]
     },
-    "newest_end_date": "2026-10-29",
+    "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina#Polling_5",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "senate_fl",
+    "kind": "poll",
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-02",
+    "population": "LV",
+    "sample": 450,
+    "moe": 4.6,
+    "d": 44.0,
+    "r": 51.0,
+    "other": 1.0,
+    "undecided": 4.0,
+    "margin_d": -7.0,
+    "aggregate": false,
+    "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
   },
   {
     "race_id": "senate_fl",
@@ -9032,8 +9464,8 @@
   {
     "race_id": "senate_fl",
     "kind": "average",
-    "average_margin_d": -5.83,
-    "n_polls": 12,
+    "average_margin_d": -5.92,
+    "n_polls": 13,
     "candidates": {
       "R": [
         "Ashley Moody"
@@ -9042,10 +9474,10 @@
         "Angie Nixon"
       ]
     },
-    "newest_end_date": "2026-10-30",
+    "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida#Polling_2",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -9101,6 +9533,24 @@
     "margin_d": 5.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_ks",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 2038,
+    "moe": 2.0,
+    "d": 52.0,
+    "r": 45.0,
+    "other": 3.0,
+    "undecided": 1.0,
+    "margin_d": 7.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-kansas-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_ks",
@@ -9429,8 +9879,8 @@
   {
     "race_id": "senate_ks",
     "kind": "average",
-    "average_margin_d": 3.25,
-    "n_polls": 8,
+    "average_margin_d": 3.67,
+    "n_polls": 9,
     "candidates": {
       "R": [
         "Roger Marshall"
@@ -9442,7 +9892,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas#Polling_2",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -9498,6 +9948,24 @@
     "margin_d": 5.0,
     "aggregate": false,
     "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
+  },
+  {
+    "race_id": "senate_mn",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 2133,
+    "moe": 2.0,
+    "d": 48.0,
+    "r": 46.0,
+    "other": 5.0,
+    "undecided": 1.0,
+    "margin_d": 2.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-minnesota-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "senate_mn",
@@ -9916,7 +10384,7 @@
   {
     "race_id": "senate_mn",
     "kind": "average",
-    "average_margin_d": 5.67,
+    "average_margin_d": 5.56,
     "n_polls": 9,
     "candidates": {
       "D": [
@@ -9929,8 +10397,26 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_ga",
+    "kind": "poll",
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-02",
+    "population": "LV",
+    "sample": 450,
+    "moe": 4.6,
+    "d": 46.0,
+    "r": 45.0,
+    "other": null,
+    "undecided": 9.0,
+    "margin_d": 1.0,
+    "aggregate": false,
+    "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
   },
   {
     "race_id": "gov_ga",
@@ -10331,8 +10817,8 @@
   {
     "race_id": "gov_ga",
     "kind": "average",
-    "average_margin_d": -0.43,
-    "n_polls": 7,
+    "average_margin_d": -0.25,
+    "n_polls": 8,
     "candidates": {
       "D": [
         "Keisha Lance Bottoms"
@@ -10344,7 +10830,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -10957,7 +11443,7 @@
     "newest_end_date": "2026-10-29",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -11300,7 +11786,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Nevada_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -11625,7 +12111,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Wisconsin_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -11663,6 +12149,60 @@
     "margin_d": 13.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
+  },
+  {
+    "race_id": "gov_mi",
+    "kind": "poll",
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 500,
+    "moe": null,
+    "d": 50.0,
+    "r": 46.0,
+    "other": 4.0,
+    "undecided": null,
+    "margin_d": 4.0,
+    "aggregate": false,
+    "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
+  },
+  {
+    "race_id": "gov_mi",
+    "kind": "poll",
+    "pollster": "Concord Public Opinion Partners",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 510,
+    "moe": 4.3,
+    "d": 50.0,
+    "r": 41.0,
+    "other": 4.0,
+    "undecided": 4.0,
+    "margin_d": 9.0,
+    "aggregate": false,
+    "source_url": "https://concordpublicopinionpartners.org/blog/michigan-ge-2026"
+  },
+  {
+    "race_id": "gov_mi",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1316,
+    "moe": 3.0,
+    "d": 53.0,
+    "r": 45.0,
+    "other": 0.0,
+    "undecided": 1.0,
+    "margin_d": 8.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-michigan-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "gov_mi",
@@ -12423,8 +12963,8 @@
   {
     "race_id": "gov_mi",
     "kind": "average",
-    "average_margin_d": 8.64,
-    "n_polls": 11,
+    "average_margin_d": 8.29,
+    "n_polls": 14,
     "candidates": {
       "D": [
         "Jocelyn Benson"
@@ -12436,8 +12976,44 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_oh",
+    "kind": "poll",
+    "pollster": "Survey 160",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1122,
+    "moe": 5.4,
+    "d": 51.0,
+    "r": 44.0,
+    "other": 4.0,
+    "undecided": 1.0,
+    "margin_d": 7.0,
+    "aggregate": false,
+    "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
+  },
+  {
+    "race_id": "gov_oh",
+    "kind": "poll",
+    "pollster": "Survey 160",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-11-01",
+    "population": "RV",
+    "sample": 1159,
+    "moe": 5.4,
+    "d": 51.0,
+    "r": 43.0,
+    "other": 4.0,
+    "undecided": 1.0,
+    "margin_d": 8.0,
+    "aggregate": false,
+    "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
   },
   {
     "race_id": "gov_oh",
@@ -12474,6 +13050,42 @@
     "margin_d": 6.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-oh-poll-toplines.html"
+  },
+  {
+    "race_id": "gov_oh",
+    "kind": "poll",
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 930,
+    "moe": null,
+    "d": 48.0,
+    "r": 48.0,
+    "other": 3.0,
+    "undecided": 1.0,
+    "margin_d": 0.0,
+    "aggregate": false,
+    "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
+  },
+  {
+    "race_id": "gov_oh",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1801,
+    "moe": 2.0,
+    "d": 52.0,
+    "r": 44.0,
+    "other": 4.0,
+    "undecided": 0.0,
+    "margin_d": 8.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-ohio-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "gov_oh",
@@ -13252,8 +13864,8 @@
   {
     "race_id": "gov_oh",
     "kind": "average",
-    "average_margin_d": 3.79,
-    "n_polls": 14,
+    "average_margin_d": 4.0,
+    "n_polls": 17,
     "candidates": {
       "D": [
         "Amy Acton"
@@ -13265,7 +13877,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Ohio_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -13285,6 +13897,42 @@
     "margin_d": 8.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html"
+  },
+  {
+    "race_id": "gov_ia",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1219,
+    "moe": 3.0,
+    "d": 54.0,
+    "r": 44.0,
+    "other": 2.0,
+    "undecided": 0.0,
+    "margin_d": 10.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-iowa-atlaspollstergraph-poll-2026-11-02"
+  },
+  {
+    "race_id": "gov_ia",
+    "kind": "poll",
+    "pollster": "Rasmussen Reports",
+    "sponsor": null,
+    "start_date": "2026-10-27",
+    "end_date": "2026-10-31",
+    "population": "LV",
+    "sample": 901,
+    "moe": 3.0,
+    "d": 50.0,
+    "r": 45.0,
+    "other": 0.0,
+    "undecided": 5.0,
+    "margin_d": 5.0,
+    "aggregate": false,
+    "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_iowa_governor"
   },
   {
     "race_id": "gov_ia",
@@ -13757,7 +14405,7 @@
   {
     "race_id": "gov_ia",
     "kind": "average",
-    "average_margin_d": 6.25,
+    "average_margin_d": 6.75,
     "n_polls": 8,
     "candidates": {
       "D": [
@@ -13770,8 +14418,44 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Iowa_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_sc",
+    "kind": "poll",
+    "pollster": "Trafalgar Group",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1091,
+    "moe": 2.9,
+    "d": 39.0,
+    "r": 54.0,
+    "other": 2.0,
+    "undecided": 5.0,
+    "margin_d": -15.0,
+    "aggregate": false,
+    "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf"
+  },
+  {
+    "race_id": "gov_sc",
+    "kind": "poll",
+    "pollster": "Resonance Media Services",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-10-30",
+    "population": "LV",
+    "sample": 600,
+    "moe": 4.0,
+    "d": 42.0,
+    "r": 51.0,
+    "other": 1.0,
+    "undecided": 6.0,
+    "margin_d": -9.0,
+    "aggregate": false,
+    "source_url": "https://www.fitsnews.com/wp-content/uploads/securepdfs/2026/11/Resonance-final-SC-Poll-Memo-11-02-2026.pdf"
   },
   {
     "race_id": "gov_sc",
@@ -13938,8 +14622,8 @@
   {
     "race_id": "gov_sc",
     "kind": "average",
-    "average_margin_d": -10.8,
-    "n_polls": 5,
+    "average_margin_d": -11.14,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Jermaine Johnson"
@@ -13948,10 +14632,10 @@
         "Alan Wilson"
       ]
     },
-    "newest_end_date": "2026-10-26",
+    "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_South_Carolina_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -14007,6 +14691,24 @@
     "margin_d": 1.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html"
+  },
+  {
+    "race_id": "gov_ks",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 2038,
+    "moe": 2.0,
+    "d": 50.0,
+    "r": 46.0,
+    "other": 3.0,
+    "undecided": 1.0,
+    "margin_d": 4.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-kansas-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "gov_ks",
@@ -14209,8 +14911,8 @@
   {
     "race_id": "gov_ks",
     "kind": "average",
-    "average_margin_d": -0.43,
-    "n_polls": 7,
+    "average_margin_d": 0.12,
+    "n_polls": 8,
     "candidates": {
       "D": [
         "Cindy Holscher"
@@ -14222,8 +14924,26 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Kansas_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
+  },
+  {
+    "race_id": "gov_nh",
+    "kind": "poll",
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1057,
+    "moe": 3.0,
+    "d": 44.0,
+    "r": 50.0,
+    "other": 3.0,
+    "undecided": 4.0,
+    "margin_d": -6.0,
+    "aggregate": false,
+    "source_url": "https://atlasintel.org/poll/usa-new-hampshire-atlaspollstergraph-poll-2026-11-02"
   },
   {
     "race_id": "gov_nh",
@@ -14534,7 +15254,7 @@
   {
     "race_id": "gov_nh",
     "kind": "average",
-    "average_margin_d": -8.17,
+    "average_margin_d": -6.5,
     "n_polls": 6,
     "candidates": {
       "D": [
@@ -14544,10 +15264,10 @@
         "Kelly Ayotte"
       ]
     },
-    "newest_end_date": "2026-10-31",
+    "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -14656,7 +15376,7 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_South_Carolina#Polling_3",
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -14668,7 +15388,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   },
   {
@@ -14680,7 +15400,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-11-02T17:38:24-05:00",
+    "retrieved_at": "2026-11-03T09:33:46-05:00",
     "label": "retrieved"
   }
 ]

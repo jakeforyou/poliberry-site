@@ -202,7 +202,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <section class="lx-note" aria-label="How to read this board"><p><b>How to read this board.</b> Election night 2026, as the votes are counted. Kept by Jake Berry with Claude. Counts come from official state results and CNN, and the calls are CNN's. Each chance to win is a rough guide built from our final forecast, locked before any votes, and the count so far. Tap any ? for a plain-English explanation. Not advice.</p></section>
 <div class="lx-bar" role="region" aria-label="About this copy">
   <span>Shared copy</span>
-  <span>Data built <b id="lx-built">2026-11-02 17:43</b></span>
+  <span>Data built <b id="lx-built">2026-11-03 09:39</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Election night numbers update every few minutes.</span>
@@ -4642,7 +4642,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return last ? { ...last, mode: 'last' } : null;
   }
   function ntXRow(d, e, g, it, full) {
-    const name = ntXName(it.key), ours = it.ours != null ? ntM(it.ours) : null, red = it.red_below != null ? ntM(it.red_below) : null;
+    const name = ntXName(it.key), ours = it.ours != null ? ntM(it.ours) : null, bd = e.band == null ? 2 : e.band;
+    // what counts as on our line, the smaller margin first when both ends are Republican (Jake, Nov 3: "redder than R+8" alone did not say what it meant)
+    const fits = it.ours == null ? null : it.ours + bd <= 0 ? `${ntM(it.ours + bd)} to ${ntM(it.ours - bd)}` : `${ntM(it.ours - bd)} to ${ntM(it.ours + bd)}`;
     const has = it.now != null, cnt = it.counted != null ? ntPct(it.counted) + ' in' : '', wn = it.called && it.called !== 'runoff' ? it.called : null;
     const src = ntXSrc(it.source);
     const row = el('button', { type: 'button', class: 'nt-xr', 'data-s': it.status || (it.outside ? 'outside' : ''), 'data-fk': `xr:${full ? 's' : 'p'}:${g.at}:${it.key}`, title: `Source: ${it.source || 'not given'}` });
@@ -4650,8 +4652,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (it.outside) {
       mid.append(ours ? ntKids('span', {}, ['we expect ', el('b', {}, ours)]) : el('span', {}, 'no line of ours'));
     } else if (has) {
-      mid.append(ntKids('span', {}, ['expect ', el('b', {}, ours || '—')]), ntKids('span', { class: 'nt-mute' }, ['now ', el('b', {}, ntM(it.now)), cnt ? ` (${cnt})` : '']));
-    } else mid.append(ntKids('span', {}, ['expect ', el('b', {}, ours || '—')]), el('span', { class: 'nt-mute' }, red ? `redder than ${red}` : ''));
+      mid.append(ntKids('span', {}, ['we expect ', el('b', {}, ours || '—')]), ntKids('span', { class: 'nt-mute' }, ['now ', el('b', {}, ntM(it.now)), cnt ? ` (${cnt})` : '']));
+    } else mid.append(ntKids('span', {}, ['we expect ', el('b', {}, ours || '—')]), el('span', { class: 'nt-mute' }, fits ? `${fits} is on our line` : ''));
     row.append(el('b', { class: 'nm' }, name), mid);
     const chip = it.status ? NT_XCHIP[it.status] : it.outside ? 'Outside marker' : has ? 'Too early' : '';
     if (chip) row.append(el('span', { class: 'chip', 'data-s': it.status || (it.outside ? 'outside' : 'wait') }, chip));
@@ -4665,7 +4667,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     const say = it.outside
       ? `${name} at ${g.at_text}. Outside marker, set by ${src}. ${it.why || ''}${ours ? ` We expect ${ours}.` : ''}`
-      : `${name} at ${g.at_text}: we expect ${ours}. Redder than ${red} means the night is running redder than our forecast.${it.status ? ` Now ${ntM(it.now)}${cnt ? ', ' + cnt : ''}. ${NT_XSAY[it.status]}` : has ? ` Counting at ${ntM(it.now)}${cnt ? ', ' + cnt : ''}. Too early to compare.` : ''}`;
+      : `${name} at ${g.at_text}: we expect ${ours}. ${fits} is on our line. Redder than that says the night is running redder than our forecast, and bluer says bluer.${it.status ? ` Now ${ntM(it.now)}${cnt ? ', ' + cnt : ''}. ${NT_XSAY[it.status]}` : has ? ` Counting at ${ntM(it.now)}${cnt ? ', ' + cnt : ''}. Too early to compare.` : ''}`;
     row.setAttribute('aria-label', `${say}${wn ? ` Called for ${wn}.` : ''} Open this race.`);
     row.addEventListener('click', () => ntXOpen(d, it.key));
     return row;
@@ -4677,7 +4679,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return b;
   }
   const ntXSources = (e) => [...new Set((e.tests || []).flatMap((g) => g.items.map((i) => (i.outside ? null : ntXSrc(i.source).replace(/, which ranks.*$/, '')))).filter(Boolean))];
-  function ntXExplain(e) { return `A seat counted more than ${fmt1(e.band == null ? 2 : e.band)} points redder than its line means the night is running redder than our forecast.`; }
+  function ntXExplain(e) { const b = fmt1(e.band == null ? 2 : e.band); return `Each seat has the margin we expect, and anything within ${b} points of it is on our line. A count more than ${b} points redder says the night is running redder than our forecast. More than ${b} points bluer says bluer.`; }
   function ntExpect(d) {
     const box = $('#nt-expect'); if (!box) return;
     const e = (d.story || {}).expect; box.hidden = !e; if (!e) return;
