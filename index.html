@@ -1419,7 +1419,8 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-bt-rhead small { font-size: 12px; color: var(--color-fg-muted); }
 .nt-bt-race .nt-bt-chart { padding: 0; background: none; }
 .nt-bt-src a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
-@media (max-width: 30rem) { .nt-bt-srow { grid-template-columns: 1fr; } .nt-bt-srow .lbl { display: flex; gap: .5rem; align-items: baseline; } }
+@media (max-width: 30rem) { .nt-bt-srow { grid-template-columns: 1fr; } .nt-bt-srow .lbl { display: flex; gap: .5rem; align-items: baseline; }
+  .nt-bt-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: .2rem; } .nt-bt-chips button { flex: none; } }  /* one row of states that scrolls sideways on a phone */
 .nt-bt-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .3rem .6rem; align-items: center; }
 .nt-bt-entry label { grid-column: 1 / -1; font-size: 12.5px; color: var(--color-fg-muted); }
 .nt-bt-entry input { font: inherit; font-size: 1rem; padding: .5rem .75rem; border-radius: 6px; border: 1px solid var(--cds-border); background: var(--color-panel); color: var(--color-fg); min-width: 0; }
@@ -3788,7 +3789,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   var nightData = null, nightTimers = null, nightPrevTheme, nightLoad = null, nightLastMinute = null, nightParseSeq = 0, nightClosed = new Set(), nightOpened = new Set();
   var nightSeen = null, nightNew = {}, nightHealth = null, nightSort = null, nightClaims = null, nightPaused = false, nightSig = null, nightDrawnAt = 0;
   var nightBatches = null, nightBatchSeq = 0, nightBatchAll = false;  // the Election Day vote batches file (scripts/night_batches.py, Nov 3)
-  var nightResults = null, nightBtTxt = null, nightRsTxt = null;  // every race's count batch by batch (scripts/night_results_batches.py), and the last good text of each file
+  var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtHouseAll = false;  // every race's count batch by batch (scripts/night_results_batches.py), and the last good text of each file
   var nightView = 'results';  // the old Deep dive now lives in Evidence's Night details (Nov 2 evening), so the night tab has one view
   var nightMode = (() => { if (ntRO()) return 'live'; try { return localStorage.getItem('nt-mode') === 'practice' ? 'practice' : 'live'; } catch (e) { return 'live'; } })();  // live or practice
   // The public copy (GitHub Pages, scripts/build_share.py --standalone, Nov 2 late): read only, its numbers in files beside
@@ -3950,7 +3951,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         let ctx = null; try { const c = await fetch(ntBase() + 'claims.json', { cache: 'no-store' }); ctx = c.ok ? await c.text() : null; } catch (e) { ctx = null; }
         // the vote batches file is its own file (not part of the board), so a report typed in lands without a poll
         // a failed read keeps the last good file, so a blip on the public site never hides the card. Only a missing file (404) clears it
-        const ntSide = async (name, last) => { try { const c = await fetch(ntBase() + name, { cache: 'no-store' }); return c.ok ? await c.text() : c.status === 404 ? null : last; } catch (e) { return last; } };
+        const ntSide = async (name, last) => { try { const c = await fetch(ntBase() + name, { cache: 'no-cache' });  // revalidate: an unchanged file comes back as a 304, almost free on a phone
+           return c.ok ? await c.text() : c.status === 404 ? null : last; } catch (e) { return last; } };
         const btx = nightMode === 'practice' ? null : await ntSide('night_batches.json', nightBtTxt);
         const rtx = await ntSide(nightMode === 'practice' ? 'night_results_practice.json' : 'night_results.json', nightRsTxt);
         if (!ntRO()) { try { nightHealth = await fetch('/api/status', { cache: 'no-store' }).then((x) => (x.ok ? x.json() : null)); } catch (e) { nightHealth = null; } }
@@ -4872,7 +4874,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const ntBtNum = (n) => (n == null ? '—' : Number(n).toLocaleString('en-US'));
   const ntBtPct = (v) => (v == null ? '—' : v.toFixed(1) + '%');
   const ntBtUrl = (u) => (typeof u === 'string' && /^https?:\/\//.test(u) ? u : null);  // only web links become links (review, Nov 3)
-  const NT_BT_FLAG = { correction: 'a running total fell (a county correction), so not a batch of new votes', source_change: 'the source changed, so the difference is not a batch', total_mismatch: 'the parties do not add up to the total given' };
+  const NT_BT_FLAG = { correction: 'a running total fell (a county correction), so not a batch of new votes', source_change: 'the source changed, so the difference is not a batch', total_mismatch: 'the parties do not add up to the total given',
+    side_missing: 'one of the two leading candidates was missing from that read, so its split is unknown' };
+  const NT_BT_HOUSE = 6;  // House races shown per state before the button
   function ntBtSvg(W, H) { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', `0 0 ${W} ${H}`); s.setAttribute('role', 'img'); return s; }
   function ntBtEl(tag, attrs, parent, text) { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.append(e); return e; }
   function ntBtTicks(lo, hi, n) {
@@ -5037,23 +5041,24 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const L = r.latest || r.batches[r.batches.length - 1], wrap = el('div', { class: 'nt-bt-race' });
     const btn = el('button', { type: 'button', class: 'nt-bt-rname', 'data-fk': `btr:${r.key}`, 'aria-label': `${r.name}. Open this race.` }, r.name);
     btn.addEventListener('click', () => ntXOpen(d, r.key));
-    wrap.append(ntKids('div', { class: 'nt-bt-rhead' }, [btn, el('small', {}, `${r.n} batch${r.n === 1 ? '' : 'es'}, latest ${L.time_text}`)]));
+    wrap.append(ntKids('div', { class: 'nt-bt-rhead' }, [btn, el('small', {}, `${r.n} batch${r.n === 1 ? '' : 'es'}, latest ${L.time_text}, counts from ${r.source}`)]));
     const p = el('p', { class: 'nt-bt-lede' });
     p.append(L.margin_d == null ? `Latest: not a batch (${(L.flags || []).map((x) => NT_BT_FLAG[x] || x).join(', ')}). ` : ntKids('span', {}, ['Latest batch: ', el('b', {}, ntBtNum(L.votes)), ' votes, ', el('b', { class: L.margin_d > 0 ? 'nt-d' : L.margin_d < 0 ? 'nt-r' : '' }, ntM(L.margin_d)), '. ']),
       'Running: ', el('b', {}, ntM(L.run_margin_d)), L.counted != null ? ` with ${Math.round(L.counted)}% counted.` : '.', r.our_line != null ? ` We expected ${ntM(r.our_line)}.` : '');
     wrap.append(p);
     const need = ntBtNeed(r); if (need) wrap.append(el('p', { class: 'nt-bt-sub' }, need));
+    if (r.check && r.check.run_margin_d != null) wrap.append(el('p', { class: 'nt-bt-sub' }, `Shown from ${r.source}. ${r.check.source} has it at ${ntM(r.check.run_margin_d)} as of ${r.check.time_text}${r.check.counted != null ? `, ${Math.round(r.check.counted)}% counted` : ''}.`));
     if (full && r.batches.length > 1) {
       const c = el('div', { class: 'nt-bt-chart' });
       c.append(ntBtKey([['d', `${ntBtSide(r, 'a')} won the batch`], ['r', `${ntBtSide(r, 'b')} won the batch`], ['run', 'Running margin'], ['ref', 'Our forecast']]), ntBtResultChart(r));
       wrap.append(c);
       const tw = el('div', { class: 'nt-scroll' }), tbl = el('table', { class: 'nt-table nt-bt-table' }), hr = el('tr');
-      for (const h of ['Time', 'Votes added', 'Batch', 'Running', 'Counted', 'Source']) hr.append(el('th', {}, h));
+      for (const h of ['Time', 'Votes added', 'Batch', 'Running', 'Counted']) hr.append(el('th', {}, h));
       tbl.append(ntKids('thead', {}, [hr]));
       const tb = el('tbody');
       for (const b of [...r.batches].reverse().slice(0, NT_BT_ROWS)) {
         const tr = el('tr', { 'data-latest': String(b === L) }); if ((b.flags || []).length) tr.dataset.flag = b.flags.join(' ');
-        for (const [v, c2] of [[b.time_text, ''], [b.margin_d == null ? 'not a batch' : ntBtNum(b.votes), ''], [ntM(b.margin_d), 'm'], [ntM(b.run_margin_d), 'm'], [b.counted == null ? '—' : Math.round(b.counted) + '%', ''], [b.source || '', '']]) tr.append(el('td', c2 ? { class: c2 } : {}, v));
+        for (const [v, c2] of [[b.time_text, ''], [b.margin_d == null ? 'not a batch' : ntBtNum(b.votes), ''], [ntM(b.margin_d), 'm'], [ntM(b.run_margin_d), 'm'], [b.counted == null ? '—' : Math.round(b.counted) + '%', '']]) tr.append(el('td', c2 ? { class: c2 } : {}, v));
         tb.append(tr);
       }
       tbl.append(tb); tw.append(tbl); wrap.append(tw);
@@ -5090,6 +5095,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
           chips.append(b);
         }
         box.append(chips);
+        const on = chips.querySelector('[aria-pressed="true"]'); if (on) chips.scrollLeft = Math.max(0, on.offsetLeft - chips.offsetLeft - 16);  // the picked state in view on a phone's scrolling row
       }
       const s = f && f.states && f.states[pick];
       if (s && s.n) ntBtTurnout(box, s, f);
@@ -5098,7 +5104,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         const rank = { senate: 0, governor: 1, house: 2 };
         races.sort((a, b) => (rank[a.office] ?? 3) - (rank[b.office] ?? 3) || String(a.key).localeCompare(String(b.key)));
         box.append(el('h3', { class: 'nt-bt-h' }, `${NT_STATE[pick] || pick}: the count, batch by batch`));
-        for (const r of races) box.append(ntBtRace(nightData, r, r.office !== 'house'));
+        const statewide = races.filter((r) => r.office !== 'house'), house = races.filter((r) => r.office === 'house');
+        house.sort((a, b) => String((b.latest || {}).at || '').localeCompare(String((a.latest || {}).at || '')));  // the House seats with the newest batches first
+        for (const r of statewide) box.append(ntBtRace(nightData, r, true));
+        for (const r of nightBtHouseAll ? house : house.slice(0, NT_BT_HOUSE)) box.append(ntBtRace(nightData, r, false));
+        if (house.length > NT_BT_HOUSE) {
+          const more = el('button', { type: 'button', class: 'nt-bt-more', 'data-fk': 'bt:house', 'aria-expanded': String(nightBtHouseAll) }, nightBtHouseAll ? `Show the newest ${NT_BT_HOUSE} House races` : `Show all ${house.length} House races`);
+          more.addEventListener('click', () => { nightBtHouseAll = !nightBtHouseAll; ntKeepFocus(ntBatches); });
+          box.append(more);
+        }
         box.append(el('p', { class: 'nt-bt-src' }, `${R.label || ''} Built ${ntT(R.built_at)} ET.`));
       } else if (s && s.n) box.append(el('p', { class: 'nt-bt-sub' }, `When the polls close, ${NT_STATE[pick] || pick}'s count shows here batch by batch, under who voted today.`));
     } catch (e) {  // a file of the wrong shape hides this card and never stops the rest of the board drawing (review, Nov 3)
