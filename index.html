@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e6532c019114';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '9874c5142c84';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1550,6 +1550,24 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-ctlc-sm .nt-ctlc-l { stroke: var(--nt-ours); stroke-dasharray: none; opacity: 1; } .nt-ctlc-sm .nt-ctlc-dot { fill: var(--nt-ours); }
 /* who voted and what it suggested, folded under the count once results come in */
 .nt-bt-before { border-top: 1px solid var(--nt-rule); padding-top: .4rem; }
+/* the ticker under the top cards (Nov 3, 6:55pm): one line at a time, its kind on the left, the controls on the right */
+.nt-tick:not([hidden]) { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .3rem .7rem; padding: .5rem .7rem; border-radius: 10px; background: var(--nt-wash); border: 1px solid var(--nt-rule); min-height: 2.6rem; }
+.nt-tick .lb { font-size: 11.5px; font-weight: 700; padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; color: var(--color-fg); background: var(--nt-wash2); }
+.nt-tick .lb[data-k="Upset watch"], .nt-tick .lb[data-k="Next up"] { color: var(--color-bg); background: var(--nt-jake); }
+.nt-tick .lb[data-k="Called"] { color: var(--color-bg); background: var(--color-fg); }
+.nt-tick .lb[data-k="Running bluer"] { color: var(--nt-d); background: color-mix(in srgb, var(--nt-d) 16%, transparent); } .nt-tick .lb[data-k="Running redder"] { color: var(--nt-r); background: color-mix(in srgb, var(--nt-r) 16%, transparent); }
+.nt-tick .lb[data-k="On track"] { color: var(--nt-ours); background: color-mix(in srgb, var(--nt-ours) 16%, transparent); }
+.nt-tick .tx { all: unset; box-sizing: border-box; font-size: 14px; line-height: 1.4; min-width: 0; }
+.nt-tick .tx[data-go="true"] { cursor: pointer; } .nt-tick .tx[data-go="true"]:hover { text-decoration: underline; text-underline-offset: 3px; }
+.nt-tick .tx:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; border-radius: 4px; }
+.nt-tick .tx.in { animation: nt-tick-in .35s ease-out; }
+@keyframes nt-tick-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .nt-tick .tx.in { animation: none; } }
+.nt-tick .ctls { display: inline-flex; align-items: center; gap: .15rem; }
+.nt-tick .ctl { all: unset; cursor: pointer; font-size: 12px; font-weight: 600; padding: .15rem .45rem; border-radius: 999px; color: var(--color-fg-muted); }
+.nt-tick .ctl:hover, .nt-tick .ctl:focus-visible { background: var(--nt-wash2); color: var(--color-fg); }
+.nt-tick .pos { font-size: 11px; color: var(--color-fg-muted); white-space: nowrap; margin-left: .2rem; }
+@media (max-width: 47.99rem) { .nt-tick:not([hidden]) { grid-template-columns: auto minmax(0, 1fr); } .nt-tick .tx { grid-column: 1 / -1; grid-row: 2; } .nt-tick .ctls { grid-column: 2; grid-row: 1; justify-self: end; } }
 .nt-bt-before > summary { cursor: pointer; color: var(--color-fg-muted); font-size: 13.5px; padding: .3rem 0; }
 .nt-bt-before[open] > summary { margin-bottom: .5rem; }
 .nt-mapsec { display: grid; gap: .5rem; margin: .8rem 0 1rem; }
@@ -2359,6 +2377,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <div class="nt-stale" id="nt-stale" hidden></div>
       <div class="nt-gl-ch" id="nt-gl-ch"></div>
       <div class="nt-next" id="nt-next"></div>
+      <div class="nt-tick" id="nt-tick" role="region" aria-label="What to watch" hidden></div>
     </section>
     <div class="nt-top">
       <div class="nt-live">
@@ -4696,7 +4715,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
     ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d); ntMoveAll(d);
-    ntGlance(d); ntExpect(d); ntBatches();
+    ntGlance(d); try { ntTicker(d); } catch (e) { /* the ticker never stops the board */ } ntExpect(d); ntBatches();
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
     ntLook(); ntSinceDraw();
@@ -4794,6 +4813,81 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     };
   }
   const ntDur = (m) => (m < 60 ? `${m} minute${m === 1 ? '' : 's'}` : `${Math.floor(m / 60)} hour${Math.floor(m / 60) === 1 ? '' : 's'}${m % 60 ? ` ${m % 60} minute${m % 60 === 1 ? '' : 's'}` : ''}`);
+  // ---------- the ticker (Jake, Nov 3, 6:55pm: "a fluidly evaluating/generative ticker" for what is next). One line at a time under the
+  // top cards, rebuilt from the board on every refresh: the next close and what is most at stake there, a county to watch with our line,
+  // the newest call, the upsets, races running off our forecast for this stage of the count, the closest race, the chances of control.
+  // Every number is the board's (CNN's count, our lines frozen before votes, the scripts' readings). This code writes the sentences from
+  // those numbers. Never Jake's own line or call.
+  var nightTick = { items: [], i: 0, paused: false, timer: null };
+  function ntTickItems(d) {
+    const out = [], st = d.story || {}, R = (nightResults || {}).races || {};
+    const rows = ntAllRows(d), byKey = Object.fromEntries(rows.map((x) => [x.key, x]));
+    const nm = (x) => ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '');
+    const sp = st.spotlight || {};
+    if (sp.kind === 'upcoming' && sp.close_iso && Date.parse(sp.close_iso) > Date.now()) {
+      const stake = (sp.states || []).flatMap((s) => ['senate_', 'gov_'].map((p) => p + s.toLowerCase())).filter((k) => byKey[k])
+        .map((k) => [k, ntImp(d, k)]).filter(([, iv]) => iv && iv.p >= 0.01).sort((a, b) => b[1].p - a[1].p).slice(0, 2);
+      out.push({ k: 'Next up', t: `${ntT(sp.close_iso)}: polls close in ${ntAnd(sp.names || sp.states || [])}.${stake.length ? ` Most at stake: ${ntAnd(stake.map(([k, iv], j) => `${nm(byKey[k])} (${j ? '' : 'decides control in '}${Math.round(iv.p * 100)}%${j ? '' : ' of our simulations'})`))}.` : ''}`, key: stake.length ? stake[0][0] : null });
+    }
+    const call = (st.events || []).find((e) => e.kind === 'call');
+    if (call) out.push({ k: 'Called', t: call.title, key: call.every || call.race_id });
+    for (const u of ntUpsets(d).slice(0, 3)) {
+      const x = u.x, ds = ntAllSide(x), rc = (x.cands || []).find((c) => c.party === 'R');
+      const who = u.side === 'D' ? (ds && (ds.last || ds.name)) || 'The Democrat' : (rc && (rc.last || rc.name)) || 'The Republican', pt = u.side === 'D' ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R';
+      out.push({ k: 'Upset watch', t: u.called ? `${nm(x)}: called for ${x.call.name || who} (${pt}), the side our forecast had as the underdog.`
+        : `${nm(x)}: ${who} (${pt}) leads by ${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)} with ${ntPct(x.counted)} counted. Our forecast had ${who} as the underdog${x.counted < 50 ? '. Early count' : ''}.`, key: x.key });
+    }
+    const sg = Object.values(R).filter((r) => r.stage && !ntBtCall(d, r.key)).sort((a, b) => Math.abs(b.stage.gap || 0) - Math.abs(a.stage.gap || 0));
+    for (const r of sg.filter((r) => r.stage.dir !== 'on').slice(0, 2)) out.push({ k: r.stage.dir === 'bluer' ? 'Running bluer' : 'Running redder', t: `${r.name} is running ${r.stage.dir} than our forecast for this stage of the count (${ntPct((r.latest || {}).counted)} counted).`, key: r.key });
+    { const on = sg.find((r) => r.stage.dir === 'on'); if (on) out.push({ k: 'On track', t: `${on.name} is on track for our forecast for this stage of the count (${ntPct((on.latest || {}).counted)} counted).`, key: on.key }); }
+    const close = rows.filter((x) => !x.call && x.margin_d != null && Math.abs(x.margin_d) < 5 && x.counted >= 20 && !x.jungle && !x.uncontested).sort((a, b) => Math.abs(a.margin_d) - Math.abs(b.margin_d))[0];
+    if (close) out.push({ k: 'Closest', t: `Closest race with a fifth or more counted: ${nm(close)}, ${ntAllNow(close)}.`, key: close.key });
+    for (const w of (d.watch_next || []).filter((w) => w.minutes > -60 && w.minutes <= 120 && (w.hinge || []).length).slice(0, 3)) {
+      const h = w.hinge[0]; if (h.our_line == null) continue;
+      out.push({ k: 'Watch', t: `${NT_STATE[w.state] || w.state}: watch ${h.county}${['LA', 'AK'].includes(w.state) ? '' : ' County'}. Our forecast there: ${ntM(h.our_line)}.${w.read_after ? ` When to look: ${w.read_after}.` : ''}`, st: w.state });
+    }
+    const co = st.control_odds || {}, hist = ntCtlHist(st);
+    if (co.senate && co.house) out.push({ k: 'Control', t: `Democrats' chance of control: Senate ${ntPct(100 * co.senate.p_d)}, House ${ntPct(100 * co.house.p_d)}.${hist.length ? ` At ${ntT(hist[0][0])} they were ${ntPct(100 * hist[0][1])} and ${ntPct(100 * hist[0][2])}.` : ''}` });
+    const called = rows.filter((x) => x.call).length, counting = rows.filter((x) => !x.call && (x.margin_d != null || x.lead)).length;
+    if (called || counting) out.push({ k: 'The count', t: `${counting} race${counting === 1 ? '' : 's'} counting and ${called} called, of ${rows.length} on the ballot.` });
+    return out;
+  }
+  function ntTicker(d) {
+    const box = $('#nt-tick'); if (!box) return;
+    nightTick.items = ntTickItems(d);
+    box.hidden = !nightTick.items.length; if (box.hidden) return;
+    if (nightTick.i >= nightTick.items.length) nightTick.i = 0;
+    if (!box.dataset.wired) {
+      box.dataset.wired = '1';
+      const lb = el('span', { class: 'lb' }), tx = el('button', { type: 'button', class: 'tx' }), pos = el('small', { class: 'pos' });
+      const step = (n) => { nightTick.i = (nightTick.i + n + nightTick.items.length) % nightTick.items.length; ntTickShow(); };
+      const prev = el('button', { type: 'button', class: 'ctl', 'aria-label': 'Previous line' }, '‹'), next = el('button', { type: 'button', class: 'ctl', 'aria-label': 'Next line' }, '›');
+      const pz = el('button', { type: 'button', class: 'ctl pz', 'aria-pressed': 'false', 'aria-label': 'Pause the ticker' }, 'Pause');
+      prev.addEventListener('click', () => step(-1)); next.addEventListener('click', () => step(1));
+      pz.addEventListener('click', () => { nightTick.paused = !nightTick.paused; pz.setAttribute('aria-pressed', String(nightTick.paused)); pz.textContent = nightTick.paused ? 'Play' : 'Pause'; pz.setAttribute('aria-label', nightTick.paused ? 'Play the ticker' : 'Pause the ticker'); });
+      tx.addEventListener('click', () => {
+        const it = nightTick.items[nightTick.i]; if (!it || !nightData) return;
+        const x = it.key && ntAllRows(nightData).find((r) => r.key === it.key);
+        if (x) ntAllPop(nightData, x); else if (it.st) ntStatePop(nightData, it.st);
+      });
+      const ctl = el('span', { class: 'ctls' }); ctl.append(prev, pz, next, pos);
+      box.append(lb, tx, ctl);
+      // the reduced-motion setting keeps the rotation (it is content, not decoration) and drops the fade
+      nightTick.timer = setInterval(() => {
+        if (nightTick.paused || document.hidden || nightTick.items.length < 2 || box.matches(':hover') || box.contains(document.activeElement)) return;
+        step(1);
+      }, 7000);
+    }
+    ntTickShow();
+  }
+  function ntTickShow() {
+    const box = $('#nt-tick'), it = nightTick.items[nightTick.i]; if (!box || !it) return;
+    const lb = box.querySelector('.lb'), tx = box.querySelector('.tx');
+    lb.textContent = it.k; lb.dataset.k = it.k;
+    if (tx.textContent !== it.t) { tx.textContent = it.t; tx.classList.remove('in'); void tx.offsetWidth; tx.classList.add('in'); }
+    tx.dataset.go = String(!!(it.key || it.st)); tx.title = it.key || it.st ? 'Open it' : '';
+    box.querySelector('.pos').textContent = `${nightTick.i + 1} of ${nightTick.items.length}`;
+  }
   function ntGlance(d) {
     const what = $('#nt-gl-what'), asof = $('#nt-gl-asof'), box = $('#nt-gl-ch'); if (!what || !asof || !box) return;
     if (!what.querySelector('.nt-q')) { const q = ntQ('glance'); if (q) what.append(q); }
