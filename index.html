@@ -1409,6 +1409,8 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-bt-srow .bar .r { background: var(--nt-r); } .nt-bt-srow .bar .d { background: var(--nt-d); } .nt-bt-srow .bar .o { background: var(--nt-jake); color: #1b1b1b; }
 .nt-bt-sub.sep { margin-top: .35rem; color: var(--color-fg); font-weight: 600; }
 .nt-bt-key i[data-c="r"] { background: var(--nt-r); } .nt-bt-key i[data-c="d"] { background: var(--nt-d); } .nt-bt-key i[data-c="o"] { background: var(--nt-jake); }
+.nt-bt-key i[data-c="now"] { background: none; border: 2px solid var(--color-fg); border-radius: 50%; width: 8px; height: 8px; } .nt-bt-key i[data-c="proj"] { background: var(--color-fg); border-radius: 50%; }
+.nt-bt-key i[data-c="past"] { background: var(--color-fg-muted); border-radius: 50%; width: 8px; height: 8px; } .nt-bt-key i[data-c="band"] { background: color-mix(in srgb, var(--nt-r) 28%, transparent); } .nt-bt-key i[data-c="ours"] { background: var(--nt-ours); transform: rotate(45deg) scale(.8); }
 .nt-bt-key i[data-c="run"] { background: var(--color-fg); height: 3px; vertical-align: 3px; } .nt-bt-key i[data-c="ref"] { background: none; border-top: 2px dashed var(--color-fg-muted); height: 0; vertical-align: 3px; }
 .nt-bt-chart h4 { margin: 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; line-height: 1.1; }
 .nt-bt-chart .ref { stroke: var(--color-fg-muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
@@ -1421,6 +1423,26 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-bt-src a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 @media (max-width: 30rem) { .nt-bt-srow { grid-template-columns: 1fr; } .nt-bt-srow .lbl { display: flex; gap: .5rem; align-items: baseline; }
   .nt-bt-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: .2rem; } .nt-bt-chips button { flex: none; } }  /* one row of states that scrolls sideways on a phone */
+.nt-bt-mp { display: block; width: 100%; max-width: 640px; height: auto; }
+.nt-bt-mp .g { stroke: var(--cds-chart-grid); } .nt-bt-mp .zero { stroke: var(--cds-chart-axis); } .nt-bt-mp .ax { fill: var(--color-fg-muted); font-size: 10px; }
+.nt-bt-mp .rl { fill: var(--color-fg-muted); font-size: 10.5px; font-weight: 600; }
+.nt-bt-mp .past { fill: var(--color-fg-muted); } .nt-bt-mp .now { fill: none; stroke: var(--color-fg); stroke-width: 2; } .nt-bt-mp .proj { fill: var(--color-fg); }
+.nt-bt-mp .band { fill: color-mix(in srgb, var(--nt-r) 28%, transparent); } .nt-bt-mp .ours { fill: var(--nt-ours); stroke: var(--color-panel); stroke-width: 1.5; }
+.nt-bt-mp .pl { fill: var(--color-fg); font-size: 10.5px; font-weight: 600; } .nt-bt-mp .pl.mute { fill: var(--color-fg-muted); font-weight: 500; } .nt-bt-mp .ours-t { fill: var(--nt-ours); }
+.nt-bt-why { margin: 0; padding-left: 1.1rem; display: grid; gap: .25rem; font-size: 13.5px; line-height: 1.45; max-width: 78ch; }
+.nt-bt-det > summary, .nt-bt-add > summary { cursor: pointer; font-size: 13px; color: var(--color-fg-muted); padding: .35rem 0; min-height: 24px; }
+.nt-bt-det > summary:focus-visible, .nt-bt-add > summary:focus-visible, .nt-bt-race > summary:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-bt-det[open] > .nt-bt-body { margin-top: .4rem; }
+.nt-bt-list { display: grid; gap: .35rem; }
+.nt-bt-race > summary { list-style: none; cursor: pointer; display: grid; gap: .25rem; min-height: 24px; }
+.nt-bt-race > summary .top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .2rem .6rem; }
+.nt-bt-race > summary::-webkit-details-marker { display: none; }
+.nt-bt-race > summary .nm { font-family: var(--font-display); font-weight: 800; font-size: 1.02rem; } .nt-bt-race > summary .nm small { font-family: var(--font-text); font-weight: 500; font-size: 12.5px; color: var(--color-fg-muted); }
+.nt-bt-race .chip { font-size: 12px; font-weight: 600; padding: .05rem .55rem; border-radius: 999px; white-space: nowrap; color: var(--color-fg-muted); background: var(--nt-wash2); }
+.nt-bt-race .chip[data-s="over"] { color: var(--nt-jake); background: color-mix(in srgb, var(--nt-jake) 16%, transparent); }
+.nt-bt-race .chip[data-s="short"], .nt-bt-race .chip[data-s="called"] { color: var(--color-fg); }
+.nt-bt-say { display: block; margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--color-fg); }
+.nt-bt-rbody { display: grid; gap: .35rem; margin-top: .3rem; }
 .nt-bt-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .3rem .6rem; align-items: center; }
 .nt-bt-entry label { grid-column: 1 / -1; font-size: 12.5px; color: var(--color-fg-muted); }
 .nt-bt-entry input { font: inherit; font-size: 1rem; padding: .5rem .75rem; border-radius: 6px; border: 1px solid var(--cds-border); background: var(--color-panel); color: var(--color-fg); min-width: 0; }
@@ -2276,12 +2298,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     <section class="nt-impact" id="nt-impact" aria-label="Most impactful so far"></section>
     <section class="nt-batches" id="nt-batches" aria-label="Vote batches" hidden>
       <div class="nt-bt-body" id="nt-bt-body"></div>
-      <form class="nt-bt-entry" id="nt-bt-form" autocomplete="off" hidden>
+      <details class="nt-bt-add" id="nt-bt-add" hidden><summary>Add a report by hand</summary>
+      <form class="nt-bt-entry" id="nt-bt-form" autocomplete="off">
         <label for="nt-bt-input">Next report, cumulative: FL 10:28am GOP DEM NPA other. Or the batch itself with + signs. void B007 withdraws a report.</label>
         <input id="nt-bt-input" type="text" spellcheck="false" placeholder="FL 10:28am 348000 181000 141000 20000" aria-describedby="nt-bt-echo">
         <button type="submit" id="nt-bt-save">Save</button>
         <p class="nt-bt-echo" id="nt-bt-echo" aria-live="polite">The script checks the numbers and does the arithmetic. Claude can add one from the terminal too: scripts/night_batches.py add "…".</p>
       </form>
+      </details>
     </section>
     <section class="nt-mapsec" id="nt-map" aria-label="The map" hidden></section>
     <section class="nt-results" id="nt-results" aria-label="Results">
@@ -3796,7 +3820,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   var nightData = null, nightTimers = null, nightPrevTheme, nightLoad = null, nightLastMinute = null, nightParseSeq = 0, nightClosed = new Set(), nightOpened = new Set();
   var nightSeen = null, nightNew = {}, nightHealth = null, nightSort = null, nightClaims = null, nightPaused = false, nightSig = null, nightDrawnAt = 0;
   var nightBatches = null, nightBatchSeq = 0, nightBatchAll = false;  // the Election Day vote batches file (scripts/night_batches.py, Nov 3)
-  var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtHouseAll = false;  // every race's count batch by batch (scripts/night_results_batches.py), and the last good text of each file
+  var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtAllRaces = false, nightBtDetOpen = false;
+  const nightBtOpen = new Set();  // races whose batches are unfolded, kept across the 30-second redraws  // every race's count batch by batch (scripts/night_results_batches.py), and the last good text of each file
   var nightView = 'results';  // the old Deep dive now lives in Evidence's Night details (Nov 2 evening), so the night tab has one view
   var nightMode = (() => { if (ntRO()) return 'live'; try { return localStorage.getItem('nt-mode') === 'practice' ? 'practice' : 'live'; } catch (e) { return 'live'; } })();  // live or practice
   // The public copy (GitHub Pages, scripts/build_share.py --standalone, Nov 2 late): read only, its numbers in files beside
@@ -4998,7 +5023,6 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const ntBtUrl = (u) => (typeof u === 'string' && /^https?:\/\//.test(u) ? u : null);  // only web links become links (review, Nov 3)
   const NT_BT_FLAG = { correction: 'a running total fell (a county correction), so not a batch of new votes', source_change: 'the source changed, so the difference is not a batch', total_mismatch: 'the parties do not add up to the total given',
     side_missing: 'one of the two leading candidates was missing from that read, so its split is unknown' };
-  const NT_BT_HOUSE = 6;  // House races shown per state before the button
   function ntBtSvg(W, H) { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', `0 0 ${W} ${H}`); s.setAttribute('role', 'img'); return s; }
   function ntBtEl(tag, attrs, parent, text) { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.append(e); return e; }
   function ntBtTicks(lo, hi, n) {
@@ -5059,17 +5083,55 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     svg.setAttribute('aria-label', `Voters added in the last ${B.length} reports. ${B.map((b) => `${b.time_text}: ${b.batch.gop_pct == null ? 'not a batch' : ntBtNum(b.batch.total) + ' voters'}`).join('. ')}.`);
     return svg;
   }
-  function ntBtTile(label, big, sub, p) {
-    const t = el('div', { class: 'nt-bt-tile', 'data-p': p || '' });
-    t.append(el('div', { class: 'lbl' }, label), el('div', { class: 'big' }, big), el('div', { class: 'sub' }, sub));
-    return t;
-  }
+
   function ntBtKey(pairs) { const k = el('div', { class: 'nt-bt-key' }); for (const [cls, lab] of pairs) { const sp = el('span'); sp.append(el('i', { 'data-c': cls }), lab); k.append(sp); } return k; }
-  function ntBtTurnout(box, s, f) {  // one state's voters through the day, by registration (scripts/night_batches.py)
-    const reps = s.reports, L = s.latest, C = s.compare || {};
-    box.append(ntHead(el('h3', { class: 'nt-bt-h' }, s.title), 'batches', el('small', {}, `${s.n} report${s.n === 1 ? '' : 's'}, latest ${L.time_text} ET`)));
-    const lines = C.lines || [];
-    if (lines.length) { const lede = el('p', { class: 'nt-bt-lede' }); lede.append(el('b', {}, lines[0]), ' ', lines[2] || ''); box.append(lede); }
+  // Florida's turnout read as meaning first (Jake, Nov 3: "I can read the numbers, I want to know what they mean"): two rows on one
+  // axis. Top, who is voting: the registration gap now, where it lands if Election Day ends like 2022's, and each year's final.
+  // Bottom, the Senate race: the range turnout implies, each year's result, and our forecast. Every number is the script's (reading()).
+  function ntBtMeansPlot(m) {
+    const W = 360, H = 176, l = 14, r = 14, rows = [58, 136];
+    const pts = [m.gap_now, m.gap_proj, m.ours, ...m.range, ...m.past.flatMap((p) => [p.gap, p.margin])];
+    const lo = Math.min(0, Math.floor(Math.min(...pts) / 5) * 5), hi = Math.ceil(Math.max(...pts) / 5) * 5 + 1;
+    const x = (v) => l + (v - lo) / (hi - lo) * (W - l - r);
+    const svg = ntBtSvg(W, H); svg.classList.add('nt-bt-mp');
+    for (let v = lo; v <= hi; v += 5) { ntBtEl('line', { x1: x(v), x2: x(v), y1: 24, y2: H - 16, class: v === 0 ? 'zero' : 'g' }, svg); ntBtEl('text', { x: x(v), y: H - 3, 'text-anchor': 'middle', class: 'ax' }, svg, v === 0 ? 'even' : `R+${v}`); }
+    ntBtEl('text', { x: l, y: 13, class: 'rl' }, svg, 'Who is voting: Republicans minus Democrats, registered');
+    ntBtEl('text', { x: l, y: 92, class: 'rl' }, svg, 'The Senate race: the result');
+    // labels step aside: a label that would sit on another one in the same row flips to the other side of its dot, then nudges
+    const placed = [];
+    const label = (v, y, text, up, cls) => {
+      let side = up, tx = x(v);
+      const clash = (s2, xx) => placed.some((q) => q.row === y && q.side === s2 && Math.abs(q.x - xx) < 24);
+      if (clash(side, tx)) side = !side;
+      if (clash(side, tx)) tx += placed.filter((q) => q.row === y && q.side === side && Math.abs(q.x - tx) < 24).length * 22;
+      placed.push({ row: y, side, x: tx });
+      ntBtEl('text', { x: tx, y: side ? y - 11 : y + 19, 'text-anchor': 'middle', class: cls }, svg, text);
+    };
+    const yr = (p) => `'${String(p.year).slice(2)}`;
+    ntBtEl('circle', { cx: x(m.gap_now), cy: rows[0], r: 6, class: 'now' }, svg); label(m.gap_now, rows[0], 'now', true, 'pl');
+    ntBtEl('circle', { cx: x(m.gap_proj), cy: rows[0], r: 6, class: 'proj' }, svg); label(m.gap_proj, rows[0], 'by close', true, 'pl');
+    for (const p of [...m.past].sort((a2, b2) => a2.gap - b2.gap)) { ntBtEl('circle', { cx: x(p.gap), cy: rows[0], r: 4, class: 'past' }, svg); label(p.gap, rows[0], yr(p), false, 'pl mute'); }
+    ntBtEl('rect', { x: x(m.range[0]), y: rows[1] - 9, width: Math.max(2, x(m.range[1]) - x(m.range[0])), height: 18, rx: 4, class: 'band' }, svg);
+    ntBtEl('path', { d: `M${x(m.ours)},${rows[1] - 9} l7,9 l-7,9 l-7,-9 z`, class: 'ours' }, svg); label(m.ours, rows[1], 'ours', true, 'pl ours-t');
+    for (const p of [...m.past].sort((a2, b2) => a2.margin - b2.margin)) { ntBtEl('circle', { cx: x(p.margin), cy: rows[1], r: 4, class: 'past' }, svg); label(p.margin, rows[1], yr(p), false, 'pl mute'); }
+    svg.setAttribute('aria-label', m.lines.slice(0, 3).join(' '));
+    return svg;
+  }
+  function ntBtPlotKey() { return ntBtKey([['now', 'Now'], ['proj', 'If Election Day ends like 2022'], ['past', 'A past year'], ['band', 'What turnout implies'], ['ours', 'Our forecast']]); }
+  function ntBtTurnout(box, s, f, compact) {  // one state's voters through the day: the reading first, the numbers folded under Details. Compact (once the count is in): the reading's first line only
+    const reps = s.reports, L = s.latest, C = s.compare || {}, M = C.means;
+    box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, `${s.name}: who has voted today`), el('small', {}, `as of ${L.time_text} ET, ${ntBtNum(L.cum.total)} Election Day voters`)]));
+    const why = M ? el('div', { class: 'nt-bt-body' }) : null;
+    if (M) {
+      box.append(ntKids('p', { class: 'nt-bt-lede' }, [el('b', {}, M.lines[0])]));
+      const ul = el('ul', { class: 'nt-bt-why' }); for (const l of M.lines.slice(1, 4)) ul.append(el('li', {}, l));
+      why.append(ntBtMeansPlot(M), ntBtPlotKey(), ul, el('p', { class: 'nt-bt-sub' }, M.lines[4] || ''));
+      if (!compact) box.append(why);
+    } else if ((C.lines || []).length) box.append(el('p', { class: 'nt-bt-lede' }, ntKids('span', {}, [el('b', {}, C.lines[0]), ' ', C.lines[2] || ''])));
+    const det = el('details', { class: 'nt-bt-det', 'data-fk': 'bt:det' });
+    det.append(el('summary', {}, 'Details: who voted, report by report'));
+    const inner = el('div', { class: 'nt-bt-body' });
+    if (compact && why) inner.append(why);
     const cmp = el('div', { class: 'nt-bt-cmp' });
     cmp.append(ntBtShareRow('Today so far', L.run, `${ntBtNum(L.cum.total)} voters, Election Day`, true));
     for (const y of C.eday || []) cmp.append(ntBtShareRow(`${y.year}`, y, `the whole Election Day, ${ntBtNum(y.votes)} voters`));
@@ -5079,55 +5141,46 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       for (const y of C.all || []) cmp.append(ntBtShareRow(`${y.year}`, y, `final, ${ntBtNum(y.votes)} votes`));
     }
     cmp.append(ntBtKey([['r', 'Republicans'], ['d', 'Democrats'], ['o', 'Others (no party and minor parties)']]));
-    box.append(cmp);
-    for (const l of lines.slice(1, 2).concat(lines.slice(3))) box.append(el('p', { class: 'nt-bt-sub' }, l));
-    const t1 = el('div', { class: 'nt-bt-tiles' });
-    const lb = L.batch, nb = lb.gop_pct == null;
-    if (reps.length > 1) {  // the first report is the whole day so far, which the bars above already show
-      t1.append(ntBtTile('Latest report', nb ? 'not a batch' : ntBtNum(lb.total), nb ? NT_BT_FLAG[L.flags[0]] || '' : `voters added since ${reps[reps.length - 2].time_text}, as of ${L.time_text}`),
-        ntBtTile('Republicans', nb ? '—' : ntBtPct(lb.gop_pct), 'of that batch', 'gop'),
-        ntBtTile('Democrats', nb ? '—' : ntBtPct(lb.dem_pct), 'of that batch', 'dem'),
-        ntBtTile('Others', nb ? '—' : ntBtPct(lb.oth_pct), 'of that batch', 'oth'));
-      box.append(t1);
-    }
+    inner.append(cmp);
+    for (const l of (C.lines || []).slice(1)) inner.append(el('p', { class: 'nt-bt-sub' }, l));
     if (reps.length > 1) {
       const charts = el('div', { class: 'nt-bt-charts' });
       const c1 = el('div', { class: 'nt-bt-chart' }), c2 = el('div', { class: 'nt-bt-chart' });
-      c1.append(el('h4', {}, 'Who voted in each report'), el('p', { class: 'n' }, `The last ${Math.min(NT_BT_LAST, reps.length)} reports. The lines are the Republican share of the whole Election Day in 2022 and 2024.`),
+      c1.append(el('h4', {}, 'Who voted in each report'), el('p', { class: 'n' }, `The last ${Math.min(NT_BT_LAST, reps.length)} reports. The lines are the Republican share of each year's whole Election Day.`),
         ntBtKey([['r', 'Republicans'], ['d', 'Democrats'], ['o', 'Others'], ['ref', 'A year\'s Election Day']]), ntBtMixChart(reps, C.eday));
       c2.append(el('h4', {}, 'Voters added in each report'), el('p', { class: 'n' }, 'The pace of the day: new voters since the report before.'),
         ntBtKey([['r', 'Republicans'], ['d', 'Democrats'], ['o', 'Others']]), ntBtVotesChart(reps));
-      charts.append(c1, c2); box.append(charts);
+      charts.append(c1, c2); inner.append(charts);
     }
-    const tw = el('div', { class: 'nt-scroll' });
-    const tbl = el('table', { class: 'nt-table nt-bt-table' });
-    const hr = el('tr'); for (const h of ['Report', 'Time', 'Voters added', 'Rep', 'Dem', 'Other', 'Voters so far', 'Rep so far', 'Dem so far']) hr.append(el('th', {}, h));
+    const tw = el('div', { class: 'nt-scroll' }), tbl = el('table', { class: 'nt-table nt-bt-table' }), hr = el('tr');
+    for (const h of ['Report', 'Time', 'Voters added', 'Rep', 'Dem', 'Other', 'Voters so far', 'Rep so far', 'Dem so far']) hr.append(el('th', {}, h));
     tbl.append(ntKids('thead', {}, [hr]));
     const tb = el('tbody');
-    const shown = nightBatchAll ? [...reps].reverse() : [...reps].reverse().slice(0, NT_BT_ROWS);
-    for (const b of shown) {
+    for (const b of (nightBatchAll ? [...reps].reverse() : [...reps].reverse().slice(0, NT_BT_ROWS))) {
       const tr = el('tr', { 'data-latest': String(b.id === L.id) }), nob = b.batch.gop_pct == null;
       if (b.flags.length) tr.dataset.flag = b.flags.join(' ');
       for (const [v, c] of [[String(b.report), ''], [b.time_text + (b.time_assumed ? '*' : ''), ''], [nob ? 'not a batch' : ntBtNum(b.batch.total), ''], [ntBtPct(b.batch.gop_pct), 'g'], [ntBtPct(b.batch.dem_pct), 'dd'], [ntBtPct(b.batch.oth_pct), 'o'],
         [ntBtNum(b.cum.total), ''], [ntBtPct(b.run.gop_pct), 'g'], [ntBtPct(b.run.dem_pct), 'dd']]) tr.append(el('td', c ? { class: c } : {}, v));
       tb.append(tr);
     }
-    tbl.append(tb); tw.append(tbl); box.append(tw);
+    tbl.append(tb); tw.append(tbl); inner.append(tw);
     if (reps.length > NT_BT_ROWS) {
       const more = el('button', { type: 'button', class: 'nt-bt-more', 'data-fk': 'bt:more', 'aria-expanded': String(nightBatchAll) }, nightBatchAll ? `Show the last ${NT_BT_ROWS}` : `Show all ${reps.length} reports`);
       more.addEventListener('click', () => { nightBatchAll = !nightBatchAll; ntKeepFocus(ntBatches); });
-      box.append(more);
+      inner.append(more);
     }
-    for (const k of Object.keys(NT_BT_FLAG)) { const n = reps.filter((r) => r.flags.includes(k)).length; if (n) box.append(el('p', { class: 'nt-bt-sub' }, `${n} report${n === 1 ? '' : 's'}: ${NT_BT_FLAG[k]}.`)); }
+    for (const k of Object.keys(NT_BT_FLAG)) { const n = reps.filter((r) => r.flags.includes(k)).length; if (n) inner.append(el('p', { class: 'nt-bt-sub' }, `${n} report${n === 1 ? '' : 's'}: ${NT_BT_FLAG[k]}.`)); }
     const srcP = el('p', { class: 'nt-bt-src' });
-    srcP.append('Newest first. Times are the source\'s own update times (ET). * means no time was given and the time typed in is used. Source: ');
+    srcP.append('Source: ');
     s.sources.forEach((x, i) => { srcP.append(ntBtLink(x.source || 'hand entry', x.url)); if (i < s.sources.length - 1) srcP.append('; '); });
     const fd = s.feed;
-    if (fd) srcP.append(fd.ok ? `. Read every ${fd.every_minutes || 10} minutes: last read ${ntT(fd.ok_at)}${fd.updated ? `, the page updated ${ntT(fd.updated)}` : ''}${fd.counties && fd.counties_eday !== fd.counties ? `, ${fd.counties_eday} of ${fd.counties} counties with Election Day votes` : ''}`
-      : `. The last read at ${ntT(fd.tried_at)} failed (${fd.result}). ${fd.ok_at ? `The numbers above are from the read at ${ntT(fd.ok_at)}` : ''}`);
-    if ((C.eday || []).length) { srcP.append('. 2022 and 2024 from the same site\'s pages: '); C.eday.forEach((y, i) => { srcP.append(ntBtLink(String(y.year), y.url)); if (i < C.eday.length - 1) srcP.append(', '); }); }
+    if (fd) srcP.append(fd.ok ? `. Read every ${fd.every_minutes || 10} minutes: last read ${ntT(fd.ok_at)}${fd.updated ? `, the page updated ${ntT(fd.updated)}` : ''}` : `. The last read at ${ntT(fd.tried_at)} failed (${fd.result}).${fd.ok_at ? ` The numbers are from ${ntT(fd.ok_at)}` : ''}`);
+    if (M) { srcP.append('. Past results: '); M.past.forEach((p, i) => { srcP.append(ntBtLink(`${p.year} Senate`, p.url)); if (i < M.past.length - 1) srcP.append(', '); }); srcP.append(`. Our forecast: ${M.ours_source || 'the closing call'}`); }
     srcP.append(`. Built ${ntT(f.built_at)} ET.`);
-    box.append(srcP);
+    inner.append(srcP);
+    det.append(inner);
+    det.open = !!nightBtDetOpen; det.addEventListener('toggle', () => { nightBtDetOpen = det.open; });
+    box.append(det);
   }
   // after the polls close: every race's count, batch by batch (scripts/night_results_batches.py, data/dashboard/night_results.json)
   function ntBtSide(r, side) { const x = (r.sides || {})[side] || {}; return x.name ? `${x.name}${x.party ? ' (' + x.party + ')' : ''}` : side === 'a' ? 'Democrat' : 'Republican'; }
@@ -5153,90 +5206,68 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     svg.setAttribute('aria-label', `${r.name}, the last ${B.length} batches. ${B.map((b) => `${b.time_text}: ${b.margin_d == null ? 'not a batch' : ntBtNum(b.votes) + ' votes, ' + ntM(b.margin_d)}, running ${ntM(b.run_margin_d)}`).join('. ')}.${r.our_line != null ? ` Our forecast: ${ntM(r.our_line)}.` : ''}`);
     return svg;
   }
-  function ntBtNeed(r) {
-    const n = r.need; if (!n || n.share_needed == null) return '';
-    const who = n.trailer === 'b' ? ntBtSide(r, 'b') : n.trailer === 'a' ? ntBtSide(r, 'a') : n.trailer;
-    return n.share_needed > 100 || (n.flags || []).includes('not_reachable') ? `${who} cannot catch up on CNN's estimate of the votes left.`
-      : `${who} needs ${n.share_needed.toFixed(1)}% of the two-way vote still out to tie (about ${ntBtNum(n.remaining_est)} votes left, ${n.basis || "CNN's estimate"}).`;
+
+  // after the polls close: one line per race that says where its count is heading (pace() in night_results_batches.py),
+  // across every state, the closest finishes first. A race's chart and batches fold under its line.
+  const NT_BT_SHOW = 4;
+  function ntBtCall(d, key) { const ev = d.every || {}; const x = [...(ev.senate || []), ...(ev.governor || []), ...(ev.house || [])].find((y) => y.key === key); return x && x.call && x.call.winner ? x.call : null; }
+  function ntBtRank(d, r) {  // smaller is more worth a look: an uncalled race finishing close, then one still early, then the rest
+    const p = r.pace || {}, imp = (((d.story || {}).importance || {})[r.key] || {}).p || 0;
+    if (ntBtCall(d, r.key)) return 1000 - imp;
+    if (p.final_margin != null) return Math.abs(p.final_margin) - 10 * imp;
+    return 100 - 100 * imp;
   }
-  function ntBtRace(d, r, full) {
-    const L = r.latest || r.batches[r.batches.length - 1], wrap = el('div', { class: 'nt-bt-race' });
-    const btn = el('button', { type: 'button', class: 'nt-bt-rname', 'data-fk': `btr:${r.key}`, 'aria-label': `${r.name}. Open this race.` }, r.name);
-    btn.addEventListener('click', () => ntXOpen(d, r.key));
-    wrap.append(ntKids('div', { class: 'nt-bt-rhead' }, [btn, el('small', {}, `${r.n} batch${r.n === 1 ? '' : 'es'}, latest ${L.time_text}, counts from ${r.source}`)]));
-    const p = el('p', { class: 'nt-bt-lede' });
-    p.append(L.margin_d == null ? `Latest: not a batch (${(L.flags || []).map((x) => NT_BT_FLAG[x] || x).join(', ')}). ` : ntKids('span', {}, ['Latest batch: ', el('b', {}, ntBtNum(L.votes)), ' votes, ', el('b', { class: L.margin_d > 0 ? 'nt-d' : L.margin_d < 0 ? 'nt-r' : '' }, ntM(L.margin_d)), '. ']),
-      'Running: ', el('b', {}, ntM(L.run_margin_d)), L.counted != null ? ` with ${Math.round(L.counted)}% counted.` : '.', r.our_line != null ? ` We expected ${ntM(r.our_line)}.` : '');
-    wrap.append(p);
-    const need = ntBtNeed(r); if (need) wrap.append(el('p', { class: 'nt-bt-sub' }, need));
-    if (r.check && r.check.run_margin_d != null) wrap.append(el('p', { class: 'nt-bt-sub' }, `Shown from ${r.source}. ${r.check.source} has it at ${ntM(r.check.run_margin_d)} as of ${r.check.time_text}${r.check.counted != null ? `, ${Math.round(r.check.counted)}% counted` : ''}.`));
-    if (full && r.batches.length > 1) {
+  function ntBtRace(d, r) {
+    const L = r.latest || r.batches[r.batches.length - 1], p = r.pace || {}, call = ntBtCall(d, r.key);
+    const wrap = el('details', { class: 'nt-bt-race', 'data-fk': `btr:${r.key}` });
+    if (nightBtOpen.has(r.key)) wrap.open = true;
+    wrap.addEventListener('toggle', () => { if (wrap.open) nightBtOpen.add(r.key); else nightBtOpen.delete(r.key); });
+    const sum = el('summary');
+    const tn = (r.need || {}).trailer_name ? String(r.need.trailer_name).split(' ').pop() : 'The trailer';
+    const chip = call ? ['called', `Called: ${(call.name || call.winner).split(',')[0]}`] : p.on_pace === true ? ['over', `${tn} on pace to overtake`] : p.on_pace === false ? ['short', `${tn} falling short`] : (p.lines || [])[0] && /^Early/.test(p.lines[0]) ? ['early', 'Early'] : ['wait', 'Counting'];
+    const say = call ? [`Called for ${(call.name || call.winner).split(',')[0]}. The count stands at ${ntM(L.run_margin_d)}${L.counted != null ? ` with ${Math.round(L.counted)}% counted` : ''}${r.our_line != null ? `. We expected ${ntM(r.our_line)}` : ''}.`] : (p.lines || []).slice(0, 2);
+    sum.append(ntKids('span', { class: 'top' }, [ntKids('span', { class: 'nm' }, [r.name, el('small', {}, ` ${ntM(L.run_margin_d)}${L.counted != null ? `, ${Math.round(L.counted)}% in` : ''}`)]), el('span', { class: 'chip', 'data-s': chip[0] }, chip[1])]));
+    if (say.length) sum.append(el('span', { class: 'nt-bt-say' }, say.join(' ')));  // the meaning shows without opening the race
+    wrap.append(sum);
+    const body = el('div', { class: 'nt-bt-rbody' });
+    if (!call && (p.lines || [])[2]) body.append(el('p', { class: 'nt-bt-sub' }, p.lines[2]));
+    body.append(el('p', { class: 'nt-bt-sub' }, `Latest batch at ${L.time_text}: ${L.margin_d == null ? `not a batch (${(L.flags || []).map((x) => NT_BT_FLAG[x] || x).join(', ')})` : `${ntBtNum(L.votes)} votes, ${ntM(L.margin_d)}`}. Counts from ${r.source}.${r.check && r.check.run_margin_d != null ? ` ${r.check.source} has it at ${ntM(r.check.run_margin_d)} as of ${r.check.time_text}.` : ''}`));
+    if (r.batches.length > 1) {
       const c = el('div', { class: 'nt-bt-chart' });
       c.append(ntBtKey([['d', `${ntBtSide(r, 'a')} won the batch`], ['r', `${ntBtSide(r, 'b')} won the batch`], ['run', 'Running margin'], ['ref', 'Our forecast']]), ntBtResultChart(r));
-      wrap.append(c);
-      const tw = el('div', { class: 'nt-scroll' }), tbl = el('table', { class: 'nt-table nt-bt-table' }), hr = el('tr');
-      for (const h of ['Time', 'Votes added', 'Batch', 'Running', 'Counted']) hr.append(el('th', {}, h));
-      tbl.append(ntKids('thead', {}, [hr]));
-      const tb = el('tbody');
-      for (const b of [...r.batches].reverse().slice(0, NT_BT_ROWS)) {
-        const tr = el('tr', { 'data-latest': String(b === L) }); if ((b.flags || []).length) tr.dataset.flag = b.flags.join(' ');
-        for (const [v, c2] of [[b.time_text, ''], [b.margin_d == null ? 'not a batch' : ntBtNum(b.votes), ''], [ntM(b.margin_d), 'm'], [ntM(b.run_margin_d), 'm'], [b.counted == null ? '—' : Math.round(b.counted) + '%', '']]) tr.append(el('td', c2 ? { class: c2 } : {}, v));
-        tb.append(tr);
-      }
-      tbl.append(tb); tw.append(tbl); wrap.append(tw);
+      body.append(c);
     }
+    const open = el('button', { type: 'button', class: 'nt-bt-more' }, 'Open the race');
+    open.addEventListener('click', () => ntXOpen(d, r.key));
+    body.append(open);
+    wrap.append(body);
     return wrap;
-  }
-  function ntBtStates(f, R) {  // the states with anything to show: turnout first, then by the newest results batch
-    const out = new Map();
-    for (const st of (f && f.order) || []) if (f.states[st] && f.states[st].n) out.set(st, '');
-    const races = Object.values((R && R.races) || {}).filter((r) => r && r.n && r.state);
-    races.sort((a, b) => String((b.latest || {}).at || '').localeCompare(String((a.latest || {}).at || '')));
-    for (const r of races) if (!out.has(r.state)) out.set(r.state, (r.latest || {}).at || '');
-    return [...out.keys()];
   }
   function ntBatches() {
     const sec = $('#nt-batches'), box = $('#nt-bt-body'); if (!sec || !box) return;
-    const f = nightBatches, R = nightResults;
-    let states = [];
-    try { states = ntBtStates(f, R); } catch (e) { states = []; }
-    sec.hidden = !states.length || nightMode === 'practice' && !(R && Object.keys(R.races || {}).length);
+    const f = nightBatches, R = nightResults, d = nightData || {};
+    const races = Object.values((R && R.races) || {}).filter((r) => r && r.n && r.latest);
+    const fl = f && f.states && Object.values(f.states).find((s) => s && s.n);
+    sec.hidden = (!fl && !races.length) || (nightMode === 'practice' && !races.length);
     const jb = document.querySelector('#nt-jump button[data-to="nt-batches"]'); if (jb) jb.hidden = sec.hidden;  // no jump button to a card that is not there
     if (sec.hidden) return;
-    const form = $('#nt-bt-form'); if (form) { form.hidden = ntRO() || nightMode === 'practice'; ntBtWire(); }
+    const form = $('#nt-bt-add'); if (form) { form.hidden = ntRO() || nightMode === 'practice'; ntBtWire(); }
     try {
       box.replaceChildren(ntHead(el('h2', {}, 'Vote batches'), 'batches'));
-      box.append(el('p', { class: 'nt-bt-sub' }, 'Who has voted through the day, then the count batch by batch as the results come in.'));
-      let pick = null; try { pick = localStorage.getItem('nt-bt-state'); } catch (e) { pick = null; }
-      if (!states.includes(pick)) pick = states[0];
-      if (states.length > 1) {
-        const chips = el('div', { class: 'nt-bt-chips', role: 'group', 'aria-label': 'Pick a state' });
-        for (const st of states) {
-          const b = el('button', { type: 'button', 'aria-pressed': String(st === pick), 'data-fk': `bts:${st}` }, NT_STATE[st] || st);
-          b.addEventListener('click', () => { try { localStorage.setItem('nt-bt-state', st); } catch (e) { /* the pick lasts until a reload */ } ntKeepFocus(ntBatches); });
-          chips.append(b);
-        }
-        box.append(chips);
-        const on = chips.querySelector('[aria-pressed="true"]'); if (on) chips.scrollLeft = Math.max(0, on.offsetLeft - chips.offsetLeft - 16);  // the picked state in view on a phone's scrolling row
-      }
-      const s = f && f.states && f.states[pick];
-      if (s && s.n) ntBtTurnout(box, s, f);
-      const races = Object.values((R && R.races) || {}).filter((r) => r && r.n && r.state === pick);
       if (races.length) {
-        const rank = { senate: 0, governor: 1, house: 2 };
-        races.sort((a, b) => (rank[a.office] ?? 3) - (rank[b.office] ?? 3) || String(a.key).localeCompare(String(b.key)));
-        box.append(el('h3', { class: 'nt-bt-h' }, `${NT_STATE[pick] || pick}: the count, batch by batch`));
-        const statewide = races.filter((r) => r.office !== 'house'), house = races.filter((r) => r.office === 'house');
-        house.sort((a, b) => String((b.latest || {}).at || '').localeCompare(String((a.latest || {}).at || '')));  // the House seats with the newest batches first
-        for (const r of statewide) box.append(ntBtRace(nightData, r, true));
-        for (const r of nightBtHouseAll ? house : house.slice(0, NT_BT_HOUSE)) box.append(ntBtRace(nightData, r, false));
-        if (house.length > NT_BT_HOUSE) {
-          const more = el('button', { type: 'button', class: 'nt-bt-more', 'data-fk': 'bt:house', 'aria-expanded': String(nightBtHouseAll) }, nightBtHouseAll ? `Show the newest ${NT_BT_HOUSE} House races` : `Show all ${house.length} House races`);
-          more.addEventListener('click', () => { nightBtHouseAll = !nightBtHouseAll; ntKeepFocus(ntBatches); });
+        races.sort((a, b) => ntBtRank(d, a) - ntBtRank(d, b));
+        box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, 'The count: where each race is heading'), el('small', {}, `${races.length} races, built ${ntT(R.built_at)} ET`)]));
+        const list = el('div', { class: 'nt-bt-list' });
+        for (const r of nightBtAllRaces ? races : races.slice(0, NT_BT_SHOW)) list.append(ntBtRace(d, r));
+        box.append(list);
+        if (races.length > NT_BT_SHOW) {
+          const more = el('button', { type: 'button', class: 'nt-bt-more', 'data-fk': 'bt:races', 'aria-expanded': String(nightBtAllRaces) }, nightBtAllRaces ? `Show the ${NT_BT_SHOW} closest` : `Show all ${races.length} races`);
+          more.addEventListener('click', () => { nightBtAllRaces = !nightBtAllRaces; ntKeepFocus(ntBatches); });
           box.append(more);
         }
-        box.append(el('p', { class: 'nt-bt-src' }, `${R.label || ''} Built ${ntT(R.built_at)} ET.`));
-      } else if (s && s.n) box.append(el('p', { class: 'nt-bt-sub' }, `When the polls close, ${NT_STATE[pick] || pick}'s count shows here batch by batch, under who voted today.`));
+        box.append(el('p', { class: 'nt-bt-src' }, `${R.label || ''} Pace is the trailing side's share of the newest ${3} batches against the share it needs of the votes left, on CNN's estimate of the expected vote.`));
+      }
+      if (fl && nightMode !== 'practice') ntBtTurnout(box, fl, f, races.length > 0);
     } catch (e) {  // a file of the wrong shape hides this card and never stops the rest of the board drawing (review, Nov 3)
       box.replaceChildren(); sec.hidden = true; if (jb) jb.hidden = true;
     }
@@ -5617,6 +5648,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Solid color is a called seat. A lighter color is a lead in the count. Gray has no votes yet. Tap a seat for its whole story. The button widens the list from seats 210 to 226 to seats 200 to 240.',
       'Our chances are our Nov 2 forecast. Counts and calls come from CNN.'] },
     batches: { title: 'Vote batches', body: [
+      'The card leads with what the numbers mean, written by a script with its assumptions stated. The numbers themselves are under Details.',
       'Before the polls close: who has voted today in Florida, by voter registration. Fresh Take Florida (freshtake.vote) posts each county\'s Election Day, early and mail votes by party and updates them through the day. The board reads it every 10 minutes and adds up the 67 counties. Each read is a report. A batch is the change from the report before.',
       'Party here is the voter\'s registration, not how they voted. A registered Republican who votes for a Democrat still counts as a Republican. So these are shares of the people voting, not a vote margin, and the card never shows one.',
       'To say whether a share is normal, it sits beside Florida\'s whole Election Day in 2022 and 2024, from the same site. Who votes on the day also depends on how many voted early or by mail, so the card shows every vote so far too.',
