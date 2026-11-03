@@ -3960,7 +3960,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const ul2 = el('ol', { class: 'nt-imp-l' });
     for (const s of sur.slice(0, 6)) {
       const li = el('li', { role: 'button', tabindex: '0' });
-      li.append(el('b', {}, s.name), el('span', {}, s.kind === 'upset' ? `The side we gave ${Math.round(100 * s.chance_before)}% won.` : `Democrats ${Math.round(100 * s.chance_before)}% before votes, ${Math.round(100 * s.chance_now)}% now.`));
+      li.append(el('b', {}, s.name), el('span', {}, s.kind === 'upset' ? `The side we gave ${Math.round(100 * s.chance_before)}% won.` : s.kind === 'other way' ? `Went the other way. We had them at ${Math.round(100 * s.chance_before)}%.` : `Democrats ${Math.round(100 * s.chance_before)}% before votes, ${Math.round(100 * s.chance_now)}% now.`));
       const ev = d.every || {}, x = [...(ev.senate || []), ...(ev.governor || []), ...(ev.house || [])].find((y) => y.key === s.key);
       const open = () => { if (x) ntAllPop(d, { ...x, st: x.state || x.key.slice(0, 2) }); };
       li.addEventListener('click', open); li.addEventListener('keydown', (k) => { if (k.key === 'Enter' || k.key === ' ') { k.preventDefault(); open(); } });
@@ -5570,7 +5570,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       }
       mu.append(ntWinBar(o.p_d, 'md'), ntDots(o.p_d, 'Democrats', 'Republicans'));
       const note = k === 'senate'
-        ? (s.r_need === 0 || s.d_need === 0 ? s.text : `Republicans need ${s.r_need} more seats, Democrats ${s.d_need}.`)
+        ? (s.waiting || s.r_need == null || s.d_need == null || s.r_need === 0 || s.d_need === 0 ? s.text : `Republicans need ${s.r_need} more seats, Democrats ${s.d_need}.`)
         : (c.house ? c.house.text.replace(/^House: (.)/, (_, a) => a.toUpperCase()) : '');
       box.append(mu, el('p', { class: 'nt-ch-n', title: 'A rough live model over the scorecard races, the safe seats and the calls so far. Not graded.' },
         `Our final call: Democrats ${ntPctW(o.final_call_d == null ? 0.5 : o.final_call_d)}. ${note}`),
