@@ -1367,6 +1367,8 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-batches > *, .nt-bt-body > * { min-width: 0; }  /* the table scrolls inside its box instead of widening the page on a phone */
 .nt-bt-body { display: grid; gap: .7rem; min-width: 0; }
 .nt-batches h2 { margin: 0; }
+.nt-batches.lead { box-shadow: inset 3px 0 0 var(--nt-ours); }  /* leading the page before the polls close */
+.nt-bt-kick { margin: 0; font-size: 13px; color: var(--color-fg-muted); max-width: 70ch; }
 .nt-bt-lede { margin: 0; font-size: var(--cds-font-size-body); line-height: 1.5; max-width: 78ch; }
 .nt-bt-lede b { font-weight: 700; }
 .nt-bt-sub { margin: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
@@ -5255,9 +5257,18 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     sec.hidden = (!fl && !races.length) || (nightMode === 'practice' && !races.length);
     const jb = document.querySelector('#nt-jump button[data-to="nt-batches"]'); if (jb) jb.hidden = sec.hidden;  // no jump button to a card that is not there
     if (sec.hidden) return;
+    // Until the first results, who is voting and what it means leads the page, under the one-line glance (Jake, Nov 3: "front and
+    // center until results come in"). The first counted vote or results batch sends it back below Most impactful, and the count leads.
+    const counting = races.length > 0 || ['senate', 'governor', 'house'].some((k) => ((d.every || {})[k] || []).some((x) => x.counted != null || x.margin_d != null || x.call));
+    const lead = !counting && nightMode !== 'practice';
+    const anchor = lead ? $('#nt-glance') : $('#nt-impact');
+    if (anchor && anchor.nextElementSibling !== sec) anchor.after(sec);
+    sec.classList.toggle('lead', lead);
+    if (jb) { if (lead) jb.parentElement.prepend(jb); else { const imp = jb.parentElement.querySelector('[data-to="nt-impact"]'); if (imp && imp.nextElementSibling !== jb) imp.after(jb); } }
     const form = $('#nt-bt-add'); if (form) { form.hidden = ntRO() || nightMode === 'practice'; ntBtWire(); }
     try {
       box.replaceChildren(ntHead(el('h2', {}, 'Vote batches'), 'batches'));
+      if (lead) box.append(el('p', { class: 'nt-bt-kick' }, 'Before the polls close, this is the live read: who is voting today, and what it means for the night. It moves down once the count starts.'));
       if (races.length) {
         races.sort((a, b) => ntBtRank(d, a) - ntBtRank(d, b));
         box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, 'The count: where each race is heading'), el('small', {}, `${races.length} races, built ${ntT(R.built_at)} ET`)]));
