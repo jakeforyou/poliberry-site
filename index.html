@@ -3978,6 +3978,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const cnn = ((d.every || {}).read_at || {}).CNN;
     return cnn ? { at: cnn, label: 'CNN' } : { at: d.built_at, label: 'board' };
   }
+  // Where the night is, for the lines that say how fresh the numbers are (Jake, Nov 3: "board build messaging/timestamp is weird"). A
+  // viewer never needs the board's build time: before the first close they need when results start, then that counts are coming, then
+  // how old the counts are. The board's build time stays in its file and on the Evidence tab.
+  const NT_FIRST_CLOSE = '2026-11-03T18:00:00-05:00';
+  function ntPhase(d) {
+    if (ntAsOf(d).label === 'CNN') return 'counting';
+    return Date.now() < Date.parse(NT_FIRST_CLOSE) ? 'before' : 'closing';
+  }
+  const ntTurnoutAt = () => { const s = ((nightBatches || {}).states || {}).FL; return s && ((s.feed || {}).updated || (s.latest || {}).at) || null; };
   const ntKids = (tag, attrs, kids) => { const n = el(tag, attrs); n.append(...kids); return n; };  // el() sets text only; this one takes text and nodes together
   const ntLastKey = (k) => (/^[A-Z]{2}-\d+$/.test(k) ? `${k.slice(0, 2)}-${+k.slice(3)}` : k);  // VA-01 reads VA-1, as everywhere on the board
 
@@ -4524,9 +4533,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       warn.hidden = !w; if (warn.textContent !== (w || '')) warn.textContent = w || '';
     };
     if (ntRO()) {  // the public copy says how fresh it is, nothing about the server behind it
-      const age = d.built_at ? (now - Date.parse(d.built_at)) / 60000 : null;
-      // The CNN read time sits at the top of the page now (ntGlance). This line says when the board was built and how the page refreshes.
-      put(age != null && age < 20 ? 'ok' : 'idle', `Board built ${ntT(d.built_at)} ET. This page checks every 30 seconds. New numbers arrive every few minutes.`, null);
+      // How fresh the numbers are sits at the top of the page (ntGlance). This line only says the page keeps itself current.
+      const fresh = nightLoadedAt && now - nightLoadedAt < 90000;
+      put(fresh ? 'ok' : 'idle', fresh ? 'This page updates itself every 30 seconds.' : 'This page has not reached the latest numbers for a minute or more. It keeps trying.', null);
       return;
     }
     const inWindow = now >= Date.parse('2026-11-03T17:45:00-05:00') && now < Date.parse('2026-11-11T00:00:00-05:00');
@@ -4545,9 +4554,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     else if (/failed/.test(h.night_last_result || '')) msg = `The last check failed: ${h.night_last_result}.`;
     else if ((d.build_errors || []).length) msg = `One part of the board didn't update: ${d.build_errors.join('; ')}. Everything else is current.`;
     const next = h.night_next_poll ? ntT(h.night_next_poll) : null;
-    const poller = { waiting: next ? `Vote checks start at ${next}` : 'Vote checks start at 5:45pm', sleeping: next ? `Next check ${next}` : null, polling: 'Checking now',
-      done: 'Vote checks finished', off: 'Vote checker off' }[h.night_poller] || null;
-    const parts = [d.poller.last_poll ? `Last count ${ntT(d.poller.last_poll)}` : 'No count yet', d.poller.fast_at ? `AP update ${ntT(d.poller.fast_at)}` : null,
+    const poller = { waiting: `Checking for votes starts at ${next || '5:45pm'}, before the 6pm closes`, sleeping: next ? `Next check ${next}` : null, polling: 'Checking now',
+      done: 'Checking finished', off: 'The vote checker is off' }[h.night_poller] || null;
+    const parts = [d.poller.last_poll ? `Last count read ${ntT(d.poller.last_poll)}` : 'No counts yet', d.poller.fast_at ? `CNN's one-minute read ${ntT(d.poller.fast_at)}` : null,
       poller, h.night_awake ? 'Mac kept awake' : null,
       (d.checks || {}).n ? `${d.checks.n} number${d.checks.n === 1 ? ' needs' : 's need'} a look` : null].filter(Boolean);
     put(msg ? 'bad' : last ? 'ok' : 'idle', parts.join('. ') + '.', msg);
@@ -4577,8 +4586,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     asof.replaceChildren();
     if (nightMode === 'practice') asof.append(document.createTextNode('Practice board with made-up results. Built '), el('b', {}, `${ntT(d.built_at)} ET`), document.createTextNode('.'));
     else {
-      asof.append(document.createTextNode(a.label === 'CNN' ? 'Last CNN read ' : 'No CNN read yet. Board built '), el('b', {}, `${ntT(a.at)} ET`), document.createTextNode(', '),
-        el('span', { id: 'nt-gl-ago' }, ntAgo(a.at)), document.createTextNode(a.label === 'CNN' ? ". Calls are CNN's." : ". CNN's counts start when the polls close."));
+      const ph = ntPhase(d), tu = ntTurnoutAt();
+      if (ph === 'counting') asof.append(document.createTextNode('Counts as of '), el('b', {}, `${ntT(a.at)} ET`), document.createTextNode(', '), el('span', { id: 'nt-gl-ago' }, ntAgo(a.at)), document.createTextNode(". Calls are CNN's."));
+      else if (ph === 'before') asof.append(document.createTextNode('Results start when the first polls close at '), el('b', {}, '6pm ET'), document.createTextNode(tu ? `. Until then, the turnout read below updates every 10 minutes (last ${ntT(tu)}).` : '.'));
+      else asof.append(document.createTextNode('Polls are closing. The first counts usually arrive within a few minutes, and this page picks them up on its own.'));
     }
     // the two chambers as a pair of small scoreboards: Democrats on the left, Republicans on the right, the chance to control under them
     const nums = ntSeatNums(d), co = (d.story || {}).control_odds || {};
@@ -4854,14 +4865,16 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   function ntTvAge(d) {  // the as-of time, big, and the banner for anything that makes the screen unsafe to trust
     const box = $('#nt-tv-asof'); if (!nightTv || !box || !d) return;
-    const a = ntAsOf(d), prac = nightMode === 'practice', key = `${prac}|${a.label}|${a.at}`;
+    const a0 = ntAsOf(d), prac = nightMode === 'practice', ph = prac ? 'counting' : ntPhase(d);
+    const a = ph === 'counting' ? a0 : { at: NT_FIRST_CLOSE, label: ph };  // before the count: when results start, never the board's build time
+    const key = `${prac}|${a.label}|${a.at}`;
     if (box.dataset.k !== key) {
       box.dataset.k = key;
       const m = /^(.*?)(am|pm)$/.exec(ntT(a.at)) || [null, ntT(a.at), ''], t = el('b', { class: 't' });
       t.append(document.createTextNode(m[1]), el('small', {}, `${m[2]} ET`));
-      box.replaceChildren(el('span', { class: 'l' }, prac ? 'Practice board built' : a.label === 'CNN' ? 'Counts as of the last CNN read' : 'No CNN read yet. Board built'), t, el('span', { class: 'a' }));
+      box.replaceChildren(el('span', { class: 'l' }, prac ? 'Practice board built' : ph === 'counting' ? 'Counts as of the last CNN read' : ph === 'before' ? 'Results start when the first polls close at' : 'No counts yet. The first polls closed at'), t, el('span', { class: 'a' }));
     }
-    const ago = ntAgo(a.at), sp = box.lastChild; if (sp.textContent !== ago) sp.textContent = ago;
+    const ago = ph === 'counting' ? ntAgo(a.at) : '', sp = box.lastChild; if (sp.textContent !== ago) sp.textContent = ago;
     const stale = $('#nt-stale'), band = $('#nt-tv-stale');
     const msg = [d.synthetic, prac ? 'Practice board. These results are made up.' : '', stale && !stale.hidden ? stale.textContent : '',
       nightPaused ? 'Updates are paused. Leave the TV view and press Pause updates again to resume.' : ''].filter(Boolean).join(' ');
@@ -7401,7 +7414,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         el('small', { class: 'nt-mute', title: f.readings != null ? `${f.readings} results read in ${f.seconds ?? '?'} seconds` : '' }, f.readings != null ? `${f.readings} results` : String(f.status).replace('_', ' ')));
       box.append(li);
     }
-    if (!d.feeds.length) box.append(el('li', { class: 'nt-mute' }, 'Not checked yet. Vote checks start at 5:45pm Tuesday.'));
+    if (!d.feeds.length) box.append(el('li', { class: 'nt-mute' }, 'Not checked yet. Checking for votes starts at 5:45pm, before the 6pm closes.'));
   }
   function ntExamples(d) {
     const ul = $('#nt-examples'); if (ul.childElementCount) return;
