@@ -6070,7 +6070,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         nodes.push(el('h3', { class: 'nt-sheet-h3' }, hs.length === 1 ? 'House' : `House: ${hs.length} seats`),
           el('p', { class: 'nt-mute' }, `${called} called${called ? ` (${won('D')} D, ${won('R')} R)` : ''}, ${counting} counting${flips ? `, ${flips} flip${flips === 1 ? '' : 's'}` : ''}.`), l);
       }
-      let cs = (d.counties || []).filter((c) => c.state === st && !c.context_only); if (!cs.length) cs = (d.counties || []).filter((c) => c.state === st);
+      // Reference-only counties (no race or line behind them, so never a count) show only before a state counts. After that they read
+      // "no votes yet" all night beside real results (Jake, Nov 3, 6:40pm: "why do the popouts say no votes yet?").
+      let cs = (d.counties || []).filter((c) => c.state === st && !c.context_only); if (!cs.length && !any) cs = (d.counties || []).filter((c) => c.state === st);
       if (cs.length) {
         nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Key counties'));
         // sort the counties: as chosen before the election, by the count, by share counted, or by distance from what we expected
