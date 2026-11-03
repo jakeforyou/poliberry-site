@@ -1801,6 +1801,96 @@ button.nt-hs[data-s="counting"][data-w="R"] { background: color-mix(in srgb, var
   body:has(> .lx-note) > .lx-note { margin-top: 1.5rem; border-top: 1px solid var(--color-border-line); }
 }
 
+/* Since you looked away (Nov 3, backlog R5): one band at the top of the night tab on a return after three minutes or more, and the marks it puts in the feed */
+.nt-since { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: .3rem .8rem; align-items: center; min-width: 0; padding: .6rem .5rem .6rem .9rem; border-radius: 12px;
+  background: color-mix(in srgb, var(--nt-ours) 13%, var(--color-panel, transparent)); outline: 1px solid color-mix(in srgb, var(--nt-ours) 55%, transparent); }
+.nt-since[hidden] { display: none; }
+.nt-since-t { grid-column: 1; grid-row: 1; margin: 0; font-size: 14px; line-height: 1.5; max-width: 82ch; }
+.nt-since-t b { font-weight: 700; }
+.nt-since-a { grid-column: 2; grid-row: 1; display: flex; align-items: center; gap: .6rem; }
+.nt-since-a:empty { display: none; }
+.nt-since-m { font-size: 12.5px; color: var(--color-fg-muted); }
+.nt-since-x { grid-column: 3; grid-row: 1; all: unset; cursor: pointer; box-sizing: border-box; min-width: 40px; min-height: 40px; display: grid; place-items: center; font-size: 1.6rem; line-height: 1; color: var(--color-fg-muted); border-radius: 8px; }
+.nt-since-x:hover, .nt-since-x:focus-visible { color: var(--color-fg); }
+.nt-since-x:focus-visible, .nt-since .nt-btn:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-ev[data-since="true"] { outline: 2px solid color-mix(in srgb, var(--nt-ours) 75%, transparent); outline-offset: -2px; }
+.nt-ev-since { display: block; font-size: 12px; font-weight: 700; color: var(--nt-ours); }
+@media (max-width: 640px) {
+  .nt-since { grid-template-columns: minmax(0, 1fr) auto; padding-left: .75rem; }
+  .nt-since-x { grid-column: 2; }
+  .nt-since-a { grid-column: 1 / -1; grid-row: 2; }
+  .nt-since .nt-btn { min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; }
+}
+
+/* The TV view (Nov 3, backlog 14). One layer, sized in a unit u: 1% of the screen's height, or 0.5625% of its width on a screen taller than 16:9.
+   Body text is 2.6u, 28px at 1080p (Amazon's Fire TV guide). The layer keeps 5% of every edge empty. No red or orange behind anything:
+   blue and coral show only on the party numbers and bars, the banner is pale blue, the countdown cyan. */
+.nt-jump #nt-tv-open { margin-left: auto; border: 1px solid var(--nt-rule); color: var(--color-fg); }
+.nt-jump #nt-tv-open:hover, .nt-jump #nt-tv-open:focus-visible { border-color: var(--nt-ours); }
+.nt.nt-tv { --u: max(4.5px, min(1vh, .5625vw)); --tv-fg: #e3e9f5; --tv-mute: #a3b3d0; --tv-cool: #86d3e6;
+  position: fixed; inset: 0; z-index: 55; display: block; min-height: 0; overflow-y: auto; background: var(--color-bg); color: var(--tv-fg); font-size: calc(var(--u) * 2.6); line-height: 1.3; gap: 0; }
+.nt.nt-tv[hidden] { display: none; }
+body.nt-tvmode { overflow: hidden; }
+.nt-tv-in { box-sizing: border-box; min-height: 100%; padding: 5vh 5vw; display: flex; flex-direction: column; gap: calc(var(--u) * 1.6); }
+.nt-tv-top { display: flex; justify-content: space-between; align-items: flex-end; gap: calc(var(--u) * 3); flex-wrap: wrap; }
+.nt-tv-brand { min-width: 0; }
+.nt-tv-brand .nt-hw { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; }
+.nt-tv-brand h2 { font-size: calc(var(--u) * 5.4); letter-spacing: .01em; }
+.nt-tv-brand p { margin: calc(var(--u) * .3) 0 0; color: var(--tv-mute); }
+.nt-tv .nt-q { width: calc(var(--u) * 3); height: calc(var(--u) * 3); margin-left: calc(var(--u) * 1.2); font-size: calc(var(--u) * 1.9); color: var(--tv-mute); border-color: var(--tv-mute); }
+.nt-tv .nt-q:hover, .nt-tv .nt-q:focus-visible { color: var(--tv-fg); border-color: var(--tv-cool); }
+.nt-tv-asof { display: grid; grid-template-columns: auto auto; justify-content: end; align-items: baseline; column-gap: calc(var(--u) * 1.6); }
+.nt-tv-asof .l { grid-column: 1 / -1; text-align: right; color: var(--tv-mute); font-weight: 600; }
+.nt-tv-asof .t { font-family: var(--nt-num); font-stretch: 80%; font-variant-numeric: tabular-nums; font-weight: 700; font-size: calc(var(--u) * 8); line-height: .95; letter-spacing: -.01em; }
+.nt-tv-asof .t small { font-size: calc(var(--u) * 3.2); font-stretch: 100%; margin-left: .2em; color: var(--tv-mute); font-weight: 600; letter-spacing: 0; }
+.nt-tv-asof .a { font-weight: 600; }
+.nt-tv-stale { margin: 0; padding: calc(var(--u) * .7) calc(var(--u) * 1.8); border-radius: calc(var(--u) * 1.4); font-weight: 700; color: #0b1424; background: #cfe2f6; }
+.nt-tv-stale[hidden] { display: none; }
+.nt-tv-ch { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(var(--u) * 2.4); }
+.nt-tv-load { margin: 0; color: var(--tv-mute); }
+.nt-tv-c { display: flex; flex-direction: column; justify-content: space-between; gap: calc(var(--u) * 1.2); min-width: 0; padding: calc(var(--u) * 1.9) calc(var(--u) * 2.6); border-radius: calc(var(--u) * 2); background: var(--color-panel); }
+.nt-tv-ch-h { display: flex; justify-content: space-between; align-items: baseline; gap: calc(var(--u) * 2); flex-wrap: wrap; }
+.nt-tv-c h2 { font-size: calc(var(--u) * 5.2); }
+.nt-tv-ch-h .need, .nt-tv-c .sub, .nt-tv-seats small, .nt-tv-chance .lab, .nt-tv-chance .pc small { color: var(--tv-mute); }
+.nt-tv-seats { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: calc(var(--u) * 2); align-items: end; }
+.nt-tv-seats .s { display: grid; gap: calc(var(--u) * .2); }
+.nt-tv-seats .r { text-align: right; }
+.nt-tv-seats b { font-family: var(--nt-num); font-stretch: 80%; font-variant-numeric: tabular-nums; font-weight: 700; font-size: calc(var(--u) * 15); line-height: .9; letter-spacing: -.02em; }
+.nt-tv-seats .d b { color: var(--nt-d); } .nt-tv-seats .r b { color: var(--nt-r); }
+.nt-tv-c .sub { margin: 0; font-size: calc(var(--u) * 2.2); line-height: 1.3; }
+.nt-tv-chance { display: grid; gap: calc(var(--u) * .8); }
+.nt-tv-chance .lab { margin: 0; font-weight: 600; }
+.nt-tv-chance .pc { display: flex; justify-content: space-between; align-items: flex-end; gap: calc(var(--u) * 2); }
+.nt-tv-chance .pc span { display: grid; } .nt-tv-chance .pc .r { text-align: right; }
+.nt-tv-chance .pc b { font-family: var(--nt-num); font-stretch: 80%; font-variant-numeric: tabular-nums; font-weight: 700; font-size: calc(var(--u) * 7.6); line-height: 1; letter-spacing: -.02em; }
+.nt-tv-chance .pc .d b { color: var(--nt-d); } .nt-tv-chance .pc .r b { color: var(--nt-r); }
+.nt-tv-chance .bar { display: flex; gap: 3px; height: calc(var(--u) * 1.8); border-radius: 999px; overflow: hidden; background: color-mix(in srgb, var(--tv-fg) 8%, transparent); }
+.nt-tv-chance .bar i { display: block; height: 100%; } .nt-tv-chance .bar i.d { background: var(--nt-d); } .nt-tv-chance .bar i.r { background: var(--nt-r); }
+.nt-tv-lines { display: grid; gap: calc(var(--u) * 1); }
+.nt-tv-line { display: grid; grid-template-columns: calc(var(--u) * 22) minmax(0, 1fr) auto; gap: calc(var(--u) * 1.6); align-items: baseline; padding: calc(var(--u) * .8) calc(var(--u) * 1.8); border-radius: calc(var(--u) * 1.4);
+  background: var(--color-panel); border-left: calc(var(--u) * .7) solid var(--ln, color-mix(in srgb, var(--tv-mute) 45%, transparent)); }
+.nt-tv-line[data-p="D"] { --ln: var(--nt-d); } .nt-tv-line[data-p="R"] { --ln: var(--nt-r); }
+.nt-tv-line .k { color: var(--tv-mute); font-weight: 600; }
+.nt-tv-line .t { font-weight: 600; text-wrap: balance; }
+.nt-tv-line .w { color: var(--tv-mute); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nt-tv-foot { display: flex; justify-content: space-between; align-items: center; gap: calc(var(--u) * 2); flex-wrap: wrap; }
+.nt-tv-next { display: flex; align-items: baseline; gap: calc(var(--u) * 1.4); flex-wrap: wrap; min-width: 0; }
+.nt-tv-next .l, .nt-tv-next .w { color: var(--tv-mute); } .nt-tv-next .t { font-weight: 700; }
+.nt-tv-next .cd { font-family: var(--nt-num); font-stretch: 80%; font-variant-numeric: tabular-nums; font-weight: 700; font-size: calc(var(--u) * 5); line-height: 1; color: var(--tv-cool); }
+.nt-tv-acts { display: flex; gap: calc(var(--u) * 1.2); flex-wrap: wrap; }
+.nt-tv-btn { all: unset; box-sizing: border-box; cursor: pointer; padding: calc(var(--u) * .7) calc(var(--u) * 1.8); border-radius: 999px; border: 2px solid color-mix(in srgb, var(--tv-mute) 70%, transparent); color: var(--tv-fg); font-size: calc(var(--u) * 2.3); font-weight: 600; }
+.nt-tv-btn:hover { border-color: var(--tv-cool); }
+.nt-tv-btn:focus-visible { outline: 3px solid var(--tv-cool); outline-offset: 3px; }
+.nt-tv-btn[hidden] { display: none; }
+.nt-tv-in:has(.nt-tv-stale:not([hidden])) .nt-tv-seats b { font-size: calc(var(--u) * 12.5); }  /* room for the banner without scrolling */
+@media (max-aspect-ratio: 1/1) {  /* a phone or a tall window: one block above the other, and the page scrolls */
+  .nt.nt-tv { --u: max(4.5px, 1.7vw); }
+  .nt-tv-ch { grid-template-columns: minmax(0, 1fr); }
+  .nt-tv-seats b { font-size: calc(var(--u) * 11.5); } .nt-tv-in:has(.nt-tv-stale:not([hidden])) .nt-tv-seats b { font-size: calc(var(--u) * 11.5); }
+  .nt-tv-line { grid-template-columns: minmax(0, 1fr) auto; } .nt-tv-line .k { grid-column: 1 / -1; }
+  .nt-tv-asof { justify-content: start; } .nt-tv-asof .l { text-align: left; }
+}
+
 /* the forecast band folds to its title line while the Night tab is open */
 /* election night is a night scene: deep navy instead of the neutral dark gray, the panels lifted off it (2026-11-02 sweep) */
 html:has(body.nt-mode), body.nt-mode { --color-bg: #0c1220; --color-panel: #121a2c; --color-border-line: #223049; background: #0c1220; }
@@ -2048,6 +2138,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   </section>
 
   <section class="ms-panel nt" data-panel="night" id="night" hidden aria-label="Election night">
+    <section class="nt-since" id="nt-since" aria-label="Since you looked away" hidden></section>
     <section class="nt-glance" id="nt-glance" aria-label="What this page is, and where the night stands">
       <p class="nt-gl-what" id="nt-gl-what">Live 2026 midterm results: every Senate, House and governor race, read against our forecast.</p>
       <p class="nt-gl-asof" id="nt-gl-asof"></p>
@@ -2090,7 +2181,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <p class="nt-prac-s">Made-up results, to see how the board behaves before the real night. Pick how far every state ends from our forecast and how much of the vote is counted, then press Show it, or load a sample night that plays out poll by poll. Races get a made-up call once 90 percent is in. Nothing here reaches the real board.</p>
     </details>
     <nav class="nt-jump" id="nt-jump" aria-label="Jump to a part of the board">
-      <button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-all">All races</button>
+      <button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-all">All races</button><button type="button" id="nt-tv-open" title="A big view for a television">TV view</button>
     </nav>
     <section class="nt-pins" id="nt-pins" aria-label="My watchlist" hidden></section>
     <div class="nt-board2" id="nt-ctl" role="group" aria-label="Control of Congress and the night so far">
@@ -2123,6 +2214,21 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <section class="nt-all" id="nt-cty" aria-label="Key counties" hidden></section>
       <section class="nt-all" id="nt-all" aria-label="All races" hidden></section>
     </section>
+  </section>
+  <section class="nt nt-tv" id="nt-tv" aria-label="TV view" hidden>
+    <div class="nt-tv-in">
+      <header class="nt-tv-top">
+        <div class="nt-tv-brand"><h2 id="nt-tv-h">Election night 2026</h2><p>Counts: state feeds and CNN. Calls: CNN. Chances: our guide, not a call.</p></div>
+        <div class="nt-tv-asof" id="nt-tv-asof"></div>
+      </header>
+      <p class="nt-tv-stale" id="nt-tv-stale" hidden></p>
+      <div class="nt-tv-ch" id="nt-tv-ch"><p class="nt-tv-load">Loading the board…</p></div>
+      <div class="nt-tv-lines" id="nt-tv-lines"></div>
+      <footer class="nt-tv-foot">
+        <div class="nt-tv-next" id="nt-tv-next"></div>
+        <div class="nt-tv-acts"><button type="button" class="nt-tv-btn" id="nt-tv-full" hidden>Full screen</button><button type="button" class="nt-tv-btn" id="nt-tv-leave">Leave TV view</button></div>
+      </footer>
+    </div>
   </section>
   <div class="nt-toasts" id="nt-toasts"></div>
   <div class="nt-sr" id="nt-sr" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -3753,6 +3859,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         if (!r.ok && nightMode === 'practice') { await ntPracticePost('/api/night/practice/reset'); return; }  // first visit: build an empty practice board
         if (!r.ok) throw new Error('HTTP ' + r.status + '. Run scripts/night_board.py once.');
         const txt = await r.text();
+        nightLoadedAt = Date.now();  // the board in hand is current as of now (the return summary asks)
         let ctx = null; try { const c = await fetch(ntBase() + 'claims.json', { cache: 'no-store' }); ctx = c.ok ? await c.text() : null; } catch (e) { ctx = null; }
         if (!ntRO()) { try { nightHealth = await fetch('/api/status', { cache: 'no-store' }).then((x) => (x.ok ? x.json() : null)); } catch (e) { nightHealth = null; } }
         // A board that is the same text as the last one is not drawn again: a redraw rebuilds every box and costs a keyboard or
@@ -3768,7 +3875,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     nightTimers.clock = setInterval(ntTick, 1000);
     // the spoken line lives straight under the body, not inside the page: a phone's sheet switches the page off, and a line in it would not be heard
     const sr = $('#nt-sr'); if (sr && sr.parentElement !== document.body) document.body.append(sr);
-    ntWireEntry(); ntWireHome(); ntWireJump();
+    ntWireEntry(); ntWireHome(); ntWireJump(); ntWireSince();
+    if (nightTvWant && state.tab === 'night') ntTvSet(true);  // a link to #night/tv opens the layer at once, before the board has loaded
     nightLoad();
   }
   // faces and state outlines (Nov 2 evening, Jake: "Include faces!" and an outline of each state on the tiles)
@@ -3985,7 +4093,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   function ntWireJump() {
     const nav = $('#nt-jump'); if (!nav) return;
-    nav.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => {
+    const tv = $('#nt-tv-open'); if (tv && !tv.dataset.wired) { tv.dataset.wired = '1'; tv.addEventListener('click', () => ntTvSet(true, { from: tv })); }
+    nav.querySelectorAll('button[data-to]').forEach((b) => b.addEventListener('click', () => {
       const s = document.getElementById(b.dataset.to); if (!s || s.hidden) return;
       // a box with display: contents (the spotlight and feed, on a phone) has no place of its own, so the jump goes to its first child
       const t = s.getClientRects().length ? s : s.firstElementChild || s;
@@ -3998,8 +4107,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const seen = new Map();
       const io = new IntersectionObserver((es) => {
         es.forEach((e) => seen.set(e.target.id, e.isIntersecting));
-        const cur = [...nav.querySelectorAll('button')].map((b) => b.dataset.to).find((id) => seen.get(id));
-        nav.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.to === cur)));
+        const cur = [...nav.querySelectorAll('button[data-to]')].map((b) => b.dataset.to).find((id) => seen.get(id));
+        nav.querySelectorAll('button[data-to]').forEach((b) => b.setAttribute('aria-current', String(b.dataset.to === cur)));
       }, { rootMargin: '-60px 0px -55% 0px' });
       ['nt-ctl', 'nt-expect', 'nt-impact', 'nt-map', 'nt-desk', 'nt-rcs', 'nt-hl', 'nt-cty', 'nt-all'].forEach((id) => { const s = document.getElementById(id); if (s) io.observe(s); });
     }
@@ -4068,6 +4177,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!$('#night')) return;
     if (!nightTimers) { startNight(); return; }
     if (!nightData) return;
+    if (nightTv && state.tab !== 'night') ntTvSet(false);  // the page moved to another tab: the layer goes
     const d = nightData;
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
@@ -4075,6 +4185,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ntGlance(d); ntExpect(d);
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
+    ntLook(); ntSinceDraw();
+    if (nightTvWant && !nightTv) ntTvSet(true);
+    if (nightTv) ntTv(d);
     nightDrawnAt = Date.now();
     if (!ntDeepDone) { ntDeepDone = true; ntOpenDeep(d); }
   }
@@ -4082,6 +4195,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // ---------- the strip: clock, next close, poller health
   function ntTick(force) {
     if (state.tab !== 'night' || !nightData) return;
+    ntLook();
     const now = new Date(), f = ntClock.format(now);
     $('#nt-clock').textContent = f.replace(' AM', '').replace(' PM', '');
     $('#nt-ampm').textContent = /PM/.test(f) ? 'pm' : 'am';
@@ -4105,6 +4219,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         say.dataset.m = String(mins); say.textContent = ', in about ' + [hr ? `${hr} hour${hr === 1 ? '' : 's'}` : '', mn ? `${mn} minute${mn === 1 ? '' : 's'}` : ''].filter(Boolean).join(' ');
       }
     } else if (box.dataset.k !== 'none') { box.dataset.k = 'none'; box.replaceChildren(el('span', { class: 'nt-next-l' }, 'All polls have closed.')); }
+    if (nightTv) ntTvNext(nx, now.getTime());
     const cd = document.querySelector('#nt-spot [data-until]'); if (cd) cd.textContent = 'in ' + ntCd(cd.dataset.until);
     const minute = Math.floor(now.getTime() / 60000);
     if (force || minute !== nightLastMinute) { nightLastMinute = minute; ntTimeline(nightData); ntAsOfAge(nightData); }
@@ -4200,6 +4315,242 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!d) return;
     const s = $('#nt-gl-ago'), a = ntAsOf(d); if (s) { const t = ntAgo(a.at); if (s.textContent !== t) s.textContent = t; }
     ntStale(d);
+    if (nightTv) ntTvAge(d);
+  }
+
+  // ---------- since you looked away (Nov 3, backlog R5; map-needs q6-intermittent-majority). Over half of viewers check in only now and
+  // then (Pew 2020), so a return after a gap opens on one band that stands on its own: the calls, the lead changes and the move in
+  // each chamber's chance since the viewer last looked. It is built only from what the board already has (story.events with their
+  // times, story.call_times, story.ctl_hist). The moment of the last look is kept in this browser only (localStorage, per browser).
+  const NT_GAP = 3 * 60000, NT_LOOK_KEY = 'nt-looked-at', NT_KEEP = 120;  // NT_KEEP: how many messages the board carries (night_story.py KEEP)
+  var nightLookedAt = ntLookRead(), nightLookSaved = 0, nightLookBusy = false, nightLoadedAt = 0, nightSince = null, nightSinceWired = false;
+  function ntLookRead() { try { const v = +localStorage.getItem(NT_LOOK_KEY); return v > 0 ? v : null; } catch (e) { return null; } }
+  function ntLookSave() { nightLookSaved = Date.now(); if (nightLookedAt == null) return; try { localStorage.setItem(NT_LOOK_KEY, String(nightLookedAt)); } catch (e) { /* storage blocked: no summary on a return, nothing else lost */ } }
+  // every call the board knows of, newest first: the feed's call messages, then seats only call_times has (a House seat held is not a message)
+  function ntCalls(d) {
+    const st = (d && d.story) || {}, ct = st.call_times || {}, out = new Map();
+    const rank = (key, ev) => (/^senate_/.test(key) ? 0 : /^gov_/.test(key) ? 1 : ev ? 2 : 3);  // statewide first, then House flips, then House holds
+    for (const e of st.events || []) {
+      const key = e.every || e.race_id, ms = Date.parse(e.at || '');
+      if (e.kind !== 'call' || !/^[DRI]$/.test(e.side || '') || !key || isNaN(ms) || out.has(key)) continue;  // a runoff has no side: it is not a call for anyone
+      const m = /^(?:.+? calls|Called:) (.+) for (.+?) \([DRI]\)\.?$/.exec(e.title || '');
+      out.set(key, { key, ms, at: e.at, id: e.id, side: e.side, title: e.title || '', text: m ? `${m[1]} for ${m[2]}` : String(e.title || '').replace(/\.$/, ''), rank: rank(key, true) });
+    }
+    const rows = {};
+    for (const part of ['senate', 'governor', 'house']) for (const x of ((d && d.every) || {})[part] || []) rows[x.key] = x;
+    for (const [key, at] of Object.entries(ct)) {
+      const x = rows[key], w = x && x.call && x.call.winner, ms = Date.parse(at || '');
+      if (out.has(key) || !/^[DRI]$/.test(w || '') || isNaN(ms)) continue;
+      const c = (x.cands || []).find((y) => y.name === x.call.name), nm = c ? c.last || c.name : ntLast(x.call.name || '') || w;
+      const place = /^(senate|gov)_[a-z]{2}$/.test(key) ? ntXName(key) : ntLastKey(key);
+      out.set(key, { key, ms, at, id: null, side: w, title: `${x.call.source || 'CNN'} calls ${place} for ${nm} (${w}).`, text: `${place} for ${nm}`, rank: rank(key, false) });
+    }
+    return [...out.values()].sort((a, b) => b.ms - a.ms);
+  }
+  function ntSinceAt(ms) {  // 10:12pm, or Nov 2, 10:12pm when it was another day
+    const iso = new Date(ms).toISOString(), t = ntT(iso);
+    return ntDayET(iso) === ntDayET(new Date().toISOString()) ? t : `${ntDay(ntDayET(iso))}, ${t}`;
+  }
+  function ntSinceCalc(d, from) {  // null when nothing happened that is worth a line
+    const st = (d && d.story) || {}, calls = ntCalls(d).filter((c) => c.ms > from);
+    const leads = (st.events || []).filter((e) => e.kind === 'lead' && e.level === 'big' && Date.parse(e.at || '') > from);  // "Lead change" messages, not the quiet early counts
+    const h = st.ctl_hist || [], co = st.control_odds || {}, chg = [];
+    let past = null; for (const row of h) { if (Date.parse(row[0]) <= from) past = row; else break; }
+    past = past || h[0] || null;  // before the history began: the first point, which is where the night started
+    const lastRow = h.length ? h[h.length - 1] : null;
+    for (const [k, i, name] of [['senate', 1, 'Senate'], ['house', 2, 'House']]) {
+      const was = past ? past[i] : null, now = co[k] && co[k].p_d != null ? co[k].p_d : lastRow ? lastRow[i] : null;
+      if (was == null || now == null) continue;
+      chg.push({ name, was: ntPctW(was), now: ntPctW(now), moved: ntPctW(was) !== ntPctW(now) });
+    }
+    if (!calls.length && !leads.length && !chg.some((c) => c.moved)) return null;
+    const top = [...calls].sort((a, b) => a.rank - b.rank || b.ms - a.ms).slice(0, 3), more = calls.length - top.length;
+    const callTxt = calls.length ? `${calls.length} call${calls.length === 1 ? '' : 's'} (${top.map((c) => c.text).join(', ')}${more > 0 ? ` and ${more} more` : ''})` : 'no calls';
+    const leadTxt = leads.length ? `${leads.length} lead change${leads.length === 1 ? '' : 's'}` : 'no lead changes';
+    const evs = st.events || [], capped = evs.length >= NT_KEEP && Date.parse(evs[evs.length - 1].at || '') > from;  // the oldest message kept is newer than the last look: some are gone
+    const chTxt = chg.length ? ` Democrats' chance to win control: ${chg.map((c) => `${c.name} ${c.moved ? `${c.was} to ${c.now}` : `still ${c.now}`}`).join(', ')}.` : '';
+    return { from, head: `Since ${ntSinceAt(from)}:`, text: `${callTxt}, ${leadTxt}.${chTxt}${capped ? ` The feed holds only the newest ${NT_KEEP} updates, so the counts can be low.` : ''}`, ids: new Set([...calls.map((c) => c.id), ...leads.map((e) => e.id)].filter((x) => x != null)), marked: false };
+  }
+  function ntSinceStart(from, scroll) {
+    const s = ntSinceCalc(nightData, from); if (!s) return;
+    const hadMarks = !!(nightSince && nightSince.marked);
+    nightSince = s; ntSinceDraw(); ntSay(`${s.head} ${s.text}`);
+    if (hadMarks && nightData.story) ntKeepFocus(() => ntFeedList(nightData, nightData.story));  // the old marks go
+    if (scroll && window.scrollY > 120) ntScrollTo($('#nt-since'));  // a return from further down the page lands on the band
+  }
+  // While the night tab is in view: remember the moment. On a return after a gap, say what happened meanwhile (after a fresh read, if the
+  // board in hand is old). Not on a first visit, not on a practice or paused board, and not when nothing changed.
+  function ntLook(tried) {
+    if (document.hidden || state.tab !== 'night' || !nightData || nightLookBusy) return;
+    const now = Date.now(), was = nightLookedAt;
+    if (was != null && now - was >= NT_GAP && nightMode === 'live' && !nightData.synthetic && !nightPaused) {
+      if (!tried && now - nightLoadedAt > 20000 && typeof nightLoad === 'function') {
+        nightLookBusy = true;
+        Promise.resolve(nightLoad()).catch(() => null).then(() => { nightLookBusy = false; ntLook(true); });
+        return;
+      }
+      ntSinceStart(was, nightDrawnAt > 0);
+    }
+    nightLookedAt = now;
+    if (now - nightLookSaved > 15000) ntLookSave();
+  }
+  function ntWireSince() {
+    if (nightSinceWired) return; nightSinceWired = true;
+    document.addEventListener('visibilitychange', () => { if (document.hidden) ntLookSave(); else ntLook(); });
+    window.addEventListener('pagehide', () => ntLookSave());
+  }
+  function ntSinceDraw() {
+    const box = $('#nt-since'); if (!box) return;
+    const s = nightSince, key = s ? `${s.from}|${s.marked}` : '';
+    box.hidden = !s;
+    if (box.dataset.k === key) return;
+    box.dataset.k = key;
+    if (!s) { box.replaceChildren(); return; }
+    const t = el('p', { class: 'nt-since-t' }); t.append(el('b', {}, s.head), document.createTextNode(' ' + s.text));
+    const q = ntQ('since'); if (q) t.append(q);
+    const a = el('div', { class: 'nt-since-a' });
+    if (s.ids.size) {
+      const go = el('button', { type: 'button', class: 'nt-btn', 'data-fk': 'since:show', 'aria-label': `Show them: the ${s.ids.size} update${s.ids.size === 1 ? '' : 's'} since ${s.head.slice(6, -1)} in the live feed` }, 'Show them');
+      go.addEventListener('click', ntSinceShow); a.append(go);
+      if (s.marked) a.append(el('span', { class: 'nt-since-m' }, 'Marked in the live feed.'));
+    }
+    const x = el('button', { type: 'button', class: 'nt-since-x', 'data-fk': 'since:close', 'aria-label': 'Close this summary' }, '×');
+    x.addEventListener('click', ntSinceClose); a.append(x);
+    box.replaceChildren(t, a);
+  }
+  function ntSinceShow() {  // mark the calls and lead changes in the feed, open the feed on Everything, and go to the newest of them
+    const s = nightSince, d = nightData; if (!s || !d || !d.story) return;
+    s.marked = true; nightRail = 'feed'; nightFeedF = 'all';
+    try { localStorage.setItem('nt-rail', 'feed'); localStorage.setItem('nt-feed', 'all'); } catch (e) { /* ignore */ }
+    const evs = d.story.events || [], last = evs.reduce((m, e, i) => (s.ids.has(e.id) ? i : m), -1);
+    if (last >= nightFeedShow) nightFeedShow = Math.ceil((last + 1) / NT_FEED_STEP) * NT_FEED_STEP;  // a phone shows the newest few: make room for the oldest marked
+    ntKeepFocus(() => { ntRail(); ntFeedList(d, d.story); ntSinceDraw(); });
+    const first = document.querySelector('#nt-feedl [data-since="true"]');
+    if (first) { ntScrollTo(first, 'center'); if (!first.hasAttribute('tabindex')) first.tabIndex = -1; first.focus({ preventScroll: true }); }
+    ntSay(`${s.ids.size} update${s.ids.size === 1 ? '' : 's'} marked in the live feed.`);
+  }
+  function ntSinceClose() {
+    const had = !!(nightSince && nightSince.marked); nightSince = null; ntSinceDraw();
+    if (had && nightData && nightData.story) ntKeepFocus(() => ntFeedList(nightData, nightData.story));
+    const g = $('#nt-glance'); if (g) { if (!g.hasAttribute('tabindex')) g.tabIndex = -1; g.focus({ preventScroll: true }); }  // the band is gone: focus goes to the top of the page's status
+  }
+
+  // ---------- the TV view (Nov 3, backlog 14; map-needs q1-tv-two-numbers, q9-tv-text-size, q9-tv-freshness-big, q9-tv-color-dim-room).
+  // A full-screen layer for a television: the two chambers as huge blocks, the last call and the last big change in one line each, the
+  // as-of time big (a frozen screen looks like a live one, so the time is the proof), the next poll close. Body text is 28px at 1080p
+  // (Amazon's Fire TV guide), nothing important in the outer 5 percent, and cool colors for everything but the party colors.
+  // It reads the same board as the page and redraws with it, so it updates on the same 30-second load. #night/tv opens it.
+  const ntTvHash = (h) => /^#night\/tv\/?$/.test(h || '');
+  var nightTv = false, nightTvWant = ntTvHash(location.hash), nightTvInert = [], nightTvFrom = null, nightTvFull = false, nightTvWired = false;
+  window.addEventListener('hashchange', (e) => {
+    let h = location.hash; try { h = new URL(e.newURL).hash; } catch (er) { /* an old browser: the address as it stands */ }  // the page's own router rewrites #night/tv to #night first, so read the link that was followed
+    nightTvWant = ntTvHash(h); if (nightTimers) ntTvSet(nightTvWant);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || !nightTv) return;
+    const sh = document.getElementById('nt-sheet'); if (sh && !sh.hidden) return;  // a "?" open over the TV view closes first
+    ntTvSet(false);
+  });
+  const ntTvStates = (s) => { const n = s.map((x) => NT_STATE[x] || x); return !n.length ? 'polls' : n.length <= 4 ? n.join(', ') : `${n.slice(0, 4).join(', ')} and ${n.length - 4} more`; };
+  function ntTvWire() {
+    const box = $('#nt-tv'); if (nightTvWired || !box) return; nightTvWired = true;
+    if (box.parentElement !== document.body) document.body.append(box);  // straight under the body, so the page behind it can be switched off
+    const brand = box.querySelector('.nt-tv-brand'), h = $('#nt-tv-h'); if (brand && h) brand.prepend(ntHead(h, 'tv'));
+    const leave = $('#nt-tv-leave'); if (leave) leave.addEventListener('click', () => ntTvSet(false));
+    const fs = $('#nt-tv-full');
+    if (fs && document.fullscreenEnabled && document.documentElement.requestFullscreen) {  // a TV browser may have no way to full screen but this
+      fs.hidden = false;
+      fs.addEventListener('click', () => {
+        try {
+          if (document.fullscreenElement) document.exitFullscreen();
+          else { nightTvFull = true; const p = document.documentElement.requestFullscreen(); if (p && p.catch) p.catch(() => { nightTvFull = false; }); }
+        } catch (e) { nightTvFull = false; }
+      });
+      document.addEventListener('fullscreenchange', () => { fs.textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen'; });
+    }
+  }
+  function ntTvSet(on, o = {}) {
+    const box = $('#nt-tv'); if (!box || on === nightTv) return;
+    if (on && state.tab !== 'night') return;
+    ntTvWire(); nightTv = on; nightTvWant = on; box.hidden = !on;
+    document.body.classList.toggle('nt-tvmode', on);
+    if (on) {
+      ntSheetClose();  // a pop-out left open on the board would sit over the TV view
+      nightTvFrom = o.from || document.activeElement;
+      nightTvInert = [...document.body.children].filter((c) => !/^(SCRIPT|STYLE|LINK)$/.test(c.tagName) && !['nt-tv', 'nt-sheet', 'nt-sr'].includes(c.id) && !c.inert);
+      nightTvInert.forEach((c) => { c.inert = true; });  // the page behind the layer is off: Tab stays inside the TV view
+      try { history.replaceState(null, '', '#night/tv'); } catch (e) { /* ignore */ }
+      if (nightData) ntTv(nightData); else $('#nt-tv-ch').replaceChildren(el('p', { class: 'nt-tv-load' }, 'Loading the board…'));
+      ntSay('TV view. Press Escape to leave.');
+      const lv = $('#nt-tv-leave'); if (lv) lv.focus({ preventScroll: true });
+    } else {
+      nightTvInert.forEach((c) => { c.inert = false; }); nightTvInert = [];
+      if (nightTvFull && document.fullscreenElement) { try { document.exitFullscreen(); } catch (e) { /* ignore */ } }
+      nightTvFull = false;
+      if (ntTvHash(location.hash)) { try { history.replaceState(null, '', '#night'); } catch (e) { /* ignore */ } }
+      const f = nightTvFrom && nightTvFrom !== document.body ? nightTvFrom : $('#nt-tv-open'); nightTvFrom = null;
+      if (f && f.isConnected && f.focus) f.focus({ preventScroll: true });
+      ntSay('Left the TV view.');
+    }
+  }
+  function ntTvChamber(k, n, o) {
+    const a = el('article', { class: 'nt-tv-c', 'data-ch': k, 'aria-label': n.name });
+    const h = el('div', { class: 'nt-tv-ch-h' }); h.append(el('h2', {}, n.name), el('span', { class: 'need' }, `${n.maj} seats for control`));
+    const seats = el('div', { class: 'nt-tv-seats' });
+    for (const [c, who, v] of [['d', 'Democrats', n.d], ['r', 'Republicans', n.r]]) { const s = el('div', { class: 's ' + c }); s.append(el('small', {}, who), el('b', {}, String(v))); seats.append(s); }
+    const sub = el('p', { class: 'sub' }, k === 'senate' ? 'Seats called or ahead, plus the 65 not up this year.' : 'Seats called or ahead.');
+    const c = el('div', { class: 'nt-tv-chance' });
+    if (o && o.p_d != null) {
+      const row = el('div', { class: 'pc' });
+      for (const [cls, who, p] of [['d', 'Democrats', o.p_d], ['r', 'Republicans', 1 - o.p_d]]) { const s = el('span', { class: cls }); s.append(el('small', {}, who), el('b', {}, ntPctW(p))); row.append(s); }
+      const bar = el('div', { class: 'bar', role: 'img', 'aria-label': `Chance to control the ${n.name}: Democrats ${ntPctW(o.p_d)}, Republicans ${ntPctW(1 - o.p_d)}` }), di = el('i', { class: 'd' }), ri = el('i', { class: 'r' });
+      di.style.width = o.p_d * 100 + '%'; ri.style.width = (1 - o.p_d) * 100 + '%'; bar.append(di, ri);
+      c.append(el('p', { class: 'lab' }, 'Chance to control'), row, bar);
+    } else c.append(el('p', { class: 'lab' }, 'Chance to control: not ready yet.'));
+    a.append(h, seats, sub, c);
+    return a;
+  }
+  function ntTvLines(d) {
+    const box = $('#nt-tv-lines'); if (!box) return;
+    const call = ntCalls(d)[0], big = ((d.story || {}).events || []).find((e) => e.level === 'big' && e.kind !== 'call' && e.kind !== 'check');  // events run newest first
+    const row = (k, text, at, p) => {
+      const r = el('div', { class: 'nt-tv-line', 'data-p': p === 'D' || p === 'R' ? p : '' });
+      r.append(el('span', { class: 'k' }, k), el('span', { class: 't' }, text), el('span', { class: 'w' }, at ? ntT(at) : ''));
+      return r;
+    };
+    box.replaceChildren(
+      row('Last call', call ? call.title : 'No race has been called yet.', call && call.at, call && call.side),
+      row('Last big change', big ? big.title : 'No big change yet.', big && big.at, big && ((big.vibe || {}).dir || big.side)));
+  }
+  function ntTvAge(d) {  // the as-of time, big, and the banner for anything that makes the screen unsafe to trust
+    const box = $('#nt-tv-asof'); if (!nightTv || !box || !d) return;
+    const a = ntAsOf(d), prac = nightMode === 'practice', key = `${prac}|${a.label}|${a.at}`;
+    if (box.dataset.k !== key) {
+      box.dataset.k = key;
+      const m = /^(.*?)(am|pm)$/.exec(ntT(a.at)) || [null, ntT(a.at), ''], t = el('b', { class: 't' });
+      t.append(document.createTextNode(m[1]), el('small', {}, `${m[2]} ET`));
+      box.replaceChildren(el('span', { class: 'l' }, prac ? 'Practice board built' : a.label === 'CNN' ? 'Counts as of the last CNN read' : 'No CNN read yet. Board built'), t, el('span', { class: 'a' }));
+    }
+    const ago = ntAgo(a.at), sp = box.lastChild; if (sp.textContent !== ago) sp.textContent = ago;
+    const stale = $('#nt-stale'), band = $('#nt-tv-stale');
+    const msg = [d.synthetic, prac ? 'Practice board. These results are made up.' : '', stale && !stale.hidden ? stale.textContent : '',
+      nightPaused ? 'Updates are paused. Leave the TV view and press Pause updates again to resume.' : ''].filter(Boolean).join(' ');
+    band.hidden = !msg; if (band.textContent !== msg) band.textContent = msg;
+  }
+  function ntTvNext(nx) {  // the next close, with a countdown that ticks every second (for the eye only)
+    const box = $('#nt-tv-next'); if (!box) return;
+    if (!nx) { if (box.dataset.k !== 'none') { box.dataset.k = 'none'; box.replaceChildren(el('span', { class: 'l' }, 'All polls have closed.')); } return; }
+    if (box.dataset.k !== nx.iso) {
+      box.dataset.k = nx.iso;
+      box.replaceChildren(el('span', { class: 'l' }, 'Next polls close'), el('b', { class: 't' }, `${ntT(nx.iso)} ET`), el('span', { class: 'w' }, ntTvStates(nx.states)), el('span', { class: 'cd', 'aria-hidden': 'true' }));
+    }
+    box.lastChild.textContent = ntCd(nx.iso);
+  }
+  function ntTv(d) {
+    const box = $('#nt-tv'); if (!nightTv || !box || !d) return;
+    const nums = ntSeatNums(d), co = (d.story || {}).control_odds || {};
+    $('#nt-tv-ch').replaceChildren(...['senate', 'house'].map((k) => ntTvChamber(k, nums[k], co[k])));
+    ntTvLines(d); ntTvAge(d); ntTvNext(ntCloseMap(d).find((c) => c.ms > Date.now()));
   }
 
   // ---------- what to expect (Nov 3 pass): scripts/night_story.py expect(), drawn. The tests were set before the polls closed.
@@ -4480,7 +4831,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   function ntSetMode(m) {
     if (m === nightMode) return;
-    nightMode = m; nightSeen = null; nightNew = {}; nightData = null; nightSig = null;
+    nightMode = m; nightSeen = null; nightNew = {}; nightData = null; nightSig = null; nightSince = null;
     try { localStorage.setItem('nt-mode', m); } catch (e) { /* ignore */ }
     const i = $('#nt-input'); if (i) i.placeholder = m === 'practice' ? 'Practice: GA Cobb 58.2 40.9 72% nyt' : 'GA Cobb 58.2 40.9 72% nyt';
     if (nightLoad) nightLoad();
@@ -4701,6 +5052,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     importance: { title: 'Decides control', body: [
       'Out of our simulations of the night, how often this race is the one that decides which party controls the chamber: the other races land so that this one is the tipping point.',
       'A high number means the race matters a lot for control. It changes as races are called, and a called race stops mattering. It is our own estimate, not a call.'] },
+    since: { title: 'Since you looked away', body: [
+      'Come back to this page after three minutes or more and this line says what happened while you were gone: how many races were called, how many leads changed, and how far each side\'s chance to control moved.',
+      'It counts a call from the time this page first saw it. That can be a few minutes after the TV said it. House seats that the feed does not list are counted too.',
+      'Show them marks those updates in the live feed and takes you there. The × closes the line. It does not show on your first visit, or when nothing changed.',
+      'The time you last looked is kept in this browser only. Nothing is sent anywhere.'] },
+    tv: { title: 'The TV view', body: [
+      'A big, plain version of the board for a television or a screen across the room. It shows the Senate and the House: seats for each party and each side\'s chance to control.',
+      'Under those: the last race called, the last big change in the count, and the next time polls close.',
+      'The time at the top right is when we last read CNN. If it stops moving, or a pale blue banner shows up, the numbers are not fresh.',
+      'It updates by itself every 30 seconds. Press Esc or Leave TV view to go back to the full board. A link ending in #night/tv opens this view straight away.',
+      'Chances are our rough guide, not a call. Calls come from CNN.'] },
     sources: { title: 'Where the numbers come from', body: [
       'Official state results feeds first. CNN\'s results feed fills in where a state has none or is slow, and it supplies the calls.',
       'Every number shows its source and when it was read. The full list is in Evidence.'], more: { label: 'See the data sources', ref: 'nightdetail' } },
@@ -4712,7 +5074,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   function ntSheetModal(on) {
     const s = $('#nt-sheet'), root = document.getElementById('dash-root') || document.querySelector('.ms');
     if (on && !nightSheetInert && root && s && matchMedia('(max-width: 40rem)').matches) { nightSheetInert = root; root.inert = true; s.setAttribute('aria-modal', 'true'); }
-    else if (!on && nightSheetInert) { nightSheetInert.inert = false; nightSheetInert = null; if (s) s.removeAttribute('aria-modal'); }
+    else if (!on && nightSheetInert) { nightSheetInert.inert = nightTvInert.includes(nightSheetInert); nightSheetInert = null; if (s) s.removeAttribute('aria-modal'); }  // the TV view keeps the page off behind it
   }
   // one live line for a screen reader (accessibility review, item 2): written only for a new big moment, a race call, and a few
   // actions the page takes itself. Cleared first so the same words twice are still spoken.
@@ -5242,13 +5604,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const e of evs.slice(0, cap)) {
       const t = ntT(e.at);
       if (t !== group) { group = t; ol.append(el('li', { class: 'nt-fg' }, t)); }
-      const li = el('li', { class: 'nt-ev', 'data-level': e.level, 'data-surprise': String(!!e.surprise), 'data-fresh': String(prevMax != null && e.id > prevMax) });
+      const mk = !!(nightSince && nightSince.marked && nightSince.ids.has(e.id));  // marked by "Show them" in the since-you-looked-away line
+      const li = el('li', { class: 'nt-ev', 'data-level': e.level, 'data-surprise': String(!!e.surprise), 'data-fresh': String(prevMax != null && e.id > prevMax), 'data-since': mk ? 'true' : null });
       const c = ntEvColor(e); if (c) li.style.setProperty('--ev', c);
       const body = el('div', {});
       const k = el('span', { class: 'nt-ev-k' }, NT_EV[e.kind] || e.kind);
       if (e.role) k.append(el('span', { class: 'nt-ev-r' }, `  ${e.role}`));
       const ttl = el('div', { class: 'nt-ev-t' }, e.title);
       if (e.vibe && e.vibe.tag) ttl.append(ntVibeTag(e.vibe));
+      if (mk) body.append(el('span', { class: 'nt-ev-since' }, 'Since you left'));
       body.append(k, ttl);
       if (e.kind === 'close' && (e.looks || []).length) {  // "Watch first:" with each county a link to why it matters
         const b = el('div', { class: 'nt-ev-b' }); b.append('Watch first: ');
