@@ -1429,6 +1429,7 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-bt-mp .past { fill: var(--color-fg-muted); } .nt-bt-mp .now { fill: none; stroke: var(--color-fg); stroke-width: 2; } .nt-bt-mp .proj { fill: var(--color-fg); }
 .nt-bt-mp .band { fill: color-mix(in srgb, var(--nt-r) 28%, transparent); } .nt-bt-mp .ours { fill: var(--nt-ours); stroke: var(--color-panel); stroke-width: 1.5; }
 .nt-bt-mp .pl { fill: var(--color-fg); font-size: 10.5px; font-weight: 600; } .nt-bt-mp .pl.mute { fill: var(--color-fg-muted); font-weight: 500; } .nt-bt-mp .ours-t { fill: var(--nt-ours); }
+.nt-bt-h4 { margin: .2rem 0 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; }
 .nt-bt-why { margin: 0; padding-left: 1.1rem; display: grid; gap: .25rem; font-size: 13.5px; line-height: 1.45; max-width: 78ch; }
 .nt-bt-det > summary, .nt-bt-add > summary { cursor: pointer; font-size: 13px; color: var(--color-fg-muted); padding: .35rem 0; min-height: 24px; }
 .nt-bt-det > summary:focus-visible, .nt-bt-add > summary:focus-visible, .nt-bt-race > summary:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
@@ -5122,16 +5123,19 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const reps = s.reports, L = s.latest, C = s.compare || {}, M = C.means;
     box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, `${s.name}: who has voted today`), el('small', {}, `as of ${L.time_text} ET, ${ntBtNum(L.cum.total)} Election Day voters`)]));
     const why = M ? el('div', { class: 'nt-bt-body' }) : null;
-    if (M) {
+    if (M) {  // the reading in plain words up front; the picture and how it is worked out fold under Details
       box.append(ntKids('p', { class: 'nt-bt-lede' }, [el('b', {}, M.lines[0])]));
-      const ul = el('ul', { class: 'nt-bt-why' }); for (const l of M.lines.slice(1, 4)) ul.append(el('li', {}, l));
-      why.append(ntBtMeansPlot(M), ntBtPlotKey(), ul, el('p', { class: 'nt-bt-sub' }, M.lines[4] || ''));
-      if (!compact) box.append(why);
+      if (!compact) {
+        const ul = el('ul', { class: 'nt-bt-why' }); for (const l of M.lines.slice(1, 4)) ul.append(el('li', {}, l));
+        box.append(ul, el('p', { class: 'nt-bt-sub' }, M.lines[4] || ''));
+      }
+      const how = el('ul', { class: 'nt-bt-why' }); for (const l of M.method || []) how.append(el('li', {}, l));
+      why.append(el('h4', { class: 'nt-bt-h4' }, 'How this is worked out'), ntBtMeansPlot(M), ntBtPlotKey(), how);
     } else if ((C.lines || []).length) box.append(el('p', { class: 'nt-bt-lede' }, ntKids('span', {}, [el('b', {}, C.lines[0]), ' ', C.lines[2] || ''])));
     const det = el('details', { class: 'nt-bt-det', 'data-fk': 'bt:det' });
-    det.append(el('summary', {}, 'Details: who voted, report by report'));
+    det.append(el('summary', {}, 'Details: how this is worked out, and who voted report by report'));
     const inner = el('div', { class: 'nt-bt-body' });
-    if (compact && why) inner.append(why);
+    if (why) inner.append(why);
     const cmp = el('div', { class: 'nt-bt-cmp' });
     cmp.append(ntBtShareRow('Today so far', L.run, `${ntBtNum(L.cum.total)} voters, Election Day`, true));
     for (const y of C.eday || []) cmp.append(ntBtShareRow(`${y.year}`, y, `the whole Election Day, ${ntBtNum(y.votes)} voters`));
