@@ -1432,6 +1432,22 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-bt-mp .past { fill: var(--color-fg-muted); } .nt-bt-mp .now { fill: none; stroke: var(--color-fg); stroke-width: 2; } .nt-bt-mp .proj { fill: var(--color-fg); }
 .nt-bt-mp .band { fill: color-mix(in srgb, var(--nt-r) 28%, transparent); } .nt-bt-mp .ours { fill: var(--nt-ours); stroke: var(--color-panel); stroke-width: 1.5; }
 .nt-bt-mp .pl { fill: var(--color-fg); font-size: 10.5px; font-weight: 600; } .nt-bt-mp .pl.mute { fill: var(--color-fg-muted); font-weight: 500; } .nt-bt-mp .ours-t { fill: var(--nt-ours); }
+@media (min-width: 72rem) {  /* a wide screen (Jake, Nov 3: "filling in the desktop UI ... LOOK GOOD to people I send this to"): two columns, so the first screen shows both chambers and the turnout verdict side by side, and nothing runs edge to edge with space wasted beside it */
+  #night { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 1.6rem; grid-auto-flow: row dense; align-items: start; }
+  #night > * { grid-column: 1 / -1; }
+  /* the order a visitor reads: what this is, any warning, the jump bar, then the two chambers beside the turnout read, the map, the clock, the rest */
+  #night > .nt-glance { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
+  #night > .nt-jump { order: 5; } #night > .nt-pins { order: 6; } #night > #nt-ctl { order: 7; } #night > #nt-batches { order: 8; }
+  #night > #nt-map { order: 9; } #night > .nt-top { order: 10; } #night > .nt-prac { order: 11; } #night > #nt-expect { order: 12; }
+  #night > #nt-impact { order: 13; } #night > #nt-results { order: 14; } #night > .nt-acc-row { order: 99; }
+  #night > #nt-ctl { grid-column: 1; grid-template-columns: minmax(0, 1fr); }  /* Senate above House, the vibe under them */
+  #night > #nt-ctl .nt-vibe { grid-column: auto; }
+  #night > #nt-map { grid-column: 1; }
+  #night > #nt-batches { grid-column: 2; grid-row: span 2; margin: 0; }
+  /* what to expect and most impactful stay full width: two tiles across, and room for the chart and its two lists */
+  #night .nt-hl-g { grid-template-rows: repeat(var(--n4, 5), auto); grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: none; }
+  #night #nt-cty .nt-all-list, #night #nt-all .nt-all-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.2rem; }  /* key counties and every race, two across */  /* the House line across the page, still ranked down each column */
+}
 .nt-acc-row { display: none; }
 @media (max-width: 47.99rem) {  /* a phone: denser, and every section but the glance, the batch card and the map is one line that opens in place (night.js ntAcc) */
   #night { zoom: .93; row-gap: .6rem; }
@@ -1518,7 +1534,10 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-map-leg { display: flex; flex-wrap: wrap; gap: .3rem .9rem; font-size: 12.5px; color: var(--color-fg-muted); }
 .nt-map-sw { display: inline-flex; align-items: center; gap: .35rem; } .nt-map-sw i { width: 14px; height: 10px; border-radius: 2px; display: inline-block; outline: 1px solid color-mix(in srgb, var(--nt-rule) 70%, transparent); }
 @media (prefers-reduced-motion: reduce) { .nt-map-st { transition: none; } }
-.nt-rc-ftoggle { display: none; }
+.nt-rc-ftoggle { all: unset; display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; padding: .3rem .85rem; min-height: 24px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--color-fg); background: var(--nt-wash2); margin-left: auto; }
+.nt-rc-ftoggle:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+/* the filter rows fold behind the button at every width (desktop pass, Nov 3): the races come first, the controls a click away */
+.nt-rcs:not(.nt-fopen) .nt-rc-frow, .nt-rcs:not(.nt-fopen) .nt-rc-bar, .nt-all:not(.nt-fopen) .nt-all-fx .nt-rc-frow { display: none; }
 @media (max-width: 640px) {
   .nt-rc-ftoggle { all: unset; display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; padding: .5rem .9rem; min-height: 24px; border-radius: 999px; font-size: 13.5px; font-weight: 600; outline: 1px solid var(--nt-rule); }
   .nt-rc-ftoggle:focus-visible { outline: 2px solid var(--nt-ours); }
@@ -5086,7 +5105,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       el('p', { class: 'nt-hl-n' }, `Our forecast favored Democrats in ${h.expected_d} of 435 seats. Called so far: Democrats ${h.won_d}, Republicans ${h.won_r}. Showing seats ${lo} to ${hi} of our ranking.`));
     const tog = el('button', { type: 'button', class: 'nt-hl-w', 'aria-pressed': String(ntHlWide), 'data-fk': 'hl:wide' }, 'Show 200 to 240');
     tog.addEventListener('click', () => { ntHlWide = !ntHlWide; try { localStorage.setItem('nt-hl-wide', ntHlWide ? 'on' : 'off'); } catch (er) { /* fine */ } ntKeepFocus(() => ntHouseLine(d)); });
-    const grid = el('div', { class: 'nt-hl-g' }); grid.style.setProperty('--n', String(Math.ceil(rows.length / 2)));
+    const grid = el('div', { class: 'nt-hl-g' }); grid.style.setProperty('--n', String(Math.ceil(rows.length / 2))); grid.style.setProperty('--n4', String(Math.ceil(rows.length / 4)));  // two columns, four on a wide screen
     for (const z of rows) {
       const call = z.winner && z.winner !== 'runoff' ? ntPK(z.winner) : '', side = call || (z.ahead ? ntPK(z.ahead) : ''), line = z.rank === (h.majority || 218);
       const st = z.winner ? 'called' : z.margin_d != null ? 'counting' : 'later';
@@ -6317,16 +6336,19 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   // the side panel: the live feed, the claims watch and what comes next, one at a time, beside the spotlight
   var nightRail = (() => { try { return localStorage.getItem('nt-rail') || 'feed'; } catch (e) { return 'feed'; } })();
+  // with no tab picked, the panel opens on Coming up while the live feed is still empty (before the polls close), then on the feed
+  var nightRailPicked = (() => { try { return !!localStorage.getItem('nt-rail'); } catch (e) { return false; } })();
   function ntRail() {
     const tabs = $('#nt-railtabs'); if (!tabs) return;
+    if (!nightRailPicked) nightRail = (nightData && ((nightData.story || {}).events || []).length) ? 'feed' : 'coming';
     if (!tabs.dataset.wired) {
       tabs.dataset.wired = '1';
-      tabs.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { nightRail = b.dataset.r; try { localStorage.setItem('nt-rail', nightRail); } catch (e) { /* ignore */ } ntRail(); }));
+      tabs.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { nightRail = b.dataset.r; nightRailPicked = true; try { localStorage.setItem('nt-rail', nightRail); } catch (e) { /* ignore */ } ntRail(); }));
       tabs.addEventListener('keydown', (e) => {  // arrow keys move between tabs, Home and End go to the first and last
         if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) return;
         e.preventDefault();
         const bs = [...tabs.querySelectorAll('button')], i = bs.findIndex((b) => b.dataset.r === nightRail), n = e.key === 'Home' ? bs[0] : e.key === 'End' ? bs[bs.length - 1] : bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length];
-        nightRail = n.dataset.r; ntRail(); n.focus();
+        nightRail = n.dataset.r; nightRailPicked = true; ntRail(); n.focus();
       });
     }
     const fl = ((nightClaims || {}).summary || {}).hour || {};
