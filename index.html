@@ -1301,6 +1301,11 @@ button.nt-look:hover b, button.nt-look:focus-visible b { text-decoration: underl
 .nt-toast b { font-size: .95rem; line-height: 1.35; } .nt-toast span { font-size: 12.5px; color: var(--color-fg-muted); }
 @media (prefers-reduced-motion: no-preference) { .nt-toast { animation: nt-toast-in .35s ease-out; } @keyframes nt-toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } } }
 .nt-rcg { display: grid; gap: .5rem; }
+/* an early count (under half the expected vote) is shown, dimmed, with a note: early batches often lean one way */
+.nt-rc[data-early="true"] .nt-rc-c .v, .nt-rc[data-early="true"] .nt-rc-c .bar { opacity: .55; }
+.nt-rc[data-early="true"] .nt-rc-h::after { content: "early count"; margin-left: auto; font-size: 11px; color: var(--color-fg-muted); }
+button.nt-ar[data-early="true"] .nt-ar-c { opacity: .7; }
+button.nt-ar[data-early="true"] .nt-ar-c > small:first-child::after { content: ", early"; }
 .nt-pins { display: grid; gap: .4rem; margin: 0 0 .7rem; }
 .nt-pins-h { display: flex; align-items: center; gap: .6rem; font-size: 13px; }
 .nt-pins-row { display: flex; gap: .45rem; overflow-x: auto; scrollbar-width: thin; padding-bottom: .2rem; }
@@ -4055,7 +4060,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Before votes it starts at our final forecast. A small arrow like ▲4 means the chance moved 4 points in the last five minutes.'] },
     callwatch: { title: 'How close to a call', body: [
       'Our read of how settled a race is, in steps: Not close, Getting close, Could be called any time, Called.',
-      'Too close to call means most of the vote is in and neither side is clearly ahead.',
+      'Too close to call means nearly all the expected vote is in (95 percent or more) and neither side is clearly ahead, the way AP uses it. Earlier, a tight race reads Close, still counting.',
       'We never call races. The calls you see come from CNN\'s decision desk.'] },
     seats: { title: 'Seats called or ahead', body: [
       'Solid bars are seats already called. Light bars are seats where a party leads in the count. The line is the majority.',
@@ -4138,7 +4143,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (link) {  // a link straight to this pop-out, for sharing (Nov 2 late overnight run)
       const url = `${location.origin}${location.pathname}#night/${link}`;
       const cp = el('button', { type: 'button', class: 'nt-sheet-link', title: 'Copy a link that opens this' }, 'Copy link');
-      cp.addEventListener('click', async () => { try { await navigator.clipboard.writeText(url); cp.textContent = 'Copied'; } catch (e) { window.prompt('Copy this link', url); } setTimeout(() => { cp.textContent = 'Copy link'; }, 1600); });
+      cp.addEventListener('click', async () => {
+        if (navigator.share && /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)) { try { await navigator.share({ title, url }); return; } catch (e) { /* cancelled: fall through to copying */ } }
+        try { await navigator.clipboard.writeText(url); cp.textContent = 'Copied'; } catch (e) { window.prompt('Copy this link', url); }
+        setTimeout(() => { cp.textContent = 'Copy link'; }, 1600);
+      });
       tt.append(cp);
     }
     head.append(tt, x);
@@ -4656,7 +4665,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   function ntRaceCard(d, r) {
     const rd = r.reading || {}, has = rd.margin_d != null, call = r.call && r.call.winner;
     const name = `${NT_STATE[r.state] || r.state} ${r.office === 'Senate' ? 'Senate' : 'Governor'}`;
-    const c = el('article', { class: 'nt-rc', 'data-s': call ? 'called' : has ? 'counting' : 'later', 'data-w': call || '', role: 'button', tabindex: '0',
+    const c = el('article', { class: 'nt-rc', 'data-s': call ? 'called' : has ? 'counting' : 'later', 'data-w': call || '', 'data-early': String(!call && has && r.counted != null && r.counted < 50), role: 'button', tabindex: '0',
       'aria-label': `${name}. Open its matchup.` });
     const h = el('div', { class: 'nt-rc-h' });
     const close = r.close_et ? clockIsoNight(d, r.close_et) : null;
@@ -4686,7 +4695,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       c.append(o);
     }
     const f = el('div', { class: 'nt-rc-f' });
-    if (call && call !== 'runoff') f.append(el('span', {}, `Called for ${ntLast(call === 'D' ? r.cand_d : r.cand_r) || call}${r.call.source ? ` by ${/CNN/.test(r.call.source) ? 'CNN' : /^Wikipedia/.test(r.call.source) ? 'Wikipedia' : r.call.source}` : ''}.`));
+    if (call && call !== 'runoff') f.append(el('span', {}, `Called for ${ntLast(call === 'D' ? r.cand_d : r.cand_r) || call}${r.call.first_called_at || r.call.at ? ` at ${ntT(r.call.first_called_at || r.call.at)}` : ''}${r.call.source ? ` by ${/CNN/.test(r.call.source) ? 'CNN' : /^Wikipedia/.test(r.call.source) ? 'Wikipedia' : r.call.source}` : ''}.`));
     if (call === 'runoff') f.append(el('span', {}, 'Called: it goes to a runoff.'));
     if (has) { const ld = el('span', {}, `${ntLast(rd.margin_d > 0 ? r.cand_d : r.cand_r) || (rd.margin_d > 0 ? 'D' : 'R')} ${call ? 'won' : 'leads'} by `); ld.append(el('b', {}, fmt1(Math.round(Math.abs(rd.margin_d) * 10) / 10))); f.append(ld); }
     if (has && r.runoff && !r.runoff.above_50 && !call) f.append(el('span', { class: 'warn' }, 'Nobody over 50% yet: a runoff if it stays that way.'));
@@ -4902,10 +4911,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const list = el('div', { class: 'nt-all-list' });
     const shown = ntCtyAll || q ? rows : rows.slice(0, NT_CTY_N);
     for (const c of shown) {
-      const rd = c.reading || {}, b = el('button', { type: 'button', class: 'nt-ar nt-cr', 'data-w': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R' });
+      const rd = c.reading || {}, b = el('button', { type: 'button', class: 'nt-ar nt-cr', 'data-w': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R', 'data-early': String(rd.margin_d != null && c.counted != null && c.counted < 50) });
       const n = el('span', { class: 'nt-ar-n' }); n.append(el('b', {}, `${c.county}, ${c.state}`), el('small', {}, (ntCountyWhy(d, c.state, c.county) || '').split(/(?<=\.)\s+/)[0] || ''));
       const exp = el('span', {}); exp.append(el('small', {}, 'What we expected'), document.createTextNode(c.our_line != null ? ntCM(c, c.our_line) : c.bench ? ntRange(c.bench) : c.pres_2024 != null ? `2024 ${ntM(c.pres_2024)}` : '—'));
-      const now = el('span', {}); now.append(el('small', {}, has(c) ? 'Count' : 'Now'), document.createTextNode(has(c) ? `${ntCM(c, rd.margin_d)}, ${ntPct(c.counted)} in` : 'No votes yet'));
+      const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', {}, has(c) ? 'Count' : 'Now'), document.createTextNode(has(c) ? `${ntCM(c, rd.margin_d)}, ${ntPct(c.counted)} in` : 'No votes yet'));
       const off = c.offset != null && c.pointer !== 'none' ? `${ntCO(c, c.offset)} than expected` : c.bench_gap != null ? (c.bench_gap === 0 ? 'inside the range that fits our forecast' : `${ntOff(c.bench_gap)} than the range`) : '';
       if (off) now.append(el('small', {}, off));
       const vl = ntVotesLeft(c); if (vl != null && vl >= 1000) now.append(el('small', {}, `about ${ntK(vl)} votes left`));
@@ -4982,7 +4991,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   function ntAllNow(x) {
     if (x.call) {
       const w = x.call.winner, wc = (x.cands || []).find((c) => c.name === x.call.name), nm = wc ? (wc.last || wc.name) : ntLast(x.call.name || '');
-      return w === 'runoff' ? 'Runoff' : `${nm || NT_PN[ntPK(w)]} won${x.call.source ? ` (${x.call.source})` : ''}`;
+      const ct = ((((ntAllD || {}).story || {}).call_times) || {})[x.key];
+      return w === 'runoff' ? 'Runoff' : `${nm || NT_PN[ntPK(w)]} won${ct ? `, called ${ntT(ct)}` : ''}${x.call.source ? ` (${x.call.source})` : ''}`;
     }
     if (x.margin_d != null) {
       const s = ntAllSide(x), side = s && s.party !== 'D' ? (s.last || s.name.split(' ').slice(-1)[0]) : null;
@@ -5059,7 +5069,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const x of rows) {
       if (ntAllTab === 'house' && ntAllS.k === 'state' && x.st !== last) { list.append(el('div', { class: 'nt-all-st' }, NT_STATE[x.st] || x.st)); last = x.st; }
       const w = x.call ? ntPK(x.call.winner) : '';
-      const b = el('button', { type: 'button', class: 'nt-ar', 'data-w': x.call && x.call.winner !== 'runoff' ? w : '', 'data-s': x.status || 'no votes' });
+      const b = el('button', { type: 'button', class: 'nt-ar', 'data-w': x.call && x.call.winner !== 'runoff' ? w : '', 'data-s': x.status || 'no votes', 'data-early': String(!x.call && x.counted != null && x.counted < 50 && x.margin_d != null) });
       const lab = el('span', { class: 'nt-ar-n' }); lab.append(el('b', {}, ntAllName(x)), el('small', {}, ntAllCands(x)));
       const pre = el('span', { class: 'nt-ar-p' }); pre.append(el('small', {}, 'Before votes'), document.createTextNode(ntAllPre(x)));
       const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', {}, x.call ? 'Called' : x.status === 'counting' ? 'Counting' : 'Now'), document.createTextNode(ntAllNow(x)));
