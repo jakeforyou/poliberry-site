@@ -1431,6 +1431,7 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-bt-mp .past { fill: var(--color-fg-muted); } .nt-bt-mp .now { fill: none; stroke: var(--color-fg); stroke-width: 2; } .nt-bt-mp .proj { fill: var(--color-fg); }
 .nt-bt-mp .band { fill: color-mix(in srgb, var(--nt-r) 28%, transparent); } .nt-bt-mp .ours { fill: var(--nt-ours); stroke: var(--color-panel); stroke-width: 1.5; }
 .nt-bt-mp .pl { fill: var(--color-fg); font-size: 10.5px; font-weight: 600; } .nt-bt-mp .pl.mute { fill: var(--color-fg-muted); font-weight: 500; } .nt-bt-mp .ours-t { fill: var(--nt-ours); }
+.nt-bt-evl { margin: .3rem 0 0; padding-left: 1.1rem; display: grid; gap: .3rem; font-size: 13px; line-height: 1.4; max-width: 78ch; }
 .nt-bt-h4 { margin: .2rem 0 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; }
 .nt-bt-why { margin: 0; padding-left: 1.1rem; display: grid; gap: .25rem; font-size: 13.5px; line-height: 1.45; max-width: 78ch; }
 .nt-bt-det > summary, .nt-bt-add > summary { cursor: pointer; font-size: 13px; color: var(--color-fg-muted); padding: .35rem 0; min-height: 24px; }
@@ -1902,6 +1903,7 @@ button.nt-hs[data-s="counting"][data-w="R"] { background: color-mix(in srgb, var
   #night > .nt-glance { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
   #night > .nt-mapsec { order: 5; } #night > .nt-expect { order: 6; } #night > .nt-top { order: 7; } #night > .nt-prac { order: 8; }
   #night > .nt-board2 { order: 9; } #night > .nt-impact { order: 10; } #night > .nt-results { order: 11; }
+  #night > .nt-batches { order: 10; } #night > .nt-batches.lead { order: 1; }  /* the vote batch card: right after the glance until the count starts (it follows the glance in the page), then after Most impactful */
   /* the build notes of the shared copy go to the foot of the page: the glance says what the page is */
   body:has(> .lx-note) { display: flex; flex-direction: column; }
   body:has(> .lx-note) > main { order: 1; }
@@ -3823,7 +3825,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   var nightData = null, nightTimers = null, nightPrevTheme, nightLoad = null, nightLastMinute = null, nightParseSeq = 0, nightClosed = new Set(), nightOpened = new Set();
   var nightSeen = null, nightNew = {}, nightHealth = null, nightSort = null, nightClaims = null, nightPaused = false, nightSig = null, nightDrawnAt = 0;
   var nightBatches = null, nightBatchSeq = 0, nightBatchAll = false;  // the Election Day vote batches file (scripts/night_batches.py, Nov 3)
-  var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtAllRaces = false, nightBtDetOpen = false;
+  var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtAllRaces = false, nightBtDetOpen = false, nightBtEvOpen = false;
   const nightBtOpen = new Set();  // races whose batches are unfolded, kept across the 30-second redraws  // every race's count batch by batch (scripts/night_results_batches.py), and the last good text of each file
   var nightView = 'results';  // the old Deep dive now lives in Evidence's Night details (Nov 2 evening), so the night tab has one view
   var nightMode = (() => { if (ntRO()) return 'live'; try { return localStorage.getItem('nt-mode') === 'practice' ? 'practice' : 'live'; } catch (e) { return 'live'; } })();  // live or practice
@@ -5213,6 +5215,24 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return svg;
   }
 
+  // every state's early vote in plain words (night_batches.early_vote): three short lines, every state folded under them
+  function ntBtEarly(box, E, compact) {
+    box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, 'Across the country: the early vote'), el('small', {}, E.as_of ? `counts as of ${E.as_of.slice(5).replace('-', '/')}` : '')]));
+    const ul = el('ul', { class: 'nt-bt-why' });
+    for (const l of compact ? E.lines.slice(0, 1) : E.lines) {
+      const m = /^(Which way|What it means):\s*/.exec(l);
+      ul.append(m ? ntKids('li', {}, [el('b', {}, m[1] + ': '), l.slice(m[0].length)]) : el('li', {}, l));
+    }
+    box.append(ul);
+    const det = el('details', { class: 'nt-bt-det', 'data-fk': 'bt:ev' });
+    det.append(el('summary', {}, `Every state (${E.states.length})`));
+    const list = el('ul', { class: 'nt-bt-evl' });
+    for (const x of E.states) list.append(el('li', {}, x.line));
+    const src = el('p', { class: 'nt-bt-src' }, `Counts from each state's file or the University of Florida Election Lab tracker, read by the morning snapshot. ${E.how}`);
+    det.append(list, src);
+    det.open = !!nightBtEvOpen; det.addEventListener('toggle', () => { nightBtEvOpen = det.open; });
+    box.append(det);
+  }
   // after the polls close: one line per race that says where its count is heading (pace() in night_results_batches.py),
   // across every state, the closest finishes first. A race's chart and batches fold under its line.
   const NT_BT_SHOW = 4;
@@ -5268,7 +5288,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const form = $('#nt-bt-add'); if (form) { form.hidden = ntRO() || nightMode === 'practice'; ntBtWire(); }
     try {
       box.replaceChildren(ntHead(el('h2', {}, 'Vote batches'), 'batches'));
-      if (lead) box.append(el('p', { class: 'nt-bt-kick' }, 'Before the polls close, this is the live read: who is voting today, and what it means for the night. It moves down once the count starts.'));
+      if (lead) box.append(el('p', { class: 'nt-bt-kick' }, 'Until the polls close: who is voting today, and what it means.'));
       if (races.length) {
         races.sort((a, b) => ntBtRank(d, a) - ntBtRank(d, b));
         box.append(ntKids('div', { class: 'nt-bt-rhead' }, [el('h3', { class: 'nt-bt-h' }, 'The count: where each race is heading'), el('small', {}, `${races.length} races, built ${ntT(R.built_at)} ET`)]));
@@ -5283,6 +5303,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         box.append(el('p', { class: 'nt-bt-src' }, `${R.label || ''} Pace is the trailing side's share of the newest ${3} batches against the share it needs of the votes left, on CNN's estimate of the expected vote.`));
       }
       if (fl && nightMode !== 'practice') ntBtTurnout(box, fl, f, races.length > 0);
+      if (f && f.early_vote && nightMode !== 'practice') ntBtEarly(box, f.early_vote, races.length > 0);
     } catch (e) {  // a file of the wrong shape hides this card and never stops the rest of the board drawing (review, Nov 3)
       box.replaceChildren(); sec.hidden = true; if (jb) jb.hidden = true;
     }
