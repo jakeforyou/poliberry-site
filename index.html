@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true;</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '881e9ffa0af7';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -4086,16 +4086,37 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         try { nightBatches = btx ? JSON.parse(btx) : null; nightBtTxt = btx; } catch (e) { /* a half-written file: keep the last one */ }
         try { nightResults = rtx ? JSON.parse(rtx) : null; nightRsTxt = rtx; } catch (e) { /* likewise */ }
         drawNight(); nightSig = sig;
+        ntSiteRestore();
         return true;
       } catch (e) { const s = $('#nt-status'); if (s) { s.textContent = 'Could not load the board: ' + e.message; delete s.dataset.sg; } return false; }
     };
-    nightTimers.data = setInterval(() => { if (!nightPaused) nightLoad(); }, 30000);
+    nightTimers.data = setInterval(() => { if (!nightPaused) nightLoad(); ntSiteCheck(); }, 30000);
     nightTimers.clock = setInterval(ntTick, 1000);
     // the spoken line lives straight under the body, not inside the page: a phone's sheet switches the page off, and a line in it would not be heard
     const sr = $('#nt-sr'); if (sr && sr.parentElement !== document.body) document.body.append(sr);
     ntWireEntry(); ntWireHome(); ntWireJump(); ntWireSince();
     if (nightTvWant && state.tab === 'night') ntTvSet(true);  // a link to #night/tv opens the layer at once, before the board has loaded
     nightLoad();
+  }
+  // A new page goes out while people have the old one open (Jake, Nov 3, 6:45pm: add an auto-refresh). The public copy carries its
+  // version (scripts/build_share.py), and data/site_version.json names the newest. When they differ the page reloads itself at a quiet
+  // moment: no sheet open, nothing being typed, the tab in view. It loads its own address with the version on it, so a browser's cached
+  // copy of the old page is not used again, and it tries once per version, so a stubborn cache can never make it loop.
+  async function ntSiteCheck() {
+    if (!ntRO() || !window.__siteVersion) return;
+    let v = null;
+    try { const r = await fetch(ntBase() + 'site_version.json', { cache: 'no-cache' }); v = r.ok ? (await r.json()).v : null; } catch (e) { return; }
+    if (!v || v === window.__siteVersion) return;
+    let tried = null; try { tried = sessionStorage.getItem('nt-site-tried'); } catch (e) { /* no storage: still fine */ }
+    if (tried === v) return;
+    const sh = $('#nt-sheet'), a = document.activeElement;
+    if (document.hidden || (sh && !sh.hidden) || (a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))) return;  // the next check tries again
+    try { sessionStorage.setItem('nt-site-tried', v); sessionStorage.setItem('nt-site-y', String(Math.round(window.scrollY))); } catch (e) { /* fine */ }
+    location.replace(location.pathname + '?v=' + v + (nightTv ? '#night/tv' : location.hash));
+  }
+  function ntSiteRestore() {  // back to where the reader was before the page reloaded itself
+    let y = null; try { y = sessionStorage.getItem('nt-site-y'); sessionStorage.removeItem('nt-site-y'); } catch (e) { return; }
+    if (y != null) requestAnimationFrame(() => window.scrollTo(0, +y));
   }
   // faces and state outlines (Nov 2 evening, Jake: "Include faces!" and an outline of each state on the tiles)
   function ntFace(raceId, p, name, size) {
