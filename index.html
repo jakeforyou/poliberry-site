@@ -1243,6 +1243,7 @@ body.nt-paused .nt-dot[data-s="ok"] { animation: none; }
 .nt-sheet-x:hover, .nt-sheet-x:focus-visible { color: var(--color-fg); } .nt-sheet-x:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-sheet-b { overflow-y: auto; padding: .9rem 1.1rem 1.4rem; display: grid; gap: .75rem; align-content: start; font-size: 14px; line-height: 1.55; }
 .nt-sheet-b p { margin: 0; } .nt-sheet-lede { font-size: 15px; }
+.nt-sheet-b .nt-sheet-asof { font-size: 12.5px; line-height: 1.3; color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }  /* how fresh the numbers in the sheet are */
 .nt-sheet-h3 { margin: .3rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; }
 .nt-dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .35rem .9rem; margin: 0; }
 .nt-dl dt { color: var(--color-fg-muted); font-size: 13px; } .nt-dl dd { margin: 0; }
@@ -3852,11 +3853,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   function startNight() {
     nightTimers = {};
+    // Resolves true when the board is in hand (new, or the same text as before) and false when it could not be read. ntLook relies on that.
     nightLoad = async (force) => {
-      if (state.tab !== 'night' && state.tab !== 'evidence') return;  // Evidence's Night details draws from the same board
+      if (state.tab !== 'night' && state.tab !== 'evidence') return true;  // Evidence's Night details draws from the same board
       try {
         const r = await fetch(ntBase() + (nightMode === 'practice' ? 'night_practice.json' : 'night.json'), { cache: 'no-store' });
-        if (!r.ok && nightMode === 'practice') { await ntPracticePost('/api/night/practice/reset'); return; }  // first visit: build an empty practice board
+        if (!r.ok && nightMode === 'practice') { await ntPracticePost('/api/night/practice/reset'); return true; }  // first visit: build an empty practice board
         if (!r.ok) throw new Error('HTTP ' + r.status + '. Run scripts/night_board.py once.');
         const txt = await r.text();
         nightLoadedAt = Date.now();  // the board in hand is current as of now (the return summary asks)
@@ -3865,11 +3867,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         // A board that is the same text as the last one is not drawn again: a redraw rebuilds every box and costs a keyboard or
         // screen reader user their place (accessibility review, item 1). The status line is still checked, because its age moves.
         const sig = nightMode + '|' + txt + '|' + (ctx || '');
-        if (!force && nightData && sig === nightSig && !ntTimeDue()) { ntHealth(nightData); return; }
+        if (!force && nightData && sig === nightSig && !ntTimeDue()) { ntHealth(nightData); return true; }
         nightData = JSON.parse(txt); registerNight(nightData);
         try { nightClaims = ctx ? JSON.parse(ctx) : null; } catch (e) { nightClaims = null; }
         drawNight(); nightSig = sig;
-      } catch (e) { const s = $('#nt-status'); if (s) { s.textContent = 'Could not load the board: ' + e.message; delete s.dataset.sg; } }
+        return true;
+      } catch (e) { const s = $('#nt-status'); if (s) { s.textContent = 'Could not load the board: ' + e.message; delete s.dataset.sg; } return false; }
     };
     nightTimers.data = setInterval(() => { if (!nightPaused) nightLoad(); }, 30000);
     nightTimers.clock = setInterval(ntTick, 1000);
@@ -3901,8 +3904,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return svg.node();
   }
   // ---------- most impactful so far (Jake's idea, Nov 2 late) and the control chart (one simple chart, Gall's law)
+  // The chart is of the night, from the first poll close (6pm ET), not of the days before. The board's history keeps nothing earlier
+  // (scripts/night_story.py ctl_history). A board built before that change can still carry a Nov 2 point, so the page leaves it out too.
+  const NT_NIGHT_START = Date.parse('2026-11-03T18:00:00-05:00');
+  const ntCtlHist = (st) => ((st && st.ctl_hist) || []).filter((p) => Date.parse(p[0]) >= NT_NIGHT_START);
   function ntCtlChart(d) {
-    const st = d.story || {}, h = st.ctl_hist || [];
+    const st = d.story || {}, h = ntCtlHist(st);
     if (h.length < 2) return null;
     const W = 640, H = 150, m = { l: 34, r: 10, t: 10, b: 20 };
     const xs = h.map((p) => Date.parse(p[0])), x0 = Math.min(...xs), x1 = Math.max(...xs, x0 + 60000);
@@ -3918,7 +3925,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     svg.append('path').attr('d', ln(1)).attr('class', 'nt-ctlc-l s');
     svg.append('path').attr('d', ln(2)).attr('class', 'nt-ctlc-l h');
     for (const mv of st.impact || []) {
-      if (mv.to == null) continue;
+      if (mv.to == null || Date.parse(mv.at) < x0) continue;  // a result from before the chart's first point has no place on it
       const c = svg.append('circle').attr('cx', x(Date.parse(mv.at))).attr('cy', y(mv.to)).attr('r', 3.5).attr('class', 'nt-ctlc-dot ' + (mv.chamber === 'house' ? 'h' : 's'));
       c.append('title').text(`${ntT(mv.at)}: ${mv.title} ${mv.chamber === 'house' ? 'House' : 'Senate'} ${ntPct(100 * mv.from)} to ${ntPct(100 * mv.to)}.`);
     }
@@ -4136,7 +4143,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const ntFkLabel = (c) => c.dataset.fk || c.getAttribute('aria-label') || (c.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
   const ntFkSee = (c) => !c.closest('[hidden]') && c.getClientRects().length > 0;
   function ntFocusNote(a) {
-    if (!a || a === document.body || !a.closest || !a.closest('#night, #nightdetail')) return null;
+    if (!a || a === document.body || !a.closest || !a.closest('#night, #nightdetail, #nt-sheet')) return null;  // the sheet is straight under the body: its focus is kept through a rebuild too
     if (a.id) return { id: a.id };
     let r = a.parentElement; while (r && !r.id) r = r.parentElement;
     const tag = a.tagName, cls = a.classList[0] || '', pool = [...(r || document).querySelectorAll(tag)].filter((c) => (c.classList[0] || '') === cls && ntFkSee(c)), lab = ntFkLabel(a);
@@ -4181,13 +4188,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const d = nightData;
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
-    ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d);
+    ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d); ntMoveAll(d);
     ntGlance(d); ntExpect(d);
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
     ntLook(); ntSinceDraw();
     if (nightTvWant && !nightTv) ntTvSet(true);
     if (nightTv) ntTv(d);
+    ntSheetRefresh(d);  // a sheet left open shows the new board, not the one it opened on
     nightDrawnAt = Date.now();
     if (!ntDeepDone) { ntDeepDone = true; ntOpenDeep(d); }
   }
@@ -4264,11 +4272,18 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
 
   // ---------- the glance (Nov 3 pass, Jake: the public link on a phone "may be the primary way users interface with our project").
   // The first thing a friend sees with no context: what this page is, when its numbers are from, the two chambers' seats, the next poll close.
+  // The seat count is CNN's. The public copy drops it when CNN's own tally is missing (scripts/public_copy.py), while the every-race list can still hold calls
+  // and counts. Then 34 and 31 for the Senate, or 0 and 0 for the House, would be wrong, and "No votes yet" too. The page says the count is waiting.
+  const NT_SEAT_WAIT = 'Seat count waiting on CNN';
+  function ntSeatWait(d, k) {
+    const s = (((d && d.every) || {}).summary || {})[k] || {};
+    return !(k === 'senate' ? d.senate_path : d.house_path) && ((s.called || 0) > 0 || (s.counting || 0) > 0);
+  }
   function ntSeatNums(d) {
     const sp = d.senate_path, hp = d.house_path;  // the same sums as the seat bars below: the Senate's 34 and 31 seats not up this year, plus called and leading
     return {
-      senate: { name: 'Senate', maj: 51, d: 34 + (sp ? sp.called_D + sp.lead_D : 0), r: 31 + (sp ? sp.called_R + sp.lead_R : 0) },
-      house: { name: 'House', maj: 218, d: hp ? hp.called_D + hp.lead_D : 0, r: hp ? hp.called_R + hp.lead_R : 0 },
+      senate: { name: 'Senate', maj: 51, wait: ntSeatWait(d, 'senate'), d: 34 + (sp ? sp.called_D + sp.lead_D : 0), r: 31 + (sp ? sp.called_R + sp.lead_R : 0) },
+      house: { name: 'House', maj: 218, wait: ntSeatWait(d, 'house'), d: hp ? hp.called_D + hp.lead_D : 0, r: hp ? hp.called_R + hp.lead_R : 0 },
     };
   }
   const ntDur = (m) => (m < 60 ? `${m} minute${m === 1 ? '' : 's'}` : `${Math.floor(m / 60)} hour${Math.floor(m / 60) === 1 ? '' : 's'}${m % 60 ? ` ${m % 60} minute${m % 60 === 1 ? '' : 's'}` : ''}`);
@@ -4287,18 +4302,21 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     box.replaceChildren();
     for (const k of ['senate', 'house']) {
       const n = nums[k], o = co[k];
-      const cnt = (cls, who, v) => { const b = el('b', { class: cls }); b.append(el('span', { class: 'nt-sr' }, who + ' '), document.createTextNode(String(v))); return b; };
+      const cnt = (cls, who, v) => { const b = el('b', { class: cls }); b.append(el('span', { class: 'nt-sr' }, who + ' '), document.createTextNode(n.wait ? '—' : String(v))); return b; };
       const t = el('div', { class: 'nt-gl-t', role: 'group', 'aria-label': n.name, 'data-ch': k });
       const h = el('div', { class: 'nt-gl-h' }); h.append(el('span', { class: 'nm' }, n.name), ntQ(k));
       const s = el('div', { class: 'nt-gl-n' }); s.append(cnt('nt-d', 'Democrats', n.d), el('small', {}, `${n.maj} wins`), cnt('nt-r', 'Republicans', n.r));
       t.append(h, s);
+      if (n.wait) t.append(el('small', { class: 'nt-gl-c nt-gl-w' }, NT_SEAT_WAIT));
       if (o && o.p_d != null) t.append(el('small', { class: 'nt-gl-c' }, 'Chance to control'), ntWinBar(o.p_d, 'sm'));
       box.append(t);
     }
     ntAsOfAge(d);
   }
   var nightStaleSaid = false;
-  const NT_STALE_MIN = { local: 5, public: 12, late: 45 };  // minutes. The public copy is pushed every 6 minutes or so, so it gets room for that lag
+  // Minutes. The board is rebuilt every 5 minutes even when the votes sit still (scripts/night.py FAST_REBUILD_EVERY) and the public copy is pushed about
+  // every 6 minutes after that, so the limits sit above those cadences. After 6am the checks run every 30 minutes.
+  const NT_STALE_MIN = { local: 8, public: 15, late: 75 };
   function ntStale(d) {  // M5: the band nobody can miss when CNN's numbers have stopped moving, from 6pm ET on election night
     const box = $('#nt-stale'); if (!box) return;
     let msg = '';
@@ -4306,7 +4324,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (nightMode !== 'practice' && d && d.every && now >= t6 && now < end) {
       const cnn = (d.every.read_at || {}).CNN, limit = now < t6am ? (ntRO() ? NT_STALE_MIN.public : NT_STALE_MIN.local) : NT_STALE_MIN.late;
       if (!cnn) { if (now - t6 > 10 * 60000) msg = "No CNN read yet tonight. The count and calls will show here once there is one."; }
-      else { const age = Math.floor((now - Date.parse(cnn)) / 60000); if (age > limit) msg = `CNN's numbers are ${ntDur(age)} old. The last read was ${ntT(cnn)} ET. The count and calls below may be behind.${ntRO() ? ' This page keeps checking.' : ''}`; }
+      else {
+        // The band shows when the newer of the last CNN read and the board's build is past the limit: a rebuild with the votes sitting still
+        // has a build time that moves and a read time that may not. The words give the CNN read's own age.
+        const rd = Date.parse(cnn), bt = Date.parse(d.built_at || ''), newest = Math.max(isNaN(rd) ? 0 : rd, isNaN(bt) ? 0 : bt);
+        const age = Math.floor((now - (newest || rd)) / 60000);
+        if (age > limit) msg = `CNN's numbers are ${ntDur(isNaN(rd) ? age : Math.floor((now - rd) / 60000))} old. The last read was ${ntT(cnn)} ET. The count and calls below may be behind.${ntRO() ? ' This page keeps checking.' : ''}`;
+      }
     }
     box.hidden = !msg; if (box.textContent !== msg) box.textContent = msg;
     if (msg && !nightStaleSaid) { nightStaleSaid = true; ntSay(msg); } else if (!msg) nightStaleSaid = false;
@@ -4321,11 +4345,22 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // ---------- since you looked away (Nov 3, backlog R5; map-needs q6-intermittent-majority). Over half of viewers check in only now and
   // then (Pew 2020), so a return after a gap opens on one band that stands on its own: the calls, the lead changes and the move in
   // each chamber's chance since the viewer last looked. It is built only from what the board already has (story.events with their
-  // times, story.call_times, story.ctl_hist). The moment of the last look is kept in this browser only (localStorage, per browser).
+  // times, story.call_times, story.ctl_hist). What the viewer last saw is kept in this browser only (localStorage, per browser, key nt-looked-at):
+  // the viewer's own clock at the last look, which only says whether there was a gap, and the built_at of the board on screen then, which is
+  // where the count starts. The events carry the server's clock, so counting from the viewer's clock would be off by the difference between the
+  // two clocks and by the age of the board the viewer had open (a board is up to 6 minutes behind the votes).
   const NT_GAP = 3 * 60000, NT_LOOK_KEY = 'nt-looked-at', NT_KEEP = 120;  // NT_KEEP: how many messages the board carries (night_story.py KEEP)
-  var nightLookedAt = ntLookRead(), nightLookSaved = 0, nightLookBusy = false, nightLoadedAt = 0, nightSince = null, nightSinceWired = false;
-  function ntLookRead() { try { const v = +localStorage.getItem(NT_LOOK_KEY); return v > 0 ? v : null; } catch (e) { return null; } }
-  function ntLookSave() { nightLookSaved = Date.now(); if (nightLookedAt == null) return; try { localStorage.setItem(NT_LOOK_KEY, String(nightLookedAt)); } catch (e) { /* storage blocked: no summary on a return, nothing else lost */ } }
+  var nightLook0 = ntLookRead(), nightLookedAt = nightLook0.at, nightLookedBoard = nightLook0.board, nightLookSaved = 0, nightLookBusy = false, nightLookFails = 0, nightLoadedAt = 0, nightSince = null, nightSinceWired = false;
+  function ntLookRead() {  // {at, board}. An older copy of this page kept just the number
+    const none = { at: null, board: null };
+    try {
+      const raw = localStorage.getItem(NT_LOOK_KEY); if (!raw) return none;
+      if (raw.charAt(0) === '{') { const j = JSON.parse(raw); return { at: +j.at > 0 ? +j.at : null, board: +j.board > 0 ? +j.board : null }; }
+      return +raw > 0 ? { at: +raw, board: null } : none;
+    } catch (e) { return none; }
+  }
+  const ntBoardMs = (d) => { const t = Date.parse((d && d.built_at) || ''); return isNaN(t) ? null : t; };
+  function ntLookSave() { nightLookSaved = Date.now(); if (nightLookedAt == null) return; try { localStorage.setItem(NT_LOOK_KEY, JSON.stringify({ at: nightLookedAt, board: nightLookedBoard })); } catch (e) { /* storage blocked: no summary on a return, nothing else lost */ } }
   // every call the board knows of, newest first: the feed's call messages, then seats only call_times has (a House seat held is not a message)
   function ntCalls(d) {
     const st = (d && d.story) || {}, ct = st.call_times || {}, out = new Map();
@@ -4354,7 +4389,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   function ntSinceCalc(d, from) {  // null when nothing happened that is worth a line
     const st = (d && d.story) || {}, calls = ntCalls(d).filter((c) => c.ms > from);
     const leads = (st.events || []).filter((e) => e.kind === 'lead' && e.level === 'big' && Date.parse(e.at || '') > from);  // "Lead change" messages, not the quiet early counts
-    const h = st.ctl_hist || [], co = st.control_odds || {}, chg = [];
+    const h = ntCtlHist(st), co = st.control_odds || {}, chg = [];
     let past = null; for (const row of h) { if (Date.parse(row[0]) <= from) past = row; else break; }
     past = past || h[0] || null;  // before the history began: the first point, which is where the night started
     const lastRow = h.length ? h[h.length - 1] : null;
@@ -4380,18 +4415,28 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   // While the night tab is in view: remember the moment. On a return after a gap, say what happened meanwhile (after a fresh read, if the
   // board in hand is old). Not on a first visit, not on a practice or paused board, and not when nothing changed.
-  function ntLook(tried) {
+  function ntLook(tried, retry) {
     if (document.hidden || state.tab !== 'night' || !nightData || nightLookBusy) return;
     const now = Date.now(), was = nightLookedAt;
     if (was != null && now - was >= NT_GAP && nightMode === 'live' && !nightData.synthetic && !nightPaused) {
       if (!tried && now - nightLoadedAt > 20000 && typeof nightLoad === 'function') {
+        if (nightLookFails > 0 && !retry) return;  // a refresh failed: the summary is still owed, and nothing asks again until the retry or the regular load
         nightLookBusy = true;
-        Promise.resolve(nightLoad()).catch(() => null).then(() => { nightLookBusy = false; ntLook(true); });
+        Promise.resolve(nightLoad()).then((ok) => ok !== false, () => false).then((ok) => {
+          nightLookBusy = false;
+          if (ok) { nightLookFails = 0; ntLook(true); return; }
+          // The refresh failed, so the board in hand may be missing what happened. The look time stays where it was and the summary waits.
+          // One more try in about 10 seconds. If that fails too, the regular 30-second load brings the board in and the summary comes with it.
+          nightLookFails += 1;
+          if (nightLookFails === 1) setTimeout(() => ntLook(false, true), 10000);
+        });
         return;
       }
-      ntSinceStart(was, nightDrawnAt > 0);
+      nightLookFails = 0;
+      ntSinceStart(nightLookedBoard != null ? nightLookedBoard : was, nightDrawnAt > 0);  // from the board last seen. No board time kept (an older copy of the page): the viewer's clock
     }
     nightLookedAt = now;
+    if (nightMode === 'live' && ntBoardMs(nightData) != null) nightLookedBoard = ntBoardMs(nightData);  // a practice board's time is not a live board's
     if (now - nightLookSaved > 15000) ntLookSave();
   }
   function ntWireSince() {
@@ -4497,8 +4542,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const a = el('article', { class: 'nt-tv-c', 'data-ch': k, 'aria-label': n.name });
     const h = el('div', { class: 'nt-tv-ch-h' }); h.append(el('h2', {}, n.name), el('span', { class: 'need' }, `${n.maj} seats for control`));
     const seats = el('div', { class: 'nt-tv-seats' });
-    for (const [c, who, v] of [['d', 'Democrats', n.d], ['r', 'Republicans', n.r]]) { const s = el('div', { class: 's ' + c }); s.append(el('small', {}, who), el('b', {}, String(v))); seats.append(s); }
-    const sub = el('p', { class: 'sub' }, k === 'senate' ? 'Seats called or ahead, plus the 65 not up this year.' : 'Seats called or ahead.');
+    for (const [c, who, v] of [['d', 'Democrats', n.d], ['r', 'Republicans', n.r]]) { const s = el('div', { class: 's ' + c }); s.append(el('small', {}, who), el('b', {}, n.wait ? '—' : String(v))); seats.append(s); }
+    const sub = el('p', { class: 'sub' }, n.wait ? `${NT_SEAT_WAIT}.` : k === 'senate' ? 'Seats called or ahead, plus the 65 not up this year.' : 'Seats called or ahead.');
     const c = el('div', { class: 'nt-tv-chance' });
     if (o && o.p_d != null) {
       const row = el('div', { class: 'pc' });
@@ -4510,9 +4555,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     a.append(h, seats, sub, c);
     return a;
   }
+  const NT_TV_BIG = ['lead', 'batch', 'verdict', 'runoff'];
   function ntTvLines(d) {
     const box = $('#nt-tv-lines'); if (!box) return;
-    const call = ntCalls(d)[0], big = ((d.story || {}).events || []).find((e) => e.level === 'big' && e.kind !== 'call' && e.kind !== 'check');  // events run newest first
+    // events run newest first. Only a lead change, a big batch, the whole-night verdict or a runoff is a change in the count: poll-close notices, county notes and data checks are not
+    const call = ntCalls(d)[0], big = ((d.story || {}).events || []).find((e) => e.level === 'big' && NT_TV_BIG.includes(e.kind));
     const row = (k, text, at, p) => {
       const r = el('div', { class: 'nt-tv-line', 'data-p': p === 'D' || p === 'R' ? p : '' });
       r.append(el('span', { class: 'k' }, k), el('span', { class: 't' }, text), el('span', { class: 'w' }, at ? ntT(at) : ''));
@@ -4577,11 +4624,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const rank = (i) => (i.outside ? 1 : i.near_line ? 2 : 0);
     return items.map((it, n) => [it, n]).sort((a, b) => rank(a[0]) - rank(b[0]) || a[1] - b[1]).map((x) => x[0]);
   }
-  function ntXPick(d, tests) {  // the next close, or the latest one that has closed and is still being read
+  // The next close, or the latest one that has closed and is still being read. A group that has just closed is "Too early" on every seat for its
+  // first half hour, so alone it says nothing. Then the latest earlier group that has a reading shows with it (prev).
+  const ntXSeen = (g) => g.items.some((i) => !i.outside && i.status != null);
+  function ntXPick(d, tests) {
     const now = Date.now();
     const gs = (tests || []).map((g) => ({ g, ms: Date.parse(ntAtIso(d, g.at) || '') })).filter((x) => !isNaN(x.ms));
     const reading = gs.filter((x) => x.ms <= now && now - x.ms <= 75 * 60000 && x.g.items.some((i) => !i.outside && i.status == null && !i.called)).pop();
-    if (reading) return { ...reading, mode: 'reading' };
+    if (reading) {
+      const before = gs.slice(0, gs.indexOf(reading)).filter((x) => ntXSeen(x.g)).pop();
+      return { ...reading, mode: 'reading', prev: !ntXSeen(reading.g) && before ? before : null };
+    }
     const next = gs.find((x) => x.ms > now);
     if (next) return { ...next, mode: 'next' };
     const last = gs[gs.length - 1];
@@ -4630,16 +4683,21 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     box.replaceChildren(ntHead(el('h2', {}, 'What to expect'), 'expect'), el('p', { class: 'nt-x-t' }, e.title || ''));
     for (const l of e.lines || []) box.append(el('p', { class: 'nt-x-n' }, l));
     const pick = ntXPick(d, e.tests), total = (e.tests || []).reduce((n, g) => n + g.items.length, 0);
-    if (pick) {
-      const g = pick.g, items = ntXOrder(g.items), sec = el('div', { class: 'nt-x-g' });
-      const lab = pick.mode === 'reading' ? `Reading now: the ${g.at_text} tests` : pick.mode === 'last' ? `Last tests: ${g.at_text}` : `Next tests: ${g.at_text}`;
-      sec.append(el('h3', { class: 'nt-x-gh' }, lab), el('p', { class: 'nt-x-n' }, ntXExplain(e)));
+    const group = (g, lab, why) => {
+      const items = ntXOrder(g.items), sec = el('div', { class: 'nt-x-g' });
+      sec.append(el('h3', { class: 'nt-x-gh' }, lab));
+      if (why) sec.append(el('p', { class: 'nt-x-n' }, ntXExplain(e)));
       const list = el('div', { class: 'nt-x-list' });
       const out = items.filter((i) => i.outside).slice(0, 2), reg = items.filter((i) => !i.outside), shown = [...reg.slice(0, NT_X_MAX - out.length), ...out];  // an outside marker always makes the short list
       for (const it of shown) list.append(ntXRow(d, e, g, it, false));
       sec.append(list);
       if (items.length > shown.length) sec.append(el('p', { class: 'nt-x-n' }, `${items.length - shown.length} more at ${g.at_text}. They are in All tests.`));
       box.append(sec);
+    };
+    if (pick) {
+      const g = pick.g;
+      group(g, pick.mode === 'reading' ? `Reading now: the ${g.at_text} tests` : pick.mode === 'last' ? `Last tests: ${g.at_text}` : `Next tests: ${g.at_text}`, true);
+      if (pick.prev) group(pick.prev.g, `Latest readings: the ${pick.prev.g.at_text} tests`, false);
     }
     const act = el('div', { class: 'nt-x-act' });
     if (total) { const all = el('button', { type: 'button', class: 'nt-btn nt-btn-q', 'data-fk': 'xr:all' }, `All tests (${total})`); all.addEventListener('click', () => ntXSheet(d)); act.append(all); }
@@ -4657,23 +4715,26 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const srcs = ntXSources(e);
     if (total) box.append(el('p', { class: 'nt-x-src' }, `Lines: ${ntAnd(srcs) || 'our forecast'}. Our readings, not results and not a call.`));
   }
-  function ntXSheet(d) {  // every close time, every test, and everything that will not finish tonight
-    const e = (d.story || {}).expect; if (!e) return;
-    const nodes = [el('p', { class: 'nt-sheet-lede' }, e.title || ''), el('p', { class: 'nt-mute' }, ntXExplain(e))];
-    for (const g of e.tests || []) {
-      nodes.push(el('h3', { class: 'nt-sheet-h3' }, `${g.at_text}, ${g.items.length} test${g.items.length === 1 ? '' : 's'}`));
-      const list = el('div', { class: 'nt-x-list' });
-      for (const it of ntXOrder(g.items)) list.append(ntXRow(d, e, g, it, true));
-      nodes.push(list);
-    }
-    if ((e.not_tonight || []).length) {
-      nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Not finishing tonight'));
-      const list = el('div', { class: 'nt-x-list' });
-      for (const n of e.not_tonight) list.append(ntXNot(d, n, true));
-      nodes.push(list);
-    }
-    nodes.push(el('p', { class: 'nt-mute' }, `Lines come from ${ntAnd(ntXSources(e)) || 'our forecast'} (data/night_tells.json and data/forecast_addendum.json). Outside markers say who set them. These are our readings, not results.`));
-    ntSheet('All tests', 'What to expect', nodes);
+  function ntXSheet(d0) {  // every close time, every test, and everything that will not finish tonight
+    const build = (d) => {
+      const e = (d.story || {}).expect; if (!e) return null;
+      const nodes = [el('p', { class: 'nt-sheet-lede' }, e.title || ''), el('p', { class: 'nt-mute' }, ntXExplain(e))];
+      for (const g of e.tests || []) {
+        nodes.push(el('h3', { class: 'nt-sheet-h3' }, `${g.at_text}, ${g.items.length} test${g.items.length === 1 ? '' : 's'}`));
+        const list = el('div', { class: 'nt-x-list' });
+        for (const it of ntXOrder(g.items)) list.append(ntXRow(d, e, g, it, true));
+        nodes.push(list);
+      }
+      if ((e.not_tonight || []).length) {
+        nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Not finishing tonight'));
+        const list = el('div', { class: 'nt-x-list' });
+        for (const n of e.not_tonight) list.append(ntXNot(d, n, true));
+        nodes.push(list);
+      }
+      nodes.push(el('p', { class: 'nt-mute' }, `Lines come from ${ntAnd(ntXSources(e)) || 'our forecast'} (data/night_tells.json and data/forecast_addendum.json). Outside markers say who set them. These are our readings, not results.`));
+      return nodes;
+    };
+    const nodes = build(d0); if (nodes) ntSheet('All tests', 'What to expect', nodes, undefined, build);
   }
 
   // ---------- the House line (Nov 3 pass): every seat ranked by our chance before votes, the 218th marked. Democrats hold the House
@@ -4750,11 +4811,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const [id, o, name, p] of [['#nt-sen', sen, 'Senate', sp], ['#nt-hou', hou, 'House', hp]]) {
       const box = $(id); box.replaceChildren();
       const head = el('div', { class: 'nt-seat-h' });
+      const wait = ntSeatWait(d, name === 'Senate' ? 'senate' : 'house');
       const dN = (o.dHeld || 0) + o.dCalled + o.dLead, rN = (o.rHeld || 0) + o.rCalled + o.rLead;
       // the two counts are told apart by color alone, so each carries its party in words for a screen reader (accessibility review, item 5)
-      const cnt = (cls, who, n) => { const b = el('b', { class: cls }); b.append(el('span', { class: 'nt-sr' }, who + ' '), document.createTextNode(String(n))); return b; };
+      const cnt = (cls, who, n) => { const b = el('b', { class: cls }); b.append(el('span', { class: 'nt-sr' }, who + ' '), document.createTextNode(wait ? '—' : String(n))); return b; };
       head.append(el('span', { class: 'nt-seat-n' }, 'Seats'), cnt('nt-d', 'Democrats', dN), cnt('nt-r', 'Republicans', rN),
-        el('small', { class: 'nt-mute' }, (p ? `called or ahead. ${p.no_votes ? p.no_votes + ' not counting yet. ' : ''}` : (name === 'Senate' ? 'seats not up this year. No votes yet. ' : 'No votes yet. ')) + `${o.majority} for control.`), ntQ('seats'));
+        el('small', { class: 'nt-mute' }, (wait ? `${NT_SEAT_WAIT}. ` : p ? `called or ahead. ${p.no_votes ? p.no_votes + ' not counting yet. ' : ''}` : (name === 'Senate' ? 'seats not up this year. No votes yet. ' : 'No votes yet. ')) + `${o.majority} for control.`), ntQ('seats'));
       const mk = (d.markets || {})[name === 'Senate' ? 'senate' : 'house'] || {};
       const pc = (v) => Math.round(v * 100) + '%', below = [];
       if (nightView === 'deep' && (mk.now != null || mk.six != null)) {
@@ -5053,10 +5115,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Out of our simulations of the night, how often this race is the one that decides which party controls the chamber: the other races land so that this one is the tipping point.',
       'A high number means the race matters a lot for control. It changes as races are called, and a called race stops mattering. It is our own estimate, not a call.'] },
     since: { title: 'Since you looked away', body: [
-      'Come back to this page after three minutes or more and this line says what happened while you were gone: how many races were called, how many leads changed, and how far each side\'s chance to control moved.',
-      'It counts a call from the time this page first saw it. That can be a few minutes after the TV said it. House seats that the feed does not list are counted too.',
+      'Come back to this page after three minutes or more and this line says what happened while you were gone: how many races were called, how many big lead changes there were, and how far each side\'s chance to control moved.',
+      'It counts from the last board you saw, by that board\'s own time and not by your clock, so a clock that runs fast or slow does not change the count. A call counts from the moment the dashboard first saw it, which can be a few minutes after the TV said it. House seats that the feed does not list are counted too. Small early-count lead changes are left out.',
+      'The feed keeps only the newest 120 updates. After a very long gap the counts can be low, and the line says so.',
       'Show them marks those updates in the live feed and takes you there. The × closes the line. It does not show on your first visit, or when nothing changed.',
-      'The time you last looked is kept in this browser only. Nothing is sent anywhere.'] },
+      'What you last saw is kept in this browser only. Nothing is sent anywhere.'] },
     tv: { title: 'The TV view', body: [
       'A big, plain version of the board for a television or a screen across the room. It shows the Senate and the House: seats for each party and each side\'s chance to control.',
       'Under those: the last race called, the last big change in the count, and the next time polls close.',
@@ -5067,7 +5130,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Official state results feeds first. CNN\'s results feed fills in where a state has none or is slow, and it supplies the calls.',
       'Every number shows its source and when it was read. The full list is in Evidence.'], more: { label: 'See the data sources', ref: 'nightdetail' } },
   };
-  var nightSheetFrom = null, nightSheetNote = null, nightSheetInert = null;
+  var nightSheetFrom = null, nightSheetNote = null, nightSheetInert = null, nightSheetBuild = null;
   // On a phone the sheet covers most of the page, so the page behind it is switched off while it is open (accessibility review,
   // item 8): focus cannot wander into what the sheet hides. It is switched back on in ntSheetClose. On a wide screen the sheet sits
   // beside the board and the board stays usable.
@@ -5079,7 +5142,26 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // one live line for a screen reader (accessibility review, item 2): written only for a new big moment, a race call, and a few
   // actions the page takes itself. Cleared first so the same words twice are still spoken.
   function ntSay(t) { const b = $('#nt-sr'); if (!b || !t) return; b.textContent = ''; setTimeout(() => { b.textContent = t; }, 60); }
-  function ntSheet(title, kicker, nodes, link) {  // one sheet at a time, beside the board (a bottom sheet on a phone); Esc or × closes it. link: its deep link
+  // The line at the top of every sheet: how fresh the numbers under it are, from the same time as the top of the page (the last CNN read, else the build)
+  function ntSheetAsOf(d) {
+    if (!d) return [];
+    const a = ntAsOf(d); if (!a.at) return [];
+    return [el('p', { class: 'nt-sheet-asof' }, `As of ${ntT(a.at)} ET`)];
+  }
+  // A sheet shows the board as it was when it opened, and the board moves under it. So a sheet that shows counts keeps the function that built its
+  // nodes (build(d) returns the nodes from a board, or null when the thing is no longer on it), and every draw of the page runs it again on the
+  // new board, in place: the scroll position stays and so does the focus. A help sheet has no build. Only its "As of" line is brought up to date.
+  function ntSheetRefresh(d) {
+    const s = $('#nt-sheet'); if (!s || s.hidden || !d) return;
+    const body = s.querySelector('.nt-sheet-b'); if (!body) return;
+    const asof = ntSheetAsOf(d);
+    if (!nightSheetBuild) { const old = body.querySelector('.nt-sheet-asof'); if (old && asof[0] && old.textContent !== asof[0].textContent) old.textContent = asof[0].textContent; return; }
+    let nodes = null;
+    try { nodes = nightSheetBuild(d); } catch (e) { nodes = null; }
+    if (!nodes) return;  // the thing left the board, or the build failed: the sheet stays as it was, and so does its "As of" line
+    ntKeepFocus(() => { const top = body.scrollTop; body.replaceChildren(...asof, ...nodes.filter(Boolean)); body.scrollTop = top; });
+  }
+  function ntSheet(title, kicker, nodes, link, build) {  // one sheet at a time, beside the board (a bottom sheet on a phone); Esc or × closes it. link: its deep link
     let s = $('#nt-sheet');
     if (!s) {
       s = el('aside', { class: 'nt nt-sheet', id: 'nt-sheet', role: 'dialog', 'aria-labelledby': 'nt-sheet-t', hidden: '' });
@@ -5110,14 +5192,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       tt.append(cp);
     }
     head.append(tt, x);
-    const body = el('div', { class: 'nt-sheet-b' }); body.append(...nodes.filter(Boolean));
+    const body = el('div', { class: 'nt-sheet-b' }); body.append(...ntSheetAsOf(nightData), ...nodes.filter(Boolean));
+    nightSheetBuild = typeof build === 'function' ? build : null;
     s.replaceChildren(head, body); s.hidden = false;
     s.querySelector('h2').focus({ preventScroll: true });
     ntSheetModal(true);
   }
   function ntSheetClose() {
     const s = $('#nt-sheet'); if (!s || s.hidden) return;
-    s.hidden = true; ntSheetModal(false);  // the page comes back first: a switched-off page cannot take focus
+    s.hidden = true; nightSheetBuild = null; ntSheetModal(false);  // the page comes back first: a switched-off page cannot take focus
     const f = nightSheetFrom, n = nightSheetNote; nightSheetFrom = nightSheetNote = null;
     // the control that opened the sheet may have been rebuilt by a redraw while it was open: then find it again by what it was
     if (f && f.isConnected && f.focus) f.focus({ preventScroll: true }); else ntFocusBack(n);
@@ -5160,139 +5243,152 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     });
     return f;
   }
-  function ntCountyPop(d, st, county) {  // a key county's whole story: the count, what we expected and how, 2024 and 2022, why it matters
-    const c = (d.counties || []).find((x) => x.state === st && x.county === county); if (!c) return;
-    const rd = c.reading || {}, has = rd.margin_d != null, dl = el('dl', { class: 'nt-dl' });
-    const first = c.first_2024;
-    const row = (k, v) => { if (v) dl.append(el('dt', {}, k), el('dd', {}, v)); };
-    row('Why we watch it', (c.why || '').split(/(?<=\.)\s+/).slice(0, 2).join(' '));
-    row('The count', has ? `${ntCM(c, rd.margin_d)}, ${ntCounted(c.counted, c.counted_kind) || 'share counted not given'}` : c.feed || c.race_id || c.state === 'VA' ? 'No votes yet.' : 'No live results feed for this county.');
-    // County numbers are not forecasts of their own: the frozen reading rule (data/night_tells.json) carries the race
-    // forecast down to each county by moving its 2024 result (or a comparison race) as far as the state forecast moved.
-    const base = c.comparator != null ? c.comparator : c.pres_2024, stn = NT_STATE[st] || st;
-    if (c.our_line != null && base != null) {
-      const sh = Math.round((c.our_line - base) * 10) / 10;
-      row('What we expected', `${ntCM(c, c.our_line)}${has && c.offset != null && c.pointer !== 'none' ? `. The count is ${Math.abs(c.offset) < 0.05 ? 'right on it' : ntCO(c, c.offset) + ' than that'}.` : '.'}`);
-      const cn = c.comparator_name || '', race = `our ${stn} ${/^gov/.test(c.race_id || '') ? 'governor' : 'Senate'} forecast`;
-      const from = c.comparator != null ? `its result in ${cn ? `the ${cn}${/race|round/.test(cn) ? '' : ' race'}` : 'a comparison race'} (${ntCM(c, base)})` : `its 2024 result (${ntM(base)})`;
-      const how = c.comparator != null ? `${race} is from that race statewide` : `${race} moves the whole state from 2024`;
-      row('How we got that', `${Math.abs(sh) < 0.05 ? `${from[0].toUpperCase()}${from.slice(1)}, unchanged, since ${race} matches that statewide.` : `${from[0].toUpperCase()}${from.slice(1)} moved ${fmt1(Math.abs(sh))} points toward ${sh > 0 ? (c.sides ? c.sides[0] : 'Democrats') : (c.sides ? c.sides[1] : 'Republicans')}: as far as ${how}.`} A simple rule set before the election. It assumes the county moves with its state.`);
-    } else if (c.bench) {
-      // No race we forecast in this state. Two yardsticks from the board script, and the range between them.
-      const b = c.bench, g = c.bench_gap, pts = (x) => `${fmt1(Math.round(Math.abs(x) * 10) / 10)} point${Math.abs(x) === 1 ? '' : 's'}`;
-      row('Why no forecast here', b.ballot || 'No race we forecast is on the ballot here.');
-      row('What would fit our forecast', `${ntRange(b)}.${has && g != null ? ` The count is ${g === 0 ? 'inside that' : `${pts(g)} ${g > 0 ? 'bluer than the top of that' : 'redder than the bottom of that'}`}.` : ''}`);
-      for (const s of b.sticks) {
-        if (s.key === 'country') {
-          const then = s.national_then;
-          row('If it moves like the country', `${ntM(s.line)}. Our forecast has Democrats winning the national House vote by ${fmt1(s.national_now)}. ${then < 0 ? `Trump won the 2024 popular vote by ${fmt1(-then)}` : `Harris won the 2024 popular vote by ${fmt1(then)}`}. That is ${pts(s.shift)} toward Democrats. ${county} was ${ntM(s.base)} in 2024, so the same move lands it at ${ntM(s.line)}.`);
-        } else if (s.key === 'last_year') {
-          const near = s.state_swing != null && Math.abs(s.state_swing - b.sticks[0].shift) < 1.5;
-          row('If it votes like last year', `${ntM(s.line)}, ${s.who}'s margin here in the ${s.year} ${s.base_name.replace(/^\d{4} /, '')}.${s.state_swing != null ? ` ${stn} swung ${pts(s.state_swing)} toward Democrats from 2024 to ${s.year}, ${near ? 'about' : 'against'} the ${fmt1(b.sticks[0].shift)} we expect for the country${near ? ', so last year is a fair guide' : ''}.` : ''}`);
-        } else if (s.key === 'midterm') {
-          const res = Math.abs(s.base) < 0.05 ? `tied ${county}` : `${s.base > 0 ? 'won' : 'lost'} ${county} by ${fmt1(Math.round(Math.abs(s.base) * 10) / 10)}`;
-          row(`If it moves from ${s.year}`, `${ntM(s.line)}. ${s.same_candidate ? `${s.who}, the Democrat again this year,` : 'The Democrat'} ${res} in the ${s.year} ${s.base_name.replace(/^\d{4} /, '')}. Our forecast has the national House vote ${pts(s.shift)} bluer than ${s.year} (${ntM(s.national_then)} then, ${ntM(s.national_now)} now), so the same move lands it at ${ntM(s.line)}.`);
+  function ntCountyPop(d0, st, county) {  // a key county's whole story: the count, what we expected and how, 2024 and 2022, why it matters
+    const c0 = (d0.counties || []).find((x) => x.state === st && x.county === county); if (!c0) return;
+    const build = (d) => {
+      const c = (d.counties || []).find((x) => x.state === st && x.county === county); if (!c) return null;
+      const rd = c.reading || {}, has = rd.margin_d != null, dl = el('dl', { class: 'nt-dl' });
+      const first = c.first_2024;
+      const row = (k, v) => { if (v) dl.append(el('dt', {}, k), el('dd', {}, v)); };
+      row('Why we watch it', (c.why || '').split(/(?<=\.)\s+/).slice(0, 2).join(' '));
+      row('The count', has ? `${ntCM(c, rd.margin_d)}, ${ntCounted(c.counted, c.counted_kind) || 'share counted not given'}` : c.feed || c.race_id || c.state === 'VA' ? 'No votes yet.' : 'No live results feed for this county.');
+      // County numbers are not forecasts of their own: the frozen reading rule (data/night_tells.json) carries the race
+      // forecast down to each county by moving its 2024 result (or a comparison race) as far as the state forecast moved.
+      const base = c.comparator != null ? c.comparator : c.pres_2024, stn = NT_STATE[st] || st;
+      if (c.our_line != null && base != null) {
+        const sh = Math.round((c.our_line - base) * 10) / 10;
+        row('What we expected', `${ntCM(c, c.our_line)}${has && c.offset != null && c.pointer !== 'none' ? `. The count is ${Math.abs(c.offset) < 0.05 ? 'right on it' : ntCO(c, c.offset) + ' than that'}.` : '.'}`);
+        const cn = c.comparator_name || '', race = `our ${stn} ${/^gov/.test(c.race_id || '') ? 'governor' : 'Senate'} forecast`;
+        const from = c.comparator != null ? `its result in ${cn ? `the ${cn}${/race|round/.test(cn) ? '' : ' race'}` : 'a comparison race'} (${ntCM(c, base)})` : `its 2024 result (${ntM(base)})`;
+        const how = c.comparator != null ? `${race} is from that race statewide` : `${race} moves the whole state from 2024`;
+        row('How we got that', `${Math.abs(sh) < 0.05 ? `${from[0].toUpperCase()}${from.slice(1)}, unchanged, since ${race} matches that statewide.` : `${from[0].toUpperCase()}${from.slice(1)} moved ${fmt1(Math.abs(sh))} points toward ${sh > 0 ? (c.sides ? c.sides[0] : 'Democrats') : (c.sides ? c.sides[1] : 'Republicans')}: as far as ${how}.`} A simple rule set before the election. It assumes the county moves with its state.`);
+      } else if (c.bench) {
+        // No race we forecast in this state. Two yardsticks from the board script, and the range between them.
+        const b = c.bench, g = c.bench_gap, pts = (x) => `${fmt1(Math.round(Math.abs(x) * 10) / 10)} point${Math.abs(x) === 1 ? '' : 's'}`;
+        row('Why no forecast here', b.ballot || 'No race we forecast is on the ballot here.');
+        row('What would fit our forecast', `${ntRange(b)}.${has && g != null ? ` The count is ${g === 0 ? 'inside that' : `${pts(g)} ${g > 0 ? 'bluer than the top of that' : 'redder than the bottom of that'}`}.` : ''}`);
+        for (const s of b.sticks) {
+          if (s.key === 'country') {
+            const then = s.national_then;
+            row('If it moves like the country', `${ntM(s.line)}. Our forecast has Democrats winning the national House vote by ${fmt1(s.national_now)}. ${then < 0 ? `Trump won the 2024 popular vote by ${fmt1(-then)}` : `Harris won the 2024 popular vote by ${fmt1(then)}`}. That is ${pts(s.shift)} toward Democrats. ${county} was ${ntM(s.base)} in 2024, so the same move lands it at ${ntM(s.line)}.`);
+          } else if (s.key === 'last_year') {
+            const near = s.state_swing != null && Math.abs(s.state_swing - b.sticks[0].shift) < 1.5;
+            row('If it votes like last year', `${ntM(s.line)}, ${s.who}'s margin here in the ${s.year} ${s.base_name.replace(/^\d{4} /, '')}.${s.state_swing != null ? ` ${stn} swung ${pts(s.state_swing)} toward Democrats from 2024 to ${s.year}, ${near ? 'about' : 'against'} the ${fmt1(b.sticks[0].shift)} we expect for the country${near ? ', so last year is a fair guide' : ''}.` : ''}`);
+          } else if (s.key === 'midterm') {
+            const res = Math.abs(s.base) < 0.05 ? `tied ${county}` : `${s.base > 0 ? 'won' : 'lost'} ${county} by ${fmt1(Math.round(Math.abs(s.base) * 10) / 10)}`;
+            row(`If it moves from ${s.year}`, `${ntM(s.line)}. ${s.same_candidate ? `${s.who}, the Democrat again this year,` : 'The Democrat'} ${res} in the ${s.year} ${s.base_name.replace(/^\d{4} /, '')}. Our forecast has the national House vote ${pts(s.shift)} bluer than ${s.year} (${ntM(s.national_then)} then, ${ntM(s.national_now)} now), so the same move lands it at ${ntM(s.line)}.`);
+          }
         }
+        const wide = b.hi - b.lo;
+        row('How to read it', `Bluer than ${ntM(b.hi)} is an early sign Democrats are doing better than our forecast. Redder than ${ntM(b.lo)} is an early sign they are doing worse. In between fits it.${wide >= 4 ? ` The two yardsticks are ${pts(wide)} apart here, so only a result well outside the range says much.` : ''} Counties never move in lockstep, so treat this as a hint about the national mood, not a verdict.`);
       }
-      const wide = b.hi - b.lo;
-      row('How to read it', `Bluer than ${ntM(b.hi)} is an early sign Democrats are doing better than our forecast. Redder than ${ntM(b.lo)} is an early sign they are doing worse. In between fits it.${wide >= 4 ? ` The two yardsticks are ${pts(wide)} apart here, so only a result well outside the range says much.` : ''} Counties never move in lockstep, so treat this as a hint about the national mood, not a verdict.`);
-    }
-    row('2024 president', c.pres_2024 != null ? ntM(c.pres_2024) : '');
-    row('2022', ntMid22(c.midterm_2022));
-    row('First results', first ? `In 2024: ${first}.` : '');
-    row('Source', rd.source ? `${rd.source}, read ${ntT(rd.at)}` : '');
-    ntSheet(`${county}, ${NT_STATE[st] || st}`, NT_CKIND[c.kind] || 'Key county', [dl, ntWrapP(ntPinRow('county', `${st}|${county}`, `${county}, ${NT_STATE[st] || st}`)),
-      ntLink(`Every key county in ${NT_STATE[st] || st}`, () => ntStatePop(d, st))], `county/${st}/${encodeURIComponent(county)}`);
+      row('2024 president', c.pres_2024 != null ? ntM(c.pres_2024) : '');
+      row('2022', ntMid22(c.midterm_2022));
+      row('First results', first ? `In 2024: ${first}.` : '');
+      row('Source', rd.source ? `${rd.source}, read ${ntT(rd.at)}` : '');
+      return [dl, ntWrapP(ntPinRow('county', `${st}|${county}`, `${county}, ${NT_STATE[st] || st}`)), ntLink(`Every key county in ${NT_STATE[st] || st}`, () => ntStatePop(d, st))];
+    };
+    ntSheet(`${county}, ${NT_STATE[st] || st}`, NT_CKIND[c0.kind] || 'Key county', build(d0), `county/${st}/${encodeURIComponent(county)}`, build);
   }
   let ntCtySort = 'list';
   function ntCtyRow(d, st, c) {  // one county in a state's list: the count, and how it sits against what we expected
-    const rd = c.reading || {}, b = el('button', { type: 'button', class: 'nt-sheet-row', 'data-p': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R' });
+    const rd = c.reading || {}, b = el('button', { type: 'button', class: 'nt-sheet-row', 'data-fk': `sr:${st}|${c.county}`, 'data-p': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R' });
     b.append(el('b', {}, c.county), el('span', {}, rd.margin_d != null ? `${ntCM(c, rd.margin_d)}, ${ntPct(c.counted)} in` : 'no votes yet'),
       el('small', {}, c.offset != null && c.pointer !== 'none' ? `${ntCO(c, c.offset)} than expected` : c.bench_gap != null ? (c.bench_gap === 0 ? 'inside the range that fits our forecast' : `${ntOff(c.bench_gap)} than the range that fits our forecast`) : c.bench ? `fits our forecast: ${ntRange(c.bench)}` : c.pres_2024 != null ? `${ntM(c.pres_2024)} in 2024` : ''));
     b.addEventListener('click', () => ntCountyPop(d, st, c.county));
     return b;
   }
-  function ntStatePop(d, st) {  // a state at a glance: its races with their chances, its key counties, when results come
-    const name = NT_STATE[st] || st, odds = (d.story || {}).odds || {}, nodes = [ntOutline(st, 120, 84, 'xl')];
-    const races = (d.races || []).filter((x) => x.state === st);
-    for (const r of races) {
-      const o = odds[r.id], rd = r.reading || {}, call = r.call && r.call.winner, card = el('div', { class: 'nt-sheet-race' });
-      const fc = el('div', { class: 'nt-sheet-faces' }); fc.append(ntFace(r.id, 'D', r.cand_d, 'md'), ntFace(r.id, 'R', r.cand_r, 'md'));
-      card.append(fc, el('b', {}, `${r.office === 'Senate' ? 'Senate' : 'Governor'}: ${ntLast(r.cand_d) || ntSN(r, 'D')} (${ntSL(r, 'D')}) v ${ntLast(r.cand_r) || 'Republican'} (R)`),
-        el('span', { class: 'nt-mute' }, call ? (call === 'runoff' ? ntRunoffTxt(r.state) : `Called for ${ntWN(r, call)}.`) : rd.margin_d != null ? `${ntM(rd.margin_d)} with ${ntPct(r.counted)} in.` : 'No votes yet.'));
-      if (o && !call) card.append(ntWinBar(o.p_d, 'sm'));
-      nodes.push(card);
-    }
-    let cs = (d.counties || []).filter((c) => c.state === st && !c.context_only); if (!cs.length) cs = (d.counties || []).filter((c) => c.state === st);
-    if (cs.length) {
-      nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Key counties'));
-      // sort the counties: as chosen before the election, by the count, by share counted, or by distance from what we expected
-      const CS = [['list', 'As listed', null], ['blue', 'Most D', (c) => -((c.reading || {}).margin_d ?? -999)], ['red', 'Most R', (c) => ((c.reading || {}).margin_d ?? 999)],
-        ['counted', 'Most counted', (c) => -(c.counted ?? -1)], ['off', 'Furthest off', (c) => -Math.abs(c.offset ?? c.bench_gap ?? 0)], ['pop', 'Biggest in 2024', (c) => -((c.first_2024 && 0) || Math.abs(c.pres_2024 ?? 0))]].slice(0, 5);
-      const so = el('div', { class: 'nt-feedf nt-sheet-sort', role: 'group', 'aria-label': 'Sort the counties' });
-      const ul = el('div', { class: 'nt-sheet-list' });
-      const draw = () => {
-        const f = (CS.find((s) => s[0] === ntCtySort) || CS[0])[2];
-        const rows = f ? [...cs].sort((a, b) => f(a) - f(b)) : cs;
-        ul.replaceChildren();
-        so.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.k === ntCtySort)));
-        for (const c of rows) ul.append(ntCtyRow(d, st, c));
-      };
-      for (const [k, lab] of CS) { const b = el('button', { type: 'button', 'data-k': k }, lab); b.addEventListener('click', () => { ntCtySort = k; draw(); }); so.append(b); }
-      nodes.push(so, ul); draw();
-    }
-    const tm = races[0] && races[0].timing ? ntWhen(races[0].timing) : ''; if (tm) nodes.push(el('p', { class: 'nt-mute' }, tm));
-    nodes.push(ntLink(`Every number for ${name}, in Evidence`, () => { ntSheetClose(); ntOpenState(st); }));
-    ntSheet(name, 'Its races and key counties', nodes, `state/${st}`);
-  }
-  function ntChamberPop(d, which) {  // the races behind a chamber's chance
-    const st = d.story || {}, odds = st.odds || {}, nodes = [];
-    if (which === 'senate') {
-      const rs = (d.races || []).filter((r) => r.office === 'Senate').sort((a, b) => ((odds[b.id] || {}).p_d || 0) - ((odds[a.id] || {}).p_d || 0));
-      nodes.push(el('p', { class: 'nt-sheet-lede' }, 'The 13 close Senate races, most Democratic first. Tap one to open it.'));
-      const ul = el('div', { class: 'nt-sheet-list' });
-      for (const r of rs) {
-        const o = odds[r.id], call = r.call && r.call.winner, rd = r.reading || {}, b = el('button', { type: 'button', class: 'nt-sheet-row nt-sheet-row2' });
-        b.append(el('b', {}, NT_STATE[r.state] || r.state), el('span', {}, `${ntLast(r.cand_d)} v ${ntLast(r.cand_r)}`),
-          el('small', {}, call ? (call === 'runoff' ? 'Runoff' : `Called for ${ntWN(r, call)}`) : rd.margin_d != null ? `${ntPct(r.counted)} in` : 'No votes yet'));
-        if (o && !call) b.append(ntWinBar(o.p_d, 'sm'));
-        b.addEventListener('click', () => { const sp = st.spotlight || {}; if (sp.all && sp.all[r.id]) { ntSheetClose(); nightSpotPin = { id: r.id, until: Date.now() + 10 * 60000 }; ntSpot(d, st); $('#nt-spot').scrollIntoView({ block: 'start' }); } else ntStatePop(d, r.state); });
-        ul.append(b);
+  function ntStatePop(d0, st) {  // a state at a glance: its races with their chances, its key counties, when results come
+    const name = NT_STATE[st] || st;
+    const build = (d) => {
+      const odds = (d.story || {}).odds || {}, nodes = [ntOutline(st, 120, 84, 'xl')];
+      const races = (d.races || []).filter((x) => x.state === st);
+      for (const r of races) {
+        const o = odds[r.id], rd = r.reading || {}, call = r.call && r.call.winner, card = el('div', { class: 'nt-sheet-race' });
+        const fc = el('div', { class: 'nt-sheet-faces' }); fc.append(ntFace(r.id, 'D', r.cand_d, 'md'), ntFace(r.id, 'R', r.cand_r, 'md'));
+        card.append(fc, el('b', {}, `${r.office === 'Senate' ? 'Senate' : 'Governor'}: ${ntLast(r.cand_d) || ntSN(r, 'D')} (${ntSL(r, 'D')}) v ${ntLast(r.cand_r) || 'Republican'} (R)`),
+          el('span', { class: 'nt-mute' }, call ? (call === 'runoff' ? ntRunoffTxt(r.state) : `Called for ${ntWN(r, call)}.`) : rd.margin_d != null ? `${ntM(rd.margin_d)} with ${ntPct(r.counted)} in.` : 'No votes yet.'));
+        if (o && !call) card.append(ntWinBar(o.p_d, 'sm'));
+        nodes.push(card);
       }
-      nodes.push(ul, el('p', { class: 'nt-mute' }, 'Also on the ballot: 22 safe seats, 9 Democratic and 13 Republican. Not up this year: 65 seats, 34 Democratic and 31 Republican.'));
-    } else {
-      const c = (st.control || {}).house; if (c) nodes.push(el('p', { class: 'nt-sheet-lede' }, c.text));
-      const early = (d.house || []).filter((h) => h.early);
-      if (early.length) {
-        nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'The early seats to watch'));
+      let cs = (d.counties || []).filter((c) => c.state === st && !c.context_only); if (!cs.length) cs = (d.counties || []).filter((c) => c.state === st);
+      if (cs.length) {
+        nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Key counties'));
+        // sort the counties: as chosen before the election, by the count, by share counted, or by distance from what we expected
+        const CS = [['list', 'As listed', null], ['blue', 'Most D', (c) => -((c.reading || {}).margin_d ?? -999)], ['red', 'Most R', (c) => ((c.reading || {}).margin_d ?? 999)],
+          ['counted', 'Most counted', (c) => -(c.counted ?? -1)], ['off', 'Furthest off', (c) => -Math.abs(c.offset ?? c.bench_gap ?? 0)], ['pop', 'Biggest in 2024', (c) => -((c.first_2024 && 0) || Math.abs(c.pres_2024 ?? 0))]].slice(0, 5);
+        const so = el('div', { class: 'nt-feedf nt-sheet-sort', role: 'group', 'aria-label': 'Sort the counties' });
         const ul = el('div', { class: 'nt-sheet-list' });
-        for (const h of early) {
-          const rd = h.reading || {}, b = el('div', { class: 'nt-sheet-row', 'data-p': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R' });
-          b.append(el('b', {}, h.key), el('span', {}, rd.margin_d != null ? `${ntM(rd.margin_d)}, ${ntPct(h.counted)} in` : 'no votes yet'),
-            el('small', {}, h.our_line != null ? `expected ${ntM(h.our_line)}` : ''));
+        const draw = () => {
+          const f = (CS.find((s) => s[0] === ntCtySort) || CS[0])[2];
+          const rows = f ? [...cs].sort((a, b) => f(a) - f(b)) : cs;
+          ul.replaceChildren();
+          so.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.k === ntCtySort)));
+          for (const c of rows) ul.append(ntCtyRow(d, st, c));
+        };
+        for (const [k, lab] of CS) { const b = el('button', { type: 'button', 'data-k': k }, lab); b.addEventListener('click', () => { ntCtySort = k; draw(); }); so.append(b); }
+        nodes.push(so, ul); draw();
+      }
+      const tm = races[0] && races[0].timing ? ntWhen(races[0].timing) : ''; if (tm) nodes.push(el('p', { class: 'nt-mute' }, tm));
+      nodes.push(ntLink(`Every number for ${name}, in Evidence`, () => { ntSheetClose(); ntOpenState(st); }));
+      return nodes;
+    };
+    ntSheet(name, 'Its races and key counties', build(d0), `state/${st}`, build);
+  }
+  function ntChamberPop(d0, which) {  // the races behind a chamber's chance
+    const build = (d) => {
+      const st = d.story || {}, odds = st.odds || {}, nodes = [];
+      if (which === 'senate') {
+        const rs = (d.races || []).filter((r) => r.office === 'Senate').sort((a, b) => ((odds[b.id] || {}).p_d || 0) - ((odds[a.id] || {}).p_d || 0));
+        nodes.push(el('p', { class: 'nt-sheet-lede' }, 'The 13 close Senate races, most Democratic first. Tap one to open it.'));
+        const ul = el('div', { class: 'nt-sheet-list' });
+        for (const r of rs) {
+          const o = odds[r.id], call = r.call && r.call.winner, rd = r.reading || {}, b = el('button', { type: 'button', class: 'nt-sheet-row nt-sheet-row2', 'data-fk': 'ch:' + r.id });
+          b.append(el('b', {}, NT_STATE[r.state] || r.state), el('span', {}, `${ntLast(r.cand_d)} v ${ntLast(r.cand_r)}`),
+            el('small', {}, call ? (call === 'runoff' ? 'Runoff' : `Called for ${ntWN(r, call)}`) : rd.margin_d != null ? `${ntPct(r.counted)} in` : 'No votes yet'));
+          if (o && !call) b.append(ntWinBar(o.p_d, 'sm'));
+          b.addEventListener('click', () => { const sp = st.spotlight || {}; if (sp.all && sp.all[r.id]) { ntSheetClose(); nightSpotPin = { id: r.id, until: Date.now() + 10 * 60000 }; ntSpot(d, st); $('#nt-spot').scrollIntoView({ block: 'start' }); } else ntStatePop(d, r.state); });
           ul.append(b);
+        }
+        nodes.push(ul, el('p', { class: 'nt-mute' }, 'Also on the ballot: 22 safe seats, 9 Democratic and 13 Republican. Not up this year: 65 seats, 34 Democratic and 31 Republican.'));
+      } else {
+        const c = (st.control || {}).house; if (c) nodes.push(el('p', { class: 'nt-sheet-lede' }, c.text));
+        const early = (d.house || []).filter((h) => h.early);
+        if (early.length) {
+          nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'The early seats to watch'));
+          const ul = el('div', { class: 'nt-sheet-list' });
+          for (const h of early) {
+            const rd = h.reading || {}, b = el('div', { class: 'nt-sheet-row', 'data-p': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R' });
+            b.append(el('b', {}, h.key), el('span', {}, rd.margin_d != null ? `${ntM(rd.margin_d)}, ${ntPct(h.counted)} in` : 'no votes yet'),
+              el('small', {}, h.our_line != null ? `expected ${ntM(h.our_line)}` : ''));
+            ul.append(b);
+          }
+          nodes.push(ul);
+        }
+        nodes.push(el('p', { class: 'nt-mute' }, 'Called and leading seats come from CNN. The early seats are ones that count fast and lean close to the national result.'));
+      }
+      return nodes;
+    };
+    ntSheet(which === 'senate' ? 'The Senate races' : 'The House', 'Behind the chance', build(d0), undefined, build);
+  }
+  function ntVibePop(d0) {  // which states make up the vibe
+    const build = (d) => {
+      const n = d.national || {}, read = (d.tiles || []).filter((t) => t.state !== 'House' && t.pointer !== 'none' && t.offset != null).sort((a, b) => a.offset - b.offset);
+      const wait = (d.tiles || []).filter((t) => t.state !== 'House' && (t.pointer === 'none' || t.offset == null)).map((t) => NT_STATE[t.state] || t.state);
+      const nodes = [el('p', { class: 'nt-sheet-lede' }, n.n ? `Across ${n.n} state${n.n === 1 ? '' : 's'}, the count is ${ntSide(n.offset)}.` : 'No state has half its vote counted in its key counties yet.')];
+      if (read.length) {
+        const ul = el('div', { class: 'nt-sheet-list' });
+        for (const t of read) {
+          const b = el('button', { type: 'button', class: 'nt-sheet-row', 'data-fk': 'vb:' + t.state, 'data-p': Math.abs(t.offset) < 2 ? '' : t.offset < 0 ? 'R' : 'D' });
+          b.append(el('b', {}, NT_STATE[t.state] || t.state), el('span', {}, Math.abs(t.offset) < 0.05 ? 'right where we expected' : `${ntOff(t.offset)} than expected`), el('small', {}, t.basis ? `from ${t.basis}` : ''));
+          b.addEventListener('click', () => ntStatePop(d, t.state)); ul.append(b);
         }
         nodes.push(ul);
       }
-      nodes.push(el('p', { class: 'nt-mute' }, 'Called and leading seats come from CNN. The early seats are ones that count fast and lean close to the national result.'));
-    }
-    ntSheet(which === 'senate' ? 'The Senate races' : 'The House', 'Behind the chance', nodes);
-  }
-  function ntVibePop(d) {  // which states make up the vibe
-    const n = d.national || {}, read = (d.tiles || []).filter((t) => t.state !== 'House' && t.pointer !== 'none' && t.offset != null).sort((a, b) => a.offset - b.offset);
-    const wait = (d.tiles || []).filter((t) => t.state !== 'House' && (t.pointer === 'none' || t.offset == null)).map((t) => NT_STATE[t.state] || t.state);
-    const nodes = [el('p', { class: 'nt-sheet-lede' }, n.n ? `Across ${n.n} state${n.n === 1 ? '' : 's'}, the count is ${ntSide(n.offset)}.` : 'No state has half its vote counted in its key counties yet.')];
-    if (read.length) {
-      const ul = el('div', { class: 'nt-sheet-list' });
-      for (const t of read) {
-        const b = el('button', { type: 'button', class: 'nt-sheet-row', 'data-p': Math.abs(t.offset) < 2 ? '' : t.offset < 0 ? 'R' : 'D' });
-        b.append(el('b', {}, NT_STATE[t.state] || t.state), el('span', {}, Math.abs(t.offset) < 0.05 ? 'right where we expected' : `${ntOff(t.offset)} than expected`), el('small', {}, t.basis ? `from ${t.basis}` : ''));
-        b.addEventListener('click', () => ntStatePop(d, t.state)); ul.append(b);
-      }
-      nodes.push(ul);
-    }
-    if (wait.length) nodes.push(el('p', { class: 'nt-mute' }, `Not counted enough yet: ${wait.join(', ')}.`));
-    ntSheet('Each state against expectations', 'From its key counties', nodes);
+      if (wait.length) nodes.push(el('p', { class: 'nt-mute' }, `Not counted enough yet: ${wait.join(', ')}.`));
+      return nodes;
+    };
+    ntSheet('Each state against expectations', 'From its key counties', build(d0), undefined, build);
   }
 
   // ---------- the matchup: chance to win, a split bar, and how close to a call (scripts/night_odds.py, a rough guide)
@@ -5303,6 +5399,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!m) { nightMoves[k] = { p, at: 0, d: 0 }; return null; }
     if (Math.abs(p - m.p) >= 0.02) { nightMoves[k] = { p, at: now, d: p - m.p }; return nightMoves[k]; }
     return now - m.at < 5 * 60000 ? m : null;
+  }
+  // Every key race's chance is noted on every draw, whichever view is on (a phone starts on the list, which draws no cards). Without this a race
+  // gets its first note when a card is opened, and the card then shows the whole gap since that tap as a move that just happened.
+  function ntMoveAll(d) {
+    const odds = (d.story || {}).odds || {};
+    for (const r of d.races || []) { const od = odds[r.id]; if (od && !(r.call && r.call.winner) && od.basis !== 'forecast' && od.p_d != null) ntMove(r.id, od.p_d); }
   }
   function ntMoveTag(mv, fresh) {  // ▲ when the Democrat's chance rose, ▼ when it fell, in that party's color
     if (!mv) return null;
@@ -5623,7 +5725,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (e.next) { const n = el('div', { class: 'nt-ev-n' }); n.append(el('b', {}, 'Next: '), document.createTextNode(e.next)); body.append(n); }
       li.append(body); ol.append(li);
       const sp = st.spotlight || {}, goRace = e.race_id && sp.all && sp.all[e.race_id], goCounty = e.kind === 'county' && e.county;
-      const ev = e.every && [...((d.every || {}).senate || []), ...((d.every || {}).house || [])].find((x) => x.key === e.every);
+      const ev = e.every && [...((d.every || {}).senate || []), ...((d.every || {}).governor || []), ...((d.every || {}).house || [])].find((x) => x.key === e.every);
       if (goRace || goCounty || ev) {  // an update about a race opens its matchup or its story; one about a county opens the county
         li.dataset.open = 'true'; li.tabIndex = 0; li.setAttribute('role', 'button');
         const open = () => { if (goRace) { nightSpotPin = { id: e.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, st); ntScrollTo($('#nt-spot')); } else if (ev) ntAllPop(d, { ...ev, st: ev.state || ev.key.slice(0, 2) }); else ntCountyPop(d, e.state, e.county); };
@@ -5789,16 +5891,21 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     b.append(n, el('span', { class: 'nt-rr-v' }, v), el('span', { class: 'nt-rr-s' }, `${ntLast(r.cand_d) || ntSN(r, 'D')} (${ntSL(r, 'D')}) v ${many ? 'Republicans' : ntLast(r.cand_r) || 'Republican'} (R). ${sub}${impTxt}`));
     if (impTxt) b.setAttribute('aria-label', b.getAttribute('aria-label').replace(/\. Open its card\.$/, `.${impTxt} Open its card.`));
     b.addEventListener('click', () => {
-      const card = ntRaceCard(d, r).cloneNode(true);  // a copy without the card's own tap, which jumps to the spotlight
-      for (const a of ['role', 'tabindex', 'aria-label', 'aria-description', 'data-fk']) card.removeAttribute(a);
-      card.style.cursor = 'default';
-      for (const x of card.querySelectorAll('.nt-pin, .nt-rc-dive, .nt-imp')) x.remove();  // a copy keeps no taps: the sheet puts live ones below
-      const nodes = [card];
-      const il = ntImpLine(d, r.id, 'nt-imp', !!call); if (il) nodes.push(il);
-      const dv = el('button', { type: 'button', class: 'nt-btn nt-sheet-dive', title: "Open this race's full matchup: both candidates, the chance to win, the count and the key counties" }, 'Full deep dive');
-      dv.addEventListener('click', () => { ntSheetClose(); ntDive(d, r); });
-      nodes.push(ntWrapP(dv), ntWrapP(ntPinRow('race', r.id, name)));
-      ntSheet(name, 'Key race', nodes, `race/${r.id}`);
+      // the card is built from the board it is given and again from each newer one while the sheet is open (ntSheetRefresh)
+      const build = (dd) => {
+        const rr = (dd.races || []).find((z) => z.id === r.id); if (!rr) return null;
+        const card = ntRaceCard(dd, rr).cloneNode(true);  // a copy without the card's own tap, which jumps to the spotlight
+        for (const a of ['role', 'tabindex', 'aria-label', 'aria-description', 'data-fk']) card.removeAttribute(a);
+        card.style.cursor = 'default';
+        for (const x of card.querySelectorAll('.nt-pin, .nt-rc-dive, .nt-imp')) x.remove();  // a copy keeps no taps: the sheet puts live ones below
+        const nodes = [card];
+        const il = ntImpLine(dd, rr.id, 'nt-imp', !!(rr.call && rr.call.winner)); if (il) nodes.push(il);
+        const dv = el('button', { type: 'button', class: 'nt-btn nt-sheet-dive', title: "Open this race's full matchup: both candidates, the chance to win, the count and the key counties" }, 'Full deep dive');
+        dv.addEventListener('click', () => { ntSheetClose(); ntDive(dd, rr); });
+        nodes.push(ntWrapP(dv), ntWrapP(ntPinRow('race', rr.id, name)));
+        return nodes;
+      };
+      ntSheet(name, 'Key race', build(d), `race/${r.id}`, build);
     });
     return b;
   }
@@ -5983,7 +6090,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ];
     const f = (SORTS.find((s) => s[0] === ntCtyS.k) || SORTS[0])[2];
     const cmp = (a, b) => { const A = f(a), B = f(b); for (let i = 0; i < A.length; i++) { if (A[i] === B[i]) continue; const c = typeof A[i] === 'number' && typeof B[i] === 'number' ? A[i] - B[i] : String(A[i]).localeCompare(String(B[i])); return i === 0 && ntCtyS.k !== 'state' ? c : c * ntCtyS.dir; } return 0; };
-    const q = ntCtyQ.toLowerCase();
+    const q = ntCtyQ.trim().toLowerCase();  // ntCtyQ keeps the box as typed, spaces too, so "palm beach" can be typed one letter at a time
     const rows = cs.filter((c) => !q || `${c.county} ${c.state} ${NT_STATE[c.state] || ''}`.toLowerCase().includes(q)).sort(cmp);
     const rep = cs.filter(has).length, half = cs.filter((c) => (c.counted || 0) >= 50).length;
     const h = el('h2', {}, 'Key counties '); h.append(el('small', {}, `${cs.length}, chosen before the election`));
@@ -5996,7 +6103,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       so.append(b);
     }
     const qi = el('input', { type: 'search', class: 'nt-all-q', placeholder: 'Find a county or state', 'aria-label': 'Find a county', value: ntCtyQ });
-    qi.addEventListener('input', () => { ntCtyQ = qi.value.trim(); redo(); });  // redo puts the cursor back where it was
+    qi.addEventListener('input', () => { ntCtyQ = qi.value; redo(); });  // redo puts the cursor back where it was. Only the match trims
     const ctl = el('div', { class: 'nt-all-ctl' }); ctl.append(qi, so);
     const list = el('div', { class: 'nt-all-list' });
     const shown = ntCtyAll || q ? rows : rows.slice(0, NT_CTY_N);
@@ -6118,12 +6225,21 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return 'No votes yet';
   }
   const ntNorm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  // A search that ends in a number means that district: "va 1" finds VA-1 and not VA-10 or VA-11, whose names run on into another digit.
+  // A bare number ("1") is a whole number too, so it cannot start in the middle of one either.
+  function ntHasWhole(hn, n) {
+    if (!n) return false;
+    if (!/\d$/.test(n)) return hn.includes(n);
+    const bare = /^\d+$/.test(n);
+    for (let i = hn.indexOf(n); i >= 0; i = hn.indexOf(n, i + 1)) if (!/\d/.test(hn.charAt(i + n.length)) && !(bare && i > 0 && /\d/.test(hn.charAt(i - 1)))) return true;
+    return false;
+  }
   // A search scores each race: 2 when the whole search, spaces and dashes aside, is in its name or key ("va 1" finds VA-1), 1 when every word is
   // somewhere in its name, office, state, key or candidates ("georgia senate", "ossoff"). Races that score 2 are the whole answer when there are any.
   function ntAllScore(x, q) {
     const hay = [ntAllName(x), x.office, NT_STATE[x.st] || '', x.st, x.key, ...(x.cands || []).map((c) => c.name)].join(' ').toLowerCase(), hn = ntNorm(hay);
-    if (hn.includes(ntNorm(q)) && ntNorm(q)) return 2;
-    return q.toLowerCase().split(/\s+/).filter(Boolean).every((t) => hay.includes(t) || hn.includes(ntNorm(t))) ? 1 : 0;
+    if (ntHasWhole(hn, ntNorm(q))) return 2;
+    return q.toLowerCase().split(/\s+/).filter(Boolean).every((t) => { const n = ntNorm(t); return /\d$/.test(n) ? ntHasWhole(hn, n) : hay.includes(t) || hn.includes(n); }) ? 1 : 0;
   }
   var ntAllHits = null;
   function ntAllSearch(all, q) {
@@ -6263,45 +6379,51 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       list.append(b);
     }
   }
-  function ntAllPop(d, x) {  // one race's whole story, any race on the ballot
-    const dl = el('dl', { class: 'nt-dl' }), row = (k, v) => { if (v) dl.append(el('dt', {}, k), el('dd', {}, v)); };
-    const p = x.pre || {}, cs = x.cands || [];
-    row('Candidates', cs.length ? cs.map((c) => `${c.name} (${NT_PN[ntPK(c.party)] || c.party}${c.inc ? ', the incumbent' : ''})`).join(', ') + (x.n_more ? `, and ${x.n_more} more on the ballot.` : '') : 'Not listed in CNN\'s file.');
-    row('Held by', x.held_by ? `${NT_PNS[x.held_by] || x.held_by} now.` : x.prev_party ? `A new seat. AP counts it as ${NT_PNS[x.prev_party] || x.prev_party}, from the old seat with this number, so another party winning shows as a flip.` : x.new_seat ? 'Nobody: a new seat on this year\'s map.' : '');
-    if (x.jungle) row('How it works', 'An open primary: every candidate on one ballot. Over 50 percent wins the seat. Otherwise the top two meet in a runoff on Dec 12. No margin is shown, because adding up each party\'s candidates is not a race between two people.');
-    else if (NT_RANKED.has(x.st) && !x.key.startsWith('gov_me')) row('How it works', `Ranked choice: if nobody passes 50 percent, the last-place candidates drop out and their voters' next choices are counted, after all ballots arrive.${x.st === 'AK' && (x.cands || []).filter((c) => c.party === 'R').length > 1 ? ' The margin here adds every Republican together, as in the last round.' : ''}`);
-    if (x.pvi != null) row('How it leans', x.pvi === 0 ? 'Even with the country (Cook PVI on the 2026 map).' : `${x.pvi > 0 ? 'D' : 'R'}+${Math.abs(x.pvi)}: about ${Math.abs(x.pvi)} points more ${x.pvi > 0 ? 'Democratic' : 'Republican'} than the country (Cook PVI on the 2026 map).`);
-    const RN = { cook: 'Cook', sabato: 'Sabato', inside_elections: 'Inside Elections', ddhq: 'Decision Desk', silver: 'Silver', economist: 'Economist', split_ticket: 'Split Ticket', fox: 'Fox', rcp: 'RCP', fifty_plus_one: '50+1' };
-    const rng = p.margin != null ? ` Expected margin ${ntM(p.margin)}${p.lo != null && p.hi != null ? `, 80% range ${ntM(p.lo)} to ${ntM(p.hi)}` : ''}.` : '';
-    const raters = p.raters != null ? ` The raters: ${p.category ? p.category + ', ' : ''}${p.raters >= 50 ? 'D' : 'R'} ${ntChanceTxt(p.raters)}.` : p.category && p.from !== 'final' ? ` The raters: ${p.category}.` : '';
-    if (p.from === 'final') row('Before votes', `Our final call: ${ntAllPre(x).replace(/, our call$/, '')}. One of the races we forecast closely all fall.`);
-    else if (p.from === 'call') row('Before votes', `Our call: ${ntAllPre(x).replace(/, our call$/, '')}.${rng}${raters} Written Nov 2 from our model, the polls and the race itself.`);
-    else if (p.from === 'core') row('Before votes', `Our model: ${ntAllPre(x).replace(/, our model$/, '')}.${rng}${raters} The model adds the 2024 result, the national mood and incumbency, then the polls${p.polls_n ? ` (${p.polls_n} in the last three weeks)` : ' (none recent, so the raters count too)'}.`);
-    else if (p.from === 'one party') row('Before votes', 'Only one major party has a candidate on the ballot.');
-    else if (p.chance_d != null) row('Before votes', `${ntAllPre(x)}. The raters' consensus${p.n_raters ? ` across ${p.n_raters} raters` : ''}.`);
-    else row('Before votes', `${p.category || 'Not rated'}. No rater lists it as competitive.`);
-    if (p.ratings) row('Each rater', Object.entries(p.ratings).map(([k, v]) => `${RN[k] || k}: ${v}`).join('. ') + '.');
-    row('The count', ntAllNow(x) === 'No votes yet' || x.call ? (x.margin_d != null || x.lead ? ntAllNow({ ...x, call: null }) : 'No votes yet.') : ntAllNow(x));
-    row('Call', x.call ? (x.call.winner === 'runoff' ? ntRunoffTxt(x.st) : `${x.call.name || NT_PN[ntPK(x.call.winner)]} (${ntPK(x.call.winner)}) won, called by ${x.call.source || 'CNN'}.`) : 'Not called yet.');
-    if (x.fifty && !x.call) row('50 percent', ntFiftyTxt(x));
-    if (x.check) row('Check', `${x.check}. Both carry AP's numbers, so one of them is behind or wrong. Trust the call more than either count until they agree.`);
-    if (x.src === 'NPR') row('Where the count comes from', "NPR's copy of AP's numbers, because CNN's are missing or stale for this race.");
-    if (x.withheld) row('Where the count comes from', "CNN's numbers for this race are missing right now. The backup source's numbers are kept off this public page, so the count and call show here once CNN has them.");
-    if (x.src === 'California') row('Where the count comes from', "California's Secretary of State, because neither CNN nor NPR has votes here yet. It reports precincts, not the share of votes counted, and California counts mail ballots for weeks.");
-    const was = x.held_by || x.prev_party;
-    if (x.flip_called) row('Flip', `Yes. ${NT_PNS[was] || was} held this seat${x.held_by ? '' : ' (the old seat with this number, as AP counts it)'}.`);
-    else if (x.flip) row('Flip', x.held_by ? `Not called, but the ${NT_PN[was] ? NT_PN[was] : was} holding this seat is behind in the count.` : `Not called, but ${NT_PNS[was] || was}, who held the old seat with this number, are behind in the count.`);
-    const odds = ((d.story || {}).odds || {})[x.key];
-    if (odds && odds.basis === 'count' && !x.call) row('Chance now', `${ntPct(100 * Math.max(odds.p_d, 1 - odds.p_d))} for ${odds.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'the Democrat' : ((x.cands || []).find((c) => c.party === 'R') || {}).name || 'the Republican'}, from the count and the chance before votes. A rough guide, not a call.`);
-    { const iv = ntImp(d, x.key); if (iv && !x.call) row('Decides control', `${ntImpTxt(iv.p)}.${iv.basis ? ' ' + iv.basis : ''}`); }
-    row('Sources', 'Count and call: CNN, with AP\'s numbers, and NPR\'s copy of AP\'s numbers as the backup and check. Candidates: CNN. Seat holder and lean: Wikipedia. Chance before votes: our final call, our Nov 2 call or our model (polls from Wikipedia\'s polling tables, 2024 results by district from The Downballot), with the raters\' consensus beside it.');
-    const nodes = [dl, ntWrapP(ntPinRow('every', x.key, ntAllName(x)))];
-    if (x.race_id) {  // a key race: its matchup in the spotlight once the count has one (it does not before), its counties always
-      const sp = (d.story || {}).spotlight || {};
-      if (sp.all && sp.all[x.race_id]) nodes.push(ntWrapP(ntLink('Full deep dive', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); ntScrollTo($('#nt-spot')); })));
-      nodes.push(ntWrapP(ntLink(`Key counties in ${NT_STATE[x.st] || x.st}`, () => { ntSheetClose(); ntStatePop(d, x.st); })));
-    }
-    ntSheet(`${ntAllName(x)}${x.key.startsWith('senate_') ? ' Senate' : x.key.startsWith('gov_') ? ' governor' : ''}`, x.key.startsWith('senate_') ? 'Senate race' : x.key.startsWith('gov_') ? 'Governor race' : 'House race', nodes, `race/${x.key}`);
+  const ntAllFresh = (d, x) => ntAllRows(d).find((r) => r.key === x.key) || x;  // the same race on a newer board
+  function ntAllPop(d0, x0) {  // one race's whole story, any race on the ballot
+    const build = (d) => {
+      const x = ntAllFresh(d, x0);
+      const dl = el('dl', { class: 'nt-dl' }), row = (k, v) => { if (v) dl.append(el('dt', {}, k), el('dd', {}, v)); };
+      const p = x.pre || {}, cs = x.cands || [];
+      row('Candidates', cs.length ? cs.map((c) => `${c.name} (${NT_PN[ntPK(c.party)] || c.party}${c.inc ? ', the incumbent' : ''})`).join(', ') + (x.n_more ? `, and ${x.n_more} more on the ballot.` : '') : 'Not listed in CNN\'s file.');
+      row('Held by', x.held_by ? `${NT_PNS[x.held_by] || x.held_by} now.` : x.prev_party ? `A new seat. AP counts it as ${NT_PNS[x.prev_party] || x.prev_party}, from the old seat with this number, so another party winning shows as a flip.` : x.new_seat ? 'Nobody: a new seat on this year\'s map.' : '');
+      if (x.jungle) row('How it works', 'An open primary: every candidate on one ballot. Over 50 percent wins the seat. Otherwise the top two meet in a runoff on Dec 12. No margin is shown, because adding up each party\'s candidates is not a race between two people.');
+      else if (NT_RANKED.has(x.st) && !x.key.startsWith('gov_me')) row('How it works', `Ranked choice: if nobody passes 50 percent, the last-place candidates drop out and their voters' next choices are counted, after all ballots arrive.${x.st === 'AK' && (x.cands || []).filter((c) => c.party === 'R').length > 1 ? ' The margin here adds every Republican together, as in the last round.' : ''}`);
+      if (x.pvi != null) row('How it leans', x.pvi === 0 ? 'Even with the country (Cook PVI on the 2026 map).' : `${x.pvi > 0 ? 'D' : 'R'}+${Math.abs(x.pvi)}: about ${Math.abs(x.pvi)} points more ${x.pvi > 0 ? 'Democratic' : 'Republican'} than the country (Cook PVI on the 2026 map).`);
+      const RN = { cook: 'Cook', sabato: 'Sabato', inside_elections: 'Inside Elections', ddhq: 'Decision Desk', silver: 'Silver', economist: 'Economist', split_ticket: 'Split Ticket', fox: 'Fox', rcp: 'RCP', fifty_plus_one: '50+1' };
+      const rng = p.margin != null ? ` Expected margin ${ntM(p.margin)}${p.lo != null && p.hi != null ? `, 80% range ${ntM(p.lo)} to ${ntM(p.hi)}` : ''}.` : '';
+      const raters = p.raters != null ? ` The raters: ${p.category ? p.category + ', ' : ''}${p.raters >= 50 ? 'D' : 'R'} ${ntChanceTxt(p.raters)}.` : p.category && p.from !== 'final' ? ` The raters: ${p.category}.` : '';
+      if (p.from === 'final') row('Before votes', `Our final call: ${ntAllPre(x).replace(/, our call$/, '')}. One of the races we forecast closely all fall.`);
+      else if (p.from === 'call') row('Before votes', `Our call: ${ntAllPre(x).replace(/, our call$/, '')}.${rng}${raters} Written Nov 2 from our model, the polls and the race itself.`);
+      else if (p.from === 'core') row('Before votes', `Our model: ${ntAllPre(x).replace(/, our model$/, '')}.${rng}${raters} The model adds the 2024 result, the national mood and incumbency, then the polls${p.polls_n ? ` (${p.polls_n} in the last three weeks)` : ' (none recent, so the raters count too)'}.`);
+      else if (p.from === 'one party') row('Before votes', 'Only one major party has a candidate on the ballot.');
+      else if (p.chance_d != null) row('Before votes', `${ntAllPre(x)}. The raters' consensus${p.n_raters ? ` across ${p.n_raters} raters` : ''}.`);
+      else row('Before votes', `${p.category || 'Not rated'}. No rater lists it as competitive.`);
+      if (p.ratings) row('Each rater', Object.entries(p.ratings).map(([k, v]) => `${RN[k] || k}: ${v}`).join('. ') + '.');
+      row('The count', ntAllNow(x) === 'No votes yet' || x.call ? (x.margin_d != null || x.lead ? ntAllNow({ ...x, call: null }) : 'No votes yet.') : ntAllNow(x));
+      row('Call', x.call ? (x.call.winner === 'runoff' ? ntRunoffTxt(x.st) : `${x.call.name || NT_PN[ntPK(x.call.winner)]} (${ntPK(x.call.winner)}) won, called by ${x.call.source || 'CNN'}.`) : 'Not called yet.');
+      if (x.fifty && !x.call) row('50 percent', ntFiftyTxt(x));
+      if (x.check) row('Check', `${x.check}. Both carry AP's numbers, so one of them is behind or wrong. Trust the call more than either count until they agree.`);
+      if (x.src === 'NPR') row('Where the count comes from', "NPR's copy of AP's numbers, because CNN's are missing or stale for this race.");
+      if (x.withheld) row('Where the count comes from', "CNN's numbers for this race are missing right now. The backup source's numbers are kept off this public page, so the count and call show here once CNN has them.");
+      if (x.src === 'California') row('Where the count comes from', "California's Secretary of State, because neither CNN nor NPR has votes here yet. It reports precincts, not the share of votes counted, and California counts mail ballots for weeks.");
+      const was = x.held_by || x.prev_party;
+      if (x.flip_called) row('Flip', `Yes. ${NT_PNS[was] || was} held this seat${x.held_by ? '' : ' (the old seat with this number, as AP counts it)'}.`);
+      else if (x.flip) row('Flip', x.held_by ? `Not called, but the ${NT_PN[was] ? NT_PN[was] : was} holding this seat is behind in the count.` : `Not called, but ${NT_PNS[was] || was}, who held the old seat with this number, are behind in the count.`);
+      const odds = ((d.story || {}).odds || {})[x.key];
+      if (odds && odds.basis === 'count' && !x.call) row('Chance now', `${ntPct(100 * Math.max(odds.p_d, 1 - odds.p_d))} for ${odds.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'the Democrat' : ((x.cands || []).find((c) => c.party === 'R') || {}).name || 'the Republican'}, from the count and the chance before votes. A rough guide, not a call.`);
+      { const iv = ntImp(d, x.key); if (iv && !x.call) row('Decides control', `${ntImpTxt(iv.p)}.${iv.basis ? ' ' + iv.basis : ''}`); }
+      row('Sources', 'Count and call: CNN, with AP\'s numbers, and NPR\'s copy of AP\'s numbers as the backup and check. Candidates: CNN. Seat holder and lean: Wikipedia. Chance before votes: our final call, our Nov 2 call or our model (polls from Wikipedia\'s polling tables, 2024 results by district from The Downballot), with the raters\' consensus beside it.');
+      const nodes = [dl, ntWrapP(ntPinRow('every', x.key, ntAllName(x)))];
+      if (x.race_id) {  // a key race: its matchup in the spotlight once the count has one (it does not before), its counties always
+        const sp = (d.story || {}).spotlight || {};
+        if (sp.all && sp.all[x.race_id]) nodes.push(ntWrapP(ntLink('Full deep dive', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); ntScrollTo($('#nt-spot')); })));
+        nodes.push(ntWrapP(ntLink(`Key counties in ${NT_STATE[x.st] || x.st}`, () => { ntSheetClose(); ntStatePop(d, x.st); })));
+      }
+      return nodes;
+    };
+    const x = ntAllFresh(d0, x0);
+    ntSheet(`${ntAllName(x)}${x.key.startsWith('senate_') ? ' Senate' : x.key.startsWith('gov_') ? ' governor' : ''}`, x.key.startsWith('senate_') ? 'Senate race' : x.key.startsWith('gov_') ? 'Governor race' : 'House race', build(d0), `race/${x.key}`, build);
   }
 
   // ---------- against the polls: the count beside the final poll averages, the claim the night is really about
