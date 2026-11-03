@@ -1413,6 +1413,22 @@ button.nt-ar[data-w="D"] { box-shadow: inset 3px 0 0 var(--nt-d); } button.nt-ar
 .nt-rcg h2 small { font-weight: 400; }
 .nt-rcl { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .55rem; }
 .nt-rc { display: grid; gap: .35rem; padding: .65rem .75rem; border-radius: 10px; background: var(--nt-wash); cursor: pointer; align-content: start; }
+.nt-rcl.nt-rcl-rows { grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 1px solid var(--nt-rule); }
+@media (min-width: 60rem) { .nt-rcl.nt-rcl-rows { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.4rem; } }
+button.nt-rr { all: unset; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: .05rem .7rem; min-height: 48px;
+  padding: .45rem .6rem .5rem .75rem; border-bottom: 1px solid var(--nt-rule); cursor: pointer; box-shadow: inset 3px 0 0 transparent; }
+button.nt-rr:hover { background: var(--nt-wash); }
+button.nt-rr:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: -2px; }
+button.nt-rr[data-w="D"] { box-shadow: inset 3px 0 0 var(--nt-d); } button.nt-rr[data-w="R"] { box-shadow: inset 3px 0 0 var(--nt-r); } button.nt-rr[data-w="I"] { box-shadow: inset 3px 0 0 var(--nt-jake); }
+button.nt-rr[data-s="counting"][data-w="D"] { box-shadow: inset 3px 0 0 color-mix(in srgb, var(--nt-d) 45%, transparent); }
+button.nt-rr[data-s="counting"][data-w="R"] { box-shadow: inset 3px 0 0 color-mix(in srgb, var(--nt-r) 45%, transparent); }
+.nt-rr-n b { font-family: 'Big Shoulders', var(--font-display, sans-serif); font-size: 17px; font-weight: 700; letter-spacing: .01em; }
+.nt-rr-n small { color: var(--color-fg-muted); font-size: 13px; }
+.nt-rr-v { font-weight: 650; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+button.nt-rr[data-w="D"] .nt-rr-v { color: var(--nt-d); } button.nt-rr[data-w="R"] .nt-rr-v { color: var(--nt-r); } button.nt-rr[data-w="I"] .nt-rr-v { color: var(--nt-jake); }
+.nt-rr-s { grid-column: 1 / -1; font-size: 12.5px; color: var(--color-fg-muted); line-height: 1.35; }
+button.nt-rr[data-early="true"] .nt-rr-v { opacity: .7; }
+.nt-sheet .nt-rc { cursor: default; }
 .nt-rc:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-rc[data-s="later"] { background: transparent; outline: 1px solid color-mix(in srgb, var(--nt-rule) 70%, transparent); }
 .nt-rc[data-s="called"][data-w="D"] { box-shadow: inset 3px 0 0 var(--nt-d); } .nt-rc[data-s="called"][data-w="R"] { box-shadow: inset 3px 0 0 var(--nt-r); }
@@ -4712,7 +4728,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const ct = (((d.story || {}).call_times) || {})[r.id] || r.call && (r.call.first_called_at || r.call.at);  // the first time the board saw the call
     if (call && call !== 'runoff') f.append(el('span', {}, `Called for ${ntWN(r, call)}${ct ? ` at ${ntT(ct)}` : ''}${r.call.source ? ` by ${/CNN/.test(r.call.source) ? 'CNN' : /^Wikipedia/.test(r.call.source) ? 'Wikipedia' : r.call.source}` : ''}.`));
     if (call === 'runoff') f.append(el('span', {}, ntRunoffTxt(r.state)));
-    if (has) { const ld = el('span', {}, `${rd.margin_d < 0 && many ? 'Republicans' : ntLast(rd.margin_d > 0 ? r.cand_d : r.cand_r) || (rd.margin_d > 0 ? 'D' : 'R')} ${call ? 'won' : many && rd.margin_d < 0 ? 'lead' : 'leads'} by `); ld.append(el('b', {}, fmt1(Math.round(Math.abs(rd.margin_d) * 10) / 10))); f.append(ld); }
+    if (has && Math.abs(rd.margin_d) < 0.05) f.append(el('span', {}, call ? 'Won by a hair.' : 'Dead even so far.'));
+    else if (has) { const ld = el('span', {}, `${rd.margin_d < 0 && many ? 'Republicans' : ntLast(rd.margin_d > 0 ? r.cand_d : r.cand_r) || (rd.margin_d > 0 ? 'D' : 'R')} ${call ? 'won' : many && rd.margin_d < 0 ? 'lead' : 'leads'} by `); ld.append(el('b', {}, fmt1(Math.round(Math.abs(rd.margin_d) * 10) / 10))); f.append(ld); }
     if (has && r.runoff && !r.runoff.above_50 && !call) f.append(el('span', { class: 'warn', title: r.runoff.text || '' }, `Nobody over 50% yet: ${r.runoff.rule === 'ranked' ? 'a ranked-choice count' : NT_RUNOFF[r.state] ? `a runoff on ${NT_RUNOFF[r.state]}` : 'a runoff'} if it stays that way.`));
     if (r.stale) f.append(el('span', { class: 'warn' }, 'Old data'));
     if (!has && !call && close && Date.parse(close) <= Date.now()) f.append(el('span', {}, 'Polls closed. Waiting for the first votes.'));
@@ -4742,11 +4759,52 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     c.addEventListener('click', open); c.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(e); } });
     return c;
   }
+  // the key races as one line each (Jake, Nov 2 late: the 30 cards were six phone screens). Same filters, sorts and
+  // groups as the cards. A tap opens the race's full card in a sheet, so the reader keeps their place.
+  function ntRaceRow(d, r) {
+    const rd = r.reading || {}, has = rd.margin_d != null, call = r.call && r.call.winner, many = ntManyR(d, r);
+    const name = `${NT_STATE[r.state] || r.state} ${r.office === 'Senate' ? 'Senate' : 'Governor'}`;
+    const od = ((d.story || {}).odds || {})[r.id], close = r.close_et ? clockIsoNight(d, r.close_et) : null;
+    const nm = (side) => (side === 'R' && many ? 'Republicans' : ntLast(side === 'D' ? r.cand_d : r.cand_r) || ntSN(r, side));
+    let v, w, sub;
+    if (call) {
+      const ct = (((d.story || {}).call_times) || {})[r.id] || r.call.first_called_at || r.call.at;
+      w = call === 'runoff' ? '' : ntWS(r, call) || 'I';
+      v = call === 'runoff' ? (NT_RANKED.has(r.state) ? 'Ranked choice' : 'Runoff') : `✓ ${ntWN(r, call)}`;
+      sub = call === 'runoff' ? ntRunoffTxt(r.state) : `Called${ct ? ' ' + ntT(ct) : ''}${has ? `, won by ${fmt1(Math.round(Math.abs(rd.margin_d) * 10) / 10)}` : ''}`;
+    } else if (has) {
+      const s = rd.margin_d > 0 ? 'D' : rd.margin_d < 0 ? 'R' : '';
+      w = s ? (s === 'D' ? ntSL(r, 'D') : 'R') : '';
+      v = s ? `${nm(s)} +${fmt1(Math.round(Math.abs(rd.margin_d) * 10) / 10)}` : 'Even';
+      sub = `${ntPct(r.counted)} in` + (od && od.basis !== 'forecast' ? `, chance now ${nm(od.p_d >= 0.5 ? 'D' : 'R')} ${ntPct(100 * Math.max(od.p_d, 1 - od.p_d))}` : '')
+        + (r.runoff && !r.runoff.above_50 ? `, nobody over 50%` : '') + (r.stale ? ', old data' : '');
+    } else {
+      const p = r.closing_p;
+      w = '';
+      v = p == null ? '' : `${nm(p >= 0.5 ? 'D' : 'R')} ${ntPctW(Math.max(p, 1 - p))}`;
+      sub = (p == null ? '' : `chance before votes, ${r.addendum ? 'our call' : 'our final call'}. `) + (close ? (Date.parse(close) <= Date.now() ? 'Polls closed, waiting for votes' : `Polls close ${ntT(close)}`) : '');
+    }
+    const b = el('button', { type: 'button', class: 'nt-rr', 'data-w': w, 'data-s': call ? 'called' : has ? 'counting' : 'later', 'data-early': String(!call && has && r.counted != null && r.counted < 50),
+      'aria-label': `${name}. ${v}. ${sub}. Open its card.` });
+    const n = el('span', { class: 'nt-rr-n' }); n.append(el('b', {}, NT_STATE[r.state] || r.state), el('small', {}, r.office === 'Senate' ? ' Senate' : ' Governor'));
+    b.append(n, el('span', { class: 'nt-rr-v' }, v), el('span', { class: 'nt-rr-s' }, `${ntLast(r.cand_d) || ntSN(r, 'D')} (${ntSL(r, 'D')}) v ${many ? 'Republicans' : ntLast(r.cand_r) || 'Republican'} (R). ${sub}`));
+    b.addEventListener('click', () => {
+      const card = ntRaceCard(d, r).cloneNode(true);  // a copy without the card's own tap, which jumps to the spotlight
+      card.removeAttribute('role'); card.removeAttribute('tabindex'); card.removeAttribute('aria-label'); card.style.cursor = 'default';
+      const pin = card.querySelector('.nt-pin'); if (pin) pin.remove();
+      const nodes = [card, ntWrapP(ntPinRow('race', r.id, name))];
+      const sp = (d.story || {}).spotlight || {};
+      if (sp.all && sp.all[r.id]) nodes.push(ntWrapP(ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: r.id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
+      else nodes.push(ntWrapP(ntLink('Open its counties', () => { ntSheetClose(); ntStatePop(d, r.state); })));
+      ntSheet(name, 'Key race', nodes, `race/${r.id}`);
+    });
+    return b;
+  }
   // the key races' sorts (Jake, Nov 2 late: sort the grid by race variables and result stats). Each sort has a natural
   // first direction; tapping the active one again reverses it. Grouping by status (counting, called, still to come)
   // can be switched off to sort every card together.
-  let ntRcS = { k: 'poll', dir: 1 }, ntRcG = true;
-  try { ntRcS = JSON.parse(localStorage.getItem('nt-rc-sort') || 'null') || ntRcS; ntRcG = localStorage.getItem('nt-rc-group') !== 'off'; } catch (e) { /* defaults */ }
+  let ntRcS = { k: 'poll', dir: 1 }, ntRcG = true, ntRcV = matchMedia('(max-width: 640px)').matches ? 'list' : 'cards';  // a phone starts on the list (Jake, Nov 2 late: lots of scrolling)
+  try { ntRcS = JSON.parse(localStorage.getItem('nt-rc-sort') || 'null') || ntRcS; ntRcG = localStorage.getItem('nt-rc-group') !== 'off'; ntRcV = localStorage.getItem('nt-rc-view') || ntRcV; } catch (e) { /* defaults */ }
   const ntHas = (r) => r.reading && r.reading.margin_d != null;
   const NT_RC_SORTS = [
     ['poll', 'Poll close', () => (r) => [r.close_et || '99', NT_STATE[r.state] || r.state]],
@@ -4846,7 +4904,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     const gb = el('button', { type: 'button', class: 'nt-rc-grp', 'aria-pressed': String(ntRcG), title: 'Keep counting, called and still to come apart, or sort every card together' }, 'Group by status');
     gb.addEventListener('click', () => { ntRcG = !ntRcG; try { localStorage.setItem('nt-rc-group', ntRcG ? 'on' : 'off'); } catch (er) { /* fine */ } ntRaceCards(d); });
-    const gw = el('div', { class: 'nt-feedf' }); gw.append(gb);
+    const gw = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Show the key races as' }); gw.append(gb);
+    for (const [k, lab] of [['cards', 'Cards'], ['list', 'List']]) {
+      const vb = el('button', { type: 'button', 'aria-pressed': String(ntRcV === k), title: k === 'list' ? 'One line per race. Tap one for its full card.' : 'A card per race with the count, the chance and the call' }, lab);
+      vb.addEventListener('click', () => { ntRcV = k; try { localStorage.setItem('nt-rc-view', k); } catch (er) { /* fine */ } ntRaceCards(d); });
+      gw.append(vb);
+    }
     bar.append(so, gw); box.append(bar);
     const cmp = ntRcCmp(d);
     const newest = (a, b) => (b.call.at || '').localeCompare(a.call.at || '');
@@ -4861,8 +4924,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (!rows.length) continue;
       const g = el('section', { class: 'nt-rcg' });
       const h = el('h2', {}, `${title} `); h.append(el('small', {}, `${rows.length}, ${sub}`), ntQ('cards'));
-      const list = el('div', { class: 'nt-rcl' });
-      for (const r of rows) list.append(ntRaceCard(d, r));
+      const list = el('div', { class: ntRcV === 'list' ? 'nt-rcl nt-rcl-rows' : 'nt-rcl' });
+      for (const r of rows) list.append(ntRcV === 'list' ? ntRaceRow(d, r) : ntRaceCard(d, r));
       g.append(h, list); box.append(g);
     }
     if (!rs.length) box.append(el('p', { class: 'nt-mute' }, 'No key race matches those filters. Clear one to see more.'));
@@ -4951,7 +5014,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   try {
     ntAllS = JSON.parse(localStorage.getItem('nt-all-sort') || 'null') || ntAllS;
     const fx = JSON.parse(localStorage.getItem('nt-all-filter') || 'null'), t = localStorage.getItem('nt-all-tab');
-    if (fx && typeof fx === 'object') ntAllFx = fx;
+    if (fx && typeof fx === 'object' && !Array.isArray(fx)) ntAllFx = Object.fromEntries(Object.entries(fx).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [k, v.filter((x) => typeof x === 'string')]));
     else if (t) ntAllFx = { office: [{ senate: 'Senate', governor: 'Governor', house: 'House' }[t] || 'Senate'] };  // the old one-chamber tab
   } catch (e) { /* storage can be blocked; defaults stand */ }
   // the race list's sorts: each has a natural first direction; tapping the active one again reverses it
