@@ -4380,6 +4380,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       return `${m}, ${x.counted != null ? ntPct(x.counted) + ' in' : 'share in not given'}`;
     }
     if (x.lead) return `${x.lead.name} +${fmt1(Math.round(x.lead.pts * 10) / 10)}, ${x.counted != null ? ntPct(x.counted) + ' in' : ''}`;
+    if (x.withheld) return "Waiting on CNN's count";
     return 'No votes yet';
   }
   function ntAllKeep(x) {
@@ -4475,6 +4476,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     row('Call', x.call ? (x.call.winner === 'runoff' ? 'Headed to a runoff.' : `${x.call.name || NT_PN[ntPK(x.call.winner)]} (${ntPK(x.call.winner)}) won, called by ${x.call.source || 'CNN'}.`) : 'Not called yet.');
     if (x.check) row('Check', `${x.check}. Both carry AP's numbers, so one of them is behind or wrong. Trust the call more than either count until they agree.`);
     if (x.src === 'NPR') row('Where the count comes from', "NPR's copy of AP's numbers, because CNN's are missing or stale for this race.");
+    if (x.withheld) row('Where the count comes from', "CNN's numbers for this race are missing right now. The backup source's numbers are kept off this public page, so the count and call show here once CNN has them.");
     if (x.src === 'California') row('Where the count comes from', "California's Secretary of State, because neither CNN nor NPR has votes here yet. It reports precincts, not the share of votes counted, and California counts mail ballots for weeks.");
     if (x.flip_called) row('Flip', `Yes. ${NT_PNS[x.held_by] || x.held_by} held this seat.`);
     else if (x.flip) row('Flip', `Not called, but the ${NT_PN[x.held_by] ? NT_PN[x.held_by] : x.held_by} holding this seat is behind in the count.`);
