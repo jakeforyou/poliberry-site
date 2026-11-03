@@ -1497,6 +1497,7 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-bt-race .chip { font-size: 12px; font-weight: 600; padding: .05rem .55rem; border-radius: 999px; white-space: nowrap; color: var(--color-fg-muted); background: var(--nt-wash2); }
 .nt-bt-race .chip[data-s="over"] { color: var(--nt-jake); background: color-mix(in srgb, var(--nt-jake) 16%, transparent); }
 .nt-bt-race .chip[data-s="short"], .nt-bt-race .chip[data-s="called"] { color: var(--color-fg); }
+.nt-bt-race .chip[data-s="bluer"] { color: var(--nt-d); background: color-mix(in srgb, var(--nt-d) 16%, transparent); } .nt-bt-race .chip[data-s="redder"] { color: var(--nt-r); background: color-mix(in srgb, var(--nt-r) 16%, transparent); } .nt-bt-race .chip[data-s="on"] { color: var(--nt-ours); background: color-mix(in srgb, var(--nt-ours) 16%, transparent); }
 .nt-bt-say { display: block; margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--color-fg); }
 .nt-bt-rbody { display: grid; gap: .35rem; margin-top: .3rem; }
 .nt-bt-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .3rem .6rem; align-items: center; }
@@ -5390,12 +5391,18 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     wrap.addEventListener('toggle', () => { if (wrap.open) nightBtOpen.add(r.key); else nightBtOpen.delete(r.key); });
     const sum = el('summary');
     const tn = (r.need || {}).trailer_name ? String(r.need.trailer_name).split(' ').pop() : 'The trailer';
-    const chip = call ? ['called', `Called: ${(call.name || call.winner).split(',')[0]}`] : p.on_pace === true ? ['over', `${tn} on pace to overtake`] : p.on_pace === false ? ['short', `${tn} falling short`] : (p.lines || [])[0] && /^Early/.test(p.lines[0]) ? ['early', 'Early'] : ['wait', 'Counting'];
-    const say = call ? [`Called for ${(call.name || call.winner).split(',')[0]}. The count stands at ${ntM(L.run_margin_d)}${L.counted != null ? ` with ${Math.round(L.counted)}% counted` : ''}${r.our_line != null ? `. We expected ${ntM(r.our_line)}` : ''}.`] : (p.lines || []).slice(0, 2);
+    const sg = r.stage;  // where the count should be by now if it ends at our forecast (night_results_batches.stage)
+    const chip = call ? ['called', `Called: ${(call.name || call.winner).split(',')[0]}`]
+      : sg ? (sg.dir === 'on' ? ['on', 'On track for our forecast'] : sg.dir === 'bluer' ? ['bluer', 'Bluer than our forecast'] : ['redder', 'Redder than our forecast'])
+      : p.on_pace === true ? ['over', `${tn} on pace to overtake`] : p.on_pace === false ? ['short', `${tn} falling short`] : (p.lines || [])[0] && /^Early/.test(p.lines[0]) ? ['early', 'Early'] : ['wait', 'Counting'];
+    const say = call ? [`Called for ${(call.name || call.winner).split(',')[0]}. The count stands at ${ntM(L.run_margin_d)}${L.counted != null ? ` with ${Math.round(L.counted)}% counted` : ''}${r.our_line != null ? `. We expected ${ntM(r.our_line)}` : ''}.`]
+      : sg ? [sg.line, (p.lines || [])[0]].filter(Boolean) : (p.lines || []).slice(0, 2);
     sum.append(ntKids('span', { class: 'top' }, [ntKids('span', { class: 'nm' }, [r.name, el('small', {}, ` ${ntM(L.run_margin_d)}${L.counted != null ? `, ${Math.round(L.counted)}% in` : ''}`)]), el('span', { class: 'chip', 'data-s': chip[0] }, chip[1])]));
     if (say.length) sum.append(el('span', { class: 'nt-bt-say' }, say.join(' ')));  // the meaning shows without opening the race
     wrap.append(sum);
     const body = el('div', { class: 'nt-bt-rbody' });
+    if (!call && sg && (p.lines || [])[1]) body.append(el('p', { class: 'nt-bt-sub' }, p.lines[1]));  // the pace finish, when the by-now line took its place above
+    if (!call && sg) body.append(el('p', { class: 'nt-bt-sub' }, `How: ${sg.basis}. Assumes tonight's count arrives in the same order.`));
     if (!call && (p.lines || [])[2]) body.append(el('p', { class: 'nt-bt-sub' }, p.lines[2]));
     body.append(el('p', { class: 'nt-bt-sub' }, `Latest batch at ${L.time_text}: ${L.margin_d == null ? `not a batch (${(L.flags || []).map((x) => NT_BT_FLAG[x] || x).join(', ')})` : `${ntBtNum(L.votes)} votes, ${ntM(L.margin_d)}`}. Counts from ${r.source}.${r.check && r.check.run_margin_d != null ? ` ${r.check.source} has it at ${ntM(r.check.run_margin_d)} as of ${r.check.time_text}.` : ''}`));
     if (r.batches.length > 1) {
