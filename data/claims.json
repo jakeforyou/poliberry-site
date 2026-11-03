@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-02T21:58:38-05:00",
+  "built_at": "2026-11-02T22:29:44-05:00",
   "label": "retrieved; flags inferred from words",
   "note": "Public posts and press releases from Trump, his administration and allies, flagged when they pair an election subject with a claim or action word. Flags come from words, not judgment.",
   "crew": [
@@ -24,7 +24,7 @@
       "via": "trumpstruth.org, a public archive of Truth Social",
       "ok": true,
       "n": 100,
-      "retrieved_at": "2026-11-02T21:58:39-05:00",
+      "retrieved_at": "2026-11-02T22:29:45-05:00",
       "newest": "2026-11-02T18:16:26-05:00"
     },
     "whitehouse": {
@@ -33,7 +33,7 @@
       "via": null,
       "ok": true,
       "n": 30,
-      "retrieved_at": "2026-11-02T21:58:40-05:00",
+      "retrieved_at": "2026-11-02T22:29:46-05:00",
       "newest": "2026-11-02T17:03:21-05:00"
     },
     "speaker": {
@@ -42,7 +42,7 @@
       "via": null,
       "ok": true,
       "n": 10,
-      "retrieved_at": "2026-11-02T21:58:40-05:00",
+      "retrieved_at": "2026-11-02T22:29:47-05:00",
       "newest": "2026-10-30T15:52:18-04:00"
     },
     "doj": {
@@ -51,7 +51,7 @@
       "via": null,
       "ok": true,
       "n": 25,
-      "retrieved_at": "2026-11-02T21:58:41-05:00",
+      "retrieved_at": "2026-11-02T22:29:47-05:00",
       "newest": "2026-11-02T07:00:00-05:00"
     },
     "rnc": {
@@ -60,7 +60,7 @@
       "via": null,
       "ok": true,
       "n": 45,
-      "retrieved_at": "2026-11-02T21:58:42-05:00",
+      "retrieved_at": "2026-11-02T22:29:48-05:00",
       "newest": "2026-11-02T21:17:40-05:00"
     },
     "news": {
@@ -68,13 +68,25 @@
       "url": "https://api.gdeltproject.org/api/v2/doc/doc",
       "ok": false,
       "n": 0,
-      "retrieved_at": "2026-11-02T21:53:38-05:00",
+      "retrieved_at": "2026-11-02T22:24:44-05:00",
       "queries": [
         {
-          "query": "check: election, last day",
+          "query": "(\"Stephen Miller\" OR \"Russell Vought\" OR \"Steven Cheung\" OR \"Karoline Leavitt\") (rigged OR fraud OR stolen OR cheating OR lawsuit OR certification OR troops OR National Guard OR \"stop the count\") sourcelang:english",
           "ok": false,
           "n": null,
           "not_retrieved": "GdeltError: rate limited: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com"
+        },
+        {
+          "query": "(\"JD Vance\" OR \"Mike Johnson\" OR \"Pam Bondi\" OR \"Kash Patel\") (rigged OR fraud OR stolen OR cheating OR lawsuit OR certification OR troops OR National Guard OR \"stop the count\") sourcelang:english",
+          "ok": false,
+          "n": null,
+          "not_retrieved": "skipped: GDELT was rate limiting"
+        },
+        {
+          "query": "(\"Steve Bannon\" OR \"Harmeet Dhillon\" OR \"Kristi Noem\" OR \"Tulsi Gabbard\") (rigged OR fraud OR stolen OR cheating OR lawsuit OR certification OR troops OR National Guard OR \"stop the count\") sourcelang:english",
+          "ok": false,
+          "n": null,
+          "not_retrieved": "skipped: GDELT was rate limiting"
         }
       ]
     }
@@ -85,11 +97,9 @@
   ],
   "summary": {
     "hour": {
-      "flagged": 1,
-      "actions": 1,
-      "kinds": {
-        "Legal action": 1
-      }
+      "flagged": 0,
+      "actions": 0,
+      "kinds": {}
     },
     "six_hours": {
       "flagged": 2,
