@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '881e9ffa0af7';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'c668379f82c9';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1466,6 +1466,7 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
      900px wide so it is never taller than a screen, and its modes, what the colors mean, the legend and the summary beside it */
   #night > #nt-map { grid-column: 1 / -1; grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr); column-gap: 1.6rem; align-items: start; }
   #night > #nt-map > .nt-map-h { grid-column: 1 / -1; }
+  #night > #nt-map > .nt-bell-p { grid-column: 2; }  /* the upset list beside the map, above its modes */
   #night > #nt-map > .nt-map-svg { grid-column: 1; grid-row: 2 / span 5; max-height: none; }
   #night > #nt-map > .nt-map-modes, #night > #nt-map > .nt-map-how, #night > #nt-map > .nt-map-leg, #night > #nt-map > .nt-all-sum { grid-column: 2; }
   #night > #nt-map > .nt-map-modes { flex-direction: column; align-items: stretch; } #night > #nt-map > .nt-map-modes button { text-align: left; }
@@ -1545,6 +1546,26 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-mapsec { display: grid; gap: .5rem; margin: .8rem 0 1rem; }
 .nt-map-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
 .nt-map-h h2 { margin: 0; }
+/* the upset bell on the map (Jake, Nov 3, 6:40pm): quiet with none, amber with some, a short ring when one is new */
+.nt-map-h .nt-bell { margin-right: auto; }
+.nt-bell { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: .3rem; padding: .25rem .6rem; border-radius: 999px; background: var(--nt-wash2); color: var(--color-fg-muted); font-size: 13px; font-weight: 600; }
+.nt-bell:not([data-n="0"]) { color: var(--color-fg); background: color-mix(in srgb, var(--nt-jake) 24%, transparent); }
+.nt-bell[aria-expanded="true"] { box-shadow: inset 0 0 0 1.5px var(--nt-jake); }
+.nt-bell:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-bell-i { display: inline-flex; } .nt-bell:not([data-n="0"]) .nt-bell-i { color: var(--nt-jake); }
+.nt-bell[data-new="true"] .nt-bell-i svg { animation: nt-ring 1.1s ease-in-out 2; transform-origin: 50% 12%; }
+@keyframes nt-ring { 0%, 100% { transform: rotate(0); } 20% { transform: rotate(16deg); } 40% { transform: rotate(-13deg); } 60% { transform: rotate(8deg); } 80% { transform: rotate(-4deg); } }
+@media (prefers-reduced-motion: reduce) { .nt-bell .nt-bell-i svg { animation: none !important; } }
+.nt-bell-p { display: grid; gap: .3rem; padding: .65rem .7rem; border-radius: 10px; background: var(--nt-wash); border-left: 3px solid var(--nt-jake); min-width: 0; }
+.nt-bell-p h3 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; }
+.nt-bell-p > p { margin: 0 0 .2rem; font-size: 13px; }
+.nt-bell-r { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: .1rem; padding: .45rem .5rem; border-radius: 8px; border-left: 3px solid transparent; font-size: 14px; }
+.nt-bell-r[data-s="D"] { border-left-color: var(--nt-d); } .nt-bell-r[data-s="R"] { border-left-color: var(--nt-r); }
+.nt-bell-r:hover, .nt-bell-r:focus-visible { background: var(--nt-wash2); }
+.nt-bell-r .top { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; }
+.nt-bell-r .tag { font-size: 11.5px; font-weight: 600; padding: .02rem .45rem; border-radius: 999px; background: var(--nt-wash2); color: var(--color-fg-muted); }
+.nt-bell-r .tag[data-k="called"] { color: var(--color-bg); background: var(--color-fg); }
+.nt-bell-r small { color: var(--color-fg-muted); font-size: 12.5px; line-height: 1.4; }
 .nt-map-h .nt-feedf { margin-left: 0; }
 .nt-map-svg { width: 100%; height: auto; max-height: 560px; }
 .nt-map-modes { display: flex; flex-wrap: wrap; gap: .3rem; }
@@ -4336,7 +4357,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       b.addEventListener('click', () => { ntMapOff = k; try { localStorage.setItem('nt-map-office', k); } catch (er) { /* fine */ } ntKeepFocus(() => ntMap(d)); });
       tabs.append(b);
     }
-    head.append(ntHead(el('h2', {}, 'The map'), 'map'), tabs);
+    const [bell, bellP] = ntBell(d);
+    head.append(ntHead(el('h2', {}, 'The map'), 'map'), bell, tabs);
     const modes = el('div', { class: 'nt-map-modes', role: 'group', 'aria-label': 'Color the map by' });
     for (const [k, lab] of NT_MAP_MODES) {
       const b = el('button', { type: 'button', 'aria-pressed': String(mode === k), 'data-fk': `mm:${k}` }, lab);
@@ -4377,7 +4399,66 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       batch: () => { if (!sum.length) return 'No batches yet. They start when the polls close and the count comes in.'; const s2 = [...sum].sort((a, b) => a[2] - b[2]); const [st, r] = s2[0]; return `Newest: ${r.name} at ${r.latest.time_text}, ${ntBtNum(r.latest.votes)} votes, ${ntM(r.latest.margin_d)}. ${s2.filter((x) => x[2] <= 10).length} state${s2.filter((x) => x[2] <= 10).length === 1 ? '' : 's'} had a batch in the last 10 minutes.`; },
     }[mode]();
     svg.attr('aria-label', `${NT_MAP_MODES.find((m) => m[0] === mode)[1]} map, ${office === 'house' ? 'House' : office === 'governor' ? 'governor' : 'Senate'}. ${say}`);
-    box.append(head, modes, el('p', { class: 'nt-map-how' }, how), svg.node(), leg, el('p', { class: 'nt-all-sum' }, say));
+    box.append(head, ...(bellP ? [bellP] : []), modes, el('p', { class: 'nt-map-how' }, how), svg.node(), leg, el('p', { class: 'nt-all-sum' }, say));
+  }
+  // The upset bell (Jake, Nov 3, 6:40pm: "a little notification bell on the state map. Once clicked, upset alert revealed", after the
+  // board never flagged Ford leading Spartz in IN-5). A race rings it when its call, or its leader while counting, is the side our forecast
+  // had under 50 percent before votes. The counts are CNN's (AP's numbers), the chance is the one frozen before votes, and the pace line is
+  // the script's. Early counts are marked, because the first votes counted are often early and mail votes, and those leads can shrink.
+  var nightBellOpen = false, nightBellAll = false;
+  function ntUpsets(d) {
+    const out = [];
+    for (const x of ntAllRows(d)) {
+      const c = (x.pre || {}).chance_d; if (c == null || c === 50 || x.jungle || x.uncontested) continue;
+      const fav = c > 50 ? 'D' : 'R', ds = ntAllSide(x);
+      const w = x.call && x.call.winner && x.call.winner !== 'runoff' ? x.call.winner : null;
+      if (w) {
+        const side = ds && x.call.name && ds.name === x.call.name ? 'D' : ntPK(w) === 'R' ? 'R' : ntPK(w) === 'D' ? 'D' : null;
+        if (side && side !== fav) out.push({ x, called: true, side });
+        continue;
+      }
+      if (x.margin_d == null || Math.abs(x.margin_d) < 0.05 || !(x.counted >= 1)) continue;
+      const side = x.margin_d > 0 ? 'D' : 'R';  // margin_d is the D side's lead, the side our chance is about
+      if (side !== fav) out.push({ x, called: false, side });
+    }
+    return out.sort((a, b) => (b.called - a.called) || ((b.x.counted || 0) - (a.x.counted || 0)));
+  }
+  function ntBell(d) {
+    const ups = ntUpsets(d), keys = ups.map((u) => u.x.key + (u.called ? ':c' : ''));
+    let seen = []; try { seen = JSON.parse(localStorage.getItem('nt-bell-seen') || '[]'); } catch (e) { seen = []; }
+    const fresh = keys.some((k) => !seen.includes(k));
+    const b = el('button', { type: 'button', class: 'nt-bell', 'data-n': String(ups.length), 'data-new': String(fresh && !nightBellOpen), 'aria-expanded': String(nightBellOpen), 'data-fk': 'map:bell',
+      'aria-label': `Upset alert: ${ups.length} race${ups.length === 1 ? '' : 's'} going against our forecast` });
+    const ic = el('span', { class: 'nt-bell-i', 'aria-hidden': 'true' });
+    ic.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a6 6 0 0 0-6 6v3.6l-1.7 3.4A1 1 0 0 0 5.2 16.5h13.6a1 1 0 0 0 .9-1.5L18 11.6V8a6 6 0 0 0-6-6zm0 20a3 3 0 0 0 2.8-2H9.2A3 3 0 0 0 12 22z"/></svg>';
+    b.append(ic, el('span', {}, ups.length ? `${ups.length} upset${ups.length === 1 ? '' : 's'}` : 'Upsets'));
+    b.addEventListener('click', () => {
+      nightBellOpen = !nightBellOpen;
+      if (nightBellOpen) try { localStorage.setItem('nt-bell-seen', JSON.stringify(keys)); } catch (e) { /* fine */ }
+      ntKeepFocus(() => ntMap(d));
+    });
+    if (!nightBellOpen) return [b, null];
+    const p = el('div', { class: 'nt-bell-p', role: 'region', 'aria-label': 'Upset alert' });
+    p.append(el('h3', {}, ups.length ? 'Going against our forecast' : 'No upsets right now'),
+      el('p', { class: 'nt-mute' }, ups.length ? 'Races where the call, or the leader in the count, is the side our forecast had as the underdog. Early counts can move a lot.' : 'No race is called for, or led by, the side our forecast had as the underdog.'));
+    const R = (nightResults || {}).races || {}, N = 8;
+    for (const u of nightBellAll ? ups : ups.slice(0, N)) {
+      const x = u.x, c = (x.pre || {}).chance_d, ds = ntAllSide(x), rc = (x.cands || []).find((k) => k.party === 'R');
+      const nm = u.side === 'D' ? (ds && (ds.last || ds.name)) || 'The Democrat' : (rc && (rc.last || rc.name)) || 'The Republican';
+      const pt = u.side === 'D' ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R';
+      const odds = u.side === 'D' ? c : 100 - c;
+      const r = el('button', { type: 'button', class: 'nt-bell-r', 'data-fk': 'bell:' + x.key, 'data-s': u.side });
+      const top = el('span', { class: 'top' }); top.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')));
+      if (u.called) top.append(el('span', { class: 'tag', 'data-k': 'called' }, 'Called'));
+      else if (x.counted < 50) top.append(el('span', { class: 'tag' }, 'Early count'));
+      r.append(top, el('span', {}, u.called ? `Called for ${x.call.name || nm} (${pt}).` : `${nm} (${pt}) leads by ${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)} with ${ntPct(x.counted)} counted.`),
+        el('small', {}, `Our forecast gave ${nm} ${odds < 1 ? 'under 1%' : Math.round(odds) + '%'}${(x.pre || {}).margin != null ? `, expecting ${ntM(x.pre.margin)}` : ''}.`));
+      const pl = !u.called && R[x.key] && ((R[x.key].pace || {}).lines || [])[0]; if (pl && !/^Early/.test(pl)) r.append(el('small', {}, pl));
+      r.addEventListener('click', () => ntAllPop(d, x));
+      p.append(r);
+    }
+    if (ups.length > N) { const m = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'bell:more' }, nightBellAll ? 'Show fewer' : `Show all ${ups.length}`); m.addEventListener('click', () => { nightBellAll = !nightBellAll; ntKeepFocus(() => ntMap(d)); }); p.append(m); }
+    return [b, p];
   }
 
   // ---------- my watchlist (overnight run): pin any race or county; pins live in this browser only, so each viewer has their own
