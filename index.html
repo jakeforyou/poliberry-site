@@ -3268,6 +3268,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const NT_MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const ntDay = (v) => (v && /^\d{4}-\d{2}-\d{2}/.test(v) ? `${NT_MON[+v.slice(5, 7) - 1]} ${+v.slice(8, 10)}` : v || '');
   const ntHm = (v) => { const m = /^(\d{1,2}):(\d{2})/.exec(v || ''); if (!m) return v || ''; const h = +m[1]; return `${h % 12 || 12}:${m[2]}${h < 12 ? 'am' : 'pm'}`; };
+  // a county's range that fits our forecast (night_board.yardsticks), redder end first
+  const ntRange = (b) => (!b ? '—' : b.hi - b.lo < 0.5 ? `about ${ntM((b.lo + b.hi) / 2)}` : `${ntM(b.lo)} to ${ntM(b.hi)}`);
   const ntGap = (g) => (g == null ? '—' : Math.abs(g) < 0.05 ? 'even' : `${fmt1(Math.round(Math.abs(g) * 10) / 10)} more ${g < 0 ? 'R' : 'D'}`);
   const ntPtr = (o) => (o == null ? 'none' : Math.abs(o) < NT_BAND ? 'ours' : 'between');
   const ntAfterMidnight = () => Date.now() >= Date.parse('2026-11-04T00:00:00-05:00');
@@ -3674,7 +3676,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'It can dip if AP raises its estimate of the total.'] },
     counties: { title: 'Key counties', body: [
       'The handful of counties in each state that tell us the most, chosen before the election.',
-      'What we expected in each county comes from our forecast for its state: the county\'s 2024 result moved as far as the state forecast moved from 2024. Where there is no Senate or governor race on the board, it moves by the national shift in our House popular-vote forecast, 9 points. A simple rule set before the election, not a separate forecast for each county.',
+      'What we expected in each county comes from our forecast for its state: the county\'s 2024 result moved as far as the state forecast moved from 2024. A simple rule set before the election, not a separate forecast for each county.',
+      'Indiana, Kentucky and Virginia have no race we forecast, but they count early. Their counties get a range instead: one end if the county moves like the country, the other from the state\'s last comparable race. A count outside the range is an early hint about the national mood.',
       'Biggest results so far are the biggest vote leads. Biggest still out are the counties with the most votes left. Tap one for its full story.'] },
     lean: { title: 'Key counties against what we expected', body: [
       'How this state\'s key counties are voting compared with what we expected there: each county\'s 2024 result moved as far as our forecast moves the whole state.',
@@ -3754,7 +3757,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const first = c.first_2024;
     const row = (k, v) => { if (v) dl.append(el('dt', {}, k), el('dd', {}, v)); };
     row('Why we watch it', (c.why || '').split(/(?<=\.)\s+/).slice(0, 2).join(' '));
-    row('The count', has ? `${ntM(rd.margin_d)}, ${ntCounted(c.counted, c.counted_kind) || 'share counted not given'}` : c.feed ? 'No votes yet.' : 'No results feed for this county yet.');
+    row('The count', has ? `${ntM(rd.margin_d)}, ${ntCounted(c.counted, c.counted_kind) || 'share counted not given'}` : c.feed ? 'No votes yet.' : 'No live results feed for this county.');
     // County numbers are not forecasts of their own: the frozen reading rule (data/night_tells.json) carries the race
     // forecast down to each county by moving its 2024 result (or a comparison race) as far as the state forecast moved.
     const base = c.comparator != null ? c.comparator : c.pres_2024, stn = NT_STATE[st] || st;
@@ -3765,9 +3768,25 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const from = c.comparator != null ? `its result in ${cn ? `the ${cn}${/race|round/.test(cn) ? '' : ' race'}` : 'a comparison race'} (${ntM(base)})` : `its 2024 result (${ntM(base)})`;
       const how = c.comparator != null ? `${race} is from that race statewide` : `${race} moves the whole state from 2024`;
       row('How we got that', `${Math.abs(sh) < 0.05 ? `${from[0].toUpperCase()}${from.slice(1)}, unchanged, since ${race} matches that statewide.` : `${from[0].toUpperCase()}${from.slice(1)} moved ${fmt1(Math.abs(sh))} points toward ${sh > 0 ? 'Democrats' : 'Republicans'}: as far as ${how}.`} A simple rule set before the election. It assumes the county moves with its state.`);
-    } else if (c.pres_2024 != null) {
-      row('What we expected', `${ntM(c.pres_2024 + 9)}.`);
-      row('How we got that', `There is no Senate or governor race here to borrow a forecast from, so its 2024 result (${ntM(c.pres_2024)}) moved 9 points toward Democrats: the national shift in our House popular-vote forecast (D+7.5, against 2024's R+1.5). A rough benchmark, set before the election.`);
+    } else if (c.bench) {
+      // No race we forecast in this state. Two yardsticks from the board script, and the range between them.
+      const b = c.bench, g = c.bench_gap, pts = (x) => `${fmt1(Math.round(Math.abs(x) * 10) / 10)} point${Math.abs(x) === 1 ? '' : 's'}`;
+      row('Why no forecast here', b.ballot || 'No race we forecast is on the ballot here.');
+      row('What would fit our forecast', `${ntRange(b)}.${has && g != null ? ` The count is ${g === 0 ? 'inside that' : `${pts(g)} ${g > 0 ? 'bluer than the top of that' : 'redder than the bottom of that'}`}.` : ''}`);
+      for (const s of b.sticks) {
+        if (s.key === 'country') {
+          const then = s.national_then;
+          row('If it moves like the country', `${ntM(s.line)}. Our forecast has Democrats winning the national House vote by ${fmt1(s.national_now)}. ${then < 0 ? `Trump won the 2024 popular vote by ${fmt1(-then)}` : `Harris won the 2024 popular vote by ${fmt1(then)}`}. That is ${pts(s.shift)} toward Democrats. ${county} was ${ntM(s.base)} in 2024, so the same move lands it at ${ntM(s.line)}.`);
+        } else if (s.key === 'last_year') {
+          const near = s.state_swing != null && Math.abs(s.state_swing - b.sticks[0].shift) < 1.5;
+          row('If it votes like last year', `${ntM(s.line)}, ${s.who}'s margin here in the ${s.year} ${s.base_name.replace(/^\d{4} /, '')}.${s.state_swing != null ? ` ${stn} swung ${pts(s.state_swing)} toward Democrats from 2024 to ${s.year}, ${near ? 'about' : 'against'} the ${fmt1(b.sticks[0].shift)} we expect for the country${near ? ', so last year is a fair guide' : ''}.` : ''}`);
+        } else if (s.key === 'midterm') {
+          const res = Math.abs(s.base) < 0.05 ? `tied ${county}` : `${s.base > 0 ? 'won' : 'lost'} ${county} by ${fmt1(Math.round(Math.abs(s.base) * 10) / 10)}`;
+          row(`If it moves from ${s.year}`, `${ntM(s.line)}. ${s.same_candidate ? `${s.who}, the Democrat again this year,` : 'The Democrat'} ${res} in the ${s.year} ${s.base_name.replace(/^\d{4} /, '')}. Our forecast has the national House vote ${pts(s.shift)} bluer than ${s.year} (${ntM(s.national_then)} then, ${ntM(s.national_now)} now), so the same move lands it at ${ntM(s.line)}.`);
+        }
+      }
+      const wide = b.hi - b.lo;
+      row('How to read it', `Bluer than ${ntM(b.hi)} is an early sign Democrats are doing better than our forecast. Redder than ${ntM(b.lo)} is an early sign they are doing worse. In between fits it.${wide >= 4 ? ` The two yardsticks are ${pts(wide)} apart here, so only a result well outside the range says much.` : ''} Counties never move in lockstep, so treat this as a hint about the national mood, not a verdict.`);
     }
     row('2024 president', c.pres_2024 != null ? ntM(c.pres_2024) : '');
     row('2022', ntMid22(c.midterm_2022));
@@ -3794,7 +3813,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       for (const c of cs) {
         const rd = c.reading || {}, b = el('button', { type: 'button', class: 'nt-sheet-row', 'data-p': rd.margin_d == null ? '' : rd.margin_d > 0 ? 'D' : 'R' });
         b.append(el('b', {}, c.county), el('span', {}, rd.margin_d != null ? `${ntM(rd.margin_d)}, ${ntPct(c.counted)} in` : 'no votes yet'),
-          el('small', {}, c.offset != null && c.pointer !== 'none' ? `${ntOff(c.offset)} than expected` : c.pres_2024 != null ? `${ntM(c.pres_2024)} in 2024` : ''));
+          el('small', {}, c.offset != null && c.pointer !== 'none' ? `${ntOff(c.offset)} than expected` : c.bench_gap != null ? (c.bench_gap === 0 ? 'inside the range that fits our forecast' : `${ntOff(c.bench_gap)} than the range that fits our forecast`) : c.bench ? `fits our forecast: ${ntRange(c.bench)}` : c.pres_2024 != null ? `${ntM(c.pres_2024)} in 2024` : ''));
         b.addEventListener('click', () => ntCountyPop(d, st, c.county)); ul.append(b);
       }
       nodes.push(ul);
@@ -3990,6 +4009,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
           const c = el('button', { type: 'button', class: 'nt-look', title: ntCountyWhy(d, l.state, l.county) });
           c.append(el('b', {}, `${l.county}, ${l.state}`));
           if (l.ours != null) { const sm = el('small', {}); sm.append(el('span', { class: 'o' }, `Expected ${ntM(l.ours)}`)); c.append(sm); }
+          else if (l.lo != null) { const sm = el('small', {}); sm.append(el('span', { class: 'o' }, `Expected ${ntRange(l)}`)); c.append(sm); }
           else if (l.pres_2024 != null) c.append(el('small', {}, `2024: ${ntM(l.pres_2024)}`));
           const why1 = ntCountyWhy(d, l.state, l.county).split(/(?<=\.)\s+/)[0]; if (why1) c.append(el('span', { class: 'nt-look-w' }, why1));
           c.addEventListener('click', () => ntCountyPop(d, l.state, l.county));
@@ -4553,7 +4573,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const list = el('div', { class: 'nt-clist' });
       for (const c of rows) {
         const row = mark(el('div', { class: 'nt-crow', 'data-stale': String(!!c.stale) }), 'night_counties', 'pointer', 'state=' + enc(c.state) + '&county=' + enc(c.county));
-        const nm = el('div', { class: 'nt-cn' }); nm.append(el('b', {}, c.county), el('small', { class: 'nt-sub' }, c.context_only ? `2024 result ${ntM(c.pres_2024)}` : `expected ${ntM(c.our_line)}`));
+        const nm = el('div', { class: 'nt-cn' }); nm.append(el('b', {}, c.county), el('small', { class: 'nt-sub' }, c.context_only ? (c.bench ? `fits our forecast: ${ntRange(c.bench)}` : `2024 result ${ntM(c.pres_2024)}`) : `expected ${ntM(c.our_line)}`));
         const m22 = ntMid22(c.midterm_2022); if (m22) nm.append(el('small', { class: 'nt-sub' }, m22));
         nm.title = [kindName[c.kind], c.why].filter(Boolean).join('. ');
         const val = el('div', { class: 'nt-cv' });

@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-02T21:16:50-05:00",
+  "built_at": "2026-11-02T21:31:57-05:00",
   "label": "retrieved; flags inferred from words",
   "note": "Public posts and press releases from Trump, his administration and allies, flagged when they pair an election subject with a claim or action word. Flags come from words, not judgment.",
   "crew": [
@@ -24,7 +24,7 @@
       "via": "trumpstruth.org, a public archive of Truth Social",
       "ok": true,
       "n": 100,
-      "retrieved_at": "2026-11-02T21:16:50-05:00",
+      "retrieved_at": "2026-11-02T21:31:58-05:00",
       "newest": "2026-11-02T18:16:26-05:00"
     },
     "whitehouse": {
@@ -33,7 +33,7 @@
       "via": null,
       "ok": true,
       "n": 30,
-      "retrieved_at": "2026-11-02T21:16:51-05:00",
+      "retrieved_at": "2026-11-02T21:31:59-05:00",
       "newest": "2026-11-02T17:03:21-05:00"
     },
     "speaker": {
@@ -42,7 +42,7 @@
       "via": null,
       "ok": true,
       "n": 10,
-      "retrieved_at": "2026-11-02T21:16:52-05:00",
+      "retrieved_at": "2026-11-02T21:31:59-05:00",
       "newest": "2026-10-30T15:52:18-04:00"
     },
     "doj": {
@@ -51,7 +51,7 @@
       "via": null,
       "ok": true,
       "n": 25,
-      "retrieved_at": "2026-11-02T21:16:53-05:00",
+      "retrieved_at": "2026-11-02T21:32:00-05:00",
       "newest": "2026-11-02T07:00:00-05:00"
     },
     "rnc": {
@@ -60,15 +60,15 @@
       "via": null,
       "ok": true,
       "n": 45,
-      "retrieved_at": "2026-11-02T21:16:54-05:00",
-      "newest": "2026-11-02T20:47:21-05:00"
+      "retrieved_at": "2026-11-02T21:32:01-05:00",
+      "newest": "2026-11-02T21:17:40-05:00"
     },
     "news": {
       "name": "News coverage (GDELT)",
       "url": "https://api.gdeltproject.org/api/v2/doc/doc",
       "ok": false,
       "n": 0,
-      "retrieved_at": "2026-11-02T21:05:56-05:00",
+      "retrieved_at": "2026-11-02T21:21:52-05:00",
       "queries": [
         {
           "query": "check: election, last day",
@@ -85,27 +85,48 @@
   ],
   "summary": {
     "hour": {
-      "flagged": 0,
-      "actions": 0,
-      "kinds": {}
+      "flagged": 1,
+      "actions": 1,
+      "kinds": {
+        "Legal action": 1
+      }
     },
     "six_hours": {
-      "flagged": 1,
-      "actions": 0,
+      "flagged": 2,
+      "actions": 1,
       "kinds": {
+        "Legal action": 1,
         "Fraud claim": 1
       }
     },
     "day": {
-      "flagged": 2,
-      "actions": 1,
+      "flagged": 3,
+      "actions": 2,
       "kinds": {
-        "Fraud claim": 1,
-        "Legal action": 1
+        "Legal action": 2,
+        "Fraud claim": 1
       }
     }
   },
   "items": [
+    {
+      "id": "f435a0da74520926",
+      "source": "rnc",
+      "source_name": "RNC",
+      "who": "RNC",
+      "at": "2026-11-02T21:17:40-05:00",
+      "title": "Election Integrity Win: RNC Lawsuit Forces New Mexico to Remove False Voter Guide From Polling Places",
+      "text": "Election Integrity Win: RNC Lawsuit Forces New Mexico to Remove False Voter Guide From Polling Places",
+      "url": "https://gop.com/press-release/election-integrity-win-rnc-lawsuit-forces-new-mexico-to-remove-false-voter-guide-from-polling-places",
+      "kind": "Legal action",
+      "terms": [
+        "lawsuit"
+      ],
+      "flagged": true,
+      "action": true,
+      "label": "inferred",
+      "first_seen": "2026-11-02T21:21:37-05:00"
+    },
     {
       "id": "e39aa141f2a89f6c",
       "source": "rnc",
@@ -3289,22 +3310,6 @@
       "title": "Former U.S. Government Contractor Arrested for Allegedly Leaking National Defense Information and Stealing Night Vision Goggles",
       "text": "James Thomas Ashbacher, 37, of Spring Lake, North Carolina, a former U.S. government contractor, was arrested by the FBI on Tuesday for allegedly leaking national defense information by posting the information on a popular social media site, unlawfully retaining other national defense information at his residence, and stealing night vision goggles from the U.S. Army’s Special Operations Command.",
       "url": "https://www.justice.gov/opa/pr/former-us-government-contractor-arrested-allegedly-leaking-national-defense-information-and",
-      "kind": null,
-      "terms": [],
-      "flagged": false,
-      "action": false,
-      "label": "retrieved",
-      "first_seen": "2026-11-02T19:11:19-05:00"
-    },
-    {
-      "id": "1aa5c8ee71463842",
-      "source": "doj",
-      "source_name": "Justice Department",
-      "who": "Justice Department",
-      "at": "2026-10-30T08:00:00-04:00",
-      "title": "Former BizJet Sales Manager Pleads Guilty to Foreign Bribery",
-      "text": "Jald Jensen, 73, of Panama City, and previously of Van Nuys, California, a former sales manager of BizJet International Sales and Support Inc. (BizJet), pleaded guilty yesterday for his role in connection with a scheme to pay bribes to government officials in Latin America to secure business for BizJet.",
-      "url": "https://www.justice.gov/opa/pr/former-bizjet-sales-manager-pleads-guilty-foreign-bribery",
       "kind": null,
       "terms": [],
       "flagged": false,
