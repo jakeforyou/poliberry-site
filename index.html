@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'c668379f82c9';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e6532c019114';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1543,6 +1543,15 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-ctlc-grid { stroke: color-mix(in srgb, var(--nt-rule) 50%, transparent); } .nt-ctlc-mid { stroke: var(--nt-rule); stroke-dasharray: 2 3; }
 .nt-ctlc-ax { font-size: 11px; fill: var(--color-fg-muted); }
 .nt-ctlc-dot { stroke: var(--color-bg); stroke-width: 1.5; } .nt-ctlc-dot.s { fill: var(--nt-ours); } .nt-ctlc-dot.h { fill: var(--color-fg); }
+/* each chamber's chance through the night, small, under its chance bar (Nov 3, 6:50pm) */
+.nt-ctlc-sw { display: grid; gap: .1rem; margin-top: .4rem; min-width: 0; grid-column: 1 / -1; }
+.nt-ctlc-sw small { font-size: 11.5px; }
+.nt-ctlc-sm { max-height: 90px; }
+.nt-ctlc-sm .nt-ctlc-l { stroke: var(--nt-ours); stroke-dasharray: none; opacity: 1; } .nt-ctlc-sm .nt-ctlc-dot { fill: var(--nt-ours); }
+/* who voted and what it suggested, folded under the count once results come in */
+.nt-bt-before { border-top: 1px solid var(--nt-rule); padding-top: .4rem; }
+.nt-bt-before > summary { cursor: pointer; color: var(--color-fg-muted); font-size: 13.5px; padding: .3rem 0; }
+.nt-bt-before[open] > summary { margin-bottom: .5rem; }
 .nt-mapsec { display: grid; gap: .5rem; margin: .8rem 0 1rem; }
 .nt-map-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
 .nt-map-h h2 { margin: 0; }
@@ -3920,7 +3929,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   var nightData = null, nightTimers = null, nightPrevTheme, nightLoad = null, nightLastMinute = null, nightParseSeq = 0, nightClosed = new Set(), nightOpened = new Set();
   var nightSeen = null, nightNew = {}, nightHealth = null, nightSort = null, nightClaims = null, nightPaused = false, nightSig = null, nightDrawnAt = 0;
   var nightBatches = null, nightBatchSeq = 0, nightBatchAll = false;  // the Election Day vote batches file (scripts/night_batches.py, Nov 3)
-  var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtAllRaces = false, nightBtEvOpen = false;
+  var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtAllRaces = false, nightBtEvOpen = false, nightBtBeforeOpen = false;
   const nightBtDetOpen = new Set();  // which states' Details are unfolded, kept across redraws
   const nightBtOpen = new Set();  // races whose batches are unfolded, kept across the 30-second redraws  // every race's count batch by batch (scripts/night_results_batches.py), and the last good text of each file
   var nightView = 'results';  // the old Deep dive now lives in Evidence's Night details (Nov 2 evening), so the night tab has one view
@@ -4190,17 +4199,38 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     svg.append('text').attr('x', W - m.r).attr('y', H - 4).attr('text-anchor', 'end').attr('class', 'nt-ctlc-ax').text(ntT(last[0]));
     return svg.node();
   }
+  // One chamber's chance through the night, under its chance bar in the scoreboard (Jake, Nov 3, 6:50pm: the line charts up with the
+  // race to 51 and 218). The same history and dots as the big chart used to show under Most impactful.
+  function ntCtlSpark(d, k) {
+    const st = d.story || {}, h = ntCtlHist(st), i = k === 'house' ? 2 : 1;
+    if (h.length < 2) return null;
+    const W = 320, H = 70, m = { l: 30, r: 6, t: 6, b: 16 };
+    const xs = h.map((p) => Date.parse(p[0])), x0 = Math.min(...xs), x1 = Math.max(...xs, x0 + 60000);
+    const x = d3.scaleLinear().domain([x0, x1]).range([m.l, W - m.r]), y = d3.scaleLinear().domain([0, 1]).range([H - m.b, m.t]);
+    const last = h[h.length - 1], who = k === 'house' ? 'House' : 'Senate';
+    const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('class', 'nt-ctlc nt-ctlc-sm').attr('role', 'img')
+      .attr('aria-label', `Democrats' chance of the ${who} through the night, from ${ntPct(100 * h[0][i])} at ${ntT(h[0][0])} to ${ntPct(100 * last[i])} at ${ntT(last[0])}.`);
+    for (const v of [0, 0.5, 1]) {
+      svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(v)).attr('y2', y(v)).attr('class', v === 0.5 ? 'nt-ctlc-mid' : 'nt-ctlc-grid');
+      if (v !== 0) svg.append('text').attr('x', m.l - 5).attr('y', y(v) + 4).attr('text-anchor', 'end').attr('class', 'nt-ctlc-ax').text(`${Math.round(v * 100)}%`);
+    }
+    svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((p) => x(Date.parse(p[0]))).y((p) => y(p[i]))(h)).attr('class', 'nt-ctlc-l ' + (k === 'house' ? 'h' : 's'));
+    for (const mv of st.impact || []) {
+      if (mv.to == null || (mv.chamber === 'house') !== (k === 'house') || Date.parse(mv.at) < x0) continue;
+      svg.append('circle').attr('cx', x(Date.parse(mv.at))).attr('cy', y(mv.to)).attr('r', 3.5).attr('class', 'nt-ctlc-dot ' + (k === 'house' ? 'h' : 's'))
+        .append('title').text(`${ntT(mv.at)}: ${mv.title} ${ntPct(100 * mv.from)} to ${ntPct(100 * mv.to)}.`);
+    }
+    svg.append('text').attr('x', m.l).attr('y', H - 3).attr('class', 'nt-ctlc-ax').text(ntT(h[0][0]));
+    svg.append('text').attr('x', W - m.r).attr('y', H - 3).attr('text-anchor', 'end').attr('class', 'nt-ctlc-ax').text(ntT(last[0]));
+    const w = el('div', { class: 'nt-ctlc-sw' }); w.append(el('small', { class: 'nt-mute' }, 'Through the night'), svg.node());
+    return w;
+  }
   function ntImpact(d) {
     const box = $('#nt-impact'); if (!box) return;
     const st = d.story || {}, moves = st.impact || [], sur = st.surprises || [];
     box.replaceChildren();
     box.append(ntHead(el('h2', {}, 'Most impactful so far'), 'impact'));
-    const chart = ntCtlChart(d);
-    if (chart) {
-      const cw = el('div', { class: 'nt-ctlc-w' });
-      const key = el('div', { class: 'nt-ctlc-key' }); key.append(el('span', { class: 's' }, 'Senate'), el('span', { class: 'h' }, 'House'), el('span', { class: 'nt-mute' }, "Democrats' chance of control, through the night. Dots are the results below."));
-      cw.append(key, chart); box.append(cw);
-    }
+    // the chance of control through the night moved up into each chamber's card (ntCtlSpark, Nov 3, 6:50pm)
     if (!moves.length && !sur.length) { box.append(el('p', { class: 'nt-mute' }, 'Nothing yet. Once votes and calls come in, the results that moved the chance of control most show here, with the time, beside the biggest surprises against our forecast.')); return; }
     const cols = el('div', { class: 'nt-imp-cols' });
     const a = el('div', {}); a.append(el('h3', { class: 'nt-sheet-h3' }, 'Moved control the most'));
@@ -5570,12 +5600,16 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         }
         box.append(el('p', { class: 'nt-bt-src' }, `${R.label || ''} Pace is the trailing side's share of the newest ${3} batches against the share it needs of the votes left, on CNN's estimate of the expected vote.`));
       }
-      if (nightMode !== 'practice' && f && f.signals) ntBtSignals(box, f.signals, races.length > 0);
+      // once results come in, who voted and what it suggested folds away under the count (Jake, Nov 3, 6:50pm: simplify now that results roll in)
+      const pre = races.length > 0 && nightMode !== 'practice' && ((f && f.signals) || fl || (f && f.early_vote)) ? el('details', { class: 'nt-bt-before', 'data-fk': 'bt:before' }) : null;
+      if (pre) { pre.open = nightBtBeforeOpen; pre.addEventListener('toggle', () => { nightBtBeforeOpen = pre.open; }); pre.append(el('summary', {}, 'Before the count: who voted, and what it suggested')); box.append(pre); }
+      const tb = pre || box;
+      if (nightMode !== 'practice' && f && f.signals) ntBtSignals(tb, f.signals, races.length > 0);
       if (nightMode !== 'practice' && (fl || (f && f.early_vote))) {  // Florida beside the country on a wide screen, one above the other on a phone
         const cols = el('div', { class: 'nt-bt-cols' }), ca = el('div', { class: 'nt-bt-col' }), cb = el('div', { class: 'nt-bt-col' });
         for (const s of tstates) ntBtTurnout(ca, s, f, races.length > 0);
         if (f && f.early_vote) ntBtEarly(cb, f.early_vote, races.length > 0);
-        cols.append(ca, cb); box.append(cols);
+        cols.append(ca, cb); tb.append(cols);
       }
     } catch (e) {  // a file of the wrong shape hides this card and never stops the rest of the board drawing (review, Nov 3)
       box.replaceChildren(); sec.hidden = true; if (jb) jb.hidden = true;
@@ -5657,7 +5691,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const dN = (o.dHeld || 0) + o.dCalled + o.dLead, rN = (o.rHeld || 0) + o.rCalled + o.rLead;
       // the two counts are told apart by color alone, so each carries its party in words for a screen reader (accessibility review, item 5)
       const cnt = (cls, who, n) => { const b = el('b', { class: cls }); b.append(el('span', { class: 'nt-sr' }, who + ' '), document.createTextNode(wait ? '—' : String(n))); return b; };
-      head.append(el('span', { class: 'nt-seat-n' }, 'Seats'), cnt('nt-d', 'Democrats', dN), cnt('nt-r', 'Republicans', rN),
+      head.append(el('span', { class: 'nt-seat-n' }, `Race to ${o.majority}`), cnt('nt-d', 'Democrats', dN), cnt('nt-r', 'Republicans', rN),
         el('small', { class: 'nt-mute' }, (wait ? `${NT_SEAT_WAIT}. ` : p ? `called or ahead. ${p.no_votes ? p.no_votes + ' not counting yet. ' : ''}` : (name === 'Senate' ? 'seats not up this year. No votes yet. ' : 'No votes yet. ')) + `${o.majority} for control.`), ntQ('seats'));
       const mk = (d.markets || {})[name === 'Senate' ? 'senate' : 'house'] || {};
       const pc = (v) => Math.round(v * 100) + '%', below = [];
@@ -5842,7 +5876,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     box.dataset.dir = v.dir || ''; box.dataset.level = v.level || 'none';
     const h = el('div', { class: 'nt-vibe-h' });
     const k = el('small', {}, 'The night so far'); k.append(ntQ('vibe'));
-    const ht = el('h2', { class: 'nt-vibe-t' }); ht.append(el('b', {}, v.headline || 'Waiting for the first votes'));
+    // The story starts the night only when one of our key races counts. Before that, other races can be counting (Kentucky and Indiana
+    // at 6pm), so the page says so rather than "Waiting for the first votes" (Nov 3, 6:50pm).
+    const ev = (nightData || {}).every || {}, counting = ['senate', 'governor', 'house'].some((k) => (ev[k] || []).some((x) => x.margin_d != null || x.lead || x.call));
+    let hl = v.headline || 'Waiting for the first votes';
+    if (counting && /^(Waiting for the first votes|First polls close)/.test(hl)) hl = 'The count is under way';
+    const ht = el('h2', { class: 'nt-vibe-t' }); ht.append(el('b', {}, hl));
     h.append(k, ht);
     const mid = el('div', { class: 'nt-vibe-m' });
     if (v.dek) mid.append(el('div', { class: 'nt-vibe-l' }, v.dek));
@@ -6431,6 +6470,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         x.append(el('small', {}, side === 'D' ? 'Democrats' : 'Republicans'), el('b', {}, ntPctW(p))); mu.append(x);
       }
       mu.append(ntWinBar(o.p_d, 'md'), ntDots(o.p_d, 'Democrats', 'Republicans'));
+      { const sk = nightData ? ntCtlSpark(nightData, k) : null; if (sk) mu.append(sk); }
       const note = k === 'senate'
         ? (s.waiting || s.r_need == null || s.d_need == null || s.r_need === 0 || s.d_need === 0 ? s.text : `Republicans need ${s.r_need} more seats, Democrats ${s.d_need}.`)
         : (c.house ? c.house.text.replace(/^House: (.)/, (_, a) => a.toUpperCase()) : '');
