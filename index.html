@@ -1301,6 +1301,31 @@ button.nt-look:hover b, button.nt-look:focus-visible b { text-decoration: underl
 .nt-toast b { font-size: .95rem; line-height: 1.35; } .nt-toast span { font-size: 12.5px; color: var(--color-fg-muted); }
 @media (prefers-reduced-motion: no-preference) { .nt-toast { animation: nt-toast-in .35s ease-out; } @keyframes nt-toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } } }
 .nt-rcg { display: grid; gap: .5rem; }
+.nt-sheet-link { all: unset; cursor: pointer; display: inline-block; margin-top: .25rem; font-size: 12.5px; text-decoration: underline; color: var(--color-fg-muted); }
+.nt-sheet-link:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-jump { position: sticky; top: 0; z-index: 20; display: flex; gap: .3rem; overflow-x: auto; scrollbar-width: none; padding: .45rem 0; margin: 0 0 .4rem;
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-bottom: 1px solid var(--nt-rule); }
+.nt-jump::-webkit-scrollbar { display: none; }
+.nt-jump button { all: unset; cursor: pointer; flex: none; padding: .35rem .8rem; border-radius: 999px; font-size: 13px; color: var(--color-fg-muted); white-space: nowrap; }
+.nt-jump button:hover, .nt-jump button[aria-current="true"] { color: var(--color-fg); background: var(--nt-wash); }
+.nt-jump button:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 1px; }
+#nt-ctl, #nt-desk, #nt-rcs, #nt-cty, #nt-all { scroll-margin-top: 3.4rem; }
+.nt-rc-ftoggle { display: none; }
+@media (max-width: 640px) {
+  .nt-rc-ftoggle { all: unset; display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; padding: .5rem .9rem; min-height: 24px; border-radius: 999px; font-size: 13.5px; font-weight: 600; outline: 1px solid var(--nt-rule); }
+  .nt-rc-ftoggle:focus-visible { outline: 2px solid var(--nt-ours); }
+  .nt-rcs:not(.nt-fopen) .nt-rc-frow, .nt-rcs:not(.nt-fopen) .nt-rc-bar { display: none; }
+  .nt-rc-frow, .nt-rc-bar .nt-feedf, .nt-all-ctl .nt-feedf { flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; }
+  .nt-rc-frow::-webkit-scrollbar, .nt-rc-bar .nt-feedf::-webkit-scrollbar, .nt-all-ctl .nt-feedf::-webkit-scrollbar { display: none; }
+  .nt-rc-frow > .nt-mute { min-width: auto !important; flex: none; }
+}
+@media (pointer: coarse), (max-width: 640px) {
+  .nt-feedf button, .nt-jump button { min-height: 36px; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; flex: none; }
+  .nt-q { position: relative; } .nt-q::after { content: ""; position: absolute; inset: -11px; }
+  .nt-cl-more, .nt-link { min-height: 36px; display: inline-flex; align-items: center; }
+}
+.nt-rcs, .nt-rcs > *, .nt-rc-filters > *, .nt-rc-bar, .nt-rc-bar > *, .nt-all, .nt-all > *, .nt-all-ctl > * { min-width: 0; max-width: 100%; }
+.nt-rc-filters { grid-template-columns: minmax(0, 1fr); }
 .nt-rc-filters { display: grid; gap: .3rem; padding: .55rem .7rem; border-radius: 10px; background: var(--nt-wash); }
 .nt-rc-fh { display: flex; align-items: center; gap: .6rem; font-size: 13px; }
 .nt-rc-clear { all: unset; cursor: pointer; font-size: 12.5px; text-decoration: underline; margin-left: auto; }
@@ -1830,7 +1855,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       </div>
       <p class="nt-prac-s">Made-up results, to see how the board behaves before the real night. Pick how far every state ends from our forecast and how much of the vote is counted, then press Show it, or load a sample night that plays out poll by poll. Races get a made-up call once 90 percent is in. Nothing here reaches the real board.</p>
     </details>
-    <div class="nt-board2" aria-label="Control of Congress and the night so far">
+    <nav class="nt-jump" id="nt-jump" aria-label="Jump to a part of the board">
+      <button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-all">All races</button>
+    </nav>
+    <div class="nt-board2" id="nt-ctl" aria-label="Control of Congress and the night so far">
       <article class="nt-chamber" data-ch="senate"><div id="nt-ch-sen"></div><div class="nt-seat" id="nt-sen" data-source="night_tiles"></div></article>
       <article class="nt-chamber" data-ch="house"><div id="nt-ch-hou"></div><div class="nt-seat" id="nt-hou" data-source="night_tiles"></div></article>
       <div class="nt-vibe" id="nt-vibe" aria-live="polite"></div>
@@ -2147,7 +2175,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     // the forecast address names a state only when one came in with the link (a click on the forecast map writes its own);
     // a state picked on another tab stays off it, so a refresh does not scroll to it (2026-10-29)
     const part = tab === 'forecast' ? (sub ? subOf(tab) : null) : subOf(tab);
-    try { history.replaceState(null, '', '#' + tab + (part ? '/' + part : '')); } catch (e) { /* ignore */ }
+    const deep = tab === 'night' && /^#night\/(race|county|state)\//.test(location.hash);  // a link straight to a race, county or state stays for the board to open
+    if (!deep) { try { history.replaceState(null, '', '#' + tab + (part ? '/' + part : '')); } catch (e) { /* ignore */ } }
     redraw();
     if (changed) window.scrollTo({ top: Math.min(window.scrollY, $('#tabs').offsetTop), behavior: 'auto' });
     if (tab === 'evidence' && state.ref) { const p = document.querySelector(`.ms-panel[data-panel="${state.ref}"]`); if (p && (changed || sub)) p.scrollIntoView({ behavior: 'auto', block: 'start' }); }
@@ -3443,7 +3472,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     };
     nightTimers.data = setInterval(() => { if (!nightPaused) nightLoad(); }, 30000);
     nightTimers.clock = setInterval(ntTick, 1000);
-    ntWireEntry(); ntWireHome();
+    ntWireEntry(); ntWireHome(); ntWireJump();
     nightLoad();
   }
   // faces and state outlines (Nov 2 evening, Jake: "Include faces!" and an outline of each state on the tiles)
@@ -3464,6 +3493,39 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     svg.append('path').attr('d', nightOutlines[k]);
     return svg.node();
   }
+  // ---------- the jump bar and deep links (overnight run, Nov 2 to 3): jump between the board's parts, and open any race,
+  // county or state from a link (#night/race/senate_ne, #night/county/NE/Douglas, #night/state/NE)
+  let ntDeepDone = false;
+  function ntWireJump() {
+    const nav = $('#nt-jump'); if (!nav) return;
+    const calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    nav.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { const s = document.getElementById(b.dataset.to); if (s && !s.hidden) s.scrollIntoView({ block: 'start', behavior: calm ? 'auto' : 'smooth' }); }));
+    if ('IntersectionObserver' in window) {
+      const seen = new Map();
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e) => seen.set(e.target.id, e.isIntersecting));
+        const cur = [...nav.querySelectorAll('button')].map((b) => b.dataset.to).find((id) => seen.get(id));
+        nav.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.to === cur)));
+      }, { rootMargin: '-60px 0px -55% 0px' });
+      ['nt-ctl', 'nt-desk', 'nt-rcs', 'nt-cty', 'nt-all'].forEach((id) => { const s = document.getElementById(id); if (s) io.observe(s); });
+    }
+    window.addEventListener('hashchange', () => { if (nightData) ntOpenDeep(nightData); });
+  }
+  function ntOpenDeep(d) {
+    const parts = location.hash.slice(1).split('/').map((p) => decodeURIComponent(p));
+    if (parts[0] !== 'night' || parts.length < 3) return;
+    const [, kind, a, b] = parts;
+    if (kind === 'race') {
+      const r = (d.races || []).find((x) => x.id === a);
+      const sp = ((d.story || {}).spotlight || {}).all || {};
+      if (r && sp[a]) { nightSpotPin = { id: a, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); return; }
+      const ev = d.every || {};
+      const x = [...(ev.senate || []), ...(ev.governor || []), ...(ev.house || [])].find((y) => y.key === a);
+      if (x) ntAllPop(d, { ...x, st: x.state || x.key.slice(0, 2) });
+      else if (r) ntStatePop(d, r.state);
+    } else if (kind === 'county' && b) ntCountyPop(d, a, b);
+    else if (kind === 'state') ntStatePop(d, a);
+  }
   function drawNight() {
     if (!nightGeoAsked && typeof loadGeo === 'function') { nightGeoAsked = true; loadGeo().then((g) => { if (g && nightData) drawNight(); }); }
     if (!$('#night')) return;
@@ -3475,6 +3537,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d);
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
+    if (!ntDeepDone) { ntDeepDone = true; ntOpenDeep(d); }
   }
 
   // ---------- the strip: clock, next close, poller health
@@ -3825,7 +3888,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Every number shows its source and when it was read. The full list is in Evidence.'], more: { label: 'See the data sources', ref: 'nightdetail' } },
   };
   var nightSheetFrom = null;
-  function ntSheet(title, kicker, nodes) {  // one sheet at a time, beside the board (a bottom sheet on a phone); Esc or × closes it
+  function ntSheet(title, kicker, nodes, link) {  // one sheet at a time, beside the board (a bottom sheet on a phone); Esc or × closes it. link: its deep link
     let s = $('#nt-sheet');
     if (!s) {
       s = el('aside', { class: 'nt nt-sheet', id: 'nt-sheet', role: 'dialog', 'aria-labelledby': 'nt-sheet-t', hidden: '' });
@@ -3836,7 +3899,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const x = el('button', { type: 'button', class: 'nt-sheet-x', 'aria-label': 'Close' }, '×');
     x.addEventListener('click', ntSheetClose);
     const tt = el('div', {}); if (kicker) tt.append(el('small', {}, kicker)); tt.append(el('h2', { id: 'nt-sheet-t', tabindex: '-1' }, title));
-    const head = el('div', { class: 'nt-sheet-h' }); head.append(tt, x);
+    const head = el('div', { class: 'nt-sheet-h' });
+    if (link) {  // a link straight to this pop-out, for sharing (Nov 2 late overnight run)
+      const url = `${location.origin}${location.pathname}#night/${link}`;
+      const cp = el('button', { type: 'button', class: 'nt-sheet-link', title: 'Copy a link that opens this' }, 'Copy link');
+      cp.addEventListener('click', async () => { try { await navigator.clipboard.writeText(url); cp.textContent = 'Copied'; } catch (e) { window.prompt('Copy this link', url); } setTimeout(() => { cp.textContent = 'Copy link'; }, 1600); });
+      tt.append(cp);
+    }
+    head.append(tt, x);
     const body = el('div', { class: 'nt-sheet-b' }); body.append(...nodes.filter(Boolean));
     s.replaceChildren(head, body); s.hidden = false;
     s.querySelector('h2').focus({ preventScroll: true });
@@ -3919,7 +3989,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     row('First results', first ? `In 2024: ${first}.` : '');
     row('Source', rd.source ? `${rd.source}, read ${ntT(rd.at)}` : '');
     ntSheet(`${county}, ${NT_STATE[st] || st}`, NT_CKIND[c.kind] || 'Key county', [dl,
-      ntLink(`Every key county in ${NT_STATE[st] || st}`, () => ntStatePop(d, st))]);
+      ntLink(`Every key county in ${NT_STATE[st] || st}`, () => ntStatePop(d, st))], `county/${st}/${encodeURIComponent(county)}`);
   }
   let ntCtySort = 'list';
   function ntCtyRow(d, st, c) {  // one county in a state's list: the count, and how it sits against what we expected
@@ -3960,7 +4030,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     const tm = races[0] && races[0].timing ? ntWhen(races[0].timing) : ''; if (tm) nodes.push(el('p', { class: 'nt-mute' }, tm));
     nodes.push(ntLink(`Every number for ${name}, in Evidence`, () => { ntSheetClose(); ntOpenState(st); }));
-    ntSheet(name, 'Its races and key counties', nodes);
+    ntSheet(name, 'Its races and key counties', nodes, `state/${st}`);
   }
   function ntChamberPop(d, which) {  // the races behind a chamber's chance
     const st = d.story || {}, odds = st.odds || {}, nodes = [];
@@ -4156,7 +4226,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
           g.append(c);
         }
         up.append(g);
-        if (sp.looks.length > 8) up.append(el('p', { class: 'nt-mute' }, ntLink(`All ${sp.looks.length} in the key counties panel, and the other ${Math.max(0, (d.counties || []).length - sp.looks.length)} as they report`, () => { ntCtyS = { k: 'next', dir: 1 }; ntCtyAll = true; ntCtyLive(d); $('#nt-cty').scrollIntoView({ block: 'start', behavior: 'smooth' }); })));
+        if (sp.looks.length > 8) { const mp = el('p', { class: 'nt-mute' }); mp.append(ntLink(`All ${sp.looks.length} in the key counties panel, and the other ${Math.max(0, (d.counties || []).length - sp.looks.length)} as they report`, () => { ntCtyS = { k: 'next', dir: 1 }; ntCtyAll = true; ntCtyLive(d); $('#nt-cty').scrollIntoView({ block: 'start', behavior: 'smooth' }); })); up.append(mp); }
       }
       box.append(up);
       return;
@@ -4482,7 +4552,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const shown = (d.races || []).filter(keep).length, total = (d.races || []).length;
     const anyF = facets.some((fc) => (ntRcF[fc.k] || []).length);
     const fp = el('div', { class: 'nt-rc-filters', role: 'group', 'aria-label': 'Filter the key races' });
-    const fh = el('div', { class: 'nt-rc-fh' }); fh.append(el('b', {}, 'Filter'), el('span', { class: 'nt-mute' }, anyF ? `showing ${shown} of ${total}` : `all ${total} races`));
+    const fh = el('div', { class: 'nt-rc-fh' });
+    const tog = el('button', { type: 'button', class: 'nt-rc-ftoggle', 'aria-expanded': String(box.classList.contains('nt-fopen')), 'aria-controls': 'nt-rcs' }, box.classList.contains('nt-fopen') ? 'Hide filter and sort' : 'Filter and sort');
+    tog.addEventListener('click', () => { box.classList.toggle('nt-fopen'); ntRaceCards(d); });
+    const active = facets.flatMap((fc) => ntRcF[fc.k] || []);
+    fh.append(el('b', {}, 'Filter'), el('span', { class: 'nt-mute' }, anyF ? `showing ${shown} of ${total}: ${active.join(', ')}` : `all ${total} races`), tog);
     if (anyF) { const cl = el('button', { type: 'button', class: 'nt-rc-clear' }, 'Clear'); cl.addEventListener('click', () => { ntRcF = {}; try { localStorage.setItem('nt-rc-filter', '{}'); } catch (er) { /* fine */ } ntRaceCards(d); }); fh.append(cl); }
     fp.append(fh);
     for (const fc of facets) {
@@ -4797,7 +4871,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     row('Sources', 'Count and call: CNN, with AP\'s numbers, and NPR\'s copy of AP\'s numbers as the backup and check. Candidates: CNN. Seat holder and lean: Wikipedia. Chance before votes: our final call, our Nov 2 call or our model (polls from Wikipedia\'s polling tables, 2024 results by district from The Downballot), with the raters\' consensus beside it.');
     const nodes = [dl];
     if (x.race_id) nodes.push(el('p', {}, ntLink('Open the full matchup', () => { ntSheetClose(); nightSpotPin = { id: x.race_id, until: Date.now() + 10 * 60000 }; ntSpot(d, d.story || {}); $('#nt-spot').scrollIntoView({ block: 'start' }); })));
-    ntSheet(`${ntAllName(x)}${x.key.startsWith('senate_') ? ' Senate' : x.key.startsWith('gov_') ? ' governor' : ''}`, x.key.startsWith('senate_') ? 'Senate race' : x.key.startsWith('gov_') ? 'Governor race' : 'House race', nodes);
+    ntSheet(`${ntAllName(x)}${x.key.startsWith('senate_') ? ' Senate' : x.key.startsWith('gov_') ? ' governor' : ''}`, x.key.startsWith('senate_') ? 'Senate race' : x.key.startsWith('gov_') ? 'Governor race' : 'House race', nodes, `race/${x.key}`);
   }
 
   // ---------- against the polls: the count beside the final poll averages, the claim the night is really about
