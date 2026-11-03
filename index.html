@@ -1438,13 +1438,22 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
   /* the order a visitor reads: what this is, any warning, the jump bar, then the two chambers beside the turnout read, the map, the clock, the rest */
   #night > .nt-glance { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
   #night > .nt-jump { order: 5; } #night > .nt-pins { order: 6; } #night > #nt-ctl { order: 7; } #night > #nt-batches { order: 8; }
-  #night > #nt-map { order: 9; } #night > .nt-top { order: 10; } #night > .nt-prac { order: 11; } #night > #nt-expect { order: 12; }
+  #night > #nt-expect { order: 9; } #night > #nt-map { order: 10; } #night > .nt-top { order: 11; } #night > .nt-prac { order: 12; }
   #night > #nt-impact { order: 13; } #night > #nt-results { order: 14; } #night > .nt-acc-row { order: 99; }
   #night > #nt-ctl { grid-column: 1; grid-template-columns: minmax(0, 1fr); }  /* Senate above House, the vibe under them */
   #night > #nt-ctl .nt-vibe { grid-column: auto; }
-  #night > #nt-map { grid-column: 1; }
+  #night > #nt-expect { grid-column: 1; }  /* what to expect under the chambers, beside the batch card */
+  #night > #nt-expect .nt-x-list { grid-template-columns: minmax(0, 1fr); } #night > #nt-expect .nt-xr[data-s="outside"] { grid-column: auto; }
+  /* the map across the page (Jake, Nov 3: "the map across the full desktop, sensibly"): the drawing on the left two thirds, at most
+     900px wide so it is never taller than a screen, and its modes, what the colors mean, the legend and the summary beside it */
+  #night > #nt-map { grid-column: 1 / -1; grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr); column-gap: 1.6rem; align-items: start; }
+  #night > #nt-map > .nt-map-h { grid-column: 1 / -1; }
+  #night > #nt-map > .nt-map-svg { grid-column: 1; grid-row: 2 / span 5; max-height: none; }
+  #night > #nt-map > .nt-map-modes, #night > #nt-map > .nt-map-how, #night > #nt-map > .nt-map-leg, #night > #nt-map > .nt-all-sum { grid-column: 2; }
+  #night > #nt-map > .nt-map-modes { flex-direction: column; align-items: stretch; } #night > #nt-map > .nt-map-modes button { text-align: left; }
+  #night > #nt-map > .nt-map-leg { flex-direction: column; gap: .35rem; }
   #night > #nt-batches { grid-column: 2; grid-row: span 2; margin: 0; }
-  /* what to expect and most impactful stay full width: two tiles across, and room for the chart and its two lists */
+  /* most impactful stays full width: room for the chart and its two lists */
   #night .nt-hl-g { grid-template-rows: repeat(var(--n4, 5), auto); grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: none; }
   #night #nt-cty .nt-all-list, #night #nt-all .nt-all-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.2rem; }  /* key counties and every race, two across */  /* the House line across the page, still ranked down each column */
 }
