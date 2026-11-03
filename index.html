@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '9874c5142c84';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e888cd160edb';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1456,11 +1456,15 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
   /* the order a visitor reads: what this is, any warning, the jump bar, then the two chambers beside the turnout read, the map, the clock, the rest */
   #night > .nt-glance { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
   #night > .nt-jump { order: 5; } #night > .nt-pins { order: 6; } #night > #nt-ctl { order: 7; } #night > #nt-batches { order: 8; }
-  #night > #nt-expect { order: 9; } #night > #nt-map { order: 10; } #night > .nt-top { order: 11; } #night > .nt-prac { order: 12; }
-  #night > #nt-impact { order: 13; } #night > #nt-results { order: 14; } #night > .nt-acc-row { order: 99; }
+  /* results first (Jake, Nov 3, 7pm: "fully simplify what we are showing users now that results are rolling through"): Most impactful
+     under the chambers beside the count, then the map, the results, and what to expect at the foot */
+  #night > #nt-impact { order: 9; } #night > #nt-map { order: 10; } #night > #nt-results { order: 11; } #night > .nt-top { order: 12; }
+  #night > #nt-expect { order: 13; } #night > .nt-prac { order: 14; } #night > .nt-acc-row { order: 99; }
+  #night > #nt-ctl { grid-row: span 3; } /* the chambers down the left, the count and then what moved control down the right */
+  #night > #nt-impact { grid-column: 2; } #night > #nt-impact .nt-imp-cols { grid-template-columns: minmax(0, 1fr); }
   #night > #nt-ctl { grid-column: 1; grid-template-columns: minmax(0, 1fr); }  /* Senate above House, the vibe under them */
   #night > #nt-ctl .nt-vibe { grid-column: auto; }
-  #night > #nt-expect { grid-column: 1; }  /* what to expect under the chambers, beside the batch card */
+  #night > #nt-expect { grid-column: 1 / -1; }  /* what to expect at the foot, across the page, now that results lead */
   #night > #nt-expect .nt-x-list { grid-template-columns: minmax(0, 1fr); } #night > #nt-expect .nt-xr[data-s="outside"] { grid-column: auto; }
   /* the map across the page (Jake, Nov 3: "the map across the full desktop, sensibly"): the drawing on the left two thirds, at most
      900px wide so it is never taller than a screen, and its modes, what the colors mean, the legend and the summary beside it */
@@ -1471,7 +1475,7 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
   #night > #nt-map > .nt-map-modes, #night > #nt-map > .nt-map-how, #night > #nt-map > .nt-map-leg, #night > #nt-map > .nt-all-sum { grid-column: 2; }
   #night > #nt-map > .nt-map-modes { flex-direction: column; align-items: stretch; } #night > #nt-map > .nt-map-modes button { text-align: left; }
   #night > #nt-map > .nt-map-leg { flex-direction: column; gap: .35rem; }
-  #night > #nt-batches { grid-column: 2; grid-row: span 2; margin: 0; }
+  #night > #nt-batches { grid-column: 2; margin: 0; }
   /* most impactful stays full width: room for the chart and its two lists */
   #night .nt-hl-g { grid-template-rows: repeat(var(--n4, 5), auto); grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: none; }
   #night #nt-cty .nt-all-list, #night #nt-all .nt-all-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.2rem; }  /* key counties and every race, two across */  /* the House line across the page, still ranked down each column */
@@ -2023,9 +2027,10 @@ button.nt-hs[data-s="counting"][data-w="R"] { background: color-mix(in srgb, var
   .nt-live .nt-status { grid-area: 2 / 1 / 3 / -1; } .nt-live .nt-pause-note { grid-area: 3 / 1 / 4 / -1; }
   /* what comes first on a phone: what this is and the numbers, the map, what to expect, then the rest */
   #night > .nt-glance { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
-  #night > .nt-mapsec { order: 5; } #night > .nt-expect { order: 6; } #night > .nt-top { order: 7; } #night > .nt-prac { order: 8; }
-  #night > .nt-board2 { order: 9; } #night > .nt-impact { order: 10; } #night > .nt-results { order: 11; }
-  #night > .nt-batches { order: 10; } #night > .nt-batches.lead { order: 1; }  /* the vote batch card: right after the glance until the count starts (it follows the glance in the page), then after Most impactful */
+  /* results first (Nov 3, 7pm): the map, the results, the count batch by batch, what moved control, the chambers in full, then what to expect */
+  #night > .nt-mapsec { order: 5; } #night > .nt-results { order: 6; } #night > .nt-impact { order: 8; } #night > .nt-board2 { order: 9; }
+  #night > .nt-expect { order: 10; } #night > .nt-top { order: 11; } #night > .nt-prac { order: 12; }
+  #night > .nt-batches { order: 7; } #night > .nt-batches.lead { order: 1; }  /* the vote batch card: right after the glance until the count starts (it follows the glance in the page), then after Most impactful */
   /* the build notes of the shared copy go to the foot of the page: the glance says what the page is */
   body:has(> .lx-note) { display: flex; flex-direction: column; }
   body:has(> .lx-note) > main { order: 1; }
@@ -2414,7 +2419,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <p class="nt-prac-s">Made-up results, to see how the board behaves before the real night. Pick how far every state ends from our forecast and how much of the vote is counted, then press Show it, or load a sample night that plays out poll by poll. Races get a made-up call once 90 percent is in. Nothing here reaches the real board.</p>
     </details>
     <nav class="nt-jump" id="nt-jump" aria-label="Jump to a part of the board">
-      <button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-batches">Vote batches</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-all">All races</button><button type="button" id="nt-tv-open" title="A big view for a television">TV view</button>
+      <button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-all">All races</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-batches">Vote batches</button><button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" id="nt-tv-open" title="A big view for a television">TV view</button>
     </nav>
     <section class="nt-pins" id="nt-pins" aria-label="My watchlist" hidden></section>
     <div class="nt-board2" id="nt-ctl" role="group" aria-label="Control of Congress and the night so far">
