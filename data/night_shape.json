@@ -1,1 +1,1603 @@
-[]
+[
+  {
+    "state": "IN",
+    "poll_close_et": "6:00 p.m. local: 6:00 p.m. ET for the ~80 Eastern-time counties (Indianapolis, Hamilton, Fort Wayne, Bloomington), 7:00 p.m. ET for the Central-time NW (Lake, Porter) and SW (Vanderburgh) counties. All polls closed by 7 p.m. ET; AP calls came at ~7:00-7:01 p.m. ET in 2024.",
+    "close_first_et": "18:00",
+    "close_last_et": "19:00",
+    "close_label": "transcribed",
+    "posts_first": "Absentee and early first. AP 2026: 'Absentee ballots in Indiana may be processed once they are received,' and counting may begin before polls close; more than three-quarters of the 92 counties include all or nearly all absentee and early results in their first update. Election Day precincts follow.",
+    "posts_last": null,
+    "drift": null,
+    "pace_2024": {
+      "first_results": "6:05pm",
+      "half_counted": "8:30pm",
+      "ninety_counted": "11:49pm",
+      "label": "transcribed"
+    },
+    "read_after": "8:30pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [],
+    "final_2024_margin_d": null,
+    "advance_2024_margin_d": null,
+    "by_hour_source": null,
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [],
+    "label": "retrieved",
+    "notes": "Harris-minus-Trump margins. 2024 governor percentages are to one decimal as published (three-way race with Libertarian Rainwater at 4.5% statewide).",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_Indiana",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_Indiana",
+      "https://en.wikipedia.org/wiki/2024_Indiana_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2024_United_States_Senate_election_in_Indiana",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Indiana",
+      "https://indianacapitalchronicle.com/?p=14090",
+      "https://wfyi.org/news/articles/hamilton-county-indiana-purple-trump-harris",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-indiana-on-election-day-nid30102026/",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml"
+    ]
+  },
+  {
+    "state": "KY",
+    "poll_close_et": "6:00 p.m. local: 6:00 p.m. ET in the Eastern-time counties (most of the population, incl. Louisville, Lexington, Northern Kentucky), 7:00 p.m. ET in the Central-time west. Networks treat 6 p.m. ET as 'most polls closed'; AP called the state at the 7 p.m. ET full close in 2024.",
+    "close_first_et": "18:00",
+    "close_last_et": "19:00",
+    "close_label": "transcribed",
+    "posts_first": "Absentee and early votes first, but Election Day votes come almost immediately: AP 2026: 'Almost all counties in Kentucky are expected to report all results for absentee and early votes' in the first report, and 'Most counties are expected to release results for in-person Election Day votes in the first report as well.' Kentucky is therefore a fast, mixed first read rather than an early-vote-only dump.",
+    "posts_last": null,
+    "drift": null,
+    "pace_2024": {
+      "first_results": "6:05pm",
+      "half_counted": "8:15pm",
+      "ninety_counted": "9:30pm",
+      "label": "transcribed"
+    },
+    "read_after": "8:15pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [],
+    "final_2024_margin_d": null,
+    "advance_2024_margin_d": null,
+    "by_hour_source": null,
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [],
+    "label": "retrieved",
+    "notes": "Harris-minus-Trump margins. 2023 governor county figures from the Wikipedia table (columns are % then #). No 2022 Senate county table was retrievable.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_Kentucky",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_Kentucky",
+      "https://en.wikipedia.org/wiki/2023_Kentucky_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Kentucky",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-kentucky-on-election-day-nid30102026/",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml"
+    ]
+  },
+  {
+    "state": "GA",
+    "poll_close_et": "7:00 p.m. ET statewide (polls 7:00a-7:00p EST; Green Papers 2026; AP 2026 note 'Polls close at 7 p.m. ET').",
+    "close_first_et": "19:00",
+    "close_last_et": "19:00",
+    "close_label": "transcribed",
+    "posts_first": "Early in-person and mail ballots returned by Monday. State law requires counties to report them within one hour of the 7 pm close. Raffensperger projected 70-75% of all votes posted by 8 pm.",
+    "posts_last": "Election Day precincts in Fulton, DeKalb, Cobb, Clayton; then provisional, cured and UOCAVA ballots at certification.",
+    "drift": "Toward D during the night in 2024 (Trump +10.2 at 8 pm to +2.2 final) because small counties post before metro Atlanta. The advance vote itself was near even (Trump +0.7), so the mirage was geographic, not by vote mode.",
+    "pace_2024": {
+      "first_results": "7:04pm",
+      "half_counted": "by 8pm (Raffensperger's estimate)",
+      "ninety_counted": "10:21pm",
+      "label": "transcribed"
+    },
+    "read_after": "counties from 8pm, the state after 10pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": -10.23,
+        "eevp": 32.33
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": -5.41,
+        "eevp": 64.84
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -2.92,
+        "eevp": 90.03
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:57",
+        "clock_et": "00:57",
+        "day_offset": 1,
+        "margin_d": -2.46,
+        "eevp": 94.23
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -2.25,
+        "eevp": 97.3
+      }
+    ],
+    "final_2024_margin_d": -2.19,
+    "advance_2024_margin_d": -0.68,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-georgia-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "Georgia Supreme Court, June 10 2025: struck four State Election Board rules adopted before the 2024 election, including the hand count of ballots at poll closing; remaining claims dismissed by agreement Aug 15 2025",
+      "SB 3EX signed by Kemp late June 2026 (special session): delays the QR-code tabulation ban to 2028 so current machines run in November, mandates hand recounts of the top two statewide races when the margin is 0.5% or less, adds audits",
+      "HB 397 (2025): drafts barred State Election Board rulemaking within 60 days of an election, exit from ERIC, limits on weekend absentee hand delivery. Enactment and final text not confirmed by this retrieval"
+    ],
+    "label": "retrieved",
+    "notes": "Harris-minus-Trump margins. 2022 governor county figures come from OpenElections precinct aggregation (all counties except Gwinnett); Senate figures from the same file match Wikipedia exactly, which validates the file.",
+    "sources": [
+      "https://11alive.com/article/news/politics/elections/georgia-election-results-time-expected-end-night-nov-5-trump-harris/85-a8c25cba-de37-43b1-820a-2932ec5d547b",
+      "https://electionlawblog.org/2025/georgia-high-court-rejects-election-boards-rules-for-hand-counts-and-inquiries/",
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_Georgia",
+      "https://en.wikipedia.org/wiki/2022_Georgia_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_Georgia",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Georgia",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia",
+      "https://georgiarecorder.com/?p=38241",
+      "https://gpb.org/node/833811",
+      "https://news.ballotpedia.org/2026/06/29/georgia-enacts-legislation-extending-voting-machine-deadline-establishing-automatic-hand-recounts/",
+      "https://raw.githubusercontent.com/openelections/openelections-data-ga/master/2022/20221108__ga__general__precinct.csv",
+      "https://thecurrentga.org/2026/06/27/kemp-signs-elections-bill-locking-in-qr-code-voting-machines-for-november/",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.adweek.com/tvnewser/election-night-battleground-states-network-airtimes/",
+      "https://www.ajc.com/politics/2026/07/libertarians-wont-be-on-the-ballot-in-georgia-meaning-likely-no-runoffs/",
+      "https://www.atlantanewsfirst.com/2024/11/01/georgia-record-early-voting-could-mean-earlier-results-election-night/",
+      "https://www.democracydocket.com/cases/georgia-state-election-board-certification-and-drop-box-rules-challenge/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-georgia-on-election-day-nid30102026/",
+      "https://www.news4jax.com/news/politics/2024/10/21/ap-decision-notes-what-to-expect-in-georgia-on-election-day/",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml",
+      "https://www.wabe.org/georgia-libertarians-end-efforts-to-get-on-2026-general-election-ballot/",
+      "https://www.wrdw.com/2025/06/10/ga-high-court-strikes-down-4-state-election-rules/"
+    ]
+  },
+  {
+    "state": "VA",
+    "poll_close_et": "7:00 p.m. ET (6:00a-7:00p).",
+    "close_first_et": "19:00",
+    "close_last_et": "19:00",
+    "close_label": "transcribed",
+    "posts_first": "Varies by locality. About a third of localities post all or nearly all early and absentee votes in their first update; nearly half post none in the first update (AP 2026 primary note). Rural Election Day precincts post fast.",
+    "posts_last": "Mail ballots in the central absentee precinct (accepted to noon Friday if postmarked by Election Day), Northern Virginia Election Day precincts, Fairfax and Loudoun late batches.",
+    "drift": "Red mirage then blue shift in 2024: Harris +7.4 at 8 pm (22% in), Trump +1.1 at 9 pm (47%), Harris +1.6 at 11 pm, Harris +4.7 at 1 am, Harris +5.8 final. Advance vote was Harris +16.1. In the 2025 governor race the first AP result came 10 minutes after close and 99%+ was in by early morning.",
+    "pace_2024": {
+      "first_results": "7:11pm",
+      "half_counted": null,
+      "ninety_counted": "95 percent at 3:56am",
+      "label": "transcribed"
+    },
+    "read_after": "9pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": 7.36,
+        "eevp": 21.63
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": -1.06,
+        "eevp": 46.83
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T23:00",
+        "clock_et": "23:00",
+        "day_offset": 0,
+        "margin_d": 1.57,
+        "eevp": 74.35
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:59",
+        "clock_et": "00:59",
+        "day_offset": 1,
+        "margin_d": 4.69,
+        "eevp": 90.55
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": 5.25,
+        "eevp": 98.82
+      }
+    ],
+    "final_2024_margin_d": 5.81,
+    "advance_2024_margin_d": 16.06,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-virginia-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No 2026 rule change retrieved. Polls close 7 pm"
+    ],
+    "label": "retrieved",
+    "notes": "No VA statewide race in 2022, so 2021 and 2025 governor are given. Virginia's 2024 count ran late (95% by 3:56 a.m.); treat early Loudoun/Fairfax posts as early-vote-heavy (7:46 p.m. Loudoun read of 61% Harris fell to 56% final).",
+    "sources": [
+      "https://augustafreepress.com/?p=378242",
+      "https://cardinalnews.org/2024/11/06/harris-wins-virginia/",
+      "https://elections.virginia.gov/media/formswarehouse/election-management/canvass-documents/Election-Night-and-Post-Election-Reporting-and-CAP-ELECT-Guidance-(rev-10-18-24).pdf",
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_Virginia",
+      "https://en.wikipedia.org/wiki/2021_Virginia_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2024_United_States_Senate_election_in_Virginia",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Virginia",
+      "https://en.wikipedia.org/wiki/2025_Virginia_gubernatorial_election",
+      "https://infonews.ca/?p=7405711",
+      "https://origin.vpap.org/visuals/visual/consequences-early-voting",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.ajc.com/news/2026/08/ap-decision-notes-what-to-expect-in-virginias-state-primary/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-virginia-on-election-day-nid30102026/",
+      "https://www.pbs.org/newshour/politics/live-results-virginia-2025-election",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml"
+    ]
+  },
+  {
+    "state": "SC",
+    "poll_close_et": "7:00 p.m. ET (7:00a-7:00p).",
+    "close_first_et": "19:00",
+    "close_last_et": "19:00",
+    "close_label": "transcribed",
+    "posts_first": "Early in-person and absentee results in the first update from nearly all 46 counties; first AP result 7:19 pm in 2024.",
+    "posts_last": "Election Day precincts in Charleston, Richland, Greenville.",
+    "drift": "Slight drift toward D in 2024: Trump +20.0 at 8 pm (11% in), +19.7 at 9 pm, +17.9 final. Advance vote was Trump +14.9, so Election Day was redder than early; the geographic order dominated.",
+    "pace_2024": {
+      "first_results": "7:19pm",
+      "half_counted": "8:50pm",
+      "ninety_counted": "11:14pm",
+      "label": "transcribed"
+    },
+    "read_after": "8:50pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": -19.96,
+        "eevp": 11.47
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": -19.7,
+        "eevp": 54.74
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -18.32,
+        "eevp": 90.79
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:57",
+        "clock_et": "00:57",
+        "day_offset": 1,
+        "margin_d": -18.23,
+        "eevp": 97.89
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -17.54,
+        "eevp": 98.45
+      }
+    ],
+    "final_2024_margin_d": -17.87,
+    "advance_2024_margin_d": -14.89,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-south-carolina-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "Record early vote in 2026 (671,314 through seven days, above the 2022 gubernatorial-year record of 561,563). Recounts automatic at 1% or less"
+    ],
+    "label": "retrieved",
+    "notes": "Harris-minus-Trump margins. SC-04 (Greenville/Spartanburg) and SC-06 (Richland/Charleston-area) reads: Greenville R+22.2, Spartanburg R+33.6, Richland D+34.6 in 2024.",
+    "sources": [
+      "https://abcnews4.com/news/local/south-carolina-early-voting-surpasses-671000-ballots-with-four-days-remaining",
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_South_Carolina",
+      "https://en.wikipedia.org/wiki/2022_South_Carolina_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_South_Carolina",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_South_Carolina",
+      "https://ideastream.org/2024-11-05/here-are-the-race-calls-as-of-9-p-m-et",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-south-carolina-on-election-day-nid30102026/",
+      "https://www.postandcourier.com/opinion/commentary/south-carolina-election-reform-derailed-by-freedom-caucus/article_bf15678e-1192-11ef-a1b8-578b0e589baf.html",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml"
+    ]
+  },
+  {
+    "state": "FL",
+    "poll_close_et": "7:00 p.m. ET for the Eastern-time counties (most of the state); 8:00 p.m. ET for the Central-time panhandle counties.",
+    "close_first_et": "19:00",
+    "close_last_et": "20:00",
+    "close_label": "transcribed",
+    "posts_first": "Early in-person and mail ballots, by law first, from 7 pm ET (Miami-Dade posts about 7:15 pm). Statewide release held to 8 pm for the Central-time panhandle.",
+    "posts_last": "Election Day precincts in the big counties and the panhandle; mail must arrive by 7 pm Election Day, so little moves after midnight.",
+    "drift": "Almost none in 2024: Trump +10.7 at 8 pm (81% in), +13.3 at 9 pm, +13.1 final. In 2020 and before the early batch leaned D; in 2024 early in-person leaned R.",
+    "pace_2024": {
+      "first_results": "7:00pm",
+      "half_counted": "7:16pm",
+      "ninety_counted": "99 percent at 10:51pm",
+      "label": "transcribed"
+    },
+    "read_after": "8pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": -10.72,
+        "eevp": 80.68
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": -13.25,
+        "eevp": 92.87
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -13.38,
+        "eevp": 96.83
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:57",
+        "clock_et": "00:57",
+        "day_offset": 1,
+        "margin_d": -13.33,
+        "eevp": 97.83
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -13.16,
+        "eevp": 99
+      }
+    ],
+    "final_2024_margin_d": -13.1,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-florida-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No 2026 rule change retrieved. Mail must be received by 7 pm Election Day regardless of postmark"
+    ],
+    "label": "retrieved",
+    "notes": "Harris-minus-Trump margins. Wikipedia FL tables list Trump first; margins here are sign-flipped to D-minus-R. 2024 Senate county percentages are to one decimal as published.",
+    "sources": [
+      "https://cbs12.com/news/election/why-ap-called-florida-for-republican-donald-trump-vice-president-kamala-harris-miami-dade",
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_Florida",
+      "https://en.wikipedia.org/wiki/2022_Florida_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_Florida",
+      "https://en.wikipedia.org/wiki/2024_United_States_Senate_election_in_Florida",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Florida",
+      "https://local10.com/vote-2024/2024/10/22/vote-2024-nov-5-florida-statewide-election-results",
+      "https://raw.githubusercontent.com/openelections/openelections-data-fl/master/2022/20221108__fl__general__precinct.csv",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.aol.com/florida-republicans-outvote-democrats-nearly-140355927.html",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-florida-on-election-day-nid30102026/",
+      "https://www.nbcmiami.com/elections/what-to-know-about-voting-in-florida-ahead-of-general-election/3860001/",
+      "https://www.nbcmiami.com/news/local/heres-when-miami-dade-and-broward-elections-departments-will-post-first-results/3463492/",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml"
+    ]
+  },
+  {
+    "state": "NH",
+    "poll_close_et": "Varies by town: 7:00, 7:30 or 8:00 p.m. ET (AP). Green Papers: the 13 cities may stay open until 8 p.m. by local option; the vast majority of polls are closed by 7 p.m., which networks treat as the earliest projection time. Polls must open by 11 a.m.; a few tiny towns open at midnight.",
+    "close_first_et": "19:00",
+    "close_last_et": "20:00",
+    "close_label": "transcribed",
+    "posts_first": "Towns and wards report all modes in one update; first votes 7:22 pm in 2020. Under 10% of ballots are absentee (excuse required).",
+    "posts_last": "Larger cities (Manchester, Nashua) and slow towns; some after midnight. No post-election mail.",
+    "drift": "Blue mirage in 2024: Harris +9.4 at 8 pm (13% in), +10.1 at 9 pm, +5.0 at 11 pm, +2.8 final. Drift toward R as outlying towns post.",
+    "pace_2024": {
+      "first_results": null,
+      "half_counted": "10:12pm",
+      "ninety_counted": "1:42am",
+      "label": "transcribed"
+    },
+    "read_after": "10pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": 9.38,
+        "eevp": 12.84
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": 10.12,
+        "eevp": 31.71
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": 4.99,
+        "eevp": 62.4
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:57",
+        "clock_et": "00:57",
+        "day_offset": 1,
+        "margin_d": 3.07,
+        "eevp": 87.86
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": 3.11,
+        "eevp": 89.39
+      }
+    ],
+    "final_2024_margin_d": 2.79,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-new-hampshire-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No 2026 rule change retrieved. Polls 7 am to 7 pm (varies by town); in-person absentee return deadline 5 pm Monday Nov 2"
+    ],
+    "label": "retrieved",
+    "notes": "Harris-minus-Trump margins. NH county totals aggregate town returns; Wikipedia presidential county tables used directly. 2024 governor county shares use OpenElections town data with Libertarian and undervotes in the denominator, so they run ~1 pt low for both candidates versus valid-vote shares.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_New_Hampshire",
+      "https://en.wikipedia.org/wiki/2022_New_Hampshire_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_New_Hampshire",
+      "https://en.wikipedia.org/wiki/2024_New_Hampshire_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_New_Hampshire",
+      "https://raw.githubusercontent.com/openelections/openelections-data-nh/master/2022/20221108__nh__general__us__senate__precinct.csv",
+      "https://raw.githubusercontent.com/openelections/openelections-data-nh/master/2024/20241105__nh__general__governor__precinct.csv",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.dover.nh.gov/government/open-government/election-information/2026-general-election/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-new-hampshire-on-election-day-nid30102026/",
+      "https://www.nhpr.org/nh-news/2024-10-30/follow-the-ballot-what-happens-after-you-vote-in-nh",
+      "https://www.thedartmouth.com/article/2024/11/2024-election-roundup-where-the-results-stand-this-morning",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml",
+      "https://www.washingtonexaminer.com/?p=3215464",
+      "https://www.wcax.com/2024/10/22/ap-decision-notes-what-expect-new-hampshire-election-day"
+    ]
+  },
+  {
+    "state": "NC",
+    "poll_close_et": "7:30 p.m. ET (6:30a-7:30p; county boards may extend to 8:30 p.m. in extraordinary circumstances).",
+    "close_first_et": "19:30",
+    "close_last_et": "19:30",
+    "close_label": "transcribed",
+    "posts_first": "One-stop early voting and mail ballots received by 5 pm Monday, posted roughly 7:30-9 pm (NCSBE). In 2024 Mecklenburg early votes were not expected until after 10:30 pm.",
+    "posts_last": "Election Day precinct results, hand-delivered 7:30-9:30 pm and posted from about 8:30 pm to midnight; then provisional and UOCAVA ballots at the county canvass. About 1% of the vote is left after election night (AP).",
+    "drift": "Depends on which counties post first. In 2024 the first 4% was Harris +5.4, by 9 pm Trump +4.4 with 36% in, then a slow drift toward D to Trump +3.2. Advance vote was Trump +0.8.",
+    "pace_2024": {
+      "first_results": "7:35pm",
+      "half_counted": "9:17pm",
+      "ninety_counted": "11:36pm",
+      "label": "transcribed"
+    },
+    "read_after": "the Election Day share after 10pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": 5.43,
+        "eevp": 4.42
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": -4.36,
+        "eevp": 36.46
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -2.88,
+        "eevp": 86.31
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:58",
+        "clock_et": "00:58",
+        "day_offset": 1,
+        "margin_d": -3.53,
+        "eevp": 96.24
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -3.41,
+        "eevp": 99
+      }
+    ],
+    "final_2024_margin_d": -3.22,
+    "advance_2024_margin_d": -0.82,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-north-carolina-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "Mail ballots must reach the county board by 7:30 pm Election Day. No post-election grace period (removed by 2023 law; confirmed in 2026 coverage)",
+      "SB 382 (Dec 2024): State Board appointments moved to the State Auditor (took effect May 1 2025; board transferred July 1 2025), shorter deadlines to count provisional and absentee ballots. Governor Stein appeal filed Oct 23 2026; litigation ongoing",
+      "State Board rules adopted Sept 4 2026 as ballots mailed: mail ballots with unsealed envelopes disqualified; only the voter, a near relative or legal guardian may return a ballot"
+    ],
+    "label": "retrieved",
+    "notes": "AG 2024 county numbers are two-candidate (no third party on ballot). NC-01 (Davis) was redrawn in 2025; Nash is inside the district under both maps per AP (Davis rematch vs Buckhout).",
+    "sources": [
+      "https://dashboard.ncleg.gov/api/Services/BillSummary/2023/S382-SMST-116(sl)-v-6",
+      "https://democracync.org/research/senate-bill-382/",
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_North_Carolina",
+      "https://en.wikipedia.org/wiki/2024_North_Carolina_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_North_Carolina",
+      "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2022_11_08/results_pct_20221108.zip",
+      "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/results_pct_20241105.zip",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.adweek.com/tvnewser/election-night-battleground-states-network-airtimes/",
+      "https://www.axios.com/local/raleigh/2026/09/04/north-carolina-election-mail-voting-registration-deadlines",
+      "https://www.foxcarolina.com/2026/10/23/nc-governor-files-appeal-reverse-law-allowing-state-auditor-appoint-election-board-members/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-north-carolina-on-election-day-nid30102026/",
+      "https://www.ncsbe.gov/news/press-releases/2022/11/03/what-expect-election-night-north-carolina",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml",
+      "https://www.wbtv.com/2026/09/07/north-carolina-approves-last-minute-mail-in-voting-rules-2026-midterm-ballots-are-sent-out/",
+      "https://www.wsls.com/news/politics/2024/11/06/why-ap-called-the-north-carolina-governors-race-for-josh-stein/",
+      "https://www.wunc.org/politics/2024-10-31/follow-election-results-pro-key-states"
+    ]
+  },
+  {
+    "state": "OH",
+    "poll_close_et": "7:30 p.m. ET (6:30a-7:30p).",
+    "close_first_et": "19:30",
+    "close_last_et": "19:30",
+    "close_label": "transcribed",
+    "posts_first": "Early in-person and mail ballots, posted by counties right after the 7:30 pm close.",
+    "posts_last": "Election Day precincts in Cuyahoga, Franklin, Hamilton; then mail postmarked by the day before and received within 4 days, and provisionals.",
+    "drift": "Blue mirage then red shift: Harris +5.2 at 8 pm (22% in), Trump +5.9 at 9 pm, Trump +12.7 at 11 pm, final Trump +11.2.",
+    "pace_2024": {
+      "first_results": "7:36pm",
+      "half_counted": "9:01pm",
+      "ninety_counted": "11:03pm",
+      "label": "transcribed"
+    },
+    "read_after": "9pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": 5.23,
+        "eevp": 21.63
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": -5.85,
+        "eevp": 46.83
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -12.68,
+        "eevp": 86.92
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:57",
+        "clock_et": "00:57",
+        "day_offset": 1,
+        "margin_d": -11.36,
+        "eevp": 96.78
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -11.35,
+        "eevp": 98.99
+      }
+    ],
+    "final_2024_margin_d": -11.21,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-ohio-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No 2026 counting-order change retrieved. Mail receipt window of 4 days after Election Day (2023 HB 458) assumed still in force"
+    ],
+    "label": "retrieved",
+    "notes": "Brown 2024 county margins are the comparison baseline for Tuesday. Brown lost statewide by 3.62; counties where he beat Harris most: Lake (+9.6), Montgomery (+6.7), Lorain (+10.5), Mahoning (+9.2).",
+    "sources": [
+      "https://athensindependent.com/2026-ohio-election-dates-deadlines/",
+      "https://en.wikipedia.org/wiki/2020_United_States_presidential_election_in_Ohio",
+      "https://en.wikipedia.org/wiki/2022_Ohio_gubernatorial_election",
+      "https://en.wikipedia.org/wiki/2022_United_States_Senate_election_in_Ohio",
+      "https://en.wikipedia.org/wiki/2024_United_States_Senate_election_in_Ohio",
+      "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Ohio",
+      "https://liveresults.ohiosos.gov/",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://wtol.com/article/news/politics/elections/2024-election-when-will-we-know-who-won-president-politics-results/512-f0cfdb8b-50fa-4e9e-a3cd-058257c28f1e",
+      "https://www.13abc.com/2024/11/05/what-happens-ohio-ballots-after-theyre-cast",
+      "https://www.13abc.com/2024/11/06/ap-race-call-donald-trump-wins-ohio/",
+      "https://www.bastillepost.com/global/article/6308503-ap-decision-notes-what-to-expect-in-ohio-on-election-day",
+      "https://www.news4jax.com/news/politics/2024/11/06/why-ap-called-the-ohio-senate-race-for-bernie-moreno/",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml"
+    ]
+  },
+  {
+    "state": "TX",
+    "poll_close_et": "8:00 pm ET for the Central-zone counties (almost all of the state); 9:00 pm ET for the Mountain-zone counties (El Paso, Hudspeth; TX-16 and TX-23 close at 9 pm ET). AP treats 9 pm ET as the statewide callable time.",
+    "close_first_et": "20:00",
+    "close_last_et": "21:00",
+    "close_label": "transcribed",
+    "posts_first": "Early in-person and mail ballots at 7 pm CT (8 pm ET) by county; the state site lags the counties.",
+    "posts_last": "Election Day precincts in Harris, Dallas, Bexar, Travis; El Paso closes 9 pm ET. Mail postmarked by Election Day accepted to 5 pm the next day (inferred).",
+    "drift": "Blue mirage then flat in 2024: Harris +8.5 at 8 pm (8% in), Trump +8.5 at 9 pm (55%), Trump +13.8 at 11 pm, Trump +13.7 final. Advance vote was Trump +13.3.",
+    "pace_2024": {
+      "first_results": "8:00pm",
+      "half_counted": "8:29pm",
+      "ninety_counted": "12:17am",
+      "label": "transcribed"
+    },
+    "read_after": "counties from 8:30pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:00",
+        "clock_et": "20:00",
+        "day_offset": 0,
+        "margin_d": 8.53,
+        "eevp": 7.59
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": -8.53,
+        "eevp": 54.54
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -13.84,
+        "eevp": 73.78
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:59",
+        "clock_et": "00:59",
+        "day_offset": 1,
+        "margin_d": -14.53,
+        "eevp": 89.34
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -13.87,
+        "eevp": 97.35
+      }
+    ],
+    "final_2024_margin_d": -13.69,
+    "advance_2024_margin_d": -13.32,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-texas-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No 2026 rule change retrieved. About 80% of 2024 votes cast before Election Day (AP)",
+      "No new counting rule for this election. SB 2753 (signed 2025) rewrites the early-voting calendar (12th day before through the day before Election Day, weekends included, early sites open on Election Day) and would end the practice of posting early-vote results right at poll close, but it takes effect after the 2026 elections (counties have until 2027; first use expected 2028). HB 511 (2025) added curbside-voting restrictions. The 2025 congressional map is in effect: a federal court found a racial gerrymander Nov 18, 2025; the Supreme Court stayed that Dec 4, 2025 (6-3) and summarily reversed Apr 27, 2026. TX-23 has been vacant since Tony Gonzales resigned Apr 13, 2026; Gov. Abbott called no special election, so the seat stays vacant until January 2027."
+    ],
+    "label": "retrieved",
+    "notes": "Compare Talarico's county numbers to both O'Rourke 2018 (statewide D-2.6) and Allred 2024 (D-8.5). Tarrant, Williamson, Nueces are the tipping-point style counties; the Valley trio (Hidalgo, Cameron, Webb) measures whether the 2020-2024 Latino shift holds. For the 'first_returns' fields, only Harris has a retrieved 2024 timestamp.",
+    "sources": [
+      "https://communityimpact.com/houston/bay-area/election/2024/11/05/early-voting-results-show-dan-simons-sean-teare-in-close-race-for-harris-county-district-attorney",
+      "https://electionlab.mit.edu/articles/how-long-did-it-take-count-vote-2024",
+      "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas",
+      "https://results.texas-election.com/",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.click2houston.com/decision-2026/2026/10/02/texas-voter-guide-2026-what-to-know-before-the-nov-3-election/",
+      "https://www.click2houston.com/news/texas/2024/10/31/when-will-texas-election-results-come-in-heres-how-the-process-unfolds/",
+      "https://www.fox4news.com/election/early-voting-turnout-texas-2024",
+      "https://www.ksat.com/news/texas/2024/11/04/9-million-texans-voted-early-in-2024-heres-how-that-compares-to-previous-years/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-texas-on-election-day-nid30102026/",
+      "https://www.sos.state.tx.us/elections/historical/70-92.shtml",
+      "https://www.texastribune.org/2025/06/06/texas-early-voting-weekends-changes"
+    ]
+  },
+  {
+    "state": "KS",
+    "poll_close_et": "8:00 pm ET (7 pm Central) for most of the state; 9:00 pm ET for the Mountain-zone counties in far western Kansas (KS-01 closes at 9 pm ET).",
+    "close_first_et": "20:00",
+    "close_last_et": "21:00",
+    "close_label": "transcribed",
+    "posts_first": "Advance ballots (mail and in-person) at 7 pm CT (8 pm ET).",
+    "posts_last": "Johnson and Sedgwick Election Day precincts; then mail postmarked by Election Day and received within 3 days (grace period in force for 2026 under injunction), and provisionals at canvass.",
+    "drift": "Blue mirage then red shift in 2024: Harris +5.2 at 9 pm (30% in), Trump +12.6 at 11 pm, Trump +16.1 final.",
+    "pace_2024": {
+      "first_results": "8:10pm",
+      "half_counted": "9:48pm",
+      "ninety_counted": "97 percent at 3:45am",
+      "label": "transcribed"
+    },
+    "read_after": "10pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:10",
+        "clock_et": "20:10",
+        "day_offset": 0,
+        "margin_d": -41.8,
+        "eevp": 0.94
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:57",
+        "clock_et": "20:57",
+        "day_offset": 0,
+        "margin_d": 5.17,
+        "eevp": 29.65
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -12.57,
+        "eevp": 78.07
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:58",
+        "clock_et": "00:58",
+        "day_offset": 1,
+        "margin_d": -15.95,
+        "eevp": 97.39
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -16.57,
+        "eevp": 99
+      }
+    ],
+    "final_2024_margin_d": -16.12,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-kansas-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "SB 4 (2025, veto overridden March 2025) ended the 3-day grace period effective Jan 1 2026. A Douglas County judge enjoined it July 16 2026; Court of Appeals upheld the injunction July 28; Kansas Supreme Court declined to intervene July 31/Aug 3. Latest reports: grace period remains for November; Secretary Schwab warned voters not to rely on it. Appeal pending",
+      "Mail-ballot grace period is in force despite SB 4. SB 4 (2025, enacted over Gov. Kelly's veto) eliminated the 3-day grace period and required mail ballots to arrive by 7 pm on Election Day. A Douglas County judge enjoined SB 4 on July 16, 2026; the Court of Appeals refused to stay the injunction July 28; the Kansas Supreme Court declined review July 30-31 (grace period applied to the Aug 4 primary); on Oct 2, 2026 the Court of Appeals denied Secretary of State Schwab's renewed stay request, so for the Nov 3 general election mail ballots postmarked by Election Day and received within three days (by Friday Nov 6) count. Election-night totals exclude those late-arriving mail ballots and provisionals."
+    ],
+    "label": "retrieved",
+    "notes": "Harris carried Johnson, Shawnee, Douglas, Wyandotte and Riley in 2020 and 2024 (AP). Kansas has no 2024 Senate race.",
+    "sources": [
+      "https://jocogov.org/newsroom/your-guide-2023-general-election-day-johnson-county",
+      "https://lawrencekstimes.com/2025/03/27/vote-mail-less-time/",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.democracydocket.com/news-alerts/gop-bid-to-scrap-kansas-mail-ballot-grace-period-fails-again/",
+      "https://www.hppr.org/hppr-news/2026-08-03/kansas-supreme-court-declines-to-take-emergency-appeal-of-election-law",
+      "https://www.kctv5.com/2026/07/28/kansas-court-appeals-upholds-ruling-that-reinstates-3-day-grace-period-mail-in-ballots/",
+      "https://www.kctv5.com/2026/07/31/kansas-supreme-court-upholds-mail-ballot-grace-period-ahead-primary-election/",
+      "https://www.kssos.org/elections/advance-voting.html",
+      "https://www.kwch.com/2025/03/25/kansas-lawmakers-end-three-day-grace-period-mail-in-ballots-override-governors-veto",
+      "https://www.kwch.com/2026/07/25/kansas-secretary-state-warns-voters-dont-count-mail-in-ballot-grace-period/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-kansas-on-election-day-nid30102026/",
+      "https://www.wibw.com/2026/07/16/kansas-judge-temporarily-reinstates-mail-ballot-grace-period-state-leaders-file-appeals/",
+      "https://www.wibw.com/2026/07/28/kansas-court-appeals-upholds-ruling-that-reinstates-3-day-grace-period-for-mail-in-ballots/"
+    ]
+  },
+  {
+    "state": "ME",
+    "poll_close_et": "8:00 pm ET statewide (towns open at varying times; all close at 8 pm). Ballots must be received by 8 pm regardless of postmark.",
+    "close_first_et": "20:00",
+    "close_last_et": "20:00",
+    "close_label": "transcribed",
+    "posts_first": "Towns report whole (Election Day plus absentee) as they finish; Portland and the larger towns first in the south.",
+    "posts_last": "Small towns through the night; then the Secretary of State ranked-choice tabulation for US House and Senate if no first-round majority (ME-02 2024 result certified Nov 15, ten days after).",
+    "drift": "Drift toward R late in 2024 as rural towns posted: Harris +2.3 at 9 pm (1% in), +5.4 at 11 pm, +7.4 at 1 am, +8.8 at 7 am (72%), +6.9 final. ME-02 2024 went to RCV: Golden 50.35 to 49.65 after rounds.",
+    "pace_2024": {
+      "first_results": "8:44pm",
+      "half_counted": "12:54am",
+      "ninety_counted": "3:13pm Wednesday",
+      "label": "transcribed"
+    },
+    "read_after": "after midnight",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:44",
+        "clock_et": "20:44",
+        "day_offset": 0,
+        "margin_d": -35.86,
+        "eevp": 0.05
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": 2.25,
+        "eevp": 0.76
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": 5.42,
+        "eevp": 17.08
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T01:00",
+        "clock_et": "01:00",
+        "day_offset": 1,
+        "margin_d": 7.36,
+        "eevp": 50.72
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": 8.79,
+        "eevp": 72.13
+      }
+    ],
+    "final_2024_margin_d": 6.94,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-maine-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": "not retrieved: the Secretary of State had not set the 2026 tabulation date (late-states file, not_retrieved)",
+    "rules_changed_2026": [
+      "Ranked choice applies to US House and Senate general elections, not governor (plurality). Maine Supreme Judicial Court advisory opinion April 2026 reaffirmed RCV cannot be used for governor general",
+      "2025 law: recounts automatic on a tie; otherwise a candidate may request and pay, with fees waived if margin is at or under 1% or 1,000 votes (whichever is less). Early processing of absentee ballots up to 7 days before Election Day (760-B, amended 2023). Absentee ballots must arrive by 8 pm Election Day."
+    ],
+    "label": "retrieved",
+    "notes": "Maine 2024 Senate was King (I) vs Costello (R) vs Kouzounas (D); county numbers are given under senate_2024_king and are not comparable as a D-R margin. Maine is slow: 50% at 12:54 am and 90% only at 3:13 pm the next day in 2024.",
+    "sources": [
+      "https://electionlab.mit.edu/articles/how-long-did-it-take-count-vote-2024",
+      "https://ivn.us/why-cant-maine-use-ranked-choice-voting-in-certain-elections-its-supreme-court-just-answered-again-2026-04-09/",
+      "https://legislature.maine.gov/statutes/21-A/title21-Asec760-B.html",
+      "https://nationalnewswatch.com/2024/11/06/ap-race-call-donald-trump-wins-alaska",
+      "https://spectrumlocalnews.com/me/maine/politics/2026/06/10/we-know-who-s-ahead-after-tuesday-s-maine-election--but-we-don-t-yet-know-who-won-in-three-key-races-",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.bangordailynews.com/2022/11/16/politics/jared-golden-wins-3rd-term/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-maine-on-election-day-nid30102026/",
+      "https://www.maine.gov/sos/news/maine-secretary-states-office-announces-ranked-choice-tabulations",
+      "https://www.maine.gov/sos/news/primary-election-one-week-away",
+      "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/Nov26%20Notice%20of%20Early%20Processing.pdf",
+      "https://www.mainepublic.org/politics/2026-06-10/three-maine-races-are-headed-to-ranked-choice-voting-heres-what-happens-next",
+      "https://www.wagmtv.com/2022/11/09/secretary-state-announces-ranked-choice-tabulation-congressional-district-2/",
+      "https://www.washingtonexaminer.com/live-blog-posts/alaska-goes-for-trump-and-harris-wins-maine",
+      "https://www.washingtontimes.com/news/2024/nov/15/jared-golden-comes-ahead-maine-ranked-choice-votin/"
+    ]
+  },
+  {
+    "state": "MI",
+    "poll_close_et": "8:00 pm ET for the Eastern-zone state; 9:00 pm ET for the four western Upper Peninsula counties on Central time (Gogebic, Iron, Dickinson, Menominee; MI-01). AP will not call statewide races before 9 pm ET.",
+    "close_first_et": "20:00",
+    "close_last_et": "21:00",
+    "close_label": "transcribed",
+    "posts_first": "Election Day precincts and absentee ballots in jurisdictions that pre-processed (allowed up to 8 days before in larger jurisdictions). Nothing public before 8 pm ET; western UP closes 9 pm ET.",
+    "posts_last": "Detroit absentee count at Huntington Place and Wayne County; clerks that chose not to pre-process (Flint, Warren in 2024). Mail must arrive by 8 pm Election Day.",
+    "drift": "Red mirage then blue shift in 2024: Harris +11.0 at 9 pm (8% in), Trump +3.8 at 11 pm, Trump +6.3 at 1 am (59%), Trump +2.1 at 7 am (95%), Trump +1.4 final. Networks called Michigan about 1 pm Wednesday (sources give 1:05 to 1:41 pm ET).",
+    "pace_2024": {
+      "first_results": "8:06pm",
+      "half_counted": "12:12am",
+      "ninety_counted": "99 percent at 4:40am",
+      "label": "transcribed"
+    },
+    "read_after": "after Detroit's absentees",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T20:07",
+        "clock_et": "20:07",
+        "day_offset": 0,
+        "margin_d": 54.67,
+        "eevp": 1.9
+      },
+      {
+        "checkpoint": "at_2100ET",
+        "at_et": "2024-11-05T20:59",
+        "clock_et": "20:59",
+        "day_offset": 0,
+        "margin_d": 11.04,
+        "eevp": 8.47
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -3.78,
+        "eevp": 27.01
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:58",
+        "clock_et": "00:58",
+        "day_offset": 1,
+        "margin_d": -6.27,
+        "eevp": 59.42
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:43",
+        "clock_et": "05:43",
+        "day_offset": 1,
+        "margin_d": -2.05,
+        "eevp": 94.68
+      }
+    ],
+    "final_2024_margin_d": -1.41,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-michigan-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "Pre-processing under PA 195 of 2022 and the 2023 expansion continues; Detroit pre-processed for the Aug 2026 primary (55,000 absentee ballots, results from 8 pm). Smaller clerks still opt out. 2.08 million absentee ballots requested by Oct 13 2026, up 20% on 2022",
+      "No 2026-specific change. Latest rules: 2023 law (SB 367) allowing 8 days of absentee pre-processing and tabulation for jurisdictions of 5,000+, and the 2024 recount law (automatic statewide recount at 0.1% or less; otherwise candidate-requested with a good-faith claim). Also on the ballot: whether to hold a state constitutional convention."
+    ],
+    "label": "retrieved",
+    "notes": "Wayne is listed last by design: it reports late and skews the statewide total until its absentees land. Saginaw is the single best early read.",
+    "sources": [
+      "https://detroitmi.gov/sites/detroitmi.localhost/files/2026-07/PREPROCESSING%20NOTICE%20071726.pdf",
+      "https://electionlab.mit.edu/articles/how-long-did-it-take-count-vote-2024",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.allsides.com/story/2024-presidential-election-election-live-blog",
+      "https://www.bridgedetroit.com/?p=211402",
+      "https://www.bridgemi.com/michigan-government/many-michigan-towns-opt-against-pre-processing-absentee-ballots",
+      "https://www.bridgemi.com/michigan-government/michigan-elections-faq-how-long-will-it-take-report-results",
+      "https://www.clickondetroit.com/news/local/2026/08/05/detroit-election-officials-report-smooth-primary-process-more-than-55k-absentee-ballots-processed/",
+      "https://www.clickondetroit.com/news/politics/2024/11/06/why-ap-called-michigan-for-trump/",
+      "https://www.michigan.gov/sos/resources/news/2026/10/13/three-weeks-before-election-day-6-percent-of-voters-have-already-cast-their-ballot",
+      "https://www.michiganpublic.org/politics-government/2026-10-30/what-to-expect-in-michigan-on-election-day",
+      "https://www.pbs.org/newshour/politics/ap-race-call-donald-trump-wins-michigan"
+    ]
+  },
+  {
+    "state": "IA",
+    "poll_close_et": "9:00 pm ET (8 pm Central) statewide.",
+    "close_first_et": "21:00",
+    "close_last_et": "21:00",
+    "close_label": "transcribed",
+    "posts_first": "Absentee-by-mail results at the start of the night from nearly all counties; in-person absentee timing varies (AP). Polls close 8 pm CT (9 pm ET).",
+    "posts_last": "Polk and Linn Election Day precincts. Mail must arrive by 8 pm Election Day; no post-election mail.",
+    "drift": "Flat after the first big batches in 2024: Trump +13.8 at 11 pm (70% in), +13.3 final. The early absentee was Harris +4.5 (NYT advance tag), so the very first numbers lean D before Election Day precincts swamp them.",
+    "pace_2024": {
+      "first_results": "9:01pm",
+      "half_counted": "10:33pm",
+      "ninety_counted": "99 percent at 3:20am",
+      "label": "transcribed"
+    },
+    "read_after": "10:30pm",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T21:02",
+        "clock_et": "21:02",
+        "day_offset": 0,
+        "margin_d": -29.77,
+        "eevp": 0.11
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -13.78,
+        "eevp": 70.25
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:57",
+        "clock_et": "00:57",
+        "day_offset": 1,
+        "margin_d": -13.78,
+        "eevp": 93.88
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -13.98,
+        "eevp": 95.28
+      }
+    ],
+    "final_2024_margin_d": -13.26,
+    "advance_2024_margin_d": 4.47,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-iowa-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No 2026 counting change retrieved; receipt deadline 8 pm Election Day, postmarks do not count",
+      "No 2026-specific change found. Absentee tabulation may not start before the day before Election Day; absentee ballots must be received by poll close (2021 law; not re-verified this run, label inferred). About 30% of the 2022 Senate vote was cast early."
+    ],
+    "label": "retrieved",
+    "notes": "Iowa has both a 2022 governor and 2022 Senate race in the county records (statewide_2022 = governor; senate_2022 also given). No 2024 Senate race.",
+    "sources": [
+      "https://am590theanswer.com/news/top-stories/ap-decision-notes-what-to-expect-in-iowas-state-primary/d9109735c2b39561fbf441768eb66ae1",
+      "https://weareiowa.com/article/news/politics/voter-guide/how-are-votes-counted-in-iowa-absentee-ballots-2020-election-preview/524-0dabbf58-61eb-44cb-ba05-ef7df9753382",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.iowapublicradio.org/political-news/2026-08-26/absentee-ballot-requests-begin-in-iowa-for-nov-3-election",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-iowa-on-election-day-nid30102026/",
+      "https://www.postandcourier.com/ap/county-boards-begin-tabulating-record-early-vote-in-iowa/article_7850db58-1e2f-11eb-b153-9b95ec16ee94.html"
+    ]
+  },
+  {
+    "state": "MN",
+    "poll_close_et": "9:00 pm ET (8 pm Central) statewide.",
+    "close_first_et": "21:00",
+    "close_last_et": "21:00",
+    "close_label": "transcribed",
+    "posts_first": "Small rural precincts and early absentee tallies after the 8 pm CT (9 pm ET) close; first NYT update 9:08 pm ET in 2024. Absentee is counted on Election Day, not before.",
+    "posts_last": "Hennepin and Ramsey precincts and their absentee boards; essentially complete by morning. Mail must arrive by Election Day.",
+    "drift": "Red mirage in 2024: Trump +23.2 at 11 pm (11% in), Harris +2.4 at 1 am (65%), Harris +4.4 at 7 am, Harris +4.3 final.",
+    "pace_2024": {
+      "first_results": "9:08pm",
+      "half_counted": "11:40pm",
+      "ninety_counted": "99 percent at 5:19am",
+      "label": "transcribed"
+    },
+    "read_after": "midnight",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T21:08",
+        "clock_et": "21:08",
+        "day_offset": 0,
+        "margin_d": -36.15,
+        "eevp": 0.05
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -23.15,
+        "eevp": 11.29
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:59",
+        "clock_et": "00:59",
+        "day_offset": 1,
+        "margin_d": 2.35,
+        "eevp": 64.86
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": 4.44,
+        "eevp": 98.62
+      }
+    ],
+    "final_2024_margin_d": 4.26,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-minnesota-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No 2026 counting change retrieved. Early in-person voting into a tabulator began Oct 16 2026 (18 days out)",
+      "No 2026-specific change found. Publicly funded recount if margin under 0.25% for statewide/federal offices. About 27% of the 2022 governor vote was cast early."
+    ],
+    "label": "retrieved",
+    "notes": "Hennepin is not on the list but reports complete in its first update per AP; it is the fastest big read. Statewide 2024: Harris +4.3 (Trump 46.7%).",
+    "sources": [
+      "https://infonews.ca/?p=4445358",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.fox9.com/election/minnesota-election-results-2024-when-will-we-know",
+      "https://www.fox9.com/news/minnesota-general-election-2026-voter-guide",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-minnesota-on-election-day-nid30102026/",
+      "https://www.mprnews.org/story/2026/09/14/for-those-with-minds-made-up-minnesotans-can-start-casting-their-midterm-ballots-friday",
+      "https://www.ntdaily.com/news/2024-live-election-coverage/article_a099b080-9ba8-11ef-873f-27c3aed8130b.html"
+    ]
+  },
+  {
+    "state": "WI",
+    "poll_close_et": "9:00 pm ET (8 pm Central) statewide. Absentee ballots must be received by 8 pm Central.",
+    "close_first_et": "21:00",
+    "close_last_et": "21:00",
+    "close_label": "transcribed",
+    "posts_first": "Municipal totals as reported to counties after 8 pm CT (9 pm ET); most municipalities count absentee at the polls and report all modes together, so small towns post first.",
+    "posts_last": "Milwaukee central count absentee (reported about 4:30 am Nov 6 2024), Madison precincts, other central-count cities; no post-election mail.",
+    "drift": "Red mirage then blue shift in 2024: Trump +2.2 at 11 pm (60% in), +4.2 at 1 am (84%), +1.3 at 7 am, +0.9 final. AP called the race about 5:35 am ET Wednesday.",
+    "pace_2024": {
+      "first_results": "9:11pm",
+      "half_counted": "10:31pm",
+      "ninety_counted": "2:22am",
+      "label": "transcribed"
+    },
+    "read_after": "after Milwaukee, about 5:30am",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T21:11",
+        "clock_et": "21:11",
+        "day_offset": 0,
+        "margin_d": -25.95,
+        "eevp": 0.08
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -2.16,
+        "eevp": 59.84
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:58",
+        "clock_et": "00:58",
+        "day_offset": 1,
+        "margin_d": -4.2,
+        "eevp": 84.33
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -1.25,
+        "eevp": 97.16
+      }
+    ],
+    "final_2024_margin_d": -0.86,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-wisconsin-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "No Monday pre-processing. The bipartisan bill never passed in 2025-26 (tied to drop-box webcam provisions); processing still begins 7 am Election Day. Milwaukee central count remains",
+      "No change. The 'Monday processing' bill (pre-processing absentees the day before Election Day) passed the Assembly in 2023 but never became law and died again in the 2026 session, so absentee processing still starts at 7 am Election Day and Milwaukee reports in one late batch. Recounts: candidate-requested only, margin under 1 point in races over 4,000 votes."
+    ],
+    "label": "retrieved",
+    "notes": "Both 2022 governor (statewide_2022) and 2022 Senate (senate_2022) are given. Milwaukee city absentees are the last big batch; do not read a Republican lead before they land.",
+    "sources": [
+      "https://electionlab.mit.edu/articles/how-long-did-it-take-count-vote-2024",
+      "https://elections.wi.gov/node/11856",
+      "https://urbanmilwaukee.com/?p=819723",
+      "https://urbanmilwaukee.com/?p=819724",
+      "https://urbanmilwaukee.com/?p=960102",
+      "https://urbanmilwaukee.com/pressrelease/wisconsin-republican-failure-file-efficient-early-vote-edition/",
+      "https://wisconsinexaminer.com/2025/09/30/where-monday-processing-and-other-elections-measures-stand-in-wisconsin-this-legislative-session/",
+      "https://wkuherald.com/79855/news/live-updates-2024-presidential-election-results",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.allsides.com/story/2024-presidential-election-election-live-blog",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-wisconsin-on-election-day-nid30102026/",
+      "https://www.politifact.com/factchecks/2024/nov/14/instagram-posts/no-an-early-morning-influx-of-milwaukee-votes-does/",
+      "https://www.votebeat.org/wisconsin/2026/08/10/2026-primary-election-when-to-expect-results/",
+      "https://www.wisn.com/article/interactive-see-when-election-results-came-out-by-state-in-2024/62831052"
+    ]
+  },
+  {
+    "state": "AZ",
+    "poll_close_et": "9:00 pm ET (7 pm MST) statewide. No results released before 10 pm ET (8 pm MST) or until all precincts have reported, whichever comes first.",
+    "close_first_et": "21:00",
+    "close_last_et": "21:00",
+    "close_label": "transcribed",
+    "posts_first": "Early ballots received and processed before Election Day, released in one batch about 10 pm ET (one hour after the 9 pm ET close or when all precincts report).",
+    "posts_last": "Election Day precincts over the night, then late earlies dropped off on Election Day (signature verification takes days), then cures. Counting ran into the following weekend in 2024; AP called the presidency Saturday Nov 9.",
+    "drift": "Reversed from 2020-22. In 2024: near even at 11 pm (Trump +0.1 at 50% in), Trump +0.7 at 1 am, Trump +4.8 at 7 am Wednesday (60%), Trump +5.5 final. Advance vote was Trump +2.1, so the late earlies and Election Day pushed R.",
+    "pace_2024": {
+      "first_results": "10:00pm",
+      "half_counted": "10:12pm",
+      "ninety_counted": "days",
+      "label": "transcribed"
+    },
+    "read_after": "Wednesday and after",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-05T22:00",
+        "clock_et": "22:00",
+        "day_offset": 0,
+        "margin_d": -17.05,
+        "eevp": 3.87
+      },
+      {
+        "checkpoint": "at_2300ET",
+        "at_et": "2024-11-05T22:59",
+        "clock_et": "22:59",
+        "day_offset": 0,
+        "margin_d": -0.13,
+        "eevp": 49.82
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:57",
+        "clock_et": "00:57",
+        "day_offset": 1,
+        "margin_d": -0.69,
+        "eevp": 50.88
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -4.76,
+        "eevp": 59.84
+      }
+    ],
+    "final_2024_margin_d": -5.53,
+    "advance_2024_margin_d": -2.06,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-arizona-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "HB 2703 (Friday 7 pm early-ballot drop-off deadline, ID at polls for Election Day drop-off) was vetoed by Gov. Hobbs Feb 18 2025. Republicans moved a referral (HCR 2013); whether it reached the Nov 2026 ballot was not confirmed",
+      "For 2026 counties offer an ID-verified drop-off for late earlies and let voters who drop off on Election Day tabulate the ballot on site like an Election Day voter, which should shrink the late-early pile (ABC15, KJZZ)",
+      "Canvass: counties by Nov 19, state Nov 23 2026",
+      "HB 2022 (signed Feb 6, 2026, emergency measure) moved the primary to the second-to-last Tuesday in July, extended the signature-cure window and codified observer access; it did not change the Election Day drop-off of early ballots. Gov. Hobbs vetoed the Feb 2025 GOP bill that would have set a 7 pm Friday-before deadline for dropping early ballots at voting sites; that idea is on the Nov 3, 2026 ballot as a legislatively referred statute and would apply only to future elections. A 2026 agreement between the Maricopa supervisors and Recorder Justin Heap divides election duties. Mail ballots must be received by 7 pm Election Day; postmarks do not count."
+    ],
+    "label": "retrieved",
+    "notes": "AP: Apache, Coconino, Pima and Santa Cruz have gone Democratic in every statewide race since 2012. Arizona was at 66% at 6:30 am the morning after in 2024; the late-early count drives the multi-day finish.",
+    "sources": [
+      "https://azmirror.com/2024/11/06/arizona-election-results-delayed-after-a-long-ballot-and-a-court-order-slow-counting/",
+      "https://azmirror.com/2025/02/18/hobbs-vetoes-republican-plan-to-end-election-day-ballot-drop-offs/",
+      "https://ballotpedia.org/Arizona_Extend_In-Person_Voting_Period_and_Reduce_Early_Ballots_Return_Period_Measure_(2026)",
+      "https://electionlab.mit.edu/articles/how-long-did-it-take-count-vote-2024",
+      "https://elections.maricopa.gov/news-and-information/elections-news/11-15-24-general-election-results-posted.html",
+      "https://elections.maricopa.gov/news-and-information/elections-news/initial-unofficial-results-2024-general-election-posted.html",
+      "https://kjzz.org/content/1820349/maricopa-county-estimates-10-12-days-tally-votes-november-elections",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.abc15.com/watch-how-arizona-voters-could-help-speed-up-election-results",
+      "https://www.axios.com/local/phoenix/2026/08/04/final-stamp-on-a-silky-smooth-primary",
+      "https://www.azfamily.com/2022/11/15/why-ap-called-arizonas-governor-race-katie-hobbs",
+      "https://www.azfamily.com/2024/11/21/board-meet-canvass-maricopa-county-election-results",
+      "https://www.azfamily.com/2025/02/18/gov-hobbs-vetoes-arizona-gops-bill-speed-up-election-results/",
+      "https://www.azfamily.com/2026/02/07/gov-hobbs-signs-elections-bill-changing-arizonas-primary-dates",
+      "https://www.kawc.org/news/2025-02-19/arizona-gov-hobbs-vetoes-republican-bill-to-speed-up-election-results",
+      "https://www.kjzz.org/elections/2026-07-20/mail-back-deadline-for-arizona-early-ballots-has-passed-but-early-voters-still-have-options",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-arizona-on-election-day-nid30102026/",
+      "https://www.mprnews.org/story/2024/11/10/why-ap-called-arizona-for-trump",
+      "https://www.pbs.org/newshour/politics/what-to-expect-in-arizona-on-election-day",
+      "https://www.yourvalley.net/stories/election-2026-arizona-general-election-advisory,731629"
+    ]
+  },
+  {
+    "state": "NV",
+    "poll_close_et": "10:00 pm ET (7 pm Pacific) statewide; anyone in line may vote, and state law bars releasing any results until the last in-person voter statewide has voted.",
+    "close_first_et": "22:00",
+    "close_last_et": "22:00",
+    "close_label": "transcribed",
+    "posts_first": "In Clark and Washoe the first update has all early in-person plus mail received before Election Day, then Election Day in-person. First 2024 results came 12:54 am ET, about three hours after the 10 pm ET close, because of long lines.",
+    "posts_last": "Mail postmarked by Election Day received up to 4 days after (5 pm Saturday), signature cures (to Nov 12 in 2024), Election Day drop-box ballots (67,397 in Clark in 2024). Counties report mail daily; certification mid-November.",
+    "drift": "Toward D after the first rural dump in 2024: Trump +16.1 at 1 am (19% in), +4.7 at 7 am (84%), +3.1 final. AP called the presidency early Saturday Nov 9.",
+    "pace_2024": {
+      "first_results": "12:54am",
+      "half_counted": "1:02am",
+      "ninety_counted": "8:26pm Wednesday",
+      "label": "transcribed"
+    },
+    "read_after": "Wednesday and after",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-06T00:55",
+        "clock_et": "00:55",
+        "day_offset": 1,
+        "margin_d": -44.72,
+        "eevp": 3.5
+      },
+      {
+        "checkpoint": "at_0100ET_wed",
+        "at_et": "2024-11-06T00:59",
+        "clock_et": "00:59",
+        "day_offset": 1,
+        "margin_d": -16.11,
+        "eevp": 19.23
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -4.66,
+        "eevp": 84.1
+      }
+    ],
+    "final_2024_margin_d": -3.1,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-nevada-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": null,
+    "ranked_choice_tabulation_2026": null,
+    "ranked_choice_source": null,
+    "rules_changed_2026": [
+      "Mail deadline unchanged (postmarked by Election Day, received within 4 days). US Supreme Court rejected the Trump-led challenge to post-Election Day receipt (KUNR, June 29 2026)",
+      "Gov. Lombardo vetoed AB 499 (voter ID deal) June 12 2025 and AB 306 (drop boxes) May 22 2025. A voter ID constitutional amendment is on the Nov 2026 ballot (second passage)",
+      "New Nevada regulation separates mail ballots received on Election Day from ballots counted in reporting (SOAR summary); details not retrieved",
+      "Deadline unchanged. On June 29, 2026 the U.S. Supreme Court rejected the Trump-led challenge to counting mail ballots that arrive after Election Day, so Nevada's rule (postmarked by Election Day, accepted up to four days after; NRS 293.269921) stands; Secretary of State Aguilar: 'Nevada's elections will not change.' A January 2026 USPS postmark-practice notice created uncertainty about postmarks; a state regulation clarified how postal marks are treated and separated 'received on Election Day' from 'counted' in reporting. Officials urged voters to mail ballots a week early. About 60% of June 2026 primary voters used mail."
+    ],
+    "label": "retrieved",
+    "notes": "Nothing is posted until every in-line voter has voted; in 2024 that meant no Nevada numbers until 12:54 am ET. 2022 Senate (senate_2022) and governor (statewide_2022) both provided.",
+    "sources": [
+      "https://abcnews.go.com/US/wireStory/ap-called-nevadas-presidential-race-trump-115667279",
+      "https://develop.reviewjournal.com/news/politics-and-government/nevada/2024-its-election-day-in-nevada-live-blog-2894684",
+      "https://electionlab.mit.edu/articles/how-long-did-it-take-count-vote-2024",
+      "https://ktnv.com/voterguide/1-608-uncounted-ballots-found-while-clark-county-prepares-final-election-results",
+      "https://law.counselstack.com/statute/nv/293.269921",
+      "https://nevadacurrent.com/?p=210851",
+      "https://news.ballotpedia.org/2025/06/16/nevada-gov-lombardo-vetoes-bills-to-require-voter-id-and-open-primaries-to-unaffiliated-voters/",
+      "https://politifact.com/factchecks/2024/nov/05/facebook-posts/nevada-mail-ballots-require-postmark-on-or-before/",
+      "https://thenevadaindependent.com/article/was-a-large-percentage-of-votes-received-after-election-day-in-nevada-in-2024",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.cbsnews.com/news/nevada-governor-primary-results-joe-lombardo-aaron-ford/",
+      "https://www.fox5vegas.com/2024/11/05/secretary-state-presents-timeline-2024-election",
+      "https://www.ktnv.com/news/why-ap-called-the-nevada-senate-race-for-catherine-cortez-masto",
+      "https://www.kunr.org/local-stories/2026-06-29/mail-ballots-in-nevada-can-continue-to-be-counted-after-election-day",
+      "https://www.kunr.org/nevada-state-government/2026-01-12/usps-postmark-notice-puts-nevada-mail-ballots-in-gray-area",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-nevada-on-election-day-nid30102026/",
+      "https://www.reviewjournal.com/news/politics-and-government/when-will-nevada-release-its-2024-election-results-3206231"
+    ]
+  },
+  {
+    "state": "AK",
+    "poll_close_et": "12:00 am ET (midnight; 8 pm Alaska time) for almost all of the state; 1:00 am ET for the one Aleutian polling place on Hawaii-Aleutian time. Media treat the state as callable at midnight ET.",
+    "close_first_et": "24:00",
+    "close_last_et": "25:00",
+    "close_label": "transcribed",
+    "posts_first": "Election Day in-person and early votes cast through the Thursday before, first-choice only, from about 1 am ET (polls close midnight ET).",
+    "posts_last": "Absentee ballots (postmarked by Election Day, accepted 10 days domestic, 15 international) counted in batches starting about a week after; questioned ballots; then the ranked-choice tabulation scheduled Nov 18 2026; certification target Nov 25.",
+    "drift": "Toward D as absentees count: Trump +16.1 at 1 am (15% in), +15.4 at 7 am (73%), +13.1 final in 2024. 2024 House: Begich 48.4 first choice on the long count, 51.3 to 48.7 after RCV on Nov 20. The 2024 RCV repeal led on election night and failed by 743 votes after absentees.",
+    "pace_2024": {
+      "first_results": "1:07am",
+      "half_counted": "2:07am",
+      "ninety_counted": "Nov 18 (ranked choice)",
+      "label": "transcribed"
+    },
+    "read_after": "Nov 18",
+    "read_after_label": "inferred",
+    "margin_2024_by_hour": [
+      {
+        "checkpoint": "first_report",
+        "at_et": "2024-11-06T01:07",
+        "clock_et": "01:07",
+        "day_offset": 1,
+        "margin_d": -16.12,
+        "eevp": 15.22
+      },
+      {
+        "checkpoint": "at_0700ET_wed",
+        "at_et": "2024-11-06T05:38",
+        "clock_et": "05:38",
+        "day_offset": 1,
+        "margin_d": -15.37,
+        "eevp": 73
+      }
+    ],
+    "final_2024_margin_d": -13.14,
+    "advance_2024_margin_d": null,
+    "by_hour_source": "NYT 2024 results JSON time series, static01.nyt.com/elections-assets/pages/data/2024-11-05/results-alaska-president.json",
+    "pct_counted_midnight_et_2022": null,
+    "pct_counted_midnight_reason": "not retrieved; the 2024 count by hour is in margin_2024_by_hour",
+    "modes_after_midnight": [],
+    "modes_reason": "mode leans not retrieved; the night view stays sign-only",
+    "near_final_date_2022": null,
+    "certification_deadline_2026": "2026-11-25",
+    "ranked_choice_tabulation_2026": "2026-11-18",
+    "ranked_choice_source": "data/raw/agents/2026-11-01T2240-night-precedents-feeds.json drift_by_state.AK.posts_last",
+    "rules_changed_2026": [
+      "Ballot Measure 2 (2026) would repeal top-four primaries and ranked choice; on the Nov 3 2026 ballot",
+      "Gov. Dunleavy vetoed a bipartisan bill to allow absentee scanning before election night, so the 15-day window stands (FairVote)",
+      "Early voting on pace to match the 2024 record (Alaska Public, Oct 28 2026)",
+      "No change in effect for this election. The RCV repeal measure, if passed, would not affect the 2026 count. About 35% of the 2022 Senate vote was early or mail; 2026 early voting was on pace to match 2024's record."
+    ],
+    "label": "retrieved",
+    "notes": "Expect roughly 75% of the vote by the morning after, first choices only, then a two-week wait for RCV. The 2024 pattern (late ballots moving results toward Democrats and against the RCV repeal) is retrieved, not assumed to repeat.",
+    "sources": [
+      "https://alaskabeacon.com/2026/10/22/thousands-of-alaskans-are-voting-before-election-day-some-ballots-wont-be-counted-until-after-it/",
+      "https://alaskapublic.org/2024/11/20/the-results-are-in-nick-begich-iii-has-won-alaskas-u-s-house-race",
+      "https://alaskapublic.org/news/politics/elections/2026-10-05/what-to-know-about-alaskas-general-election",
+      "https://ballotpedia.org/Alaska_Repeal_Top-Four_Ranked-Choice_Voting_Initiative_(2026)",
+      "https://electionlab.mit.edu/articles/how-long-did-it-take-count-vote-2024",
+      "https://fairvote.org/when-should-we-expect-alaska-results/",
+      "https://nationalnewswatch.com/2024/11/06/ap-race-call-donald-trump-wins-alaska",
+      "https://www.270towin.com/poll-closing-times",
+      "https://www.adn.com/politics/2024/11/04/election-day-in-alaska-how-to-vote-whats-on-the-ballot-when-to-expect-results/",
+      "https://www.alaskasnewssource.com/2024/11/21/alaska-chooses-keep-ranked-choice-voting-begich-defeats-peltola-unofficial-results-show/",
+      "https://www.ktoo.org/2024/11/04/in-close-races-this-election-day-it-will-likely-be-weeks-before-alaska-knows-the-results/",
+      "https://www.lanacion.com.ar/usa/ap-decision-notes-what-to-expect-in-alaska-on-election-day-nid30102026/",
+      "https://www.thegreenpapers.com/G26/PollingHours.phtml"
+    ]
+  }
+]

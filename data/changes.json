@@ -12848,7 +12848,7 @@
     "old": null,
     "new": null,
     "delta_text": "",
-    "reading": "26 changes since 2026-11-01 (14 market, 10 vote, 2 rating). No forecast number changed. Biggest: Markets: Senate · KS; Markets: Governor · NH; Markets: Senate · TX.",
+    "reading": "40 changes since 2026-11-01 (24 vote, 14 market, 2 rating). No forecast number changed. Biggest: Markets: Senate · KS; NJ: ballots voted (mail accepted plus in person) (2026 so far); Markets: Governor · NH.",
     "tone": null,
     "magnitude": 1000,
     "source_url": null,
@@ -12863,7 +12863,7 @@
     "old": null,
     "new": null,
     "delta_text": "House 88 · Senate 56",
-    "reading": "The outcome signals lean Democratic: 13 moved toward Democrats and 1 toward Republicans (weighted D 282, R 10). Early-vote composition shifted in 5 places, mostly toward registered Democrats. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 26.2 against the 30 percent trigger by Oct 25 (3.8 away); our widest gap to the markets is Governor · NV at 34 points. The outlook stands at House 88, Senate 56.",
+    "reading": "The outcome signals lean Democratic: 13 moved toward Democrats and 1 toward Republicans (weighted D 282, R 10). Early-vote composition shifted in 13 places, mostly toward registered Republicans. That says who has voted so far, not who wins, and does not enter the lean. No forecast number changed, so none of this moves the outlook until a run says it does. No lock trigger was reached. Nearest: North Carolina's Republican share of early ballots is 26.2 against the 30 percent trigger by Oct 25 (3.8 away); our widest gap to the markets is Governor · NV at 34 points. The outlook stands at House 88, Senate 56.",
     "tone": "D",
     "magnitude": 999,
     "source_url": null,
@@ -12895,6 +12895,21 @@
   {
     "as_of": "2026-11-02",
     "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "NJ: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_NJ",
+    "old": "855,440",
+    "new": "1,147,488",
+    "delta_text": "D 59.6 to 56.6; R 22.8 to 24.2; Other 17.6 to 19.2",
+    "reading": "The share moved -3.0 points to 56.6 percent of early voters (1,147,488 voters).",
+    "tone": "R",
+    "magnitude": 38.2,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 3
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
     "category": "market",
     "item": "Markets: Governor · NH",
     "item_id": "gov_nh",
@@ -12906,7 +12921,7 @@
     "magnitude": 36.5,
     "source_url": "https://polymarket.com/event/new-hampshire-governor-winner-2026",
     "move": 7.3,
-    "n": 3
+    "n": 4
   },
   {
     "as_of": "2026-11-02",
@@ -12922,7 +12937,7 @@
     "magnitude": 30.0,
     "source_url": "https://polymarket.com/event/texas-senate-election-winner",
     "move": 6.0,
-    "n": 4
+    "n": 5
   },
   {
     "as_of": "2026-11-02",
@@ -12937,7 +12952,7 @@
     "tone": null,
     "magnitude": 25,
     "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
-    "n": 5
+    "n": 6
   },
   {
     "as_of": "2026-11-02",
@@ -12952,7 +12967,7 @@
     "tone": null,
     "magnitude": 25,
     "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
-    "n": 6
+    "n": 7
   },
   {
     "as_of": "2026-11-02",
@@ -12968,7 +12983,7 @@
     "magnitude": 25.0,
     "source_url": "https://polymarket.com/event/iowa-senate-election-winner",
     "move": 5.0,
-    "n": 7
+    "n": 8
   },
   {
     "as_of": "2026-11-02",
@@ -12984,7 +12999,7 @@
     "magnitude": 25.0,
     "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
     "move": 5.0,
-    "n": 8
+    "n": 9
   },
   {
     "as_of": "2026-11-02",
@@ -13000,7 +13015,7 @@
     "magnitude": 25.0,
     "source_url": "https://polymarket.com/event/kansas-governor-winner-2026",
     "move": 5.0,
-    "n": 9
+    "n": 10
   },
   {
     "as_of": "2026-11-02",
@@ -13016,7 +13031,7 @@
     "magnitude": 22.5,
     "source_url": "https://polymarket.com/event/south-carolina-senate-election-winner",
     "move": 4.5,
-    "n": 10
+    "n": 11
   },
   {
     "as_of": "2026-11-02",
@@ -13025,13 +13040,13 @@
     "item": "Florida: Vote-by-mail ballots returned by party (2026 so far)",
     "item_id": "ev_FL",
     "old": "1,902,740",
-    "new": "1,941,375",
+    "new": "1,941,483",
     "delta_text": "D 42.9 to 42.9; R 35.1 to 35.0; No party 19.6 to 19.7; Other 2.5 to 2.5",
-    "reading": "38,635 more ballots counted. The Republican share moved -0.2 points to 35.0. Florida's in-person early voting starts Oct 24. Until then this is mail only.",
+    "reading": "38,743 more ballots counted. The Republican share moved -0.2 points to 35.0. Florida's in-person early voting starts Oct 24. Until then this is mail only.",
     "tone": "D",
     "magnitude": 21.7,
     "source_url": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
-    "n": 11
+    "n": 12
   },
   {
     "as_of": "2026-11-02",
@@ -13046,7 +13061,7 @@
     "tone": null,
     "magnitude": 20.3,
     "source_url": "https://data.pa.gov/d/nbwd-pfn4",
-    "n": 12
+    "n": 13
   },
   {
     "as_of": "2026-11-02",
@@ -13061,7 +13076,7 @@
     "tone": "D",
     "magnitude": 20.1,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
-    "n": 13
+    "n": 14
   },
   {
     "as_of": "2026-11-02",
@@ -13077,7 +13092,67 @@
     "magnitude": 20.0,
     "source_url": "https://polymarket.com/event/maine-senate-election-winner",
     "move": 4.0,
-    "n": 14
+    "n": 15
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "KY: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_KY",
+    "old": "192,709",
+    "new": "438,602",
+    "delta_text": "D 49.6 to 48.5; R 43.5 to 44.4; Other 6.9 to 7.1",
+    "reading": "The share moved -1.2 points to 48.5 percent of early voters (438,602 voters).",
+    "tone": "R",
+    "magnitude": 19.7,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 16
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "KS: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_KS",
+    "old": "422,143",
+    "new": "470,170",
+    "delta_text": "D 41.2 to 40.8; R 43.6 to 43.3; Other 15.2 to 15.9",
+    "reading": "The share moved +0.7 points to 15.9 percent of early voters (470,170 voters).",
+    "tone": null,
+    "magnitude": 14.7,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 17
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "NM: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_NM",
+    "old": "419,434",
+    "new": "456,726",
+    "delta_text": "D 52.2 to 51.6; R 30.7 to 31.0; Other 17.1 to 17.4",
+    "reading": "The share moved -0.6 points to 51.6 percent of early voters (456,726 voters).",
+    "tone": "R",
+    "magnitude": 14.0,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 18
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "OR: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_OR",
+    "old": "1,181,637",
+    "new": "1,294,451",
+    "delta_text": "D 41.6 to 41.3; R 31.1 to 31.0; Other 27.2 to 27.7",
+    "reading": "The share moved +0.5 points to 27.7 percent of early voters (1,294,451 voters).",
+    "tone": null,
+    "magnitude": 12.6,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 19
   },
   {
     "as_of": "2026-11-02",
@@ -13093,7 +13168,7 @@
     "magnitude": 12.5,
     "source_url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
     "move": 2.5,
-    "n": 15
+    "n": 20
   },
   {
     "as_of": "2026-11-02",
@@ -13109,22 +13184,127 @@
     "magnitude": 12.5,
     "source_url": "https://polymarket.com/event/florida-senate-election-winner",
     "move": 2.5,
-    "n": 16
+    "n": 21
   },
   {
     "as_of": "2026-11-02",
     "prev_as_of": "2026-11-01",
     "category": "votes",
-    "item": "CO: ballots voted (mail accepted plus in person) (2026 so far)",
-    "item_id": "ev_CO",
-    "old": "1,525,971",
-    "new": "1,591,323",
-    "delta_text": "D 31.2 to 31.1; R 24.6 to 24.4; Other 44.2 to 44.4",
-    "reading": "The share moved +0.2 points to 44.4 percent of early voters (1,591,323 voters).",
+    "item": "IA: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_IA",
+    "old": "440,389",
+    "new": "464,008",
+    "delta_text": "D 46.2 to 46.1; R 34.1 to 33.8; Other 19.7 to 20.1",
+    "reading": "The share moved +0.5 points to 20.1 percent of early voters (464,008 voters).",
     "tone": null,
-    "magnitude": 10.2,
+    "magnitude": 12.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 17
+    "n": 22
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "OH: Ballots voted (mail accepted plus in person), by last primary ballot (2026 so far)",
+    "item_id": "ev_OH",
+    "old": "3,318,382",
+    "new": "3,418,508",
+    "delta_text": "D 27.7 to 27.4; Other 0.2 to 0.2; R 25.4 to 25.3; Unaffiliated 46.8 to 47.2; All — to —",
+    "reading": "The share moved +0.4 points to 47.2 percent of early voters (3,418,508 voters).",
+    "tone": null,
+    "magnitude": 12.5,
+    "source_url": "https://www.ohiosos.gov/data",
+    "n": 23
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "CT: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_CT",
+    "old": "467,678",
+    "new": "505,945",
+    "delta_text": "D 48.3 to 47.9; R 19.4 to 19.4; Other 32.3 to 32.7",
+    "reading": "The share moved -0.4 points to 47.9 percent of early voters (505,945 voters).",
+    "tone": "R",
+    "magnitude": 12.0,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 24
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "NE: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_NE",
+    "old": "215,424",
+    "new": "237,135",
+    "delta_text": "D 38.7 to 38.4; R 44.1 to 44.2; Other 17.1 to 17.4",
+    "reading": "The share moved -0.4 points to 38.4 percent of early voters (237,135 voters).",
+    "tone": "R",
+    "magnitude": 11.5,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 25
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "ME: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_ME",
+    "old": "288,672",
+    "new": "300,491",
+    "delta_text": "D 47.0 to 46.7; R 22.9 to 22.9; Other 30.1 to 30.4",
+    "reading": "The share moved -0.3 points to 46.7 percent of early voters (300,491 voters).",
+    "tone": "R",
+    "magnitude": 11.3,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 26
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "WY: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_WY",
+    "old": "57,968",
+    "new": "65,264",
+    "delta_text": "D 17.1 to 16.8; R 75.4 to 75.4; Other 7.5 to 7.8",
+    "reading": "The share moved -0.3 points to 16.8 percent of early voters (65,264 voters).",
+    "tone": "R",
+    "magnitude": 10.9,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 27
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "NV: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_NV",
+    "old": "718,903",
+    "new": "732,715",
+    "delta_text": "D 39.8 to 39.6; R 33.5 to 33.7; Other 26.7 to 26.8",
+    "reading": "The share moved -0.2 points to 39.6 percent of early voters (732,715 voters).",
+    "tone": "R",
+    "magnitude": 10.4,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 28
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "Florida: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_FL",
+    "old": "5,345,564",
+    "new": "5,458,419",
+    "delta_text": "D 37.7 to 37.8; R 40.4 to 40.2; Other 21.9 to 22.0",
+    "reading": "The share moved -0.2 points to 40.2 percent of early voters (5,458,419 voters).",
+    "tone": "D",
+    "magnitude": 10.1,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 29
   },
   {
     "as_of": "2026-11-02",
@@ -13140,7 +13320,7 @@
     "magnitude": 10.0,
     "source_url": "https://polymarket.com/event/nevada-governor-winner-2026",
     "move": -2.0,
-    "n": 18
+    "n": 30
   },
   {
     "as_of": "2026-11-02",
@@ -13156,7 +13336,7 @@
     "magnitude": 10.0,
     "source_url": "https://kalshi.com/markets/govpartyoh",
     "move": 2.0,
-    "n": 19
+    "n": 31
   },
   {
     "as_of": "2026-11-02",
@@ -13172,22 +13352,7 @@
     "magnitude": 10.0,
     "source_url": "https://kalshi.com/markets/govpartyia",
     "move": 2.0,
-    "n": 20
-  },
-  {
-    "as_of": "2026-11-02",
-    "prev_as_of": "2026-11-01",
-    "category": "votes",
-    "item": "Florida: ballots voted (mail accepted plus in person) (2026 so far)",
-    "item_id": "ev_FL",
-    "old": "5,345,564",
-    "new": "5,410,010",
-    "delta_text": "D 37.7 to 37.8; R 40.4 to 40.2; Other 21.9 to 22.0",
-    "reading": "The share moved -0.1 points to 40.2 percent of early voters (5,410,010 voters).",
-    "tone": "D",
-    "magnitude": 9.4,
-    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 21
+    "n": 32
   },
   {
     "as_of": "2026-11-02",
@@ -13196,13 +13361,28 @@
     "item": "AZ: ballots voted (mail accepted plus in person) (2026 so far)",
     "item_id": "ev_AZ",
     "old": "1,595,938",
-    "new": "1,602,837",
-    "delta_text": "D 37.2 to 37.2; R 38.1 to 38.0; Other 24.7 to 24.7",
-    "reading": "The share moved -0.1 points to 38.0 percent of early voters (1,602,837 voters).",
-    "tone": "D",
-    "magnitude": 8.5,
+    "new": "1,648,197",
+    "delta_text": "D 37.2 to 37.2; R 38.1 to 37.9; Other 24.7 to 24.9",
+    "reading": "The share moved +0.2 points to 24.9 percent of early voters (1,648,197 voters).",
+    "tone": null,
+    "magnitude": 9.5,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 22
+    "n": 33
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "DE: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_DE",
+    "old": "145,712",
+    "new": "148,738",
+    "delta_text": "D 53.0 to 52.9; R 27.7 to 27.7; Other 19.3 to 19.4",
+    "reading": "The share moved +0.1 points to 19.4 percent of early voters (148,738 voters).",
+    "tone": null,
+    "magnitude": 8.6,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 34
   },
   {
     "as_of": "2026-11-02",
@@ -13217,7 +13397,52 @@
     "tone": null,
     "magnitude": 8.3,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
-    "n": 23
+    "n": 35
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "AR: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_AR",
+    "old": "518,198",
+    "new": "550,338",
+    "delta_text": "D 6.3 to 6.3; R 9.0 to 9.0; Other 84.7 to 84.7",
+    "reading": "The share moved +0.0 points to 84.7 percent of early voters (550,338 voters).",
+    "tone": null,
+    "magnitude": 8.3,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 36
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "Pennsylvania: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_PA",
+    "old": "1,056,549",
+    "new": "1,062,313",
+    "delta_text": "D 64.7 to 64.7; R 25.2 to 25.2; Other 10.1 to 10.1",
+    "reading": "The share moved -0.0 points to 25.2 percent of early voters (1,062,313 voters).",
+    "tone": "D",
+    "magnitude": 8.3,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 37
+  },
+  {
+    "as_of": "2026-11-02",
+    "prev_as_of": "2026-11-01",
+    "category": "votes",
+    "item": "MD: ballots voted (mail accepted plus in person) (2026 so far)",
+    "item_id": "ev_MD",
+    "old": "991,069",
+    "new": "993,206",
+    "delta_text": "D 64.0 to 64.0; R 20.9 to 20.8; Other 15.1 to 15.1",
+    "reading": "The share moved +0.0 points to 15.1 percent of early voters (993,206 voters).",
+    "tone": null,
+    "magnitude": 8.2,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "n": 38
   },
   {
     "as_of": "2026-11-02",
@@ -13232,7 +13457,7 @@
     "tone": null,
     "magnitude": 8.1,
     "source_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
-    "n": 24
+    "n": 39
   },
   {
     "as_of": "2026-11-02",
@@ -13247,22 +13472,7 @@
     "tone": "D",
     "magnitude": 8.1,
     "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
-    "n": 25
-  },
-  {
-    "as_of": "2026-11-02",
-    "prev_as_of": "2026-11-01",
-    "category": "votes",
-    "item": "TX: Ballots so far by mode (2026 so far)",
-    "item_id": "ev_TX",
-    "old": "7,717,024",
-    "new": "7,716,772",
-    "delta_text": "in person 96.6 to 96.6; mail 3.4 to 3.4",
-    "reading": "The share moved -0.0 points to 3.4 percent of early voters (7,716,772 voters).",
-    "tone": null,
-    "magnitude": 8.1,
-    "source_url": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
-    "n": 26
+    "n": 40
   },
   {
     "as_of": "2026-11-02",
@@ -13278,6 +13488,6 @@
     "magnitude": 5.5,
     "source_url": "https://polymarket.com/event/south-carolina-governor-margin-of-victory-2026",
     "move": 1.1,
-    "n": 27
+    "n": 41
   }
 ]

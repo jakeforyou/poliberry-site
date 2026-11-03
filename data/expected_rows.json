@@ -10,17 +10,17 @@
     "chance": 70.0,
     "sigma": 6.0,
     "sigma_label": "inferred",
-    "margin": 4.61,
-    "margin_lo": 0.2,
-    "margin_hi": 9.03,
-    "margin_source": "core model: fundamentals and 7 polls, run judgment -0.34",
+    "margin": 4.46,
+    "margin_lo": 0.05,
+    "margin_hi": 8.88,
+    "margin_source": "core model: fundamentals and 8 polls, run judgment -0.29",
     "margin_label": "inferred",
-    "chance_implied_by_margin": 90.99,
+    "chance_implied_by_margin": 90.25,
     "lock_margin_item": null,
-    "other": 1.25,
-    "other_source": "poll average of other over 8 polls",
+    "other": 1.4,
+    "other_source": "poll average of other over 10 polls",
     "other_label": "retrieved",
-    "share_d": 51.68,
+    "share_d": 51.53,
     "share_r": 47.07,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
@@ -32,7 +32,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Maine 2024 Senate was King (I) vs Costello (R) vs Kouzounas (D); county numbers are given under senate_2024_king and are not comparable as a D-R margin. Maine is slow: 50% at 12:54 am and 90% only at 3:13 pm the next day in 2024."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -45,18 +55,18 @@
     "chance": 96.0,
     "sigma": 6.0,
     "sigma_label": "inferred",
-    "margin": 10.29,
-    "margin_lo": 5.88,
-    "margin_hi": 14.71,
-    "margin_source": "core model: fundamentals and 5 polls, run judgment -0.92",
+    "margin": 10.06,
+    "margin_lo": 5.65,
+    "margin_hi": 14.47,
+    "margin_source": "core model: fundamentals and 6 polls, run judgment -0.70",
     "margin_label": "inferred",
-    "chance_implied_by_margin": 99.86,
+    "chance_implied_by_margin": 99.83,
     "lock_margin_item": null,
-    "other": 3.0,
-    "other_source": "poll average of other over 5 polls",
+    "other": 2.67,
+    "other_source": "poll average of other over 6 polls",
     "other_label": "retrieved",
-    "share_d": 53.64,
-    "share_r": 43.36,
+    "share_d": 53.7,
+    "share_r": 43.63,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
@@ -74,9 +84,19 @@
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": {
       "d": 2340000.0,
-      "r": 1890000.0
+      "r": 1900000.0
     },
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "AG 2024 county numbers are two-candidate (no third party on ballot). NC-01 (Davis) was redrawn in 2025; Nash is inside the district under both maps per AP (Davis rematch vs Buckhout)."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -96,11 +116,11 @@
     "margin_label": "inferred",
     "chance_implied_by_margin": 79.0,
     "lock_margin_item": null,
-    "other": 3.29,
-    "other_source": "poll average of other over 14 polls",
+    "other": 3.33,
+    "other_source": "poll average of other over 15 polls",
     "other_label": "retrieved",
-    "share_d": 49.74,
-    "share_r": 46.96,
+    "share_d": 49.73,
+    "share_r": 46.95,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
@@ -111,7 +131,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Brown 2024 county margins are the comparison baseline for Tuesday. Brown lost statewide by 3.62; counties where he beat Harris most: Lake (+9.6), Montgomery (+6.7), Lorain (+10.5), Mahoning (+9.2)."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -124,18 +154,18 @@
     "chance": 52.0,
     "sigma": 6.0,
     "sigma_label": "inferred",
-    "margin": 2.58,
-    "margin_lo": -1.84,
-    "margin_hi": 6.99,
-    "margin_source": "core model: fundamentals and 22 polls, run judgment -0.09",
+    "margin": 2.33,
+    "margin_lo": -2.08,
+    "margin_hi": 6.74,
+    "margin_source": "core model: fundamentals and 24 polls, run judgment -0.08",
     "margin_label": "inferred",
-    "chance_implied_by_margin": 77.27,
+    "chance_implied_by_margin": 75.07,
     "lock_margin_item": null,
     "other": 1.89,
     "other_source": "poll average of other over 9 polls",
     "other_label": "retrieved",
-    "share_d": 50.34,
-    "share_r": 47.77,
+    "share_d": 50.22,
+    "share_r": 47.89,
     "shares_suppressed": null,
     "third_candidate_max_other": 1.0,
     "ranked_choice": false,
@@ -146,7 +176,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Compare Talarico's county numbers to both O'Rourke 2018 (statewide D-2.6) and Allred 2024 (D-8.5). Tarrant, Williamson, Nueces are the tipping-point style counties; the Valley trio (Hidalgo, Cameron, Webb) measures whether the 2020-2024 Latino shift holds. For the 'first_returns' fields, only Harris has a retrieved 2024 timestamp."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -172,7 +212,7 @@
     "share_d": 48.15,
     "share_r": 49.85,
     "shares_suppressed": null,
-    "third_candidate_max_other": 1.0,
+    "third_candidate_max_other": 2.0,
     "ranked_choice": true,
     "ranked_choice_note": "forecast on the final round; other is the first-round share",
     "runoff_chance": null,
@@ -181,7 +221,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": "2026-11-25",
+      "ranked_choice_result_date": "2026-11-18",
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Expect roughly 75% of the vote by the morning after, first choices only, then a two-week wait for RCV. The 2024 pattern (late ballots moving results toward Democrats and against the RCV repeal) is retrieved, not assumed to repeat."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -194,18 +244,18 @@
     "chance": 34.0,
     "sigma": 6.0,
     "sigma_label": "inferred",
-    "margin": -0.3,
-    "margin_lo": -4.72,
-    "margin_hi": 4.11,
-    "margin_source": "core model: fundamentals and 7 polls, run judgment -0.17",
+    "margin": -0.5,
+    "margin_lo": -4.91,
+    "margin_hi": 3.92,
+    "margin_source": "core model: fundamentals and 8 polls, run judgment -0.12",
     "margin_label": "inferred",
-    "chance_implied_by_margin": 46.48,
+    "chance_implied_by_margin": 44.26,
     "lock_margin_item": null,
-    "other": 3.22,
-    "other_source": "poll average of other over 9 polls",
+    "other": 3.09,
+    "other_source": "poll average of other over 11 polls",
     "other_label": "retrieved",
-    "share_d": 48.24,
-    "share_r": 48.54,
+    "share_d": 48.2,
+    "share_r": 48.7,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
@@ -216,16 +266,26 @@
     "turnout_point": {
       "point": 1410000.0,
       "factor": 1.15,
-      "ratio": 1.51,
+      "ratio": 1.36,
       "capped": true,
       "label": "inferred from retrieved counts"
     },
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": {
       "d": 680000.0,
-      "r": 680000.0
+      "r": 690000.0
     },
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Iowa has both a 2022 governor and 2022 Senate race in the county records (statewide_2022 = governor; senate_2022 also given). No 2024 Senate race."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -255,21 +315,22 @@
     "ranked_choice": false,
     "ranked_choice_note": null,
     "runoff_chance": null,
-    "turnout_2022": 4500400,
+    "turnout_2022": null,
     "turnout_band": null,
-    "turnout_point": {
-      "point": 5180000.0,
-      "factor": 1.15,
-      "ratio": 1.65,
-      "capped": true,
-      "label": "inferred from retrieved counts"
-    },
+    "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
-    "votes": {
-      "d": 2640000.0,
-      "r": 2350000.0
-    },
-    "night": null
+    "votes": null,
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Wayne is listed last by design: it reports late and skews the statewide total until its absentees land. Saginaw is the single best early read."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -304,7 +365,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris-minus-Trump margins. 2022 governor county figures come from OpenElections precinct aggregation (all counties except Gwinnett); Senate figures from the same file match Wikipedia exactly, which validates the file."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -324,11 +395,11 @@
     "margin_label": "inferred",
     "chance_implied_by_margin": 99.69,
     "lock_margin_item": null,
-    "other": 3.67,
-    "other_source": "poll average of other over 3 polls",
+    "other": 3.25,
+    "other_source": "poll average of other over 4 polls",
     "other_label": "retrieved",
-    "share_d": 52.87,
-    "share_r": 43.46,
+    "share_d": 53.08,
+    "share_r": 43.67,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
@@ -339,7 +410,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris-minus-Trump margins. NH county totals aggregate town returns; Wikipedia presidential county tables used directly. 2024 governor county shares use OpenElections town data with Libertarian and undervotes in the denominator, so they run ~1 pt low for both candidates versus valid-vote shares."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -374,7 +455,7 @@
     "turnout_point": {
       "point": 1980000.0,
       "factor": 1.15,
-      "ratio": 1.87,
+      "ratio": 1.86,
       "capped": true,
       "label": "inferred from retrieved counts"
     },
@@ -383,7 +464,17 @@
       "d": 920000.0,
       "r": 990000.0
     },
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris-minus-Trump margins. SC-04 (Greenville/Spartanburg) and SC-06 (Richland/Charleston-area) reads: Greenville R+22.2, Spartanburg R+33.6, Richland D+34.6 in 2024."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -418,7 +509,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris-minus-Trump margins. Wikipedia FL tables list Trump first; margins here are sign-flipped to D-minus-R. 2024 Senate county percentages are to one decimal as published."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -431,18 +532,18 @@
     "chance": 40.0,
     "sigma": 6.0,
     "sigma_label": "inferred",
-    "margin": 0.76,
-    "margin_lo": -3.65,
-    "margin_hi": 5.18,
-    "margin_source": "core model: fundamentals and 5 polls, run judgment -0.25",
+    "margin": 1.47,
+    "margin_lo": -2.94,
+    "margin_hi": 5.89,
+    "margin_source": "core model: fundamentals and 6 polls, run judgment -0.31",
     "margin_label": "inferred",
-    "chance_implied_by_margin": 58.77,
+    "chance_implied_by_margin": 66.55,
     "lock_margin_item": null,
-    "other": 2.0,
-    "other_source": "poll average of other over 5 polls",
+    "other": 2.71,
+    "other_source": "poll average of other over 7 polls",
     "other_label": "retrieved",
     "share_d": 49.38,
-    "share_r": 48.62,
+    "share_r": 47.91,
     "shares_suppressed": null,
     "third_candidate_max_other": 3.0,
     "ranked_choice": false,
@@ -453,7 +554,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris carried Johnson, Shawnee, Douglas, Wyandotte and Riley in 2020 and 2024 (AP). Kansas has no 2024 Senate race."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -466,18 +577,18 @@
     "chance": 93.0,
     "sigma": 6.0,
     "sigma_label": "inferred",
-    "margin": 7.75,
-    "margin_lo": 3.34,
-    "margin_hi": 12.16,
-    "margin_source": "core model: fundamentals and 6 polls, run judgment -0.54",
+    "margin": 7.95,
+    "margin_lo": 3.54,
+    "margin_hi": 12.37,
+    "margin_source": "core model: fundamentals and 7 polls, run judgment -0.47",
     "margin_label": "inferred",
-    "chance_implied_by_margin": 98.78,
+    "chance_implied_by_margin": 98.95,
     "lock_margin_item": null,
-    "other": 2.57,
-    "other_source": "poll average of other over 7 polls",
+    "other": 2.56,
+    "other_source": "poll average of other over 9 polls",
     "other_label": "retrieved",
-    "share_d": 52.59,
-    "share_r": 44.84,
+    "share_d": 52.7,
+    "share_r": 44.74,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
@@ -488,7 +599,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Hennepin is not on the list but reports complete in its first update per AP; it is the fastest big read. Statewide 2024: Harris +4.3 (Trump 46.7%)."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -523,7 +644,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris-minus-Trump margins. 2022 governor county figures come from OpenElections precinct aggregation (all counties except Gwinnett); Senate figures from the same file match Wikipedia exactly, which validates the file."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -558,7 +689,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "AP: Apache, Coconino, Pima and Santa Cruz have gone Democratic in every statewide race since 2012. Arizona was at 66% at 6:30 am the morning after in 2024; the late-early count drives the multi-day finish."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -593,7 +734,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Nothing is posted until every in-line voter has voted; in 2024 that meant no Nevada numbers until 12:54 am ET. 2022 Senate (senate_2022) and governor (statewide_2022) both provided."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -628,7 +779,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Both 2022 governor (statewide_2022) and 2022 Senate (senate_2022) are given. Milwaukee city absentees are the last big batch; do not read a Republican lead before they land."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -648,31 +809,32 @@
     "margin_label": "inferred",
     "chance_implied_by_margin": 96.45,
     "lock_margin_item": null,
-    "other": 4.91,
+    "other": 5.18,
     "other_source": "poll average of other over 11 polls",
     "other_label": "retrieved",
-    "share_d": 51.76,
-    "share_r": 43.33,
+    "share_d": 51.62,
+    "share_r": 43.19,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
     "ranked_choice_note": null,
     "runoff_chance": null,
-    "turnout_2022": 4500400,
+    "turnout_2022": null,
     "turnout_band": null,
-    "turnout_point": {
-      "point": 5180000.0,
-      "factor": 1.15,
-      "ratio": 1.65,
-      "capped": true,
-      "label": "inferred from retrieved counts"
-    },
+    "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
-    "votes": {
-      "d": 2680000.0,
-      "r": 2240000.0
-    },
-    "night": null
+    "votes": null,
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Wayne is listed last by design: it reports late and skews the statewide total until its absentees land. Saginaw is the single best early read."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -707,7 +869,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Brown 2024 county margins are the comparison baseline for Tuesday. Brown lost statewide by 3.62; counties where he beat Harris most: Lake (+9.6), Montgomery (+6.7), Lorain (+10.5), Mahoning (+9.2)."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -742,7 +914,7 @@
     "turnout_point": {
       "point": 1410000.0,
       "factor": 1.15,
-      "ratio": 1.51,
+      "ratio": 1.36,
       "capped": true,
       "label": "inferred from retrieved counts"
     },
@@ -751,7 +923,17 @@
       "d": 730000.0,
       "r": 650000.0
     },
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Iowa has both a 2022 governor and 2022 Senate race in the county records (statewide_2022 = governor; senate_2022 also given). No 2024 Senate race."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -786,7 +968,7 @@
     "turnout_point": {
       "point": 1980000.0,
       "factor": 1.15,
-      "ratio": 1.87,
+      "ratio": 1.86,
       "capped": true,
       "label": "inferred from retrieved counts"
     },
@@ -795,7 +977,17 @@
       "d": 870000.0,
       "r": 1050000.0
     },
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris-minus-Trump margins. SC-04 (Greenville/Spartanburg) and SC-06 (Richland/Charleston-area) reads: Greenville R+22.2, Spartanburg R+33.6, Richland D+34.6 in 2024."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -808,18 +1000,18 @@
     "chance": 30.0,
     "sigma": 7.0,
     "sigma_label": "inferred",
-    "margin": -1.53,
-    "margin_lo": -7.51,
-    "margin_hi": 4.45,
-    "margin_source": "core model: fundamentals and 5 polls, run judgment -0.16",
+    "margin": -1.16,
+    "margin_lo": -7.14,
+    "margin_hi": 4.82,
+    "margin_source": "core model: fundamentals and 6 polls, run judgment -0.18",
     "margin_label": "inferred",
-    "chance_implied_by_margin": 37.17,
+    "chance_implied_by_margin": 40.22,
     "lock_margin_item": null,
     "other": 2.0,
-    "other_source": "poll average of other over 4 polls",
+    "other_source": "poll average of other over 6 polls",
     "other_label": "retrieved",
-    "share_d": 48.23,
-    "share_r": 49.77,
+    "share_d": 48.42,
+    "share_r": 49.58,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
@@ -830,7 +1022,17 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris carried Johnson, Shawnee, Douglas, Wyandotte and Riley in 2020 and 2024 (AP). Kansas has no 2024 Senate race."
+    }
   },
   {
     "as_of": "2026-11-02",
@@ -850,11 +1052,11 @@
     "margin_label": "inferred",
     "chance_implied_by_margin": 21.44,
     "lock_margin_item": null,
-    "other": 2.6,
-    "other_source": "poll average of other over 5 polls",
+    "other": 2.67,
+    "other_source": "poll average of other over 6 polls",
     "other_label": "retrieved",
-    "share_d": 46.86,
-    "share_r": 50.55,
+    "share_d": 46.82,
+    "share_r": 50.51,
     "shares_suppressed": null,
     "third_candidate_max_other": 0.0,
     "ranked_choice": false,
@@ -865,6 +1067,16 @@
     "turnout_point": null,
     "turnout_rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
     "votes": null,
-    "night": null
+    "night": {
+      "midnight_margin": null,
+      "pct_counted_midnight": null,
+      "near_final_date": null,
+      "certification": null,
+      "ranked_choice_result_date": null,
+      "modes_after_midnight": [],
+      "shift_known": false,
+      "label": "retrieved",
+      "note": "Harris-minus-Trump margins. NH county totals aggregate town returns; Wikipedia presidential county tables used directly. 2024 governor county shares use OpenElections town data with Libertarian and undervotes in the denominator, so they run ~1 pt low for both candidates versus valid-vote shares."
+    }
   }
 ]

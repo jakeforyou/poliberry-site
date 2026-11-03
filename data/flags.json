@@ -2425,15 +2425,17 @@
     "item": "Governor · NH",
     "kinds": [
       "market",
-      "poll"
+      "poll",
+      "alert"
     ],
     "triggers": [
       "markets moved +7.3 points since the last pull (Polymarket 7.6 to 15.4; Kalshi 7.7 to 14.5%)",
-      "University of New Hampshire (LV, through 2026-10-31) shows D+0, 10 points from the prior average of D-10 (4 polls)"
+      "University of New Hampshire (LV, through 2026-10-31) shows D+0, 10 points from the prior average of D-10 (5 polls)",
+      "moved -3.0 points since the day's open by 17:05"
     ],
-    "weight": 17.3,
+    "weight": 20.1,
     "source_url": "https://polymarket.com/event/new-hampshire-governor-winner-2026",
-    "kind": "market",
+    "kind": "alert",
     "why": {
       "events": [],
       "events_by_kind": {},
@@ -2452,8 +2454,8 @@
         }
       ],
       "poll_average": {
-        "margin_d": -8.0,
-        "n": 5,
+        "margin_d": -8.17,
+        "n": 6,
         "newest": "2026-10-31"
       },
       "market_path": [
@@ -2500,12 +2502,72 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.1497
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.1365
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.1358
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.1358
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.1358
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.1358
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.135
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.135
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.1345
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.1345
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.1345
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.1345
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.1345
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.139
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.1392
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.1392
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +7.3 points since the last pull (Polymarket 7.6 to 15.4; Kalshi 7.7 to 14.5%); University of New Hampshire (LV, through 2026-10-31) shows D+0, 10 points from the prior average of D-10 (4 polls). News in the last 48 hours: 0 articles. Polls just in: University of New Hampshire D+0 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +7.3 points since the last pull (Polymarket 7.6 to 15.4; Kalshi 7.7 to 14.5%); University of New Hampshire (LV, through 2026-10-31) shows D+0, 10 points from the prior average of D-10 (5 polls); moved -3.0 points since the day's open by 17:05. News in the last 48 hours: 0 articles. Polls just in: University of New Hampshire D+0 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2521,7 +2583,7 @@
     "triggers": [
       "Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip)",
       "markets moved +4.0 points since the last pull (Polymarket 70.5 to 74.5; Kalshi 68.5 to 72.5%)",
-      "University of New Hampshire (LV, through 2026-10-31) shows D+9, 6 points from the prior average of D+3 (9 polls)"
+      "University of New Hampshire (LV, through 2026-10-31) shows D+9, 6 points from the prior average of D+3 (10 polls)"
     ],
     "weight": 12.6,
     "source_url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model",
@@ -2530,6 +2592,18 @@
       "events": [],
       "events_by_kind": {},
       "polls": [
+        {
+          "pollster": "Survey 160",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 1323,
+          "d": 50.0,
+          "r": 47.0,
+          "margin_d": 3.0,
+          "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
+        },
         {
           "pollster": "New York Times / Siena University",
           "sponsor": null,
@@ -2556,8 +2630,8 @@
         }
       ],
       "poll_average": {
-        "margin_d": 4.0,
-        "n": 10,
+        "margin_d": 3.91,
+        "n": 11,
         "newest": "2026-11-01"
       },
       "market_path": [
@@ -2604,12 +2678,72 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.735
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.735
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip); markets moved +4.0 points since the last pull (Polymarket 70.5 to 74.5; Kalshi 68.5 to 72.5%); University of New Hampshire (LV, through 2026-10-31) shows D+9, 6 points from the prior average of D+3 (9 polls). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+6 (LV); University of New Hampshire D+9 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: Silver Bulletin changed its rating, Lean D (flip) to Likely D (flip); markets moved +4.0 points since the last pull (Polymarket 70.5 to 74.5; Kalshi 68.5 to 72.5%); University of New Hampshire (LV, through 2026-10-31) shows D+9, 6 points from the prior average of D+3 (10 polls). News in the last 48 hours: 0 articles. Polls just in: Survey 160 D+3 (LV); New York Times / Siena University D+6 (LV); University of New Hampshire D+9 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2716,6 +2850,66 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.785
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.78
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.78
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.78
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.78
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.79
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.79
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.79
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.785
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.79
         ]
       ],
       "events_window_hours": 48,
@@ -2740,8 +2934,30 @@
     "kind": "market",
     "why": {
       "events": [],
-      "events_by_kind": {},
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 0
+      },
       "polls": [
+        {
+          "pollster": "Survey 160",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 1267,
+          "d": 50.0,
+          "r": 44.0,
+          "margin_d": 6.0,
+          "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
+        },
         {
           "pollster": "New York Times / Siena University",
           "sponsor": null,
@@ -2756,8 +2972,8 @@
         }
       ],
       "poll_average": {
-        "margin_d": 2.86,
-        "n": 7,
+        "margin_d": 3.25,
+        "n": 8,
         "newest": "2026-11-01"
       },
       "market_path": [
@@ -2804,12 +3020,72 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.62
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.625
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.625
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.625
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.625
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.625
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.625
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.62
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.62
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +9.5 points since the last pull (Polymarket 52.5 to 61.5; Kalshi 52.5 to 62.5%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +9.5 points since the last pull (Polymarket 52.5 to 61.5; Kalshi 52.5 to 62.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: Survey 160 D+6 (LV); New York Times / Siena University D+5 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -2940,6 +3216,66 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.755
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.75
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.75
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.745
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.745
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.745
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.735
         ]
       ],
       "events_window_hours": 48,
@@ -2957,7 +3293,7 @@
       "poll"
     ],
     "triggers": [
-      "University of New Hampshire (LV, through 2026-10-31) shows D+12, 6 points from the prior average of D+6 (3 polls)"
+      "University of New Hampshire (LV, through 2026-10-31) shows D+12, 6 points from the prior average of D+6 (4 polls)"
     ],
     "weight": 6.0,
     "source_url": "https://scholars.unh.edu/survey_center_polls/1011/",
@@ -2980,8 +3316,8 @@
         }
       ],
       "poll_average": {
-        "margin_d": 7.5,
-        "n": 4,
+        "margin_d": 7.2,
+        "n": 5,
         "newest": "2026-10-31"
       },
       "market_path": [
@@ -3028,12 +3364,72 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.94
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.9417
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.9423
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.9423
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.9423
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.9423
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.9423
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.9423
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.9487
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.9487
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.9487
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.9487
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.9487
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.9497
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.9497
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.9497
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: University of New Hampshire (LV, through 2026-10-31) shows D+12, 6 points from the prior average of D+6 (3 polls). News in the last 48 hours: 0 articles. Polls just in: University of New Hampshire D+12 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: University of New Hampshire (LV, through 2026-10-31) shows D+12, 6 points from the prior average of D+6 (4 polls). News in the last 48 hours: 0 articles. Polls just in: University of New Hampshire D+12 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -3075,11 +3471,35 @@
           "r": 47.0,
           "margin_d": 1.0,
           "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html"
+        },
+        {
+          "pollster": "Rasmussen Reports",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-10-31",
+          "population": "LV",
+          "sample": 901,
+          "d": 46.0,
+          "r": 47.0,
+          "margin_d": -1.0,
+          "source_url": "https://www.rasmussenreports.com/public_content/politics/public_surveys/toplines_iowa_senate_october_27_31_2026"
+        },
+        {
+          "pollster": "GrayHouse",
+          "sponsor": null,
+          "start_date": "2026-10-28",
+          "end_date": "2026-10-31",
+          "population": "LV",
+          "sample": 601,
+          "d": 46.0,
+          "r": 48.0,
+          "margin_d": -2.0,
+          "source_url": "https://www.grayhouse.com/post/grayhouse-poll-hinson-leads-in-iowa-by-2"
         }
       ],
       "poll_average": {
-        "margin_d": -0.5,
-        "n": 10,
+        "margin_d": -0.67,
+        "n": 12,
         "newest": "2026-11-01"
       },
       "market_path": [
@@ -3126,12 +3546,72 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.485
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.5
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.505
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.505
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +5.0 points since the last pull (Polymarket 42.5 to 47.5; Kalshi 44.5 to 49.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+1 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +5.0 points since the last pull (Polymarket 42.5 to 47.5; Kalshi 44.5 to 49.5%). News in the last 48 hours: 0 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). Polls just in: New York Times / Siena University D+1 (LV); Rasmussen Reports D-1 (LV); GrayHouse D-2 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -3153,6 +3633,18 @@
       "events_by_kind": {},
       "polls": [
         {
+          "pollster": "Survey 160",
+          "sponsor": null,
+          "start_date": "2026-10-27",
+          "end_date": "2026-11-01",
+          "population": "LV",
+          "sample": 1267,
+          "d": 49.0,
+          "r": 48.0,
+          "margin_d": 1.0,
+          "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
+        },
+        {
           "pollster": "New York Times / Siena University",
           "sponsor": null,
           "start_date": "2026-10-27",
@@ -3166,8 +3658,8 @@
         }
       ],
       "poll_average": {
-        "margin_d": -0.67,
-        "n": 6,
+        "margin_d": -0.43,
+        "n": 7,
         "newest": "2026-11-01"
       },
       "market_path": [
@@ -3214,112 +3706,72 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.31
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.31
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.305
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.305
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
-    "reading": "Flagged: markets moved +5.0 points since the last pull (Polymarket 26.5 to 30.5; Kalshi 25.5 to 31.5%). News in the last 48 hours: 0 articles. Polls just in: New York Times / Siena University D+1 (LV). No reading yet. The morning brief explains every flagged item.",
-    "needs_why": true,
-    "label": "retrieved"
-  },
-  {
-    "as_of": "2026-11-02",
-    "item_id": "gov_mi",
-    "item": "Governor · MI",
-    "kinds": [
-      "poll"
-    ],
-    "triggers": [
-      "New York Times / Siena University (LV, through 2026-11-01) shows D+13, 5 points from the prior average of D+8 (9 polls)"
-    ],
-    "weight": 5.0,
-    "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html",
-    "kind": "poll",
-    "why": {
-      "events": [],
-      "events_by_kind": {},
-      "polls": [
-        {
-          "pollster": "Research Co.",
-          "sponsor": null,
-          "start_date": "2026-10-30",
-          "end_date": "2026-11-01",
-          "population": "LV",
-          "sample": 450,
-          "d": 53.0,
-          "r": 41.0,
-          "margin_d": 12.0,
-          "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
-        },
-        {
-          "pollster": "New York Times / Siena University",
-          "sponsor": null,
-          "start_date": "2026-10-23",
-          "end_date": "2026-11-01",
-          "population": "LV",
-          "sample": 1011,
-          "d": 52.0,
-          "r": 39.0,
-          "margin_d": 13.0,
-          "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
-        }
-      ],
-      "poll_average": {
-        "margin_d": 8.5,
-        "n": 10,
-        "newest": "2026-11-01"
-      },
-      "market_path": [
-        [
-          "2026-11-02T00:13:08-05:00",
-          0.9435
-        ],
-        [
-          "2026-11-02T01:00:01-05:00",
-          0.9443
-        ],
-        [
-          "2026-11-02T02:00:00-05:00",
-          0.9427
-        ],
-        [
-          "2026-11-02T03:00:00-05:00",
-          0.9432
-        ],
-        [
-          "2026-11-02T04:00:00-05:00",
-          0.9432
-        ],
-        [
-          "2026-11-02T05:12:43-05:00",
-          0.943
-        ],
-        [
-          "2026-11-02T06:00:00-05:00",
-          0.943
-        ],
-        [
-          "2026-11-02T07:00:00-05:00",
-          0.9425
-        ],
-        [
-          "2026-11-02T08:00:00-05:00",
-          0.9425
-        ],
-        [
-          "2026-11-02T09:00:00-05:00",
-          0.9445
-        ],
-        [
-          "2026-11-02T10:00:00-05:00",
-          0.9447
-        ]
-      ],
-      "events_window_hours": 48,
-      "early_vote": []
-    },
-    "reading": "Flagged: New York Times / Siena University (LV, through 2026-11-01) shows D+13, 5 points from the prior average of D+8 (9 polls). News in the last 48 hours: 0 articles. Polls just in: Research Co. D+12 (LV); New York Times / Siena University D+13 (LV). No reading yet. The morning brief explains every flagged item.",
+    "reading": "Flagged: markets moved +5.0 points since the last pull (Polymarket 26.5 to 30.5; Kalshi 25.5 to 31.5%). News in the last 48 hours: 0 articles. Polls just in: Survey 160 D+1 (LV); New York Times / Siena University D+1 (LV). No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -3389,12 +3841,203 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.31
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.315
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.325
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.325
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.325
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.32
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.32
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
     "reading": "Flagged: markets moved +4.5 points since the last pull (Polymarket 25.5 to 31.5; Kalshi 27.5 to 30.5%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-02",
+    "item_id": "senate_dem_control",
+    "item": "Senate control",
+    "kinds": [
+      "alert"
+    ],
+    "triggers": [
+      "moved +3.5 points since the day's open by 17:05"
+    ],
+    "weight": 3.5,
+    "source_url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+    "kind": "alert",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [
+        [
+          "2026-11-02T00:13:08-05:00",
+          0.72
+        ],
+        [
+          "2026-11-02T01:00:01-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T02:00:00-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T03:00:00-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T04:00:00-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T05:12:43-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T06:00:00-05:00",
+          0.725
+        ],
+        [
+          "2026-11-02T07:00:00-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T08:00:00-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T09:00:00-05:00",
+          0.73
+        ],
+        [
+          "2026-11-02T10:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.735
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.74
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.75
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.76
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.765
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.76
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.755
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.755
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "reading": "Flagged: moved +3.5 points since the day's open by 17:05. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   },
@@ -3477,12 +4120,118 @@
         [
           "2026-11-02T10:00:00-05:00",
           0.84
+        ],
+        [
+          "2026-11-02T11:00:00-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T12:00:00-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T12:41:31-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T13:00:00-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T13:09:55-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T13:54:23-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T14:00:00-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T15:00:00-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T15:37:15-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T16:00:00-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T16:23:32-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T16:39:50-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T16:54:24-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T17:00:00-05:00",
+          0.845
+        ],
+        [
+          "2026-11-02T17:05:15-05:00",
+          0.845
         ]
       ],
       "events_window_hours": 48,
       "early_vote": []
     },
     "reading": "Flagged: Research Co. (LV, through 2026-11-01) shows D+5 in a race with 2 other polls in 21 days. News in the last 48 hours: 0 articles. Polls just in: Research Co. D+5 (LV). No reading yet. The morning brief explains every flagged item.",
+    "needs_why": true,
+    "label": "retrieved"
+  },
+  {
+    "as_of": "2026-11-02",
+    "item_id": "ev_dc",
+    "item": "Early vote · DC",
+    "kinds": [
+      "ballots"
+    ],
+    "triggers": [
+      "DC passed half its 2022 turnout: 111,150 ballots through Nov 2, against 205,774 votes cast in all of 2022"
+    ],
+    "weight": 3.0,
+    "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+    "kind": "ballots",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": [
+        {
+          "state": "DC",
+          "date": "2026-11-02",
+          "days_before": 1,
+          "total": 111150,
+          "gap": null,
+          "gap_2022": null,
+          "swing": null,
+          "r_vs_2022": null,
+          "r_share": null,
+          "r_share_2022": null,
+          "prev_date": "2026-10-31",
+          "total_prev": 88113,
+          "swing_prev": null,
+          "source_url": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
+          "kind": "passed_half_2022_turnout",
+          "line": 102887,
+          "turnout_2022_total": 205774
+        }
+      ]
+    },
+    "reading": "Flagged: DC passed half its 2022 turnout: 111,150 ballots through Nov 2, against 205,774 votes cast in all of 2022. News in the last 48 hours: 0 articles. Ballots in DC: 111,150 through Nov 2. No reading yet. The morning brief explains every flagged item.",
     "needs_why": true,
     "label": "retrieved"
   }

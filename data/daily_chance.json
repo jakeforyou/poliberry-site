@@ -25083,7 +25083,7 @@
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 3,
+    "n_polls": 4,
     "polls": [
       {
         "pollster": "Beacon Research/ Shaw & Co. Research",
@@ -25093,7 +25093,7 @@
         "moe": 2.5,
         "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf",
         "error": 3.242,
-        "weight": 0.3218
+        "weight": 0.278
       },
       {
         "pollster": "University of New Hampshire",
@@ -25103,7 +25103,7 @@
         "moe": 2.4,
         "source_url": "https://scholars.unh.edu/survey_center_polls/1013/",
         "error": 3.162,
-        "weight": 0.3382
+        "weight": 0.2923
       },
       {
         "pollster": "New York Times / Siena University",
@@ -25113,7 +25113,17 @@
         "moe": 4.7,
         "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-me-poll-toplines.html",
         "error": 5.196,
-        "weight": 0.1253
+        "weight": 0.1082
+      },
+      {
+        "pollster": "Survey 160",
+        "end_date": "2026-11-01",
+        "population": "LV",
+        "margin_d": 3.0,
+        "moe": 4.1,
+        "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states",
+        "error": 4.637,
+        "weight": 0.1359
       }
     ],
     "seen": [
@@ -25146,23 +25156,23 @@
       }
     ],
     "posterior": {
-      "mean": 4.4714,
-      "sd_now": 1.839,
-      "sd_total": 4.8613,
-      "chance": 82.12,
-      "margin": 4.47,
-      "margin_lo": -1.76,
-      "margin_hi": 10.7,
-      "prior_weight": 0.2147
+      "mean": 4.2715,
+      "sd_now": 1.7095,
+      "sd_total": 4.8138,
+      "chance": 81.26,
+      "margin": 4.27,
+      "margin_lo": -1.9,
+      "margin_hi": 10.44,
+      "prior_weight": 0.1855
     },
-    "chance": 82.12,
-    "margin": 4.47,
-    "margin_lo": -1.76,
-    "margin_hi": 10.7,
+    "chance": 81.26,
+    "margin": 4.27,
+    "margin_lo": -1.9,
+    "margin_hi": 10.44,
     "run_chance": 70.0,
     "lock_chance": 55.0,
-    "d_run": 12.12,
-    "d_lock": 27.12,
+    "d_run": 11.26,
+    "d_lock": 26.26,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -25206,6 +25216,15 @@
         "moe": 4.7,
         "source_url": "https://www.highpoint.edu/blog/2026/10/hpu-yougov-poll-north-carolina-likely-voters-weigh-in-on-u-s-senate-race-and-more/",
         "token": "Point"
+      },
+      {
+        "pollster": "East Carolina University",
+        "end_date": "2026-10-29",
+        "population": "LV",
+        "margin_d": 9.0,
+        "moe": 3.5,
+        "source_url": "https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-cooper-leads-whatley-by-9-points-as-election-day-nears",
+        "token": "Carolina"
       },
       {
         "pollster": "YouGov",
@@ -25574,6 +25593,15 @@
         "token": "ActiVote"
       },
       {
+        "pollster": "Quantus Insights",
+        "end_date": "2026-10-28",
+        "population": "LV",
+        "margin_d": -1.0,
+        "moe": 3.2,
+        "source_url": "https://quantusinsights.org/polling/f/texas-survey-paxton-up-one-abbott-ahead-by-five",
+        "token": "Quantus"
+      },
+      {
         "pollster": "YouGov",
         "end_date": "2026-10-29",
         "population": "LV",
@@ -25694,7 +25722,7 @@
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 2,
+    "n_polls": 3,
     "polls": [
       {
         "pollster": "GS Strategy Group/ New River Strategies",
@@ -25704,7 +25732,17 @@
         "moe": null,
         "source_url": "https://www.cookpolitical.com/analysis/survey-research/battleground-district-project/senate-battleground-district-project-october",
         "error": 4.545,
-        "weight": 0.325
+        "weight": 0.2453
+      },
+      {
+        "pollster": "GrayHouse",
+        "end_date": "2026-10-31",
+        "population": "LV",
+        "margin_d": -2.0,
+        "moe": 4.0,
+        "source_url": "https://www.grayhouse.com/post/grayhouse-poll-hinson-leads-in-iowa-by-2",
+        "error": 4.545,
+        "weight": 0.2453
       },
       {
         "pollster": "New York Times / Siena University",
@@ -25714,7 +25752,7 @@
         "moe": 4.7,
         "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html",
         "error": 5.196,
-        "weight": 0.2487
+        "weight": 0.1877
       }
     ],
     "seen": [
@@ -25747,23 +25785,23 @@
       }
     ],
     "posterior": {
-      "mean": -0.1563,
-      "sd_now": 2.5911,
-      "sd_total": 5.1927,
-      "chance": 48.8,
-      "margin": -0.16,
-      "margin_lo": -6.81,
-      "margin_hi": 6.5,
-      "prior_weight": 0.4263
+      "mean": -0.6085,
+      "sd_now": 2.251,
+      "sd_total": 5.0316,
+      "chance": 45.19,
+      "margin": -0.61,
+      "margin_lo": -7.06,
+      "margin_hi": 5.84,
+      "prior_weight": 0.3217
     },
-    "chance": 48.8,
-    "margin": -0.16,
-    "margin_lo": -6.81,
-    "margin_hi": 6.5,
+    "chance": 45.19,
+    "margin": -0.61,
+    "margin_lo": -7.06,
+    "margin_hi": 5.84,
     "run_chance": 34.0,
     "lock_chance": 40.0,
-    "d_run": 14.8,
-    "d_lock": 8.8,
+    "d_run": 11.19,
+    "d_lock": 5.19,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -25929,7 +25967,7 @@
     ],
     "seen": [
       {
-        "pollster": "University of Georgia School of Public and International Affairs",
+        "pollster": "University of Georgia",
         "end_date": "2026-10-15",
         "population": "LV",
         "margin_d": 8.0,
@@ -25992,7 +26030,7 @@
     ],
     "seen": [
       {
-        "pollster": "University of Georgia School of Public and International Affairs",
+        "pollster": "University of Georgia",
         "end_date": "2026-10-15",
         "population": "LV",
         "margin_d": 8.0,
@@ -26394,7 +26432,7 @@
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 1,
+    "n_polls": 2,
     "polls": [
       {
         "pollster": "New York Times / Siena University",
@@ -26404,7 +26442,17 @@
         "moe": 4.4,
         "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html",
         "error": 4.915,
-        "weight": 0.3947
+        "weight": 0.2555
+      },
+      {
+        "pollster": "Survey 160",
+        "end_date": "2026-11-01",
+        "population": "LV",
+        "margin_d": 6.0,
+        "moe": 3.6,
+        "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states",
+        "error": 4.183,
+        "weight": 0.3527
       }
     ],
     "seen": [
@@ -26446,23 +26494,23 @@
       }
     ],
     "posterior": {
-      "mean": 1.0531,
-      "sd_now": 3.0877,
-      "sd_total": 5.4575,
-      "chance": 57.65,
-      "margin": 1.05,
-      "margin_lo": -5.94,
-      "margin_hi": 8.05,
-      "prior_weight": 0.6053
+      "mean": 2.7979,
+      "sd_now": 2.4842,
+      "sd_total": 5.1402,
+      "chance": 70.69,
+      "margin": 2.8,
+      "margin_lo": -3.79,
+      "margin_hi": 9.39,
+      "prior_weight": 0.3918
     },
-    "chance": 57.65,
-    "margin": 1.05,
-    "margin_lo": -5.94,
-    "margin_hi": 8.05,
+    "chance": 70.69,
+    "margin": 2.8,
+    "margin_lo": -3.79,
+    "margin_hi": 9.39,
     "run_chance": 40.0,
     "lock_chance": 33.0,
-    "d_run": 17.65,
-    "d_lock": 24.65,
+    "d_run": 30.69,
+    "d_lock": 37.69,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -26484,7 +26532,7 @@
       "s": 4.5,
       "sigma": 6.0
     },
-    "n_polls": 1,
+    "n_polls": 2,
     "polls": [
       {
         "pollster": "Research Co.",
@@ -26494,7 +26542,17 @@
         "moe": 4.6,
         "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/",
         "error": 5.102,
-        "weight": 0.377
+        "weight": 0.2452
+      },
+      {
+        "pollster": "Survey 160",
+        "end_date": "2026-11-01",
+        "population": "LV",
+        "margin_d": 9.0,
+        "moe": 3.7,
+        "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states",
+        "error": 4.273,
+        "weight": 0.3496
       }
     ],
     "seen": [
@@ -26527,23 +26585,23 @@
       }
     ],
     "posterior": {
-      "mean": 7.4016,
-      "sd_now": 3.1325,
-      "sd_total": 5.4829,
-      "chance": 91.15,
-      "margin": 7.4,
-      "margin_lo": 0.37,
-      "margin_hi": 14.43,
-      "prior_weight": 0.623
+      "mean": 7.9603,
+      "sd_now": 2.5264,
+      "sd_total": 5.1607,
+      "chance": 93.85,
+      "margin": 7.96,
+      "margin_lo": 1.35,
+      "margin_hi": 14.57,
+      "prior_weight": 0.4052
     },
-    "chance": 91.15,
-    "margin": 7.4,
-    "margin_lo": 0.37,
-    "margin_hi": 14.43,
+    "chance": 93.85,
+    "margin": 7.96,
+    "margin_lo": 1.35,
+    "margin_hi": 14.57,
     "run_chance": 93.0,
     "lock_chance": 86.0,
-    "d_run": -1.85,
-    "d_lock": 5.15,
+    "d_run": 0.85,
+    "d_lock": 7.85,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
@@ -27346,7 +27404,7 @@
       "s": 5.25,
       "sigma": 7.0
     },
-    "n_polls": 4,
+    "n_polls": 5,
     "polls": [
       {
         "pollster": "SSRS",
@@ -27356,7 +27414,7 @@
         "moe": 4.5,
         "source_url": "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/",
         "error": 5.008,
-        "weight": 0.1675
+        "weight": 0.1351
       },
       {
         "pollster": "The Washington Post / SSPG",
@@ -27366,7 +27424,7 @@
         "moe": 3.9,
         "source_url": "https://www.washingtonpost.com/documents/91bad124-1d3a-437b-b1ba-07af61cb729d.pdf",
         "error": 4.454,
-        "weight": 0.2118
+        "weight": 0.1708
       },
       {
         "pollster": "Emerson College",
@@ -27376,7 +27434,7 @@
         "moe": 3.5,
         "source_url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/",
         "error": 4.093,
-        "weight": 0.2508
+        "weight": 0.2022
       },
       {
         "pollster": "New York Times / Siena University",
@@ -27386,7 +27444,17 @@
         "moe": 4.4,
         "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html",
         "error": 4.915,
-        "weight": 0.1739
+        "weight": 0.1402
+      },
+      {
+        "pollster": "Survey 160",
+        "end_date": "2026-11-01",
+        "population": "LV",
+        "margin_d": 1.0,
+        "moe": 3.6,
+        "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states",
+        "error": 4.183,
+        "weight": 0.1936
       }
     ],
     "seen": [
@@ -27401,23 +27469,23 @@
       }
     ],
     "posterior": {
-      "mean": -1.3663,
-      "sd_now": 2.0497,
-      "sd_total": 5.6359,
-      "chance": 40.42,
-      "margin": -1.37,
-      "margin_lo": -8.59,
-      "margin_hi": 5.86,
-      "prior_weight": 0.196
+      "mean": -0.9082,
+      "sd_now": 1.8406,
+      "sd_total": 5.5633,
+      "chance": 43.52,
+      "margin": -0.91,
+      "margin_lo": -8.04,
+      "margin_hi": 6.22,
+      "prior_weight": 0.158
     },
-    "chance": 40.42,
-    "margin": -1.37,
-    "margin_lo": -8.59,
-    "margin_hi": 5.86,
+    "chance": 43.52,
+    "margin": -0.91,
+    "margin_lo": -8.04,
+    "margin_hi": 6.22,
     "run_chance": 30.0,
     "lock_chance": 27.0,
-    "d_run": 10.42,
-    "d_lock": 13.42,
+    "d_run": 13.52,
+    "d_lock": 16.52,
     "sigma_label": "inferred",
     "label": "inferred",
     "rule": "run prior, polls the run did not see"
