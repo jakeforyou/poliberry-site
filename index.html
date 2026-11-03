@@ -1301,6 +1301,15 @@ button.nt-look:hover b, button.nt-look:focus-visible b { text-decoration: underl
 .nt-toast b { font-size: .95rem; line-height: 1.35; } .nt-toast span { font-size: 12.5px; color: var(--color-fg-muted); }
 @media (prefers-reduced-motion: no-preference) { .nt-toast { animation: nt-toast-in .35s ease-out; } @keyframes nt-toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } } }
 .nt-rcg { display: grid; gap: .5rem; }
+.nt-rc-filters { display: grid; gap: .3rem; padding: .55rem .7rem; border-radius: 10px; background: var(--nt-wash); }
+.nt-rc-fh { display: flex; align-items: center; gap: .6rem; font-size: 13px; }
+.nt-rc-clear { all: unset; cursor: pointer; font-size: 12.5px; text-decoration: underline; margin-left: auto; }
+.nt-rc-clear:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-rc-frow { margin-left: 0; flex-wrap: wrap; align-items: center; }
+.nt-rc-frow > .nt-mute { min-width: 6.5rem; }
+.nt-rc-filters .nt-feedf button { background: transparent; outline: 1px solid color-mix(in srgb, var(--nt-rule) 80%, transparent); }
+.nt-rc-filters .nt-feedf button[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); outline-color: var(--color-fg); }
+@media (max-width: 640px) { .nt-rc-frow > .nt-mute { min-width: 100%; } }
 .nt-rc-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; margin-bottom: .2rem; }
 .nt-rc-bar .nt-feedf { margin-left: 0; flex-wrap: wrap; }
 .nt-feedf > .nt-mute { align-self: center; font-size: 12.5px; margin-right: .15rem; }
@@ -3799,6 +3808,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     cards: { title: 'Key races', body: [
       'The Senate and governor races we forecast closely, with the most detail on the night.',
       'Sort them by the race (poll close, state, office, our chance, how close our forecast is) or by the count (margin, how tight, share counted, chance now, how far from our forecast). Tap the active sort again to reverse it. Group by status keeps counting, called and still to come apart.',
+      'Filter with the chips: pick as many as you like in each row. Inside a row, any chosen chip counts. Across rows, a race has to match every row you used. The number on each chip is how many races it covers.',
       'Each card is one race: the vote count, each side\'s chance to win, how close it is to a call, and where it ends if the rest counts like 2024.',
       'Tap a counting race to see its full matchup at the top. Tap one with no votes to see its key counties.'] },
     feed: { title: 'Live feed', body: [
@@ -4433,8 +4443,66 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       return a.id > b.id ? 1 : -1;
     };
   }
+  // the key races' filters (Jake, Nov 2 late: "multi filter and multi select of each filter"). Each filter is a row of
+  // chips; chips inside one filter widen it (any of them), filters narrow each other (all of them). Nothing chosen = all.
+  let ntRcF = {};
+  try { ntRcF = JSON.parse(localStorage.getItem('nt-rc-filter') || '{}') || {}; } catch (e) { ntRcF = {}; }
+  function ntRcFacets(d) {
+    const odds = (d.story || {}).odds || {};
+    const held = {};
+    for (const x of [...((d.every || {}).senate || []), ...((d.every || {}).governor || [])]) held[x.key] = x.held_by;
+    const lean = (p) => (p == null ? null : p >= 0.85 ? 'Likely D' : p >= 0.6 ? 'Lean D' : p > 0.4 ? 'Toss-up' : p > 0.15 ? 'Lean R' : 'Likely R');
+    const lead = (r) => { const w = (r.call || {}).winner; if (w) return w === 'runoff' ? 'Runoff' : `${ntSL(r, w === 'D' || w === 'I' ? 'D' : 'R')} won`; const m = (r.reading || {}).margin_d; return m == null ? 'No votes' : m > 0 ? `${ntSL(r, 'D')} leads` : m < 0 ? 'R leads' : 'Tied'; };
+    const side = (r) => { const w = (r.call || {}).winner; if (w && w !== 'runoff') return w === 'R' ? 'R' : 'D'; const m = (r.reading || {}).margin_d; return m == null || m === 0 ? null : m > 0 ? 'D' : 'R'; };
+    return [
+      ['status', 'Status', (r) => (r.call ? 'Called' : ntHas(r) ? 'Counting' : 'Still to come'), ['Still to come', 'Counting', 'Called']],
+      ['office', 'Office', (r) => r.office, ['Senate', 'Governor']],
+      ['close', 'Polls close', (r) => (r.close_et ? ntCloseT(d, r.close_et) : 'Not listed'), null],
+      ['fc', 'Our forecast', (r) => lean(r.closing_p), ['Likely D', 'Lean D', 'Toss-up', 'Lean R', 'Likely R']],
+      ['now', 'Now', (r) => lead(r), null],
+      ['held', 'Held by', (r) => ({ D: 'Democrats', R: 'Republicans' })[held[r.id]] || 'Not listed', ['Democrats', 'Republicans']],
+      ['flip', 'Flips', (r) => { const s = side(r), h = held[r.id]; return !s || !h ? 'No votes' : s !== h ? 'Would flip' : 'Holding'; }, ['Would flip', 'Holding', 'No votes']],
+      ['st', 'State', (r) => r.state, null],
+    ].map(([k, lab, f, order]) => {
+      const vals = [...new Set((d.races || []).map(f).filter((v) => v != null))];
+      const sorted = order ? order.filter((v) => vals.includes(v)).concat(vals.filter((v) => !order.includes(v)))
+        : k === 'close' ? vals.sort((a, b) => { const m = (s) => { const x = /^(\d+):(\d+)(am|pm)/.exec(s); if (!x) return 9e9; let h = +x[1] % 12 + (x[3] === 'pm' ? 12 : 0); if (h < 6) h += 24; return h * 60 + +x[2]; }; return m(a) - m(b); })
+          : vals.sort();
+      return { k, lab, f, vals: sorted, odds };
+    });
+  }
+  function ntRcKeep(facets) {
+    return (r) => facets.every((fc) => { const on = ntRcF[fc.k] || []; return !on.length || on.includes(fc.f(r)); });
+  }
   function ntRaceCards(d) {
     const box = $('#nt-rcs'); box.replaceChildren();
+    const facets = ntRcFacets(d);
+    for (const fc of facets) if (ntRcF[fc.k]) ntRcF[fc.k] = ntRcF[fc.k].filter((v) => fc.vals.includes(v));  // drop choices that no longer exist
+    const keep = ntRcKeep(facets);
+    const shown = (d.races || []).filter(keep).length, total = (d.races || []).length;
+    const anyF = facets.some((fc) => (ntRcF[fc.k] || []).length);
+    const fp = el('div', { class: 'nt-rc-filters', role: 'group', 'aria-label': 'Filter the key races' });
+    const fh = el('div', { class: 'nt-rc-fh' }); fh.append(el('b', {}, 'Filter'), el('span', { class: 'nt-mute' }, anyF ? `showing ${shown} of ${total}` : `all ${total} races`));
+    if (anyF) { const cl = el('button', { type: 'button', class: 'nt-rc-clear' }, 'Clear'); cl.addEventListener('click', () => { ntRcF = {}; try { localStorage.setItem('nt-rc-filter', '{}'); } catch (er) { /* fine */ } ntRaceCards(d); }); fh.append(cl); }
+    fp.append(fh);
+    for (const fc of facets) {
+      if (fc.vals.length < 2) continue;
+      const row = el('div', { class: 'nt-feedf nt-rc-frow', role: 'group', 'aria-label': fc.lab }); row.append(el('span', { class: 'nt-mute' }, fc.lab));
+      for (const v of fc.vals) {
+        const on = (ntRcF[fc.k] || []).includes(v);
+        const n = (d.races || []).filter((r) => fc.f(r) === v).length;
+        const b = el('button', { type: 'button', 'aria-pressed': String(on), title: `${n} race${n === 1 ? '' : 's'}` }, fc.k === 'st' ? v : `${v} ${n}`);
+        b.addEventListener('click', () => {
+          const cur = new Set(ntRcF[fc.k] || []); if (cur.has(v)) cur.delete(v); else cur.add(v);
+          ntRcF[fc.k] = [...cur]; if (!ntRcF[fc.k].length) delete ntRcF[fc.k];
+          try { localStorage.setItem('nt-rc-filter', JSON.stringify(ntRcF)); } catch (er) { /* fine */ }
+          ntRaceCards(d);
+        });
+        row.append(b);
+      }
+      fp.append(row);
+    }
+    box.append(fp);
     const bar = el('div', { class: 'nt-rc-bar' });
     const so = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Sort the key races' }); so.append(el('span', { class: 'nt-mute' }, 'Sort'));
     for (const [k, lab] of NT_RC_SORTS) {
@@ -4450,10 +4518,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const cmp = ntRcCmp(d);
     const newest = (a, b) => (b.call.at || '').localeCompare(a.call.at || '');
     const sortLab = (NT_RC_SORTS.find((s) => s[0] === ntRcS.k) || NT_RC_SORTS[0])[1].toLowerCase();
-    const groups = !ntRcG ? [['Key races', `sorted by ${sortLab}`, [...d.races].sort(cmp)]] : [
-      ['Counting now', 'tap a race for its full matchup', d.races.filter((r) => !r.call && ntHas(r)).sort(cmp)],
-      ['Called', ntRcS.k === 'poll' ? 'newest first' : `sorted by ${sortLab}`, d.races.filter((r) => r.call).sort(ntRcS.k === 'poll' ? newest : cmp)],
-      ['Still to come', ntRcS.k === 'poll' ? 'in poll-closing order' : `sorted by ${sortLab}`, d.races.filter((r) => !r.call && !ntHas(r)).sort(cmp)],
+    const rs = d.races.filter(keep);
+    const groups = !ntRcG ? [['Key races', `sorted by ${sortLab}`, [...rs].sort(cmp)]] : [
+      ['Counting now', 'tap a race for its full matchup', rs.filter((r) => !r.call && ntHas(r)).sort(cmp)],
+      ['Called', ntRcS.k === 'poll' ? 'newest first' : `sorted by ${sortLab}`, rs.filter((r) => r.call).sort(ntRcS.k === 'poll' ? newest : cmp)],
+      ['Still to come', ntRcS.k === 'poll' ? 'in poll-closing order' : `sorted by ${sortLab}`, rs.filter((r) => !r.call && !ntHas(r)).sort(cmp)],
     ];
     for (const [title, sub, rows] of groups) {
       if (!rows.length) continue;
@@ -4463,6 +4532,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       for (const r of rows) list.append(ntRaceCard(d, r));
       g.append(h, list); box.append(g);
     }
+    if (!rs.length) box.append(el('p', { class: 'nt-mute' }, 'No key race matches those filters. Clear one to see more.'));
   }
 
   // ---------- the key counties, live (Jake, Nov 2 late: four counties to watch was far too few once big chunks roll in)
