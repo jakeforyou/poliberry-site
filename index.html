@@ -1361,7 +1361,7 @@ button.nt-ar[data-early="true"] .nt-ar-c > small:first-child::after { content: "
 @media (max-width: 640px) {
   .nt-rc-ftoggle { all: unset; display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; padding: .5rem .9rem; min-height: 24px; border-radius: 999px; font-size: 13.5px; font-weight: 600; outline: 1px solid var(--nt-rule); }
   .nt-rc-ftoggle:focus-visible { outline: 2px solid var(--nt-ours); }
-  .nt-rcs:not(.nt-fopen) .nt-rc-frow, .nt-rcs:not(.nt-fopen) .nt-rc-bar { display: none; }
+  .nt-rcs:not(.nt-fopen) .nt-rc-frow, .nt-rcs:not(.nt-fopen) .nt-rc-bar, .nt-all:not(.nt-fopen) .nt-all-fx .nt-rc-frow { display: none; }
   .nt-rc-frow, .nt-rc-bar .nt-feedf, .nt-all-ctl .nt-feedf { flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; }
   .nt-rc-frow::-webkit-scrollbar, .nt-rc-bar .nt-feedf::-webkit-scrollbar, .nt-all-ctl .nt-feedf::-webkit-scrollbar { display: none; }
   .nt-rc-frow > .nt-mute { min-width: auto !important; flex: none; }
@@ -4116,6 +4116,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     all: { title: 'All 506 races', body: [
       'Every Senate, governor and House race on the ballot: 35 for the Senate, 36 for governor, 435 for the House. Each shows the count and CNN\'s call as they come in.',
       'Before votes: our final call for the races we forecast closely all fall. Every other race shows our forecast from Nov 2: our own call for the competitive ones, our model for the rest. The model adds each race\'s 2024 result, the national mood and incumbency, then the latest polls. The raters\' view sits beside it in each race\'s story.',
+      'Filter by office, status, who is ahead, our chance before votes, who holds the seat, flips and state. Pick as many values in a row as you like: a race shows if it matches any of them, and it has to match every row you used. Each value counts the races it would show with your other choices. Your filters are kept in this browser.',
       'A flip is a seat won by a party that did not hold it. Tap any race for its full story.'] },
     cards: { title: 'Key races', body: [
       'The Senate and governor races we forecast closely, with the most detail on the night.',
@@ -4944,11 +4945,16 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
 
   // ---------- all 470 races: every Senate and House race with the count and CNN's call (Jake, Nov 2 late)
-  let ntAllTab = 'senate', ntAllF = 'all', ntAllQ = '', ntAllD = null, ntAllS = { k: 'state', dir: 1 };
-  try { ntAllTab = localStorage.getItem('nt-all-tab') || 'senate'; ntAllS = JSON.parse(localStorage.getItem('nt-all-sort') || 'null') || ntAllS; } catch (e) { /* storage can be blocked; defaults are fine */ }
+  let ntAllQ = '', ntAllD = null, ntAllS = { k: 'state', dir: 1 }, ntAllFx = { office: ['Senate'] };  // filters: facet -> chosen values (any of them), all facets at once
+  try {
+    ntAllS = JSON.parse(localStorage.getItem('nt-all-sort') || 'null') || ntAllS;
+    const fx = JSON.parse(localStorage.getItem('nt-all-filter') || 'null'), t = localStorage.getItem('nt-all-tab');
+    if (fx && typeof fx === 'object') ntAllFx = fx;
+    else if (t) ntAllFx = { office: [{ senate: 'Senate', governor: 'Governor', house: 'House' }[t] || 'Senate'] };  // the old one-chamber tab
+  } catch (e) { /* storage can be blocked; defaults stand */ }
   // the race list's sorts: each has a natural first direction; tapping the active one again reverses it
   const NT_ALL_SORTS = [
-    ['state', 'State', (x) => [NT_STATE[x.st] || x.st, x.key]],
+    ['state', 'State', (x) => [NT_STATE[x.st] || x.st, { Senate: 0, Governor: 1, House: 2 }[x.office] ?? 3, x.key]],
     ['close', 'Closest', (x) => [x.call ? 2 : x.margin_d != null ? 0 : 1, x.margin_d != null ? Math.abs(x.margin_d) : Math.abs(((x.pre || {}).chance_d ?? 100) - 50)]],
     ['lead', 'Biggest lead', (x) => [x.margin_d == null ? 1 : 0, -Math.abs(x.margin_d || 0)]],
     ['counted', 'Most counted', (x) => [x.counted == null ? 1 : 0, -(x.counted || 0)]],
@@ -4968,14 +4974,25 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const NT_PN = { D: 'Democrat', R: 'Republican', I: 'independent' };
   const NT_PNS = { D: 'Democrats', R: 'Republicans', I: 'an independent' };
   const ntPK = (p) => (p === 'D' || p === 'R' ? p : 'I');
-  function ntAllRows(d) {
-    const e = d.every || {};
-    if (ntAllTab === 'senate') return (e.senate || []).map((x) => ({ ...x, st: x.state }));
-    if (ntAllTab === 'governor') return (e.governor || []).map((x) => ({ ...x, st: x.state, gov: true }));
-    const n = {};
+  function ntAllRows(d) {  // every race on the ballot, each with its office and state
+    const e = d.every || {}, n = {};
     for (const x of e.house || []) n[x.key.slice(0, 2)] = (n[x.key.slice(0, 2)] || 0) + 1;
-    return (e.house || []).map((x) => ({ ...x, st: x.key.slice(0, 2), al: n[x.key.slice(0, 2)] === 1 }));
+    return [...(e.senate || []).map((x) => ({ ...x, st: x.state, office: 'Senate' })), ...(e.governor || []).map((x) => ({ ...x, st: x.state, gov: true, office: 'Governor' })),
+      ...(e.house || []).map((x) => ({ ...x, st: x.key.slice(0, 2), al: n[x.key.slice(0, 2)] === 1, office: 'House' }))];
   }
+  // Our chance before votes, in bands. The D side is whoever our chance is about (Nebraska's Osborn, Montana's Bodnar).
+  const ntAllLean = (p) => (p == null ? 'Not rated' : p >= 95 ? 'Safe D' : p >= 75 ? 'Likely D' : p >= 60 ? 'Lean D' : p > 40 ? 'Toss-up' : p > 25 ? 'Lean R' : p > 5 ? 'Likely R' : 'Safe R');
+  const NT_ALL_FACETS = [  // [key, label, value of a row, order of the values (null: alphabetical)]
+    ['office', 'Office', (x) => x.office, ['Senate', 'Governor', 'House']],
+    ['status', 'Status', (x) => (x.call ? 'Called' : x.status === 'counting' ? 'Counting' : 'No votes yet'), ['No votes yet', 'Counting', 'Called']],
+    ['now', 'Now', (x) => { const w = (x.call || {}).winner; if (w) return w === 'runoff' ? 'Runoff' : `${ntPK(w)} won`; return x.ahead ? `${ntPK(x.ahead)} ahead` : 'No votes yet'; },
+      ['D ahead', 'R ahead', 'I ahead', 'D won', 'R won', 'I won', 'Runoff', 'No votes yet']],
+    ['fc', 'Before votes', (x) => ((x.pre || {}).from === 'one party' ? 'One party' : ntAllLean((x.pre || {}).chance_d)), ['Safe D', 'Likely D', 'Lean D', 'Toss-up', 'Lean R', 'Likely R', 'Safe R', 'One party', 'Not rated']],
+    ['held', 'Held by', (x) => ({ D: 'Democrats', R: 'Republicans', I: 'Independent' })[x.held_by] || (x.new_seat || x.prev_party ? 'New seat' : 'Not listed'), ['Democrats', 'Republicans', 'Independent', 'New seat', 'Not listed']],
+    ['flip', 'Flips', (x) => (x.flip_called ? 'Flipped' : x.flip ? 'Would flip' : x.call || x.status === 'counting' ? 'Holding' : 'No votes yet'), ['Flipped', 'Would flip', 'Holding', 'No votes yet']],
+    ['st', 'State', (x) => x.st, null],
+  ];
+  const ntAllNF = () => NT_ALL_FACETS.reduce((n, [k]) => n + ((ntAllFx[k] || []).length ? 1 : 0), 0);
   function ntAllName(x) {
     if (x.gov || x.key.startsWith('gov_')) return NT_STATE[x.st] || x.st;
     if (x.office === 'senate' || x.key.startsWith('senate_')) return `${NT_STATE[x.st] || x.st}${x.special ? ' (special)' : ''}`;
@@ -5020,12 +5037,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (x.withheld) return "Waiting on CNN's count";
     return 'No votes yet';
   }
-  function ntAllKeep(x) {
-    const p = (x.pre || {}).chance_d;
-    if (ntAllF === 'close' && !(p != null && p > 10 && p < 90) && !x.flip) return false;
-    if (ntAllF === 'counting' && x.status !== 'counting') return false;
-    if (ntAllF === 'called' && !x.call) return false;
-    if (ntAllF === 'flips' && !x.flip) return false;
+  function ntAllKeep(x, skip) {  // every facet with a choice must match (any of its values); skip leaves one facet out, for its own counts
+    for (const [k, , f] of NT_ALL_FACETS) { const on = ntAllFx[k] || []; if (k !== skip && on.length && !on.includes(f(x))) return false; }
     if (!ntAllQ) return true;
     const q = ntAllQ.toLowerCase();
     return [ntAllName(x), NT_STATE[x.st] || '', x.st, x.key, ...(x.cands || []).map((c) => c.name)].some((s) => String(s).toLowerCase().includes(q));
@@ -5039,18 +5052,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!box.firstChild) {  // the controls are built once, so typing in the search box survives each refresh
       const h = el('h2', {}, 'All 506 races '); h.append(ntQ('all'));
       const sum = el('p', { class: 'nt-all-sum', id: 'nt-all-sum' });
-      const tabs = el('div', { class: 'nt-feedf nt-all-tabs', role: 'group', 'aria-label': 'Chamber' });
-      for (const [k, lab] of [['senate', 'Senate, 35'], ['governor', 'Governor, 36'], ['house', 'House, 435']]) {
-        const b = el('button', { type: 'button', 'data-k': k, 'aria-pressed': String(ntAllTab === k) }, lab);
-        b.addEventListener('click', () => { ntAllTab = k; try { localStorage.setItem('nt-all-tab', k); } catch (er) { /* fine */ } tabs.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.k === k))); ntAllList(); });
-        tabs.append(b);
-      }
-      const fl = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Show' });
-      for (const [k, lab] of [['all', 'All'], ['close', 'Competitive'], ['counting', 'Counting'], ['called', 'Called'], ['flips', 'Flips']]) {
-        const b = el('button', { type: 'button', 'data-k': k, 'aria-pressed': String(ntAllF === k) }, lab);
-        b.addEventListener('click', () => { ntAllF = k; fl.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.k === k))); ntAllList(); });
-        fl.append(b);
-      }
+      const fx = el('div', { class: 'nt-rc-filters nt-all-fx', id: 'nt-all-fx', role: 'group', 'aria-label': 'Filter all races' });
       const so = el('div', { class: 'nt-feedf nt-all-sort', role: 'group', 'aria-label': 'Sort' }); so.append(el('span', { class: 'nt-mute' }, 'Sort'));
       for (const [k, lab] of NT_ALL_SORTS.map((s) => [s[0], s[1]])) {
         const b = el('button', { type: 'button', 'data-k': k, 'aria-pressed': String(ntAllS.k === k) }, lab + (ntAllS.k === k && ntAllS.dir < 0 ? ' \u2193' : ''));
@@ -5064,8 +5066,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       }
       const q = el('input', { type: 'search', class: 'nt-all-q', placeholder: 'Find a state, district or candidate', 'aria-label': 'Find a race' });
       q.addEventListener('input', () => { ntAllQ = q.value.trim(); ntAllList(); });
-      const ctl = el('div', { class: 'nt-all-ctl' }); ctl.append(tabs, fl, q, so);
-      box.append(h, sum, ctl, el('div', { class: 'nt-all-list', id: 'nt-all-list' }), el('p', { class: 'nt-all-src', id: 'nt-all-src' }));
+      const ctl = el('div', { class: 'nt-all-ctl' }); ctl.append(q, so);
+      box.append(h, sum, fx, ctl, el('div', { class: 'nt-all-list', id: 'nt-all-list' }), el('p', { class: 'nt-all-src', id: 'nt-all-src' }));
     }
     const s = (e.summary || {}), ss = s.senate || {}, hs = s.house || {}, gs = s.governor || {};
     const flips = [...(ss.flips_called || []), ...(hs.flips_called || []), ...(gs.flips_called || [])].length;
@@ -5076,18 +5078,60 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     $('#nt-all-src').textContent = `Counts and calls: CNN (AP's numbers)${e.feed_at ? `, read ${ntT(e.feed_at)}` : ', from 6pm ET'}. Candidates, seat holders and leans: CNN and Wikipedia, ${e.roster_built_at ? 'read ' + ntT(e.roster_built_at) : ''}.`;
     ntAllList();
   }
+  function ntAllSave() { try { localStorage.setItem('nt-all-filter', JSON.stringify(ntAllFx)); } catch (er) { /* fine */ } }
+  function ntAllFacets(all) {  // the filter panel: one row per facet, each value a toggle with how many races it would show next to the other choices
+    const box = $('#nt-all-fx'); if (!box) return;
+    const fk = document.activeElement && box.contains(document.activeElement) ? document.activeElement.dataset.fk : null;  // keep the focused chip through the redraw
+    const shown = all.filter((x) => ntAllKeep(x)).length, nf = ntAllNF(), open = $('#nt-all').classList.contains('nt-fopen');
+    const fh = el('div', { class: 'nt-rc-fh' });
+    const active = NT_ALL_FACETS.flatMap(([k]) => ntAllFx[k] || []);
+    const tog = el('button', { type: 'button', class: 'nt-rc-ftoggle', 'aria-expanded': String(open), 'data-fk': 'all:toggle' }, open ? 'Hide filters' : 'Filters');
+    tog.addEventListener('click', () => { $('#nt-all').classList.toggle('nt-fopen'); ntAllList(); });
+    fh.append(el('b', {}, 'Filter'), el('span', { class: 'nt-mute', role: 'status' }, nf || ntAllQ ? `showing ${shown} of ${all.length}${active.length ? ': ' + active.map((v) => NT_STATE[v] || v).join(', ') : ''}` : `all ${all.length} races`), tog);
+    if (nf) { const cl = el('button', { type: 'button', class: 'nt-rc-clear', 'data-fk': 'all:clear' }, 'Clear'); cl.addEventListener('click', () => { ntAllFx = {}; ntAllSave(); ntAllList(); }); fh.append(cl); }
+    const rows = [fh];
+    for (const [k, lab, f, order] of NT_ALL_FACETS) {
+      const n = {};
+      for (const x of all) if (ntAllKeep(x, k)) { const v = f(x); n[v] = (n[v] || 0) + 1; }
+      const on = ntAllFx[k] || [];
+      const vals = [...new Set([...Object.keys(n), ...on])];
+      const sorted = order ? order.filter((v) => vals.includes(v)).concat(vals.filter((v) => !order.includes(v)).sort()) : vals.sort((a, b) => String(NT_STATE[a] || a).localeCompare(String(NT_STATE[b] || b)));
+      if (sorted.length < 2 && !on.length) continue;  // one value only: nothing to choose
+      const row = el('div', { class: 'nt-feedf nt-rc-frow', role: 'group', 'aria-label': lab }); row.append(el('span', { class: 'nt-mute' }, lab));
+      for (const v of sorted) {
+        const pressed = on.includes(v), c = n[v] || 0;
+        const b = el('button', { type: 'button', 'aria-pressed': String(pressed), 'data-fk': `all:${k}:${v}`, title: k === 'st' ? `${NT_STATE[v] || v}: ${c} race${c === 1 ? '' : 's'}` : `${c} race${c === 1 ? '' : 's'}` }, k === 'st' ? v : `${v} ${c}`);
+        b.addEventListener('click', () => {
+          const cur = new Set(ntAllFx[k] || []); if (cur.has(v)) cur.delete(v); else cur.add(v);
+          ntAllFx[k] = [...cur]; if (!ntAllFx[k].length) delete ntAllFx[k];
+          ntAllSave(); ntAllList();
+        });
+        row.append(b);
+      }
+      rows.push(row);
+    }
+    box.replaceChildren(...rows);
+    if (fk) { const t = [...box.querySelectorAll('[data-fk]')].find((b) => b.dataset.fk === fk); if (t) t.focus(); }
+  }
   function ntAllList() {
     const d = ntAllD, list = $('#nt-all-list'); if (!d || !list) return;
     const odds = (d.story || {}).odds || {};
-    const rows = ntAllRows(d).filter(ntAllKeep).sort(ntAllCmp);
+    const all = ntAllRows(d);
+    ntAllFacets(all);
+    const rows = all.filter((x) => ntAllKeep(x)).sort(ntAllCmp);
     list.replaceChildren();
-    if (!rows.length) { list.append(el('p', { class: 'nt-mute' }, ntAllF === 'flips' ? 'No seat has flipped yet.' : ntAllF === 'called' ? 'No race in this list is called yet.' : ntAllF === 'counting' ? 'No race in this list is counting yet.' : 'No race matches that.')); return; }
+    if (!rows.length) {
+      const p = el('p', { class: 'nt-mute' }, 'No race matches these filters. ');
+      if (ntAllNF()) { const cl = el('button', { type: 'button', class: 'nt-rc-clear' }, 'Clear the filters'); cl.addEventListener('click', () => { ntAllFx = {}; ntAllSave(); ntAllList(); }); p.append(cl); }
+      list.append(p); return;
+    }
     let last = '';
+    const heads = ntAllS.k === 'state' && rows.length > 40;  // a long list sorted by state gets a heading per state
     for (const x of rows) {
-      if (ntAllTab === 'house' && ntAllS.k === 'state' && x.st !== last) { list.append(el('div', { class: 'nt-all-st' }, NT_STATE[x.st] || x.st)); last = x.st; }
+      if (heads && x.st !== last) { list.append(el('div', { class: 'nt-all-st' }, NT_STATE[x.st] || x.st)); last = x.st; }
       const w = x.call ? ntPK(x.call.winner) : '';
       const b = el('button', { type: 'button', class: 'nt-ar', 'data-w': x.call && x.call.winner !== 'runoff' ? w : '', 'data-s': x.status || 'no votes', 'data-early': String(!x.call && x.counted != null && x.counted < 50 && x.margin_d != null) });
-      const lab = el('span', { class: 'nt-ar-n' }); lab.append(el('b', {}, ntAllName(x)), el('small', {}, ntAllCands(x)));
+      const lab = el('span', { class: 'nt-ar-n' }); lab.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')), el('small', {}, ntAllCands(x)));
       const pre = el('span', { class: 'nt-ar-p' }); pre.append(el('small', {}, 'Before votes'), document.createTextNode(ntAllPre(x)));
       const now = el('span', { class: 'nt-ar-c' }); now.append(el('small', {}, x.call ? 'Called' : x.status === 'counting' ? 'Counting' : 'Now'), document.createTextNode(ntAllNow(x)));
       const o = odds[x.key];
