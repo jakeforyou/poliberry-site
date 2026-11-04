@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '2846ba90b50c';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '6861289f82c2';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -6979,7 +6979,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (rows.length > 15) { const m = ntLink(nightCtyLiveAll ? 'Show 15' : `Show all ${rows.length}`, () => { nightCtyLiveAll = !nightCtyLiveAll; draw(); }); more.append(m); }
     };
     for (const [k, lab] of SORTS) { const b = el('button', { type: 'button', 'data-k': k }, lab); b.addEventListener('click', () => { nightCtyLiveSort = k; nightCtyLiveAll = false; draw(); }); so.append(b); }
-    w.append(so, tb, more);
+    w.append(so, tb, more, ...ntLeftParts(L));
     if (L.n_zero) w.append(el('p', { class: 'nt-mute nt-left-n' }, `No votes in yet: ${(L.zero || []).slice(0, 12).join(', ')}${L.n_zero > 12 ? ` and ${L.n_zero - 12} more` : ''}.`));
     w.append(el('small', { class: 'nt-mute' }, `★ a key county we chose before the night: tap it for its full story. Counts: CNN (AP's numbers). Votes left from AP's estimate of each county's expected vote; under 20% counted, not estimated.`));
     draw();
@@ -8253,14 +8253,34 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // margin, for the eye only: its numbers are the ones printed.
   // ---------- a statewide race's deep dive in its card (Jake, Nov 3, 9:40pm: "do a deep dive on ohio for the people. When they open that
   // popout that should be fairly robust"): where the rest of the vote is, how the state counts, and its key counties against our forecast
+  function ntLeftParts(L) {  // the places inside a county that CNN also lists on their own (Wayne's cities), outside every total
+    const out = [];
+    for (const [county, P] of Object.entries((L && L.parts) || {})) {
+      if (!(P.rows || []).length) continue;
+      out.push(el('p', { class: 'nt-mute nt-left-n' }, `Inside ${county} County: ${P.rows.slice(0, 6).map((r) => `${r[0]} ${ntPct(r[1])} in, ${ntM(r[3])}`).join('. ')}.${P.n_zero ? ` ${P.n_zero} of its ${P.n} places have none in yet.` : ''}`));
+    }
+    return out;
+  }
   function ntLeftBox(d, x) {
     const L = ((nightLeft || {}).races || {})[x.key]; if (!L || !(L.counties || []).length) return null;
     const ds = ntAllSide(x), rc = (x.cands || []).find((k) => k.party === 'R');
     const dn = ntLast((ds && ds.name) || '') || 'the Democrat', rn = ntLast((rc && rc.name) || '') || 'the Republican';
     const tl = (d.timeline || []).find((t) => t.state === x.st) || {};
     const w = el('div', { class: 'nt-left' }); w.append(el('h4', {}, 'Where the rest of the vote is'));
-    const net = L.proj_net_d, zn = L.n_zero ?? (L.zero || []).length;
-    w.append(el('p', { class: 'nt-res-sub' }, `About ${ntBtNum(L.left)} votes left in counties already reporting${zn ? `, plus ${zn} count${zn === 1 ? 'y' : 'ies'} with none in yet` : ''}. If each county's rest votes like its count so far, ${net > 0 ? dn : rn} nets about ${ntBtNum(Math.abs(net))} more.`));
+    const net = L.proj_net_d, zn = L.n_zero ?? (L.zero || []).length, F = L.full;
+    // the full estimate (Nov 3, 10:57pm, Michigan): every county, the barely started ones from 2024, so Wayne and Macomb count
+    if (F) {
+      w.append(el('p', { class: 'nt-res-sub' }, `About ${ntBtNum(F.left)} votes still to count. If they vote as below, ${F.proj_net_d > 0 ? dn : rn} nets about ${ntBtNum(Math.abs(F.proj_net_d))} more.`));
+      if ((F.from_2024 || []).length) {
+        const t2 = el('table', { class: 'nt-left-t' });
+        t2.append(ntKids('thead', {}, [ntKids('tr', {}, [el('th', {}, 'Under half in'), el('th', {}, 'Counted'), el('th', {}, 'Left (est.)'), el('th', {}, 'Leans')])]));
+        const b2 = el('tbody');
+        for (const r of F.from_2024.slice(0, 5)) b2.append(ntKids('tr', {}, [el('td', {}, r[0]), el('td', {}, ntPct(r[1])), el('td', {}, ntBtNum(r[2])), el('td', { class: r[3] > 0 ? 'nt-d' : r[3] < 0 ? 'nt-r' : '' }, ntM(r[3]))]));
+        t2.append(b2); w.append(t2);
+      }
+      w.append(el('p', { class: 'nt-mute nt-left-n' }, `How: a county under half counted is expected to lean like it did in 2024 plus tonight's typical county shift (${ntShTxt(F.shift_med)}), since its early count is often its mail votes. Under 20% counted, its votes left are its 2024 vote times tonight's turnout (${Math.round(100 * F.turnout_ratio)}% of 2024). Both read from the ${F.shift_n} counties at least half counted. A county at least half counted votes like its own count.`));
+    }
+    w.append(el('p', { class: F ? 'nt-mute nt-left-n' : 'nt-res-sub' }, `${F ? 'Counting only the counties at least 20% in: ' : ''}about ${ntBtNum(L.left)} votes left in counties already reporting${zn ? `, plus ${zn} count${zn === 1 ? 'y' : 'ies'} with none in yet` : ''}. If each county's rest votes like its count so far, ${net > 0 ? dn : rn} nets about ${ntBtNum(Math.abs(net))} more.`));
     w.append(el('p', { class: 'nt-left-warn' }, `A guide, not a projection. ${tl.posts_first ? `What ${NT_STATE[x.st] || x.st} posts first: ${tl.posts_first.charAt(0).toLowerCase() + tl.posts_first.slice(1)} ` : ''}The votes still out are mostly counted later and can lean differently from each county's count so far.`));
     const tb = el('table', { class: 'nt-left-t' });
     tb.append(ntKids('thead', {}, [ntKids('tr', {}, [el('th', {}, 'County'), el('th', {}, 'Counted'), el('th', {}, 'Left (est.)'), el('th', {}, 'So far')])]));
@@ -8268,11 +8288,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const c of L.counties.slice(0, 8)) {
       body.append(ntKids('tr', {}, [el('td', {}, c.county), el('td', {}, ntPct(c.pct)), el('td', {}, ntBtNum(c.left)), el('td', { class: c.margin_d > 0 ? 'nt-d' : c.margin_d < 0 ? 'nt-r' : '' }, ntM(c.margin_d))]));
     }
-    tb.append(body); w.append(tb);
+    tb.append(body); w.append(tb, ...ntLeftParts(L));
     if (zn) w.append(el('p', { class: 'nt-mute nt-left-n' }, `No votes in yet: ${(L.zero || []).slice(0, 8).join(', ')}${zn > 8 ? ` and ${zn - 8} more` : ''}.`));
     const ne = L.n_early ?? (L.early || []).length;
     if (ne) w.append(el('p', { class: 'nt-mute nt-left-n' }, `Barely started (under 20% counted, left out of the estimate): ${(L.early || []).slice(0, 6).map((c) => `${c.county} ${ntPct(c.pct)}`).join(', ')}${ne > 6 ? ` and ${ne - 6} more` : ''}.`));
-    w.append(el('small', { class: 'nt-mute' }, `County counts: CNN (AP's numbers), read ${ntT(L.read_at)}. Votes left come from AP's estimate of each county's expected vote.`));
+    w.append(el('small', { class: 'nt-mute' }, `County counts: CNN (AP's numbers), read ${ntT(L.read_at)}. Votes left come from AP's estimate of each county's expected vote${F ? ', and from CNN\'s 2024 county results where a county has barely started' : ''}. A guide with stated assumptions, not a projection.`));
     return w;
   }
   function ntHowCounts(d, x) {
