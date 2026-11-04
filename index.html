@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '48ec08f1e613';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '21f76ba212eb';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1619,10 +1619,11 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-up-where .f { all: unset; cursor: pointer; font-size: 12.5px; font-weight: 600; padding: .15rem .55rem; border-radius: 999px; background: color-mix(in srgb, var(--nt-jake) 22%, transparent); }
 .nt-up-where .f:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-up-cl { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: .2rem .6rem; }
-.nt-up-c { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 4.6rem minmax(0, 1fr) auto auto; align-items: baseline; gap: .5rem; padding: .35rem .5rem; border-radius: 7px; border-left: 3px solid var(--nt-rule); font-size: 13.5px; min-width: 0; }
+.nt-up-c { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "n o t" "w w w"; align-items: baseline; gap: .1rem .5rem; padding: .35rem .5rem; border-radius: 7px; border-left: 3px solid var(--nt-rule); font-size: 13.5px; min-width: 0; }
+.nt-up-c .n { grid-area: n; } .nt-up-c .o { grid-area: o; } .nt-up-c .tier { grid-area: t; } .nt-up-c .w { grid-area: w; }  /* the race and the chances on one line, who leads under it, wrapping (Nov 3, 10pm: it clipped) */
 .nt-up-c[data-s="D"] { border-left-color: var(--nt-d); } .nt-up-c[data-s="R"] { border-left-color: var(--nt-r); }
 .nt-up-c:hover, .nt-up-c:focus-visible { background: var(--nt-wash2); } .nt-up-c:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 1px; }
-.nt-up-c .n { font-weight: 800; white-space: nowrap; } .nt-up-c .w { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .nt-up-c .o { font-size: 12.5px; color: var(--color-fg-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nt-up-c .n { font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .nt-up-c .w { min-width: 0; line-height: 1.35; } .nt-up-c .o { font-size: 12.5px; color: var(--color-fg-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .nt-up-c .tier { width: .55rem; height: .55rem; border-radius: 50%; background: var(--nt-wash2); align-self: center; }
 .nt-up-c[data-t="called"] .tier { background: var(--nt-jake); } .nt-up-c[data-t="favored"] .tier { background: color-mix(in srgb, var(--nt-jake) 70%, transparent); } .nt-up-c[data-t="inplay"] .tier { background: color-mix(in srgb, var(--nt-jake) 40%, transparent); border: 1px solid var(--nt-jake); }
 .nt-up-c[data-t="early"] { opacity: .8; }
