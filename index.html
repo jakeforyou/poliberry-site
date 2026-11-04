@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '21f76ba212eb';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '8812af828e8a';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -4285,7 +4285,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
            return c.ok ? await c.text() : c.status === 404 ? null : last; } catch (e) { return last; } };
         const btx = nightMode === 'practice' ? null : await ntSide('night_batches.json', nightBtTxt);
         const rtx = await ntSide(nightMode === 'practice' ? 'night_results_practice.json' : 'night_results.json', nightRsTxt);
-        const ltx = nightMode === 'practice' ? null : await ntSide('night_left.json', nightLfTxt);
+        // the county file (night_left.json) is read by race and state cards only: on the first load, then while a card is open (data diet, Nov 3, 10:15pm)
+        const shOpen = !!($('#nt-sheet') && !$('#nt-sheet').hidden);
+        const ltx = nightMode === 'practice' ? null : (nightLfTxt == null || shOpen) ? await ntSide('night_left.json', nightLfTxt) : nightLfTxt;
         if (!ntRO()) { try { nightHealth = await fetch('/api/status', { cache: 'no-store' }).then((x) => (x.ok ? x.json() : null)); } catch (e) { nightHealth = null; } }
         // A board that is the same text as the last one is not drawn again: a redraw rebuilds every box and costs a keyboard or
         // screen reader user their place (accessibility review, item 1). The status line is still checked, because its age moves.
@@ -4301,7 +4303,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         return true;
       } catch (e) { const s = $('#nt-status'); if (s) { s.textContent = 'Could not load the board: ' + e.message; delete s.dataset.sg; } return false; }
     };
-    nightTimers.data = setInterval(() => { if (!nightPaused) nightLoad(); ntSiteCheck(); }, 30000);
+    // a phone in a pocket or another tab does not refresh: it catches up the moment it is looked at again (data diet, Nov 3, 10:15pm)
+    nightTimers.data = setInterval(() => { if (document.hidden) return; if (!nightPaused) nightLoad(); ntSiteCheck(); }, 30000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden && !nightPaused && nightLoad) { nightLoad(); ntSiteCheck(); } });
     nightTimers.clock = setInterval(ntTick, 1000);
     // the spoken line lives straight under the body, not inside the page: a phone's sheet switches the page off, and a line in it would not be heard
     const sr = $('#nt-sr'); if (sr && sr.parentElement !== document.body) document.body.append(sr);
@@ -6639,7 +6643,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     head.append(tt, x);
     const body = el('div', { class: 'nt-sheet-b' }); body.append(...ntSheetAsOf(nightData), ...nodes.filter(Boolean));
     nightSheetBuild = typeof build === 'function' ? build : null;
+    const wasHidden = s.hidden;
     s.replaceChildren(head, body); s.hidden = false;
+    if (wasHidden && nightLoad) setTimeout(() => nightLoad(), 0);  // a card just opened: fetch the county file now, it is only kept fresh while a card is open
     s.querySelector('h2').focus({ preventScroll: true });
     ntSheetModal(true);
   }
