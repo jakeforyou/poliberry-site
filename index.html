@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e5a5524ac8f5';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '212fca8773f8';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -6947,17 +6947,22 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     const x = key && ntAllRows(d).find((r) => r.key === key); if (x) ntAllPop(d, x);
   }
+  const NT_SPOT_STICKY = ['senate_sc'];  // Jake, Nov 3, 9:10pm: "add SC Senate to the spotlight til its called"
   function ntSpot(d, st) {
     const box = $('#nt-spot'); box.replaceChildren();
     const sp = st.spotlight || {};
     if (sp.kind === 'race' && (sp.races || []).length) {
-      const pin = nightSpotPin && Date.now() < nightSpotPin.until ? ((sp.all || {})[nightSpotPin.id] || sp.races.find((x) => x.race_id === nightSpotPin.id)) : null;
+      const live = nightSpotPin && Date.now() < nightSpotPin.until ? ((sp.all || {})[nightSpotPin.id] || sp.races.find((x) => x.race_id === nightSpotPin.id)) : null;
+      // a race kept in the spotlight until it is called (NT_SPOT_STICKY): it leads over an alert's pick, a reader's own tap still shows first.
+      // The spotlight's list holds only uncalled races with votes, so a called race drops out by itself.
+      const sticky = NT_SPOT_STICKY.map((id) => (sp.all || {})[id]).find(Boolean) || null, mine = live && !nightSpotPin.auto;
+      const pin = mine ? live : sticky || live;
       const r = pin || sp.races[0];
       const tabsList = pin && !sp.races.some((x) => x.race_id === pin.race_id) ? [pin, ...sp.races] : sp.races;
       const top = el('div', { class: 'nt-spot-top' });
       // why this race is here (Jake, Nov 3, 9pm: "Spotlight race section needs better discernment about what is being displayed")
       const lastAl = ((st.events || []).find((e) => (e.race_id === r.race_id || e.every === r.race_id) && NT_STRIP_KINDS.has(e.kind)));
-      const why0 = pin && pin.auto && lastAl ? `In the spotlight for a new alert at ${ntT(lastAl.at)}: ${lastAl.title}` : pin && !pin.auto ? 'You picked this race. It stays here for 10 minutes, then the closest race returns.'
+      const why0 = pin && pin === sticky && !mine ? 'Kept in the spotlight until it is called. Tap a tab to see the others.' : pin && nightSpotPin && nightSpotPin.auto && lastAl ? `In the spotlight for a new alert at ${ntT(lastAl.at)}: ${lastAl.title}` : pin ? 'You picked this race. It stays here for 10 minutes, then the closest race returns.'
         : 'The race to watch right now: close, with real votes counted. The tabs are the next closest.';
       const sk = el('span', { class: 'nt-spot-k' }, 'Spotlight'); sk.append(ntQ('spotlight')); top.append(sk, el('p', { class: 'nt-spot-why0' }, why0));
       if (tabsList.length > 1) {
