@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '8812af828e8a';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '34e31ff12e84';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1718,7 +1718,21 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-bug .c { all: unset; cursor: pointer; display: inline-flex; align-items: baseline; gap: .3rem; font-size: 13px; font-variant-numeric: tabular-nums; }
 .nt-bug .c:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; border-radius: 4px; }
 .nt-bug .nm { font-family: var(--font-display); font-weight: 800; } .nt-bug .nt-d, .nt-bug .nt-r { font-weight: 800; font-size: 15px; } .nt-bug .sep { color: var(--color-fg-muted); font-size: 11px; }
-.nt-bug .p { color: var(--color-fg-muted); font-size: 12px; } .nt-bug .c.up { font-weight: 700; padding: 0 .5rem; border-radius: 999px; background: color-mix(in srgb, var(--nt-jake) 28%, transparent); }
+.nt-bug .p { color: var(--color-fg-muted); font-size: 12px; }
+/* the phone's tab bar (Nov 3, 10:20pm): five places, fixed to the bottom, clear of the home bar */
+.nt-tabbar { display: none; }
+@media (max-width: 47.99rem) {
+  .nt-tabbar:not([hidden]) { position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); min-height: 0; height: auto; gap: 0;
+    padding: .25rem max(8px, env(safe-area-inset-right, 0px)) calc(.25rem + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px));
+    background: color-mix(in srgb, var(--color-bg) 94%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--nt-rule); }
+  .nt-tabbar button { all: unset; cursor: pointer; display: grid; justify-items: center; gap: .1rem; padding: .3rem 0 .2rem; min-height: 44px; color: var(--color-fg-muted); font-size: 10.5px; font-weight: 600; text-align: center; -webkit-tap-highlight-color: transparent; }
+  .nt-tabbar button[aria-current="true"] { color: var(--nt-ours); }
+  .nt-tabbar button:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: -2px; border-radius: 8px; }
+  .nt-tabbar .l { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  body.nt-sheet-open .nt-tabbar { display: none !important; }
+  body.nt-mode { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }  /* the page's foot clears the bar */
+  .nt-toasts { bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }  /* notices float above the bar */
+} .nt-bug .c.up { font-weight: 700; padding: 0 .5rem; border-radius: 999px; background: color-mix(in srgb, var(--nt-jake) 28%, transparent); }
 .nt-bt-before > summary { cursor: pointer; color: var(--color-fg-muted); font-size: 13.5px; padding: .3rem 0; }
 .nt-bt-before[open] > summary { margin-bottom: .5rem; }
 .nt-mapsec { display: grid; gap: .5rem; margin: .8rem 0 1rem; }
@@ -4957,7 +4971,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
     ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d); ntMoveAll(d);
-    ntGlance(d); try { ntStrip(d); ntBug(d); } catch (e) { /* the strip and the score bar never stop the board */ } try { ntWall(d); } catch (e) { /* nor the wall */ } try { ntUps(d); } catch (e) { /* nor the upset watch */ } ntExpect(d); ntBatches();
+    ntGlance(d); try { ntStrip(d); ntBug(d); ntTabbar(); } catch (e) { /* the strip, the score bar and the tab bar never stop the board */ } try { ntWall(d); } catch (e) { /* nor the wall */ } try { ntUps(d); } catch (e) { /* nor the upset watch */ } ntExpect(d); ntBatches();
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
     ntLook(); ntSinceDraw();
@@ -5134,6 +5148,54 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const all = el('button', { type: 'button', class: 'f more', 'data-fk': 'strip:feed' }, 'Every update'); all.addEventListener('click', () => { const f = $('#nt-desk'); if (f) ntScrollTo(f); }); facts.append(all);
     box.hidden = false;
     box.replaceChildren(rows, facts);
+  }
+  // ---------- the phone's tab bar (Jake, Nov 3, 10:20pm: "Yes, tab bar"): five places a thumb can reach, fixed to the bottom of the
+  // screen. Each scrolls to its section and opens it when it is folded; the one on screen is lit. Hidden while a race card is open and
+  // in the TV view. Phones only (CSS).
+  const NT_TABS = [
+    ['top', 'Top', '<path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-4.5v-5.5h-5V21H5a1 1 0 0 1-1-1z"/>'],
+    ['races', 'Races', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>'],
+    ['upsets', 'Upsets', '<path d="M12 3a6 6 0 0 0-6 6v3.6l-1.7 3.4A1 1 0 0 0 5.2 17.5h13.6a1 1 0 0 0 .9-1.5L18 12.6V9a6 6 0 0 0-6-6zm0 19a3 3 0 0 0 2.8-2H9.2A3 3 0 0 0 12 22z"/>'],
+    ['map', 'Map', '<path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 4v13.5M15 6.5V20" stroke="currentColor" stroke-width="1.8"/>'],
+    ['feed', 'Feed', '<rect x="4" y="5" width="16" height="2.4" rx="1.2"/><rect x="4" y="10.8" width="16" height="2.4" rx="1.2"/><rect x="4" y="16.6" width="11" height="2.4" rx="1.2"/>'],
+  ];
+  const ntTabTarget = (k) => ({ top: $('#nt-glance'), races: $('#nt-wall'), upsets: $('#nt-ups'), map: $('#nt-map'), feed: $('#nt-rail') || $('#nt-desk') }[k]);
+  var nightTabObs = null;
+  function ntTabGo(k) {
+    if (k === 'feed') {  // the feed sits in a folded section on a phone, behind its tab
+      if (!nightAccOpen.has('nt-rail')) ntAccOpen('nt-rail', true);
+      nightRail = 'feed'; nightRailPicked = true; ntRail();
+    }
+    setTimeout(() => { const t = k === 'top' ? null : ntTabTarget(k); if (t) t.scrollIntoView({ block: 'start' }); else window.scrollTo({ top: 0 }); }, k === 'feed' ? 80 : 0);
+  }
+  function ntTabbar() {
+    let bar = $('#nt-tabbar');
+    if (!bar) {
+      bar = el('nav', { class: 'nt nt-tabbar', id: 'nt-tabbar', 'aria-label': 'Sections' });
+      for (const [k, lab, icon] of NT_TABS) {
+        const b = el('button', { type: 'button', 'data-k': k, 'aria-label': lab });
+        const i = el('span', { class: 'i', 'aria-hidden': 'true' }); i.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">${icon}</svg>`;
+        b.append(i, el('span', { class: 'l' }, lab));
+        b.addEventListener('click', () => ntTabGo(k));
+        bar.append(b);
+      }
+      document.body.append(bar);
+    }
+    bar.hidden = state.tab !== 'night' || !!nightTv;
+    const ups = ntUpsets(nightData || {}).length, ub = bar.querySelector('[data-k="upsets"] .l');
+    if (ub) ub.textContent = ups ? `Upsets ${ups}` : 'Upsets';
+    if (!nightTabObs) {  // the section under the top third of the screen lights its tab: a plain scroll check, since some browsers hold back observers
+      let pend = false;
+      const light = () => {
+        pend = false;
+        let k = 'top';
+        for (const [kk] of NT_TABS) { const t = ntTabTarget(kk); if (t && t.offsetParent !== null && t.getBoundingClientRect().top <= window.innerHeight * 0.33) k = kk; }
+        bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.k === k)));
+      };
+      nightTabObs = () => { if (!pend) { pend = true; setTimeout(light, 120); } };
+      window.addEventListener('scroll', nightTabObs, { passive: true });
+    }
+    nightTabObs();
   }
   // ---------- the score bar (Jake, Nov 3, 8:20pm): once the top cards scroll away, both chambers stay in view at the top of the screen
   var nightBugObs = null;
@@ -6585,6 +6647,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // beside the board and the board stays usable.
   function ntSheetModal(on) {
     const s = $('#nt-sheet'), root = document.getElementById('dash-root') || document.querySelector('.ms');
+    document.body.classList.toggle('nt-sheet-open', !!on);  // the phone's tab bar steps aside for a card
     if (on && !nightSheetInert && root && s && matchMedia('(max-width: 40rem)').matches) { nightSheetInert = root; root.inert = true; s.setAttribute('aria-modal', 'true'); }
     else if (!on && nightSheetInert) { nightSheetInert.inert = nightTvInert.includes(nightSheetInert); nightSheetInert = null; if (s) s.removeAttribute('aria-modal'); }  // the TV view keeps the page off behind it
   }
