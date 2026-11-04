@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e888cd160edb';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '5fdb53cf0d09';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1454,7 +1454,7 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
   #night { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 1.6rem; grid-auto-flow: row dense; align-items: start; }
   #night > * { grid-column: 1 / -1; }
   /* the order a visitor reads: what this is, any warning, the jump bar, then the two chambers beside the turnout read, the map, the clock, the rest */
-  #night > .nt-glance { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
+  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
   #night > .nt-jump { order: 5; } #night > .nt-pins { order: 6; } #night > #nt-ctl { order: 7; } #night > #nt-batches { order: 8; }
   /* results first (Jake, Nov 3, 7pm: "fully simplify what we are showing users now that results are rolling through"): Most impactful
      under the chambers beside the count, then the map, the results, and what to expect at the foot */
@@ -1554,6 +1554,36 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-ctlc-sm .nt-ctlc-l { stroke: var(--nt-ours); stroke-dasharray: none; opacity: 1; } .nt-ctlc-sm .nt-ctlc-dot { fill: var(--nt-ours); }
 /* who voted and what it suggested, folded under the count once results come in */
 .nt-bt-before { border-top: 1px solid var(--nt-rule); padding-top: .4rem; }
+/* the wall (Nov 3, 7:10pm: "I want to see everything at once!"): every Senate and governor race as a scoreboard tile */
+.nt-wall:not([hidden]) { display: grid; gap: .55rem; }
+.nt-wall-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
+.nt-wall-h h2 { margin: 0; }
+.nt-wall-b { display: grid; gap: .3rem; min-width: 0; }
+.nt-wall-bh { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
+.nt-wall-bh h3 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 1rem; }
+.nt-wall-bh small { font-size: 12px; }
+.nt-wall-g { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.2rem, 1fr)); gap: .3rem; }
+.nt-wt { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 0; padding: .28rem .42rem .32rem; border-radius: 8px; background: var(--nt-wash); border: 1.5px solid transparent; min-width: 0; font-variant-numeric: tabular-nums; }
+.nt-wt .a { display: flex; justify-content: space-between; align-items: baseline; gap: .2rem; font-size: 10.5px; color: var(--color-fg-muted); }
+.nt-wt .a b { font-size: 12.5px; font-weight: 800; color: var(--color-fg); letter-spacing: .02em; }
+.nt-wt .m { font-family: var(--font-display); font-weight: 800; font-size: 1rem; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nt-wt .n { font-size: 10.5px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nt-wt[data-s="wait"] .m { color: var(--color-fg-muted); font-weight: 700; font-size: .92rem; }
+.nt-wt[data-lead="D"] { background: color-mix(in srgb, var(--nt-d) 15%, transparent); } .nt-wt[data-lead="D"] .m { color: var(--nt-d); }
+.nt-wt[data-lead="R"] { background: color-mix(in srgb, var(--nt-r) 15%, transparent); } .nt-wt[data-lead="R"] .m { color: var(--nt-r); }
+.nt-wt[data-lead="I"] { background: color-mix(in srgb, var(--nt-jake) 15%, transparent); }
+.nt-wt[data-won="D"] { background: color-mix(in srgb, var(--nt-d) 42%, var(--color-bg)); } .nt-wt[data-won="R"] { background: color-mix(in srgb, var(--nt-r) 42%, var(--color-bg)); } .nt-wt[data-won="I"] { background: color-mix(in srgb, var(--nt-jake) 42%, var(--color-bg)); }
+.nt-wt:is([data-won="D"], [data-won="R"], [data-won="I"]) :is(.m, .n, .a) { color: var(--color-fg); }  /* data-won is empty on a race not called */
+.nt-wt[data-upset="true"] { border-color: var(--nt-jake); box-shadow: 0 0 0 1px var(--nt-jake); }
+.nt-wt:hover { filter: brightness(1.12); } .nt-wt:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-wall-house { margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .5rem; }
+.nt-wall-key { margin: 0; font-size: 12px; }
+@media (min-width: 48rem) { .nt-wall-tabs { display: none; } }
+@media (max-width: 47.99rem) {
+  .nt-wall[data-office="senate"] .nt-wall-b[data-k="governor"], .nt-wall[data-office="governor"] .nt-wall-b[data-k="senate"] { display: none; }
+  .nt-wall-g { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .25rem; }
+  .nt-wt { padding: .22rem .32rem .26rem; } .nt-wt .m { font-size: .92rem; }
+}
 /* the ticker under the top cards (Nov 3, 6:55pm): one line at a time, its kind on the left, the controls on the right */
 .nt-tick:not([hidden]) { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .3rem .7rem; padding: .5rem .7rem; border-radius: 10px; background: var(--nt-wash); border: 1px solid var(--nt-rule); min-height: 2.6rem; }
 .nt-tick .lb { font-size: 11.5px; font-weight: 700; padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; color: var(--color-fg); background: var(--nt-wash2); }
@@ -2026,7 +2056,7 @@ button.nt-hs[data-s="counting"][data-w="R"] { background: color-mix(in srgb, var
   .nt-live .nt-time { grid-area: 1 / 1; } .nt-live .nt-pause { grid-area: 1 / 2; justify-self: end; }
   .nt-live .nt-status { grid-area: 2 / 1 / 3 / -1; } .nt-live .nt-pause-note { grid-area: 3 / 1 / 4 / -1; }
   /* what comes first on a phone: what this is and the numbers, the map, what to expect, then the rest */
-  #night > .nt-glance { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
+  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
   /* results first (Nov 3, 7pm): the map, the results, the count batch by batch, what moved control, the chambers in full, then what to expect */
   #night > .nt-mapsec { order: 5; } #night > .nt-results { order: 6; } #night > .nt-impact { order: 8; } #night > .nt-board2 { order: 9; }
   #night > .nt-expect { order: 10; } #night > .nt-top { order: 11; } #night > .nt-prac { order: 12; }
@@ -2384,6 +2414,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <div class="nt-next" id="nt-next"></div>
       <div class="nt-tick" id="nt-tick" role="region" aria-label="What to watch" hidden></div>
     </section>
+    <section class="nt-wall" id="nt-wall" aria-label="Every race at a glance" hidden></section>
     <div class="nt-top">
       <div class="nt-live">
         <p class="nt-status" id="nt-status">Loading the board…</p>
@@ -4720,7 +4751,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
     ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d); ntMoveAll(d);
-    ntGlance(d); try { ntTicker(d); } catch (e) { /* the ticker never stops the board */ } ntExpect(d); ntBatches();
+    ntGlance(d); try { ntTicker(d); } catch (e) { /* the ticker never stops the board */ } try { ntWall(d); } catch (e) { /* nor the wall */ } ntExpect(d); ntBatches();
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
     ntLook(); ntSinceDraw();
@@ -4892,6 +4923,75 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (tx.textContent !== it.t) { tx.textContent = it.t; tx.classList.remove('in'); void tx.offsetWidth; tx.classList.add('in'); }
     tx.dataset.go = String(!!(it.key || it.st)); tx.title = it.key || it.st ? 'Open it' : '';
     box.querySelector('.pos').textContent = `${nightTick.i + 1} of ${nightTick.items.length}`;
+  }
+  // ---------- the wall (Jake, Nov 3, 7:10pm: "I want to see everything at once!"): every Senate and governor race as a small tile, like a
+  // scoreboard of every game. Live races first (closest first), then the ones still to close, then the called ones. A tile is tinted by who
+  // leads, filled when called, and edged in amber when the side our forecast had as the underdog leads or won. Then one line for the House.
+  // Every number is the board's (CNN's count and calls, our chance before votes). A phone shows one office at a time.
+  var nightWallOff = (() => { try { return localStorage.getItem('nt-wall-office') || 'senate'; } catch (e) { return 'senate'; } })();
+  function ntWallTile(d, x) {
+    const w = x.call && x.call.winner, won = w && w !== 'runoff' ? ntPK(w) : '', has = x.margin_d != null || !!x.lead;
+    const c = (x.pre || {}).chance_d, fav = c == null || c === 50 ? null : c > 50 ? 'D' : 'R', ds = ntAllSide(x);
+    // the side a margin or a winner is on, as our chance counts sides (Nebraska's independent is the D side)
+    const lead = won ? (ds && x.call.name && ds.name === x.call.name ? 'D' : won) : x.margin_d != null && Math.abs(x.margin_d) >= 0.05 ? (x.margin_d > 0 ? 'D' : 'R') : x.lead ? ntPK(x.lead.party) : '';
+    const upset = !!(fav && lead && (lead === 'D' || lead === 'R') && lead !== fav && (won || x.counted >= 1));
+    const ln = (nm) => String(nm || '').split(' ').pop();
+    let m, n, top;
+    if (w === 'runoff') { m = 'Runoff'; n = NT_RANKED.has(x.st) ? 'Ranked choice' : 'Nobody over 50'; top = 'Called'; }
+    else if (won) { m = `${ln(x.call.name) || NT_PN[won]} ✓`; n = x.margin_d != null && x.counted >= 1 ? `${ntM(x.margin_d)}, ${ntPct(x.counted)} in` : 'Called'; top = 'Won'; }
+    else if (has && !(x.counted >= 1)) { m = 'First votes'; n = x.lead ? `${ln(x.lead.name)} ahead, under 1%` : 'under 1% in'; top = '0%'; }  // a town or two: no margin worth showing
+    else if (has) {  // the margin from the count itself (the lead's points come from rounded shares), the leader by name
+      const rc = (x.cands || []).find((k) => k.party === 'R'), who = x.margin_d != null ? (x.margin_d > 0 ? ds && (ds.last || ds.name) : rc && (rc.last || rc.name)) : x.lead && x.lead.name;
+      m = x.margin_d != null ? ntM(x.margin_d) : x.lead ? `${ntPK(x.lead.party)}+${fmt1(Math.round(x.lead.pts * 10) / 10)}` : '';
+      n = who ? `${ln(who)} leads` : 'counting'; top = ntPct(x.counted);
+    } else { const ct = ntCloseT(d, x.close); const open = x.close && ct && ntCloseMs(x.close) > Date.now(); m = open ? ct.replace(':00', '') : 'Waiting'; n = open ? 'polls close' : 'no votes yet'; top = ''; }
+    const name = ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor');
+    const b = el('button', { type: 'button', class: 'nt-wt', 'data-fk': 'wt:' + x.key, 'data-won': won, 'data-lead': won ? '' : has && x.counted >= 1 ? lead : '', 'data-upset': String(upset), 'data-s': won || w ? 'called' : has ? 'counting' : 'wait',
+      'aria-label': `${name}: ${won ? `${x.call.name || NT_PN[won]} won` : w === 'runoff' ? ntRunoffTxt(x.st) : has ? `${ntAllNow(x)}` : m === 'Waiting' ? 'no votes yet' : `polls close at ${m}`}.${upset ? ' Our forecast had them as the underdog.' : ''}`, title: name });
+    b.append(ntKids('span', { class: 'a' }, [el('b', {}, x.st + (x.special ? '*' : '')), el('span', {}, top)]), el('span', { class: 'm' }, m), el('span', { class: 'n' }, n));
+    b.addEventListener('click', () => ntAllPop(d, x));
+    return b;
+  }
+  function ntWallRank(x) {  // counting first, closest first; then still to close, soonest first; then called
+    if (x.call) return 3000;
+    if (x.margin_d != null || x.lead) return Math.min(999, Math.abs(x.margin_d ?? (x.lead || {}).pts ?? 999));
+    return 1000 + (x.close ? (ntCloseMs(x.close) - NT_NIGHT_START) / 60000 : 999);  // minutes after 6pm
+  }
+  function ntWall(d) {
+    const box = $('#nt-wall'); if (!box) return;
+    const rows = ntAllRows(d);
+    box.hidden = !rows.length; if (box.hidden) return;
+    box.dataset.office = nightWallOff;
+    const h = el('div', { class: 'nt-wall-h' });
+    h.append(ntHead(el('h2', {}, 'Every race at a glance'), 'wall'));
+    const tabs = el('div', { class: 'nt-feedf nt-wall-tabs', role: 'group', 'aria-label': 'Which office' });
+    for (const [k, lab] of [['senate', 'Senate'], ['governor', 'Governor']]) {
+      const t = el('button', { type: 'button', 'aria-pressed': String(nightWallOff === k), 'data-fk': 'wall:' + k }, lab);
+      t.addEventListener('click', () => { nightWallOff = k; try { localStorage.setItem('nt-wall-office', k); } catch (e) { /* fine */ } ntKeepFocus(() => ntWall(d)); });
+      tabs.append(t);
+    }
+    h.append(tabs);
+    const blocks = [];
+    for (const [k, lab, off] of [['senate', 'Senate', 'Senate'], ['governor', 'Governor', 'Governor']]) {
+      const xs = rows.filter((x) => x.office === off).sort((a, b) => ntWallRank(a) - ntWallRank(b) || a.st.localeCompare(b.st));
+      const cw = xs.filter((x) => x.call).length, cn = xs.filter((x) => !x.call && (x.margin_d != null || x.lead)).length;
+      const wD = xs.filter((x) => x.call && ntPK(x.call.winner) === 'D').length, wR = xs.filter((x) => x.call && ntPK(x.call.winner) === 'R').length;
+      const g = el('div', { class: 'nt-wall-g' }); for (const x of xs) g.append(ntWallTile(d, x));
+      const bh = el('div', { class: 'nt-wall-bh' }); bh.append(el('h3', {}, lab), el('small', { class: 'nt-mute' }, `${cw} called${cw ? ` (${wD} D, ${wR} R)` : ''}, ${cn} counting, ${xs.length - cw - cn} waiting`));
+      const blk = el('div', { class: 'nt-wall-b', 'data-k': k }); blk.append(bh, g); blocks.push(blk);
+    }
+    // the House in one line, with the upsets one tap away
+    const hs = rows.filter((x) => x.office === 'House'), hc = hs.filter((x) => x.call), ups = ntUpsets(d).filter((u) => u.x.office === 'House');
+    const hD = hc.filter((x) => ntPK(x.call.winner) === 'D').length, hR = hc.filter((x) => ntPK(x.call.winner) === 'R').length;
+    const hn = hs.filter((x) => !x.call && (x.margin_d != null || x.lead)).length, fl = hs.filter((x) => x.flip_called).length;
+    const hl = el('p', { class: 'nt-wall-house' });
+    hl.append(el('b', {}, 'House: '), document.createTextNode(`${hc.length} of ${hs.length} called (${hD} D, ${hR} R), ${hn} counting${fl ? `, ${fl} flipped` : ''}. `));
+    if (ups.length) {
+      const u = ntLink(`${ups.length} upset${ups.length === 1 ? '' : 's'} in the count`, () => { nightBellOpen = true; if (nightData) ntMap(nightData); const m = $('#nt-map'); if (m) ntScrollTo(m); });
+      hl.append(u);
+    }
+    hl.append(' ', ntLink('All House races', () => { const a = $('#nt-all'); if (a) ntScrollTo(a); }));
+    box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. Amber edge: the side our forecast had as the underdog leads or won. Live races first, closest first. Tap any race. * a special election.'));
   }
   function ntGlance(d) {
     const what = $('#nt-gl-what'), asof = $('#nt-gl-asof'), box = $('#nt-gl-ch'); if (!what || !asof || !box) return;
@@ -6016,6 +6116,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     seats: { title: 'Seats called or ahead', body: [
       'Solid bars are seats already called. Light bars are seats where a party leads in the count. The line is the majority.',
       'On the Senate bar the faded ends are the seats not on the ballot this year.'] },
+    wall: { title: 'Every race at a glance', body: [
+      'Every Senate and governor race on the ballot, one small tile each, like a scoreboard of every game.',
+      'A tile is tinted by who leads the count and filled once CNN calls it. The number is the leader\'s margin in points, and the line under it says who leads and how much is counted.',
+      'An amber edge means the side our forecast had as the underdog leads or won. Early counts can move a lot, so open the race to see how much is counted and what is left.',
+      'Live races come first, closest first, then the ones still to close, then the called ones. Under the tiles, one line for the House.'] },
     vibe: { title: 'The night so far', body: [
       'The biggest fact right now, in one line: who has won each chamber, or who is on track to, and how sure that is.',
       'Under it: the seats each party has won or leads, the chance to control each chamber that is still open, and how the votes compare with what we expected.',
