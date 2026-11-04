@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '481f222b0097';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '2846ba90b50c';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1719,6 +1719,10 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-bug .c:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; border-radius: 4px; }
 .nt-bug .nm { font-family: var(--font-display); font-weight: 800; } .nt-bug .nt-d, .nt-bug .nt-r { font-weight: 800; font-size: 15px; } .nt-bug .sep { color: var(--color-fg-muted); font-size: 11px; }
 .nt-bug .p { color: var(--color-fg-muted); font-size: 12px; }
+.nt-cty-shift { display: block; max-width: 100%; height: auto; margin-block: .4rem; }
+.nt-left { grid-template-columns: minmax(0, 1fr); } .nt-sheet-sort { flex-wrap: wrap; }  /* a row of sort chips wraps on a phone, never widening the card */
+.nt-left-t td.nt-sh { white-space: nowrap; font-variant-numeric: tabular-nums; } .nt-left-t td.nt-sh[data-early="true"] { opacity: .55; }
+@media (max-width: 47.99rem) { .nt-left-t { font-size: 12px; } .nt-left-t th, .nt-left-t td { padding-inline: .18rem; } .nt-left-t th { font-size: 11px; } .nt-left-t td:first-child { overflow-wrap: anywhere; } }
 .nt-card-nav { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: .4rem; }
 .nt-card-nav button { all: unset; cursor: pointer; min-height: 36px; font-size: 12.5px; font-weight: 600; color: var(--nt-ours); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .nt-card-nav button:last-child { text-align: right; } .nt-card-nav .pos { font-size: 11.5px; color: var(--color-fg-muted); white-space: nowrap; }
@@ -4524,12 +4528,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ['upsets', 'Upsets', 'Where our forecast\'s underdog has won, is now favored, or is in play on the live chance. Palest: the underdog only leads an early count. For the House, the number of upsets in the state.'],
   ];
   // The 2024 presidential margins (scripts/shift_2024.py, CNN's AP numbers), read once: the states for the shift map, the counties for
-  // a state card (Jake, Nov 3, 10:42pm: "a map view that has those "shift" arrows that are colored per party per location").
+  // a state card (Jake, Nov 3, about 10:30pm: "a map view that has those "shift" arrows that are colored per party per location").
   var nightShift = {}, nightShiftAsked = {};
   function ntShiftLoad(part, then) {
     if (nightShift[part] || nightShiftAsked[part]) return; nightShiftAsked[part] = true;
     fetch(ntBase() + (part === 'states' ? 'shift_2024.json' : 'shift_2024_counties.json')).then((r) => (r.ok ? r.json() : null))
-      .then((j) => { if (j && j[part]) { nightShift[part] = j[part]; if (then) then(); } }).catch(() => { nightShiftAsked[part] = false; });
+      .then((j) => { if (j && j[part]) { nightShift[part] = j[part]; if (j.cent) nightShift.cent = j.cent; if (then) then(); } }).catch(() => { nightShiftAsked[part] = false; });
   }
   const ntPres = (m) => (m >= 0 ? `Harris +${m.toFixed(1)}` : `Trump +${(-m).toFixed(1)}`);
   const ntShTxt = (v, ind) => `${Math.abs(v).toFixed(1)} toward ${v > 0 ? (ind ? 'the independent' : 'D') : 'R'}`;
@@ -6898,6 +6902,53 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // every county in the state, live (Jake, Nov 3, 10pm: "on mobile the counties list in the drill down is static and not dynamic at the
   // state level"): from the state's Senate race (else its governor's) in night_left.json, refreshed every 3 minutes, sortable
   var nightCtyLiveSort = 'left', nightCtyLiveAll = false;
+  // The state's counties against 2024 (Jake, Nov 3, about 10:30pm: shift arrows "per location"): an arrow at each county's center, the
+  // county's count so far against its Trump-Harris margin in 2024. Counts from night_left.json (the state's counting statewide race), the
+  // 2024 margins and centers from shift_2024_counties.json. Solid at half the county counted, faded and dashed under it.
+  function ntShiftOf(st, r) {  // r: a night_left "all" row [county, share counted, votes, votes left, margin so far]
+    const b = ((nightShift.counties || {})[st] || {})[r[0]];
+    return b ? { sh: r[4] - b[0], m24: b[0], fips: b[2], firm: r[1] >= 50 } : null;
+  }
+  function ntCtyShift(d, st) {
+    const races = (nightLeft || {}).races || {}, key = Object.keys(races).find((k) => races[k].state === st && races[k].all);
+    if (!key || !_geo) return null;
+    if (!nightShift.counties) {
+      ntShiftLoad('counties', () => { const sh = $('#nt-sheet'); if (nightData && sh && !sh.hidden) ntSheetRefresh(nightData); });
+      return el('p', { class: 'nt-mute' }, 'Loading the 2024 county results for the shift map.');
+    }
+    const f = _geo.feats.find((g) => g.st === st); if (!f) return null;
+    const L = races[key], x = ntAllRows(d).find((r) => r.key === key), cent = nightShift.cent || {}, pts = [];
+    for (const r of L.all) { const s2 = ntShiftOf(st, r), c = s2 && cent[s2.fips]; if (c) pts.push({ ...s2, name: r[0], c }); }
+    if (pts.length < 2) return null;  // New England counts by town and Alaska by district: no county centers, so the list's column only
+    const css = (v, fb) => (getComputedStyle($('#night')).getPropertyValue(v) || fb).trim() || fb;
+    const D = css('--nt-d', '#7da2f5'), R = css('--nt-r', '#f2806f'), I = css('--nt-jake', '#e3a548');
+    const mid = isDark() ? '#2a2f3d' : '#d9dbe3', bg = isDark() ? '#161b27' : '#eef0f4';
+    const ind = !!x && ((((x.pre || {}).side || {}).party === 'I') || !(x.cands || []).some((c) => c.party === 'D'));
+    const W = 420; let proj = d3.geoAlbersUsa().fitWidth(W - 12, f);
+    const bb = d3.geoPath(proj).bounds(f), H = Math.round(Math.min(W * 1.15, Math.max(160, bb[1][1] - bb[0][1] + 12)));
+    proj = d3.geoAlbersUsa().fitExtent([[6, 6], [W - 6, H - 6]], f);
+    const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('width', '100%').attr('class', 'nt-cty-shift').attr('role', 'img');
+    svg.append('path').attr('d', d3.geoPath(proj)(f)).attr('fill', mid).attr('stroke', isDark() ? '#3a4152' : '#c4c8d2');
+    const g = svg.append('g').attr('pointer-events', 'none');
+    for (const p of [...pts].sort((a, b) => Math.abs(b.sh) - Math.abs(a.sh))) {
+      const xy = proj(p.c); if (!xy) continue;
+      ntShiftArrow(g, xy[0], xy[1], p.sh, p.sh > 0 ? (ind ? I : D) : R, W / 300, p.firm, bg, 40);
+    }
+    const firm = pts.filter((p) => p.firm), toD = firm.filter((p) => p.sh > 0).length, srt = firm.map((p) => p.sh).sort((a, b) => a - b);
+    const med = srt.length ? (srt.length % 2 ? srt[(srt.length - 1) / 2] : (srt[srt.length / 2 - 1] + srt[srt.length / 2]) / 2) : null;
+    const big = [...firm].sort((a, b) => Math.abs(b.sh) - Math.abs(a.sh)).slice(0, 3);
+    const say = firm.length ? `${firm.length} count${firm.length === 1 ? 'y' : 'ies'} at half counted or more: ${toD} moved toward ${ind ? 'the independent' : 'Democrats'} since 2024, ${firm.length - toD} toward Republicans. The middle one moved ${ntShTxt(med, ind)}. Biggest: ${big.map((p) => `${p.name} ${ntShTxt(p.sh, ind)}`).join(', ')}.`
+      : 'No county is half counted yet, so every arrow is faded.';
+    svg.attr('aria-label', `Shift from 2024 by county. ${say}`);
+    const leg = el('div', { class: 'nt-map-leg' });
+    leg.append(ntShiftSw(ind ? I : D, 8, 'Bluer than 2024', true), ntShiftSw(R, -8, 'Redder than 2024', true), ntShiftSw(isDark() ? '#9aa3b8' : '#5b6274', -8, 'Under half counted', false));
+    const w = el('div', { class: 'nt-left' });
+    w.append(el('h3', { class: 'nt-sheet-h3' }, 'Shift from 2024, county by county'),
+      el('p', { class: 'nt-res-sub' }, `${x ? ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor') : 'The statewide race'}: each county's count so far against Trump and Harris there in 2024. Left and ${ind ? 'amber' : 'blue'}: ${ind ? 'toward the independent' : 'bluer'}. Right and red: redder. A longer arrow is a bigger shift.`),
+      svg.node(), leg, el('p', { class: 'nt-all-sum' }, say),
+      el('small', { class: 'nt-mute' }, 'The candidates differ from 2024, so a shift is not a test of our forecast. 2024 margins and counts: CNN (AP\'s numbers). County centers: Census shapes via us-atlas.'));
+    return w;
+  }
   function ntCtyLive2(d, st) {
     const races = (nightLeft || {}).races || {}, key = Object.keys(races).find((k) => races[k].state === st && races[k].all);
     if (!key) return null;
@@ -6908,16 +6959,19 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       el('p', { class: 'nt-res-sub' }, `${x ? ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor') : 'The statewide race'}, county by county: about ${ntBtNum(L.left)} votes left${L.n_zero ? `, and ${L.n_zero} count${L.n_zero === 1 ? 'y' : 'ies'} with none in yet` : ''}. Read ${ntT(L.read_at)}, refreshed every 3 minutes.`));
     const SORTS = [['left', 'Most left', (a, b) => (b[3] ?? -1) - (a[3] ?? -1)], ['counted', 'Least counted', (a, b) => a[1] - b[1]],
       ['d', 'Most D', (a, b) => b[4] - a[4]], ['r', 'Most R', (a, b) => a[4] - b[4]], ['votes', 'Biggest', (a, b) => b[2] - a[2]]];
+    const has24 = !!(nightShift.counties && nightShift.counties[st]), shOf = (r) => { const z = ntShiftOf(st, r); return z ? z.sh : null; };
+    if (has24) SORTS.push(['shift', 'Biggest shift', (a, b) => Math.abs(shOf(b) ?? 0) - Math.abs(shOf(a) ?? 0)]);
     const so = el('div', { class: 'nt-feedf nt-sheet-sort', role: 'group', 'aria-label': 'Sort the counties' });
     const tb = el('table', { class: 'nt-left-t' }), body = el('tbody'), more = el('div');
-    tb.append(ntKids('thead', {}, [ntKids('tr', {}, [el('th', {}, 'County'), el('th', {}, 'Counted'), el('th', {}, 'Left (est.)'), el('th', {}, 'So far')])]), body);
+    tb.append(ntKids('thead', {}, [ntKids('tr', {}, [el('th', {}, 'County'), el('th', {}, 'Counted'), el('th', {}, 'Left (est.)'), el('th', {}, 'So far'), ...(has24 ? [el('th', {}, 'vs 2024')] : [])])]), body);
     const draw = () => {
       const f = (SORTS.find((z) => z[0] === nightCtyLiveSort) || SORTS[0])[2], rows = [...L.all].sort(f), n = nightCtyLiveAll ? rows.length : 15;
       so.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === nightCtyLiveSort)));
       body.replaceChildren();
       for (const r of rows.slice(0, n)) {
         const tr = ntKids('tr', { 'data-key': String(keyset.has(r[0])) }, [el('td', {}, keyset.has(r[0]) ? `${r[0]} ★` : r[0]), el('td', {}, ntPct(r[1])), el('td', {}, r[3] == null ? '—' : ntBtNum(r[3])),
-          el('td', { class: r[4] > 0 ? 'nt-d' : r[4] < 0 ? 'nt-r' : '' }, ntM(r[4]))]);
+          el('td', { class: r[4] > 0 ? 'nt-d' : r[4] < 0 ? 'nt-r' : '' }, ntM(r[4])),
+          ...(has24 ? [(() => { const v = shOf(r); return el('td', { class: 'nt-sh ' + (v == null ? '' : v > 0 ? 'nt-d' : 'nt-r'), 'data-early': String(r[1] < 50), title: v == null ? 'No 2024 result for this county' : `${ntShTxt(v)} points since 2024` }, v == null ? '—' : v > 0 ? `← ${Math.abs(v).toFixed(1)}` : `${Math.abs(v).toFixed(1)} →`); })()] : [])]);
         if (keyset.has(r[0])) { tr.classList.add('go'); tr.addEventListener('click', () => ntCountyPop(d, st, r[0])); }
         body.append(tr);
       }
@@ -6961,6 +7015,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         nodes.push(el('h3', { class: 'nt-sheet-h3' }, hs.length === 1 ? 'House' : `House: ${hs.length} seats`),
           el('p', { class: 'nt-mute' }, `${called} called${called ? ` (${won('D')} D, ${won('R')} R)` : ''}, ${counting} counting${flips ? `, ${flips} flip${flips === 1 ? '' : 's'}` : ''}.`), l);
       }
+      { let sh = null; try { sh = ntCtyShift(d, st); } catch (e) { sh = null; } if (sh) nodes.push(sh); }  // the county shift arrows, then the list
       { let live = null; try { live = ntCtyLive2(d, st); } catch (e) { live = null; } if (live) nodes.push(live); }  // every county, live, before the key counties
       // Reference-only counties (no race or line behind them, so never a count) show only before a state counts. After that they read
       // "no votes yet" all night beside real results (Jake, Nov 3, 6:40pm: "why do the popouts say no votes yet?").
