@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '11eec7cdd5d6';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'a1e8ad2cb96c';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -6695,7 +6695,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const t0 = Math.min(...B.map((b) => Date.parse(b.at)), ...H.filter((p) => p[2] !== 'before').map((p) => p[0]));
     if (H.length && H[0][2] === 'before') H[0][0] = Math.min(H[0][0], t0);  // our chance before votes starts the line at the first drop
     const t1 = Math.max(Date.now(), ...B.map((b) => Date.parse(b.at)), ...H.map((p) => p[0]));
-    const W = 600, P1 = 120, P2 = 70, gap = 26, m = { l: 42, r: 10, t: 8, b: 18 }, Ht = m.t + P1 + gap + P2 + m.b;
+    const phone = window.matchMedia('(max-width: 47.99rem)').matches;  // Jake, Nov 3, 8:10pm: "too many dots on tiny chart on mobile"
+    const W = phone ? 360 : 600, P1 = phone ? 110 : 120, P2 = phone ? 64 : 70, gap = 26, m = { l: 40, r: 8, t: 8, b: 18 }, Ht = m.t + P1 + gap + P2 + m.b;
     const x = d3.scaleLinear().domain([t0, Math.max(t1, t0 + 60000)]).range([m.l, W - m.r]);
     const vals = B.map((b) => b.run_margin_d).concat(R && R.our_line != null ? [R.our_line] : []);
     const ext = Math.max(5, ...vals.map(Math.abs)) * 1.15, y1 = d3.scaleLinear().domain([-ext, ext]).range([m.t + P1, m.t]);
@@ -6708,7 +6709,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const v of [ext / 1.15, -ext / 1.15]) svg.append('text').attr('x', m.l - 5).attr('y', y1(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(ntM(Math.round(v)));
     svg.append('text').attr('x', m.l).attr('y', m.t + 10).attr('class', 'ax hd').text('The count');
     if (B.length) svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((b) => x(Date.parse(b.at))).y((b) => y1(b.run_margin_d))([...B, { at: new Date(t1).toISOString(), run_margin_d: B[B.length - 1].run_margin_d }])).attr('class', 'run');
-    const vmax = Math.max(1, ...B.map((b) => b.votes || 0));
+    const cap = phone ? 18 : 60, k = Math.max(1, Math.ceil(B.length / cap)), G = [];
+    for (let i = 0; i < B.length; i += k) {
+      const g = B.slice(i, i + k), clean = g.filter((b) => b.margin_d != null), cv = clean.reduce((a, b) => a + (b.votes || 0), 0), last = g[g.length - 1];
+      G.push({ at: last.at, from: g[0].at, n: g.length, votes: g.reduce((a, b) => a + (b.votes || 0), 0), run_margin_d: last.run_margin_d, counted: last.counted,
+        margin_d: cv ? clean.reduce((a, b) => a + b.margin_d * (b.votes || 0), 0) / cv : null });  // a group's margin weighted by votes, the same as its summed votes'
+    }
+    const vmax = Math.max(1, ...G.map((b) => b.votes || 0));
     // panel 2: the chance
     svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y2(0.5)).attr('y2', y2(0.5)).attr('class', 'mid');
     for (const v of [0, 0.5, 1]) svg.append('text').attr('x', m.l - 5).attr('y', y2(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(`${Math.round(v * 100)}%`);
@@ -6723,21 +6730,22 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       svg.selectAll('.drop').classed('sel', function () { return !!b && this.dataset.at === b.at; });
       why.replaceChildren();
       if (!b) { why.append(el('span', { class: 'nt-mute' }, 'Tap a dot for that vote drop and what it did to the chance.')); return; }
-      const i = B.indexOf(b), pb = i > 0 ? chanceAt(Date.parse(B[i - 1].at)) : (H[0] || [])[1], pa = chanceAt(Date.parse(b.at) + 240000);  // the next build after the drop, within 4 minutes
-      why.append(el('b', {}, `${tms(Date.parse(b.at))}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}. `),
+      const i = G.indexOf(b), pb = i > 0 ? chanceAt(Date.parse(G[i - 1].at)) : (H[0] || [])[1], pa = chanceAt(Date.parse(b.at) + 240000);  // the next build after the drop, within 4 minutes
+      const when = b.n > 1 ? `${tms(Date.parse(b.from))} to ${tms(Date.parse(b.at))}, ${b.n} drops` : tms(Date.parse(b.at));
+      why.append(el('b', {}, `${when}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}${b.n > 1 ? ' together' : ''}. `),
         document.createTextNode(`The count now ${ntM(b.run_margin_d)}${b.counted != null ? ` with ${Math.round(b.counted)}% counted` : ''}.`));
       if (pb != null && pa != null) { why.append(' ', document.createTextNode(`${ntLast(r.cand_d) || 'The Democrat'}'s chance: ${ntPctW(pb)} to ${ntPctW(pa)} `)); const tg = ntSinceTag(pa, pb); if (tg) why.append(tg); }
     };
-    for (const b of B) {
-      const cx = x(Date.parse(b.at)), cy = y1(b.run_margin_d), rr = 3 + 6 * Math.sqrt((b.votes || 0) / vmax);
+    for (const b of G) {
+      const cx = x(Date.parse(b.at)), cy = y1(b.run_margin_d), rr = (phone ? 2.5 : 3) + (phone ? 5 : 6) * Math.sqrt((b.votes || 0) / vmax);
       svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', rr).attr('class', 'drop ' + (b.margin_d == null ? 'x' : b.margin_d > 0 ? 'd' : 'r')).attr('data-at', b.at);
       svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', Math.max(11, rr + 3)).attr('class', 'nt-ctlc-hit').attr('tabindex', 0).attr('role', 'button')
-        .attr('aria-label', `${tms(Date.parse(b.at))}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}. Running ${ntM(b.run_margin_d)}.`)
+        .attr('aria-label', `${b.n > 1 ? `${tms(Date.parse(b.from))} to ${tms(Date.parse(b.at))}, ${b.n} drops` : tms(Date.parse(b.at))}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}. Running ${ntM(b.run_margin_d)}.`)
         .on('click', () => show(b)).on('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); show(b); } });
     }
     const w = el('div', { class: 'nt-sc-w' });
     w.append(ntBtKey([['d', `${ntLast(r.cand_d) || 'Democrat'} won the drop`], ['r', `${ntLast(r.cand_r) || 'Republican'} won the drop`], ['run', 'Running margin'], ['ref', 'Our forecast']]), svg.node(), why);
-    const keep = nightSpotSel && nightSpotSel.startsWith(r.race_id + '|') ? B.find((b) => r.race_id + '|' + b.at === nightSpotSel) : null;
+    const keep = nightSpotSel && nightSpotSel.startsWith(r.race_id + '|') ? G.find((b) => r.race_id + '|' + b.at === nightSpotSel) : null;
     show(keep || null);
     return w;
   }
