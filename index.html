@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'bd220a6e447b';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '86be277f5fff';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1649,6 +1649,12 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-spk .o { stroke: var(--nt-ours); stroke-width: .8; opacity: .55; vector-effect: non-scaling-stroke; }
 .nt-spk .l { fill: none; stroke: var(--color-fg); stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-linejoin: round; } .nt-spk .l.d { stroke: var(--nt-d); } .nt-spk .l.r { stroke: var(--nt-r); }
 .nt-spk.rc { height: 26px; }
+.nt-left { display: grid; gap: .3rem; padding-top: .5rem; border-top: 1px solid var(--nt-rule); min-width: 0; } .nt-left h4 { margin: 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; }
+.nt-left-warn { margin: 0; font-size: 12.5px; color: var(--color-fg-muted); padding: .35rem .5rem; border-radius: 6px; background: var(--nt-wash2); }
+.nt-left-t { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.nt-left-t th { text-align: left; font-size: 11.5px; font-weight: 600; color: var(--color-fg-muted); padding: .15rem .3rem; border-bottom: 1px solid var(--nt-rule); }
+.nt-left-t td { padding: .2rem .3rem; border-bottom: 1px solid color-mix(in srgb, var(--nt-rule) 50%, transparent); } .nt-left-t td:nth-child(n+2), .nt-left-t th:nth-child(n+2) { text-align: right; }
+.nt-left-n { margin: 0; font-size: 12.5px; }
 .nt-res-night { display: grid; gap: .3rem; } .nt-res-night h4 { margin: .2rem 0 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; } .nt-res-night .nt-sc-w { background: none; padding: 0; }
 .nt-rc-tr { display: grid; gap: .1rem; } .nt-rc-tr small { font-size: 12px; color: var(--color-fg-muted); }
 .nt-wall-wait .r { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; font-size: 12px; }
@@ -4095,6 +4101,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   var nightData = null, nightTimers = null, nightPrevTheme, nightLoad = null, nightLastMinute = null, nightParseSeq = 0, nightClosed = new Set(), nightOpened = new Set();
   var nightSeen = null, nightNew = {}, nightHealth = null, nightSort = null, nightClaims = null, nightPaused = false, nightSig = null, nightDrawnAt = 0;
   var nightBatches = null, nightBatchSeq = 0, nightBatchAll = false;  // the Election Day vote batches file (scripts/night_batches.py, Nov 3)
+  var nightLeft = null, nightLfTxt = null;  // each counting statewide race's votes left by county (scripts/night_left.py), Nov 3
   var nightResults = null, nightBtTxt = null, nightRsTxt = null, nightBtAllRaces = false, nightBtEvOpen = false, nightBtBeforeOpen = false;
   const nightBtDetOpen = new Set();  // which states' Details are unfolded, kept across redraws
   const nightBtOpen = new Set();  // races whose batches are unfolded, kept across the 30-second redraws  // every race's count batch by batch (scripts/night_results_batches.py), and the last good text of each file
@@ -4272,15 +4279,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
            return c.ok ? await c.text() : c.status === 404 ? null : last; } catch (e) { return last; } };
         const btx = nightMode === 'practice' ? null : await ntSide('night_batches.json', nightBtTxt);
         const rtx = await ntSide(nightMode === 'practice' ? 'night_results_practice.json' : 'night_results.json', nightRsTxt);
+        const ltx = nightMode === 'practice' ? null : await ntSide('night_left.json', nightLfTxt);
         if (!ntRO()) { try { nightHealth = await fetch('/api/status', { cache: 'no-store' }).then((x) => (x.ok ? x.json() : null)); } catch (e) { nightHealth = null; } }
         // A board that is the same text as the last one is not drawn again: a redraw rebuilds every box and costs a keyboard or
         // screen reader user their place (accessibility review, item 1). The status line is still checked, because its age moves.
-        const sig = nightMode + '|' + txt + '|' + (ctx || '') + '|' + (btx || '') + '|' + (rtx || '');
+        const sig = nightMode + '|' + txt + '|' + (ctx || '') + '|' + (btx || '') + '|' + (rtx || '') + '|' + (ltx || '');
         if (!force && nightData && sig === nightSig && !ntTimeDue()) { ntHealth(nightData); return true; }
         nightData = JSON.parse(txt); registerNight(nightData);
         try { nightClaims = ctx ? JSON.parse(ctx) : null; } catch (e) { nightClaims = null; }
         try { nightBatches = btx ? JSON.parse(btx) : null; nightBtTxt = btx; } catch (e) { /* a half-written file: keep the last one */ }
         try { nightResults = rtx ? JSON.parse(rtx) : null; nightRsTxt = rtx; } catch (e) { /* likewise */ }
+        try { nightLeft = ltx ? JSON.parse(ltx) : null; nightLfTxt = ltx; } catch (e) { /* likewise */ }
         drawNight(); nightSig = sig;
         ntSiteRestore();
         return true;
@@ -7981,6 +7990,58 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // or who leads and by how much, how much is counted, our forecast beside it, and the scripts' reading of where the count is heading.
   // Every reading line is the script's (night_results_batches.py stage and pace). The vote bar is drawn from the leader's share and the
   // margin, for the eye only: its numbers are the ones printed.
+  // ---------- a statewide race's deep dive in its card (Jake, Nov 3, 9:40pm: "do a deep dive on ohio for the people. When they open that
+  // popout that should be fairly robust"): where the rest of the vote is, how the state counts, and its key counties against our forecast
+  function ntLeftBox(d, x) {
+    const L = ((nightLeft || {}).races || {})[x.key]; if (!L || !(L.counties || []).length) return null;
+    const ds = ntAllSide(x), rc = (x.cands || []).find((k) => k.party === 'R');
+    const dn = ntLast((ds && ds.name) || '') || 'the Democrat', rn = ntLast((rc && rc.name) || '') || 'the Republican';
+    const tl = (d.timeline || []).find((t) => t.state === x.st) || {};
+    const w = el('div', { class: 'nt-left' }); w.append(el('h4', {}, 'Where the rest of the vote is'));
+    const net = L.proj_net_d, zn = L.n_zero ?? (L.zero || []).length;
+    w.append(el('p', { class: 'nt-res-sub' }, `About ${ntBtNum(L.left)} votes left in counties already reporting${zn ? `, plus ${zn} count${zn === 1 ? 'y' : 'ies'} with none in yet` : ''}. If each county's rest votes like its count so far, ${net > 0 ? dn : rn} nets about ${ntBtNum(Math.abs(net))} more.`));
+    w.append(el('p', { class: 'nt-left-warn' }, `A guide, not a projection. ${tl.posts_first ? `What ${NT_STATE[x.st] || x.st} posts first: ${tl.posts_first.charAt(0).toLowerCase() + tl.posts_first.slice(1)} ` : ''}The votes still out are mostly counted later and can lean differently from each county's count so far.`));
+    const tb = el('table', { class: 'nt-left-t' });
+    tb.append(ntKids('thead', {}, [ntKids('tr', {}, [el('th', {}, 'County'), el('th', {}, 'Counted'), el('th', {}, 'Left (est.)'), el('th', {}, 'So far')])]));
+    const body = el('tbody');
+    for (const c of L.counties.slice(0, 8)) {
+      body.append(ntKids('tr', {}, [el('td', {}, c.county), el('td', {}, ntPct(c.pct)), el('td', {}, ntBtNum(c.left)), el('td', { class: c.margin_d > 0 ? 'nt-d' : c.margin_d < 0 ? 'nt-r' : '' }, ntM(c.margin_d))]));
+    }
+    tb.append(body); w.append(tb);
+    if (zn) w.append(el('p', { class: 'nt-mute nt-left-n' }, `No votes in yet: ${(L.zero || []).slice(0, 8).join(', ')}${zn > 8 ? ` and ${zn - 8} more` : ''}.`));
+    const ne = L.n_early ?? (L.early || []).length;
+    if (ne) w.append(el('p', { class: 'nt-mute nt-left-n' }, `Barely started (under 20% counted, left out of the estimate): ${(L.early || []).slice(0, 6).map((c) => `${c.county} ${ntPct(c.pct)}`).join(', ')}${ne > 6 ? ` and ${ne - 6} more` : ''}.`));
+    w.append(el('small', { class: 'nt-mute' }, `County counts: CNN (AP's numbers), read ${ntT(L.read_at)}. Votes left come from AP's estimate of each county's expected vote.`));
+    return w;
+  }
+  function ntHowCounts(d, x) {
+    const tl = (d.timeline || []).find((t) => t.state === x.st); if (!tl || !(tl.posts_first || tl.drift)) return null;
+    const w = el('div', { class: 'nt-left' }); w.append(el('h4', {}, `How ${NT_STATE[x.st] || x.st} counts`));
+    const dl = el('dl', { class: 'nt-dl' }), row = (k, v) => { if (v) dl.append(el('dt', {}, k), el('dd', {}, v)); };
+    row('First to post', tl.posts_first);
+    row('In 2024', tl.drift);
+    row('2024 pace', [tl.first_2024 && `first votes ${tl.first_2024}`, tl.half_2024 && `half counted ${tl.half_2024}`, tl.ninety_2024 && `90% counted ${tl.ninety_2024}`].filter(Boolean).join(', ') + '.');
+    row('Read it after', tl.read_after ? `${tl.read_after} ET, once the early count has settled.` : '');
+    w.append(dl);
+    return w;
+  }
+  function ntKeyCty(d, x) {
+    const band = ((d.thresholds || {}).band) || 2;
+    const cs = (d.counties || []).filter((c) => c.state === x.st && !c.context_only && c.our_line != null && (!c.race_id || c.race_id === (x.race_id || x.key)));
+    if (!cs.length || !(x.race_id || /^(senate|gov)_/.test(x.key))) return null;
+    const w = el('div', { class: 'nt-left' }); w.append(el('h4', {}, 'Key counties against our forecast'));
+    const tb = el('table', { class: 'nt-left-t' });
+    tb.append(ntKids('thead', {}, [ntKids('tr', {}, [el('th', {}, 'County'), el('th', {}, 'Our line'), el('th', {}, 'Now'), el('th', {}, 'Reads')])]));
+    const body = el('tbody');
+    for (const c of cs) {
+      const rd = c.reading || {}, off = c.offset;
+      const reads = rd.margin_d == null ? 'no votes yet' : off == null ? `${ntPct(c.counted)} in` : Math.abs(off) < band ? `on our line, ${ntPct(c.counted)} in` : `${fmt1(Math.round(Math.abs(off) * 10) / 10)} ${off > 0 ? 'bluer' : 'redder'}, ${ntPct(c.counted)} in`;
+      body.append(ntKids('tr', {}, [el('td', {}, c.county), el('td', {}, ntM(c.our_line)), el('td', { class: rd.margin_d > 0 ? 'nt-d' : rd.margin_d < 0 ? 'nt-r' : '' }, rd.margin_d == null ? '—' : ntM(rd.margin_d)), el('td', {}, reads)]));
+    }
+    tb.append(body); w.append(tb);
+    w.append(el('small', { class: 'nt-mute' }, `Our line: what each county reads if the race ends at our forecast, set before the night. On it means within ${band} points.`));
+    return w;
+  }
   function ntResHead(d, x) {
     const R = ((nightResults || {}).races || {})[x.key], L = R && (R.latest || (R.batches || [])[R.batches.length - 1]);
     const w = x.call && x.call.winner, has = x.margin_d != null || !!x.lead, p = x.pre || {};
@@ -8038,6 +8099,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const c = el('div', { class: 'nt-res-night' }); c.append(el('h4', {}, 'The count through the night'));
       if (tr) c.append(el('p', { class: 'nt-res-sub' }, ntTrendTxt(tr, ntLast(((ntAllSide(x) || {}).name) || '') || 'the Democrat', ntLast((((x.cands || []).find((k) => k.party === 'R')) || {}).name || '') || 'the Republican')));
       c.append(night); box.append(c);
+      for (const f of [ntLeftBox, ntHowCounts, ntKeyCty]) { try { const n = f(d, x); if (n) box.append(n); } catch (e) { /* a section never stops the card */ } }
     } else if (R && (R.batches || []).length > 1) {
       const c = el('div', { class: 'nt-bt-chart nt-res-chart' });
       c.append(el('h4', {}, 'The count, batch by batch'), ntBtKey([['d', `${ntBtSide(R, 'a')} won the batch`], ['r', `${ntBtSide(R, 'b')} won the batch`], ['run', 'Running margin'], ['ref', 'Our forecast']]), ntBtResultChart(R));
