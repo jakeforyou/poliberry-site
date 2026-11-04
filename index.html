@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'd43b946bee9b';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '801b5a97316d';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1553,6 +1553,9 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-ctlc-sw small { font-size: 11.5px; }
 .nt-ctlc-sm { max-height: 90px; }
 .nt-ctlc-sm .nt-ctlc-l { stroke: var(--nt-ours); stroke-dasharray: none; opacity: 1; } .nt-ctlc-sm .nt-ctlc-dot { fill: var(--nt-ours); }
+.nt-ctlc-hit { fill: transparent; cursor: pointer; outline: none; } .nt-ctlc-hit:focus-visible { stroke: var(--nt-ours); stroke-width: 2; }
+.nt-ctlc-dot.sel { r: 6; stroke: var(--color-fg); stroke-width: 2; }
+.nt-ctlc-why { margin: .2rem 0 0; font-size: 13px; line-height: 1.45; min-height: 1.4em; } .nt-ctlc-why b { font-weight: 700; }
 /* who voted and what it suggested, folded under the count once results come in */
 .nt-bt-before { border-top: 1px solid var(--nt-rule); padding-top: .4rem; }
 /* the wall (Nov 3, 7:10pm: "I want to see everything at once!"): every Senate and governor race as a scoreboard tile */
@@ -4257,6 +4260,29 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   // One chamber's chance through the night, under its chance bar in the scoreboard (Jake, Nov 3, 6:50pm: the line charts up with the
   // race to 51 and 218). The same history and dots as the big chart used to show under Most impactful.
+  // Why a dot is there (Jake, Nov 3, 7:45pm: "the dots on the charts need to pop out to show why that dot was generated"). A dot from
+  // one race carries that race's message. A dot from many races at once came from the national read: which state joined it, left
+  // it or moved, from each state's own history of its offset (tiles[].trace, one point per build).
+  var nightDot = null;
+  // When the live model itself was corrected (server restarts, Nov 3). A dot in the few minutes after one is the correction, not the votes.
+  const NT_MODEL_FIXES = [['2026-11-03T19:07:31-05:00', 'a first sliver of the count now barely moves a race'], ['2026-11-03T19:21:53-05:00', 'one state now moves the rest of the night less'],
+    ['2026-11-03T19:23:07-05:00', 'counts past a fifth carry their full weight again'], ['2026-11-03T19:24:41-05:00', 'a big early gap from our forecast is read as mostly the order of the count'],
+    ['2026-11-03T19:44:44-05:00', 'a state moves other races only once half of it is counted']];
+  function ntDotWhy(d, mv) {
+    if (mv.kind !== 'count' || mv.race_id || mv.every) return mv.title || '';
+    const fx = NT_MODEL_FIXES.find(([at]) => { const g = Date.parse(mv.at) - Date.parse(at); return g >= 0 && g < 150000; });
+    if (fx) return `The live model was corrected at ${ntT(fx[0])}: ${fx[1]}. Every race was recomputed at once.`;
+    const t = Date.parse(mv.at), builds = ntCtlHist(d.story || {}).map((p) => Date.parse(p[0])).filter((b) => b < t);
+    const prev = builds.length ? builds[builds.length - 1] : null, bits = [];
+    for (const tl of d.tiles || []) {
+      const tr = tl.trace || [], at = tr.find((p) => Math.abs(Date.parse(p[0]) - t) < 2000), was = prev == null ? null : tr.find((p) => Math.abs(Date.parse(p[0]) - prev) < 2000);
+      const nm = NT_STATE[tl.state] || tl.state, side = (v) => `${fmt1(Math.round(Math.abs(v) * 10) / 10)} points ${v > 0 ? 'bluer' : 'redder'}`;
+      if (at && !was) bits.push(`${nm} joined the read of the night, ${side(at[1])} than our forecast`);
+      else if (!at && was && !tr.some((p) => Date.parse(p[0]) > t)) bits.push(`${nm} left the read of the night`);
+      else if (at && was && Math.abs(at[1] - was[1]) >= 1.5) bits.push(`${nm} moved from ${side(was[1])} to ${side(at[1])} than our forecast`);
+    }
+    return bits.length ? `${bits.join('. ')}. Races still to count move with that read, so many moved at once.` : 'Many races moved at once as their counts updated.';
+  }
   function ntCtlSpark(d, k) {
     const st = d.story || {}, h = ntCtlHist(st), i = k === 'house' ? 2 : 1;
     if (h.length < 2) return null;
@@ -4271,14 +4297,31 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (v !== 0) svg.append('text').attr('x', m.l - 5).attr('y', y(v) + 4).attr('text-anchor', 'end').attr('class', 'nt-ctlc-ax').text(`${Math.round(v * 100)}%`);
     }
     svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((p) => x(Date.parse(p[0]))).y((p) => y(p[i]))(h)).attr('class', 'nt-ctlc-l ' + (k === 'house' ? 'h' : 's'));
+    const why = el('p', { class: 'nt-ctlc-why', role: 'status' });
+    const show = (mv) => {
+      nightDot = mv ? { k, at: mv.at } : null;
+      svg.selectAll('.nt-ctlc-dot').classed('sel', function () { return !!mv && this.dataset.at === mv.at; });
+      why.replaceChildren();
+      if (!mv) { why.append(el('span', { class: 'nt-mute' }, 'Tap a dot to see what moved it.')); return; }
+      why.append(el('b', {}, `${ntT(mv.at)}: ${who} ${ntPct(100 * mv.from)} to ${ntPct(100 * mv.to)} `), ntSinceTag(mv.to, mv.from) || '', el('br'), document.createTextNode(ntDotWhy(d, mv)));
+      const key = mv.every || mv.race_id;
+      if (key) { const x = ntAllRows(d).find((r) => r.key === key); if (x) why.append(' ', ntLink('Open the race', () => ntAllPop(d, x))); }
+      else if (mv.state) why.append(' ', ntLink(`Open ${NT_STATE[mv.state] || mv.state}`, () => ntStatePop(d, mv.state)));
+    };
     for (const mv of st.impact || []) {
       if (mv.to == null || (mv.chamber === 'house') !== (k === 'house') || Date.parse(mv.at) < x0) continue;
-      svg.append('circle').attr('cx', x(Date.parse(mv.at))).attr('cy', y(mv.to)).attr('r', 3.5).attr('class', 'nt-ctlc-dot ' + (k === 'house' ? 'h' : 's'))
-        .append('title').text(`${ntT(mv.at)}: ${mv.title} ${ntPct(100 * mv.from)} to ${ntPct(100 * mv.to)}.`);
+      const cx = x(Date.parse(mv.at)), cy = y(mv.to);
+      svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', 4).attr('class', 'nt-ctlc-dot ' + (k === 'house' ? 'h' : 's')).attr('data-at', mv.at);
+      // a bigger invisible target, so a finger can hit the dot; Enter or Space works too
+      svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', 12).attr('class', 'nt-ctlc-hit').attr('tabindex', 0).attr('role', 'button')
+        .attr('aria-label', `${ntT(mv.at)}: ${who} ${ntPct(100 * mv.from)} to ${ntPct(100 * mv.to)}. ${ntDotWhy(d, mv)}`)
+        .on('click', () => show(mv)).on('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); show(mv); } });
     }
     svg.append('text').attr('x', m.l).attr('y', H - 3).attr('class', 'nt-ctlc-ax').text(ntT(h[0][0]));
     svg.append('text').attr('x', W - m.r).attr('y', H - 3).attr('text-anchor', 'end').attr('class', 'nt-ctlc-ax').text(ntT(last[0]));
-    const w = el('div', { class: 'nt-ctlc-sw' }); w.append(el('small', { class: 'nt-mute' }, 'Through the night'), svg.node());
+    const w = el('div', { class: 'nt-ctlc-sw' }); w.append(el('small', { class: 'nt-mute' }, 'Through the night. The dots are what moved it.'), svg.node(), why);
+    const keep = nightDot && nightDot.k === k ? (st.impact || []).find((m) => m.at === nightDot.at && (m.chamber === 'house') === (k === 'house')) : null;
+    show(keep || null);
     return w;
   }
   function ntImpact(d) {
