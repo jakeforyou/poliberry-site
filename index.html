@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '5fdb53cf0d09';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'd43b946bee9b';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1206,6 +1206,7 @@ details.nt-prac[open] { display: grid; gap: .7rem; }
 /* what moved: a small arrow and the size of the move beside a chance that changed in the last five minutes, and one glow */
 .nt-mv { font-family: var(--font-text); font-size: 12px; font-weight: 700; letter-spacing: 0; padding: 0 .35rem; border-radius: 999px; color: var(--mc); background: color-mix(in srgb, var(--mc) 16%, transparent); }
 .nt-mv[data-p="D"] { --mc: var(--nt-d); } .nt-mv[data-p="R"] { --mc: var(--nt-r); }
+.nt-wt .nt-mv { font-size: 10px; padding: 0 .25rem; }  /* the wall's arrows: small, beside the share counted */
 @media (prefers-reduced-motion: no-preference) {
   .nt-rc[data-moved="true"] { animation: nt-moved 2.4s ease-out 1; }
   @keyframes nt-moved { 0% { box-shadow: 0 0 0 2px var(--nt-jake); } 100% { box-shadow: 0 0 0 0 transparent; } }
@@ -4948,7 +4949,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const name = ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor');
     const b = el('button', { type: 'button', class: 'nt-wt', 'data-fk': 'wt:' + x.key, 'data-won': won, 'data-lead': won ? '' : has && x.counted >= 1 ? lead : '', 'data-upset': String(upset), 'data-s': won || w ? 'called' : has ? 'counting' : 'wait',
       'aria-label': `${name}: ${won ? `${x.call.name || NT_PN[won]} won` : w === 'runoff' ? ntRunoffTxt(x.st) : has ? `${ntAllNow(x)}` : m === 'Waiting' ? 'no votes yet' : `polls close at ${m}`}.${upset ? ' Our forecast had them as the underdog.' : ''}`, title: name });
-    b.append(ntKids('span', { class: 'a' }, [el('b', {}, x.st + (x.special ? '*' : '')), el('span', {}, top)]), el('span', { class: 'm' }, m), el('span', { class: 'n' }, n));
+    const od = !w && ((d.story || {}).odds || {})[x.race_id || x.key], tg = od && od.basis === 'count' && Math.abs((od.p_d ?? 0) - (od.final_call_d ?? od.p_d ?? 0)) >= 0.05 ? ntSinceTag(od.p_d, od.final_call_d) : null;
+    const ar = el('span', {}, top); if (tg) ar.append(' ', tg);
+    b.append(ntKids('span', { class: 'a' }, [el('b', {}, x.st + (x.special ? '*' : '')), ar]), el('span', { class: 'm' }, m), el('span', { class: 'n' }, n));
     b.addEventListener('click', () => ntAllPop(d, x));
     return b;
   }
@@ -5016,7 +5019,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const s = el('div', { class: 'nt-gl-n' }); s.append(cnt('nt-d', 'Democrats', n.d), el('small', {}, `${n.maj} wins`), cnt('nt-r', 'Republicans', n.r));
       t.append(h, s);
       if (n.wait) t.append(el('small', { class: 'nt-gl-c nt-gl-w' }, NT_SEAT_WAIT));
-      if (o && o.p_d != null) t.append(el('small', { class: 'nt-gl-c' }, 'Chance to control'), ntWinBar(o.p_d, 'sm'));
+      if (o && o.p_d != null) { const lb = el('small', { class: 'nt-gl-c' }, 'Chance to control'); const tg = ntSinceTag(o.p_d, o.final_call_d); if (tg) lb.append(' ', tg); t.append(lb, ntWinBar(o.p_d, 'sm')); }
       box.append(t);
     }
     ntAsOfAge(d);
@@ -6518,6 +6521,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return t;
   }
   const ntPctW = (p) => (p >= 0.995 ? '>99%' : p <= 0.005 ? '<1%' : Math.round(p * 100) + '%');
+  // How far a chance has moved since before votes (our final call), shown for as long as it is off by a point or more (Jake, Nov 3,
+  // 7:30pm: "I don't see any change arrows"). ntMoveTag still marks a move that just happened while the page was open.
+  function ntSinceTag(p, p0, words) {
+    if (p == null || p0 == null) return null;
+    const dd = Math.round((p - p0) * 100); if (Math.abs(dd) < 1) return null;
+    const up = dd > 0;
+    return el('span', { class: 'nt-mv', 'data-p': up ? 'D' : 'R', 'data-since': 'true', role: 'img', 'aria-label': `Democrats' chance ${up ? 'up' : 'down'} ${Math.abs(dd)} points since before votes, from ${ntPctW(p0)}`,
+      title: `Democrats' chance: ${ntPctW(p0)} before votes, ${ntPctW(p)} now` }, `${up ? '▲' : '▼'}${Math.abs(dd)}${words ? ' ' + words : ''}`);
+  }
   function ntWinBar(pD, size) {
     const w = el('div', { class: 'nt-win', 'data-size': size || 'sm', role: 'img', 'aria-label': `Chance to win: Democrats ${ntPctW(pD)}, Republicans ${ntPctW(1 - pD)}` });
     const bar = el('span', { class: 'bar' }), di = el('i', { class: 'd' }), ri = el('i', { class: 'r' });
@@ -6668,7 +6680,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       box.append(h);
       if (!o) continue;
       const mu = el('div', { class: 'nt-mu2', 'data-size': 'md' });
-      const mh = el('div', { class: 'nt-mu2-h' }, 'Chance to control'); mh.append(ntQ('chance')); mu.append(mh);
+      const mh = el('div', { class: 'nt-mu2-h' }, 'Chance to control'); mh.append(ntQ('chance')); { const tg = ntSinceTag(o.p_d, o.final_call_d, 'since 6pm'); if (tg) mh.append(' ', tg); } mu.append(mh);
       for (const side of ['D', 'R']) {
         const p = side === 'D' ? o.p_d : 1 - o.p_d, x = el('div', { class: 's', 'data-p': side, 'data-fav': String(p >= 0.5) });
         x.append(el('small', {}, side === 'D' ? 'Democrats' : 'Republicans'), el('b', {}, ntPctW(p))); mu.append(x);
@@ -6908,6 +6920,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (mv && Date.now() - mv.at < 40000) c.dataset.moved = 'true';  // one glow on the refresh that brought the move
       const lab = el('div', { class: 'nt-rc-ol' });  // labeled, so a chance to win is never read as a vote share
       const lt = el('span', {}, od.basis === 'forecast' ? 'Chance to win, before votes' : 'Chance to win'); const mt = ntMoveTag(mv); if (mt) lt.append(' ', mt);
+      { const tg = od.basis === 'forecast' ? null : ntSinceTag(od.p_d, od.final_call_d, 'since our forecast'); if (tg) lt.append(' ', tg); }
       lab.append(lt, od.basis === 'forecast' ? el('small', { class: 'nt-rc-pre' }, r.addendum ? 'our call' : 'our final call') : ntCallWatch(od.call_watch));
       o.append(ntWinBar(od.p_d, 'sm'), lab);
       c.append(o);
@@ -7531,7 +7544,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!w) for (const t of (pc.lines || []).slice(0, sg ? 1 : 2)) read.append(el('p', { class: 'nt-mute' }, t));
     if (read.children.length) box.append(read);
     const o = ((d.story || {}).odds || {})[x.key];
-    if (o && o.basis === 'count' && !w) box.append(el('p', { class: 'nt-res-sub' }, `Chance now: ${ntPct(100 * Math.max(o.p_d, 1 - o.p_d))} for ${o.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'the Democrat' : ((x.cands || []).find((c) => c.party === 'R') || {}).name || 'the Republican'}. A rough guide from the count and our forecast, not a call.`));
+    if (o && o.basis === 'count' && !w) {
+      const cp = el('p', { class: 'nt-res-sub' }, `Chance now: ${ntPct(100 * Math.max(o.p_d, 1 - o.p_d))} for ${o.p_d >= 0.5 ? (ntAllSide(x) || {}).name || 'the Democrat' : ((x.cands || []).find((c) => c.party === 'R') || {}).name || 'the Republican'}${o.final_call_d != null ? ` (Democrats ${ntPctW(o.final_call_d)} before votes)` : ''}. A rough guide from the count and our forecast, not a call. `);
+      const tg = ntSinceTag(o.p_d, o.final_call_d); if (tg) cp.append(tg);
+      box.append(cp);
+    }
     { const iv = ntImp(d, x.key); if (iv && !w && iv.p >= 0.01) box.append(el('p', { class: 'nt-res-sub' }, `${ntImpTxt(iv.p)}.`)); }
     if (R && (R.batches || []).length > 1) {
       const c = el('div', { class: 'nt-bt-chart nt-res-chart' });
