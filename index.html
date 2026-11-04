@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '6c8eaaa36fdc';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'bd220a6e447b';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -7151,7 +7151,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // ---------- the claims watch: fraud claims, legal threats and escalation from Trump, his administration and allies.
   // Real posts in both modes (it is not part of the practice board). Flags come from words, not judgment.
   const ntDayET = (iso) => (iso ? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date(iso)) : '');  // YYYY-MM-DD in Eastern time
-  var nightClaimsF = (() => { try { return localStorage.getItem('nt-claims-f') || 'flagged'; } catch (e) { return 'flagged'; } })(), nightClaimsN = 6;
+  // opens on everything they said, not only flagged claims (Jake, Nov 3, 9:25pm: "The people need to know"); a new key, so an older saved choice does not hide it
+  var nightClaimsF = (() => { try { return localStorage.getItem('nt-claims-f2') || 'all'; } catch (e) { return 'all'; } })(), nightClaimsN = 8;
   function ntClaimsCard() {
     const box = $('#nt-claims'); if (!box) return;
     const c = nightClaims; box.hidden = !c; if (!c) return;
@@ -7170,7 +7171,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const f = el('div', { class: 'nt-cl-f', role: 'group', 'aria-label': 'Show claims' });
     for (const [k, name] of [['flagged', 'Flagged'], ['all', 'Everything']]) {
       const b = el('button', { type: 'button', 'aria-pressed': String(nightClaimsF === k) }, name);
-      b.addEventListener('click', () => { nightClaimsF = k; nightClaimsN = 6; try { localStorage.setItem('nt-claims-f', k); } catch (e) { /* ignore */ } ntKeepFocus(ntClaimsCard); });
+      b.addEventListener('click', () => { nightClaimsF = k; nightClaimsN = 8; try { localStorage.setItem('nt-claims-f2', k); } catch (e) { /* ignore */ } ntKeepFocus(ntClaimsCard); });
       f.append(b);
     }
     box.append(sum, f);
