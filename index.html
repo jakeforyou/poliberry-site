@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'f8173a38de99';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '11eec7cdd5d6';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1556,6 +1556,14 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-ctlc-hit { fill: transparent; cursor: pointer; outline: none; } .nt-ctlc-hit:focus-visible { stroke: var(--nt-ours); stroke-width: 2; }
 .nt-ctlc-dot.sel { r: 6; stroke: var(--color-fg); stroke-width: 2; }
 .nt-ctlc-why { margin: .2rem 0 0; font-size: 13px; line-height: 1.45; min-height: 1.4em; } .nt-ctlc-why b { font-weight: 700; }
+/* the spotlight race over time: the count's drops and the chance (Nov 3, 8pm) */
+.nt-sc-w { display: grid; gap: .25rem; padding: .55rem .65rem; border-radius: 10px; background: var(--nt-wash); min-width: 0; }
+.nt-sc { width: 100%; height: auto; display: block; }
+.nt-sc .zero { stroke: var(--cds-chart-axis); } .nt-sc .mid { stroke: var(--nt-rule); stroke-dasharray: 2 3; }
+.nt-sc .ref { stroke: var(--nt-ours); stroke-width: 1.5; stroke-dasharray: 5 4; } .nt-sc .ax { font-size: 11px; fill: var(--color-fg-muted); } .nt-sc .ax.ours { fill: var(--nt-ours); } .nt-sc .ax.hd { font-weight: 700; fill: var(--color-fg); }
+.nt-sc .run { fill: none; stroke: var(--color-fg); stroke-width: 2; } .nt-sc .ch { fill: none; stroke: var(--nt-ours); stroke-width: 2.4; }
+.nt-sc .drop { stroke: var(--color-bg); stroke-width: 1.5; } .nt-sc .drop.d { fill: var(--nt-d); } .nt-sc .drop.r { fill: var(--nt-r); } .nt-sc .drop.x { fill: var(--cds-chart-muted); }
+.nt-sc .drop.sel { stroke: var(--color-fg); stroke-width: 2.5; }
 /* who voted and what it suggested, folded under the count once results come in */
 .nt-bt-before { border-top: 1px solid var(--nt-rule); padding-top: .4rem; }
 /* the wall (Nov 3, 7:10pm: "I want to see everything at once!"): every Senate and governor race as a scoreboard tile */
@@ -6672,6 +6680,67 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     w.append(segs, el('span', { class: 'l' }, cw.stage === 4 ? `${cw.label} ✓` : cw.label));
     return w;
   }
+  // The spotlight race over time (Jake, Nov 3, 8pm: "Could that have line graphs of the drops and impact on odds over time?"). Top: the
+  // running margin, a dot for each vote drop sized by its votes and colored by who won the drop, our forecast dashed. Bottom: the D
+  // side's chance to win on the same clock (story.race_hist, kept by the script since 8pm). Tap a dot for the drop and what it did to
+  // the chance. Counts are CNN's batches (night_results_batches.py), the chance is the live model's.
+  var nightSpotSel = null;
+  function ntSpotChart(d, r) {
+    const R = ((nightResults || {}).races || {})[r.race_id];
+    // the whole night when the file has it (trail: [time, running margin, votes, the drop's margin, share counted]), else the newest batches
+    const B = ((R && R.trail) ? R.trail.map((t) => ({ at: t[0], run_margin_d: t[1], votes: t[2], margin_d: t[3], counted: t[4] })) : ((R && R.batches) || [])).filter((b) => b.run_margin_d != null && b.at);
+    const tms = (ms) => new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(ms).replace(' ', '').toLowerCase();  // ntT reads an offset ISO string, not a UTC one
+    const H = (((d.story || {}).race_hist || {})[r.race_id] || []).map((p) => [Date.parse(p[0]), p[1], p[2]]);
+    if (B.length < 2 && H.length < 2) return null;
+    const t0 = Math.min(...B.map((b) => Date.parse(b.at)), ...H.filter((p) => p[2] !== 'before').map((p) => p[0]));
+    if (H.length && H[0][2] === 'before') H[0][0] = Math.min(H[0][0], t0);  // our chance before votes starts the line at the first drop
+    const t1 = Math.max(Date.now(), ...B.map((b) => Date.parse(b.at)), ...H.map((p) => p[0]));
+    const W = 600, P1 = 120, P2 = 70, gap = 26, m = { l: 42, r: 10, t: 8, b: 18 }, Ht = m.t + P1 + gap + P2 + m.b;
+    const x = d3.scaleLinear().domain([t0, Math.max(t1, t0 + 60000)]).range([m.l, W - m.r]);
+    const vals = B.map((b) => b.run_margin_d).concat(R && R.our_line != null ? [R.our_line] : []);
+    const ext = Math.max(5, ...vals.map(Math.abs)) * 1.15, y1 = d3.scaleLinear().domain([-ext, ext]).range([m.t + P1, m.t]);
+    const y2 = d3.scaleLinear().domain([0, 1]).range([m.t + P1 + gap + P2, m.t + P1 + gap]);
+    const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${Ht}`).attr('class', 'nt-sc').attr('role', 'img')
+      .attr('aria-label', `${NT_STATE[r.state] || r.state} ${r.office}: the running margin over ${B.length} vote drops, and ${r.cand_d}'s chance to win over time.`);
+    // panel 1: the margin
+    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y1(0)).attr('y2', y1(0)).attr('class', 'zero');
+    if (R && R.our_line != null) { svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y1(R.our_line)).attr('y2', y1(R.our_line)).attr('class', 'ref'); svg.append('text').attr('x', W - m.r).attr('y', y1(R.our_line) - 4).attr('text-anchor', 'end').attr('class', 'ax ours').text(`our forecast ${ntM(R.our_line)}`); }
+    for (const v of [ext / 1.15, -ext / 1.15]) svg.append('text').attr('x', m.l - 5).attr('y', y1(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(ntM(Math.round(v)));
+    svg.append('text').attr('x', m.l).attr('y', m.t + 10).attr('class', 'ax hd').text('The count');
+    if (B.length) svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((b) => x(Date.parse(b.at))).y((b) => y1(b.run_margin_d))([...B, { at: new Date(t1).toISOString(), run_margin_d: B[B.length - 1].run_margin_d }])).attr('class', 'run');
+    const vmax = Math.max(1, ...B.map((b) => b.votes || 0));
+    // panel 2: the chance
+    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y2(0.5)).attr('y2', y2(0.5)).attr('class', 'mid');
+    for (const v of [0, 0.5, 1]) svg.append('text').attr('x', m.l - 5).attr('y', y2(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(`${Math.round(v * 100)}%`);
+    svg.append('text').attr('x', m.l).attr('y', m.t + P1 + gap - 6).attr('class', 'ax hd').text(`${ntLast(r.cand_d) || 'Democrat'}'s chance to win`);
+    if (H.length) svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((p) => x(p[0])).y((p) => y2(p[1]))([...H, [t1, H[H.length - 1][1]]])).attr('class', 'ch');
+    svg.append('text').attr('x', m.l).attr('y', Ht - 3).attr('class', 'ax').text(tms(t0));
+    svg.append('text').attr('x', W - m.r).attr('y', Ht - 3).attr('text-anchor', 'end').attr('class', 'ax').text(tms(t1));
+    const why = el('p', { class: 'nt-ctlc-why', role: 'status' });
+    const chanceAt = (t) => { let p = null; for (const h of H) { if (h[0] <= t + 1000) p = h[1]; } return p; };
+    const show = (b) => {
+      nightSpotSel = b ? r.race_id + '|' + b.at : null;
+      svg.selectAll('.drop').classed('sel', function () { return !!b && this.dataset.at === b.at; });
+      why.replaceChildren();
+      if (!b) { why.append(el('span', { class: 'nt-mute' }, 'Tap a dot for that vote drop and what it did to the chance.')); return; }
+      const i = B.indexOf(b), pb = i > 0 ? chanceAt(Date.parse(B[i - 1].at)) : (H[0] || [])[1], pa = chanceAt(Date.parse(b.at) + 240000);  // the next build after the drop, within 4 minutes
+      why.append(el('b', {}, `${tms(Date.parse(b.at))}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}. `),
+        document.createTextNode(`The count now ${ntM(b.run_margin_d)}${b.counted != null ? ` with ${Math.round(b.counted)}% counted` : ''}.`));
+      if (pb != null && pa != null) { why.append(' ', document.createTextNode(`${ntLast(r.cand_d) || 'The Democrat'}'s chance: ${ntPctW(pb)} to ${ntPctW(pa)} `)); const tg = ntSinceTag(pa, pb); if (tg) why.append(tg); }
+    };
+    for (const b of B) {
+      const cx = x(Date.parse(b.at)), cy = y1(b.run_margin_d), rr = 3 + 6 * Math.sqrt((b.votes || 0) / vmax);
+      svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', rr).attr('class', 'drop ' + (b.margin_d == null ? 'x' : b.margin_d > 0 ? 'd' : 'r')).attr('data-at', b.at);
+      svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', Math.max(11, rr + 3)).attr('class', 'nt-ctlc-hit').attr('tabindex', 0).attr('role', 'button')
+        .attr('aria-label', `${tms(Date.parse(b.at))}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}. Running ${ntM(b.run_margin_d)}.`)
+        .on('click', () => show(b)).on('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); show(b); } });
+    }
+    const w = el('div', { class: 'nt-sc-w' });
+    w.append(ntBtKey([['d', `${ntLast(r.cand_d) || 'Democrat'} won the drop`], ['r', `${ntLast(r.cand_r) || 'Republican'} won the drop`], ['run', 'Running margin'], ['ref', 'Our forecast']]), svg.node(), why);
+    const keep = nightSpotSel && nightSpotSel.startsWith(r.race_id + '|') ? B.find((b) => r.race_id + '|' + b.at === nightSpotSel) : null;
+    show(keep || null);
+    return w;
+  }
   function ntSpot(d, st) {
     const box = $('#nt-spot'); box.replaceChildren();
     const sp = st.spotlight || {};
@@ -6748,7 +6817,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       go.addEventListener('click', () => ntStatePop(d, r.state));
       const foot = el('div', { class: 'nt-spot-foot' });
       foot.append(el('span', { class: 'nt-spot-src' }, `Count from ${r.source || 'the feed'}${r.at ? ', ' + ntT(r.at) : ''}. Tap any race card below to put it here.`), go);
-      box.append(top, h, ...(od ? [mu] : []), sb, ul, ...(od ? [cwb] : []), ...(cos.childElementCount ? [cos] : []), why, foot);
+      let sc = null; try { sc = ntSpotChart(d, r); } catch (e) { sc = null; }  // the chart never stops the card
+      box.append(top, h, ...(od ? [mu] : []), ...(sc ? [sc] : []), sb, ul, ...(od ? [cwb] : []), ...(cos.childElementCount ? [cos] : []), why, foot);
       return;
     }
     if (sp.kind === 'upcoming') {
