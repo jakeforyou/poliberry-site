@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '9366fad978a9';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '48ec08f1e613';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1658,6 +1658,7 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-left-t th { text-align: left; font-size: 11.5px; font-weight: 600; color: var(--color-fg-muted); padding: .15rem .3rem; border-bottom: 1px solid var(--nt-rule); }
 .nt-left-t td { padding: .2rem .3rem; border-bottom: 1px solid color-mix(in srgb, var(--nt-rule) 50%, transparent); } .nt-left-t td:nth-child(n+2), .nt-left-t th:nth-child(n+2) { text-align: right; }
 .nt-left-n { margin: 0; font-size: 12.5px; }
+.nt-left-t tr.go { cursor: pointer; } .nt-left-t tr.go:hover td { background: var(--nt-wash2); } .nt-left-t tr[data-key="true"] td:first-child { font-weight: 700; }
 .nt-res-night { display: grid; gap: .3rem; } .nt-res-night h4 { margin: .2rem 0 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; } .nt-res-night .nt-sc-w { background: none; padding: 0; }
 .nt-rc-tr { display: grid; gap: .1rem; } .nt-rc-tr small { font-size: 12px; color: var(--color-fg-muted); }
 .nt-wall-wait .r { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; font-size: 12px; }
@@ -6741,6 +6742,42 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     b.addEventListener('click', () => ntCountyPop(d, st, c.county));
     return b;
   }
+  // every county in the state, live (Jake, Nov 3, 10pm: "on mobile the counties list in the drill down is static and not dynamic at the
+  // state level"): from the state's Senate race (else its governor's) in night_left.json, refreshed every 3 minutes, sortable
+  var nightCtyLiveSort = 'left', nightCtyLiveAll = false;
+  function ntCtyLive2(d, st) {
+    const races = (nightLeft || {}).races || {}, key = Object.keys(races).find((k) => races[k].state === st && races[k].all);
+    if (!key) return null;
+    const L = races[key], x = ntAllRows(d).find((r) => r.key === key);
+    const keyset = new Set((d.counties || []).filter((c) => c.state === st).map((c) => c.county));
+    const w = el('div', { class: 'nt-left' });
+    w.append(el('h3', { class: 'nt-sheet-h3' }, 'Every county, live'),
+      el('p', { class: 'nt-res-sub' }, `${x ? ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor') : 'The statewide race'}, county by county: about ${ntBtNum(L.left)} votes left${L.n_zero ? `, and ${L.n_zero} count${L.n_zero === 1 ? 'y' : 'ies'} with none in yet` : ''}. Read ${ntT(L.read_at)}, refreshed every 3 minutes.`));
+    const SORTS = [['left', 'Most left', (a, b) => (b[3] ?? -1) - (a[3] ?? -1)], ['counted', 'Least counted', (a, b) => a[1] - b[1]],
+      ['d', 'Most D', (a, b) => b[4] - a[4]], ['r', 'Most R', (a, b) => a[4] - b[4]], ['votes', 'Biggest', (a, b) => b[2] - a[2]]];
+    const so = el('div', { class: 'nt-feedf nt-sheet-sort', role: 'group', 'aria-label': 'Sort the counties' });
+    const tb = el('table', { class: 'nt-left-t' }), body = el('tbody'), more = el('div');
+    tb.append(ntKids('thead', {}, [ntKids('tr', {}, [el('th', {}, 'County'), el('th', {}, 'Counted'), el('th', {}, 'Left (est.)'), el('th', {}, 'So far')])]), body);
+    const draw = () => {
+      const f = (SORTS.find((z) => z[0] === nightCtyLiveSort) || SORTS[0])[2], rows = [...L.all].sort(f), n = nightCtyLiveAll ? rows.length : 15;
+      so.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === nightCtyLiveSort)));
+      body.replaceChildren();
+      for (const r of rows.slice(0, n)) {
+        const tr = ntKids('tr', { 'data-key': String(keyset.has(r[0])) }, [el('td', {}, keyset.has(r[0]) ? `${r[0]} ★` : r[0]), el('td', {}, ntPct(r[1])), el('td', {}, r[3] == null ? '—' : ntBtNum(r[3])),
+          el('td', { class: r[4] > 0 ? 'nt-d' : r[4] < 0 ? 'nt-r' : '' }, ntM(r[4]))]);
+        if (keyset.has(r[0])) { tr.classList.add('go'); tr.addEventListener('click', () => ntCountyPop(d, st, r[0])); }
+        body.append(tr);
+      }
+      more.replaceChildren();
+      if (rows.length > 15) { const m = ntLink(nightCtyLiveAll ? 'Show 15' : `Show all ${rows.length}`, () => { nightCtyLiveAll = !nightCtyLiveAll; draw(); }); more.append(m); }
+    };
+    for (const [k, lab] of SORTS) { const b = el('button', { type: 'button', 'data-k': k }, lab); b.addEventListener('click', () => { nightCtyLiveSort = k; nightCtyLiveAll = false; draw(); }); so.append(b); }
+    w.append(so, tb, more);
+    if (L.n_zero) w.append(el('p', { class: 'nt-mute nt-left-n' }, `No votes in yet: ${(L.zero || []).slice(0, 12).join(', ')}${L.n_zero > 12 ? ` and ${L.n_zero - 12} more` : ''}.`));
+    w.append(el('small', { class: 'nt-mute' }, `★ a key county we chose before the night: tap it for its full story. Counts: CNN (AP's numbers). Votes left from AP's estimate of each county's expected vote; under 20% counted, not estimated.`));
+    draw();
+    return w;
+  }
   function ntArTier(b, x, ups) {  // a state card's race row marked when it is an upset or an early lead (ntUpsets)
     const u = ups[x.key]; if (!u) return b;
     b.dataset.upset = u.tier;
@@ -6770,11 +6807,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         nodes.push(el('h3', { class: 'nt-sheet-h3' }, hs.length === 1 ? 'House' : `House: ${hs.length} seats`),
           el('p', { class: 'nt-mute' }, `${called} called${called ? ` (${won('D')} D, ${won('R')} R)` : ''}, ${counting} counting${flips ? `, ${flips} flip${flips === 1 ? '' : 's'}` : ''}.`), l);
       }
+      { let live = null; try { live = ntCtyLive2(d, st); } catch (e) { live = null; } if (live) nodes.push(live); }  // every county, live, before the key counties
       // Reference-only counties (no race or line behind them, so never a count) show only before a state counts. After that they read
       // "no votes yet" all night beside real results (Jake, Nov 3, 6:40pm: "why do the popouts say no votes yet?").
       let cs = (d.counties || []).filter((c) => c.state === st && !c.context_only); if (!cs.length && !any) cs = (d.counties || []).filter((c) => c.state === st);
       if (cs.length) {
-        nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Key counties'));
+        nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Key counties against our forecast'));
         // sort the counties: as chosen before the election, by the count, by share counted, or by distance from what we expected
         const CS = [['list', 'As listed', null], ['blue', 'Most D', (c) => -((c.reading || {}).margin_d ?? -999)], ['red', 'Most R', (c) => ((c.reading || {}).margin_d ?? 999)],
           ['counted', 'Most counted', (c) => -(c.counted ?? -1)], ['off', 'Furthest off', (c) => -Math.abs(c.offset ?? c.bench_gap ?? 0)], ['pop', 'Biggest in 2024', (c) => -((c.first_2024 && 0) || Math.abs(c.pres_2024 ?? 0))]].slice(0, 5);
