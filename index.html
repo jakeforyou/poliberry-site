@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'a1e8ad2cb96c';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '41656a829a76';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1587,6 +1587,14 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-wt[data-won="D"] { background: color-mix(in srgb, var(--nt-d) 42%, var(--color-bg)); } .nt-wt[data-won="R"] { background: color-mix(in srgb, var(--nt-r) 42%, var(--color-bg)); } .nt-wt[data-won="I"] { background: color-mix(in srgb, var(--nt-jake) 42%, var(--color-bg)); }
 .nt-wt:is([data-won="D"], [data-won="R"], [data-won="I"]) :is(.m, .n, .a) { color: var(--color-fg); }  /* data-won is empty on a race not called */
 .nt-wt[data-upset="true"] { border-color: var(--nt-jake); box-shadow: 0 0 0 1px var(--nt-jake); }
+.nt-wt[data-upset="early"] { border: 1.5px dashed color-mix(in srgb, var(--nt-jake) 70%, transparent); }
+/* upset tiers on rows (Nov 3, 8:15pm) */
+button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 var(--nt-jake); }
+.nt-ar-up { justify-self: start; margin-top: .15rem; padding: .02rem .45rem; border-radius: 999px; font-size: 11px; font-weight: 600; background: color-mix(in srgb, var(--nt-jake) 30%, transparent); }
+.nt-ar-up[data-t="early"] { background: var(--nt-wash2); color: var(--color-fg-muted); }
+.nt-bell-r .tag[data-k="favored"], .nt-bell-r .tag[data-k="inplay"] { background: color-mix(in srgb, var(--nt-jake) 30%, transparent); color: var(--color-fg); }
+.nt-up-r[data-t="early"] { opacity: .85; }
+.nt-up-g[data-k="favored"] h3 { color: var(--nt-jake); }
 .nt-wt:hover { filter: brightness(1.12); } .nt-wt:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-wall-house { margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .5rem; }
 .nt-wall-key { margin: 0; font-size: 12px; }
@@ -4390,6 +4398,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ['control', 'Decides control', 'How often the state\'s races hand a party control in our simulations. Senate is live through the night, House is set before votes. A called race stops mattering.'],
     ['flips', 'Flips', 'Where a seat is changing party, called or leading. For the House, the net seats changing in the state.'],
     ['batch', 'Newest votes', 'Which way the newest batch of counted votes broke in each state\'s race. Bright when it landed in the last 10 minutes, fading after 30.'],
+    ['upsets', 'Upsets', 'Where our forecast\'s underdog has won, is now favored, or is in play on the live chance. Palest: the underdog only leads an early count. For the House, the number of upsets in the state.'],
   ];
   let ntMapOff = 'senate', ntMapMode = 'results';
   try { ntMapOff = localStorage.getItem('nt-map-office') || 'senate'; ntMapMode = localStorage.getItem('nt-map-mode') || 'results'; } catch (e) { /* default */ }
@@ -4423,6 +4432,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const results = (nightResults && nightResults.races) || {};
     const open = (st, x) => () => { if (x) ntAllPop(d, { ...x, st }); else ntStatePop(d, st); };
     const sum = [];  // facts for the sentence under the map, gathered as the states are colored
+    const upT = mode === 'upsets' ? Object.fromEntries(ntUpsets(d, true).map((u) => [u.x.key, u])) : {};
     const statusOf = {
       results(st) {
         if (office === 'house') {
@@ -4485,6 +4495,16 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         sum.push([st, p, !!x.flip_called]);
         return { fill: x.flip_called ? col[p] : mix(col[p], 0.5), label: `${x.flip_called ? 'Flipped' : 'Flipping, not called'}: ${pName(was, x)} seat to the ${pName(p, x)}`, text: x.flip_called ? `${st} ${p}` : null, x };
       },
+      upsets(st) {
+        const xs = office === 'house' ? byH[st] : by[st] ? [by[st]] : null; if (!xs) return NOT;
+        const us = xs.map((x) => upT[x.key]).filter(Boolean).sort((a, b) => NT_UP_RANK[a.tier] - NT_UP_RANK[b.tier]);
+        if (!us.length) return { fill: mid, label: xs.some((x) => x.counted != null || x.call) ? 'No upset so far' : 'No votes yet', up: true, x: xs.length === 1 ? xs[0] : null };
+        const best = us[0].tier, real = us.filter((u) => u.tier !== 'early');
+        sum.push([st, us]);
+        const shade = { called: 1, favored: 0.75, inplay: 0.48, early: 0.2 }[best];
+        const label = office === 'house' ? us.map((u) => `${ntLastKey(u.x.key)}: ${NT_UP_TIERS[u.tier]}`).join('. ') : `${NT_UP_TIERS[best]}. ${ntUpLine(d, us[0])} ${ntUpOdds(us[0])}.`;
+        return { fill: mix(I, shade), label, text: office === 'house' ? (real.length ? String(real.length) : null) : best !== 'early' ? st : null, up: true, x: xs.length === 1 ? xs[0] : null };
+      },
       batch(st) {
         const rs = Object.values(results).filter((r) => r && r.state === st && r.office === office && r.latest);
         const xs = office === 'house' ? byH[st] : by[st] ? [by[st]] : null; if (!xs) return NOT;
@@ -4540,6 +4560,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       control: [[mix(IMP, 1), '15% or more'], [mix(IMP, 0.5), 'About 7%'], [mix(IMP, 0.2), 'Rarely'], [mid, 'Almost never, or called']],
       flips: office === 'house' ? [[mix(D, 0.8), 'Net seats to D'], [mix(I, 0.5), 'Even swap'], [mix(R, 0.8), 'Net seats to R'], [mid, 'No change']] : [[D, 'Flipped to D'], [mix(D, 0.5), 'Flipping to D'], [mix(R, 0.5), 'Flipping to R'], [R, 'Flipped to R'], [I, 'To an independent'], [mid, 'Holding, or no votes']],
       batch: [[mix(D, 1), 'Newest batch went D'], [mix(R, 1), 'Newest batch went R'], [mix(D, 0.35), 'Older than 30 minutes'], [mid, 'No batch yet']],
+      upsets: [[mix(I, 1), NT_UP_TIERS.called], [mix(I, 0.75), NT_UP_TIERS.favored], [mix(I, 0.48), NT_UP_TIERS.inplay], [mix(I, 0.2), NT_UP_TIERS.early], [mid, 'No upset']],
     }[mode];
     for (const [f, lab] of L) leg.append(sw(f, lab));
     const say = {
@@ -4548,6 +4569,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       counting: () => { const w = sum.filter((x) => x[0] === 'wait').map((x) => x[1]).sort((a, b) => ntCloseMs(a) - ntCloseMs(b)); const cnt = sum.filter((x) => x[0] === 'count'); return `${w.length ? `Next close: ${ntHourText(w[0])}, ${w.filter((x) => x === w[0]).length} state${w.filter((x) => x === w[0]).length === 1 ? '' : 's'}. ` : 'Every state has closed. '}${cnt.length} counting${cnt.filter((x) => x[1] >= 99).length ? `, ${cnt.filter((x) => x[1] >= 99).length} all but done` : ''}.`; },
       control: () => (sum.length ? `Most decisive now: ${[...sum].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([st, p]) => `${st} ${(100 * p).toFixed(0)}%`).join(', ')}.` : 'No race decides control any more.'),
       flips: () => { if (!sum.length) return 'No seat is changing party.'; if (office === 'house') { const t = sum.reduce((a, [, g]) => ({ D: a.D + g.D, R: a.R + g.R }), { D: 0, R: 0 }); return `House seats changing party: ${t.D} to Democrats, ${t.R} to Republicans, across ${sum.length} state${sum.length === 1 ? '' : 's'}.`; } return `Changing party: ${sum.map(([st, p, c]) => `${st} to ${p}${c ? '' : ' (leading)'}`).join(', ')}.`; },
+      upsets: () => { const c = { called: 0, favored: 0, inplay: 0, early: 0 }; for (const [, us] of sum) for (const u of us) c[u.tier]++; const n = c.called + c.favored + c.inplay; return n || c.early ? `${office === 'house' ? 'House' : office === 'governor' ? 'Governor' : 'Senate'}: ${c.called} called for the underdog, ${c.favored} underdog${c.favored === 1 ? '' : 's'} now favored, ${c.inplay} in play, and ${c.early} early lead${c.early === 1 ? '' : 's'} only. Tap a state.` : 'No upsets so far.'; },
       batch: () => { if (!sum.length) return 'No batches yet. They start when the polls close and the count comes in.'; const s2 = [...sum].sort((a, b) => a[2] - b[2]); const [st, r] = s2[0]; return `Newest: ${r.name} at ${r.latest.time_text}, ${ntBtNum(r.latest.votes)} votes, ${ntM(r.latest.margin_d)}. ${s2.filter((x) => x[2] <= 10).length} state${s2.filter((x) => x[2] <= 10).length === 1 ? '' : 's'} had a batch in the last 10 minutes.`; },
     }[mode]();
     svg.attr('aria-label', `${NT_MAP_MODES.find((m) => m[0] === mode)[1]} map, ${office === 'house' ? 'House' : office === 'governor' ? 'governor' : 'Senate'}. ${say}`);
@@ -4558,23 +4580,46 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // had under 50 percent before votes. The counts are CNN's (AP's numbers), the chance is the one frozen before votes, and the pace line is
   // the script's. Early counts are marked, because the first votes counted are often early and mail votes, and those leads can shrink.
   var nightBellOpen = false, nightBellAll = false;
-  function ntUpsets(d) {
-    const out = [];
+  // Upsets by tier (Jake, Nov 3, 8:12pm: "another pass at how we're identifying upsets"). The underdog is the side our forecast gave under
+  // 50 percent before votes. The tiers read the live chance, which already weighs how much is counted and the order of the count:
+  //   called: CNN called it for the underdog. favored: the underdog's live chance is 50 percent or more. inplay: 25 percent or more and
+  //   15 points or more above where it started. early: the underdog only leads the raw count, the live chance still has them well behind.
+  // Early leads stay visible but never count as upsets: they were 21 of the 27 "upsets" at 7:56pm, Indiana's and Ohio's first votes.
+  // House seats off our scorecard get a live chance only from half counted (night_odds.EVERY_MIN_PCT), so until then they are early at most.
+  const NT_UP_TIERS = { called: 'Called for the underdog', favored: 'Underdog now favored', inplay: 'Upset in play', early: 'Early lead only' };
+  const NT_UP_RANK = { called: 0, favored: 1, inplay: 2, early: 3 };
+  function ntUpsets(d, withEarly) {
+    const out = [], odds = (d.story || {}).odds || {};
     for (const x of ntAllRows(d)) {
       const c = (x.pre || {}).chance_d; if (c == null || c === 50 || x.jungle || x.uncontested) continue;
-      const fav = c > 50 ? 'D' : 'R', ds = ntAllSide(x);
+      const under = c > 50 ? 'R' : 'D', before = (under === 'D' ? c : 100 - c) / 100, ds = ntAllSide(x);
       const w = x.call && x.call.winner && x.call.winner !== 'runoff' ? x.call.winner : null;
       if (w) {
         const side = ds && x.call.name && ds.name === x.call.name ? 'D' : ntPK(w) === 'R' ? 'R' : ntPK(w) === 'D' ? 'D' : null;
-        if (side && side !== fav) out.push({ x, called: true, side });
+        if (side === under) out.push({ x, called: true, side: under, tier: 'called', before, now: 1 });
         continue;
       }
-      if (x.margin_d == null || Math.abs(x.margin_d) < 0.05 || !(x.counted >= 1)) continue;
-      const side = x.margin_d > 0 ? 'D' : 'R';  // margin_d is the D side's lead, the side our chance is about
-      if (side !== fav) out.push({ x, called: false, side });
+      const o = odds[x.race_id || x.key], live = o && o.p_d != null && o.basis === 'count' ? (under === 'D' ? o.p_d : 1 - o.p_d) : null;
+      const leads = x.margin_d != null && Math.abs(x.margin_d) >= 0.05 && x.counted >= 1 && (x.margin_d > 0 ? 'D' : 'R') === under;  // margin_d is the D side's lead
+      const tier = live != null && live >= 0.5 ? 'favored' : live != null && live >= 0.25 && live - before >= 0.15 ? 'inplay' : leads ? 'early' : null;
+      if (!tier || (tier === 'early' && !withEarly)) continue;
+      out.push({ x, called: false, side: under, tier, before, now: live });
     }
-    return out.sort((a, b) => (b.called - a.called) || ((b.x.counted || 0) - (a.x.counted || 0)));
+    return out.sort((a, b) => NT_UP_RANK[a.tier] - NT_UP_RANK[b.tier] || (a.before - b.before) || ((b.x.counted || 0) - (a.x.counted || 0)));
   }
+  // one upset in words: who, the count, and the chance before votes and now
+  function ntUpWho(u) {
+    const x = u.x, ds = ntAllSide(x), rc = (x.cands || []).find((k) => k.party === 'R');
+    const nm = u.side === 'D' ? (ds && (ds.last || ds.name)) || 'The Democrat' : (rc && (rc.last || rc.name)) || 'The Republican';
+    return { nm, pt: u.side === 'D' ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R' };
+  }
+  function ntUpLine(d, u) {
+    const x = u.x, { nm, pt } = ntUpWho(u), ct = (((d.story || {}).call_times) || {})[x.key];
+    if (u.called) return `${x.call.name || nm} (${pt}) won. Called${ct ? ' ' + ntT(ct) : ''} by ${x.call.source || 'CNN'}.`;
+    const ahead = x.margin_d != null && (x.margin_d > 0 ? 'D' : 'R') === u.side, m = x.margin_d == null ? null : fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10);
+    return m == null ? `${nm} (${pt}), ${ntPct(x.counted)} counted.` : `${nm} (${pt}) ${Math.abs(x.margin_d) < 0.05 ? 'is even' : ahead ? `leads by ${m}` : `trails by ${m}`} with ${ntPct(x.counted)} counted.`;
+  }
+  const ntUpOdds = (u) => `${u.before < 0.01 ? 'Under 1%' : Math.round(u.before * 100) + '%'} before votes${u.now != null && !u.called ? `, ${ntPctW(u.now)} now` : ''}`;
   function ntBell(d) {
     const ups = ntUpsets(d), keys = ups.map((u) => u.x.key + (u.called ? ':c' : ''));
     let seen = []; try { seen = JSON.parse(localStorage.getItem('nt-bell-seen') || '[]'); } catch (e) { seen = []; }
@@ -4592,20 +4637,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!nightBellOpen) return [b, null];
     const p = el('div', { class: 'nt-bell-p', role: 'region', 'aria-label': 'Upset alert' });
     p.append(el('h3', {}, ups.length ? 'Going against our forecast' : 'No upsets right now'),
-      el('p', { class: 'nt-mute' }, ups.length ? 'Races where the call, or the leader in the count, is the side our forecast had as the underdog. Early counts can move a lot.' : 'No race is called for, or led by, the side our forecast had as the underdog.'));
+      el('p', { class: 'nt-mute' }, ups.length ? 'Called for the underdog, or the underdog now favored or in play on the live chance. A lead in an early count alone is not on this list: Upset watch has those.' : 'No race is called for the underdog, and no underdog is favored or in play on the live chance yet.'));
     const R = (nightResults || {}).races || {}, N = 8;
     for (const u of nightBellAll ? ups : ups.slice(0, N)) {
-      const x = u.x, c = (x.pre || {}).chance_d, ds = ntAllSide(x), rc = (x.cands || []).find((k) => k.party === 'R');
-      const nm = u.side === 'D' ? (ds && (ds.last || ds.name)) || 'The Democrat' : (rc && (rc.last || rc.name)) || 'The Republican';
-      const pt = u.side === 'D' ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R';
-      const odds = u.side === 'D' ? c : 100 - c;
+      const x = u.x;
       const r = el('button', { type: 'button', class: 'nt-bell-r', 'data-fk': 'bell:' + x.key, 'data-s': u.side });
-      const top = el('span', { class: 'top' }); top.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')));
-      if (u.called) top.append(el('span', { class: 'tag', 'data-k': 'called' }, 'Called'));
-      else if (x.counted < 50) top.append(el('span', { class: 'tag' }, 'Early count'));
-      r.append(top, el('span', {}, u.called ? `Called for ${x.call.name || nm} (${pt}).` : `${nm} (${pt}) leads by ${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)} with ${ntPct(x.counted)} counted.`),
-        el('small', {}, `Our forecast gave ${nm} ${odds < 1 ? 'under 1%' : Math.round(odds) + '%'}${(x.pre || {}).margin != null ? `, expecting ${ntM(x.pre.margin)}` : ''}.`));
-      const pl = !u.called && R[x.key] && ((R[x.key].pace || {}).lines || [])[0]; if (pl && !/^Early/.test(pl)) r.append(el('small', {}, pl));
+      const top = el('span', { class: 'top' }); top.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')), el('span', { class: 'tag', 'data-k': u.tier }, NT_UP_TIERS[u.tier]));
+      r.append(top, el('span', {}, ntUpLine(d, u)), el('small', {}, ntUpOdds(u) + '.'));
+      const pl = !u.called && R[x.race_id || x.key] && ((R[x.race_id || x.key].pace || {}).lines || [])[0]; if (pl && !/^Early/.test(pl)) r.append(el('small', {}, pl));
       r.addEventListener('click', () => ntAllPop(d, x));
       p.append(r);
     }
@@ -4935,10 +4974,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const call = (st.events || []).find((e) => e.kind === 'call');
     if (call) out.push({ k: 'Called', t: call.title, key: call.every || call.race_id });
     for (const u of ntUpsets(d).slice(0, 3)) {
-      const x = u.x, ds = ntAllSide(x), rc = (x.cands || []).find((c) => c.party === 'R');
-      const who = u.side === 'D' ? (ds && (ds.last || ds.name)) || 'The Democrat' : (rc && (rc.last || rc.name)) || 'The Republican', pt = u.side === 'D' ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R';
-      out.push({ k: 'Upset watch', t: u.called ? `${nm(x)}: called for ${x.call.name || who} (${pt}), the side our forecast had as the underdog.`
-        : `${nm(x)}: ${who} (${pt}) leads by ${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)} with ${ntPct(x.counted)} counted. Our forecast had ${who} as the underdog${x.counted < 50 ? '. Early count' : ''}.`, key: x.key });
+      out.push({ k: u.called ? 'Upset' : 'Upset watch', t: `${nm(u.x)}: ${ntUpLine(d, u)} ${NT_UP_TIERS[u.tier]}: ${ntUpOdds(u).toLowerCase().replace(/^under/, 'under')}.`, key: u.x.key });
     }
     const sg = Object.values(R).filter((r) => r.stage && !ntBtCall(d, r.key)).sort((a, b) => Math.abs(b.stage.gap || 0) - Math.abs(a.stage.gap || 0));
     for (const r of sg.filter((r) => r.stage.dir !== 'on').slice(0, 2)) out.push({ k: r.stage.dir === 'bluer' ? 'Running bluer' : 'Running redder', t: `${r.name} is running ${r.stage.dir} than our forecast for this stage of the count (${ntPct((r.latest || {}).counted)} counted).`, key: r.key });
@@ -4996,12 +5032,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // leads, filled when called, and edged in amber when the side our forecast had as the underdog leads or won. Then one line for the House.
   // Every number is the board's (CNN's count and calls, our chance before votes). A phone shows one office at a time.
   var nightWallOff = (() => { try { return localStorage.getItem('nt-wall-office') || 'senate'; } catch (e) { return 'senate'; } })();
-  function ntWallTile(d, x) {
+  function ntWallTile(d, x, tiers) {
     const w = x.call && x.call.winner, won = w && w !== 'runoff' ? ntPK(w) : '', has = x.margin_d != null || !!x.lead;
-    const c = (x.pre || {}).chance_d, fav = c == null || c === 50 ? null : c > 50 ? 'D' : 'R', ds = ntAllSide(x);
+    const ds = ntAllSide(x);
     // the side a margin or a winner is on, as our chance counts sides (Nebraska's independent is the D side)
     const lead = won ? (ds && x.call.name && ds.name === x.call.name ? 'D' : won) : x.margin_d != null && Math.abs(x.margin_d) >= 0.05 ? (x.margin_d > 0 ? 'D' : 'R') : x.lead ? ntPK(x.lead.party) : '';
-    const upset = !!(fav && lead && (lead === 'D' || lead === 'R') && lead !== fav && (won || x.counted >= 1));
+    const tier = (tiers || {})[x.key] || '';  // ntUpsets: called, favored and in play are upsets; an early lead is marked lighter
     const ln = (nm) => String(nm || '').split(' ').pop();
     let m, n, top;
     if (w === 'runoff') { m = 'Runoff'; n = NT_RANKED.has(x.st) ? 'Ranked choice' : 'Nobody over 50'; top = 'Called'; }
@@ -5013,8 +5049,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       n = who ? `${ln(who)} leads` : 'counting'; top = ntPct(x.counted);
     } else { const ct = ntCloseT(d, x.close); const open = x.close && ct && ntCloseMs(x.close) > Date.now(); m = open ? ct.replace(':00', '') : 'Waiting'; n = open ? 'polls close' : 'no votes yet'; top = ''; }
     const name = ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor');
-    const b = el('button', { type: 'button', class: 'nt-wt', 'data-fk': 'wt:' + x.key, 'data-won': won, 'data-lead': won ? '' : has && x.counted >= 1 ? lead : '', 'data-upset': String(upset), 'data-s': won || w ? 'called' : has ? 'counting' : 'wait',
-      'aria-label': `${name}: ${won ? `${x.call.name || NT_PN[won]} won` : w === 'runoff' ? ntRunoffTxt(x.st) : has ? `${ntAllNow(x)}` : m === 'Waiting' ? 'no votes yet' : `polls close at ${m}`}.${upset ? ' Our forecast had them as the underdog.' : ''}`, title: name });
+    const b = el('button', { type: 'button', class: 'nt-wt', 'data-fk': 'wt:' + x.key, 'data-won': won, 'data-lead': won ? '' : has && x.counted >= 1 ? lead : '', 'data-upset': tier ? (tier === 'early' ? 'early' : 'true') : 'false', 'data-s': won || w ? 'called' : has ? 'counting' : 'wait',
+      'aria-label': `${name}: ${won ? `${x.call.name || NT_PN[won]} won` : w === 'runoff' ? ntRunoffTxt(x.st) : has ? `${ntAllNow(x)}` : m === 'Waiting' ? 'no votes yet' : `polls close at ${m}`}.${tier ? ` ${NT_UP_TIERS[tier]}.` : ''}`, title: name });
     const od = !w && ((d.story || {}).odds || {})[x.race_id || x.key], tg = od && od.basis === 'count' && Math.abs((od.p_d ?? 0) - (od.final_call_d ?? od.p_d ?? 0)) >= 0.05 ? ntSinceTag(od.p_d, od.final_call_d) : null;
     const ar = el('span', {}, top); if (tg) ar.append(' ', tg);
     b.append(ntKids('span', { class: 'a' }, [el('b', {}, x.st + (x.special ? '*' : '')), ar]), el('span', { class: 'm' }, m), el('span', { class: 'n' }, n));
@@ -5040,12 +5076,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       tabs.append(t);
     }
     h.append(tabs);
-    const blocks = [];
+    const blocks = [], tiers = Object.fromEntries(ntUpsets(d, true).map((u) => [u.x.key, u.tier]));
     for (const [k, lab, off] of [['senate', 'Senate', 'Senate'], ['governor', 'Governor', 'Governor']]) {
       const xs = rows.filter((x) => x.office === off).sort((a, b) => ntWallRank(a) - ntWallRank(b) || a.st.localeCompare(b.st));
       const cw = xs.filter((x) => x.call).length, cn = xs.filter((x) => !x.call && (x.margin_d != null || x.lead)).length;
       const wD = xs.filter((x) => x.call && ntPK(x.call.winner) === 'D').length, wR = xs.filter((x) => x.call && ntPK(x.call.winner) === 'R').length;
-      const g = el('div', { class: 'nt-wall-g' }); for (const x of xs) g.append(ntWallTile(d, x));
+      const g = el('div', { class: 'nt-wall-g' }); for (const x of xs) g.append(ntWallTile(d, x, tiers));
       const bh = el('div', { class: 'nt-wall-bh' }); bh.append(el('h3', {}, lab), el('small', { class: 'nt-mute' }, `${cw} called${cw ? ` (${wD} D, ${wR} R)` : ''}, ${cn} counting, ${xs.length - cw - cn} waiting`));
       const blk = el('div', { class: 'nt-wall-b', 'data-k': k }); blk.append(bh, g); blocks.push(blk);
     }
@@ -5060,7 +5096,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       hl.append(u);
     }
     hl.append(' ', ntLink('All House races', () => { const a = $('#nt-all'); if (a) ntScrollTo(a); }));
-    box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. Amber edge: the side our forecast had as the underdog leads or won. Live races first, closest first. Tap any race. * a special election.'));
+    box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. Amber edge: an upset (called for our forecast\'s underdog, or the underdog favored or in play on the live chance). Dashed amber: the underdog leads an early count only. Live races first, closest first. Tap any race. * a special election.'));
   }
   // ---------- Upset Watch (Jake, Nov 3, 7:52pm: "We need to spin up a quick Upset Watch view - there are so many of them!"). Every race
   // where the side our forecast had as the underdog won or leads (ntUpsets), in three groups by how much to trust it: called, holding up
@@ -5068,19 +5104,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // chance now and the script's by-now or pace line. Counts are CNN's, chances before votes are frozen, the reading lines are the scripts'.
   var nightUpsOff = 'all', nightUpsAll = {};
   function ntUpsRow(d, u) {
-    const x = u.x, c = (x.pre || {}).chance_d, ds = ntAllSide(x), rc = (x.cands || []).find((k) => k.party === 'R');
-    const nm = u.side === 'D' ? (ds && (ds.last || ds.name)) || 'The Democrat' : (rc && (rc.last || rc.name)) || 'The Republican';
-    const pt = u.side === 'D' ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R';
-    const odds = u.side === 'D' ? c : 100 - c, R = ((nightResults || {}).races || {})[x.race_id || x.key] || {};
-    const od = ((d.story || {}).odds || {})[x.race_id || x.key];
-    const b = el('button', { type: 'button', class: 'nt-up-r', 'data-fk': 'up:' + x.key, 'data-s': u.side });
+    const x = u.x, R = ((nightResults || {}).races || {})[x.race_id || x.key] || {};
+    const b = el('button', { type: 'button', class: 'nt-up-r', 'data-fk': 'up:' + x.key, 'data-s': u.side, 'data-t': u.tier });
     const top = el('span', { class: 'top' });
     top.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')));
     if (x.flip_called || (x.flip && !u.called)) top.append(el('span', { class: 'tag', 'data-k': 'flip' }, x.flip_called ? 'Flip' : 'Would flip'));
-    const now = od && od.basis === 'count' && od.p_d != null ? (u.side === 'D' ? od.p_d : 1 - od.p_d) : null;
-    top.append(el('span', { class: 'odds' }, `${odds < 1 ? 'under 1%' : Math.round(odds) + '%'} before votes${now != null ? `, ${ntPctW(now)} now` : ''}`));
-    b.append(top, el('span', { class: 'what' }, u.called ? `${x.call.name || nm} (${pt}) won. Called${(((d.story || {}).call_times) || {})[x.key] ? ' ' + ntT(d.story.call_times[x.key]) : ''} by ${x.call.source || 'CNN'}.`
-      : `${nm} (${pt}) leads by ${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)} with ${ntPct(x.counted)} counted.${(x.pre || {}).margin != null || R.our_line != null ? ` Our forecast: ${ntM((x.pre || {}).margin ?? R.our_line)}.` : ''}`));
+    top.append(el('span', { class: 'odds' }, ntUpOdds(u)));
+    b.append(top, el('span', { class: 'what' }, ntUpLine(d, u) + ((x.pre || {}).margin != null || R.our_line != null ? ` Our forecast: ${ntM((x.pre || {}).margin ?? R.our_line)}.` : '')));
     const sg = !u.called && R.stage, pl = !u.called && ((R.pace || {}).lines || [])[0];
     if (sg) b.append(el('small', {}, `${sg.dir === 'on' ? 'On track for our forecast' : sg.dir === 'bluer' ? 'Running bluer than our forecast' : 'Running redder than our forecast'} for this stage of the count.`));
     else if (pl && !/^Early/.test(pl)) b.append(el('small', {}, pl));
@@ -5089,31 +5119,30 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   function ntUps(d) {
     const box = $('#nt-ups'); if (!box) return;
-    const all = ntUpsets(d), offs = { all: () => true, statewide: (u) => u.x.office !== 'House', house: (u) => u.x.office === 'House' };
+    const all = ntUpsets(d, true), offs = { all: () => true, statewide: (u) => u.x.office !== 'House', house: (u) => u.x.office === 'House' };
     box.hidden = !all.length; if (box.hidden) return;
-    const ups = all.filter(offs[nightUpsOff] || offs.all);
+    const ups = all.filter(offs[nightUpsOff] || offs.all), real = (xs) => xs.filter((u) => u.tier !== 'early').length;
     const h = el('div', { class: 'nt-wall-h' });
     h.append(ntHead(el('h2', {}, 'Upset watch'), 'ups'));
     const tabs = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Which races' });
-    for (const [k, lab, n] of [['all', 'All', all.length], ['statewide', 'Senate and governor', all.filter(offs.statewide).length], ['house', 'House', all.filter(offs.house).length]]) {
-      const t = el('button', { type: 'button', 'aria-pressed': String(nightUpsOff === k), 'data-fk': 'ups:' + k }, `${lab} ${n}`);
+    for (const [k, lab] of [['all', 'All'], ['statewide', 'Senate and governor'], ['house', 'House']]) {
+      const t = el('button', { type: 'button', 'aria-pressed': String(nightUpsOff === k), 'data-fk': 'ups:' + k }, `${lab} ${real(all.filter(offs[k]))}`);
       t.addEventListener('click', () => { nightUpsOff = k; ntKeepFocus(() => ntUps(d)); });
       tabs.append(t);
     }
     h.append(tabs);
-    const groups = [
-      ['called', 'Called against our forecast', ups.filter((u) => u.called)],
-      ['holding', 'Leading with half or more counted', ups.filter((u) => !u.called && u.x.counted >= 50)],
-      ['early', 'Leading in an early count', ups.filter((u) => !u.called && !(u.x.counted >= 50))],
-    ];
-    const kids = [h, el('p', { class: 'nt-mute nt-up-sub' }, 'Races where the side our forecast had as the underdog won or leads. Early counts are often early and mail votes first, so many of those leads shrink. Tap a race for its count batch by batch.')];
-    for (const [k, lab, xs] of groups) {
-      if (!xs.length) continue;
-      const sorted = [...xs].sort((a, b) => ((a.side === 'D' ? (a.x.pre || {}).chance_d : 100 - (a.x.pre || {}).chance_d) - (b.side === 'D' ? (b.x.pre || {}).chance_d : 100 - (b.x.pre || {}).chance_d)) || ((b.x.counted || 0) - (a.x.counted || 0)));
-      const cap = nightUpsAll[k] ? sorted.length : 6;
-      const g = el('div', { class: 'nt-up-g', 'data-k': k }); g.append(ntKids('h3', {}, [lab, el('small', {}, ` ${xs.length}`)]));
-      const list = el('div', { class: 'nt-up-l' }); for (const u of sorted.slice(0, cap)) list.append(ntUpsRow(d, u)); g.append(list);
-      if (sorted.length > 6) { const m = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'ups:more:' + k }, nightUpsAll[k] ? 'Show fewer' : `Show all ${sorted.length}`); m.addEventListener('click', () => { nightUpsAll[k] = !nightUpsAll[k]; ntKeepFocus(() => ntUps(d)); }); g.append(m); }
+    const kids = [h, el('p', { class: 'nt-mute nt-up-sub' }, 'The underdog is the side our forecast gave under 50 percent before votes. An upset counts once CNN calls it, or once the live chance (which weighs how much is counted and the order of the count) favors the underdog or has moved them into play. Early leads alone are listed last.')];
+    for (const tier of ['called', 'favored', 'inplay', 'early']) {
+      const xs = ups.filter((u) => u.tier === tier); if (!xs.length) continue;
+      const open = tier !== 'early' || nightUpsAll.early, cap = nightUpsAll[tier] ? xs.length : 6;
+      const g = el('div', { class: 'nt-up-g', 'data-k': tier }); g.append(ntKids('h3', {}, [NT_UP_TIERS[tier], el('small', {}, ` ${xs.length}`)]));
+      if (tier === 'early') g.append(el('p', { class: 'nt-mute nt-up-sub' }, 'The underdog leads the count so far, but the live chance still has them well behind: often early and mail votes counted first.'));
+      if (open) { const list = el('div', { class: 'nt-up-l' }); for (const u of xs.slice(0, tier === 'early' ? xs.length : cap)) list.append(ntUpsRow(d, u)); g.append(list); }
+      if (tier === 'early' || xs.length > 6) {
+        const lab = tier === 'early' ? (open ? 'Hide early leads' : `Show ${xs.length} early lead${xs.length === 1 ? '' : 's'}`) : nightUpsAll[tier] ? 'Show fewer' : `Show all ${xs.length}`;
+        const m = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'ups:more:' + tier }, lab);
+        m.addEventListener('click', () => { nightUpsAll[tier] = !nightUpsAll[tier]; ntKeepFocus(() => ntUps(d)); }); g.append(m);
+      }
       kids.push(g);
     }
     if (kids.length === 2) kids.push(el('p', { class: 'nt-mute' }, 'None in this group right now.'));
@@ -6244,8 +6273,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'On the Senate bar the faded ends are the seats not on the ballot this year.'] },
     ups: { title: 'Upset watch', body: [
       'Every race where the side our forecast had as the underdog has won or is ahead. Our forecast is the chance each side had before any votes, frozen before the polls opened.',
-      'Called: CNN has called it for the underdog. Leading with half or more counted: a lead that is starting to mean something. Leading in an early count: often early and mail votes first, so many of these shrink.',
-      'Under each race: the chance our forecast gave the side now ahead, the chance now from the count, and where the count is heading for this stage of the night.'] },
+      'Called for the underdog: CNN has called it. Underdog now favored: the live chance gives the underdog 50 percent or more. Upset in play: the live chance gives them 25 percent or more, up 15 points or more from before votes. Early lead only: they lead the count so far, but the live chance still has them well behind.',
+      'The live chance weighs how much is counted and the order the count usually comes in, so it reads an early lead more coolly than the raw margin does.',
+      'Under each race: the underdog\'s chance before votes and now, and where the count is heading for this stage of the night.'] },
     wall: { title: 'Every race at a glance', body: [
       'Every Senate and governor race on the ballot, one small tile each, like a scoreboard of every game.',
       'A tile is tinted by who leads the count and filled once CNN calls it. The number is the leader\'s margin in points, and the line under it says who leads and how much is counted.',
@@ -6523,10 +6553,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     b.addEventListener('click', () => ntCountyPop(d, st, c.county));
     return b;
   }
+  function ntArTier(b, x, ups) {  // a state card's race row marked when it is an upset or an early lead (ntUpsets)
+    const u = ups[x.key]; if (!u) return b;
+    b.dataset.upset = u.tier;
+    const n = b.querySelector('.nt-ar-c'); if (n) n.append(el('span', { class: 'nt-ar-up', 'data-t': u.tier }, NT_UP_TIERS[u.tier]));
+    return b;
+  }
   function ntStatePop(d0, st) {  // a state's results: its statewide races, its House seats, its key counties (results first, Jake, Nov 3, 6:35pm)
     const name = NT_STATE[st] || st;
     const build = (d) => {
       const rows = ntAllRows(d).filter((x) => x.st === st), sw = rows.filter((x) => x.office !== 'House'), hs = rows.filter((x) => x.office === 'House');
+      const ups = Object.fromEntries(ntUpsets(d, true).filter((u) => u.x.st === st).map((u) => [u.x.key, u]));
       const any = rows.some((x) => x.call || x.margin_d != null || x.lead), nodes = [];
       if (!any) {  // nothing counted yet: the state's shape and when its results come
         const kr = (d.races || []).find((r) => r.state === st), tm = kr && kr.timing ? ntWhen(kr.timing) : '';
@@ -6534,14 +6571,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         nodes.push(el('p', { class: 'nt-mute' }, `No votes counted here yet.${tm ? ' ' + tm : ''}`));
       }
       if (sw.length) {
-        const l = el('div', { class: 'nt-sheet-list' }); for (const x of sw) l.append(ntArBtn(d, x));
+        const l = el('div', { class: 'nt-sheet-list' }); for (const x of sw) l.append(ntArTier(ntArBtn(d, x), x, ups));
         nodes.push(el('h3', { class: 'nt-sheet-h3' }, 'Statewide'), l);
       }
       if (hs.length) {
         const won = (p) => hs.filter((x) => x.call && x.call.winner !== 'runoff' && ntPK(x.call.winner) === p).length;
         const called = hs.filter((x) => x.call).length, counting = hs.filter((x) => !x.call && (x.margin_d != null || x.lead)).length, flips = hs.filter((x) => x.flip_called).length;
         const l = el('div', { class: 'nt-sheet-list' });
-        for (const x of [...hs].sort((a, b) => (+a.key.slice(3) || 0) - (+b.key.slice(3) || 0))) l.append(ntArBtn(d, x));
+        for (const x of [...hs].sort((a, b) => (+a.key.slice(3) || 0) - (+b.key.slice(3) || 0))) l.append(ntArTier(ntArBtn(d, x), x, ups));
         nodes.push(el('h3', { class: 'nt-sheet-h3' }, hs.length === 1 ? 'House' : `House: ${hs.length} seats`),
           el('p', { class: 'nt-mute' }, `${called} called${called ? ` (${won('D')} D, ${won('R')} R)` : ''}, ${counting} counting${flips ? `, ${flips} flip${flips === 1 ? '' : 's'}` : ''}.`), l);
       }
