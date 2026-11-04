@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '53f241eb83b6';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '4be4f348e752';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1621,6 +1621,14 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-wall-house { margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .5rem; }
 .nt-wall-key { margin: 0; font-size: 12px; }
 .nt-wall-wait { display: grid; gap: .2rem; margin-top: .15rem; }
+/* each race's count through the night (Nov 3, 9pm) */
+.nt-spk { display: block; width: 100%; overflow: visible; }
+.nt-spk .z { stroke: var(--color-fg-muted); stroke-width: .6; stroke-dasharray: 2 2; opacity: .6; vector-effect: non-scaling-stroke; }
+.nt-spk .o { stroke: var(--nt-ours); stroke-width: .8; opacity: .55; vector-effect: non-scaling-stroke; }
+.nt-spk .l { fill: none; stroke: var(--color-fg); stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-linejoin: round; } .nt-spk .l.d { stroke: var(--nt-d); } .nt-spk .l.r { stroke: var(--nt-r); }
+.nt-spk.wt { height: 16px; margin-top: .15rem; } .nt-spk.rc { height: 26px; }
+.nt-wt[data-trend="D"] .n::after { content: " ↗"; color: var(--nt-d); } .nt-wt[data-trend="R"] .n::after { content: " ↘"; color: var(--nt-r); }
+.nt-rc-tr { display: grid; gap: .1rem; } .nt-rc-tr small { font-size: 12px; color: var(--color-fg-muted); }
 .nt-wall-wait .r { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; font-size: 12px; }
 .nt-wall-wait .h { color: var(--color-fg-muted); margin-right: .25rem; min-width: 6.5rem; }
 .nt-wall-wait .st { all: unset; cursor: pointer; font-size: 11.5px; font-weight: 700; padding: .05rem .4rem; border-radius: 5px; background: var(--nt-wash); letter-spacing: .02em; }
@@ -5089,6 +5097,26 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // leads, filled when called, and edged in amber when the side our forecast had as the underdog leads or won. Then one line for the House.
   // Every number is the board's (CNN's count and calls, our chance before votes). A phone shows one office at a time.
   var nightWallOff = (() => { try { return localStorage.getItem('nt-wall-office') || 'senate'; } catch (e) { return 'senate'; } })();
+  // A race's count through the night (Jake, Nov 3, 9pm: "It's hard to tell the trends from throughout the night... very informative as things
+  // get down to the wire"): the running margin from the whole-night trail (night_results_batches.trail), and its move over the last 30
+  // minutes of the trail. Statewide races only: House seats keep just their newest batches.
+  function ntTrend(key) {
+    const R = ((nightResults || {}).races || {})[key], T = R && R.trail; if (!T || T.length < 2) return null;
+    const pts = T.map((t) => [Date.parse(t[0]), t[1]]).filter((p) => p[1] != null && !Number.isNaN(p[0])); if (pts.length < 2) return null;
+    const last = pts[pts.length - 1], ago = pts.filter((p) => p[0] <= last[0] - 30 * 60000).pop() || pts[0];
+    return { pts, last: last[1], move: last[1] - ago[1], mins: Math.max(1, Math.round((last[0] - ago[0]) / 60000)), our: R.our_line };
+  }
+  function ntSpark(tr, w, h, cls) {  // the margin as a line, the even line dashed, our forecast as a faint tick line, the line in the leader's color
+    const x0 = tr.pts[0][0], x1 = Math.max(tr.pts[tr.pts.length - 1][0], x0 + 60000);
+    const ext = Math.max(2, ...tr.pts.map((p) => Math.abs(p[1])), tr.our != null ? Math.abs(tr.our) : 0) * 1.1;
+    const x = (t) => 1 + (w - 2) * (t - x0) / (x1 - x0), y = (v) => h / 2 - (h / 2 - 1.5) * v / ext;
+    const svg = d3.create('svg').attr('viewBox', `0 0 ${w} ${h}`).attr('preserveAspectRatio', 'none').attr('class', 'nt-spk ' + (cls || '')).attr('aria-hidden', 'true');
+    svg.append('line').attr('x1', 0).attr('x2', w).attr('y1', y(0)).attr('y2', y(0)).attr('class', 'z');
+    if (tr.our != null) svg.append('line').attr('x1', 0).attr('x2', w).attr('y1', y(tr.our)).attr('y2', y(tr.our)).attr('class', 'o');
+    svg.append('path').attr('d', d3.line().x((p) => x(p[0])).y((p) => y(p[1]))(tr.pts)).attr('class', 'l ' + (tr.last > 0 ? 'd' : tr.last < 0 ? 'r' : ''));
+    return svg.node();
+  }
+  const ntTrendTxt = (tr, dn, rn) => { const v = Math.round(Math.abs(tr.move) * 10) / 10; return Math.abs(tr.move) < 0.3 ? `Steady over the last ${tr.mins} minutes.` : `Last ${tr.mins} minutes: ${fmt1(v)} point${v === 1 ? '' : 's'} toward ${tr.move > 0 ? dn : rn}.`; };
   function ntWallTile(d, x, tiers) {
     const w = x.call && x.call.winner, won = w && w !== 'runoff' ? ntPK(w) : '', has = x.margin_d != null || !!x.lead;
     const ds = ntAllSide(x);
@@ -5111,6 +5139,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const od = !w && ((d.story || {}).odds || {})[x.race_id || x.key], tg = od && od.basis === 'count' && Math.abs((od.p_d ?? 0) - (od.final_call_d ?? od.p_d ?? 0)) >= 0.05 ? ntSinceTag(od.p_d, od.final_call_d) : null;
     const ar = el('span', {}, top); if (tg) ar.append(' ', tg);
     b.append(ntKids('span', { class: 'a' }, [el('b', {}, x.st + (x.special ? '*' : '')), ar]), el('span', { class: 'm' }, m), el('span', { class: 'n' }, n));
+    const tr = !w && ntTrend(x.race_id || x.key);
+    if (tr) {
+      const rc = (x.cands || []).find((k) => k.party === 'R'), dn = ln((ds && ds.name) || 'the Democrat'), rn = ln((rc && rc.name) || 'the Republican');
+      b.append(ntSpark(tr, 100, 16, 'wt'));
+      b.setAttribute('aria-label', `${b.getAttribute('aria-label')} ${ntTrendTxt(tr, dn, rn)}`); b.title = `${name}. ${ntTrendTxt(tr, dn, rn)}`;
+      if (Math.abs(tr.move) >= 1) b.dataset.trend = tr.move > 0 ? 'D' : 'R';
+    }
     b.addEventListener('click', () => ntAllPop(d, x));
     return b;
   }
@@ -6834,7 +6869,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       G.push({ at: last.at, from: g[0].at, n: g.length, votes: g.reduce((a, b) => a + (b.votes || 0), 0), run_margin_d: last.run_margin_d, counted: last.counted,
         margin_d: cv ? clean.reduce((a, b) => a + b.margin_d * (b.votes || 0), 0) / cv : null });  // a group's margin weighted by votes, the same as its summed votes'
     }
-    const vmax = Math.max(1, ...G.map((b) => b.votes || 0));
+    const vmax = Math.max(1, ...G.map((b) => Math.abs(b.votes || 0)));  // a drop can be negative when CNN revises a total down
     // panel 2: the chance
     svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y2(0.5)).attr('y2', y2(0.5)).attr('class', 'mid');
     for (const v of [0, 0.5, 1]) svg.append('text').attr('x', m.l - 5).attr('y', y2(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(`${Math.round(v * 100)}%`);
@@ -6856,7 +6891,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       if (pb != null && pa != null) { why.append(' ', document.createTextNode(`${ntLast(r.cand_d) || 'The Democrat'}'s chance: ${ntPctW(pb)} to ${ntPctW(pa)} `)); const tg = ntSinceTag(pa, pb); if (tg) why.append(tg); }
     };
     for (const b of G) {
-      const cx = x(Date.parse(b.at)), cy = y1(b.run_margin_d), rr = (phone ? 2.5 : 3) + (phone ? 5 : 6) * Math.sqrt((b.votes || 0) / vmax);
+      const cx = x(Date.parse(b.at)), cy = y1(b.run_margin_d), rr = (phone ? 2.5 : 3) + (phone ? 5 : 6) * Math.sqrt(Math.abs(b.votes || 0) / vmax);
       svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', rr).attr('class', 'drop ' + (b.margin_d == null ? 'x' : b.margin_d > 0 ? 'd' : 'r')).attr('data-at', b.at);
       svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', Math.max(11, rr + 3)).attr('class', 'nt-ctlc-hit').attr('tabindex', 0).attr('role', 'button')
         .attr('aria-label', `${b.n > 1 ? `${tms(Date.parse(b.from))} to ${tms(Date.parse(b.at))}, ${b.n} drops` : tms(Date.parse(b.at))}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}. Running ${ntM(b.run_margin_d)}.`)
@@ -7262,6 +7297,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       o.append(ntWinBar(od.p_d, 'sm'), lab);
       c.append(o);
     }
+    { const tr = !call && ntTrend(r.id);
+      if (tr) { const tb = el('div', { class: 'nt-rc-tr' }); tb.append(ntSpark(tr, 200, 26, 'rc'), el('small', {}, ntTrendTxt(tr, ntLast(r.cand_d) || 'the Democrat', ntLast(r.cand_r) || 'the Republican'))); c.append(tb); } }
     const f = el('div', { class: 'nt-rc-f' });
     const ct = (((d.story || {}).call_times) || {})[r.id] || r.call && (r.call.first_called_at || r.call.at);  // the first time the board saw the call
     if (call && call !== 'runoff') f.append(el('span', {}, `Called for ${ntWN(r, call)}${ct ? ` at ${ntT(ct)}` : ''}${r.call.source ? ` by ${/CNN/.test(r.call.source) ? 'CNN' : /^Wikipedia/.test(r.call.source) ? 'Wikipedia' : r.call.source}` : ''}.`));
