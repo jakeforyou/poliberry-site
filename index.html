@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e9e2c1edf77d';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '6c8eaaa36fdc';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1692,6 +1692,8 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-strip-f { display: flex; flex-wrap: wrap; gap: .3rem; }
 .nt-strip-f .f { all: unset; cursor: pointer; font-size: 12.5px; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; background: var(--nt-wash2); }
 .nt-strip-f .f.up { background: color-mix(in srgb, var(--nt-jake) 28%, transparent); } .nt-strip-f .f.more { color: var(--nt-ours); }
+.nt-cl-gap { margin: .2rem 0; padding: .45rem .6rem; border-radius: 8px; font-size: 13px; line-height: 1.45; background: color-mix(in srgb, var(--nt-jake) 16%, transparent); border-left: 3px solid var(--nt-jake); }
+.nt-strip-f .f.claims.hot { background: color-mix(in srgb, var(--nt-r) 28%, transparent); }
 .nt-strip-f .f:hover, .nt-strip-f .f:focus-visible { filter: brightness(1.2); } .nt-strip-f .f:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 @media (max-width: 47.99rem) {
   .nt-strip-r { grid-template-columns: auto minmax(0, 1fr); font-size: 13.5px; } .nt-strip-r .t { grid-row: 1; } .nt-strip-r .k { grid-row: 1; justify-self: start; }
@@ -2559,7 +2561,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <p class="nt-prac-s">Made-up results, to see how the board behaves before the real night. Pick how far every state ends from our forecast and how much of the vote is counted, then press Show it, or load a sample night that plays out poll by poll. Races get a made-up call once 90 percent is in. Nothing here reaches the real board.</p>
     </details>
     <nav class="nt-jump" id="nt-jump" aria-label="Jump to a part of the board">
-      <button type="button" data-to="nt-ups">Upset watch</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-all">All races</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-batches">Vote batches</button><button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" id="nt-tv-open" title="A big view for a television">TV view</button>
+      <button type="button" data-to="nt-ups">Upset watch</button><button type="button" data-claims="1">Claims watch</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-all">All races</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-batches">Vote batches</button><button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" id="nt-tv-open" title="A big view for a television">TV view</button>
     </nav>
     <section class="nt-pins" id="nt-pins" aria-label="My watchlist" hidden></section>
     <div class="nt-board2" id="nt-ctl" role="group" aria-label="Control of Congress and the night so far">
@@ -4802,6 +4804,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   function ntWireJump() {
     const nav = $('#nt-jump'); if (!nav) return;
     const tv = $('#nt-tv-open'); if (tv && !tv.dataset.wired) { tv.dataset.wired = '1'; tv.addEventListener('click', () => ntTvSet(true, { from: tv })); }
+    const cb = nav.querySelector('button[data-claims]'); if (cb && !cb.dataset.wired) { cb.dataset.wired = '1'; cb.addEventListener('click', ntGoClaims); }
     nav.querySelectorAll('button[data-to]').forEach((b) => b.addEventListener('click', () => {
       const s = document.getElementById(b.dataset.to); if (!s || s.hidden) return;
       if (s.classList.contains('nt-acc') && !nightAccOpen.has(s.id)) ntAccOpen(s.id, true);  // landing on a folded section opens it
@@ -5107,6 +5110,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (ups.length) { const b = el('button', { type: 'button', class: 'f up', 'data-fk': 'strip:ups' }, `${ups.length} upset${ups.length === 1 ? '' : 's'}`); b.addEventListener('click', () => { const u = $('#nt-ups'); if (u) ntScrollTo(u); }); facts.append(b); }
     const close = ntAllRows(d).filter((x) => x.office !== 'House' && !x.call && x.margin_d != null && Math.abs(x.margin_d) < 3 && x.counted >= 20).sort((a, b) => Math.abs(a.margin_d) - Math.abs(b.margin_d))[0];
     if (close) { const b = el('button', { type: 'button', class: 'f', 'data-fk': 'strip:close' }, `Closest: ${ntAllName(close)} ${close.office === 'Senate' ? 'Senate' : 'governor'}, ${ntAllNow(close)}`); b.addEventListener('click', () => ntAllPop(d, close)); facts.append(b); }
+    const cw = nightClaims && nightClaims.summary;
+    if (cw) { const n = (cw.day || {}).flagged || 0, h1 = (cw.hour || {}).flagged || 0; const b = el('button', { type: 'button', class: 'f claims' + (h1 ? ' hot' : ''), 'data-fk': 'strip:claims' }, h1 ? `Claims watch: ${h1} flagged this hour` : `Claims watch${n ? `: ${n} flagged today` : ''}`); b.addEventListener('click', ntGoClaims); facts.append(b); }
     const all = el('button', { type: 'button', class: 'f more', 'data-fk': 'strip:feed' }, 'Every update'); all.addEventListener('click', () => { const f = $('#nt-desk'); if (f) ntScrollTo(f); }); facts.append(all);
     box.hidden = false;
     box.replaceChildren(rows, facts);
@@ -7152,6 +7157,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const c = nightClaims; box.hidden = !c; if (!c) return;
     box.replaceChildren(ntHead(el('h3', {}, 'Claims watch'), 'claims'),
       el('p', { class: 'nt-cl-sub' }, 'Fraud claims, lawsuits and escalation from Trump, his administration and allies, as they post them.'));
+    // a source whose newest post is hours old on election night is a gap, not silence (Jake, Nov 3, 9:20pm: "it has zero commentary from
+    // trump? No shot he's been quiet"): the Truth Social archive we read stopped at 8:34am ET, and Truth Social itself refuses automated reads
+    const tr = (c.sources || {}).trump;
+    if (tr && tr.newest && Date.now() - Date.parse(tr.newest) > 3 * 3600000) {
+      box.append(el('p', { class: 'nt-cl-gap', role: 'note' }, `Trump's Truth Social posts are missing after ${ntT(tr.newest)}${ntDayET(tr.newest) !== ntDayET(new Date().toISOString()) ? ' ' + ntDay(ntDayET(tr.newest)) : ''}. We read them through ${tr.via || 'a public archive'}, which has not updated since. Truth Social does not allow automated reading, and we do not get around that. So this list cannot show his posts tonight: no post here does not mean he has been quiet.`));
+    }
     const h1 = c.summary.hour, d1 = c.summary.day;
     const sum = el('p', { class: 'nt-cl-sum' });
     if (h1.flagged) { sum.append(el('b', {}, `${h1.flagged} flagged in the last hour`), document.createTextNode(h1.actions ? `, ${h1.actions} of them actions.` : '.')); }
@@ -7188,6 +7199,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   var nightRail = (() => { try { return localStorage.getItem('nt-rail') || 'feed'; } catch (e) { return 'feed'; } })();
   // with no tab picked, the panel opens on Coming up while the live feed is still empty (before the polls close), then on the feed
   var nightRailPicked = (() => { try { return !!localStorage.getItem('nt-rail'); } catch (e) { return false; } })();
+  // straight to the claims watch (Jake, Nov 3, 9:20pm: "where is the feed of trump & co commentary on mobile?"): it sat two taps and
+  // about 4,000px down on a phone. Opens the feed section on a phone, picks the Claims watch tab, and scrolls to it.
+  function ntGoClaims() {
+    if (window.matchMedia('(max-width: 47.99rem)').matches && !nightAccOpen.has('nt-rail')) ntAccOpen('nt-rail', true);
+    nightRail = 'claims'; nightRailPicked = true; try { localStorage.setItem('nt-rail', 'claims'); } catch (e) { /* fine */ }
+    ntRail();
+    setTimeout(() => { const t = $('#nt-tab-claims') || $('#nt-claims') || $('#nt-rail'); if (t) t.scrollIntoView({ block: 'start' }); }, 80);  // after the section has opened; a jump, since the redraw cancels a smooth scroll
+  }
   function ntRail() {
     const tabs = $('#nt-railtabs'); if (!tabs) return;
     if (!nightRailPicked) nightRail = (nightData && ((nightData.story || {}).events || []).length) ? 'feed' : 'coming';
