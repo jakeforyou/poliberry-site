@@ -1,11 +1,26 @@
 [
   {
-    "as_of": "2026-10-27",
+    "as_of": "2026-11-03",
     "days": 7,
     "this_period": {
+      "start": "2026-10-28",
+      "end": "2026-11-03",
+      "articles": 0,
+      "usable_days": 0,
+      "skipped_days": [
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03"
+      ]
+    },
+    "prior_period": {
       "start": "2026-10-21",
       "end": "2026-10-27",
-      "articles": 1033,
+      "articles": 1053,
       "usable_days": 4,
       "skipped_days": [
         "2026-10-25",
@@ -13,29 +28,20 @@
         "2026-10-27"
       ]
     },
-    "prior_period": {
-      "start": "2026-10-14",
-      "end": "2026-10-20",
-      "articles": 1686,
-      "usable_days": 6,
-      "skipped_days": [
-        "2026-10-14"
-      ]
-    },
-    "change_pct": -8.1,
-    "direction": "flat",
+    "change_pct": null,
+    "direction": "unclear",
     "top_kind": "other",
-    "top_kind_articles": 4,
+    "top_kind_articles": 19,
     "top_speaker": "Donald Trump",
-    "top_speaker_articles": 962,
+    "top_speaker_articles": 19,
     "counts_source": "daily",
     "baseline": {
-      "usable_days": 30,
-      "per_day": 236.2,
-      "this_per_day": 258.2,
-      "change_pct": 9.3
+      "usable_days": 34,
+      "per_day": 242.0,
+      "this_per_day": null,
+      "change_pct": null
     },
-    "sentence": "Coverage of election-legitimacy statements is flat this week (1033 articles on 4 days against 1686 on 6), led by Trump on other topics.",
+    "sentence": "Coverage of election-legitimacy statements cannot be compared this week: GDELT has usable data for 0 of 7 days this week and 4 of 7 days the week before.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",

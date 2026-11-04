@@ -771,7 +771,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine#Polling_4",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -1924,7 +1924,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -2992,8 +2992,8 @@
   {
     "race_id": "senate_oh",
     "kind": "average",
-    "average_margin_d": 2.43,
-    "n_polls": 21,
+    "average_margin_d": 2.25,
+    "n_polls": 20,
     "candidates": {
       "D": [
         "Sherrod Brown"
@@ -3005,7 +3005,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Ohio#Polling",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -4541,8 +4541,8 @@
   {
     "race_id": "senate_tx",
     "kind": "average",
-    "average_margin_d": 2.76,
-    "n_polls": 25,
+    "average_margin_d": 2.67,
+    "n_polls": 24,
     "candidates": {
       "D": [
         "James Talarico"
@@ -4554,7 +4554,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas#Polling_4",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -5133,7 +5133,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alaska#Polling_2",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -5949,8 +5949,8 @@
   {
     "race_id": "senate_ia",
     "kind": "average",
-    "average_margin_d": -0.09,
-    "n_polls": 11,
+    "average_margin_d": -0.3,
+    "n_polls": 10,
     "candidates": {
       "R": [
         "Ashley Hinson"
@@ -5962,7 +5962,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Iowa#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -5982,6 +5982,24 @@
     "margin_d": 2.0,
     "aggregate": false,
     "source_url": "https://johnzogbystrategies.com/el-sayed-leads-rogers-51-49-new-john-zogby-strategies-eve-of-election-day-poll/"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "Trafalgar Group",
+    "sponsor": null,
+    "start_date": "2026-10-31",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 1087,
+    "moe": 2.9,
+    "d": 47.0,
+    "r": 46.0,
+    "other": 3.0,
+    "undecided": 5.0,
+    "margin_d": 1.0,
+    "aggregate": false,
+    "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/MI-Gen-Sen-Poll-Report-1101.pdf"
   },
   {
     "race_id": "senate_mi",
@@ -7336,8 +7354,8 @@
   {
     "race_id": "senate_mi",
     "kind": "average",
-    "average_margin_d": 5.11,
-    "n_polls": 19,
+    "average_margin_d": 4.9,
+    "n_polls": 20,
     "candidates": {
       "D": [
         "Abdul El-Sayed"
@@ -7349,7 +7367,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -7854,7 +7872,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -8485,7 +8503,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Hampshire#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -8864,7 +8882,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina#Polling_5",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -8884,6 +8902,24 @@
     "margin_d": -7.0,
     "aggregate": false,
     "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
+  },
+  {
+    "race_id": "senate_fl",
+    "kind": "poll",
+    "pollster": "RedBox Research",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-10-31",
+    "population": "LV",
+    "sample": 2898,
+    "moe": 2.1,
+    "d": 45.0,
+    "r": 47.0,
+    "other": 7.0,
+    "undecided": 2.0,
+    "margin_d": -2.0,
+    "aggregate": false,
+    "source_url": "https://afightworthhaving.com/polling/2026/florida"
   },
   {
     "race_id": "senate_fl",
@@ -8938,6 +8974,24 @@
     "margin_d": -6.0,
     "aggregate": false,
     "source_url": "https://www.bigdatapoll.com/blog/sunshine-state-poll-ashley-moody-leads-angie-craig-governors-race-tight/"
+  },
+  {
+    "race_id": "senate_fl",
+    "kind": "poll",
+    "pollster": "Targoz Market Research",
+    "sponsor": null,
+    "start_date": "2026-10-26",
+    "end_date": "2026-10-29",
+    "population": "LV",
+    "sample": 1013,
+    "moe": 3.0,
+    "d": 43.0,
+    "r": 52.0,
+    "other": 2.0,
+    "undecided": 3.0,
+    "margin_d": -9.0,
+    "aggregate": false,
+    "source_url": "https://www.targoz.com/market-matters-blog/2026/11/2/republicans-lead-all-five-florida-statewide-races"
   },
   {
     "race_id": "senate_fl",
@@ -9464,8 +9518,8 @@
   {
     "race_id": "senate_fl",
     "kind": "average",
-    "average_margin_d": -5.92,
-    "n_polls": 13,
+    "average_margin_d": -5.87,
+    "n_polls": 15,
     "candidates": {
       "R": [
         "Ashley Moody"
@@ -9477,7 +9531,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida#Polling_2",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -9892,7 +9946,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas#Polling_2",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -10397,7 +10451,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -10817,8 +10871,8 @@
   {
     "race_id": "gov_ga",
     "kind": "average",
-    "average_margin_d": -0.25,
-    "n_polls": 8,
+    "average_margin_d": 0.0,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Keisha Lance Bottoms"
@@ -10830,7 +10884,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -11443,7 +11497,7 @@
     "newest_end_date": "2026-10-29",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -11773,8 +11827,8 @@
   {
     "race_id": "gov_nv",
     "kind": "average",
-    "average_margin_d": 1.5,
-    "n_polls": 4,
+    "average_margin_d": 2.33,
+    "n_polls": 3,
     "candidates": {
       "D": [
         "Aaron Ford"
@@ -11786,7 +11840,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Nevada_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -12111,7 +12165,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Wisconsin_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -12976,7 +13030,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -13864,8 +13918,8 @@
   {
     "race_id": "gov_oh",
     "kind": "average",
-    "average_margin_d": 4.0,
-    "n_polls": 17,
+    "average_margin_d": 3.94,
+    "n_polls": 16,
     "candidates": {
       "D": [
         "Amy Acton"
@@ -13877,7 +13931,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Ohio_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -14405,8 +14459,8 @@
   {
     "race_id": "gov_ia",
     "kind": "average",
-    "average_margin_d": 6.75,
-    "n_polls": 8,
+    "average_margin_d": 6.14,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Rob Sand"
@@ -14418,7 +14472,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Iowa_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -14635,7 +14689,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_South_Carolina_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -14924,7 +14978,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Kansas_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -15267,7 +15321,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -15376,7 +15430,7 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_South_Carolina#Polling_3",
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -15388,7 +15442,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   },
   {
@@ -15400,7 +15454,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-11-03T09:33:46-05:00",
+    "retrieved_at": "2026-11-04T09:33:42-05:00",
     "label": "retrieved"
   }
 ]
