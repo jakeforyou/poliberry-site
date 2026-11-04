@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '34e31ff12e84';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '53932c0666e0';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1719,6 +1719,19 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-bug .c:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; border-radius: 4px; }
 .nt-bug .nm { font-family: var(--font-display); font-weight: 800; } .nt-bug .nt-d, .nt-bug .nt-r { font-weight: 800; font-size: 15px; } .nt-bug .sep { color: var(--color-fg-muted); font-size: 11px; }
 .nt-bug .p { color: var(--color-fg-muted); font-size: 12px; }
+.nt-card-nav { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: .4rem; }
+.nt-card-nav button { all: unset; cursor: pointer; min-height: 36px; font-size: 12.5px; font-weight: 600; color: var(--nt-ours); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nt-card-nav button:last-child { text-align: right; } .nt-card-nav .pos { font-size: 11.5px; color: var(--color-fg-muted); white-space: nowrap; }
+.nt-card-nav button:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; border-radius: 4px; }
+.nt-bug .age { font-size: 11px; color: var(--color-fg-muted); } .nt-bug .age[data-old="true"] { color: var(--nt-jake); font-weight: 600; }
+/* tap targets on a phone (Nov 3, 10:25pm): small chips and help marks get a larger touch area, the look barely changes */
+@media (max-width: 47.99rem) {
+  .nt-strip-f .f, .nt-up-where .f, .nt-wall-wait .st, .nt-feedf button, .nt-sheet-sort button, .nt-spot-tabs button { min-height: 32px; display: inline-flex; align-items: center; }
+  .nt-wall-wait .st { padding: .2rem .55rem; }
+  button.nt-q, .nt-q { position: relative; } button.nt-q::after, .nt-q::after { content: ""; position: absolute; inset: -12px; }  /* a 40px touch area round each 16px "?" */
+  .nt-link { padding-block: .35rem; display: inline-block; }
+}
+
 /* the phone's tab bar (Nov 3, 10:20pm): five places, fixed to the bottom, clear of the home bar */
 .nt-tabbar { display: none; }
 @media (max-width: 47.99rem) {
@@ -5216,6 +5229,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       kids.push(b);
     }
     if (ups) { const u = el('button', { type: 'button', class: 'c up', 'data-fk': 'bug:ups' }, `${ups} upset${ups === 1 ? '' : 's'}`); u.addEventListener('click', () => { const x = $('#nt-ups'); if (x) ntScrollTo(x); }); kids.push(u); }
+    { const a = ntAsOf(d), ago = a && a.at ? Math.max(0, Math.round((Date.now() - Date.parse(a.at)) / 60000)) : null;  // how fresh the numbers are (Nov 3, 10:25pm)
+      if (ago != null) kids.push(el('span', { class: 'age', 'data-old': String(ago >= 6) }, ago < 1 ? 'Updated just now' : `Updated ${ago} min ago`)); }
     bar.replaceChildren(...kids);
     if (!nightBugObs && 'IntersectionObserver' in window) {  // shown only while the top cards are off screen, on the night tab, with no sheet open
       const target = $('#nt-gl-ch');
@@ -6679,6 +6694,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       s = el('aside', { class: 'nt nt-sheet', id: 'nt-sheet', role: 'dialog', 'aria-labelledby': 'nt-sheet-t', hidden: '' });
       document.body.append(s);
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !s.hidden) ntSheetClose(); });
+      let sx = null, sy = null;  // a sideways swipe on a race card steps to the next or previous race; not inside a table, a chart or a row of chips
+      s.addEventListener('touchstart', (e) => { const t = e.touches[0]; sx = e.target.closest('table, svg, .nt-feedf, .nt-sheet-sort, .nt-left') ? null : t.clientX; sy = t.clientY; }, { passive: true });
+      s.addEventListener('touchend', (e) => {
+        if (sx == null || !nightCardNav) return; const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy; sx = null;
+        if (Math.abs(dx) > 70 && Math.abs(dy) < 45) (dx < 0 ? nightCardNav.next : nightCardNav.prev)();
+      }, { passive: true });
       s.addEventListener('keydown', (e) => {  // while the sheet is modal, Tab goes round inside it
         if (e.key !== 'Tab' || s.getAttribute('aria-modal') !== 'true') return;
         const f = [...s.querySelectorAll('button, a[href], input, select, textarea, summary, [tabindex]:not([tabindex="-1"])')].filter((c) => !c.disabled && ntFkSee(c));
@@ -6854,7 +6875,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const n = b.querySelector('.nt-ar-c'); if (n) n.append(el('span', { class: 'nt-ar-up', 'data-t': u.tier }, NT_UP_TIERS[u.tier]));
     return b;
   }
-  function ntStatePop(d0, st) {  // a state's results: its statewide races, its House seats, its key counties (results first, Jake, Nov 3, 6:35pm)
+  function ntStatePop(d0, st) {
+    nightCardNav = null;  // a state card has no previous and next  // a state's results: its statewide races, its House seats, its key counties (results first, Jake, Nov 3, 6:35pm)
     const name = NT_STATE[st] || st;
     const build = (d) => {
       const rows = ntAllRows(d).filter((x) => x.st === st), sw = rows.filter((x) => x.office !== 'House'), hs = rows.filter((x) => x.office === 'House');
@@ -8231,10 +8253,30 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return box;
   }
   const ntAllFresh = (d, x) => ntAllRows(d).find((r) => r.key === x.key) || x;  // the same race on a newer board
+  // Previous and next race from a race card, by buttons or a sideways swipe (Jake, Nov 3, 10:25pm: phone upgrades): a statewide race
+  // steps through its office in the wall's order (live and closest first), a House seat through its state's seats in order.
+  var nightCardNav = null;
+  function ntCardSeq(d, x) {
+    const rows = ntAllRows(d);
+    if (x.office === 'House') return rows.filter((r) => r.office === 'House' && r.st === x.st).sort((a, b) => (+a.key.slice(3) || 0) - (+b.key.slice(3) || 0));
+    return rows.filter((r) => r.office === x.office).sort((a, b) => ntWallRank(a) - ntWallRank(b) || a.st.localeCompare(b.st));
+  }
+  function ntCardNavRow(d, x) {
+    const seq = ntCardSeq(d, x), i = seq.findIndex((r) => r.key === x.key);
+    if (i < 0 || seq.length < 2) { nightCardNav = null; return null; }
+    const prev = seq[(i - 1 + seq.length) % seq.length], next = seq[(i + 1) % seq.length];
+    const nm = (r) => ntAllName(r) + (r.office === 'Senate' ? ' Sen' : r.office === 'Governor' ? ' Gov' : '');
+    nightCardNav = { prev: () => ntAllPop(d, prev), next: () => ntAllPop(d, next) };
+    const row = el('div', { class: 'nt-card-nav' });
+    const pb = el('button', { type: 'button', 'data-fk': 'card:prev', 'aria-label': `Previous: ${nm(prev)}` }, `‹ ${nm(prev)}`), nb = el('button', { type: 'button', 'data-fk': 'card:next', 'aria-label': `Next: ${nm(next)}` }, `${nm(next)} ›`);
+    pb.addEventListener('click', nightCardNav.prev); nb.addEventListener('click', nightCardNav.next);
+    row.append(pb, el('span', { class: 'pos' }, `${i + 1} of ${seq.length}`), nb);
+    return row;
+  }
   function ntAllPop(d0, x0) {  // one race, results first, its context folded below
     const build = (d) => {
       const x = ntAllFresh(d, x0), w = x.call && x.call.winner, has = x.margin_d != null || !!x.lead;
-      const nodes = [ntResHead(d, x)];
+      const nodes = [ntCardNavRow(d, x), ntResHead(d, x)];
       // what changes how the count reads stays in view
       const nd = el('dl', { class: 'nt-dl' }), note = (k, v) => { if (v) nd.append(el('dt', {}, k), el('dd', {}, v)); };
       const was = x.held_by || x.prev_party;
