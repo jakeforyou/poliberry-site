@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '801b5a97316d';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '84d57b37c8f9';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -7570,7 +7570,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const ct = (((d.story || {}).call_times) || {})[x.key];
       sub = `Called${ct ? ' ' + ntT(ct) : ''} by ${x.call.source || 'CNN'}.${x.margin_d != null ? ` The count: ${ntM(x.margin_d)}${x.counted != null ? ` with ${ntPct(x.counted)} counted` : ''}.` : ''}`;
     } else if (x.jungle || (x.lead && x.margin_d == null)) big = ntAllNow(x);
-    else if (x.lead) { big = `${x.lead.name} (${ntPK(x.lead.party)}) leads by ${fmt1(Math.round(x.lead.pts * 10) / 10)}`; if (x.lead.pct != null) sub = `${x.lead.name} has ${ntPct(x.lead.pct)} of the vote counted so far.`; }
+    else if (x.margin_d != null) {  // the margin is the count's own. Many statewide rows carry no lead object, so the leader comes from its sign (Nov 3, 7:50pm)
+      const ds = ntAllSide(x), rc = (x.cands || []).find((c) => c.party === 'R'), dSide = x.margin_d > 0;
+      const nm = dSide ? (ds && ds.name) || 'The Democrat' : (rc && rc.name) || 'The Republican', pt = dSide ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R';
+      big = Math.abs(x.margin_d) < 0.05 ? 'Dead even' : `${nm} (${pt}) leads by ${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)}`;
+      if (x.lead && x.lead.pct != null && ntPK(x.lead.party) === pt) sub = `${x.lead.name} has ${ntPct(x.lead.pct)} of the vote counted so far.`;
+    } else if (x.lead) { big = `${x.lead.name} (${ntPK(x.lead.party)}) leads by ${fmt1(Math.round(x.lead.pts * 10) / 10)}`; if (x.lead.pct != null) sub = `${x.lead.name} has ${ntPct(x.lead.pct)} of the vote counted so far.`; }
     else { big = x.withheld ? "Waiting on CNN's count" : 'No votes counted yet'; const ct = ntCloseT(d, x.close); if (ct && !x.withheld) sub = `Polls close at ${ct} ET.`; }
     box.append(el('p', { class: 'nt-res-big' }, big));
     if (!w && x.lead && x.margin_d != null && x.lead.pct != null && (x.ahead === 'D' || x.ahead === 'R')) {
