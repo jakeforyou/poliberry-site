@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '41656a829a76';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'f41ea1e50bc7';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1618,24 +1618,34 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
   .nt-wall-g { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .25rem; }
   .nt-wt { padding: .22rem .32rem .26rem; } .nt-wt .m { font-size: .92rem; }
 }
-/* the ticker under the top cards (Nov 3, 6:55pm): one line at a time, its kind on the left, the controls on the right */
-.nt-tick:not([hidden]) { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .3rem .7rem; padding: .5rem .7rem; border-radius: 10px; background: var(--nt-wash); border: 1px solid var(--nt-rule); min-height: 2.6rem; }
-.nt-tick .lb { font-size: 11.5px; font-weight: 700; padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; color: var(--color-fg); background: var(--nt-wash2); }
-.nt-tick .lb[data-k="Upset watch"], .nt-tick .lb[data-k="Next up"] { color: var(--color-bg); background: var(--nt-jake); }
-.nt-tick .lb[data-k="Called"] { color: var(--color-bg); background: var(--color-fg); }
-.nt-tick .lb[data-k="Running bluer"] { color: var(--nt-d); background: color-mix(in srgb, var(--nt-d) 16%, transparent); } .nt-tick .lb[data-k="Running redder"] { color: var(--nt-r); background: color-mix(in srgb, var(--nt-r) 16%, transparent); }
-.nt-tick .lb[data-k="On track"] { color: var(--nt-ours); background: color-mix(in srgb, var(--nt-ours) 16%, transparent); }
-.nt-tick .tx { all: unset; box-sizing: border-box; font-size: 14px; line-height: 1.4; min-width: 0; }
-.nt-tick .tx[data-go="true"] { cursor: pointer; } .nt-tick .tx[data-go="true"]:hover { text-decoration: underline; text-underline-offset: 3px; }
-.nt-tick .tx:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; border-radius: 4px; }
-.nt-tick .tx.in { animation: nt-tick-in .35s ease-out; }
-@keyframes nt-tick-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .nt-tick .tx.in { animation: none; } }
-.nt-tick .ctls { display: inline-flex; align-items: center; gap: .15rem; }
-.nt-tick .ctl { all: unset; cursor: pointer; font-size: 12px; font-weight: 600; padding: .15rem .45rem; border-radius: 999px; color: var(--color-fg-muted); }
-.nt-tick .ctl:hover, .nt-tick .ctl:focus-visible { background: var(--nt-wash2); color: var(--color-fg); }
-.nt-tick .pos { font-size: 11px; color: var(--color-fg-muted); white-space: nowrap; margin-left: .2rem; }
-@media (max-width: 47.99rem) { .nt-tick:not([hidden]) { grid-template-columns: auto minmax(0, 1fr); } .nt-tick .tx { grid-column: 1 / -1; grid-row: 2; } .nt-tick .ctls { grid-column: 2; grid-row: 1; justify-self: end; } }
+/* the live strip under the top cards (Nov 3, 8:20pm), in place of the rotating ticker: the newest events that matter, then what holds now */
+.nt-tick:not([hidden]) { display: grid; gap: .4rem; padding: .5rem .6rem; border-radius: 10px; background: var(--nt-wash); border: 1px solid var(--nt-rule); }
+.nt-strip-l { display: grid; gap: .15rem; }
+.nt-strip-r { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: baseline; gap: .1rem .55rem; padding: .3rem .4rem; border-radius: 7px; border-left: 3px solid var(--ev, var(--nt-rule)); font-size: 14px; line-height: 1.35; min-width: 0; }
+.nt-strip-r:hover, .nt-strip-r:focus-visible { background: var(--nt-wash2); } .nt-strip-r:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 1px; }
+.nt-strip-r .t { font-size: 12px; color: var(--color-fg-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nt-strip-r .k { font-size: 11.5px; font-weight: 700; padding: .02rem .45rem; border-radius: 999px; background: var(--nt-wash2); white-space: nowrap; }
+.nt-strip-r[data-big="true"] .k { color: var(--color-bg); background: var(--ev, var(--nt-jake)); }
+.nt-strip-r .x { min-width: 0; }
+.nt-strip-r.new { animation: nt-strip-new 6s ease-out 1; }
+@keyframes nt-strip-new { 0% { background: color-mix(in srgb, var(--nt-jake) 34%, transparent); } 100% { background: transparent; } }
+@media (prefers-reduced-motion: reduce) { .nt-strip-r.new { animation: none; background: color-mix(in srgb, var(--nt-jake) 16%, transparent); } }
+.nt-strip-f { display: flex; flex-wrap: wrap; gap: .3rem; }
+.nt-strip-f .f { all: unset; cursor: pointer; font-size: 12.5px; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; background: var(--nt-wash2); }
+.nt-strip-f .f.up { background: color-mix(in srgb, var(--nt-jake) 28%, transparent); } .nt-strip-f .f.more { color: var(--nt-ours); }
+.nt-strip-f .f:hover, .nt-strip-f .f:focus-visible { filter: brightness(1.2); } .nt-strip-f .f:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+@media (max-width: 47.99rem) {
+  .nt-strip-r { grid-template-columns: auto minmax(0, 1fr); font-size: 13.5px; } .nt-strip-r .t { grid-row: 1; } .nt-strip-r .k { grid-row: 1; justify-self: start; }
+  .nt-strip-r .x { grid-column: 1 / -1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* the score bar (Nov 3, 8:20pm): both chambers pinned to the top once the top cards scroll away */
+.nt-bug:not([hidden]) { position: fixed; top: 0; left: 0; right: 0; z-index: 30; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .3rem .9rem; min-height: 0; height: auto;  /* .nt gives panels a tall min-height */
+  padding: calc(.35rem + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) .35rem max(16px, env(safe-area-inset-left, 0px));
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--nt-rule); box-shadow: 0 4px 16px rgba(0, 0, 0, .25); }
+.nt-bug .c { all: unset; cursor: pointer; display: inline-flex; align-items: baseline; gap: .3rem; font-size: 13px; font-variant-numeric: tabular-nums; }
+.nt-bug .c:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; border-radius: 4px; }
+.nt-bug .nm { font-family: var(--font-display); font-weight: 800; } .nt-bug .nt-d, .nt-bug .nt-r { font-weight: 800; font-size: 15px; } .nt-bug .sep { color: var(--color-fg-muted); font-size: 11px; }
+.nt-bug .p { color: var(--color-fg-muted); font-size: 12px; } .nt-bug .c.up { font-weight: 700; padding: 0 .5rem; border-radius: 999px; background: color-mix(in srgb, var(--nt-jake) 28%, transparent); }
 .nt-bt-before > summary { cursor: pointer; color: var(--color-fg-muted); font-size: 13.5px; padding: .3rem 0; }
 .nt-bt-before[open] > summary { margin-bottom: .5rem; }
 .nt-mapsec { display: grid; gap: .5rem; margin: .8rem 0 1rem; }
@@ -4857,7 +4867,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
     ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d); ntMoveAll(d);
-    ntGlance(d); try { ntTicker(d); } catch (e) { /* the ticker never stops the board */ } try { ntWall(d); } catch (e) { /* nor the wall */ } try { ntUps(d); } catch (e) { /* nor the upset watch */ } ntExpect(d); ntBatches();
+    ntGlance(d); try { ntStrip(d); ntBug(d); } catch (e) { /* the strip and the score bar never stop the board */ } try { ntWall(d); } catch (e) { /* nor the wall */ } try { ntUps(d); } catch (e) { /* nor the upset watch */ } ntExpect(d); ntBatches();
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
     ntLook(); ntSinceDraw();
@@ -4955,77 +4965,90 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     };
   }
   const ntDur = (m) => (m < 60 ? `${m} minute${m === 1 ? '' : 's'}` : `${Math.floor(m / 60)} hour${Math.floor(m / 60) === 1 ? '' : 's'}${m % 60 ? ` ${m % 60} minute${m % 60 === 1 ? '' : 's'}` : ''}`);
-  // ---------- the ticker (Jake, Nov 3, 6:55pm: "a fluidly evaluating/generative ticker" for what is next). One line at a time under the
-  // top cards, rebuilt from the board on every refresh: the next close and what is most at stake there, a county to watch with our line,
-  // the newest call, the upsets, races running off our forecast for this stage of the count, the closest race, the chances of control.
-  // Every number is the board's (CNN's count, our lines frozen before votes, the scripts' readings). This code writes the sentences from
-  // those numbers. Never Jake's own line or call.
-  var nightTick = { items: [], i: 0, paused: false, timer: null };
-  function ntTickItems(d) {
-    const out = [], st = d.story || {}, R = (nightResults || {}).races || {};
-    const rows = ntAllRows(d), byKey = Object.fromEntries(rows.map((x) => [x.key, x]));
-    const nm = (x) => ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '');
-    const sp = st.spotlight || {};
-    if (sp.kind === 'upcoming' && sp.close_iso && Date.parse(sp.close_iso) > Date.now()) {
-      const stake = (sp.states || []).flatMap((s) => ['senate_', 'gov_'].map((p) => p + s.toLowerCase())).filter((k) => byKey[k])
-        .map((k) => [k, ntImp(d, k)]).filter(([, iv]) => iv && iv.p >= 0.01).sort((a, b) => b[1].p - a[1].p).slice(0, 2);
-      out.push({ k: 'Next up', t: `${ntT(sp.close_iso)}: polls close in ${ntAnd(sp.names || sp.states || [])}.${stake.length ? ` Most at stake: ${ntAnd(stake.map(([k, iv], j) => `${nm(byKey[k])} (${j ? '' : 'decides control in '}${Math.round(iv.p * 100)}%${j ? '' : ' of our simulations'})`))}.` : ''}`, key: stake.length ? stake[0][0] : null });
+  // ---------- the live strip (Jake, Nov 3, 8:20pm: "TICKER UPGRADE!!!", then "Build both"). It replaced the rotating ticker: one line that
+  // changed every 7 seconds hid most of what it carried, and the research on rotating content and news tickers favors updating in place over
+  // rotating or scrolling (DECISIONS.md). The newest events that matter, newest first, each with its time and kind; a new one glows for a
+  // moment. A big moment from the last 15 minutes stays on top. Under them, facts that hold right now. Nothing moves on its own.
+  const NT_STRIP_KINDS = new Set(['call', 'lead', 'first', 'close', 'verdict', 'runoff', 'lean', 'milestone', 'batch']);
+  var nightStripSeen = null;
+  function ntStripEvents(d, n) {
+    const now = (nightMode === 'practice' && Date.parse(d.now_et)) || Date.now(), out = [], races = new Set();
+    const keep = (e) => NT_STRIP_KINDS.has(e.kind) && (e.level === 'big' || (e.level === 'normal' && (e.kind !== 'call' || /^(senate|gov)_/.test(e.every || e.race_id || ''))));
+    const evs = ((d.story || {}).events || []).filter(keep);
+    const top = evs.find((e) => e.level === 'big' && now - Date.parse(e.at) < 15 * 60000);
+    for (const e of top ? [top, ...evs.filter((x) => x !== top)] : evs) {
+      const rk = e.every || e.race_id; if (rk && races.has(rk)) continue;  // one line per race: its newest
+      if (rk) races.add(rk);
+      out.push(e); if (out.length >= n) break;
     }
-    const call = (st.events || []).find((e) => e.kind === 'call');
-    if (call) out.push({ k: 'Called', t: call.title, key: call.every || call.race_id });
-    for (const u of ntUpsets(d).slice(0, 3)) {
-      out.push({ k: u.called ? 'Upset' : 'Upset watch', t: `${nm(u.x)}: ${ntUpLine(d, u)} ${NT_UP_TIERS[u.tier]}: ${ntUpOdds(u).toLowerCase().replace(/^under/, 'under')}.`, key: u.x.key });
-    }
-    const sg = Object.values(R).filter((r) => r.stage && !ntBtCall(d, r.key)).sort((a, b) => Math.abs(b.stage.gap || 0) - Math.abs(a.stage.gap || 0));
-    for (const r of sg.filter((r) => r.stage.dir !== 'on').slice(0, 2)) out.push({ k: r.stage.dir === 'bluer' ? 'Running bluer' : 'Running redder', t: `${r.name} is running ${r.stage.dir} than our forecast for this stage of the count (${ntPct((r.latest || {}).counted)} counted).`, key: r.key });
-    { const on = sg.find((r) => r.stage.dir === 'on'); if (on) out.push({ k: 'On track', t: `${on.name} is on track for our forecast for this stage of the count (${ntPct((on.latest || {}).counted)} counted).`, key: on.key }); }
-    const close = rows.filter((x) => !x.call && x.margin_d != null && Math.abs(x.margin_d) < 5 && x.counted >= 20 && !x.jungle && !x.uncontested).sort((a, b) => Math.abs(a.margin_d) - Math.abs(b.margin_d))[0];
-    if (close) out.push({ k: 'Closest', t: `Closest race with a fifth or more counted: ${nm(close)}, ${ntAllNow(close)}.`, key: close.key });
-    for (const w of (d.watch_next || []).filter((w) => w.minutes > -60 && w.minutes <= 120 && (w.hinge || []).length).slice(0, 3)) {
-      const h = w.hinge[0]; if (h.our_line == null) continue;
-      out.push({ k: 'Watch', t: `${NT_STATE[w.state] || w.state}: watch ${h.county}${['LA', 'AK'].includes(w.state) ? '' : ' County'}. Our forecast there: ${ntM(h.our_line)}.${w.read_after ? ` When to look: ${w.read_after}.` : ''}`, st: w.state });
-    }
-    const co = st.control_odds || {}, hist = ntCtlHist(st);
-    if (co.senate && co.house) out.push({ k: 'Control', t: `Democrats' chance of control: Senate ${ntPct(100 * co.senate.p_d)}, House ${ntPct(100 * co.house.p_d)}.${hist.length ? ` At ${ntT(hist[0][0])} they were ${ntPct(100 * hist[0][1])} and ${ntPct(100 * hist[0][2])}.` : ''}` });
-    const called = rows.filter((x) => x.call).length, counting = rows.filter((x) => !x.call && (x.margin_d != null || x.lead)).length;
-    if (called || counting) out.push({ k: 'The count', t: `${counting} race${counting === 1 ? '' : 's'} counting and ${called} called, of ${rows.length} on the ballot.` });
     return out;
   }
-  function ntTicker(d) {
+  function ntStrip(d) {
     const box = $('#nt-tick'); if (!box) return;
-    nightTick.items = ntTickItems(d);
-    box.hidden = !nightTick.items.length; if (box.hidden) return;
-    if (nightTick.i >= nightTick.items.length) nightTick.i = 0;
-    if (!box.dataset.wired) {
-      box.dataset.wired = '1';
-      const lb = el('span', { class: 'lb' }), tx = el('button', { type: 'button', class: 'tx' }), pos = el('small', { class: 'pos' });
-      const step = (n) => { nightTick.i = (nightTick.i + n + nightTick.items.length) % nightTick.items.length; ntTickShow(); };
-      const prev = el('button', { type: 'button', class: 'ctl', 'aria-label': 'Previous line' }, '‹'), next = el('button', { type: 'button', class: 'ctl', 'aria-label': 'Next line' }, '›');
-      const pz = el('button', { type: 'button', class: 'ctl pz', 'aria-pressed': 'false', 'aria-label': 'Pause the ticker' }, 'Pause');
-      prev.addEventListener('click', () => step(-1)); next.addEventListener('click', () => step(1));
-      pz.addEventListener('click', () => { nightTick.paused = !nightTick.paused; pz.setAttribute('aria-pressed', String(nightTick.paused)); pz.textContent = nightTick.paused ? 'Play' : 'Pause'; pz.setAttribute('aria-label', nightTick.paused ? 'Play the ticker' : 'Pause the ticker'); });
-      tx.addEventListener('click', () => {
-        const it = nightTick.items[nightTick.i]; if (!it || !nightData) return;
-        const x = it.key && ntAllRows(nightData).find((r) => r.key === it.key);
-        if (x) ntAllPop(nightData, x); else if (it.st) ntStatePop(nightData, it.st);
+    const phone = window.matchMedia('(max-width: 47.99rem)').matches, evs = ntStripEvents(d, phone ? 3 : 4);
+    const first = nightStripSeen == null; if (first) nightStripSeen = new Set();
+    const rows = el('div', { class: 'nt-strip-l' });
+    for (const e of evs) {
+      const fresh = !first && !nightStripSeen.has(e.id); nightStripSeen.add(e.id);
+      const kind = e.surprise && e.vibe && e.vibe.tag ? e.vibe.tag : NT_EV[e.kind] || '';
+      const b = el('button', { type: 'button', class: 'nt-strip-r' + (fresh ? ' new' : ''), 'data-k': e.kind, 'data-big': String(e.level === 'big'), 'data-fk': 'strip:' + e.id });
+      const c = ntEvColor(e); if (c) b.style.setProperty('--ev', c);
+      b.append(el('span', { class: 't' }, ntT(e.at)), el('span', { class: 'k' }, kind), el('span', { class: 'x' }, e.title));
+      const rk = e.every || e.race_id;
+      b.addEventListener('click', () => {
+        const x = rk && ntAllRows(d).find((r) => r.key === rk);
+        if (x) ntAllPop(d, x); else if (e.state) ntStatePop(d, e.state); else { const f = $('#nt-desk'); if (f) ntScrollTo(f); }
       });
-      const ctl = el('span', { class: 'ctls' }); ctl.append(prev, pz, next, pos);
-      box.append(lb, tx, ctl);
-      // the reduced-motion setting keeps the rotation (it is content, not decoration) and drops the fade
-      nightTick.timer = setInterval(() => {
-        if (nightTick.paused || document.hidden || nightTick.items.length < 2 || box.matches(':hover') || box.contains(document.activeElement)) return;
-        step(1);
-      }, 7000);
+      rows.append(b);
     }
-    ntTickShow();
+    if (!evs.length) rows.append(el('p', { class: 'nt-mute' }, 'Calls, lead changes and first votes show here as they happen.'));
+    // what holds right now: the next close, the upsets, the closest race, and the whole feed
+    const facts = el('div', { class: 'nt-strip-f' }), now = Date.now();
+    const fut = (d.timeline || []).filter((t) => t.close_iso && Date.parse(t.close_iso) > now).sort((a, b) => a.close_iso.localeCompare(b.close_iso));
+    if (fut.length) {
+      const at = fut[0].close_iso, sts = fut.filter((t) => t.close_iso === at).map((t) => t.state);
+      const b = el('button', { type: 'button', class: 'f', 'data-fk': 'strip:next' }, `Next close ${ntT(at)}: ${sts.slice(0, 3).join(', ')}${sts.length > 3 ? ` and ${sts.length - 3} more` : ''}`);
+      b.addEventListener('click', () => { ntMapMode = 'counting'; const m = $('#nt-map'); if (nightData) ntMap(nightData); if (m) ntScrollTo(m); }); facts.append(b);
+    }
+    const ups = ntUpsets(d);
+    if (ups.length) { const b = el('button', { type: 'button', class: 'f up', 'data-fk': 'strip:ups' }, `${ups.length} upset${ups.length === 1 ? '' : 's'}`); b.addEventListener('click', () => { const u = $('#nt-ups'); if (u) ntScrollTo(u); }); facts.append(b); }
+    const close = ntAllRows(d).filter((x) => x.office !== 'House' && !x.call && x.margin_d != null && Math.abs(x.margin_d) < 3 && x.counted >= 20).sort((a, b) => Math.abs(a.margin_d) - Math.abs(b.margin_d))[0];
+    if (close) { const b = el('button', { type: 'button', class: 'f', 'data-fk': 'strip:close' }, `Closest: ${ntAllName(close)} ${close.office === 'Senate' ? 'Senate' : 'governor'}, ${ntAllNow(close)}`); b.addEventListener('click', () => ntAllPop(d, close)); facts.append(b); }
+    const all = el('button', { type: 'button', class: 'f more', 'data-fk': 'strip:feed' }, 'Every update'); all.addEventListener('click', () => { const f = $('#nt-desk'); if (f) ntScrollTo(f); }); facts.append(all);
+    box.hidden = false;
+    box.replaceChildren(rows, facts);
   }
-  function ntTickShow() {
-    const box = $('#nt-tick'), it = nightTick.items[nightTick.i]; if (!box || !it) return;
-    const lb = box.querySelector('.lb'), tx = box.querySelector('.tx');
-    lb.textContent = it.k; lb.dataset.k = it.k;
-    if (tx.textContent !== it.t) { tx.textContent = it.t; tx.classList.remove('in'); void tx.offsetWidth; tx.classList.add('in'); }
-    tx.dataset.go = String(!!(it.key || it.st)); tx.title = it.key || it.st ? 'Open it' : '';
-    box.querySelector('.pos').textContent = `${nightTick.i + 1} of ${nightTick.items.length}`;
+  // ---------- the score bar (Jake, Nov 3, 8:20pm): once the top cards scroll away, both chambers stay in view at the top of the screen
+  var nightBugObs = null;
+  function ntBug(d) {
+    let bar = $('#nt-bug');
+    if (!bar) {
+      bar = el('div', { class: 'nt nt-bug', id: 'nt-bug', role: 'region', 'aria-label': 'Score: both chambers', hidden: '' });
+      document.body.append(bar);
+    }
+    const nums = ntSeatNums(d), co = (d.story || {}).control_odds || {}, ups = ntUpsets(d).length;
+    const kids = [];
+    for (const k of ['senate', 'house']) {
+      const n = nums[k], o = co[k]; if (!n) continue;
+      const b = el('button', { type: 'button', class: 'c', 'data-fk': 'bug:' + k, 'aria-label': `${n.name}: Democrats ${n.wait ? 'not yet' : n.d}, Republicans ${n.wait ? 'not yet' : n.r}, ${n.maj} to win. Democrats' chance of control ${o && o.p_d != null ? ntPctW(o.p_d) : 'not yet'}.` });
+      b.append(el('b', { class: 'nm' }, n.name), el('span', { class: 'nt-d' }, n.wait ? '—' : String(n.d)), el('span', { class: 'sep' }, 'to'), el('span', { class: 'nt-r' }, n.wait ? '—' : String(n.r)));
+      if (o && o.p_d != null) { const p = el('span', { class: 'p' }, `D ${ntPctW(o.p_d)}`); const tg = ntSinceTag(o.p_d, o.final_call_d); if (tg) p.append(' ', tg); b.append(p); }
+      b.addEventListener('click', () => { const g = $('#nt-glance'); if (g) ntScrollTo(g); });
+      kids.push(b);
+    }
+    if (ups) { const u = el('button', { type: 'button', class: 'c up', 'data-fk': 'bug:ups' }, `${ups} upset${ups === 1 ? '' : 's'}`); u.addEventListener('click', () => { const x = $('#nt-ups'); if (x) ntScrollTo(x); }); kids.push(u); }
+    bar.replaceChildren(...kids);
+    if (!nightBugObs && 'IntersectionObserver' in window) {  // shown only while the top cards are off screen, on the night tab, with no sheet open
+      const target = $('#nt-gl-ch');
+      if (target) {
+        nightBugObs = new IntersectionObserver((ents) => {
+          const off = ents.some((e) => !e.isIntersecting && e.boundingClientRect.top < 0);
+          const sh = $('#nt-sheet');
+          bar.hidden = !off || state.tab !== 'night' || nightTv || (sh && !sh.hidden);
+        });
+        nightBugObs.observe(target);
+      }
+    }
   }
   // ---------- the wall (Jake, Nov 3, 7:10pm: "I want to see everything at once!"): every Senate and governor race as a small tile, like a
   // scoreboard of every game. Live races first (closest first), then the ones still to close, then the called ones. A tile is tinted by who
