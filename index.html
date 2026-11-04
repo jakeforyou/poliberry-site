@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '86be277f5fff';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '9366fad978a9';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1114,7 +1114,10 @@ details.nt-prac[open] { display: grid; gap: .7rem; }
   .nt-sb-row { grid-template-columns: minmax(0, 1fr) auto; gap: .2rem .6rem; }
   .nt-sb-row .bar { grid-row: 2; grid-column: 1 / -1; height: 10px; }
   .nt-spot-h b { font-size: 2rem; } .nt-spot-in { margin-left: 0; justify-items: start; }
-  .nt-feedl { max-height: none; overflow: visible; }
+  /* a phone's feed holds the newest 60 in its own scrolling box, tighter rows, two lines of detail (Nov 3, 9:55pm) */
+  .nt-feedl { max-height: 62vh; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; gap: .2rem; padding-right: .2rem; }
+  .nt-feedl .nt-ev { padding-top: .3rem; padding-bottom: .3rem; } .nt-feedl .nt-ev-t { font-size: 13.5px; line-height: 1.35; }
+  .nt-feedl .nt-ev-b, .nt-feedl .nt-ev-n { font-size: 12.5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .nt-spot .nt-spot-why { grid-template-columns: minmax(0, 1fr); }
 }
 .nt-spot-lead { font-family: var(--font-display); font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.25rem; }
@@ -1699,6 +1702,7 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-strip-f .f { all: unset; cursor: pointer; font-size: 12.5px; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; background: var(--nt-wash2); }
 .nt-strip-f .f.up { background: color-mix(in srgb, var(--nt-jake) 28%, transparent); } .nt-strip-f .f.more { color: var(--nt-ours); }
 .nt-cl-gap { margin: .2rem 0; padding: .45rem .6rem; border-radius: 8px; font-size: 13px; line-height: 1.45; background: color-mix(in srgb, var(--nt-jake) 16%, transparent); border-left: 3px solid var(--nt-jake); }
+.nt-ev[data-claim="true"] .nt-ev-k { color: var(--nt-jake); }
 .nt-strip-f .f.claims.hot { background: color-mix(in srgb, var(--nt-r) 28%, transparent); }
 .nt-strip-f .f:hover, .nt-strip-f .f:focus-visible { filter: brightness(1.2); } .nt-strip-f .f:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 @media (max-width: 47.99rem) {
@@ -6382,7 +6386,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     ntDesk(d); ntPins(d); ntImpact(d); ntMap(d); ntRaceCards(d); ntHouseLine(d); ntCtyLive(d); ntAll(d);
   }
   // ---------- the live desk: scripts/night_story.py writes every word; this draws them
-  const NT_EV = { close: 'Polls closed', first: 'First votes', lead: 'Lead change', batch: 'Big batch', call: 'Called', milestone: 'Milestone',
+  const NT_EV = { claims: 'Claims watch', close: 'Polls closed', first: 'First votes', lead: 'Lead change', batch: 'Big batch', call: 'Called', milestone: 'Milestone',
     lean: 'How a state leans', verdict: 'The whole night', county: 'Key county', check: 'Data check', runoff: 'Runoff watch', more: 'More updates' };
   var nightSpotPin = null, nightFeedMax = null, nightFeedF = (() => { try { return localStorage.getItem('nt-feed') || 'all'; } catch (e) { return 'all'; } })();
   function ntEvColor(e) {
@@ -7275,24 +7279,30 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const w of items) { const li = el('li'); li.append(el('span', { class: 't' }, w.at ? ntT(w.at) : 'Soon')); const x = el('span', {}, w.title); if (w.body) x.append(el('small', { class: 'nt-sub' }, w.body)); li.append(x); ul.append(li); }
     box.append(ul);
   }
-  var nightFeedShow = 12;
-  const NT_FEED_STEP = 12;
+  var nightFeedShow = 60;  // a phone's first page: 60 in a box that scrolls on its own (Nov 3, 9:55pm; was 12)
+  const NT_FEED_STEP = 30;
   function ntFeedList(d, st) {
     const f = $('#nt-feedf');
     if (!f.dataset.wired) {
       f.dataset.wired = '1';
       for (const [k, name] of [['all', 'Everything'], ['big', 'Big moments']]) {
         const b = el('button', { type: 'button', 'data-k': k }, name);
-        b.addEventListener('click', () => { nightFeedF = k; nightFeedShow = NT_FEED_STEP; try { localStorage.setItem('nt-feed', k); } catch (e) { /* ignore */ } if (nightData) ntKeepFocus(() => ntFeedList(nightData, nightData.story)); });
+        b.addEventListener('click', () => { nightFeedF = k; nightFeedShow = 60; try { localStorage.setItem('nt-feed', k); } catch (e) { /* ignore */ } if (nightData) ntKeepFocus(() => ntFeedList(nightData, nightData.story)); });
         f.append(b);
       }
     }
     f.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === nightFeedF)));
-    const all = st.events || [];
+    // flagged claims watch posts join the feed in time order (Jake, Nov 3, 9:55pm: "make sure any claims watch alerts end up in the live
+    // feed"): from the last day, an action (a lawsuit, troops, stop the count) counts as a big moment
+    const dayAgo = Date.now() - 24 * 3600000;
+    const cl = ((nightClaims || {}).items || []).filter((x) => x.flagged && Date.parse(x.at || x.first_seen) > dayAgo).map((x) => ({
+      id: 'c:' + x.id, at: x.at || x.first_seen, kind: 'claims', level: x.action ? 'big' : 'normal', title: `${x.who}: ${(x.title || x.text || '').slice(0, 220)}`,
+      body: `${x.kind}. ${x.source_name || ''}`.trim(), url: x.url, claim: true }));
+    const all = [...(st.events || []), ...cl].sort((a, b) => Date.parse(b.at) - Date.parse(a.at));
     const evs = all.filter((e) => nightFeedF !== 'big' || e.level === 'big');
     $('#nt-feed-sub').textContent = all.length ? `${all.length} update${all.length === 1 ? '' : 's'}, newest first` : '';
     const ol = $('#nt-feedl'); ol.replaceChildren();
-    const maxId = all.length ? all[0].id : 0, prevMax = nightFeedMax;
+    const ids = all.map((e) => e.id).filter((i) => typeof i === 'number'), maxId = ids.length ? Math.max(...ids) : 0, prevMax = nightFeedMax;
     nightFeedMax = maxId;
     if (!evs.length) {
       ol.append(el('li', { class: 'nt-feed-empty' }, all.length ? 'Nothing here for this filter yet.' : 'Messages show up here as polls close and votes come in: lead changes, big batches, key counties reporting, calls, and what each one means. The first polls close at 6pm.'));
@@ -7300,13 +7310,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     const fh = $('.nt-feed-h h2'); if (fh && !fh.parentElement.querySelector('.nt-q')) fh.after(ntQ('feed'));
     let group = null;
-    const cap = matchMedia('(max-width: 640px)').matches ? nightFeedShow : Infinity;  // a phone shows the newest few, a wide screen scrolls the whole list inside its box
+    const cap = matchMedia('(max-width: 640px)').matches ? nightFeedShow : Infinity;  // a phone holds the newest 60 in a box that scrolls on its own (Nov 3, 9:55pm), a wide screen the whole list
     for (const e of evs.slice(0, cap)) {
       const t = ntT(e.at);
       if (t !== group) { group = t; ol.append(el('li', { class: 'nt-fg' }, t)); }
       const mk = !!(nightSince && nightSince.marked && nightSince.ids.has(e.id));  // marked by "Show them" in the since-you-looked-away line
-      const li = el('li', { class: 'nt-ev', 'data-level': e.level, 'data-surprise': String(!!e.surprise), 'data-fresh': String(prevMax != null && e.id > prevMax), 'data-since': mk ? 'true' : null });
-      const c = ntEvColor(e); if (c) li.style.setProperty('--ev', c);
+      const li = el('li', { class: 'nt-ev', 'data-level': e.level, 'data-surprise': String(!!e.surprise), 'data-fresh': String(prevMax != null && typeof e.id === 'number' && e.id > prevMax), 'data-since': mk ? 'true' : null, 'data-claim': e.claim ? 'true' : null });
+      const c = e.claim ? 'var(--nt-jake)' : ntEvColor(e); if (c) li.style.setProperty('--ev', c);
       const body = el('div', {});
       const k = el('span', { class: 'nt-ev-k' }, NT_EV[e.kind] || e.kind);
       if (e.role) k.append(el('span', { class: 'nt-ev-r' }, `  ${e.role}`));
@@ -7318,6 +7328,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         const b = el('div', { class: 'nt-ev-b' }); b.append('Watch first: ');
         e.looks.forEach((l, i) => { const a = ntLink(l.county, () => ntCountyPop(d, l.state, l.county)), w = ntCountyWhy(d, l.state, l.county); a.title = w; if (w) a.setAttribute('aria-description', w); b.append(a); if (i < e.looks.length - 1) b.append(i === e.looks.length - 2 ? ' and ' : ', '); });
         b.append('.'); body.append(b);
+      } else if (e.claim) {
+        const b = el('div', { class: 'nt-ev-b' }, e.body + ' ');
+        if (e.url) { const a = el('a', { href: e.url, target: '_blank', rel: 'noopener' }, 'Source'); a.append(el('span', { class: 'nt-sr' }, ' (opens in a new tab)')); b.append(a); }
+        body.append(b);
       } else if (e.body) body.append(el('div', { class: 'nt-ev-b' }, e.body));
       if (e.kind === 'county' && e.county) li.title = ntCountyWhy(d, e.state, e.county);
       if (e.next) { const n = el('div', { class: 'nt-ev-n' }); n.append(el('b', {}, 'Next: '), document.createTextNode(e.next)); body.append(n); }
