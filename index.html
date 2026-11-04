@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'ba6608fda40c';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e5a5524ac8f5';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1629,6 +1629,10 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-mx .p { grid-area: p; font-size: 12.5px; color: var(--color-fg-muted); }
 .nt-mx-bar { grid-column: 1 / -1; } .nt-mx-f { grid-column: 1 / -1; margin: 0; font-size: 12.5px; color: var(--color-fg-muted); display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
 .nt-spot-al { padding: .2rem 0; }
+/* the House two-thirds tracker (Nov 3, 9:10pm) */
+.nt-ch-sup { grid-column: 1 / -1; display: grid; gap: .1rem; margin-top: .4rem; padding: .4rem .55rem; border-radius: 8px; background: var(--nt-wash); font-size: 12.5px; line-height: 1.4; }
+.nt-ch-sup b { font-size: 13px; } .nt-ch-sup[data-near="true"] { box-shadow: inset 3px 0 0 var(--nt-jake); }
+.seat-super { stroke: var(--color-fg); stroke-width: 1.5; stroke-dasharray: 3 2; }
 .nt-spot-why0 { margin: .1rem 0 0; font-size: 13px; color: var(--color-fg-muted); line-height: 1.4; flex-basis: 100%; }
 .nt-spot-sh { margin: .5rem 0 -.1rem; font-family: var(--font-text); font-size: 11.5px; font-weight: 700; letter-spacing: .03em; color: var(--color-fg-muted); }
 .nt-wt:hover { filter: brightness(1.12); } .nt-wt:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
@@ -6165,6 +6169,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     let b = o.total;
     for (const [n, cls] of [[o.rHeld, 'seat-r-held'], [o.rCalled, 'seat-r'], [o.rLead, 'seat-r-lead']]) { if (n) svg.append('rect').attr('x', bx(b - n)).attr('y', y0).attr('width', bx(b) - bx(b - n)).attr('height', bh).attr('class', cls); b -= n || 0; }
     svg.append('line').attr('x1', bx(o.majority)).attr('x2', bx(o.majority)).attr('y1', y0 - 4).attr('y2', y0 + bh + 4).attr('class', 'seat-maj');
+    if (o.super) svg.append('line').attr('x1', bx(o.super)).attr('x2', bx(o.super)).attr('y1', y0 - 4).attr('y2', y0 + bh + 4).attr('class', 'seat-super').append('title').text(`Two-thirds: ${o.super} seats`);
     if (o.closing && o.closing.lo != null) {
       svg.append('line').attr('x1', bx(o.closing.lo)).attr('x2', bx(o.closing.hi)).attr('y1', 12).attr('y2', 12).attr('class', 'seat-call');
       svg.append('circle').attr('cx', bx(o.closing.point)).attr('cy', 12).attr('r', 3).attr('class', 'seat-call-pt');
@@ -6176,7 +6181,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const sp = d.senate_path, hp = d.house_path, t = d.tally;
     const sen = { total: 100, majority: 51, dHeld: 34, rHeld: 31, dCalled: sp ? sp.called_D : 0, dLead: sp ? sp.lead_D : 0, rCalled: sp ? sp.called_R : 0, rLead: sp ? sp.lead_R : 0,
       closing: nightView === 'deep' ? t.senate.closing : null };
-    const hou = { total: 435, majority: 218, dHeld: 0, rHeld: 0, dCalled: hp ? hp.called_D : 0, dLead: hp ? hp.lead_D : 0, rCalled: hp ? hp.called_R : 0, rLead: hp ? hp.lead_R : 0,
+    const hou = { total: 435, majority: 218, super: 290, dHeld: 0, rHeld: 0, dCalled: hp ? hp.called_D : 0, dLead: hp ? hp.lead_D : 0, rCalled: hp ? hp.called_R : 0, rLead: hp ? hp.lead_R : 0,
       closing: nightView === 'deep' ? t.house.closing : null };
     for (const [id, o, name, p] of [['#nt-sen', sen, 'Senate', sp], ['#nt-hou', hou, 'House', hp]]) {
       const box = $(id); box.replaceChildren();
@@ -6186,7 +6191,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       // the two counts are told apart by color alone, so each carries its party in words for a screen reader (accessibility review, item 5)
       const cnt = (cls, who, n) => { const b = el('b', { class: cls }); b.append(el('span', { class: 'nt-sr' }, who + ' '), document.createTextNode(wait ? '—' : String(n))); return b; };
       head.append(el('span', { class: 'nt-seat-n' }, `Race to ${o.majority}`), cnt('nt-d', 'Democrats', dN), cnt('nt-r', 'Republicans', rN),
-        el('small', { class: 'nt-mute' }, (wait ? `${NT_SEAT_WAIT}. ` : p ? `called or ahead. ${p.no_votes ? p.no_votes + ' not counting yet. ' : ''}` : (name === 'Senate' ? 'seats not up this year. No votes yet. ' : 'No votes yet. ')) + `${o.majority} for control.`), ntQ('seats'));
+        el('small', { class: 'nt-mute' }, (wait ? `${NT_SEAT_WAIT}. ` : p ? `called or ahead. ${p.no_votes ? p.no_votes + ' not counting yet. ' : ''}` : (name === 'Senate' ? 'seats not up this year. No votes yet. ' : 'No votes yet. ')) + `${o.majority} for control.${o.super ? ` The dashed line is ${o.super}, two-thirds.` : ''}`), ntQ('seats'));
       const mk = (d.markets || {})[name === 'Senate' ? 'senate' : 'house'] || {};
       const pc = (v) => Math.round(v * 100) + '%', below = [];
       if (nightView === 'deep' && (mk.now != null || mk.six != null)) {
@@ -6416,6 +6421,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       'Called for the underdog: CNN has called it. Underdog now favored: the live chance gives the underdog 50 percent or more. Upset in play: the live chance gives them 25 percent or more, up 15 points or more from before votes. Early lead only: they lead the count so far, but the live chance still has them well behind.',
       'The live chance weighs how much is counted and the order the count usually comes in, so it reads an early lead more coolly than the raw margin does.',
       'Under each race: the underdog\'s chance before votes and now, and where the count is heading for this stage of the night.'] },
+    super: { title: 'Two-thirds of the House', body: [
+      'Two-thirds of the House is 290 seats. It takes two-thirds to pass a constitutional amendment or override a veto without the other party.',
+      'The chance comes from the same rough live House model as the chance of control: our final seat estimate, moved by how the night is running, blended toward the seats called and leading. A guide, not a call.',
+      'On the House seat bar, the dashed line is 290.'] },
     wall: { title: 'Every race at a glance', body: [
       'Every Senate and governor race on the ballot, one small tile each, like a scoreboard of every game.',
       'A tile is tinted by who leads the count and filled once CNN calls it. The number is the leader\'s margin in points, and the line under it says who leads and how much is counted.',
@@ -7089,6 +7098,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const note = k === 'senate'
         ? (s.waiting || s.r_need == null || s.d_need == null || s.r_need === 0 || s.d_need === 0 ? s.text : `Republicans need ${s.r_need} more seats, Democrats ${s.d_need}.`)
         : (c.house ? c.house.text.replace(/^House: (.)/, (_, a) => a.toUpperCase()) : '');
+      if (k === 'house' && o.super) {  // the two-thirds tracker (Jake, Nov 3, 9:10pm: "Add in house super majority tracker")
+        const sp2 = o.super, pd = sp2.p_d, pr = sp2.p_r, pc = (v) => (v < 0.01 ? 'under 1%' : v > 0.99 ? 'over 99%' : Math.round(v * 100) + '%');
+        const nums = nightData ? ntSeatNums(nightData).house : null;
+        const sup = el('div', { class: 'nt-ch-sup', 'data-near': String(pd >= 0.1 || pr >= 0.1) });
+        sup.append(ntKids('span', { class: 'h' }, [el('b', {}, `Two-thirds: ${sp2.seats} seats `), ntQ('super')]),
+          el('span', {}, `Democrats' chance of ${sp2.seats} or more: ${pc(pd)}.${pr >= 0.01 ? ` Republicans': ${pc(pr)}.` : ''} The model's center is ${Math.round(o.mu)} Democratic seats (80% range ${sp2.lo80} to ${sp2.hi80})${nums && !nums.wait ? `, with ${nums.d} won or leading now` : ''}.`));
+        mu.append(sup);
+      }
       box.append(mu, el('p', { class: 'nt-ch-n', title: 'A rough live model over the scorecard races, the safe seats and the calls so far. Not graded.' },
         `Our final call: Democrats ${ntPctW(o.final_call_d == null ? 0.5 : o.final_call_d)}. ${note}`),
         ntLink(k === 'senate' ? 'See every Senate race' : 'See the House picture', () => nightData && ntChamberPop(nightData, k)));
