@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'dace18347c3f';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '5ccb9222b34d';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -9235,13 +9235,14 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (hs.length) {
       const key = hs.filter((h) => h.key_race), all = retroOpen.has('house-all'), shown = all ? key : key.slice(0, 12);
       kids.push(el('h3', { class: 'rt-h3' }, `House, ${hs.length} seats still counting`),
-        el('p', { class: 'rt-sub' }, `Democrats lead ${H.ahead_d ?? '?'} and Republicans ${H.ahead_r ?? '?'}${H.no_votes ? `, ${H.no_votes} with no count yet` : ''}. ${H.flipping || 0} would change party. The ${key.length} that are close or could flip, closest first:`));
+        el('p', { class: 'rt-sub' }, `Democrats lead ${H.ahead_d ?? '?'} and Republicans ${H.ahead_r ?? '?'}${H.no_votes ? `, ${H.no_votes} with no count yet` : ''}${H.same_party ? `, and ${H.same_party} ${H.same_party === 1 ? 'is a race' : 'are races'} between two candidates of the same party` : ''}. ${H.flipping || 0} would change party. The ${key.length} that are close or could flip, closest first:`));
       const ln = (n) => ntLast(n || '') || n || '?';
       const rows = shown.map((h) => {
         const lead = h.margin_d == null ? null : h.margin_d > 0 ? 'D' : 'R';
         const seat = ntKids('td', {}, [el('b', {}, ntLastKey(h.key)), ...(h.flip ? [el('span', { class: 'rt-flip', title: `Would change party from ${rtWho(h.held_by)}` }, 'flip')] : [])]);
         const ch = h.p_d == null ? '—' : h.p_d >= 0.5 ? el('span', { class: 'nt-d' }, `D ${rtP(h.p_d)}`) : el('span', { class: 'nt-r' }, `R ${rtP(1 - h.p_d)}`);
-        return [seat, `${ln(h.d_name)} v ${ln(h.r_name)}`, el('span', { class: lead === 'D' ? 'nt-d' : lead === 'R' ? 'nt-r' : '' }, h.margin_d == null ? 'No count' : ntM(h.margin_d)), h.counted == null ? '—' : ntPct(h.counted), ch];
+        const now = h.same_party ? `${h.same_party} v ${h.same_party}` : h.margin_d == null ? 'No count' : ntM(h.margin_d);  // a top-two race between one party has no D-minus-R margin
+        return [seat, `${ln(h.d_name)} v ${ln(h.r_name)}`, el('span', { class: lead === 'D' ? 'nt-d' : lead === 'R' ? 'nt-r' : '' }, now), h.counted == null ? '—' : ntPct(h.counted), ch];
       });
       kids.push(rtTable([['Seat'], ['Democrat v Republican', 'wide'], ['Now'], ['In'], ['Live chance']], rows, (i) => rtOpenRace(shown[i].key), 'rt-house'));
       if (key.length > 12) kids.push(rtMore('house-all', all, key.length, 'Show the closest 12'));
