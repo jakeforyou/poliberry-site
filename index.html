@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'f41ea1e50bc7';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'fdeaa13b697f';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1595,6 +1595,28 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-bell-r .tag[data-k="favored"], .nt-bell-r .tag[data-k="inplay"] { background: color-mix(in srgb, var(--nt-jake) 30%, transparent); color: var(--color-fg); }
 .nt-up-r[data-t="early"] { opacity: .85; }
 .nt-up-g[data-k="favored"] h3 { color: var(--nt-jake); }
+/* Upset watch condensed (Nov 3, 8:50pm): one line per upset, the tier as a dot on the right */
+.nt-up-where { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem; font-size: 13px; }
+.nt-up-where .f { all: unset; cursor: pointer; font-size: 12.5px; font-weight: 600; padding: .15rem .55rem; border-radius: 999px; background: color-mix(in srgb, var(--nt-jake) 22%, transparent); }
+.nt-up-where .f:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-up-cl { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: .2rem .6rem; }
+.nt-up-c { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 4.6rem minmax(0, 1fr) auto auto; align-items: baseline; gap: .5rem; padding: .35rem .5rem; border-radius: 7px; border-left: 3px solid var(--nt-rule); font-size: 13.5px; min-width: 0; }
+.nt-up-c[data-s="D"] { border-left-color: var(--nt-d); } .nt-up-c[data-s="R"] { border-left-color: var(--nt-r); }
+.nt-up-c:hover, .nt-up-c:focus-visible { background: var(--nt-wash2); } .nt-up-c:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 1px; }
+.nt-up-c .n { font-weight: 800; white-space: nowrap; } .nt-up-c .w { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .nt-up-c .o { font-size: 12.5px; color: var(--color-fg-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nt-up-c .tier { width: .55rem; height: .55rem; border-radius: 50%; background: var(--nt-wash2); align-self: center; }
+.nt-up-c[data-t="called"] .tier { background: var(--nt-jake); } .nt-up-c[data-t="favored"] .tier { background: color-mix(in srgb, var(--nt-jake) 70%, transparent); } .nt-up-c[data-t="inplay"] .tier { background: color-mix(in srgb, var(--nt-jake) 40%, transparent); border: 1px solid var(--nt-jake); }
+.nt-up-c[data-t="early"] { opacity: .8; }
+/* the spotlight's matchup and count in one (Nov 3, 8:45pm) */
+.nt-mx { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem .8rem; }
+.nt-mx .s { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "f nm" "f v" "f p"; column-gap: .55rem; align-items: center; min-width: 0; }
+.nt-mx .s[data-p="R"] { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nm f" "v f" "p f"; text-align: right; }
+.nt-mx .s > :first-child { grid-area: f; } .nt-mx .nm { grid-area: nm; display: grid; min-width: 0; } .nt-mx .nm b { font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .nt-mx .nm small { font-size: 11.5px; color: var(--color-fg-muted); }
+.nt-mx .v { grid-area: v; font-family: var(--font-display); font-weight: 800; font-size: 1.7rem; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.nt-mx .s[data-p="D"] .v { color: var(--nt-d); } .nt-mx .s[data-p="R"] .v { color: var(--nt-r); } .nt-mx .s[data-lead="false"] .v { opacity: .75; }
+.nt-mx .p { grid-area: p; font-size: 12.5px; color: var(--color-fg-muted); }
+.nt-mx-bar { grid-column: 1 / -1; } .nt-mx-f { grid-column: 1 / -1; margin: 0; font-size: 12.5px; color: var(--color-fg-muted); display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
+.nt-spot-al { padding: .2rem 0; }
 .nt-wt:hover { filter: brightness(1.12); } .nt-wt:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-wall-house { margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .5rem; }
 .nt-wall-key { margin: 0; font-size: 12px; }
@@ -4611,7 +4633,11 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       }
       const o = odds[x.race_id || x.key], live = o && o.p_d != null && o.basis === 'count' ? (under === 'D' ? o.p_d : 1 - o.p_d) : null;
       const leads = x.margin_d != null && Math.abs(x.margin_d) >= 0.05 && x.counted >= 1 && (x.margin_d > 0 ? 'D' : 'R') === under;  // margin_d is the D side's lead
-      const tier = live != null && live >= 0.5 ? 'favored' : live != null && live >= 0.25 && live - before >= 0.15 ? 'inplay' : leads ? 'early' : null;
+      let tier = live != null && live >= 0.5 ? 'favored' : live != null && live >= 0.25 && live - before >= 0.15 ? 'inplay' : leads ? 'early' : null;
+      // the favorite on pace to take it back (the script's pace over the newest batches) keeps the underdog in play, not favored (Nov 3,
+      // 8:50pm: North Carolina's House seats read "favored" while the late batches were swinging back)
+      const pc = ((((nightResults || {}).races || {})[x.race_id || x.key] || {}).pace) || {};
+      if (tier === 'favored' && pc.on_pace === true && leads) tier = 'inplay';
       if (!tier || (tier === 'early' && !withEarly)) continue;
       out.push({ x, called: false, side: under, tier, before, now: live });
     }
@@ -4995,10 +5021,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const c = ntEvColor(e); if (c) b.style.setProperty('--ev', c);
       b.append(el('span', { class: 't' }, ntT(e.at)), el('span', { class: 'k' }, kind), el('span', { class: 'x' }, e.title));
       const rk = e.every || e.race_id;
-      b.addEventListener('click', () => {
-        const x = rk && ntAllRows(d).find((r) => r.key === rk);
-        if (x) ntAllPop(d, x); else if (e.state) ntStatePop(d, e.state); else { const f = $('#nt-desk'); if (f) ntScrollTo(f); }
-      });
+      b.addEventListener('click', () => { if (rk) ntGoRace(d, rk); else if (e.state) ntStatePop(d, e.state); else { const f = $('#nt-desk'); if (f) ntScrollTo(f); } });
       rows.append(b);
     }
     if (!evs.length) rows.append(el('p', { class: 'nt-mute' }, 'Calls, lead changes and first votes show here as they happen.'));
@@ -5126,49 +5149,53 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // with half or more counted, and early. Each row: who leads and by how much, how much is counted, what our forecast gave them, the
   // chance now and the script's by-now or pace line. Counts are CNN's, chances before votes are frozen, the reading lines are the scripts'.
   var nightUpsOff = 'all', nightUpsAll = {};
+  // Upset watch, condensed (Jake, Nov 3, 8:50pm: "Upset watch needs to be consolidated a lot more... This is overwhelming"): where the
+  // upsets are, state by state; the five biggest as one line each; the rest and the early leads one tap away. The pace and the forecast
+  // margin live in each race's card.
   function ntUpsRow(d, u) {
-    const x = u.x, R = ((nightResults || {}).races || {})[x.race_id || x.key] || {};
-    const b = el('button', { type: 'button', class: 'nt-up-r', 'data-fk': 'up:' + x.key, 'data-s': u.side, 'data-t': u.tier });
-    const top = el('span', { class: 'top' });
-    top.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')));
-    if (x.flip_called || (x.flip && !u.called)) top.append(el('span', { class: 'tag', 'data-k': 'flip' }, x.flip_called ? 'Flip' : 'Would flip'));
-    top.append(el('span', { class: 'odds' }, ntUpOdds(u)));
-    b.append(top, el('span', { class: 'what' }, ntUpLine(d, u) + ((x.pre || {}).margin != null || R.our_line != null ? ` Our forecast: ${ntM((x.pre || {}).margin ?? R.our_line)}.` : '')));
-    const sg = !u.called && R.stage, pl = !u.called && ((R.pace || {}).lines || [])[0];
-    if (sg) b.append(el('small', {}, `${sg.dir === 'on' ? 'On track for our forecast' : sg.dir === 'bluer' ? 'Running bluer than our forecast' : 'Running redder than our forecast'} for this stage of the count.`));
-    else if (pl && !/^Early/.test(pl)) b.append(el('small', {}, pl));
-    b.addEventListener('click', () => ntAllPop(d, x));
+    const x = u.x, { nm, pt } = ntUpWho(u);
+    const b = el('button', { type: 'button', class: 'nt-up-c', 'data-fk': 'up:' + x.key, 'data-s': u.side, 'data-t': u.tier, title: `${ntUpLine(d, u)} ${ntUpOdds(u)}.` });
+    const lead = u.called ? `${nm} (${pt}) won` : x.margin_d == null ? `${nm} (${pt})` : `${nm} (${pt}) ${(x.margin_d > 0 ? 'D' : 'R') === u.side ? '+' : '−'}${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)}, ${ntPct(x.counted)} in`;
+    b.append(el('b', { class: 'n' }, ntAllName(x) + (x.office === 'Senate' ? ' Sen' : x.office === 'Governor' ? ' Gov' : '')), el('span', { class: 'w' }, lead),
+      el('span', { class: 'o' }, `${u.before < 0.01 ? '<1%' : Math.round(u.before * 100) + '%'} → ${u.called ? 'won' : ntPctW(u.now)}`), el('i', { class: 'tier', title: NT_UP_TIERS[u.tier] }));
+    b.addEventListener('click', () => ntGoRace(d, x.race_id || x.key));
     return b;
   }
   function ntUps(d) {
     const box = $('#nt-ups'); if (!box) return;
     const all = ntUpsets(d, true), offs = { all: () => true, statewide: (u) => u.x.office !== 'House', house: (u) => u.x.office === 'House' };
     box.hidden = !all.length; if (box.hidden) return;
-    const ups = all.filter(offs[nightUpsOff] || offs.all), real = (xs) => xs.filter((u) => u.tier !== 'early').length;
+    const pick = all.filter(offs[nightUpsOff] || offs.all), real = pick.filter((u) => u.tier !== 'early'), early = pick.filter((u) => u.tier === 'early');
     const h = el('div', { class: 'nt-wall-h' });
-    h.append(ntHead(el('h2', {}, 'Upset watch'), 'ups'));
+    h.append(ntHead(el('h2', {}, `Upset watch${real.length ? ` ${real.length}` : ''}`), 'ups'));
     const tabs = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Which races' });
     for (const [k, lab] of [['all', 'All'], ['statewide', 'Senate and governor'], ['house', 'House']]) {
-      const t = el('button', { type: 'button', 'aria-pressed': String(nightUpsOff === k), 'data-fk': 'ups:' + k }, `${lab} ${real(all.filter(offs[k]))}`);
+      const t = el('button', { type: 'button', 'aria-pressed': String(nightUpsOff === k), 'data-fk': 'ups:' + k }, `${lab} ${all.filter(offs[k]).filter((u) => u.tier !== 'early').length}`);
       t.addEventListener('click', () => { nightUpsOff = k; ntKeepFocus(() => ntUps(d)); });
       tabs.append(t);
     }
     h.append(tabs);
-    const kids = [h, el('p', { class: 'nt-mute nt-up-sub' }, 'The underdog is the side our forecast gave under 50 percent before votes. An upset counts once CNN calls it, or once the live chance (which weighs how much is counted and the order of the count) favors the underdog or has moved them into play. Early leads alone are listed last.')];
-    for (const tier of ['called', 'favored', 'inplay', 'early']) {
-      const xs = ups.filter((u) => u.tier === tier); if (!xs.length) continue;
-      const open = tier !== 'early' || nightUpsAll.early, cap = nightUpsAll[tier] ? xs.length : 6;
-      const g = el('div', { class: 'nt-up-g', 'data-k': tier }); g.append(ntKids('h3', {}, [NT_UP_TIERS[tier], el('small', {}, ` ${xs.length}`)]));
-      if (tier === 'early') g.append(el('p', { class: 'nt-mute nt-up-sub' }, 'The underdog leads the count so far, but the live chance still has them well behind: often early and mail votes counted first.'));
-      if (open) { const list = el('div', { class: 'nt-up-l' }); for (const u of xs.slice(0, tier === 'early' ? xs.length : cap)) list.append(ntUpsRow(d, u)); g.append(list); }
-      if (tier === 'early' || xs.length > 6) {
-        const lab = tier === 'early' ? (open ? 'Hide early leads' : `Show ${xs.length} early lead${xs.length === 1 ? '' : 's'}`) : nightUpsAll[tier] ? 'Show fewer' : `Show all ${xs.length}`;
-        const m = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'ups:more:' + tier }, lab);
-        m.addEventListener('click', () => { nightUpsAll[tier] = !nightUpsAll[tier]; ntKeepFocus(() => ntUps(d)); }); g.append(m);
-      }
-      kids.push(g);
+    const kids = [h];
+    const tc = { called: 0, favored: 0, inplay: 0 }; for (const u of real) tc[u.tier]++;
+    kids.push(el('p', { class: 'nt-up-sub' }, real.length ? `${tc.called} called for the underdog, ${tc.favored} underdog${tc.favored === 1 ? '' : 's'} now favored, ${tc.inplay} in play. Each line: who leads, how much is counted, and the underdog's chance before votes and now.` : 'No upsets on the live chance yet.'));
+    if (real.length) {
+      const bySt = {}; for (const u of real) bySt[u.x.st] = (bySt[u.x.st] || 0) + 1;
+      const where = el('div', { class: 'nt-up-where' }); where.append(el('span', { class: 'nt-mute' }, 'Where: '));
+      const sts = Object.entries(bySt).sort((a, b) => b[1] - a[1]);
+      for (const [stt, n] of sts.slice(0, 5)) { const c = el('button', { type: 'button', class: 'f', 'data-fk': 'ups:st:' + stt }, `${NT_STATE[stt] || stt} ${n}`); c.addEventListener('click', () => ntStatePop(d, stt)); where.append(c); }
+      if (sts.length > 5) where.append(el('span', { class: 'nt-mute' }, `and ${sts.length - 5} more state${sts.length - 5 === 1 ? '' : 's'}`));
+      kids.push(where);
+      const shown = nightUpsAll.real ? real : real.slice(0, 5), list = el('div', { class: 'nt-up-cl' });
+      for (const u of shown) list.append(ntUpsRow(d, u));
+      kids.push(list);
+      if (real.length > 5) { const m = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'ups:more' }, nightUpsAll.real ? 'Show the five biggest' : `Show all ${real.length}`); m.addEventListener('click', () => { nightUpsAll.real = !nightUpsAll.real; ntKeepFocus(() => ntUps(d)); }); kids.push(m); }
     }
-    if (kids.length === 2) kids.push(el('p', { class: 'nt-mute' }, 'None in this group right now.'));
+    if (early.length) {
+      const e = el('p', { class: 'nt-up-sub nt-mute' }, `Plus ${early.length} early lead${early.length === 1 ? '' : 's'}: the underdog ahead in a partial count that the live chance does not trust yet. `);
+      const m = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'ups:early' }, nightUpsAll.early ? 'Hide them' : 'Show them'); m.addEventListener('click', () => { nightUpsAll.early = !nightUpsAll.early; ntKeepFocus(() => ntUps(d)); }); e.append(m);
+      kids.push(e);
+      if (nightUpsAll.early) { const list = el('div', { class: 'nt-up-cl' }); for (const u of early) list.append(ntUpsRow(d, u)); kids.push(list); }
+    }
     box.replaceChildren(...kids);
   }
   function ntGlance(d) {
@@ -6809,6 +6836,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     show(keep || null);
     return w;
   }
+  // A race from an alert, a toast or the strip: its spotlight card when it has one, else its race card (Jake, Nov 3, 8:45pm: "Tie spotlight
+  // cards to key update alerts"). On a phone the Spotlight section opens first.
+  function ntGoRace(d, key) {
+    const sp = (d.story || {}).spotlight || {};
+    if (key && sp.all && sp.all[key]) {
+      nightSpotPin = { id: key, until: Date.now() + 10 * 60000 };
+      if (window.matchMedia('(max-width: 47.99rem)').matches && !nightAccOpen.has('nt-spot')) ntAccOpen('nt-spot', true);
+      ntSpot(d, d.story || {}); ntScrollTo($('#nt-spot')); return;
+    }
+    const x = key && ntAllRows(d).find((r) => r.key === key); if (x) ntAllPop(d, x);
+  }
   function ntSpot(d, st) {
     const box = $('#nt-spot'); box.replaceChildren();
     const sp = st.spotlight || {};
@@ -6835,26 +6873,33 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       ti.style.width = Math.max(0, Math.min(100, r.counted || 0)) + '%'; tr.append(ti);
       inb.append(el('span', { title: "AP's estimate of the total vote, as CNN reports it. The share can dip when the estimate goes up." }, `${ntPct(r.counted)} of the expected vote in`), ntQ('expected'), tr);
       h.append(inb);
-      const od = r.odds, mu = el('div', { class: 'nt-mu2' });
-      if (od) {  // the matchup: each side's chance to win, big, then the split bar and what it started from
-        for (const side of ['D', 'R']) {
-          const p = side === 'D' ? od.p_d : 1 - od.p_d, s = el('div', { class: 's', 'data-p': side, 'data-fav': String(p >= 0.5) });
-          s.append(ntFace(r.race_id, side, side === 'D' ? r.cand_d : r.cand_r, 'lg'), el('small', {}, `${side === 'D' ? r.cand_d : r.cand_r} (${ntSL(r, side)})`), el('b', {}, ntPctW(p)));
-          mu.append(s);
-        }
-        const mh = el('div', { class: 'nt-mu2-h' }, 'Chance to win'); mh.append(ntQ('chance')); mu.prepend(mh);
-        const fc = od.final_call_d;
-        mu.append(ntWinBar(od.p_d, 'lg'), ntDots(od.p_d, r.cand_d, r.cand_r), el('p', { class: 'c', title: 'From the count so far, where it ends if the rest comes in like 2024, and our final call. A rough guide, not a call.' },
-          `${(d.races.find((x) => x.id === r.race_id) || {}).addendum ? 'Our call' : 'Our final call'} had ${fc >= 0.5 ? r.cand_d : r.cand_r} at ${ntPctW(Math.max(fc, 1 - fc))}.`));
+      // the matchup and the count in one (Jake, Nov 3, 8:45pm: "Combine the odds and the vote drop items, they're correlated anyway, just be
+      // efficient about it"): each side's face, name, share of the vote and chance to win in one row, the vote split as one bar, where the
+      // chance started, then the chart of the vote drops and the chance on one clock
+      const od = r.odds, mx = el('div', { class: 'nt-mx' });
+      for (const side of ['D', 'R']) {
+        const sh = side === 'D' ? r.d : r.r, p = od ? (side === 'D' ? od.p_d : 1 - od.p_d) : null, lead = r.margin != null && (side === 'D') === (r.margin > 0);
+        const s2 = el('div', { class: 's', 'data-p': side, 'data-lead': String(lead) });
+        const nm = el('span', { class: 'nm' }); nm.append(el('b', {}, side === 'D' ? r.cand_d : r.cand_r), el('small', {}, ntSN(r, side)));
+        s2.append(ntFace(r.race_id, side, side === 'D' ? r.cand_d : r.cand_r, 'md'), nm, el('span', { class: 'v' }, sh == null ? '—' : fmt1(Math.round(sh * 10) / 10) + '%'),
+          el('span', { class: 'p' }, p == null ? '' : `${ntPctW(p)} to win`));
+        mx.append(s2);
       }
-      const sb = el('div', { class: 'nt-sb' });
-      for (const side of r.margin >= 0 ? ['D', 'R'] : ['R', 'D']) {  // the leader on top
-        const sh = side === 'D' ? r.d : r.r, lead = (side === 'D') === (r.margin > 0);
-        const row = el('div', { class: 'nt-sb-row', 'data-p': side, 'data-lead': String(lead) });
-        const n = el('span', { class: 'n' }, side === 'D' ? r.cand_d : r.cand_r); n.append(el('small', {}, ntSN(r, side)));
-        const bar = el('span', { class: 'bar' }), bi = el('i'); bi.style.width = Math.max(0, Math.min(100, sh || 0)) + '%'; bar.append(bi);
-        row.append(n, bar, el('span', { class: 'v' }, sh == null ? '—' : fmt1(Math.round(sh * 10) / 10) + '%'));
-        sb.append(row);
+      if (r.d != null && r.r != null) {
+        const bar = el('div', { class: 'nt-res-bar nt-mx-bar', role: 'img', 'aria-label': `Votes so far: ${r.cand_d} ${fmt1(Math.round(r.d * 10) / 10)}%, ${r.cand_r} ${fmt1(Math.round(r.r * 10) / 10)}%` });
+        const di = el('i', { class: 'd' }), ri = el('i', { class: 'r' }); di.style.width = r.d + '%'; ri.style.width = r.r + '%'; bar.append(di, ri); mx.append(bar);
+      }
+      if (od) {
+        const fc = od.final_call_d, mf = el('p', { class: 'nt-mx-f' }, `${(d.races.find((x) => x.id === r.race_id) || {}).addendum ? 'Our call' : 'Our final call'} had ${fc >= 0.5 ? r.cand_d : r.cand_r} at ${ntPctW(Math.max(fc, 1 - fc))} to win. `);
+        const tg = ntSinceTag(od.p_d, fc, 'since then'); if (tg) mf.append(tg); mf.append(ntQ('chance')); mx.append(mf);
+      }
+      // the newest alerts about this race, so a toast and this card tell the same story
+      const al = ((st.events || []).filter((e) => (e.race_id === r.race_id || e.every === r.race_id) && NT_STRIP_KINDS.has(e.kind))).slice(0, 3);
+      const alw = el('div', { class: 'nt-strip-l nt-spot-al' });
+      for (const e of al) {
+        const b = el('div', { class: 'nt-strip-r', 'data-k': e.kind, 'data-big': String(e.level === 'big') }); const c = ntEvColor(e); if (c) b.style.setProperty('--ev', c);
+        b.append(el('span', { class: 't' }, ntT(e.at)), el('span', { class: 'k' }, e.surprise && e.vibe && e.vibe.tag ? e.vibe.tag : NT_EV[e.kind] || ''), el('span', { class: 'x' }, e.title));
+        alw.append(b);
       }
       const ul = el('ul', { class: 'nt-spot-read' });
       for (const line of r.read || []) {  // each reading line with its plain-English "?"
@@ -6886,7 +6931,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const foot = el('div', { class: 'nt-spot-foot' });
       foot.append(el('span', { class: 'nt-spot-src' }, `Count from ${r.source || 'the feed'}${r.at ? ', ' + ntT(r.at) : ''}. Tap any race card below to put it here.`), go);
       let sc = null; try { sc = ntSpotChart(d, r); } catch (e) { sc = null; }  // the chart never stops the card
-      box.append(top, h, ...(od ? [mu] : []), ...(sc ? [sc] : []), sb, ul, ...(od ? [cwb] : []), ...(cos.childElementCount ? [cos] : []), why, foot);
+      box.append(top, h, mx, ...(al.length ? [alw] : []), ...(sc ? [sc] : []), ul, ...(od ? [cwb] : []), ...(cos.childElementCount ? [cos] : []), why, foot);
       return;
     }
     if (sp.kind === 'upcoming') {
@@ -7128,6 +7173,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     // (no mark stored, from a board built before marks existed, counts as the same run)
     const cut = seen.lastIndexOf('|'), was = cut < 0 ? '' : seen.slice(0, cut), since = !was || was === run ? +seen.slice(cut + 1) : 0;
     const fresh = all.filter((e) => e.id > since && e.level === 'big').sort((a, b) => (b.surprise ? 1 : 0) - (a.surprise ? 1 : 0)).slice(0, 3);
+    { const spa = ((st.spotlight || {}).all) || {}, hit = fresh.find((e) => spa[e.race_id || e.every]);
+      if (hit && !(nightSpotPin && Date.now() < nightSpotPin.until && !nightSpotPin.auto)) { nightSpotPin = { id: hit.race_id || hit.every, until: Date.now() + 5 * 60000, auto: true }; if (nightData) ntSpot(nightData, st); } }
     const kind = (e) => (e.surprise && e.vibe && e.vibe.tag ? e.vibe.tag : NT_EV[e.kind] || '');
     // The one spoken line (accessibility review, item 2): a new big moment, or a new race call. Written once, so a burst reads as one message.
     const said = all.filter((e) => e.id > since && (e.level === 'big' || e.kind === 'call')).sort((a, b) => (b.surprise ? 1 : 0) - (a.surprise ? 1 : 0)).slice(0, 3);
@@ -7137,6 +7184,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const c = ntEvColor(e); if (c) t.style.setProperty('--ev', c);
       t.append(el('span', {}, kind(e)), el('b', {}, e.title));
       if (e.body) t.append(el('span', {}, e.body.length > 140 ? e.body.slice(0, 137) + '…' : e.body));
+      const rk = e.race_id || e.every; if (rk && nightData) t.addEventListener('click', () => ntGoRace(nightData, rk));  // tapping an alert opens its race
       ntToastShow(box, t, e.surprise ? 15000 : 9000);
     }
   }
