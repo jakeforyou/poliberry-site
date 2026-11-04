@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '0031f674e181';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'e9e2c1edf77d';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1571,9 +1571,13 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-sc2 .ours { stroke: var(--nt-ours); stroke-width: 1.5; stroke-dasharray: 5 4; }
 .nt-sc2 .run { fill: none; stroke: var(--color-fg); stroke-width: 2.2; stroke-linejoin: round; }
 .nt-sc2 .side { font-size: 11px; font-weight: 700; } .nt-sc2 .side.d { fill: var(--nt-d); } .nt-sc2 .side.r { fill: var(--nt-r); }
-.nt-sc2 .lab { font-size: 12px; font-weight: 700; } .nt-sc2 .lab.ours { fill: var(--nt-ours); font-weight: 600; font-size: 11px; } .nt-sc2 .lab.now.d { fill: var(--nt-d); } .nt-sc2 .lab.now.r { fill: var(--nt-r); }
+.nt-sc2 .lab { font-size: 12px; font-weight: 700; } .nt-sc2 .lab.ours { fill: var(--nt-ours); font-weight: 600; font-size: 10.5px; } .nt-sc2 .lab.now.d { fill: var(--nt-d); } .nt-sc2 .lab.now.r { fill: var(--nt-r); }
 .nt-sc2 .end { stroke: var(--color-bg); stroke-width: 1.5; } .nt-sc2 .end.d { fill: var(--nt-d); } .nt-sc2 .end.r { fill: var(--nt-r); }
 .nt-sc2 .ax { font-size: 11px; fill: var(--color-fg-muted); }
+.nt-sc2 text { paint-order: stroke; stroke: var(--color-panel); stroke-width: 3px; stroke-linejoin: round; }  /* a halo, so a line never cuts through a label */
+.nt-sc2 .lab.even { fill: var(--color-fg-muted); font-weight: 500; font-size: 11px; }
+.nt-sc2-key { display: flex; flex-wrap: wrap; gap: .15rem .8rem; font-size: 11.5px; font-weight: 600; }
+.nt-sc2-key .d { color: var(--nt-d); } .nt-sc2-key .r { color: var(--nt-r); } .nt-sc2-key .o { color: var(--nt-ours); }
 .nt-sc2 .drop { stroke: var(--color-bg); stroke-width: 1.5; } .nt-sc2 .drop.d { fill: var(--nt-d); } .nt-sc2 .drop.r { fill: var(--nt-r); } .nt-sc2 .drop.x { fill: var(--cds-chart-muted); }
 .nt-sc2 .drop.sel { stroke: var(--color-fg); stroke-width: 2.5; }
 /* who voted and what it suggested, folded under the count once results come in */
@@ -6895,7 +6899,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const H = (((d.story || {}).race_hist || {})[r.race_id] || []).map((p) => [Date.parse(p[0]), p[1]]);
     const tms = (ms) => new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(ms).replace(' ', '').toLowerCase();  // ntT reads an offset ISO string, not a UTC one
     const phone = window.matchMedia('(max-width: 47.99rem)').matches;
-    const W = phone ? 360 : 600, Ht = phone ? 150 : 170, m = { l: 6, r: phone ? 84 : 92, t: 8, b: 18 };  // room on the right for the labels
+    const W = phone ? 360 : 600, Ht = phone ? 150 : 170, m = { l: 6, r: phone ? 98 : 104, t: 12, b: 18 };  // room on the right for the labels
     const t0 = Date.parse(B[0].at), t1 = Math.max(Date.parse(B[B.length - 1].at), t0 + 60000);
     const x = d3.scaleLinear().domain([t0, t1]).range([m.l, W - m.r]);
     // the scale fits the count past its first 5 percent (Michigan opened at D+54 and flattened the rest); earlier points sit at the edge
@@ -6914,17 +6918,21 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     svg.append('path').attr('d', area(pts)).attr('class', 'ad').attr('clip-path', `url(#${uid}a)`);
     svg.append('path').attr('d', area(pts)).attr('class', 'ar').attr('clip-path', `url(#${uid}b)`);
     svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0)).attr('class', 'zero');
-    svg.append('text').attr('x', m.l + 2).attr('y', y(0) - 5).attr('class', 'side d').text(`↑ ${dn} ahead`);  // beside the even line, clear of the forecast
-    svg.append('text').attr('x', m.l + 2).attr('y', y(0) + 13).attr('class', 'side r').text(`↓ ${rn} ahead`);
-    if (R && R.our_line != null) {
-      svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(R.our_line)).attr('y2', y(R.our_line)).attr('class', 'ours');
-      svg.append('text').attr('x', W - m.r + 4).attr('y', y(R.our_line) + 4).attr('class', 'lab ours').text(`forecast ${ntM(R.our_line)}`);
-    }
+    if (R && R.our_line != null) svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(R.our_line)).attr('y2', y(R.our_line)).attr('class', 'ours');
     svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((b) => x(Date.parse(b.at))).y((b) => y(b.run_margin_d))(pts)).attr('class', 'run');
-    // the margin now, at the end of the line
-    const ey = y(last.run_margin_d), oy = R && R.our_line != null ? y(R.our_line) : null, nowY = oy != null && Math.abs(ey - oy) < 12 ? ey + (ey <= oy ? -8 : 8) : ey;
+    // the labels on the right, kept 13px apart so none overlaps (Jake, Nov 3, 9:15pm: "text overlap on mobile, looks bad"): the margin now,
+    // our forecast and the even line, each beside its own line, pushed apart only as far as needed
+    const ey = y(last.run_margin_d);
     svg.append('circle').attr('cx', x(t1)).attr('cy', ey).attr('r', 3.5).attr('class', 'end ' + (last.run_margin_d > 0 ? 'd' : 'r'));
-    svg.append('text').attr('x', W - m.r + 4).attr('y', nowY + 4).attr('class', 'lab now ' + (last.run_margin_d > 0 ? 'd' : 'r')).text(`${ntM(last.run_margin_d)} now`);
+    const labs = [{ y: ey, t: `${ntM(last.run_margin_d)} now`, c: 'lab now ' + (last.run_margin_d > 0 ? 'd' : 'r') }, { y: y(0), t: 'even', c: 'lab even' }];
+    if (R && R.our_line != null) labs.push({ y: y(R.our_line), t: `forecast ${ntM(R.our_line)}`, c: 'lab ours' });
+    labs.sort((a, b) => a.y - b.y);
+    const GAP = 16;  // a bold 12px label with its halo is about 15px tall
+    for (let i = 1; i < labs.length; i++) labs[i].y = Math.max(labs[i].y, labs[i - 1].y + GAP);
+    const over = labs[labs.length - 1].y - (Ht - m.b); if (over > 0) for (const l of labs) l.y -= over;
+    for (let i = labs.length - 2; i >= 0; i--) labs[i].y = Math.min(labs[i].y, labs[i + 1].y - GAP);
+    const under = m.t - labs[0].y; if (under > 0) for (const l of labs) l.y += under;
+    for (const l of labs) svg.append('text').attr('x', W - m.r + 6).attr('y', l.y + 4).attr('class', l.c).text(l.t);
     svg.append('text').attr('x', m.l).attr('y', Ht - 3).attr('class', 'ax').text(tms(t0));
     svg.append('text').attr('x', W - m.r).attr('y', Ht - 3).attr('text-anchor', 'end').attr('class', 'ax').text(tms(t1));
     // the five biggest vote drops, tappable
@@ -6948,7 +6956,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         .attr('aria-label', `${tms(Date.parse(b.at))}: ${ntBtNum(b.votes)} votes, ${b.margin_d == null ? 'not a clean batch' : ntM(b.margin_d)}. After it ${ntM(b.run_margin_d)}.`)
         .on('click', () => show(b)).on('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); show(b); } });
     }
-    const w = el('div', { class: 'nt-sc-w' }); w.append(svg.node(), why);
+    const key = el('div', { class: 'nt-sc2-key' });  // which side is which, above the chart rather than on it
+    key.append(el('span', { class: 'd' }, `Shaded blue: ${dn} ahead`), el('span', { class: 'r' }, `Shaded red: ${rn} ahead`), el('span', { class: 'o' }, 'Dashed: our forecast'));
+    const w = el('div', { class: 'nt-sc-w' }); w.append(key, svg.node(), why);
     const keep = nightSpotSel && nightSpotSel.startsWith(r.race_id + '|') ? big.find((b) => r.race_id + '|' + b.at === nightSpotSel) : null;
     show(keep || null);
     return w;
