@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '4be4f348e752';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'ac39a1a1879e';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1627,7 +1627,6 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-spk .o { stroke: var(--nt-ours); stroke-width: .8; opacity: .55; vector-effect: non-scaling-stroke; }
 .nt-spk .l { fill: none; stroke: var(--color-fg); stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-linejoin: round; } .nt-spk .l.d { stroke: var(--nt-d); } .nt-spk .l.r { stroke: var(--nt-r); }
 .nt-spk.wt { height: 16px; margin-top: .15rem; } .nt-spk.rc { height: 26px; }
-.nt-wt[data-trend="D"] .n::after { content: " ↗"; color: var(--nt-d); } .nt-wt[data-trend="R"] .n::after { content: " ↘"; color: var(--nt-r); }
 .nt-rc-tr { display: grid; gap: .1rem; } .nt-rc-tr small { font-size: 12px; color: var(--color-fg-muted); }
 .nt-wall-wait .r { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; font-size: 12px; }
 .nt-wall-wait .h { color: var(--color-fg-muted); margin-right: .25rem; min-width: 6.5rem; }
@@ -5136,15 +5135,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const name = ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor');
     const b = el('button', { type: 'button', class: 'nt-wt', 'data-fk': 'wt:' + x.key, 'data-won': won, 'data-lead': won ? '' : has && x.counted >= 1 ? lead : '', 'data-upset': tier ? (tier === 'early' ? 'early' : 'true') : 'false', 'data-s': won || w ? 'called' : has ? 'counting' : 'wait',
       'aria-label': `${name}: ${won ? `${x.call.name || NT_PN[won]} won` : w === 'runoff' ? ntRunoffTxt(x.st) : has ? `${ntAllNow(x)}` : m === 'Waiting' ? 'no votes yet' : `polls close at ${m}`}.${tier ? ` ${NT_UP_TIERS[tier]}.` : ''}`, title: name });
-    const od = !w && ((d.story || {}).odds || {})[x.race_id || x.key], tg = od && od.basis === 'count' && Math.abs((od.p_d ?? 0) - (od.final_call_d ?? od.p_d ?? 0)) >= 0.05 ? ntSinceTag(od.p_d, od.final_call_d) : null;
-    const ar = el('span', {}, top); if (tg) ar.append(' ', tg);
+    const ar = el('span', {}, top);  // no arrows on a tile (Jake, Nov 3, 9pm: "the arrows in every race at a glance on mobile make no sense"): the line under it is the trend
     b.append(ntKids('span', { class: 'a' }, [el('b', {}, x.st + (x.special ? '*' : '')), ar]), el('span', { class: 'm' }, m), el('span', { class: 'n' }, n));
     const tr = !w && ntTrend(x.race_id || x.key);
     if (tr) {
       const rc = (x.cands || []).find((k) => k.party === 'R'), dn = ln((ds && ds.name) || 'the Democrat'), rn = ln((rc && rc.name) || 'the Republican');
       b.append(ntSpark(tr, 100, 16, 'wt'));
       b.setAttribute('aria-label', `${b.getAttribute('aria-label')} ${ntTrendTxt(tr, dn, rn)}`); b.title = `${name}. ${ntTrendTxt(tr, dn, rn)}`;
-      if (Math.abs(tr.move) >= 1) b.dataset.trend = tr.move > 0 ? 'D' : 'R';
     }
     b.addEventListener('click', () => ntAllPop(d, x));
     return b;
@@ -5197,7 +5194,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       hl.append(u);
     }
     hl.append(' ', ntLink('All House races', () => { const a = $('#nt-all'); if (a) ntScrollTo(a); }));
-    box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. Amber edge: an upset (called for our forecast\'s underdog, or the underdog favored or in play on the live chance). Dashed amber: the underdog leads an early count only. Live races first, closest first. Tap any race. * a special election.'));
+    box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. The line on a tile: its margin through the night, blue above the dashed even line, red below. Amber edge: an upset (called for our forecast\'s underdog, or the underdog favored or in play on the live chance). Dashed amber: the underdog leads an early count only. Live races first, closest first. Tap any race. * a special election.'));
   }
   // ---------- Upset Watch (Jake, Nov 3, 7:52pm: "We need to spin up a quick Upset Watch view - there are so many of them!"). Every race
   // where the side our forecast had as the underdog won or leads (ntUpsets), in three groups by how much to trust it: called, holding up
