@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'fdeaa13b697f';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '53f241eb83b6';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1455,8 +1455,8 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
   #night { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 1.6rem; grid-auto-flow: row dense; align-items: start; }
   #night > * { grid-column: 1 / -1; }
   /* the order a visitor reads: what this is, any warning, the jump bar, then the two chambers beside the turnout read, the map, the clock, the rest */
-  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-ups { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
-  #night > .nt-jump { order: 5; } #night > .nt-pins { order: 6; } #night > #nt-ctl { order: 7; } #night > #nt-batches { order: 8; }
+  #night > .nt-glance { order: 1; } #night > .nt-jump { order: 1; } #night > .nt-wall { order: 2; } #night > .nt-ups { order: 2; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
+  #night > .nt-pins { order: 6; } #night > #nt-ctl { order: 7; } #night > #nt-batches { order: 8; }
   /* results first (Jake, Nov 3, 7pm: "fully simplify what we are showing users now that results are rolling through"): Most impactful
      under the chambers beside the count, then the map, the results, and what to expect at the foot */
   #night > #nt-impact { order: 9; } #night > #nt-map { order: 10; } #night > #nt-results { order: 11; } #night > .nt-top { order: 12; }
@@ -1620,6 +1620,11 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-wt:hover { filter: brightness(1.12); } .nt-wt:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-wall-house { margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .5rem; }
 .nt-wall-key { margin: 0; font-size: 12px; }
+.nt-wall-wait { display: grid; gap: .2rem; margin-top: .15rem; }
+.nt-wall-wait .r { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; font-size: 12px; }
+.nt-wall-wait .h { color: var(--color-fg-muted); margin-right: .25rem; min-width: 6.5rem; }
+.nt-wall-wait .st { all: unset; cursor: pointer; font-size: 11.5px; font-weight: 700; padding: .05rem .4rem; border-radius: 5px; background: var(--nt-wash); letter-spacing: .02em; }
+.nt-wall-wait .st:hover, .nt-wall-wait .st:focus-visible { background: var(--nt-wash2); } .nt-wall-wait .st:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 1px; }
 /* upset watch (Nov 3, 7:52pm): every race where our forecast's underdog won or leads, in three groups by how much to trust it */
 .nt-ups:not([hidden]) { display: grid; gap: .5rem; padding: .7rem .8rem; border-radius: 12px; background: var(--nt-wash); border-left: 4px solid var(--nt-jake); }
 .nt-up-sub { margin: 0; font-size: 13px; }
@@ -2008,6 +2013,9 @@ button.nt-rr[data-early="true"] .nt-rr-v { opacity: .85; }
    The glance, what to expect, the House line, importance, the stale band, and a phone page that is shorter. */
 .nt-glance { display: grid; gap: .5rem; min-width: 0; }
 .nt-gl-what { margin: 0; font-size: 1rem; line-height: 1.4; font-weight: 500; max-width: 62ch; }
+.nt-gl-what.told { max-width: none; } .nt-gl-head { font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; line-height: 1.15; }
+.nt-gl-what.told[data-dir="D"] .nt-gl-head { color: var(--nt-d); } .nt-gl-what.told[data-dir="R"] .nt-gl-head { color: var(--nt-r); }
+.nt-gl-dek { color: var(--color-fg-muted); font-size: .95rem; }
 .nt-gl-asof { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--color-fg-muted); }
 .nt-gl-asof b { color: var(--color-fg); font-weight: 600; }
 .nt-stale { padding: .55rem .75rem; border-radius: 8px; font-size: 13.5px; font-weight: 600; line-height: 1.4; background: color-mix(in srgb, var(--nt-jake) 20%, transparent); outline: 1px solid color-mix(in srgb, var(--nt-jake) 65%, transparent); }
@@ -2020,8 +2028,10 @@ button.nt-rr[data-early="true"] .nt-rr-v { opacity: .85; }
 .nt-gl-n b { font-family: var(--nt-num); font-stretch: 80%; font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.9rem; line-height: 1; }
 .nt-gl-n small { font-size: 12px; color: var(--color-fg-muted); text-align: center; }
 .nt-gl-c { font-size: 12px; color: var(--color-fg-muted); margin-top: .15rem; }
-@media (min-width: 641px) {  /* a wide screen shows both chambers right below, so the glance is one slim row */
-  .nt-gl-ch { display: none; }
+@media (min-width: 641px) {  /* a wide screen: the answer and the countdown on one row, both chambers under them (since Nov 3, 8:55pm the wall and
+     Upset watch sit between the glance and the full chamber cards, so the glance keeps its two scoreboards) */
+  .nt-gl-ch { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 24rem)); }
+  .nt-glance .nt-tick { grid-column: 1 / -1; }
   .nt-glance { grid-template-columns: minmax(0, 1fr) auto; column-gap: 1.4rem; row-gap: .2rem; align-items: baseline; }
   .nt-glance .nt-next { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
   .nt-stale { grid-column: 1 / -1; }
@@ -2122,7 +2132,7 @@ button.nt-hs[data-s="counting"][data-w="R"] { background: color-mix(in srgb, var
   .nt-live .nt-time { grid-area: 1 / 1; } .nt-live .nt-pause { grid-area: 1 / 2; justify-self: end; }
   .nt-live .nt-status { grid-area: 2 / 1 / 3 / -1; } .nt-live .nt-pause-note { grid-area: 3 / 1 / 4 / -1; }
   /* what comes first on a phone: what this is and the numbers, the map, what to expect, then the rest */
-  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-ups { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
+  #night > .nt-glance { order: 1; } #night > .nt-jump { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-wall { order: 3; } #night > .nt-ups { order: 3; } #night > .nt-pins { order: 4; }
   /* results first (Nov 3, 7pm): the map, the results, the count batch by batch, what moved control, the chambers in full, then what to expect */
   #night > .nt-mapsec { order: 5; } #night > .nt-results { order: 6; } #night > .nt-impact { order: 8; } #night > .nt-board2 { order: 9; }
   #night > .nt-expect { order: 10; } #night > .nt-top { order: 11; } #night > .nt-prac { order: 12; }
@@ -4999,7 +5009,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   var nightStripSeen = null;
   function ntStripEvents(d, n) {
     const now = (nightMode === 'practice' && Date.parse(d.now_et)) || Date.now(), out = [], races = new Set();
-    const keep = (e) => NT_STRIP_KINDS.has(e.kind) && (e.level === 'big' || (e.level === 'normal' && (e.kind !== 'call' || /^(senate|gov)_/.test(e.every || e.race_id || ''))));
+    const keep = (e) => NT_STRIP_KINDS.has(e.kind) && !/^Early count/.test(e.title || '')  // a lead swing in the first sliver of a count stays in the feed
+      && (e.level === 'big' || (e.level === 'normal' && (e.kind !== 'call' || /^(senate|gov)_/.test(e.every || e.race_id || ''))));
     const evs = ((d.story || {}).events || []).filter(keep);
     const top = evs.find((e) => e.level === 'big' && now - Date.parse(e.at) < 15 * 60000);
     for (const e of top ? [top, ...evs.filter((x) => x !== top)] : evs) {
@@ -5127,9 +5138,18 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const xs = rows.filter((x) => x.office === off).sort((a, b) => ntWallRank(a) - ntWallRank(b) || a.st.localeCompare(b.st));
       const cw = xs.filter((x) => x.call).length, cn = xs.filter((x) => !x.call && (x.margin_d != null || x.lead)).length;
       const wD = xs.filter((x) => x.call && ntPK(x.call.winner) === 'D').length, wR = xs.filter((x) => x.call && ntPK(x.call.winner) === 'R').length;
-      const g = el('div', { class: 'nt-wall-g' }); for (const x of xs) g.append(ntWallTile(d, x, tiers));
+      const live = xs.filter((x) => x.call || x.margin_d != null || x.lead), wait = xs.filter((x) => !(x.call || x.margin_d != null || x.lead));
+      const g = el('div', { class: 'nt-wall-g' }); for (const x of live) g.append(ntWallTile(d, x, tiers));
+      // races with no votes yet: one line per poll-close time, each state a tap (Nov 3, 8:50pm: the wall was 820px on a phone, half of it waiting)
+      const wl = el('div', { class: 'nt-wall-wait' }), byT = {};
+      for (const x of wait) { const ms = x.close ? ntCloseMs(x.close) : null, k = ms && ms > Date.now() ? ms : 0; (byT[k] = byT[k] || []).push(x); }
+      for (const k of Object.keys(byT).map(Number).sort((a, b) => a - b)) {
+        const row = el('div', { class: 'r' }); row.append(el('span', { class: 'h' }, k ? `Close ${ntCloseT(d, byT[k][0].close)}` : 'Closed, no votes yet'));
+        for (const x of byT[k].sort((a, b) => a.st.localeCompare(b.st))) { const c = el('button', { type: 'button', class: 'st', 'data-fk': 'ww:' + x.key, title: ntAllName(x) + (x.office === 'Senate' ? ' Senate' : ' governor') }, x.st + (x.special ? '*' : '')); c.addEventListener('click', () => ntAllPop(d, x)); row.append(c); }
+        wl.append(row);
+      }
       const bh = el('div', { class: 'nt-wall-bh' }); bh.append(el('h3', {}, lab), el('small', { class: 'nt-mute' }, `${cw} called${cw ? ` (${wD} D, ${wR} R)` : ''}, ${cn} counting, ${xs.length - cw - cn} waiting`));
-      const blk = el('div', { class: 'nt-wall-b', 'data-k': k }); blk.append(bh, g); blocks.push(blk);
+      const blk = el('div', { class: 'nt-wall-b', 'data-k': k }); blk.append(bh, ...(live.length ? [g] : []), ...(wait.length ? [wl] : [])); blocks.push(blk);
     }
     // the House in one line, with the upsets one tap away
     const hs = rows.filter((x) => x.office === 'House'), hc = hs.filter((x) => x.call), ups = ntUpsets(d).filter((u) => u.x.office === 'House');
@@ -5200,7 +5220,19 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   }
   function ntGlance(d) {
     const what = $('#nt-gl-what'), asof = $('#nt-gl-asof'), box = $('#nt-gl-ch'); if (!what || !asof || !box) return;
-    if (!what.querySelector('.nt-q')) { const q = ntQ('glance'); if (q) what.append(q); }
+    // the answer first (Jake, Nov 3, 8:50pm UI sweep for 10 to 15 viewers): once the story has a headline, the top line is the night in one
+    // sentence and how far the votes are running from our forecast, both the script's (night_story.night_so_far, night_board.national)
+    const v = (d.story || {}).vibe || {}, nat = d.national || {};
+    const told = v.headline && !/^(Waiting for the first votes|First polls close)/.test(v.headline);
+    const sig = told ? `${v.headline}|${nat.text || ''}` : 'intro';
+    if (what.dataset.sig !== sig) {
+      what.dataset.sig = sig;
+      if (told) {
+        what.classList.add('told'); what.dataset.dir = v.dir || '';
+        what.replaceChildren(el('b', { class: 'nt-gl-head' }, v.headline + '.'), ...(nat.n ? [document.createTextNode(' '), el('span', { class: 'nt-gl-dek' }, nat.text.replace(/^Across (\d+) states?, the count is/, (m, n) => `Votes are running`).replace(/\.$/, '') + ` across ${nat.n} state${nat.n === 1 ? '' : 's'}.`)] : []));
+      } else { what.classList.remove('told'); what.replaceChildren(document.createTextNode('Live 2026 midterm results: every Senate, House and governor race, read against our forecast.')); }
+      const q = ntQ('glance'); if (q) what.append(' ', q);
+    }
     const a = ntAsOf(d);
     asof.replaceChildren();
     if (nightMode === 'practice') asof.append(document.createTextNode('Practice board with made-up results. Built '), el('b', {}, `${ntT(d.built_at)} ET`), document.createTextNode('.'));
