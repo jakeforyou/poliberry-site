@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '84d57b37c8f9';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'f8173a38de99';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1455,7 +1455,7 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
   #night { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 1.6rem; grid-auto-flow: row dense; align-items: start; }
   #night > * { grid-column: 1 / -1; }
   /* the order a visitor reads: what this is, any warning, the jump bar, then the two chambers beside the turnout read, the map, the clock, the rest */
-  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
+  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-ups { order: 1; } #night > .nt-since { order: 2; } #night > .nt-health { order: 3; } #night > .nt-synthetic { order: 4; }
   #night > .nt-jump { order: 5; } #night > .nt-pins { order: 6; } #night > #nt-ctl { order: 7; } #night > #nt-batches { order: 8; }
   /* results first (Jake, Nov 3, 7pm: "fully simplify what we are showing users now that results are rolling through"): Most impactful
      under the chambers beside the count, then the map, the results, and what to expect at the foot */
@@ -1582,6 +1582,20 @@ html:has(#night:not([hidden])) { scroll-padding-top: 6.4rem; }
 .nt-wt:hover { filter: brightness(1.12); } .nt-wt:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-wall-house { margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .5rem; }
 .nt-wall-key { margin: 0; font-size: 12px; }
+/* upset watch (Nov 3, 7:52pm): every race where our forecast's underdog won or leads, in three groups by how much to trust it */
+.nt-ups:not([hidden]) { display: grid; gap: .5rem; padding: .7rem .8rem; border-radius: 12px; background: var(--nt-wash); border-left: 4px solid var(--nt-jake); }
+.nt-up-sub { margin: 0; font-size: 13px; }
+.nt-up-g { display: grid; gap: .3rem; min-width: 0; }
+.nt-up-g h3 { margin: .2rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: 1rem; } .nt-up-g h3 small { font-family: var(--font-text); font-weight: 600; color: var(--color-fg-muted); font-size: 12px; }
+.nt-up-l { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: .35rem; }
+.nt-up-r { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: .12rem; padding: .45rem .6rem; border-radius: 8px; background: var(--color-panel); border-left: 3px solid var(--nt-rule); min-width: 0; font-size: 14px; }
+.nt-up-r[data-s="D"] { border-left-color: var(--nt-d); } .nt-up-r[data-s="R"] { border-left-color: var(--nt-r); }
+.nt-up-r:hover, .nt-up-r:focus-visible { background: var(--nt-wash2); } .nt-up-r:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
+.nt-up-r .top { display: flex; align-items: baseline; flex-wrap: wrap; gap: .2rem .5rem; }
+.nt-up-r .odds { margin-left: auto; font-size: 12px; color: var(--color-fg-muted); }
+.nt-up-r .tag { font-size: 11px; font-weight: 600; padding: .02rem .45rem; border-radius: 999px; background: color-mix(in srgb, var(--nt-jake) 26%, transparent); }
+.nt-up-r small { color: var(--color-fg-muted); font-size: 12.5px; line-height: 1.4; }
+.nt-up-g[data-k="called"] h3 { color: var(--nt-jake); }
 @media (min-width: 48rem) { .nt-wall-tabs { display: none; } }
 @media (max-width: 47.99rem) {
   .nt-wall[data-office="senate"] .nt-wall-b[data-k="governor"], .nt-wall[data-office="governor"] .nt-wall-b[data-k="senate"] { display: none; }
@@ -2060,7 +2074,7 @@ button.nt-hs[data-s="counting"][data-w="R"] { background: color-mix(in srgb, var
   .nt-live .nt-time { grid-area: 1 / 1; } .nt-live .nt-pause { grid-area: 1 / 2; justify-self: end; }
   .nt-live .nt-status { grid-area: 2 / 1 / 3 / -1; } .nt-live .nt-pause-note { grid-area: 3 / 1 / 4 / -1; }
   /* what comes first on a phone: what this is and the numbers, the map, what to expect, then the rest */
-  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
+  #night > .nt-glance { order: 1; } #night > .nt-wall { order: 1; } #night > .nt-ups { order: 1; } #night > .nt-synthetic, #night > .nt-health { order: 2; } #night > .nt-pins { order: 3; } #night > .nt-jump { order: 4; }
   /* results first (Nov 3, 7pm): the map, the results, the count batch by batch, what moved control, the chambers in full, then what to expect */
   #night > .nt-mapsec { order: 5; } #night > .nt-results { order: 6; } #night > .nt-impact { order: 8; } #night > .nt-board2 { order: 9; }
   #night > .nt-expect { order: 10; } #night > .nt-top { order: 11; } #night > .nt-prac { order: 12; }
@@ -2419,6 +2433,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <div class="nt-tick" id="nt-tick" role="region" aria-label="What to watch" hidden></div>
     </section>
     <section class="nt-wall" id="nt-wall" aria-label="Every race at a glance" hidden></section>
+    <section class="nt-ups" id="nt-ups" aria-label="Upset watch" hidden></section>
     <div class="nt-top">
       <div class="nt-live">
         <p class="nt-status" id="nt-status">Loading the board…</p>
@@ -2454,7 +2469,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       <p class="nt-prac-s">Made-up results, to see how the board behaves before the real night. Pick how far every state ends from our forecast and how much of the vote is counted, then press Show it, or load a sample night that plays out poll by poll. Races get a made-up call once 90 percent is in. Nothing here reaches the real board.</p>
     </details>
     <nav class="nt-jump" id="nt-jump" aria-label="Jump to a part of the board">
-      <button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-all">All races</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-batches">Vote batches</button><button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" id="nt-tv-open" title="A big view for a television">TV view</button>
+      <button type="button" data-to="nt-ups">Upset watch</button><button type="button" data-to="nt-map">Map</button><button type="button" data-to="nt-desk">Spotlight and feed</button><button type="button" data-to="nt-rcs">Key races</button><button type="button" data-to="nt-all">All races</button><button type="button" data-to="nt-impact">Most impactful</button><button type="button" data-to="nt-batches">Vote batches</button><button type="button" data-to="nt-ctl">Control</button><button type="button" data-to="nt-hl">House line</button><button type="button" data-to="nt-cty">Key counties</button><button type="button" data-to="nt-expect">What to expect</button><button type="button" id="nt-tv-open" title="A big view for a television">TV view</button>
     </nav>
     <section class="nt-pins" id="nt-pins" aria-label="My watchlist" hidden></section>
     <div class="nt-board2" id="nt-ctl" role="group" aria-label="Control of Congress and the night so far">
@@ -4795,7 +4810,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     $('#nt-synthetic').hidden = !d.synthetic; $('#nt-synthetic').textContent = d.synthetic || '';
     $('#night').dataset.view = nightView;
     ntModeBar(d); ntHealth(d); ntMarkNew(d); ntPractice(d); ntMoveAll(d);
-    ntGlance(d); try { ntTicker(d); } catch (e) { /* the ticker never stops the board */ } try { ntWall(d); } catch (e) { /* nor the wall */ } ntExpect(d); ntBatches();
+    ntGlance(d); try { ntTicker(d); } catch (e) { /* the ticker never stops the board */ } try { ntWall(d); } catch (e) { /* nor the wall */ } try { ntUps(d); } catch (e) { /* nor the upset watch */ } ntExpect(d); ntBatches();
     ntSeatsAll(d); ntResults(d); ntHero(d); ntPolls(d); ntBetLine(d); ntKinds(d); ntWatch(d); ntTiles(d); ntMidnight(d); ntBoard(d); ntHouse(d); ntCounties(d); ntTimeline(d); ntLog(d); ntFeeds(d); ntExamples(d);
     ntTick(true);
     ntLook(); ntSinceDraw();
@@ -5038,6 +5053,63 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     hl.append(' ', ntLink('All House races', () => { const a = $('#nt-all'); if (a) ntScrollTo(a); }));
     box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. Amber edge: the side our forecast had as the underdog leads or won. Live races first, closest first. Tap any race. * a special election.'));
+  }
+  // ---------- Upset Watch (Jake, Nov 3, 7:52pm: "We need to spin up a quick Upset Watch view - there are so many of them!"). Every race
+  // where the side our forecast had as the underdog won or leads (ntUpsets), in three groups by how much to trust it: called, holding up
+  // with half or more counted, and early. Each row: who leads and by how much, how much is counted, what our forecast gave them, the
+  // chance now and the script's by-now or pace line. Counts are CNN's, chances before votes are frozen, the reading lines are the scripts'.
+  var nightUpsOff = 'all', nightUpsAll = {};
+  function ntUpsRow(d, u) {
+    const x = u.x, c = (x.pre || {}).chance_d, ds = ntAllSide(x), rc = (x.cands || []).find((k) => k.party === 'R');
+    const nm = u.side === 'D' ? (ds && (ds.last || ds.name)) || 'The Democrat' : (rc && (rc.last || rc.name)) || 'The Republican';
+    const pt = u.side === 'D' ? (ds && ds.party !== 'D' ? ntPK(ds.party) : 'D') : 'R';
+    const odds = u.side === 'D' ? c : 100 - c, R = ((nightResults || {}).races || {})[x.race_id || x.key] || {};
+    const od = ((d.story || {}).odds || {})[x.race_id || x.key];
+    const b = el('button', { type: 'button', class: 'nt-up-r', 'data-fk': 'up:' + x.key, 'data-s': u.side });
+    const top = el('span', { class: 'top' });
+    top.append(el('b', {}, ntAllName(x) + (x.office === 'Senate' ? ' Senate' : x.office === 'Governor' ? ' governor' : '')));
+    if (x.flip_called || (x.flip && !u.called)) top.append(el('span', { class: 'tag', 'data-k': 'flip' }, x.flip_called ? 'Flip' : 'Would flip'));
+    const now = od && od.basis === 'count' && od.p_d != null ? (u.side === 'D' ? od.p_d : 1 - od.p_d) : null;
+    top.append(el('span', { class: 'odds' }, `${odds < 1 ? 'under 1%' : Math.round(odds) + '%'} before votes${now != null ? `, ${ntPctW(now)} now` : ''}`));
+    b.append(top, el('span', { class: 'what' }, u.called ? `${x.call.name || nm} (${pt}) won. Called${(((d.story || {}).call_times) || {})[x.key] ? ' ' + ntT(d.story.call_times[x.key]) : ''} by ${x.call.source || 'CNN'}.`
+      : `${nm} (${pt}) leads by ${fmt1(Math.round(Math.abs(x.margin_d) * 10) / 10)} with ${ntPct(x.counted)} counted.${(x.pre || {}).margin != null || R.our_line != null ? ` Our forecast: ${ntM((x.pre || {}).margin ?? R.our_line)}.` : ''}`));
+    const sg = !u.called && R.stage, pl = !u.called && ((R.pace || {}).lines || [])[0];
+    if (sg) b.append(el('small', {}, `${sg.dir === 'on' ? 'On track for our forecast' : sg.dir === 'bluer' ? 'Running bluer than our forecast' : 'Running redder than our forecast'} for this stage of the count.`));
+    else if (pl && !/^Early/.test(pl)) b.append(el('small', {}, pl));
+    b.addEventListener('click', () => ntAllPop(d, x));
+    return b;
+  }
+  function ntUps(d) {
+    const box = $('#nt-ups'); if (!box) return;
+    const all = ntUpsets(d), offs = { all: () => true, statewide: (u) => u.x.office !== 'House', house: (u) => u.x.office === 'House' };
+    box.hidden = !all.length; if (box.hidden) return;
+    const ups = all.filter(offs[nightUpsOff] || offs.all);
+    const h = el('div', { class: 'nt-wall-h' });
+    h.append(ntHead(el('h2', {}, 'Upset watch'), 'ups'));
+    const tabs = el('div', { class: 'nt-feedf', role: 'group', 'aria-label': 'Which races' });
+    for (const [k, lab, n] of [['all', 'All', all.length], ['statewide', 'Senate and governor', all.filter(offs.statewide).length], ['house', 'House', all.filter(offs.house).length]]) {
+      const t = el('button', { type: 'button', 'aria-pressed': String(nightUpsOff === k), 'data-fk': 'ups:' + k }, `${lab} ${n}`);
+      t.addEventListener('click', () => { nightUpsOff = k; ntKeepFocus(() => ntUps(d)); });
+      tabs.append(t);
+    }
+    h.append(tabs);
+    const groups = [
+      ['called', 'Called against our forecast', ups.filter((u) => u.called)],
+      ['holding', 'Leading with half or more counted', ups.filter((u) => !u.called && u.x.counted >= 50)],
+      ['early', 'Leading in an early count', ups.filter((u) => !u.called && !(u.x.counted >= 50))],
+    ];
+    const kids = [h, el('p', { class: 'nt-mute nt-up-sub' }, 'Races where the side our forecast had as the underdog won or leads. Early counts are often early and mail votes first, so many of those leads shrink. Tap a race for its count batch by batch.')];
+    for (const [k, lab, xs] of groups) {
+      if (!xs.length) continue;
+      const sorted = [...xs].sort((a, b) => ((a.side === 'D' ? (a.x.pre || {}).chance_d : 100 - (a.x.pre || {}).chance_d) - (b.side === 'D' ? (b.x.pre || {}).chance_d : 100 - (b.x.pre || {}).chance_d)) || ((b.x.counted || 0) - (a.x.counted || 0)));
+      const cap = nightUpsAll[k] ? sorted.length : 6;
+      const g = el('div', { class: 'nt-up-g', 'data-k': k }); g.append(ntKids('h3', {}, [lab, el('small', {}, ` ${xs.length}`)]));
+      const list = el('div', { class: 'nt-up-l' }); for (const u of sorted.slice(0, cap)) list.append(ntUpsRow(d, u)); g.append(list);
+      if (sorted.length > 6) { const m = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'ups:more:' + k }, nightUpsAll[k] ? 'Show fewer' : `Show all ${sorted.length}`); m.addEventListener('click', () => { nightUpsAll[k] = !nightUpsAll[k]; ntKeepFocus(() => ntUps(d)); }); g.append(m); }
+      kids.push(g);
+    }
+    if (kids.length === 2) kids.push(el('p', { class: 'nt-mute' }, 'None in this group right now.'));
+    box.replaceChildren(...kids);
   }
   function ntGlance(d) {
     const what = $('#nt-gl-what'), asof = $('#nt-gl-asof'), box = $('#nt-gl-ch'); if (!what || !asof || !box) return;
@@ -6162,6 +6234,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     seats: { title: 'Seats called or ahead', body: [
       'Solid bars are seats already called. Light bars are seats where a party leads in the count. The line is the majority.',
       'On the Senate bar the faded ends are the seats not on the ballot this year.'] },
+    ups: { title: 'Upset watch', body: [
+      'Every race where the side our forecast had as the underdog has won or is ahead. Our forecast is the chance each side had before any votes, frozen before the polls opened.',
+      'Called: CNN has called it for the underdog. Leading with half or more counted: a lead that is starting to mean something. Leading in an early count: often early and mail votes first, so many of these shrink.',
+      'Under each race: the chance our forecast gave the side now ahead, the chance now from the count, and where the count is heading for this stage of the night.'] },
     wall: { title: 'Every race at a glance', body: [
       'Every Senate and governor race on the ballot, one small tile each, like a scoreboard of every game.',
       'A tile is tinted by who leads the count and filled once CNN calls it. The number is the leader\'s margin in points, and the line under it says who leads and how much is counted.',
