@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'ac39a1a1879e';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '24f9e011f48e';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1617,6 +1617,8 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-mx .p { grid-area: p; font-size: 12.5px; color: var(--color-fg-muted); }
 .nt-mx-bar { grid-column: 1 / -1; } .nt-mx-f { grid-column: 1 / -1; margin: 0; font-size: 12.5px; color: var(--color-fg-muted); display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
 .nt-spot-al { padding: .2rem 0; }
+.nt-spot-why0 { margin: .1rem 0 0; font-size: 13px; color: var(--color-fg-muted); line-height: 1.4; flex-basis: 100%; }
+.nt-spot-sh { margin: .5rem 0 -.1rem; font-family: var(--font-text); font-size: 11.5px; font-weight: 700; letter-spacing: .03em; color: var(--color-fg-muted); }
 .nt-wt:hover { filter: brightness(1.12); } .nt-wt:focus-visible { outline: 2px solid var(--nt-ours); outline-offset: 2px; }
 .nt-wall-house { margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .5rem; }
 .nt-wall-key { margin: 0; font-size: 12px; }
@@ -1626,7 +1628,8 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .nt-spk .z { stroke: var(--color-fg-muted); stroke-width: .6; stroke-dasharray: 2 2; opacity: .6; vector-effect: non-scaling-stroke; }
 .nt-spk .o { stroke: var(--nt-ours); stroke-width: .8; opacity: .55; vector-effect: non-scaling-stroke; }
 .nt-spk .l { fill: none; stroke: var(--color-fg); stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-linejoin: round; } .nt-spk .l.d { stroke: var(--nt-d); } .nt-spk .l.r { stroke: var(--nt-r); }
-.nt-spk.wt { height: 16px; margin-top: .15rem; } .nt-spk.rc { height: 26px; }
+.nt-spk.rc { height: 26px; }
+.nt-res-night { display: grid; gap: .3rem; } .nt-res-night h4 { margin: .2rem 0 0; font-family: var(--font-display); font-size: 1rem; font-weight: 800; } .nt-res-night .nt-sc-w { background: none; padding: 0; }
 .nt-rc-tr { display: grid; gap: .1rem; } .nt-rc-tr small { font-size: 12px; color: var(--color-fg-muted); }
 .nt-wall-wait .r { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; font-size: 12px; }
 .nt-wall-wait .h { color: var(--color-fg-muted); margin-right: .25rem; min-width: 6.5rem; }
@@ -5014,18 +5017,29 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // moment. A big moment from the last 15 minutes stays on top. Under them, facts that hold right now. Nothing moves on its own.
   const NT_STRIP_KINDS = new Set(['call', 'lead', 'first', 'close', 'verdict', 'runoff', 'lean', 'milestone', 'batch']);
   var nightStripSeen = null;
+  // Which events lead (Jake, Nov 3, 9pm: "seems stagnant and irrelevant... a lower GA toss up notification from like 15 mins ago? Need to be
+  // snappier and more relevant"): each event scores by what it is (a call or a lead change in a statewide race, the night's verdict, an
+  // upset) times how fresh it is (half-life 6 minutes, nothing past 40 minutes while newer things exist). The top ones show newest first.
+  const NT_STRIP_W = { call: 3, lead: 3, verdict: 3, runoff: 2, lean: 1.5, milestone: 1.2, batch: 1, first: 1, close: 1 };
   function ntStripEvents(d, n) {
-    const now = (nightMode === 'practice' && Date.parse(d.now_et)) || Date.now(), out = [], races = new Set();
+    const now = (nightMode === 'practice' && Date.parse(d.now_et)) || Date.now();
     const keep = (e) => NT_STRIP_KINDS.has(e.kind) && !/^Early count/.test(e.title || '')  // a lead swing in the first sliver of a count stays in the feed
       && (e.level === 'big' || (e.level === 'normal' && (e.kind !== 'call' || /^(senate|gov)_/.test(e.every || e.race_id || ''))));
-    const evs = ((d.story || {}).events || []).filter(keep);
-    const top = evs.find((e) => e.level === 'big' && now - Date.parse(e.at) < 15 * 60000);
-    for (const e of top ? [top, ...evs.filter((x) => x !== top)] : evs) {
-      const rk = e.every || e.race_id; if (rk && races.has(rk)) continue;  // one line per race: its newest
+    const statewide = (e) => /^(senate|gov)_/.test(e.every || e.race_id || '');
+    const score = (e) => {
+      const age = Math.max(0, (now - Date.parse(e.at)) / 60000);
+      return (NT_STRIP_W[e.kind] || 1) * (e.level === 'big' ? 1.6 : 1) * (statewide(e) ? 1.5 : 1) * (e.surprise ? 1.5 : 1) * Math.pow(0.5, age / 6);
+    };
+    let evs = ((d.story || {}).events || []).filter(keep);
+    const fresh = evs.filter((e) => now - Date.parse(e.at) < 40 * 60000);
+    if (fresh.length >= n) evs = fresh;
+    const out = [], races = new Set();
+    for (const e of [...evs].sort((a, b) => score(b) - score(a))) {
+      const rk = e.every || e.race_id; if (rk && races.has(rk)) continue;  // one line per race
       if (rk) races.add(rk);
       out.push(e); if (out.length >= n) break;
     }
-    return out;
+    return out.sort((a, b) => Date.parse(b.at) - Date.parse(a.at));
   }
   function ntStrip(d) {
     const box = $('#nt-tick'); if (!box) return;
@@ -5037,7 +5051,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const kind = e.surprise && e.vibe && e.vibe.tag ? e.vibe.tag : NT_EV[e.kind] || '';
       const b = el('button', { type: 'button', class: 'nt-strip-r' + (fresh ? ' new' : ''), 'data-k': e.kind, 'data-big': String(e.level === 'big'), 'data-fk': 'strip:' + e.id });
       const c = ntEvColor(e); if (c) b.style.setProperty('--ev', c);
-      b.append(el('span', { class: 't' }, ntT(e.at)), el('span', { class: 'k' }, kind), el('span', { class: 'x' }, e.title));
+      const ago = Math.max(0, Math.round((Date.now() - Date.parse(e.at)) / 60000));
+      b.append(el('span', { class: 't', title: ntT(e.at) }, ago < 1 ? 'just now' : `${ago} min ago`), el('span', { class: 'k' }, kind), el('span', { class: 'x' }, e.title));
       const rk = e.every || e.race_id;
       b.addEventListener('click', () => { if (rk) ntGoRace(d, rk); else if (e.state) ntStatePop(d, e.state); else { const f = $('#nt-desk'); if (f) ntScrollTo(f); } });
       rows.append(b);
@@ -5138,9 +5153,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const ar = el('span', {}, top);  // no arrows on a tile (Jake, Nov 3, 9pm: "the arrows in every race at a glance on mobile make no sense"): the line under it is the trend
     b.append(ntKids('span', { class: 'a' }, [el('b', {}, x.st + (x.special ? '*' : '')), ar]), el('span', { class: 'm' }, m), el('span', { class: 'n' }, n));
     const tr = !w && ntTrend(x.race_id || x.key);
-    if (tr) {
+    if (tr) {  // the trend in words for a screen reader and a hover; the chart is in the race's card (Jake, Nov 3, 9pm: "too small with zero labels... in the pop out")
       const rc = (x.cands || []).find((k) => k.party === 'R'), dn = ln((ds && ds.name) || 'the Democrat'), rn = ln((rc && rc.name) || 'the Republican');
-      b.append(ntSpark(tr, 100, 16, 'wt'));
       b.setAttribute('aria-label', `${b.getAttribute('aria-label')} ${ntTrendTxt(tr, dn, rn)}`); b.title = `${name}. ${ntTrendTxt(tr, dn, rn)}`;
     }
     b.addEventListener('click', () => ntAllPop(d, x));
@@ -5194,7 +5208,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       hl.append(u);
     }
     hl.append(' ', ntLink('All House races', () => { const a = $('#nt-all'); if (a) ntScrollTo(a); }));
-    box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. The line on a tile: its margin through the night, blue above the dashed even line, red below. Amber edge: an upset (called for our forecast\'s underdog, or the underdog favored or in play on the live chance). Dashed amber: the underdog leads an early count only. Live races first, closest first. Tap any race. * a special election.'));
+    box.replaceChildren(h, ...blocks, hl, el('p', { class: 'nt-wall-key nt-mute' }, 'Filled: called. Tinted: who leads. Tap a race for its count through the night. Amber edge: an upset (called for our forecast\'s underdog, or the underdog favored or in play on the live chance). Dashed amber: the underdog leads an early count only. Live races first, closest first. Tap any race. * a special election.'));
   }
   // ---------- Upset Watch (Jake, Nov 3, 7:52pm: "We need to spin up a quick Upset Watch view - there are so many of them!"). Every race
   // where the side our forecast had as the underdog won or leads (ntUpsets), in three groups by how much to trust it: called, holding up
@@ -6843,22 +6857,25 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const tms = (ms) => new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(ms).replace(' ', '').toLowerCase();  // ntT reads an offset ISO string, not a UTC one
     const H = (((d.story || {}).race_hist || {})[r.race_id] || []).map((p) => [Date.parse(p[0]), p[1], p[2]]);
     if (B.length < 2 && H.length < 2) return null;
+    const hasH = H.length >= 2;  // the chance over time is kept for our key races only; the others chart the count alone
     const t0 = Math.min(...B.map((b) => Date.parse(b.at)), ...H.filter((p) => p[2] !== 'before').map((p) => p[0]));
     if (H.length && H[0][2] === 'before') H[0][0] = Math.min(H[0][0], t0);  // our chance before votes starts the line at the first drop
     const t1 = Math.max(Date.now(), ...B.map((b) => Date.parse(b.at)), ...H.map((p) => p[0]));
     const phone = window.matchMedia('(max-width: 47.99rem)').matches;  // Jake, Nov 3, 8:10pm: "too many dots on tiny chart on mobile"
-    const W = phone ? 360 : 600, P1 = phone ? 110 : 120, P2 = phone ? 64 : 70, gap = 26, m = { l: 40, r: 8, t: 8, b: 18 }, Ht = m.t + P1 + gap + P2 + m.b;
+    const W = phone ? 360 : 600, P1 = phone ? 110 : 120, P2 = hasH ? (phone ? 64 : 70) : 0, gap = hasH ? 26 : 0, m = { l: 40, r: 8, t: 8, b: 18 }, Ht = m.t + P1 + gap + P2 + m.b;
     const x = d3.scaleLinear().domain([t0, Math.max(t1, t0 + 60000)]).range([m.l, W - m.r]);
-    const vals = B.map((b) => b.run_margin_d).concat(R && R.our_line != null ? [R.our_line] : []);
-    const ext = Math.max(5, ...vals.map(Math.abs)) * 1.15, y1 = d3.scaleLinear().domain([-ext, ext]).range([m.t + P1, m.t]);
+    // the scale fits the count past its first 5 percent: a first sliver (Michigan opened at D+54) would flatten the rest. Earlier points sit at the edge.
+    const settled = B.filter((b) => b.counted != null && b.counted >= 5), base = settled.length >= 2 ? settled : B;
+    const vals = base.map((b) => b.run_margin_d).concat(R && R.our_line != null ? [R.our_line] : []);
+    const ext = Math.max(5, ...vals.map(Math.abs)) * 1.15, y1s = d3.scaleLinear().domain([-ext, ext]).range([m.t + P1, m.t]), y1 = (v) => y1s(Math.max(-ext, Math.min(ext, v)));
     const y2 = d3.scaleLinear().domain([0, 1]).range([m.t + P1 + gap + P2, m.t + P1 + gap]);
     const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${Ht}`).attr('class', 'nt-sc').attr('role', 'img')
       .attr('aria-label', `${NT_STATE[r.state] || r.state} ${r.office}: the running margin over ${B.length} vote drops, and ${r.cand_d}'s chance to win over time.`);
     // panel 1: the margin
     svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y1(0)).attr('y2', y1(0)).attr('class', 'zero');
+    svg.append('text').attr('x', m.l - 5).attr('y', y1(0) + 4).attr('text-anchor', 'end').attr('class', 'ax').text('even');
     if (R && R.our_line != null) { svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y1(R.our_line)).attr('y2', y1(R.our_line)).attr('class', 'ref'); svg.append('text').attr('x', W - m.r).attr('y', y1(R.our_line) - 4).attr('text-anchor', 'end').attr('class', 'ax ours').text(`our forecast ${ntM(R.our_line)}`); }
     for (const v of [ext / 1.15, -ext / 1.15]) svg.append('text').attr('x', m.l - 5).attr('y', y1(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(ntM(Math.round(v)));
-    svg.append('text').attr('x', m.l).attr('y', m.t + 10).attr('class', 'ax hd').text('The count');
     if (B.length) svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((b) => x(Date.parse(b.at))).y((b) => y1(b.run_margin_d))([...B, { at: new Date(t1).toISOString(), run_margin_d: B[B.length - 1].run_margin_d }])).attr('class', 'run');
     const cap = phone ? 18 : 60, k = Math.max(1, Math.ceil(B.length / cap)), G = [];
     for (let i = 0; i < B.length; i += k) {
@@ -6868,10 +6885,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     const vmax = Math.max(1, ...G.map((b) => Math.abs(b.votes || 0)));  // a drop can be negative when CNN revises a total down
     // panel 2: the chance
-    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y2(0.5)).attr('y2', y2(0.5)).attr('class', 'mid');
-    for (const v of [0, 0.5, 1]) svg.append('text').attr('x', m.l - 5).attr('y', y2(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(`${Math.round(v * 100)}%`);
-    svg.append('text').attr('x', m.l).attr('y', m.t + P1 + gap - 6).attr('class', 'ax hd').text(`${ntLast(r.cand_d) || 'Democrat'}'s chance to win`);
-    if (H.length) svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((p) => x(p[0])).y((p) => y2(p[1]))([...H, [t1, H[H.length - 1][1]]])).attr('class', 'ch');
+    if (hasH) {
+      svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y2(0.5)).attr('y2', y2(0.5)).attr('class', 'mid');
+      for (const v of [0, 0.5, 1]) svg.append('text').attr('x', m.l - 5).attr('y', y2(v) + 4).attr('text-anchor', 'end').attr('class', 'ax').text(`${Math.round(v * 100)}%`);
+      svg.append('text').attr('x', m.l).attr('y', m.t + P1 + gap - 6).attr('class', 'ax hd').text(`${ntLast(r.cand_d) || 'Democrat'}'s chance to win`);
+    }
+    if (hasH) svg.append('path').attr('d', d3.line().curve(d3.curveStepAfter).x((p) => x(p[0])).y((p) => y2(p[1]))([...H, [t1, H[H.length - 1][1]]])).attr('class', 'ch');
     svg.append('text').attr('x', m.l).attr('y', Ht - 3).attr('class', 'ax').text(tms(t0));
     svg.append('text').attr('x', W - m.r).attr('y', Ht - 3).attr('text-anchor', 'end').attr('class', 'ax').text(tms(t1));
     const why = el('p', { class: 'nt-ctlc-why', role: 'status' });
@@ -6919,11 +6938,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const r = pin || sp.races[0];
       const tabsList = pin && !sp.races.some((x) => x.race_id === pin.race_id) ? [pin, ...sp.races] : sp.races;
       const top = el('div', { class: 'nt-spot-top' });
-      const sk = el('span', { class: 'nt-spot-k' }, pin ? 'Spotlight' : 'Spotlight: the race to watch right now'); sk.append(ntQ('spotlight')); top.append(sk);
+      // why this race is here (Jake, Nov 3, 9pm: "Spotlight race section needs better discernment about what is being displayed")
+      const lastAl = ((st.events || []).find((e) => (e.race_id === r.race_id || e.every === r.race_id) && NT_STRIP_KINDS.has(e.kind)));
+      const why0 = pin && pin.auto && lastAl ? `In the spotlight for a new alert at ${ntT(lastAl.at)}: ${lastAl.title}` : pin && !pin.auto ? 'You picked this race. It stays here for 10 minutes, then the closest race returns.'
+        : 'The race to watch right now: close, with real votes counted. The tabs are the next closest.';
+      const sk = el('span', { class: 'nt-spot-k' }, 'Spotlight'); sk.append(ntQ('spotlight')); top.append(sk, el('p', { class: 'nt-spot-why0' }, why0));
       if (tabsList.length > 1) {
         const tabs = el('div', { class: 'nt-spot-tabs', role: 'group', 'aria-label': 'Other close races' });
         for (const x of tabsList) {
-          const b = el('button', { type: 'button', 'aria-pressed': String(x.race_id === r.race_id) }, `${NT_STATE[x.state] || x.state}${x.office === 'Governor' ? ' gov.' : ''}`);
+          const b = el('button', { type: 'button', 'aria-pressed': String(x.race_id === r.race_id), title: `${NT_STATE[x.state] || x.state} ${x.office === 'Governor' ? 'governor' : 'Senate'}` }, `${x.state} ${x.office === 'Governor' ? 'Gov' : 'Sen'} ${x.margin != null ? ntM(x.margin) : ''}`.trim());
           b.addEventListener('click', () => { nightSpotPin = { id: x.race_id, until: Date.now() + 5 * 60000 }; ntKeepFocus(() => ntSpot(d, st)); });
           tabs.append(b);
         }
@@ -6995,7 +7018,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const foot = el('div', { class: 'nt-spot-foot' });
       foot.append(el('span', { class: 'nt-spot-src' }, `Count from ${r.source || 'the feed'}${r.at ? ', ' + ntT(r.at) : ''}. Tap any race card below to put it here.`), go);
       let sc = null; try { sc = ntSpotChart(d, r); } catch (e) { sc = null; }  // the chart never stops the card
-      box.append(top, h, mx, ...(al.length ? [alw] : []), ...(sc ? [sc] : []), ul, ...(od ? [cwb] : []), ...(cos.childElementCount ? [cos] : []), why, foot);
+      const sh = (t) => el('h4', { class: 'nt-spot-sh' }, t);  // each block says what it is
+      box.append(top, h, sh('Where it stands'), mx, ...(al.length ? [sh('Latest alerts'), alw] : []), ...(sc ? [sh('The count through the night'), sc] : []),
+        ...(ul.childElementCount ? [sh('What the count says'), ul] : []), ...(od ? [cwb] : []), ...(cos.childElementCount ? [cos] : []), why, foot);
       return;
     }
     if (sp.kind === 'upcoming') {
@@ -7926,7 +7951,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       box.append(cp);
     }
     { const iv = ntImp(d, x.key); if (iv && !w && iv.p >= 0.01) box.append(el('p', { class: 'nt-res-sub' }, `${ntImpTxt(iv.p)}.`)); }
-    if (R && (R.batches || []).length > 1) {
+    const tr = !w && ntTrend(x.race_id || x.key);
+    let night = null;
+    if (R && R.trail && R.trail.length > 1) {  // a statewide race: its whole night, labeled, in the card (Jake, Nov 3, 9pm: "user friendly and in the pop out")
+      const rc = (x.cands || []).find((k) => k.party === 'R'), ds = ntAllSide(x);
+      try { night = ntSpotChart(d, { race_id: x.race_id || x.key, state: x.st, office: x.office === 'Senate' ? 'Senate' : 'Governor', cand_d: (ds && ds.name) || 'Democrat', cand_r: (rc && rc.name) || 'Republican' }); } catch (e) { night = null; }
+    }
+    if (night) {
+      const c = el('div', { class: 'nt-res-night' }); c.append(el('h4', {}, 'The count through the night'));
+      if (tr) c.append(el('p', { class: 'nt-res-sub' }, ntTrendTxt(tr, ntLast(((ntAllSide(x) || {}).name) || '') || 'the Democrat', ntLast((((x.cands || []).find((k) => k.party === 'R')) || {}).name || '') || 'the Republican')));
+      c.append(night); box.append(c);
+    } else if (R && (R.batches || []).length > 1) {
       const c = el('div', { class: 'nt-bt-chart nt-res-chart' });
       c.append(el('h4', {}, 'The count, batch by batch'), ntBtKey([['d', `${ntBtSide(R, 'a')} won the batch`], ['r', `${ntBtSide(R, 'b')} won the batch`], ['run', 'Running margin'], ['ref', 'Our forecast']]), ntBtResultChart(R));
       box.append(c);
