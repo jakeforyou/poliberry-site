@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '53932c0666e0';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '481f222b0097';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -4516,12 +4516,43 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const NT_MAP_MODES = [
     ['results', 'Results', 'Who has won or leads each race. Pale before any votes: our chance before the night.'],
     ['forecast', 'Against our forecast', 'Each test state\'s count against our forecast: bluer, on our line, or redder. The tests were set before the night. Other states are not tests.'],
+    ['shift', 'Shift from 2024', 'Arrows show how far each state\'s count has moved from Trump against Harris in 2024. Left and blue: toward Democrats. Right and red: toward Republicans. A longer arrow is a bigger shift. Faded: under half counted, where early votes can tilt it. The candidates differ from 2024, so one strong candidate can move a state alone.'],
     ['counting', 'Closing and counting', 'Before a state\'s polls close: the hour they close. After: how much of the expected vote is counted.'],
     ['control', 'Decides control', 'How often the state\'s races hand a party control in our simulations. Senate is live through the night, House is set before votes. A called race stops mattering.'],
     ['flips', 'Flips', 'Where a seat is changing party, called or leading. For the House, the net seats changing in the state.'],
     ['batch', 'Newest votes', 'Which way the newest batch of counted votes broke in each state\'s race. Bright when it landed in the last 10 minutes, fading after 30.'],
     ['upsets', 'Upsets', 'Where our forecast\'s underdog has won, is now favored, or is in play on the live chance. Palest: the underdog only leads an early count. For the House, the number of upsets in the state.'],
   ];
+  // The 2024 presidential margins (scripts/shift_2024.py, CNN's AP numbers), read once: the states for the shift map, the counties for
+  // a state card (Jake, Nov 3, 10:42pm: "a map view that has those "shift" arrows that are colored per party per location").
+  var nightShift = {}, nightShiftAsked = {};
+  function ntShiftLoad(part, then) {
+    if (nightShift[part] || nightShiftAsked[part]) return; nightShiftAsked[part] = true;
+    fetch(ntBase() + (part === 'states' ? 'shift_2024.json' : 'shift_2024_counties.json')).then((r) => (r.ok ? r.json() : null))
+      .then((j) => { if (j && j[part]) { nightShift[part] = j[part]; if (then) then(); } }).catch(() => { nightShiftAsked[part] = false; });
+  }
+  const ntPres = (m) => (m >= 0 ? `Harris +${m.toFixed(1)}` : `Trump +${(-m).toFixed(1)}`);
+  const ntShTxt = (v, ind) => `${Math.abs(v).toFixed(1)} toward ${v > 0 ? (ind ? 'the independent' : 'D') : 'R'}`;
+  // One shift arrow, NYT style: from the place's center, up and to the left (bluer) or right (redder), longer for a bigger shift.
+  // len: pixels per point of shift. Faded and dashed when the count is early.
+  function ntShiftArrow(g, x, y, sh, color, perPt, firm, halo, maxPts) {
+    const L = Math.max(3, Math.min(maxPts || 25, Math.abs(sh)) * perPt), dir = sh > 0 ? -1 : 1, a = 35 * Math.PI / 180;
+    const tx = x + dir * L * Math.cos(a), ty = y - L * Math.sin(a), ang = Math.atan2(ty - y, tx - x), hl = Math.max(5, Math.min(9, L * 0.4));
+    const hw = Math.max(3.2, perPt * 1.6), sw = Math.max(2, Math.min(3, perPt * 1.1));
+    const head = [[tx, ty], [tx - hl * Math.cos(ang) + hw * Math.sin(ang), ty - hl * Math.sin(ang) - hw * Math.cos(ang)], [tx - hl * Math.cos(ang) - hw * Math.sin(ang), ty - hl * Math.sin(ang) + hw * Math.cos(ang)]];
+    const bx = tx - hl * 0.8 * Math.cos(ang), by = ty - hl * 0.8 * Math.sin(ang);
+    const grp = g.append('g').attr('opacity', firm ? 1 : 0.45).attr('class', 'nt-shift-a');
+    if (halo) grp.append('line').attr('x1', x).attr('y1', y).attr('x2', bx).attr('y2', by).attr('stroke', halo).attr('stroke-width', sw + 2).attr('stroke-linecap', 'round');
+    grp.append('line').attr('x1', x).attr('y1', y).attr('x2', bx).attr('y2', by).attr('stroke', color).attr('stroke-width', sw).attr('stroke-linecap', 'round').attr('stroke-dasharray', firm ? null : '3 2');
+    grp.append('polygon').attr('points', head.map((p) => p.join(',')).join(' ')).attr('fill', color).attr('stroke', halo || 'none').attr('stroke-width', halo ? 0.8 : 0);
+    return grp;
+  }
+  function ntShiftSw(color, sh, lab, firm) {  // a legend arrow
+    const s = el('span', { class: 'nt-map-sw' });
+    const svg = d3.create('svg').attr('viewBox', '0 0 26 16').attr('width', 26).attr('height', 16).attr('aria-hidden', 'true');
+    ntShiftArrow(svg, sh > 0 ? 23 : 3, 14, sh, color, 2, firm, null, 20);
+    s.append(svg.node(), document.createTextNode(lab)); return s;
+  }
   let ntMapOff = 'senate', ntMapMode = 'results';
   try { ntMapOff = localStorage.getItem('nt-map-office') || 'senate'; ntMapMode = localStorage.getItem('nt-map-mode') || 'results'; } catch (e) { /* default */ }
   if (!NT_MAP_MODES.some((m) => m[0] === ntMapMode)) ntMapMode = 'results';
@@ -4536,7 +4567,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const box = $('#nt-map'); if (!box) return;
     if (!_geo) { box.hidden = true; return; }  // the shapes load with the page; the next refresh draws it
     box.hidden = false; box.replaceChildren();
-    const mode = ntMapMode, office = mode === 'control' && ntMapOff === 'governor' ? 'senate' : ntMapOff;  // governors do not decide control
+    const mode = ntMapMode, office = (mode === 'control' && ntMapOff === 'governor') || (mode === 'shift' && ntMapOff === 'house') ? 'senate' : ntMapOff;  // governors do not decide control; the House has no statewide count
+    if (mode === 'shift' && !nightShift.states) ntShiftLoad('states', () => { if (nightData && ntMapMode === 'shift') ntKeepFocus(() => ntMap(nightData)); });
+    const arrows = [], cent = {};  // the shift map's arrows, drawn over the states
     const ev = d.every || {}, rows = ev[office] || [];
     const by = {}, byH = {};
     for (const x of rows) { const st = ntStOf(x); if (!st) continue; if (office === 'house') (byH[st] = byH[st] || []).push(x); else by[st] = x; }
@@ -4617,6 +4650,15 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         sum.push([st, p, !!x.flip_called]);
         return { fill: x.flip_called ? col[p] : mix(col[p], 0.5), label: `${x.flip_called ? 'Flipped' : 'Flipping, not called'}: ${pName(was, x)} seat to the ${pName(p, x)}`, text: x.flip_called ? `${st} ${p}` : null, x };
       },
+      shift(st) {
+        const x = by[st]; if (!x) return NOT;
+        const b = (nightShift.states || {})[st];
+        if (!b) return { fill: mid, label: nightShift.states ? 'No 2024 result on file' : 'Loading the 2024 results', x };
+        if (x.margin_d == null) return { fill: mid, label: `No votes yet. 2024: ${ntPres(b[0])}`, x };
+        const sh = x.margin_d - b[0], c = x.counted, w = (x.call || {}).winner, firm = c != null && c >= 50, ind = sideOf(x) === 'I';  // a call does not make an early count's margin final (Wyoming, called at 12% counted)
+        sum.push([st, sh, firm, ind]); arrows.push([st, sh, firm, ind]);
+        return { fill: mid, label: `${office === 'governor' ? 'Governor' : 'Senate'} count ${ntM(x.margin_d)}${c != null ? ` with ${Math.round(c)}% counted` : ''}${w ? ', called' : ''}. 2024: ${ntPres(b[0])}. Shift: ${ntShTxt(sh, ind)} points${firm ? '' : '. Under half counted: early votes can tilt it'}`, x };
+      },
       upsets(st) {
         const xs = office === 'house' ? byH[st] : by[st] ? [by[st]] : null; if (!xs) return NOT;
         const us = xs.map((x) => upT[x.key]).filter(Boolean).sort((a, b) => NT_UP_RANK[a.tier] - NT_UP_RANK[b.tier]);
@@ -4659,7 +4701,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       b.addEventListener('click', () => { ntMapMode = k; try { localStorage.setItem('nt-map-mode', k); } catch (er) { /* fine */ } ntKeepFocus(() => ntMap(d)); });
       modes.append(b);
     }
-    const how = NT_MAP_MODES.find((m) => m[0] === mode)[2] + (mode === 'control' && ntMapOff === 'governor' ? ' Governors do not decide control, so this shows the Senate.' : '');
+    const how = NT_MAP_MODES.find((m) => m[0] === mode)[2] + (mode === 'control' && ntMapOff === 'governor' ? ' Governors do not decide control, so this shows the Senate.' : '')
+      + (mode === 'shift' && ntMapOff === 'house' ? ' The House has no statewide count, so this shows the Senate.' : '');
     const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('class', 'nt-map-svg').attr('role', 'img');
     const codes = [];
     for (const f of _geo.feats) {
@@ -4667,9 +4710,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       const p = svg.append('path').attr('d', path(f)).attr('fill', s.fill).attr('class', 'nt-map-st' + (s.x || s.up ? ' up' : ''));
       p.append('title').text(`${NT_STATE[f.st] || f.st}: ${s.label}`);
       if (s.x || s.up) p.on('click', open(f.st, s.x));
+      if (mode === 'shift') cent[f.st] = path.centroid(f);
       if (s.text) { const bb = path.bounds(f), c = path.centroid(f); if (bb[1][0] - bb[0][0] >= 26 && bb[1][1] - bb[0][1] >= 14 && !Number.isNaN(c[0])) codes.push([c, s.text, s.fill]); }
     }
     svg.append('path').attr('d', path(_geo.mesh)).attr('class', 'nt-map-mesh');
+    if (mode === 'shift') {  // the arrows, biggest first so a small one is never hidden under a big one; taps go through to the state
+      const g = svg.append('g').attr('pointer-events', 'none');
+      for (const [st, sh, firm, ind] of [...arrows].sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]))) {
+        const c = cent[st]; if (!c || Number.isNaN(c[0])) continue;
+        ntShiftArrow(g, c[0], c[1], sh, sh > 0 ? (ind ? I : D) : R, W / 450, firm, none, 30);  // about 2px a point on a laptop: tonight's shifts run to 30
+      }
+    }
     // a state's code, count or hour prints on it, since color alone should not carry the meaning (amber and coral are close for some eyes)
     for (const [c, t, fill] of codes) svg.append('text').attr('x', c[0]).attr('y', c[1] + 4).attr('text-anchor', 'middle').attr('class', 'nt-map-t' + (d3.lab(fill).l < 55 ? ' lt' : '')).text(t);  // light text on a dark fill
     const leg = el('div', { class: 'nt-map-leg' });
@@ -4682,15 +4733,26 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       control: [[mix(IMP, 1), '15% or more'], [mix(IMP, 0.5), 'About 7%'], [mix(IMP, 0.2), 'Rarely'], [mid, 'Almost never, or called']],
       flips: office === 'house' ? [[mix(D, 0.8), 'Net seats to D'], [mix(I, 0.5), 'Even swap'], [mix(R, 0.8), 'Net seats to R'], [mid, 'No change']] : [[D, 'Flipped to D'], [mix(D, 0.5), 'Flipping to D'], [mix(R, 0.5), 'Flipping to R'], [R, 'Flipped to R'], [I, 'To an independent'], [mid, 'Holding, or no votes']],
       batch: [[mix(D, 1), 'Newest batch went D'], [mix(R, 1), 'Newest batch went R'], [mix(D, 0.35), 'Older than 30 minutes'], [mid, 'No batch yet']],
+      shift: [],
       upsets: [[mix(I, 1), NT_UP_TIERS.called], [mix(I, 0.75), NT_UP_TIERS.favored], [mix(I, 0.48), NT_UP_TIERS.inplay], [mix(I, 0.2), NT_UP_TIERS.early], [mid, 'No upset']],
     }[mode];
     for (const [f, lab] of L) leg.append(sw(f, lab));
+    if (mode === 'shift') leg.append(ntShiftSw(D, 8, 'Bluer than 2024', true), ntShiftSw(R, -8, 'Redder than 2024', true), ntShiftSw(isDark() ? '#9aa3b8' : '#5b6274', -8, 'Under half counted', false), sw(none, 'Not up'));
     const say = {
       results: () => { const xs = office === 'house' ? (ev.house || []) : rows; const c = xs.filter((x) => x.call).length, l = xs.filter((x) => !x.call && x.margin_d != null).length; return `${c} called, ${l} counting, ${xs.length - c - l} with no votes yet. Tap a state for its race.`; },
       forecast: () => { if (!sum.length) return `None of the ${Object.keys(tiles).length} test states has a reading yet.`; const s2 = [...sum].sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])); const blu = sum.filter((x) => x[1] > band).length, red = sum.filter((x) => x[1] < -band).length; return `${sum.length} of ${Object.keys(tiles).length} test states read: ${blu} bluer, ${sum.length - blu - red} on our line, ${red} redder. Furthest: ${s2.slice(0, 3).map(([st, o]) => `${st} ${ntOff(o)}`).join(', ')}.`; },
       counting: () => { const w = sum.filter((x) => x[0] === 'wait').map((x) => x[1]).sort((a, b) => ntCloseMs(a) - ntCloseMs(b)); const cnt = sum.filter((x) => x[0] === 'count'); return `${w.length ? `Next close: ${ntHourText(w[0])}, ${w.filter((x) => x === w[0]).length} state${w.filter((x) => x === w[0]).length === 1 ? '' : 's'}. ` : 'Every state has closed. '}${cnt.length} counting${cnt.filter((x) => x[1] >= 99).length ? `, ${cnt.filter((x) => x[1] >= 99).length} all but done` : ''}.`; },
       control: () => (sum.length ? `Most decisive now: ${[...sum].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([st, p]) => `${st} ${(100 * p).toFixed(0)}%`).join(', ')}.` : 'No race decides control any more.'),
       flips: () => { if (!sum.length) return 'No seat is changing party.'; if (office === 'house') { const t = sum.reduce((a, [, g]) => ({ D: a.D + g.D, R: a.R + g.R }), { D: 0, R: 0 }); return `House seats changing party: ${t.D} to Democrats, ${t.R} to Republicans, across ${sum.length} state${sum.length === 1 ? '' : 's'}.`; } return `Changing party: ${sum.map(([st, p, c]) => `${st} to ${p}${c ? '' : ' (leading)'}`).join(', ')}.`; },
+      shift: () => {
+        if (!nightShift.states) return 'Loading the 2024 results.';
+        if (!sum.length) return 'No state has a count to set against 2024 yet.';
+        const firm = sum.filter((x) => x[2]), toD = firm.filter((x) => x[1] > 0).length, srt = [...firm].map((x) => x[1]).sort((a, b) => a - b);
+        const med = srt.length ? (srt.length % 2 ? srt[(srt.length - 1) / 2] : (srt[srt.length / 2 - 1] + srt[srt.length / 2]) / 2) : null;
+        const big = [...firm].sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 3);
+        return (firm.length ? `${firm.length} state${firm.length === 1 ? '' : 's'} at half counted or more: ${toD} moved toward Democrats since 2024, ${firm.length - toD} toward Republicans. The middle state moved ${ntShTxt(med)}. Biggest: ${big.map(([st, v, , ind]) => `${st} ${ntShTxt(v, ind)}`).join(', ')}.` : 'No state is half counted yet.')
+          + (sum.length - firm.length ? ` ${sum.length - firm.length} more are early, faded.` : '');
+      },
       upsets: () => { const c = { called: 0, favored: 0, inplay: 0, early: 0 }; for (const [, us] of sum) for (const u of us) c[u.tier]++; const n = c.called + c.favored + c.inplay; return n || c.early ? `${office === 'house' ? 'House' : office === 'governor' ? 'Governor' : 'Senate'}: ${c.called} called for the underdog, ${c.favored} underdog${c.favored === 1 ? '' : 's'} now favored, ${c.inplay} in play, and ${c.early} early lead${c.early === 1 ? '' : 's'} only. Tap a state.` : 'No upsets so far.'; },
       batch: () => { if (!sum.length) return 'No batches yet. They start when the polls close and the count comes in.'; const s2 = [...sum].sort((a, b) => a[2] - b[2]); const [st, r] = s2[0]; return `Newest: ${r.name} at ${r.latest.time_text}, ${ntBtNum(r.latest.votes)} votes, ${ntM(r.latest.margin_d)}. ${s2.filter((x) => x[2] <= 10).length} state${s2.filter((x) => x[2] <= 10).length === 1 ? '' : 's'} had a batch in the last 10 minutes.`; },
     }[mode]();
