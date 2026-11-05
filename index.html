@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '5ccb9222b34d';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'ee8dd6f8d905';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1809,6 +1809,41 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .rt-card .rt-h3 { margin: 0; }
 .rt-tag { justify-self: start; font-size: 11px; font-weight: 700; padding: .05rem .5rem; border-radius: 999px; background: var(--nt-wash2); color: var(--color-fg-muted); }
 .rt-errs { margin: 0; padding-left: 1.1rem; display: grid; gap: .35rem; font-size: 13.5px; line-height: 1.45; } .rt-errs b { font-variant-numeric: tabular-nums; }
+/* how our forecast did (retro.js rtGrade, Nov 5) */
+.rt-gtiles .rt-tile .sc { font-size: 1.75rem; }
+.rt-gsay { font-size: 15px; max-width: 68ch; }
+.rt-field, .rt-cal { display: grid; gap: .3rem; max-width: 46rem; }
+.rt-fr, .rt-calr { display: grid; grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr) 4.2rem; gap: .7rem; align-items: center; font-size: 13px; }
+.rt-fr .lab, .rt-calr .lab { display: grid; line-height: 1.2; min-width: 0; } .rt-fr .lab b, .rt-calr .lab b { font-weight: 600; }
+.rt-fr .lab small, .rt-calr .lab small { color: var(--color-fg-muted); font-size: 11.5px; }
+.rt-fr .tr, .rt-calr .tr { position: relative; height: 14px; border-radius: 3px; background: var(--nt-wash); }
+.rt-fr .tr i { position: absolute; top: 50%; }
+.rt-fr .tr .flip { top: -3px; bottom: -3px; width: 0; border-left: 1px dashed var(--nt-rule); }
+.rt-fr .tr .span { height: 2px; margin-top: -1px; background: var(--color-fg-muted); opacity: .5; }
+.rt-fr .tr .then, .rt-fr .tr .now { width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; }
+.rt-fr .tr .then { box-shadow: inset 0 0 0 2px var(--color-fg-muted); background: var(--color-bg); }
+.rt-fr .tr .now { background: var(--color-fg); }
+.rt-fr.ours { padding-block: .2rem; border-radius: 6px; background: color-mix(in srgb, var(--nt-ours) 10%, transparent); }
+.rt-fr.ours .lab b { color: var(--nt-ours); } .rt-fr.ours .tr .now { background: var(--nt-ours); } .rt-fr.ours .tr .then { box-shadow: inset 0 0 0 2px var(--nt-ours); }
+.rt-fr .v { display: grid; text-align: right; font-variant-numeric: tabular-nums; line-height: 1.2; } .rt-fr .v small { color: var(--color-fg-muted); font-size: 11.5px; }
+.rt-fr.ax .tr { background: none; height: 1.1rem; } .rt-fr.ax .tr span { position: absolute; top: 0; font-size: 11px; color: var(--color-fg-muted); white-space: nowrap; }
+.rt-fr.ax .tr span.end { transform: translateX(-100%); } .rt-fr.ax .v b { font-size: 11px; font-weight: 600; } .rt-fr.ax .v small { font-size: 11px; }
+.rt-cap .k.now::before { width: 9px; height: 9px; border-radius: 50%; background: var(--nt-ours); }
+.rt-cap .k.then::before { width: 9px; height: 9px; border-radius: 50%; background: transparent; box-shadow: inset 0 0 0 2px var(--nt-ours); }
+.rt-cap .k.now, .rt-cap .k.then { color: var(--color-fg); font-weight: 500; }
+.rt-calr .tr .won { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--nt-ours); opacity: .75; }
+.rt-calr .tr .said { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--color-fg); }
+.rt-calr .v { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rt-cap .k.won::before { background: var(--nt-ours); } .rt-cap .k.said::before { width: 2px; height: 11px; background: var(--color-fg); }
+.rt-cap .k.won, .rt-cap .k.said { color: var(--color-fg); font-weight: 500; }
+.rt-pend { margin: 0; padding: 0; list-style: none; display: grid; gap: .45rem; max-width: 72ch; font-size: 13.5px; line-height: 1.45; }
+.rt-pend li { padding-left: .75rem; border-left: 2px solid var(--nt-rule); } .rt-pend .rt-tag { display: inline-block; vertical-align: 1px; }
+.rt-tag.miss { background: color-mix(in srgb, var(--nt-jake) 22%, transparent); color: var(--nt-jake); }
+.rt-tag.hit { background: color-mix(in srgb, var(--nt-ours) 20%, transparent); color: var(--nt-ours); }
+.rt-gradet { max-width: 54rem; } .rt-gradet td:nth-child(n+3) { white-space: nowrap; }
+.rt-gradet td:nth-child(2), .rt-gradet th:nth-child(2) { text-align: left; }
+.rt-gc { white-space: nowrap; } .rt-gc.miss { color: var(--nt-jake); font-weight: 700; } .rt-gc.miss .rt-mini i { background: var(--nt-jake); }
+.rt-gc.even .rt-mini i { background: var(--color-fg-muted); }
 @media (min-width: 64rem) {
   .rt-mgrid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
   .rt-mchart { position: sticky; top: 6.4rem; }
@@ -1826,6 +1861,8 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
   .rt-t .wide { display: none; }
   .rt-mini { width: 2.2rem; margin-right: .35rem; } .rt-miss { width: 2.6rem; margin-right: .35rem; }
   .rt-sec { scroll-margin-top: 5.6rem; }
+  .rt-fr, .rt-calr { grid-template-columns: minmax(0, 6.8rem) minmax(0, 1fr) 3.4rem; gap: .5rem; font-size: 12.5px; }
+  .rt-gtiles .rt-tile .sc { font-size: 1.5rem; }
 }
 @media (max-width: 23rem) { .rt-t .wide2 { display: none; } }
 .nt-dive { display: grid; gap: .55rem; min-width: 0; }
@@ -9046,8 +9083,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   // Reads retro.json (scripts/build_retro.py: the night's moments, when we knew, the shifts, the upsets) and night_dive.json (every
   // race still counting, rebuilt every 10 minutes). Answer first, then what the night showed, then what is still counting, then the
   // night in order. Every derived number is a script's and labeled inferred. The live board is one tap away, and the frozen copies
-  // of it are listed with their times. UI sweep Nov 4, done 3:31pm (Jake: "Do a better UI sweep of the retro tab").
-  var retroData = null, retroDive = null, retroSig = '', retroAsked = false, retroOpen = new Set(), retroShiftOff = 'senate';
+  // of it are listed with their times. UI sweep Nov 4, done 3:31pm (Jake: "Do a better UI sweep of the retro tab"). The grade (grade.json)
+  // joined on Nov 5 as "How our forecast did".
+  var retroData = null, retroDive = null, retroGrade = null, retroSig = '', retroAsked = false, retroOpen = new Set(), retroShiftOff = 'senate';
   const RT_ARCHIVES = [['night-2026-11-04T0905', '9:05am, Nov 4']];  // data/archive/<folder>, served at archive/<folder>/ on the public site
   const RT_PUBLIC = 'https://jakeforyou.github.io/poliberry-site/';
   const rtArchiveHref = (f) => `${ntRO() ? '' : RT_PUBLIC}archive/${f}/`;
@@ -9066,8 +9104,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const rtOffice = (o) => ({ senate: 'Senate', governor: 'governor', house: 'House' }[o] || o);
   const rtP = (v) => (v == null ? '—' : v >= 0.995 ? 'over 99%' : v < 0.005 ? 'under 1%' : `${Math.round(100 * v)}%`);  // a 0 to 1 chance, as a percent
   const rtName = (r) => (r.office === 'house' ? ntLastKey(r.key) : `${rtSt(r.state)} ${rtOffice(r.office)}`);
-  const RT_SECS = [['rt-counting', 'Still counting'], ['rt-moments', 'Moments'], ['rt-knew', 'When we knew'], ['rt-shifts', 'Shifts'],
-    ['rt-where', 'Where it moved'], ['rt-upsets', 'Upsets'], ['rt-coming', 'How we did']];
+  const RT_SECS = [['rt-counting', 'Still counting'], ['rt-grade', 'How we did'], ['rt-moments', 'Moments'], ['rt-knew', 'When we knew'], ['rt-shifts', 'Shifts'],
+    ['rt-where', 'Where it moved'], ['rt-upsets', 'Upsets'], ['rt-coming', 'What we got wrong']];
   Object.assign(NIGHT_HELP, {
     rt_counting: { title: 'Still counting', body: [
       'Every race not yet called, read every 10 minutes from the same counts as the live board (CNN, AP\'s numbers).',
@@ -9082,6 +9120,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       '"Sure" means our live chance reached 95 percent for the eventual winner and never fell back under it after. The gap to the call is how far ahead of the networks the board was.',
       '"Pointed the wrong way" means the live chance was 80 percent or more for the side that lost, at some point in the night. Those are the ones to learn from.',
     ] },
+    rt_grade: { title: 'How our forecast did', body: [
+      'Every score here comes from our scoring scripts, never by hand. A race counts once CNN (AP\'s call) or its Wikipedia article names a winner, and the two are checked against each other. Races still counting, seat totals and vote margins wait for the final count.',
+      'A Brier score is the gap between the chance a forecast gave and what happened (1 if it happened, 0 if not), squared and averaged over the races. 0 is perfect. Saying 50% every time scores 0.25. Lower is better. Being confident and right scores well, and being confident and wrong scores badly.',
+      'Our locked forecast was frozen on Oct 16 and never changed. Our final call was made on Nov 1. Each is compared with the other forecasters and markets as they stood on the same day, on the same races. Ratings like Lean or Likely are not chances, so they are scored as the chances they convert to: Toss-up 50%, Tilt 60%, Lean 70%, Likely 85%, Safe 97%. Silver Bulletin is scored on its ratings as listed on Wikipedia. Decision Desk HQ is its model\'s chance for the Senate and its rating for governor.',
+      '"Every race we forecast" takes in each called race our forecast gave a chance before any votes: the key races at our final call, the rest from the calls we wrote for them or from our model. Races between two candidates of one party are left out.',
+    ] },
     rt_where: { title: 'Where the vote moved', body: [
       'Each county\'s 2026 margin against its 2024 presidential margin, for counties at least 90 percent counted, grouped three ways: by the kind of place (from our key county list, made before the night), by how it voted in 2024, and by its size.',
       'These are places, not voters. A county that moved toward Democrats may have new voters, different turnout or real switching. An exit poll is a different measure, and none is used here yet.',
@@ -9090,11 +9134,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
 
   async function retroLoad() {
     const get = async (n) => { try { const r = await fetch(ntBase() + n, { cache: 'no-cache' }); return r.ok ? await r.text() : null; } catch (e) { return null; } };
-    const [a, b] = await Promise.all([get('retro.json'), get('night_dive.json')]);
-    const sig = (a || '') + '|' + (b || ''); if (sig === retroSig) return;
+    const [a, b, c] = await Promise.all([get('retro.json'), get('night_dive.json'), get('grade.json')]);
+    const sig = (a || '') + '|' + (b || '') + '|' + (c || ''); if (sig === retroSig) return;
     retroSig = sig;
     try { if (a) retroData = JSON.parse(a); } catch (e) { /* a half-written file: keep the last one */ }
     try { if (b) retroDive = JSON.parse(b); } catch (e) { /* likewise */ }
+    try { if (c) retroGrade = JSON.parse(c); } catch (e) { /* likewise */ }
     if (state.tab === 'retro') drawRetro();
   }
   function retroStart() {
@@ -9180,6 +9225,9 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (sen.length) { const blu = sen.filter((r) => r.vs_forecast > 0).length; out.push(['rt-shifts', [el('b', {}, `${blu} of ${sen.length}`), document.createTextNode(` Senate races ran ${blu * 2 >= sen.length ? 'bluer' : 'redder'} than our forecast.`)]]); }
     const k = (((R.shifts || {}).by_kind) || []).map((g) => ({ ...g, v: g.weighted_shift ?? g.median_shift })).filter((g) => g.v != null).sort((a, b) => Math.abs(b.v) - Math.abs(a.v))[0];
     if (k) out.push(['rt-where', [document.createTextNode(`${k.name} key counties (${k.n}) moved furthest from 2024: `), el('b', {}, ntShTxt(k.v).replace(' D', ' Democrats').replace(' R', ' Republicans')), document.createTextNode('.')]]);
+    const GC = retroGrade && retroGrade.scorecard && retroGrade.scorecard.compare && retroGrade.scorecard.compare.closing;
+    const gc = GC && GC.rows.find((r) => r.source === 'closing');
+    if (gc) out.push(['rt-grade', [document.createTextNode('Our final call picked '), el('b', {}, `${gc.favorites_won} of ${gc.favorites}`), document.createTextNode(` key winners, and placed ${rtOrd(gc.rank)} of ${GC.of} against forecasters and markets.`)]]);
     const U = R.upsets || [];
     if (U.length) {
       const by = {}; for (const u of U) by[u.winner] = (by[u.winner] || 0) + 1;
@@ -9207,7 +9255,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const b = el('button', { type: 'button', class: 'nt-dive-r', 'data-fk': `rt:race:${r.key}`, 'data-end': r.finish == null ? '' : r.finish > 0 ? (r.side === 'I' ? 'I' : 'D') : 'R' });
     b.addEventListener('click', () => rtOpenRace(r.key));
     const top = el('div', { class: 'top' });
-    top.append(el('b', {}, `${rtSt(r.state)} ${rtOffice(r.office)}`), el('span', { class: 'now' }, m == null ? 'No votes yet' : `${ntSideM(m, r.side)}, ${ntPct(r.counted)} in`));
+    // Alaska ranks its choices, and the board's margin adds up each party's candidates (Nov 5: Peltola led Sullivan on first
+    // choices while the two Republicans together led), so the line says whose votes it adds
+    const pooled = r.state === 'AK';
+    top.append(el('b', {}, `${rtSt(r.state)} ${rtOffice(r.office)}`), el('span', { class: 'now' }, m == null ? 'No votes yet' : `${pooled ? `${m > 0 ? 'Democrats' : 'Republicans'} combined ` : ''}${ntSideM(m, r.side)}, ${ntPct(r.counted)} in`));
     b.append(top, el('span', { class: 'who' }, `${ln(r.d_name)} (${r.side}) v ${ln(r.r_name)} (R)`));
     if (r.finish != null) {
       const end = el('div', { class: 'end' });
@@ -9216,7 +9267,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       b.append(end);
       const w = r.watch;
       b.append(el('div', { class: 'sub' }, `About ${ntRound(r.left)} votes left.${w ? ` Watch ${w[0]}: about ${ntRound(w[2])} left, ${w[4] === 'count' ? 'voting' : 'leaning'} ${ntSideM(w[3], r.side)}.` : ''}`));
-    } else b.append(el('div', { class: 'sub' }, m == null ? 'No votes yet, so no estimate.' : r.state === 'AK' ? 'Alaska counts by House district, not county, so there is no county estimate.' : 'No county is half counted yet, so no estimate.'));
+    } else b.append(el('div', { class: 'sub' }, m == null ? 'No votes yet, so no estimate.' : r.state === 'AK' ? 'Alaska ranks its choices, so this adds up each party\'s candidates: it is not one candidate\'s lead. Alaska counts by House district, not county, so there is no county estimate.' : 'No county is half counted yet, so no estimate.'));
     // what the state counts last, without its parentheses: the full rule is on the race's card
     // (the first clause, and a ranked-choice or runoff step if the rule names one, since that sets when the race can end)
     const cl = r.finish == null && r.posts_last ? String(r.posts_last).replace(/\s*\([^)]*\)/g, '').split(/(?<=\.)\s/)[0].replace(/\.+$/, '').split(/;\s*/) : [];
@@ -9452,7 +9503,131 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       el('small', { class: 'nt-mute' }, 'Our chance: what our forecast gave the winner before any votes. First led: the first count that had them ahead. Called races only: the live board\'s upset count also takes in underdogs now favored or in play in races still counting.')], sub);
   }
 
-  // ---------- how we did
+  // ---------- how we did (grade.json, scripts/build_grade.py: every score from scripts/brier.py, on data/resolutions.json.
+  // Jake, Nov 5, 9:16am: "keep in mind that the results will be seen by many". Answer first: did the favorites win, where we
+  // stand against the field, every race. Then the field chart, race by race, calibration, and what is still to grade.)
+  const rtOrd = (n) => (n == null ? '' : n === 1 ? '1st' : n === 2 ? '2nd' : n === 3 ? '3rd' : `${n}th`);
+  const rtB = (v) => (v == null ? '—' : v.toFixed(3));
+  const RT_GSHORT = { lock: 'Our forecast', closing: 'Our forecast', ddhq: 'Decision Desk HQ', polymarket: 'Polymarket', kalshi: 'Kalshi',
+    sabato: 'Sabato', inside_elections: 'Inside Elections', cook: 'Cook', silver: 'Silver Bulletin' };
+  const RT_GKIND = { price: 'market', rating: 'rating', mixed: 'model and rating', chance: 'model' };
+  function rtField(cl, lk) {  // one row per forecaster: Oct 16 (hollow) and Nov 1 (filled) on one Brier scale, coin flip at the right
+    const byL = Object.fromEntries(lk.rows.map((r) => [r.source === 'lock' ? 'ours' : r.source, r]));
+    const rows = cl.rows.map((r) => ({ key: r.source === 'closing' ? 'ours' : r.source, now: r, then: byL[r.source === 'closing' ? 'ours' : r.source] }));
+    const mx = Math.max(0.25, ...rows.flatMap((r) => [r.now.mean_brier, r.then && r.then.mean_brier]).filter((v) => v != null)) * 1.04;
+    const pos = (v) => `${(100 * v) / mx}%`;
+    const box = el('div', { class: 'rt-field', role: 'list' });
+    for (const r of rows) {
+      const ours = r.key === 'ours', a = r.then && r.then.mean_brier, b = r.now.mean_brier;
+      const row = el('div', { class: `rt-fr${ours ? ' ours' : ''}`, role: 'listitem' });
+      const tr = el('div', { class: 'tr', 'aria-hidden': 'true' });
+      tr.append(el('i', { class: 'flip', style: `left:${pos(0.25)}` }));
+      if (a != null && b != null) tr.append(el('i', { class: 'span', style: `left:${pos(Math.min(a, b))};width:${(100 * Math.abs(a - b)) / mx}%` }));
+      if (a != null) tr.append(el('i', { class: 'then', style: `left:${pos(a)}` }));
+      if (b != null) tr.append(el('i', { class: 'now', style: `left:${pos(b)}` }));
+      row.append(ntKids('span', { class: 'lab' }, [el('b', {}, ours ? 'Our forecast' : RT_GSHORT[r.key] || r.now.label), el('small', {}, ours ? 'model and judgment' : RT_GKIND[r.now.kind] || '')]),
+        tr, ntKids('span', { class: 'v', 'aria-label': `Nov 1 ${rtB(b)}, Oct 16 ${rtB(a)}` }, [el('b', {}, rtB(b)), el('small', {}, rtB(a))]));
+      box.append(row);
+    }
+    const axis = el('div', { class: 'rt-fr ax', 'aria-hidden': 'true' });
+    const at = el('div', { class: 'tr' }); at.append(el('span', { style: 'left:0' }, '0 perfect'), el('span', { class: 'end', style: `left:${pos(0.25)}` }, '0.25 coin flip'));
+    axis.append(el('span', { class: 'lab' }), at, ntKids('span', { class: 'v' }, [el('b', {}, 'Nov 1'), el('small', {}, 'Oct 16')]));
+    box.append(axis);
+    return box;
+  }
+  function rtCalib(W) {  // when our favorite had this chance, how often it won: the bar, and the chance we gave on average: the tick
+    const box = el('div', { class: 'rt-cal' });
+    for (const c of (W.calibration || []).filter((x) => x.n)) {
+      const row = el('div', { class: 'rt-calr' }), tr = el('div', { class: 'tr', 'aria-hidden': 'true' });
+      const bar = el('i', { class: 'won' }); bar.style.width = `${100 * c.share_won}%`;
+      const tick = el('i', { class: 'said' }); tick.style.left = `${100 * c.mean_chance}%`;
+      tr.append(bar, tick);
+      row.append(ntKids('span', { class: 'lab' }, [el('b', {}, c.hi >= 100 ? `${c.lo}% or more` : `${c.lo} to ${c.hi}%`), el('small', {}, `${c.n} race${c.n === 1 ? '' : 's'}`)]),
+        tr, el('span', { class: 'v', 'aria-label': `the favorite won ${c.favorites_won} of ${c.n}, we gave ${rtP(c.mean_chance)} on average` }, `${c.favorites_won} of ${c.n}`));
+      box.append(row);
+    }
+    return box;
+  }
+  function rtPending(S) {  // what the calls so far already settle, and what waits
+    const ul = el('ul', { class: 'rt-pend' });
+    const tag = (t, k) => el('span', { class: `rt-tag${k ? ` ${k}` : ''}` }, t);
+    const add = (name, text, t) => ul.append(ntKids('li', {}, [el('b', {}, name), document.createTextNode(` ${text}`), ...(t ? [document.createTextNode(' '), t] : [])]));
+    const P = S.pending || [], by = Object.fromEntries(P.map((p) => [p.id, p]));
+    for (const p of P) {
+      if (p.bounds_now) {
+        const [lo, hi] = p.bounds_now, who = p.id === 'southern_redrawn_gop_seats_flipped' ? 'Democrats have won' : p.id === 'senate_dem_seats' ? 'Democrats and their allies have' : 'Democrats have';
+        add(`${p.name}.`, `Our 80% range: ${p.lo80} to ${p.hi80}. ${who} ${lo}${hi > lo ? `, and at most ${hi} once every race is in` : ''}.`,
+          p.range_already === 'outside' ? tag('Already outside our range', 'miss') : p.range_already === 'inside' ? tag('Already inside our range', 'hit') : tag('Still open'));
+      } else if (p.count_so_far) {
+        const c = p.count_so_far;
+        add(`${p.name}.`, `Our 80% range: ${ntM(p.lo80)} to ${ntM(p.hi80)}. The count so far: ${ntM(c.margin_d)}, ${c.counted}% counted, not final.`,
+          c.vs_range === 'inside' ? tag('Inside so far', 'hit') : c.vs_range ? tag(`Outside so far, ${c.vs_range}`, 'miss') : null);
+      }
+    }
+    for (const id of ['senate_ak', 'gov_ks']) {
+      const p = by[id]; if (!p) continue;
+      add(`${p.name}.`, `Still counting. We gave the Democrat ${rtP(p.lock_p)} on Oct 16 and ${rtP(p.closing_p)} on Nov 1.`, tag('Waiting on the count'));
+    }
+    if (by.house_popular_vote_margin_d) { const p = by.house_popular_vote_margin_d; add(`${p.name}.`, `Our 80% range: ${ntM(p.lo80)} to ${ntM(p.hi80)}. It needs every state's full count, certified in December.`, tag('December')); }
+    const gates = ['any_state_misses_federal_certification_deadline', 'house_seating_dispute_jan3', 'litigation_changes_called_outcome'].filter((g) => by[g]);
+    if (gates.length) add('Three questions about the count itself.', 'Does a state miss its deadline to certify, is a House member\'s seat disputed on Jan 3, and does a court reverse a called race. Each settles later.', tag('Later'));
+    return ul;
+  }
+  function rtGrade() {
+    const G = retroGrade; if (!G || !G.scorecard || !G.scorecard.compare) return null;
+    const S = G.scorecard, W = G.wide || {}, cl = S.compare.closing, lk = S.compare.lock;
+    const oc = cl.rows.find((r) => r.source === 'closing') || {}, ol = lk.rows.find((r) => r.source === 'lock') || {};
+    const best = cl.rows.filter((r) => r.rank === 1).map((r) => RT_GSHORT[r.source] || r.label);
+    const tiles = el('div', { class: 'rt-tiles rt-gtiles' });
+    const tile = (nm, big, rest, sub) => ntKids('div', { class: 'rt-tile' }, [el('span', { class: 'nm' }, nm), el('span', { class: 'sc' }, big), el('span', { class: 'rest' }, rest), ...(sub ? [el('span', { class: 'when' }, sub)] : [])]);
+    tiles.append(
+      tile('Picked the winner', `${oc.favorites_won} of ${oc.favorites}`, `Key Senate and governor races where our final call's favorite won.${oc.toss_ups ? ` We called ${oc.toss_ups === 1 ? 'one more' : `${oc.toss_ups} more`} a toss-up.` : ''}`, `Locked forecast, Oct 16: ${ol.favorites_won} of ${ol.favorites}.`),
+      tile('Against the field', `${rtOrd(oc.rank)} of ${cl.of}`, `Our final call's Brier score on the same ${cl.n} races, against forecasters and markets that day. Best: ${best.join(' and ')}.`, `Locked forecast, Oct 16: ${rtOrd(ol.rank)} of ${lk.of}.`));
+    if (W.all && W.all.favorites) tiles.append(tile('Every race we forecast', `${W.all.favorites_won} of ${W.all.favorites}`, `Called Senate, governor and House races where our favorite won.`, W.competitive ? `In the ${W.competitive.favorites} closer ones, favorite under 90%: ${W.competitive.favorites_won}.` : ''));
+    const ub = (W.all || {}).upsets_by || {}, oneSide = Object.keys(ub).length === 1 ? Object.keys(ub)[0] : null;
+    const above = cl.rows.filter((r) => r.rank < oc.rank).map((r) => RT_GSHORT[r.source] || r.label);
+    const past = (S.pending || []).map((p) => p.side || (p.count_so_far && p.count_so_far.vs_range !== 'inside' ? p.count_so_far.vs_range : null)).filter(Boolean);
+    const say = [oc.favorites_won * 4 >= oc.favorites * 3 ? 'We picked most winners.' : 'We missed more winners than we should have.',
+      above.length ? `${above.length} of the ${cl.of - 1} others put better numbers on the same races, led by ${best.join(' and ')}.` : 'Our final call scored best of the field.',
+      oneSide ? `All ${ub[oneSide]} of our misses went to ${rtWho(oneSide)}.` : '',
+      past.length && new Set(past).size === 1 ? `Every seat count and margin already past our range, ${past.length} of them, is past it ${past[0] === 'bluer' ? 'toward Democrats' : 'toward Republicans'}. None is final yet.` : ''];
+    const kids = [tiles, el('p', { class: 'rt-sub rt-gsay' }, say.filter(Boolean).join(' '))];
+    // the field
+    kids.push(el('h3', { class: 'rt-h3' }, `Against the field, on the ${cl.n} called key races`), rtField(cl, lk),
+      ntKids('p', { class: 'rt-cap' }, [el('span', { class: 'k now' }, 'Nov 1, our final call'), el('span', { class: 'k then' }, 'Oct 16, our locked forecast'),
+        document.createTextNode('Brier score, lower is better: the gap between the chance given and what happened, squared and averaged. Each forecaster is scored on the same races, as it stood on the same day as ours. Ratings are scored as the chances they convert to: Toss-up 50%, Tilt 60, Lean 70, Likely 85, Safe 97.')]));
+    // control and race by race
+    const ctl = ['senate_dem_control', 'house_dem_majority'].map((id) => (S.other || []).find((r) => r.id === id)).filter(Boolean);
+    if (ctl.length) {
+      const ul = el('ul', { class: 'rt-pend rt-ctlg' });
+      for (const r of ctl) {
+        const pm = ((r.bench || {}).closing || {}).polymarket;
+        ul.append(ntKids('li', {}, [el('b', {}, `${r.name}.`), document.createTextNode(` ${r.outcome ? 'Democrats won it' : 'Republicans won it'}. We gave Democrats ${rtP(r.lock.p_d)} on Oct 16 and ${rtP(r.closing.p_d)} on Nov 1.${pm ? ` Polymarket on Nov 1: ${rtP(pm.p_d)}.` : ''}`)]));
+      }
+      kids.push(el('h3', { class: 'rt-h3' }, 'Control'), ul);
+    }
+    const races = [...(S.races || [])].sort((a, b) => (a.closing.p_happened ?? 1) - (b.closing.p_happened ?? 1));
+    const all = retroOpen.has('grade-all'), shown = all ? races : races.slice(0, 8);
+    const cell = (p) => { const s = el('span', { class: `rt-gc${p != null && p < 0.5 ? ' miss' : p === 0.5 ? ' even' : ''}` }); s.append(ntKids('span', { class: 'rt-mini' }, [el('i', { style: `width:${100 * (p || 0)}%` })]), document.createTextNode(rtP(p))); return s; };
+    const rating = (t) => (t ? String(t).replace(/\s*\(.*?\)/g, '').replace(/^Tossup$/i, 'Toss-up').replace(/^Solid /, 'Safe ') : '—');
+    const rows = shown.map((r) => [el('b', {}, r.name), el('span', { class: r.winner_party === 'D' ? 'nt-d' : r.winner_party === 'R' ? 'nt-r' : 'nt-i' }, `${r.winner} (${r.winner_party})`),
+      cell(r.closing.p_happened), rtP(r.lock.p_happened), rtP((r.bench.closing.polymarket || {}).p_happened), rating((r.bench.closing.cook || {}).rating)]);
+    kids.push(el('h3', { class: 'rt-h3' }, 'Race by race, our worst calls first'),
+      rtTable([['Race'], ['Winner'], ['Our chance for the winner'], ['Oct 16', 'wide'], ['Polymarket', 'wide'], ['Cook', 'wide']], rows, (i) => rtOpenRace(shown[i].id), 'rt-gradet'));
+    if (races.length > 8) kids.push(rtMore('grade-all', all, races.length, 'Show 8'));
+    kids.push(el('small', { class: 'nt-mute' }, 'Our chance for the winner: what our final call on Nov 1 gave the side that won. Under 50% is a miss. Oct 16: our locked forecast. Polymarket: its price on Nov 1. Cook: its rating on Nov 1.'));
+    // calibration
+    if (W.calibration && W.all) {
+      kids.push(el('h3', { class: 'rt-h3' }, `When we said a favorite had this chance, how often it won: ${W.all.n} called races`), rtCalib(W),
+        ntKids('p', { class: 'rt-cap' }, [el('span', { class: 'k won' }, 'How often the favorite won'), el('span', { class: 'k said' }, 'The chance we gave, on average'),
+          document.createTextNode(`Every called Senate, governor and House race our forecast gave a chance before any votes: the key races at our final call, the rest from our written calls and our model. A bar that reaches its tick is a forecast that meant what it said.${W.all.toss_ups ? ` ${W.all.toss_ups === 1 ? 'One race' : `${W.all.toss_ups} races`} we called a toss-up ${W.all.toss_ups === 1 ? 'is' : 'are'} left out.` : ''}${oneSide ? ` The misses all went one way, so they were not ${ub[oneSide]} separate surprises: one national shift moved many races together.` : ''}`)]));
+    }
+    kids.push(el('h3', { class: 'rt-h3' }, 'Still to grade'), rtPending(S));
+    kids.push(el('small', { class: 'nt-mute rt-foot' }, `Graded ${rtT(G.built_at)} by our scoring scripts, on ${S.resolved} of ${S.items} questions in our locked scorecard. A race counts once CNN (AP's call) or its Wikipedia article names a winner, and the two are checked against each other. Seat totals and vote margins are graded only on the final count.`));
+    return rtSec('rt-grade', 'How our forecast did', 'rt_grade', kids, `Our forecast was locked on Oct 16 and our final call made on Nov 1, before any votes. Here they are against the results so far.`);
+  }
+
+  // ---------- what we got wrong
   function rtComing() {
     const F = (retroData || {}).forecast || {};
     const card = (t, body) => ntKids('div', { class: 'rt-card' }, [el('h3', { class: 'rt-h3' }, t), ...body]);
@@ -9461,12 +9636,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       ['10:34pm', 'The pace line read three towns in Maine and flipped every few minutes. It now reads at least 3% of the votes left.'],
       ['11:02pm', 'Wayne County was listed twice, once whole and once by city. Counted once now.'],
       ['11:46pm', 'Orleans Parish\'s votes left read as precincts and showed Louisiana flipping for one push. Capped against 2024.'],
-      ['3:31pm Wed', 'This page said every upset winner had under 1% in our forecast, from 9:30am. The real range was 4% to 48%. Fixed.']];
+      ['3:31pm Wed', 'This page said every upset winner had under 1% in our forecast, from 9:30am. The real range was 4% to 48%. Fixed.'],
+      ['Nov 5', 'Still counting showed Alaska as Sullivan R+2.0. That adds both Republicans\' votes. On first choices Peltola led Sullivan. It now says whose votes it adds.']];
     const ul = el('ul', { class: 'rt-errs' }); for (const [t, x] of errs) ul.append(ntKids('li', {}, [el('b', {}, t), document.createTextNode(` ${x}`)]));
-    return rtSec('rt-coming', 'How we did, and what we got wrong', null, [ntKids('div', { class: 'rt-cards' }, [
-      card('Our forecast against the results', [el('span', { class: 'rt-tag' }, 'Coming'), el('p', { class: 'rt-sub' }, F.note || 'Graded once results are final, by our scoring scripts, on settled races only.')]),
+    return rtSec('rt-coming', 'What we got wrong, and what it means', null, [ntKids('div', { class: 'rt-cards' }, [
+      ...(retroGrade ? [] : [card('Our forecast against the results', [el('span', { class: 'rt-tag' }, 'Coming'), el('p', { class: 'rt-sub' }, F.note || 'Graded once results are final, by our scoring scripts, on settled races only.')])]),
       card('What we got wrong on the night', [ul, el('small', { class: 'nt-mute' }, 'From our error log, which keeps every slip we found. Times are Eastern.')]),
-      card('What it means', [el('span', { class: 'rt-tag' }, 'Coming'), el('p', { class: 'rt-sub' }, 'Once the grade is in. It will be labeled as our reading.')]),
+      card('What it means', [el('span', { class: 'rt-tag' }, 'Coming'), el('p', { class: 'rt-sub' }, 'Once more races are graded. It will be labeled as our reading.')]),
     ])]);
   }
 
@@ -9492,7 +9668,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!retroDive && !retroData) { box.replaceChildren(el('p', { class: 'nt-mute rt-loading' }, 'Loading the night in review…')); return; }
     const y = window.scrollY, f = document.activeElement && document.activeElement.dataset ? document.activeElement.dataset.fk : null;
     const parts = [];
-    for (const fn of [rtAnswer, rtCounting, rtMoments, rtKnew, rtShifts, rtWhere, rtUpsets, rtComing]) { try { const n = fn(); if (n) parts.push(n); } catch (e) { /* one part failing never stops the rest */ } }
+    for (const fn of [rtAnswer, rtCounting, rtGrade, rtMoments, rtKnew, rtShifts, rtWhere, rtUpsets, rtComing]) { try { const n = fn(); if (n) parts.push(n); } catch (e) { /* one part failing never stops the rest */ } }
     const present = new Set(parts.map((p) => p.id).filter(Boolean));
     if (parts.length > 1 && present.size > 1) parts.splice(1, 0, rtJump(present));
     box.replaceChildren(...parts);
