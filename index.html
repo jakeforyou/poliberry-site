@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '5076bb34c185';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '6263d7990fe7';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -9275,7 +9275,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     // (the first clause, and a ranked-choice or runoff step if the rule names one, since that sets when the race can end)
     const cl = r.finish == null && r.posts_last ? String(r.posts_last).replace(/\s*\([^)]*\)/g, '').split(/(?<=\.)\s/)[0].replace(/\.+$/, '').split(/;\s*/) : [];
     const last = cl.length ? [cl[0], ...cl.slice(1).filter((c) => /ranked|runoff/i.test(c))].join('; ').replace(/(\w{3} \d{1,2}) 20\d\d/g, '$1') : '';
-    const bits = [r.p_d != null ? `Live chance: ${r.p_d >= 0.5 ? `${ln(r.d_name)} ${rtP(r.p_d)}` : `${ln(r.r_name)} ${rtP(1 - r.p_d)}`}` : '', last ? `Counts last: ${last}` : ''].filter(Boolean);
+    // when the board last saw new votes in this race (its newest count batch): a count that has sat still since election night says so
+    const bits = [r.p_d != null && Math.round(100 * r.p_d) === 50 ? 'Live chance: even' : r.p_d != null ? `Live chance: ${r.p_d >= 0.5 ? `${ln(r.d_name)} ${rtP(r.p_d)}` : `${ln(r.r_name)} ${rtP(1 - r.p_d)}`}` : '', r.count_at ? `New votes last seen ${rtT(r.count_at)}` : '', last ? `Counts last: ${last}` : ''].filter(Boolean);
     if (bits.length) b.append(el('div', { class: 'meta' }, bits.join('. ') + '.'));
     return b;
   }
