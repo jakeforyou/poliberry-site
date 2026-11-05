@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'ee8dd6f8d905';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'cd2b00ecdb71';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -1840,6 +1840,8 @@ button.nt-ar[data-upset]:not([data-upset="early"]) { box-shadow: inset 3px 0 0 v
 .rt-pend li { padding-left: .75rem; border-left: 2px solid var(--nt-rule); } .rt-pend .rt-tag { display: inline-block; vertical-align: 1px; }
 .rt-tag.miss { background: color-mix(in srgb, var(--nt-jake) 22%, transparent); color: var(--nt-jake); }
 .rt-tag.hit { background: color-mix(in srgb, var(--nt-ours) 20%, transparent); color: var(--nt-ours); }
+.rt-means { gap: .45rem; } .rt-reading { font-size: 13.5px; padding-left: .7rem; border-left: 2px solid var(--nt-ours); }
+.rt-offt { max-width: 34rem; } .rt-offt td:nth-child(n+2), .rt-offt th:nth-child(n+2) { text-align: right; white-space: nowrap; }
 .rt-gradet { max-width: 54rem; } .rt-gradet td:nth-child(n+3) { white-space: nowrap; }
 .rt-gradet td:nth-child(2), .rt-gradet th:nth-child(2) { text-align: left; }
 .rt-gc { white-space: nowrap; } .rt-gc.miss { color: var(--nt-jake); font-weight: 700; } .rt-gc.miss .rt-mini i { background: var(--nt-jake); }
@@ -9622,9 +9624,39 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         ntKids('p', { class: 'rt-cap' }, [el('span', { class: 'k won' }, 'How often the favorite won'), el('span', { class: 'k said' }, 'The chance we gave, on average'),
           document.createTextNode(`Every called Senate, governor and House race our forecast gave a chance before any votes: the key races at our final call, the rest from our written calls and our model. A bar that reaches its tick is a forecast that meant what it said.${W.all.toss_ups ? ` ${W.all.toss_ups === 1 ? 'One race' : `${W.all.toss_ups} races`} we called a toss-up ${W.all.toss_ups === 1 ? 'is' : 'are'} left out.` : ''}${oneSide ? ` The misses all went one way, so they were not ${ub[oneSide]} separate surprises: one national shift moved many races together.` : ''}`)]));
     }
+    const O = W.offices || {}, offs = [['senate', 'Senate'], ['governor', 'Governor'], ['house', 'House']].filter(([k]) => (O[k] || {}).n);
+    if (offs.length) {
+      kids.push(el('h3', { class: 'rt-h3' }, 'By office'), rtTable([['Office'], ['Called'], ['Favorite won'], ['Upsets'], ['Brier score', 'wide']], offs.map(([k, nm]) => {
+        const o = O[k]; return [el('b', {}, nm), String(o.n), `${o.favorites_won} of ${o.favorites}${o.toss_ups ? `, ${o.toss_ups} toss-up` : ''}`, String(o.upsets), rtB(o.mean_brier)];
+      }), null, 'rt-offt'), el('small', { class: 'nt-mute' }, 'Brier scores are not comparable across offices: most House seats were safe, and a safe seat called right scores near 0.'));
+    }
     kids.push(el('h3', { class: 'rt-h3' }, 'Still to grade'), rtPending(S));
     kids.push(el('small', { class: 'nt-mute rt-foot' }, `Graded ${rtT(G.built_at)} by our scoring scripts, on ${S.resolved} of ${S.items} questions in our locked scorecard. A race counts once CNN (AP's call) or its Wikipedia article names a winner, and the two are checked against each other. Seat totals and vote margins are graded only on the final count.`));
     return rtSec('rt-grade', 'How our forecast did', 'rt_grade', kids, `Our forecast was locked on Oct 16 and our final call made on Nov 1, before any votes. Here they are against the results so far.`);
+  }
+
+  function rtMeans() {  // what the grade says so far: three findings read straight off grade.json, then one sentence of our own reading, labeled
+    const G = retroGrade; if (!G || !G.scorecard || !G.scorecard.compare) return null;
+    const S = G.scorecard, W = G.wide || {}, cl = S.compare.closing, oc = cl.rows.find((r) => r.source === 'closing');
+    if (!oc) return null;
+    const ctl = Object.fromEntries((S.other || []).map((r) => [r.id, r])), sen = ctl.senate_dem_control, hou = ctl.house_dem_majority;
+    const ub = (W.all || {}).upsets_by || {}, sides = Object.keys(ub), seats = (S.pending || []).find((p) => p.id === 'senate_dem_seats');
+    const pts = [];
+    if (sen && hou && sen.outcome === hou.outcome) {
+      const fav = (r) => (r.outcome ? r.closing.p_d : 1 - r.closing.p_d) > 0.5;
+      pts.push(`${fav(sen) && fav(hou) ? 'We had the right side in both chambers' : 'We had the wrong side in a chamber'}: our final call gave ${rtWho(sen.outcome ? 'D' : 'R')} ${rtP(sen.outcome ? sen.closing.p_d : 1 - sen.closing.p_d)} for the Senate and ${rtP(hou.outcome ? hou.closing.p_d : 1 - hou.closing.p_d)} for the House.`
+        + (sides.length === 1 ? ` We missed the size. All ${ub[sides[0]]} upsets went to ${rtWho(sides[0])}${seats && seats.range_already === 'outside' ? `, and ${seats.side === 'bluer' ? 'Democrats and their allies' : 'Republicans'} already hold more Senate seats than our range allowed` : ''}.` : ''));
+    }
+    const above = cl.rows.filter((r) => r.rank < oc.rank);
+    if (above.length) pts.push(`On the ${cl.n} key races, ${above.length} of the ${cl.of - 1} others were sharper than our final call, among them ${above.slice(0, 3).map((r) => RT_GSHORT[r.source] || r.label).join(', ')}. Our locked forecast, a month earlier, placed ${rtOrd((S.compare.lock.rows.find((r) => r.source === 'lock') || {}).rank)}.`);
+    const cal = (W.calibration || []).filter((c) => c.n), less = cal.filter((c) => c.vs_said === 'less'), ok = cal.filter((c) => c.vs_said !== 'less');
+    if (cal.length) pts.push(`Across ${W.all.n} races, favorites won about as often as we said, or more often, in ${less.length ? 'most bands' : 'every band'}.${less.map((c) => ` Where we said ${c.lo} to ${c.hi}%, they won ${c.favorites_won} of ${c.n}, fewer than the ${rtP(c.mean_chance)} we gave.`).join('')}`);
+    if (!pts.length) return null;
+    const ul = el('ul', { class: 'rt-errs rt-means' }); for (const t of pts) ul.append(el('li', {}, t));
+    const kids = [el('span', { class: 'rt-tag' }, 'So far'), ul];
+    if (sides.length === 1) kids.push(ntKids('p', { class: 'rt-sub rt-reading' }, [el('b', {}, 'Our reading: '), document.createTextNode('one national shift explains most of the misses, since the races moved together. A forecast that treats races one at a time looks overconfident on a night like this. The lesson for us is how large a shared swing we allow for, more than any single race.')]));
+    kids.push(el('small', { class: 'nt-mute' }, `Partial: ${S.resolved} of ${S.items} questions graded. The findings come from the grade above. The reading is ours, an inference, not a score.`));
+    return kids;
   }
 
   // ---------- what we got wrong
@@ -9642,7 +9674,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     return rtSec('rt-coming', 'What we got wrong, and what it means', null, [ntKids('div', { class: 'rt-cards' }, [
       ...(retroGrade ? [] : [card('Our forecast against the results', [el('span', { class: 'rt-tag' }, 'Coming'), el('p', { class: 'rt-sub' }, F.note || 'Graded once results are final, by our scoring scripts, on settled races only.')])]),
       card('What we got wrong on the night', [ul, el('small', { class: 'nt-mute' }, 'From our error log, which keeps every slip we found. Times are Eastern.')]),
-      card('What it means', [el('span', { class: 'rt-tag' }, 'Coming'), el('p', { class: 'rt-sub' }, 'Once more races are graded. It will be labeled as our reading.')]),
+      card('What it means', rtMeans() || [el('span', { class: 'rt-tag' }, 'Coming'), el('p', { class: 'rt-sub' }, 'Once more races are graded. It will be labeled as our reading.')]),
     ])]);
   }
 
