@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '66a304c3b0c5';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '5076bb34c185';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -9580,7 +9580,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const G = retroGrade; if (!G || !G.scorecard || !G.scorecard.compare) return null;
     const S = G.scorecard, W = G.wide || {}, cl = S.compare.closing, lk = S.compare.lock;
     const oc = cl.rows.find((r) => r.source === 'closing') || {}, ol = lk.rows.find((r) => r.source === 'lock') || {};
-    const best = cl.rows.filter((r) => r.rank === 1).map((r) => RT_GSHORT[r.source] || r.label);
+    const rtGName = (r) => `${RT_GSHORT[r.source] || r.label}${r.kind === 'rating' ? '\'s ratings' : ''}`;  // a rating is scored as the chance it converts to, so say it was the ratings
+    const best = cl.rows.filter((r) => r.rank === 1).map(rtGName);
     const tiles = el('div', { class: 'rt-tiles rt-gtiles' });
     const tile = (nm, big, rest, sub) => ntKids('div', { class: 'rt-tile' }, [el('span', { class: 'nm' }, nm), el('span', { class: 'sc' }, big), el('span', { class: 'rest' }, rest), ...(sub ? [el('span', { class: 'when' }, sub)] : [])]);
     tiles.append(
@@ -9649,7 +9650,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         + (sides.length === 1 ? ` We missed the size. All ${ub[sides[0]]} upsets went to ${rtWho(sides[0])}${seats && seats.range_already === 'outside' ? `, and ${seats.side === 'bluer' ? 'Democrats and their allies' : 'Republicans'} already hold more Senate seats than our range allowed` : ''}.` : ''));
     }
     const above = cl.rows.filter((r) => r.rank < oc.rank);
-    if (above.length) pts.push(`On the ${cl.n} key races, ${above.length} of the ${cl.of - 1} others were sharper than our final call, among them ${above.slice(0, 3).map((r) => RT_GSHORT[r.source] || r.label).join(', ')}. Our locked forecast, a month earlier, placed ${rtOrd((S.compare.lock.rows.find((r) => r.source === 'lock') || {}).rank)}.`);
+    if (above.length) pts.push(`On the ${cl.n} key races, ${above.length} of the ${cl.of - 1} others were sharper than our final call, among them ${above.slice(0, 3).map((r) => `${RT_GSHORT[r.source] || r.label}${r.kind === 'rating' ? '\'s ratings' : ''}`).join(', ').replace(/, ([^,]*)$/, ' and $1')}. Our locked forecast, a month earlier, placed ${rtOrd((S.compare.lock.rows.find((r) => r.source === 'lock') || {}).rank)}.`);
     const cal = (W.calibration || []).filter((c) => c.n), less = cal.filter((c) => c.vs_said === 'less'), ok = cal.filter((c) => c.vs_said !== 'less');
     if (cal.length) pts.push(`Across ${W.all.n} races, favorites won about as often as we said, or more often, in ${less.length ? 'most bands' : 'every band'}.${less.map((c) => ` Where we said ${c.lo} to ${c.hi}%, they won ${c.favorites_won} of ${c.n}, fewer than the ${rtP(c.mean_chance)} we gave.`).join('')}`);
     if (!pts.length) return null;
