@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '37d333d1b2a1';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '66a304c3b0c5';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -202,7 +202,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 <body>
 <div class="lx-bar" role="region" aria-label="About this copy" hidden>
   <span>Shared copy</span>
-  <span>Forecast snapshot <b id="lx-built">2026-11-04 09:39</b></span>
+  <span>Forecast snapshot <b id="lx-built">2026-11-05 09:39</b></span>
   <span>Days saved <b id="lx-days">—</b></span>
   <span class="spacer"></span>
   <span>Election night numbers update every few minutes.</span>
@@ -9126,7 +9126,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     rt_grade: { title: 'How our forecast did', body: [
       'Every score here comes from our scoring scripts, never by hand. A race counts once CNN (AP\'s call) or its Wikipedia article names a winner, and the two are checked against each other. Races still counting, seat totals and vote margins wait for the final count.',
       'A Brier score is the gap between the chance a forecast gave and what happened (1 if it happened, 0 if not), squared and averaged over the races. 0 is perfect. Saying 50% every time scores 0.25. Lower is better. Being confident and right scores well, and being confident and wrong scores badly.',
-      'Our locked forecast was frozen on Oct 16 and never changed. Our final call was made on Nov 1. Each is compared with the other forecasters and markets as they stood on the same day, on the same races. Ratings like Lean or Likely are not chances, so they are scored as the chances they convert to: Toss-up 50%, Tilt 60%, Lean 70%, Likely 85%, Safe 97%. Silver Bulletin is scored on its ratings as listed on Wikipedia. Decision Desk HQ is its model\'s chance for the Senate and its rating for governor.',
+      'Our locked forecast was frozen on Oct 16 and never changed. Our final call was made on Nov 1. Each is compared with the other forecasters and markets as they stood on the same day, on the same races. Ratings like Lean or Likely are not chances, so they are scored as the chances they convert to: Toss-up 50%, Tilt 60%, Lean 70%, Likely 85%, Safe 97%. Silver Bulletin is scored on its ratings as listed on Wikipedia. Decision Desk HQ is its model\'s chance for the Senate and its rating for governor. A market\'s chance is the midpoint of its best buy and sell prices that day.',
       '"Every race we forecast" takes in each called race our forecast gave a chance before any votes: the key races at our final call, the rest from the calls we wrote for them or from our model. Races between two candidates of one party are left out.',
     ] },
     rt_where: { title: 'Where the vote moved', body: [
@@ -9631,7 +9631,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
         const o = O[k]; return [el('b', {}, nm), String(o.n), `${o.favorites_won} of ${o.favorites}${o.toss_ups ? `, ${o.toss_ups} toss-up` : ''}`, String(o.upsets), rtB(o.mean_brier)];
       }), null, 'rt-offt'), el('small', { class: 'nt-mute' }, 'Brier scores are not comparable across offices: most House seats were safe, and a safe seat called right scores near 0.'));
     }
-    kids.push(el('h3', { class: 'rt-h3' }, 'Still to grade'), rtPending(S));
+    kids.push(el('h3', { class: 'rt-h3' }, 'Still to grade'), el('p', { class: 'rt-sub' }, 'For a count or a margin we gave a range, not a single number. An 80% range is where we expected the result four times in five.'), rtPending(S));
     kids.push(el('small', { class: 'nt-mute rt-foot' }, `Graded ${rtT(G.built_at)} by our scoring scripts, on ${S.resolved} of ${S.items} questions in our locked scorecard. A race counts once CNN (AP's call) or its Wikipedia article names a winner, and the two are checked against each other. Seat totals and vote margins are graded only on the final count.`));
     return rtSec('rt-grade', 'How our forecast did', 'rt_grade', kids, `Our forecast was locked on Oct 16 and our final call made on Nov 1, before any votes. Here they are against the results so far.`);
   }
