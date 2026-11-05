@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '870c5e0c4dfe';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '4c9fcee03ccb';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -9645,7 +9645,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       }), null, 'rt-offt'), el('small', { class: 'nt-mute' }, 'Brier scores are not comparable across offices: most House seats were safe, and a safe seat called right scores near 0.'));
     }
     kids.push(el('h3', { class: 'rt-h3' }, 'Still to grade'), el('p', { class: 'rt-sub' }, 'For a count or a margin we gave a range, not a single number. An 80% range is where we expected the result four times in five.'), rtPending(S));
-    kids.push(el('small', { class: 'nt-mute rt-foot' }, `Graded ${rtT(G.built_at)} by our scoring scripts, on ${S.resolved} of ${S.items} questions in our locked scorecard. A race counts once CNN (AP's call) or its Wikipedia article names a winner, and the two are checked against each other. Seat totals and vote margins are graded only on the final count.`));
+    kids.push(el('small', { class: 'nt-mute rt-foot' }, `Grade file last changed ${rtT(G.built_at)}. Graded by our scoring scripts, on ${S.resolved} of ${S.items} questions in our locked scorecard. A race counts once CNN (AP's call) or its Wikipedia article names a winner, and the two are checked against each other. Seat totals and vote margins are graded only on the final count.`));
     return rtSec('rt-grade', 'How our forecast did', 'rt_grade', kids, `Our forecast was locked on Oct 16 and our final call made on Nov 1, before any votes. Here they are against the results so far.`);
   }
 
