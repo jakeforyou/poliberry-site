@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '6263d7990fe7';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'd4ad519c19d5';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -9626,6 +9626,10 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       kids.push(el('h3', { class: 'rt-h3' }, `When we said a favorite had this chance, how often it won: ${W.all.n} called races`), rtCalib(W),
         ntKids('p', { class: 'rt-cap' }, [el('span', { class: 'k won' }, 'How often the favorite won'), el('span', { class: 'k said' }, 'The chance we gave, on average'),
           document.createTextNode(`Every called Senate, governor and House race our forecast gave a chance before any votes: the key races at our final call, the rest from our written calls and our model. A bar that reaches its tick is a forecast that meant what it said.${W.all.toss_ups ? ` ${W.all.toss_ups === 1 ? 'One race' : `${W.all.toss_ups} races`} we called a toss-up ${W.all.toss_ups === 1 ? 'is' : 'are'} left out.` : ''}${oneSide ? ` The misses all went one way, so they were not ${ub[oneSide]} separate surprises: one national shift moved many races together.` : ''}`)]));
+    }
+    if ((W.all || {}).upsets && ((retroData || {}).upsets || []).length) {
+      const go = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'rt:to:upsets' }, `See all ${W.all.upsets} upsets, longest shot first`);
+      go.addEventListener('click', () => rtGo('rt-upsets')); kids.push(go);
     }
     const O = W.offices || {}, offs = [['senate', 'Senate'], ['governor', 'Governor'], ['house', 'House']].filter(([k]) => (O[k] || {}).n);
     if (offs.length) {
