@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = 'd4ad519c19d5';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '870c5e0c4dfe';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -9552,6 +9552,13 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     }
     return box;
   }
+  const RT_MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function rtSettle(p) {  // when it can settle, from the state timing file (an inferred date is our reading of the state's law)
+    const st = p && p.settles; if (!st || !st.steps || !st.steps.length) return '';
+    const d = (x) => { const [, m, dd] = String(x).split('-'); return `${RT_MON[+m - 1]} ${+dd}`; };
+    const cap = (t) => `${t.charAt(0).toUpperCase()}${t.slice(1)}`;
+    return ` ${st.steps.map((x) => cap(`${x.words} ${d(x.date)}${x.label === 'inferred' ? ' (our reading of state law)' : ''}`)).join('. ')}.`;
+  }
   function rtPending(S) {  // what the calls so far already settle, and what waits
     const ul = el('ul', { class: 'rt-pend' });
     const tag = (t, k) => el('span', { class: `rt-tag${k ? ` ${k}` : ''}` }, t);
@@ -9560,17 +9567,17 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     for (const p of P) {
       if (p.bounds_now) {
         const [lo, hi] = p.bounds_now, who = p.id === 'southern_redrawn_gop_seats_flipped' ? 'Democrats have won' : p.id === 'senate_dem_seats' ? 'Democrats and their allies have' : 'Democrats have';
-        add(`${p.name}.`, `Our 80% range: ${p.lo80} to ${p.hi80}. ${who} ${lo}${hi > lo ? `, and at most ${hi} once every race is in` : ''}.`,
+        add(`${p.name}.`, `Our 80% range: ${p.lo80} to ${p.hi80}. ${who} ${lo}${hi > lo ? `, and at most ${hi} once every race is in` : ''}.${rtSettle(p)}`,
           p.range_already === 'outside' ? tag('Already outside our range', 'miss') : p.range_already === 'inside' ? tag('Already inside our range', 'hit') : tag('Still open'));
       } else if (p.count_so_far) {
         const c = p.count_so_far;
-        add(`${p.name}.`, `Our 80% range: ${ntM(p.lo80)} to ${ntM(p.hi80)}. The count so far: ${ntM(c.margin_d)}, ${c.counted}% counted, not final.`,
+        add(`${p.name}.`, `Our 80% range: ${ntM(p.lo80)} to ${ntM(p.hi80)}. The count so far: ${ntM(c.margin_d)}, ${c.counted}% counted, not final.${rtSettle(p)}`,
           c.vs_range === 'inside' ? tag('Inside so far', 'hit') : c.vs_range ? tag(`Outside so far, ${c.vs_range}`, 'miss') : null);
       }
     }
     for (const id of ['senate_ak', 'gov_ks']) {
       const p = by[id]; if (!p) continue;
-      add(`${p.name}.`, `Still counting. We gave the Democrat ${rtP(p.lock_p)} on Oct 16 and ${rtP(p.closing_p)} on Nov 1.`, tag('Waiting on the count'));
+      add(`${p.name}.`, `Still counting. We gave the Democrat ${rtP(p.lock_p)} on Oct 16 and ${rtP(p.closing_p)} on Nov 1.${rtSettle(p)}`, tag('Waiting on the count'));
     }
     if (by.house_popular_vote_margin_d) { const p = by.house_popular_vote_margin_d; add(`${p.name}.`, `Our 80% range: ${ntM(p.lo80)} to ${ntM(p.hi80)}. It needs every state's full count, certified in December.`, tag('December')); }
     const gates = ['any_state_misses_federal_certification_deadline', 'house_seating_dispute_jan3', 'litigation_changes_called_outcome'].filter((g) => by[g]);
