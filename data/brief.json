@@ -4471,5 +4471,3522 @@
     "n_explained": 0,
     "stale": "No brief written for this day yet.",
     "label": null
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "lead",
+    "item_id": null,
+    "text": "Nothing new moved today. Every one of the 34 flags is the first pull since election night reading the settlement: Kalshi and Polymarket priced every called race at its result, the raters' final pre-election calls dated Nov 2 and 3 landed in Wikipedia's tables, and Decision Desk's last update came at 15:04 on Nov 2, after our pull that morning (retrieved). Of the 23 statewide races we forecast, 21 are called, 18 to the Democrat and 3 to the Republican, with Alaska counting toward its Nov 18 ranked-choice tabulation and Kansas governor at 99 percent in with a call logged on Nov 5 and withdrawn (retrieved, data/resolutions.json). The grade puts our locked forecast fourth of eight on mean Brier over those 21 races, behind Silver Bulletin and both markets, and our final call seventh (retrieved, scripts/grade.py). The misses are all on the same side: South Carolina, Kansas and Iowa Senate went to the Democrat against our 20, 33 and 40 at the lock, and the Senate seat count already sits at 54 decided against a range that topped out at 53 (retrieved). The news feed is the 09:38 GDELT pull, all national post-mortems, and the Polymarket number for the South Carolina Senate margin is an artifact of dead brackets, logged in data/errors.md (retrieved).",
+    "written_at": "2026-11-06T14:02:37-05:00",
+    "n_flags": 34,
+    "n_explained": 34,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Fifty-four Senate seats decided, and our range topped out at 53.",
+    "vibe": "The markets have priced every called race at its result, Alaska is counting toward Nov 18, Kansas governor lost its call at 99 percent in, and the grade puts our lock fourth of eight behind Silver Bulletin and both markets.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://kalshi.com/markets/controls",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "written_at": "2026-11-06T14:02:37-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_sc",
+    "item": "Senate · SC",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +69.3 points since the last pull (Kalshi 30.5 to 99.8%)",
+      "Decision Desk moved +9.0 (30.0 to 39.0%)"
+    ],
+    "facts": "Flagged: markets moved +69.3 points since the last pull (Kalshi 30.5 to 99.8%); Decision Desk moved +9.0 (30.0 to 39.0%). News in the last 48 hours: 31 articles (1 scandal, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Voters spoke . And it was about war , not just the economy .",
+          "url": "https://www.csmonitor.com/USA/Politics/2026/1106/election-trump-iran-war",
+          "domain": "csmonitor.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Voters fired Republicans , they didnt hire the left – San Bernardino Sun",
+          "url": "https://www.sbsun.com/2026/11/06/voters-fired-republicans-they-didnt-hire-the-left/",
+          "domain": "sbsun.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "US Midterm Election Tech Stock Rout Explained - Pragativadi I Latest Odisha News in English I Breaking News",
+          "url": "https://pragativadi.com/us-midterm-election-tech-stock-rout-and-its-impact/",
+          "domain": "pragativadi.com",
+          "seendate": "2026-11-06T09:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Voters fired Republicans , they didnt hire the left – Daily Breeze",
+          "url": "https://www.dailybreeze.com/2026/11/06/voters-fired-republicans-they-didnt-hire-the-left/",
+          "domain": "dailybreeze.com",
+          "seendate": "2026-11-06T09:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Extinction - level event : Republicans turn on Trump after midterms rout",
+          "url": "https://www.hani.co.kr/arti/english_edition/e_international/1286151.html",
+          "domain": "hani.co.kr",
+          "seendate": "2026-11-06T08:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Trump defied political consequences for years . Midterms changed that",
+          "url": "https://www.orovillemr.com/2026/11/04/trump-midterms-consequences/",
+          "domain": "orovillemr.com",
+          "seendate": "2026-11-06T08:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 1,
+        "money": 0,
+        "other": 30
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": -1.0,
+        "n": 10,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.998
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Andrews won South Carolina. Our 13 was the board's worst call.",
+    "what_happened": "Annie Andrews won. The count read D+4.48 at 99 percent counted, and the call was first seen on CNN's AP feed at 22:02 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_South_Carolina&oldid=1383676773). Kalshi settled at 99.8 for Andrews from 30.5, with a last trade and no bid, so the market is closed; Decision Desk moved from 30 to 39 (retrieved). Our lock had the Democrat at 20, our final call at 13, and the model's number on the lock's inputs is 22.88 (retrieved, data/dashboard/grade.json and race_summary.json). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). Sabato, Cook and Silver Bulletin all held Lean R to the end (retrieved). The feed shows 31 articles in 48 hours, all national post-mortems, none about this race, and the one tagged scandal is a national story (retrieved, GDELT 09:38 pull). This is the largest miss on the board: a 20 percent lock and a 13 percent final call on a race the Democrat won by about four and a half points.",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "South Carolina certifies on Nov 13. The certified margin grades sc_senate_margin, not this item.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_South_Carolina&oldid=1383676773",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +64.0 points since the last pull (Polymarket 35.5 to 99.5; Kalshi 35.5 to 99.6%)",
+      "Silver Bulletin changed its rating, Lean R (flip) to Tossup"
+    ],
+    "facts": "Flagged: markets moved +64.0 points since the last pull (Polymarket 35.5 to 99.5; Kalshi 35.5 to 99.6%); Silver Bulletin changed its rating, Lean R (flip) to Tossup. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 0.12,
+        "n": 8,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.996
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9968
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9968
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9965
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9943
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9932
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9932
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.995
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Kansas governor priced at 99 with no standing call",
+    "what_happened": "CNN's AP feed reads Holscher ahead by D+0.64 at 99 percent counted as of 13:47 today (retrieved). A call for Holscher was logged at 18:30 on Nov 5 and then withdrawn, so the item is pending (retrieved, data/resolutions.json and data/night/story.jsonl). Polymarket and Kalshi settled at 99.5 and 99.6 from 35.5 since the Nov 3 pull (retrieved). Silver Bulletin's final rating, dated Nov 3, moved Lean R to Tossup (retrieved, Wikipedia revid 1384114503). Mail ballots postmarked by Election Day count if they arrive by today, Nov 6 (retrieved, Democracy Docket). Our lock had Holscher at 27, our final call at 30, and the model's number is 53.65 (retrieved).",
+    "why_it_moved": "The markets are pricing the count, not a call: a 0.64 point lead at 99 percent in with the mail grace period ending today (inferred). The withdrawn call is the reason the grade does not score it yet (retrieved).",
+    "should_it_move_us": "Wait. Nothing resolves until a call stands or the state certifies, and the model's 54 was the one number on the board that leaned the right way.",
+    "trigger": "A standing call from AP, or the certified count. Kansas certifies in early December.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://polymarket.com/event/kansas-governor-winner-2026",
+      "https://www.democracydocket.com/news-alerts/gop-bid-to-scrap-kansas-mail-ballot-grace-period-fails-again/",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_ia",
+    "item": "Senate · IA",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +51.4 points since the last pull (Kalshi 48.5 to 99.9%)",
+      "Sabato changed its rating, Tossup to Lean R"
+    ],
+    "facts": "Flagged: markets moved +51.4 points since the last pull (Kalshi 48.5 to 99.9%); Sabato changed its rating, Tossup to Lean R. News in the last 48 hours: 22 articles (2 legal, 1 scandal, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "RFK Jr . Faces New Threat as MAHA Turns on Trump",
+          "url": "https://www.thedailybeast.com/rfk-jr-faces-new-threat-as-maha-turns-on-trump",
+          "domain": "thedailybeast.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Midterm elections crack open political map , putting conservative states back in play",
+          "url": "https://www.mtairynews.com/ap/washington/midterm-elections-crack-open-political-map-putting-conservative-states-back-in-play/article_ce83aca0-2697-5126-b4a1-38eaf9dac1d6.html",
+          "domain": "mtairynews.com",
+          "seendate": "2026-11-06T08:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "One Subplot To The GOP Midterm Debacle Was A Repudiation Of The MAHA Movement",
+          "url": "https://www.techdirt.com/2026/11/05/one-subplot-to-the-gops-midterm-debacle-was-a-repudiation-of-the-maha-movement/",
+          "domain": "techdirt.com",
+          "seendate": "2026-11-06T06:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Watkins wins Iowa House District 100 race",
+          "url": "https://www.mississippivalleypublishing.com/daily_gate/daily_gate/watkins-wins-iowa-house-district-100-race/article_74c42946-32b0-4c22-a482-d928187a74b2.html",
+          "domain": "mississippivalleypublishing.com",
+          "seendate": "2026-11-06T06:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Republican Candidates Win Delaware County in Tuesday Election – Mix 94 . 7 KMCH",
+          "url": "https://kmch.com/2026/11/05/republican-candidates-win-delaware-county-in-tuesdays-election/",
+          "domain": "kmch.com",
+          "seendate": "2026-11-06T04:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "The Exonian | Phillips Exeter Academy",
+          "url": "https://www.theexonian.com/articles/midterms-continue-democrats-flip-congress",
+          "domain": "theexonian.com",
+          "seendate": "2026-11-06T04:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 2,
+        "scandal": 1,
+        "money": 0,
+        "other": 19
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": -0.11,
+        "n": 9,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Turek won Iowa. Sabato's last call and ours both leaned the other way.",
+    "what_happened": "Josh Turek won. The count read D+4.11 at 99 percent counted, and the call was first seen on CNN's AP feed at 23:37 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Iowa&oldid=1383686230). Kalshi settled at 99.9 from 48.5; Sabato's final call, dated Nov 2, moved Tossup to Lean R (retrieved). Our lock had the Democrat at 40, our final call at 34, and the model's number on the lock's inputs is 66.24 (retrieved, data/dashboard/grade.json and race_summary.json). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503). Sabato's last move went against the result (retrieved). Our final call moved the wrong way too, from 40 to 34.",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Iowa&oldid=1383686230",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_ks",
+    "item": "Senate · KS",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +33.4 points since the last pull (Kalshi 66.5 to 99.9%)",
+      "Decision Desk moved +16.0 (35.0 to 51.0%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: markets moved +33.4 points since the last pull (Kalshi 66.5 to 99.9%); Decision Desk moved +16.0 (35.0 to 51.0%); Sabato changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 27 articles (1 poll, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Clergy candidate message of  love your neighbor  powers Democrat midterm election gains | Associated Press National",
+          "url": "https://www.nvdaily.com/associated_press_national/clergy-candidates-message-of-love-your-neighbor-powers-democrats-midterm-election-gains/article_53167b8a-c1e9-5f7f-bdc8-78680a836633.html",
+          "domain": "nvdaily.com",
+          "seendate": "2026-11-06T14:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Latino voters swing left in midterm elections , lifting Democrats to big wins in Texas and nationwide",
+          "url": "http://www.dailyadvance.com/news/national/latino-voters-swing-left-in-midterm-elections-lifting-democrats-to-big-wins-in-texas-and/article_bf60892d-2b5b-5615-8707-2262a50baff6.html",
+          "domain": "dailyadvance.com",
+          "seendate": "2026-11-06T12:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "What races AP has not yet called in contests for Senate and governor",
+          "url": "https://www.sbsun.com/2026/11/05/election-2026-uncalled-races-alaska-mississippi/",
+          "domain": "sbsun.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Voters fired Republicans , they didnt hire the left – San Bernardino Sun",
+          "url": "https://www.sbsun.com/2026/11/06/voters-fired-republicans-they-didnt-hire-the-left/",
+          "domain": "sbsun.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "RFK Jr . Faces New Threat as MAHA Turns on Trump",
+          "url": "https://www.thedailybeast.com/rfk-jr-faces-new-threat-as-maha-turns-on-trump",
+          "domain": "thedailybeast.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Voters fired Republicans , they didnt hire the left – Daily Breeze",
+          "url": "https://www.dailybreeze.com/2026/11/06/voters-fired-republicans-they-didnt-hire-the-left/",
+          "domain": "dailybreeze.com",
+          "seendate": "2026-11-06T09:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 26
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 4.25,
+        "n": 8,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Hamilton won Kansas by five, every late mover was right",
+    "what_happened": "Adam Hamilton won. The count read D+5.00 at 99 percent counted, and the call was first seen on CNN's AP feed at 23:16 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Kansas&oldid=1383685656). Kalshi settled at 99.9 from 66.5; Decision Desk moved 35 to 51; Sabato's final call moved Tossup to Lean D (flip) (retrieved). Our lock had the Democrat at 33, our final call at 40, and the model's number on the lock's inputs is 90.14 (retrieved, data/dashboard/grade.json and race_summary.json). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Kansas&oldid=1383685656",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_me",
+    "item": "Senate · ME",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +31.4 points since the last pull (Kalshi 68.5 to 99.9%)",
+      "Decision Desk moved +11.0 (54.0 to 65.0%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: markets moved +31.4 points since the last pull (Kalshi 68.5 to 99.9%); Decision Desk moved +11.0 (54.0 to 65.0%); Sabato changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 32 articles (4 legal, 1 debate, 1 scandal, 0 ad, 0 endorsement, 0 rally, 0 poll, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Hey , John Cornyn : Im So Glad Youre Going",
+          "url": "https://thefederalist.com/2026/11/06/hey-john-cornyn-im-so-glad-youre-going/",
+          "domain": "thefederalist.com",
+          "seendate": "2026-11-06T13:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Trump tsunami : Sen . Collins blames election loss on anti - Trump sentiment",
+          "url": "https://kval.com/news/nation-world/trump-tsunami-sen-collins-blames-election-loss-on-anti-trump-sentiment-democrat-troy-jackson-republicans",
+          "domain": "kval.com",
+          "seendate": "2026-11-06T13:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Redding Chico Eureka",
+          "url": "https://krcrtv.com/news/nation-world/trump-tsunami-sen-collins-blames-election-loss-on-anti-trump-sentiment-democrat-troy-jackson-republicans",
+          "domain": "krcrtv.com",
+          "seendate": "2026-11-06T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Students react to  blue wave  in midterm elections – The Bowdoin Orient",
+          "url": "https://bowdoinorient.com/2026/11/06/students-react-to-blue-wave-in-midterm-elections/",
+          "domain": "bowdoinorient.com",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Maine must not soften the message on Gaza genocide",
+          "url": "https://www.pressherald.com/2026/11/06/troy-jackson-must-not-soften-the-message-on-gaza-genocide-opinion/",
+          "domain": "pressherald.com",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Senator - elect Peggy Flanagan calls for new leadership of Senate Democrats",
+          "url": "https://www.mesabitribune.com/around_the_web/news/senator-elect-peggy-flanagan-calls-for-new-leadership-of-senate-democrats/article_e9c897c4-f676-5070-9f62-9aab8d7964d1.html",
+          "domain": "mesabitribune.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 1,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 4,
+        "scandal": 1,
+        "money": 0,
+        "other": 26
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 3.92,
+        "n": 13,
+        "newest": "2026-11-02"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Jackson won Maine, called after midnight at 93 percent in",
+    "what_happened": "Troy Jackson (replacing Graham Platner ) won. The count read D+6.35 at 93 percent counted, and the call was first seen on CNN's AP feed at 00:21 ET on 11/04 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Maine&oldid=1383692421). Kalshi settled at 99.9 from 68.5; Decision Desk moved 54 to 65; Sabato's final call moved Tossup to Lean D (flip) (retrieved). Our lock had the Democrat at 55, our final call at 70, and the model's number on the lock's inputs is 89.18 (retrieved, data/dashboard/grade.json and race_summary.json). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503). The count was 93 percent in when the call was first seen (retrieved).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Maine&oldid=1383692421",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_oh",
+    "item": "Governor · OH",
+    "flag_kind": "market",
+    "triggers": [
+      "Decision Desk moved +20.0 (50.0 to 70.0%)",
+      "markets moved +22.3 points since the last pull (Kalshi 77.5 to 99.8%)"
+    ],
+    "facts": "Flagged: Decision Desk moved +20.0 (50.0 to 70.0%); markets moved +22.3 points since the last pull (Kalshi 77.5 to 99.8%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 3.94,
+        "n": 16,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.998
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Acton won Ohio by eight. Decision Desk's Toss-up lasted two days.",
+    "what_happened": "Amy Acton won. The count read D+7.93 at 98 percent counted, and the call was first seen on CNN's AP feed at 22:51 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_Ohio_gubernatorial_election&oldid=1383682222). Decision Desk moved 50 to 70; Kalshi settled at 99.8 from 77.5 (retrieved). Our lock had the Democrat at 62, our final call at 60, and the model's number on the lock's inputs is 82.68 (retrieved, data/dashboard/grade.json and race_summary.json). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). On Nov 1 the brief noted Decision Desk alone at Toss-up here. Its Nov 2 update put Ohio back at 70 before the vote (retrieved).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_Ohio_gubernatorial_election&oldid=1383682222",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_ga",
+    "item": "Governor · GA",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +28.3 points since the last pull (Kalshi 71.5 to 99.8%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: markets moved +28.3 points since the last pull (Kalshi 71.5 to 99.8%); Sabato changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 22 articles (1 poll, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Democrats Spent Year Demanding Data Center Moratoriums . They Own The Narrative . Will They Own The Fallout ?",
+          "url": "http://www.zerohedge.com/markets/democrats-spent-year-demanding-data-center-moratoriums-they-own-narrative-will-they-own",
+          "domain": "zerohedge.com",
+          "seendate": "2026-11-06T14:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Opinion : Black candidates thrived after redistricting cases | Quin Hillyer",
+          "url": "https://www.nola.com/opinions/quin_hillyer/hillyer-callais-redistricting-black-voting-elections/article_1a882cb5-c554-442e-bb8d-6d6db126b356.html",
+          "domain": "nola.com",
+          "seendate": "2026-11-06T14:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Five with Jamaican connections score wins in US midterm elections",
+          "url": "https://www.jamaicaobserver.com/2026/11/06/five-jamaican-connections-score-wins-us-midterm-elections/",
+          "domain": "jamaicaobserver.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Trump defied political consequences for years . Midterms changed that",
+          "url": "https://www.orovillemr.com/2026/11/04/trump-midterms-consequences/",
+          "domain": "orovillemr.com",
+          "seendate": "2026-11-06T08:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Midterms Reveal Southern Democrats Are a Thing Again",
+          "url": "https://www.newsweek.com/midterms-reveal-southern-democrats-are-a-thing-again-12638318",
+          "domain": "newsweek.com",
+          "seendate": "2026-11-06T06:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Democracy belongs to the people",
+          "url": "https://punchng.com/democracy-belongs-to-the-people/",
+          "domain": "punchng.com",
+          "seendate": "2026-11-06T05:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 21
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 0.17,
+        "n": 6,
+        "newest": "2026-11-02"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.998
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Bottoms won Georgia by nine. We had it at 50 twice.",
+    "what_happened": "Keisha Lance Bottoms won. The count read D+8.62 at 99 percent counted, and the call was first seen on CNN's AP feed at 21:18 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_Georgia_gubernatorial_election&oldid=1383672979). Kalshi settled at 99.8 from 71.5; Sabato's final call moved Tossup to Lean D (flip) (retrieved). Our lock had the Democrat at 50, our final call at 50, and the model's number on the lock's inputs is 51.75 (retrieved, data/dashboard/grade.json and race_summary.json). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_Georgia_gubernatorial_election&oldid=1383672979",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_tx",
+    "item": "Senate · TX",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +25.2 points since the last pull (Kalshi 74.5 to 99.7%)",
+      "Decision Desk moved +6.0 (56.0 to 62.0%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: markets moved +25.2 points since the last pull (Kalshi 74.5 to 99.7%); Decision Desk moved +6.0 (56.0 to 62.0%); Sabato changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 101 articles (4 ad, 2 scandal, 1 poll, 1 money, 0 debate, 0 endorsement, 0 rally, 0 legal). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Clergy candidate message of  love your neighbor  powers Democrat midterm election gains | Associated Press National",
+          "url": "https://www.nvdaily.com/associated_press_national/clergy-candidates-message-of-love-your-neighbor-powers-democrats-midterm-election-gains/article_53167b8a-c1e9-5f7f-bdc8-78680a836633.html",
+          "domain": "nvdaily.com",
+          "seendate": "2026-11-06T14:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Hey , John Cornyn : Im So Glad Youre Going",
+          "url": "https://thefederalist.com/2026/11/06/hey-john-cornyn-im-so-glad-youre-going/",
+          "domain": "thefederalist.com",
+          "seendate": "2026-11-06T13:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Pomerance : Thoughts on the election results and next steps for Boulder",
+          "url": "https://www.dailycamera.com/2026/11/06/steve-pomerance-boulder-midterm-election-results-next-steps/",
+          "domain": "dailycamera.com",
+          "seendate": "2026-11-06T12:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Latino voters swing left in midterm elections , lifting Democrats to big wins in Texas and nationwide",
+          "url": "http://www.dailyadvance.com/news/national/latino-voters-swing-left-in-midterm-elections-lifting-democrats-to-big-wins-in-texas-and/article_bf60892d-2b5b-5615-8707-2262a50baff6.html",
+          "domain": "dailyadvance.com",
+          "seendate": "2026-11-06T12:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Have we hit peak polarization ? | Countercurrents",
+          "url": "https://countercurrents.org/2026/11/have-we-hit-peak-polarization/",
+          "domain": "countercurrents.org",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "What James Talarico can teach Democrats about revenge politics – The Bowdoin Orient",
+          "url": "https://bowdoinorient.com/2026/11/06/what-james-talarico-can-teach-democrats-about-revenge-politics/",
+          "domain": "bowdoinorient.com",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 4,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 0,
+        "scandal": 2,
+        "money": 1,
+        "other": 93
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.75,
+        "n": 20,
+        "newest": "2026-11-02"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9983
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.997
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Talarico won Texas by twelve. Our 52 never moved.",
+    "what_happened": "James Talarico won. The count read D+12.10 at 99 percent counted, and the call was first seen on CNN's AP feed at 23:00 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Texas&oldid=1383682392). Kalshi settled at 99.7 from 74.5; Decision Desk moved 56 to 62; Sabato's final call moved Tossup to Lean D (flip) (retrieved). Our lock had the Democrat at 52, our final call at 52, and the model's number on the lock's inputs is 77.74 (retrieved, data/dashboard/grade.json and race_summary.json). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Texas&oldid=1383682392",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_oh",
+    "item": "Senate · OH special",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +27.3 points since the last pull (Kalshi 72.5 to 99.8%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: markets moved +27.3 points since the last pull (Kalshi 72.5 to 99.8%); Sabato changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.47,
+        "n": 19,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.998
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Brown won the Ohio special by about five",
+    "what_happened": "Sherrod Brown won. The count read D+4.85 at 98 percent counted, and the call was first seen on CNN's AP feed at 23:00 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_special_election_in_Ohio&oldid=1383683942). Kalshi settled at 99.8 from 72.5; Sabato's final call moved Tossup to Lean D (flip) (retrieved). Our lock had the Democrat at 58, our final call at 58, and the model's number on the lock's inputs is 82.51 (retrieved, data/dashboard/grade.json and race_summary.json). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_special_election_in_Ohio&oldid=1383683942",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_dem_control",
+    "item": "Senate control",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +25.4 points since the last pull (Kalshi 74.5 to 99.9%)",
+      "Decision Desk moved +9.0 (56.0 to 65.0%)"
+    ],
+    "facts": "Flagged: markets moved +25.4 points since the last pull (Kalshi 74.5 to 99.9%); Decision Desk moved +9.0 (56.0 to 65.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Senate control resolved for the Democrats, with two races still open",
+    "what_happened": "Resolved. 54 Democratic-caucus seats are decided, the 32 not up plus 20 called and the two independents, with Alaska and Mississippi open, and 54 is at least 51 whatever those do (retrieved, data/dashboard/grade.json derivation from CNN's AP feed). The night board put control at the Iowa call, 23:31 on Nov 3 (retrieved, retro.json). Kalshi settled at 99.9 from 74.5 since the Nov 3 pull. Decision Desk's final update on Nov 2 moved 56 to 65 (retrieved). Our lock had it at 53, our final call at 56 (retrieved).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). ",
+    "should_it_move_us": "No. Resolved. The lock's 53 and the final call's 56 are scored.",
+    "trigger": "Nothing for this item. Alaska on Nov 18 and Mississippi decide the seat count, not control.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://kalshi.com/markets/controls",
+      "https://elections2026.thehill.com/forecast/2026/senate/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +29.4 points since the last pull (Polymarket 69.5 to 98.0; Kalshi 67.5 to 97.7%)"
+    ],
+    "facts": "Flagged: markets moved +29.4 points since the last pull (Polymarket 69.5 to 98.0; Kalshi 67.5 to 97.7%). News in the last 48 hours: 20 articles (1 poll, 1 legal, 1 money, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 scandal). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "How 4 states voted on election - related ballot measures",
+          "url": "https://rollcall.com/2026/11/06/how-4-states-voted-on-election-related-ballot-measures/",
+          "domain": "rollcall.com",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "What races AP has not yet called in contests for Senate and governor",
+          "url": "https://www.sbsun.com/2026/11/05/election-2026-uncalled-races-alaska-mississippi/",
+          "domain": "sbsun.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Who Is Gerald Heikes ? Trump Wants Alaska Votes Given to Dan Sullivan",
+          "url": "https://www.newsweek.com/donald-trump-gerald-heikes-alaska-senate-dan-sullivan-12673255",
+          "domain": "newsweek.com",
+          "seendate": "2026-11-06T06:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Ann Rostow : Going Postal - San Francisco Bay Times",
+          "url": "https://sfbaytimes.com/the-academy-sf-a-modern-haven-for-queer-connection-that-goes-beyond-the-bar/",
+          "domain": "sfbaytimes.com",
+          "seendate": "2026-11-06T06:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "The Exonian | Phillips Exeter Academy",
+          "url": "https://www.theexonian.com/articles/midterms-continue-democrats-flip-congress",
+          "domain": "theexonian.com",
+          "seendate": "2026-11-06T04:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Votes still being counted in close Senate races in Alaska and Mississippi",
+          "url": "https://foxrochester.com/news/nation-world/votes-still-being-counted-in-close-senate-races-in-alaska-and-mississippi",
+          "domain": "foxrochester.com",
+          "seendate": "2026-11-06T03:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 1,
+        "scandal": 0,
+        "money": 1,
+        "other": 17
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.4,
+        "n": 5,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.971
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9725
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9725
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9723
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9715
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9712
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9725
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.975
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9732
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.974
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.974
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9738
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.976
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9772
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.9783
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Alaska uncalled at 74 percent in, markets at 98 for Peltola",
+    "what_happened": "Not called. CNN's AP feed reads Sullivan ahead by 1.97 points on first choices at 74 percent counted as of 13:47 today (retrieved). Alaska's ranked-choice tabulation is Nov 18 and certification Nov 25 (retrieved, Alaska Public Media). Polymarket is at 98.0 and Kalshi at 97.7 from 69.5 and 67.5 at the Nov 3 pull, and the hourly path today ran from 97.1 at midnight to 97.7 at 13:00 with no intraday flag (retrieved, alerts.json). Our lock had Peltola at 62, our final call at 55, and the model's number is 75.03 (retrieved).",
+    "why_it_moved": "The markets are pricing the ranked-choice transfer and the uncounted mail and absentee ballots against a first-choice deficit under two points (inferred). AP has not called it, and the race article lists it uncalled (retrieved).",
+    "should_it_move_us": "Wait. The item is pending until the Nov 18 tabulation, and the model's 75 is a pre-election number the count will grade.",
+    "trigger": "The ranked-choice tabulation on Nov 18, and before it, whether the remaining ballots narrow the first-choice gap.",
+    "sources": [
+      "https://polymarket.com/event/alaska-senate-election-winner",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://alaskapublic.org/news/politics/elections/2026-10-05/what-to-know-about-alaskas-general-election"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_mi",
+    "item": "Senate · MI",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +23.4 points since the last pull (Kalshi 76.5 to 99.9%)",
+      "Decision Desk moved +5.0 (70.0 to 75.0%)",
+      "Cook changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: markets moved +23.4 points since the last pull (Kalshi 76.5 to 99.9%); Decision Desk moved +5.0 (70.0 to 75.0%); Cook changed its rating, Tossup to Lean D. News in the last 48 hours: 103 articles (5 scandal, 3 poll, 2 ad, 2 endorsement, 2 legal, 1 debate, 0 rally, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Democrats Spent Year Demanding Data Center Moratoriums . They Own The Narrative . Will They Own The Fallout ?",
+          "url": "http://www.zerohedge.com/markets/democrats-spent-year-demanding-data-center-moratoriums-they-own-narrative-will-they-own",
+          "domain": "zerohedge.com",
+          "seendate": "2026-11-06T14:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Netanyahu office says Trump US aid cutoff shows  strength  of Israel partnership",
+          "url": "https://www.moneycontrol.com/world/netanyahu-s-office-says-trump-s-us-aid-cutoff-shows-strength-of-israel-partnership-article-14073462.html",
+          "domain": "moneycontrol.com",
+          "seendate": "2026-11-06T13:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "U . S . Senator - elect El - Sayed backing Van Hollen for Majority Leader",
+          "url": "https://whtc.com/2026/11/06/u-s-senator-elect-el-sayed-backing-van-hollen-for-majority-leader/",
+          "domain": "whtc.com",
+          "seendate": "2026-11-06T12:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Midterm Wave Sets a Course for  Medicare for All  Fight",
+          "url": "https://kffhealthnews.org/insurance/medicare-for-all-single-payer-insurance-el-sayed-midterms-democratic-congress-voter-appeal/",
+          "domain": "kffhealthnews.org",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "What James Talarico can teach Democrats about revenge politics – The Bowdoin Orient",
+          "url": "https://bowdoinorient.com/2026/11/06/what-james-talarico-can-teach-democrats-about-revenge-politics/",
+          "domain": "bowdoinorient.com",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "There is a showdown looming in the Democratic party over support for Israel | Moustafa Bayoumi",
+          "url": "https://www.theguardian.com/commentisfree/2026/nov/06/us-midterms-democratic-party-israel-support",
+          "domain": "theguardian.com",
+          "seendate": "2026-11-06T11:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 2,
+        "debate": 1,
+        "endorsement": 2,
+        "rally": 0,
+        "poll": 3,
+        "legal": 2,
+        "scandal": 5,
+        "money": 0,
+        "other": 88
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 5.05,
+        "n": 19,
+        "newest": "2026-11-02"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "El-Sayed won Michigan by seven, called at 02:30",
+    "what_happened": "Abdul El-Sayed won. The count read D+7.08 at 98 percent counted, and the call was first seen on CNN's AP feed at 02:30 ET on 11/04 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Michigan&oldid=1383704858). Kalshi settled at 99.9 from 76.5; Decision Desk moved 70 to 75; Cook's final call, dated Nov 2, moved Tossup to Lean D (retrieved). Our lock had the Democrat at 70, our final call at 70, and the model's number on the lock's inputs is 93.96 (retrieved, data/dashboard/grade.json and race_summary.json). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Michigan&oldid=1383704858",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_nv",
+    "item": "Governor · NV",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +17.4 points since the last pull (Kalshi 82.5 to 99.9%)",
+      "Sabato changed its rating, Tossup to Lean D (flip)"
+    ],
+    "facts": "Flagged: markets moved +17.4 points since the last pull (Kalshi 82.5 to 99.9%); Sabato changed its rating, Tossup to Lean D (flip). News in the last 48 hours: 6 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Five with Jamaican connections score wins in US midterm elections",
+          "url": "https://www.jamaicaobserver.com/2026/11/06/five-jamaican-connections-score-wins-us-midterm-elections/",
+          "domain": "jamaicaobserver.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "The Exonian | Phillips Exeter Academy",
+          "url": "https://www.theexonian.com/articles/midterms-continue-democrats-flip-congress",
+          "domain": "theexonian.com",
+          "seendate": "2026-11-06T04:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "After Democrat Takeovers , 5 States Could Legalize Assisted Suicide",
+          "url": "https://www.lifenews.com/2026/11/05/after-democrat-takeovers-5-states-could-legalize-assisted-suicide/",
+          "domain": "lifenews.com",
+          "seendate": "2026-11-06T03:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "What We Need to Know : Historic 2026 Midterms , Gas Prices & Black History",
+          "url": "https://hiphopnc.com/8826932/historic-2026-midterms-gas-prices-black-history/",
+          "domain": "hiphopnc.com",
+          "seendate": "2026-11-05T23:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "White Pine voters back GOP candidates as Democrats make gains statewide",
+          "url": "https://elynews.com/2026/11/05/white-pine-voters-back-gop-candidates-as-democrats-make-gains-statewide/",
+          "domain": "elynews.com",
+          "seendate": "2026-11-05T23:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Our Historic Victories and How We Won",
+          "url": "https://www.thenation.com/podcast/politics/sms-110526/",
+          "domain": "thenation.com",
+          "seendate": "2026-11-05T22:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 6
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 2.33,
+        "n": 3,
+        "newest": "2026-10-28"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Ford won Nevada by about eight. We had him under 50.",
+    "what_happened": "Aaron Ford won. The count read D+7.70 at 94 percent counted, and the call was first seen on CNN's AP feed at 05:10 ET on 11/04 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_Nevada_gubernatorial_election&oldid=1383716422). Kalshi settled at 99.9 from 82.5; Sabato's final call moved Tossup to Lean D (flip) (retrieved). Our lock had the Democrat at 45, our final call at 42, and the model's number on the lock's inputs is 45.52 (retrieved, data/dashboard/grade.json and race_summary.json). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503). The count was 94 percent in at the call (retrieved). Our lock and final call both had Ford under 50.",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_Nevada_gubernatorial_election&oldid=1383716422",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_nh",
+    "item": "Governor · NH",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -12.8 points since the last pull (Kalshi 13.5 to 0.7%)",
+      "Sabato changed its rating, Likely R to Lean R"
+    ],
+    "facts": "Flagged: markets moved -12.8 points since the last pull (Kalshi 13.5 to 0.7%); Sabato changed its rating, Likely R to Lean R. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": -6.5,
+        "n": 6,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.011
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.007
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Ayotte held New Hampshire by four. The UNH tie was the outlier.",
+    "what_happened": "Kelly Ayotte won. The count read D-4.29 at 99 percent counted, and the call was first seen on CNN's AP feed at 01:57 ET on 11/04 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_New_Hampshire_gubernatorial_election&oldid=1383772581). Kalshi settled at 0.7 from 13.5; Sabato's final call, dated Nov 2, moved Likely R to Lean R (retrieved). Our lock had the Democrat at 7, our final call at 8, and the model's number on the lock's inputs is 14.56 (retrieved, data/dashboard/grade.json and race_summary.json). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503). The Nov 2 brief moved a little toward Warmington on the UNH tie poll. The result landed near the four earlier polls' Republican lead, not the tie (inferred).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_New_Hampshire_gubernatorial_election&oldid=1383772581",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "sc_senate_margin",
+    "item": "SC Senate margin",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -14.7 points since the last pull (Polymarket -4.1 to -18.8 pts)"
+    ],
+    "facts": "Flagged: markets moved -14.7 points since the last pull (Polymarket -4.1 to -18.8 pts). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "The Polymarket margin number is an artifact of dead brackets",
+    "what_happened": "The count reads D+4.48 at 99 percent counted, called for Andrews, not yet certified (retrieved, resolutions.json). Polymarket's derived margin moved from -4.1 to -18.8 since the Nov 3 pull (retrieved). The event's mapped brackets run only from -35 to 0, the Republican side, and every one is priced between 0.001 and 0.0025, so the script's median is taken over brackets with no live price and no bracket for the result (retrieved, data/raw/normalized/2026-11-06T1350-markets.json). Our lock range was -14 to +2 with a point of -6, and the final call kept -6 (retrieved, grade.json).",
+    "why_it_moved": "An artifact, not a market move. The event's Democratic-margin brackets were never mapped, and the Republican brackets went to near zero when the result landed outside them (inferred). Logged in data/errors.md.",
+    "should_it_move_us": "No. The market number means nothing today, and the count already sits above the top of our range. The grade waits for certification.",
+    "trigger": "South Carolina's certified margin, due by Nov 13.",
+    "sources": [
+      "https://polymarket.com/event/south-carolina-senate-margin-of-victory-2026",
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_South_Carolina&oldid=1383676773"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_wi",
+    "item": "Governor · WI",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +14.1 points since the last pull (Kalshi 84.5 to 98.6%)"
+    ],
+    "facts": "Flagged: markets moved +14.1 points since the last pull (Kalshi 84.5 to 98.6%). News in the last 48 hours: 25 articles (3 poll, 1 debate, 1 legal, 0 ad, 0 endorsement, 0 rally, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Milwaukee County discloses $4 . 5M budget error day after Crowley elected governor",
+          "url": "https://www.wbay.com:443/2026/11/06/milwaukee-county-discloses-45m-budget-error-day-after-crowley-elected-governor/",
+          "domain": "wbay.com",
+          "seendate": "2026-11-06T13:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Gov .- elect David Crowley discusses blue wave , goals for office",
+          "url": "https://www.wpr.org/news/governor-elect-david-crowley-blue-wave-wpr-interview",
+          "domain": "wpr.org",
+          "seendate": "2026-11-06T13:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Five with Jamaican connections score wins in US midterm elections",
+          "url": "https://www.jamaicaobserver.com/2026/11/06/five-jamaican-connections-score-wins-us-midterm-elections/",
+          "domain": "jamaicaobserver.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Fill in the blank in the quiz : Vance says they lost the midterms because of ____",
+          "url": "https://www.wxxinews.org/npr-news/2026-11-06/fill-in-the-blank-in-the-quiz-vance-says-they-lost-the-midterms-because-of",
+          "domain": "wxxinews.org",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Data Centres Took Beating in Midterm Elections , Reckoning May Be Ahead For Tech Giants",
+          "url": "https://www.deccanchronicle.com/technology/data-centres-took-beating-in-midterm-elections-reckoning-may-be-ahead-for-tech-giants-2002223",
+          "domain": "deccanchronicle.com",
+          "seendate": "2026-11-06T08:30:00Z",
+          "kinds": [
+            "poll"
+          ]
+        },
+        {
+          "title": "Trump defied political consequences for years . Midterms changed that",
+          "url": "https://www.orovillemr.com/2026/11/04/trump-midterms-consequences/",
+          "domain": "orovillemr.com",
+          "seendate": "2026-11-06T08:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 1,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 3,
+        "legal": 1,
+        "scandal": 0,
+        "money": 0,
+        "other": 20
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 5.0,
+        "n": 3,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9928
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.986
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Crowley won Wisconsin by eight",
+    "what_happened": "David Crowley won. The count read D+7.99 at 99 percent counted, and the call was first seen on CNN's AP feed at 23:26 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_Wisconsin_gubernatorial_election&oldid=1383698513). Kalshi settled at 98.6 from 84.5 (retrieved). Our lock had the Democrat at 68, our final call at 75, and the model's number on the lock's inputs is 85.65 (retrieved, data/dashboard/grade.json and race_summary.json).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_Wisconsin_gubernatorial_election&oldid=1383698513",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_ia",
+    "item": "Governor · IA",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +10.3 points since the last pull (Kalshi 89.5 to 99.8%)"
+    ],
+    "facts": "Flagged: markets moved +10.3 points since the last pull (Kalshi 89.5 to 99.8%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 6.14,
+        "n": 7,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.998
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Sand won Iowa by eleven",
+    "what_happened": "Rob Sand won. The count read D+10.98 at 99 percent counted, and the call was first seen on CNN's AP feed at 23:26 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_Iowa_gubernatorial_election&oldid=1383738070). Kalshi settled at 99.8 from 89.5 (retrieved). Our lock had the Democrat at 78, our final call at 72, and the model's number on the lock's inputs is 94.82 (retrieved, data/dashboard/grade.json and race_summary.json).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_Iowa_gubernatorial_election&oldid=1383738070",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "house_dem_majority",
+    "item": "House majority",
+    "flag_kind": "market",
+    "triggers": [
+      "Decision Desk moved +7.0 (77.0 to 84.0%)",
+      "markets moved +6.7 points since the last pull (Kalshi 93.2 to 99.9%)"
+    ],
+    "facts": "Flagged: Decision Desk moved +7.0 (77.0 to 84.0%); markets moved +6.7 points since the last pull (Kalshi 93.2 to 99.9%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "House majority resolved for the Democrats on Nov 4",
+    "what_happened": "Resolved. CNN's AP feed has 250 Democratic seats called, 160 Republican, 25 open, one of them a runoff, and 250 is at least 218 whatever the open races do (retrieved, grade.json derivation). The night board put control at 01:49 on Nov 4 (retrieved, retro.json). Kalshi settled at 99.9 from 93.2 since the Nov 3 pull. Decision Desk's final update on Nov 2 moved 77 to 84 (retrieved). Our lock had it at 90, our final call at 88 (retrieved).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). ",
+    "should_it_move_us": "No. Resolved and scored.",
+    "trigger": "Nothing for this item.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json",
+      "https://elections2026.thehill.com/forecast/2026/house/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "house_dem_seats",
+    "item": "House seats",
+    "flag_kind": "market",
+    "triggers": [
+      "Decision Desk moved +6.0 (235 to 241 seats)",
+      "markets moved +7.2 points since the last pull (Kalshi 244.3 to 251.5 seats)"
+    ],
+    "facts": "Flagged: Decision Desk moved +6.0 (235 to 241 seats); markets moved +7.2 points since the last pull (Kalshi 244.3 to 251.5 seats). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Democrats at 250 seats called, the top of our range, with 25 open",
+    "what_happened": "Pending. 250 Democratic seats called with 25 races open, so the final sits between 250 and 275 (retrieved, grade.json pending row from CNN's AP feed). Kalshi's seat market reads 251.5 from 244.3 at the Nov 3 pull, and Decision Desk's final update on Nov 2 moved its point from 235 to 241 (retrieved). Our lock range was 218 to 250 with a point of 235, and the final call moved the point to 232 (retrieved).",
+    "why_it_moved": "The count. The market and Decision Desk both sat below where the called seats already are (retrieved).",
+    "should_it_move_us": "Wait. The item grades when every race is called, and the count has already reached the top of our interval, so the question left is by how much it passes it.",
+    "trigger": "The 25 open races, most of them in states that count mail for weeks, and the one runoff.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json",
+      "https://kalshi.com/markets/house",
+      "https://elections2026.thehill.com/forecast/2026/house/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_fl",
+    "item": "Senate · FL special",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved -9.4 points since the last pull (Kalshi 9.5 to 0.1%)"
+    ],
+    "facts": "Flagged: markets moved -9.4 points since the last pull (Kalshi 9.5 to 0.1%). News in the last 48 hours: 7 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Opinion : Black candidates thrived after redistricting cases | Quin Hillyer",
+          "url": "https://www.nola.com/opinions/quin_hillyer/hillyer-callais-redistricting-black-voting-elections/article_1a882cb5-c554-442e-bb8d-6d6db126b356.html",
+          "domain": "nola.com",
+          "seendate": "2026-11-06T14:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Latino voters swing left in midterm elections , lifting Democrats to big wins in Texas and nationwide",
+          "url": "http://www.dailyadvance.com/news/national/latino-voters-swing-left-in-midterm-elections-lifting-democrats-to-big-wins-in-texas-and/article_bf60892d-2b5b-5615-8707-2262a50baff6.html",
+          "domain": "dailyadvance.com",
+          "seendate": "2026-11-06T12:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "FAILLA : Sad midterms make for happy holidays , so put down the political knives",
+          "url": "https://www.foxnews.com/opinion/jimmy-failla-happy-holidays-sad-midterms-pass-pie-not-insults",
+          "domain": "foxnews.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "These former members of Congress are seeking comebacks in 2026",
+          "url": "https://www.broomfieldenterprise.com/2025/12/29/congress-comeback-bids/",
+          "domain": "broomfieldenterprise.com",
+          "seendate": "2026-11-06T07:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "OPINION : The midterm biggest winners and losers - Indiana Daily Student",
+          "url": "https://www.idsnews.com/article/2026/11/opinion-midterm-election-indiana-ford-sayed-nixon",
+          "domain": "idsnews.com",
+          "seendate": "2026-11-06T04:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "OPINION : Florida Democrats are running out of excuses - The Independent Florida Alligator",
+          "url": "https://www.alligator.org/article/2026/11/midterm-reactions",
+          "domain": "alligator.org",
+          "seendate": "2026-11-06T01:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 7
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": -5.86,
+        "n": 14,
+        "newest": "2026-11-02"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.001
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.001
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Moody held Florida by under three",
+    "what_happened": "Ashley Moody won. The count read D-2.87 at 99 percent counted, and the call was first seen on CNN's AP feed at 20:37 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_special_election_in_Florida&oldid=1383667050). Kalshi settled at 0.1 from 9.5 (retrieved). Our lock had the Democrat at 11, our final call at 6, and the model's number on the lock's inputs is 3.99 (retrieved, data/dashboard/grade.json and race_summary.json). Sabato, Cook and Silver Bulletin never moved off Likely or Safe R (retrieved). The margin was under three points in a race every source had at ten or more for Moody.",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_special_election_in_Florida&oldid=1383667050",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_mn",
+    "item": "Senate · MN",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +8.9 points since the last pull (Kalshi 91.0 to 99.9%)"
+    ],
+    "facts": "Flagged: markets moved +8.9 points since the last pull (Kalshi 91.0 to 99.9%). News in the last 48 hours: 15 articles (1 poll, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Senator - elect Peggy Flanagan calls for new leadership of Senate Democrats",
+          "url": "https://www.mesabitribune.com/around_the_web/news/senator-elect-peggy-flanagan-calls-for-new-leadership-of-senate-democrats/article_e9c897c4-f676-5070-9f62-9aab8d7964d1.html",
+          "domain": "mesabitribune.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Voters fired Republicans , they didnt hire the left – San Bernardino Sun",
+          "url": "https://www.sbsun.com/2026/11/06/voters-fired-republicans-they-didnt-hire-the-left/",
+          "domain": "sbsun.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Latest Articles",
+          "url": "https://freerepublic.com/tag/*/index?more=4402000",
+          "domain": "freerepublic.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Voters fired Republicans , they didnt hire the left – Daily Breeze",
+          "url": "https://www.dailybreeze.com/2026/11/06/voters-fired-republicans-they-didnt-hire-the-left/",
+          "domain": "dailybreeze.com",
+          "seendate": "2026-11-06T09:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Petitions to Replace Chuck Schumer Pass 100 , 000 Signatures Day After Launch",
+          "url": "https://www.newsweek.com/petitions-to-replace-chuck-schumer-pass-100000-signatures-day-after-launch-12674387",
+          "domain": "newsweek.com",
+          "seendate": "2026-11-06T06:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Prediction : Kiss the Filibuster Goodbye As Schumer Struggles to Hold Power",
+          "url": "https://hotair.com/ed-morrissey/2026/11/05/prediction-kiss-the-filibuster-goodbye-n3820690",
+          "domain": "hotair.com",
+          "seendate": "2026-11-06T03:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 14
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 5.88,
+        "n": 8,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Flanagan won Minnesota by ten",
+    "what_happened": "Peggy Flanagan won. The count read D+10.15 at 99 percent counted, and the call was first seen on CNN's AP feed at 00:10 ET on 11/04 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Minnesota&oldid=1383690643). Kalshi settled at 99.9 from 91.0 (retrieved). Our lock had the Democrat at 86, our final call at 93, and the model's number on the lock's inputs is 95.49 (retrieved, data/dashboard/grade.json and race_summary.json).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_Minnesota&oldid=1383690643",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "senate_nh",
+    "item": "Senate · NH",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +5.9 points since the last pull (Kalshi 94.0 to 99.9%)",
+      "Silver Bulletin changed its rating, Likely D to Solid D"
+    ],
+    "facts": "Flagged: markets moved +5.9 points since the last pull (Kalshi 94.0 to 99.9%); Silver Bulletin changed its rating, Likely D to Solid D. News in the last 48 hours: 10 articles (1 poll, 0 ad, 0 debate, 0 endorsement, 0 rally, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Senator - elect Peggy Flanagan calls for new leadership of Senate Democrats",
+          "url": "https://www.mesabitribune.com/around_the_web/news/senator-elect-peggy-flanagan-calls-for-new-leadership-of-senate-democrats/article_e9c897c4-f676-5070-9f62-9aab8d7964d1.html",
+          "domain": "mesabitribune.com",
+          "seendate": "2026-11-06T11:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "These former members of Congress are seeking comebacks in 2026",
+          "url": "https://www.broomfieldenterprise.com/2025/12/29/congress-comeback-bids/",
+          "domain": "broomfieldenterprise.com",
+          "seendate": "2026-11-06T07:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "How Democrat US midterm victory triggered a global tech stock rout over fears of AI slowdown",
+          "url": "https://www.hindustantimes.com/business/global-tech-selloff-artificial-intelligence-ai-data-centers-us-midterm-election-results-nasdaq-wall-street-asian-markets-stocks-101793941673026.html",
+          "domain": "hindustantimes.com",
+          "seendate": "2026-11-06T07:30:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "The Exonian | Phillips Exeter Academy",
+          "url": "https://www.theexonian.com/articles/midterms-continue-democrats-flip-congress",
+          "domain": "theexonian.com",
+          "seendate": "2026-11-06T04:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "LGBTQ elected officials , activists around the world welcome U . S . election results",
+          "url": "https://www.washingtonblade.com/2026/11/05/lgbtq-elected-officials-activists-around-the-world-welcome-u-s-election-results/",
+          "domain": "washingtonblade.com",
+          "seendate": "2026-11-06T04:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Congresswoman - elect Stefany Shaheen looks ahead to her first term in Congress",
+          "url": "https://www.nhpr.org/nh-news/2026-11-05/congresswoman-elect-stefany-shaheen-cd1-democrat-priorities-first-term-in-congress",
+          "domain": "nhpr.org",
+          "seendate": "2026-11-06T03:30:00Z",
+          "kinds": [
+            "poll"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 1,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 9
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 7.67,
+        "n": 6,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Pappas won New Hampshire by fourteen",
+    "what_happened": "Chris Pappas won. The count read D+13.74 at 99 percent counted, and the call was first seen on CNN's AP feed at 20:26 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_New_Hampshire&oldid=1383670174). Kalshi settled at 99.9 from 94.0; Silver Bulletin's final rating, dated Nov 3, moved Likely D to Solid D (retrieved). Our lock had the Democrat at 86, our final call at 94, and the model's number on the lock's inputs is 99.34 (retrieved, data/dashboard/grade.json and race_summary.json). The raters' changes are their final pre-election calls, dated Nov 2 and 3 in Wikipedia's ratings tables, which today's pull is the first to read since the Nov 2 morning pull (retrieved, revid 1384118774 and 1384114503).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_Senate_election_in_New_Hampshire&oldid=1383670174",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_az",
+    "item": "Governor · AZ",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +8.2 points since the last pull (Kalshi 91.6 to 99.8%)"
+    ],
+    "facts": "Flagged: markets moved +8.2 points since the last pull (Kalshi 91.6 to 99.8%). News in the last 48 hours: 3 articles (0 ad, 0 debate, 0 endorsement, 0 rally, 0 poll, 0 legal, 0 scandal, 0 money). No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [
+        {
+          "title": "Use of county letterhead questioned in Lingenfelter support for clemency | News",
+          "url": "https://www.kdminer.com/news/use-of-county-letterhead-questioned-in-lingenfelter-s-support-for-clemency/article_669d3395-1214-4c52-bad8-591eaa2a2fa7.html",
+          "domain": "kdminer.com",
+          "seendate": "2026-11-06T01:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Arizona voters voice hope with new Democratic power in the state",
+          "url": "https://cronkitenews.azpbs.org/2026/11/05/arizona-voters-new-party-power/",
+          "domain": "cronkitenews.azpbs.org",
+          "seendate": "2026-11-06T01:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        },
+        {
+          "title": "Philanthropoids and nonprofit staff who won in the midterms",
+          "url": "https://www.insidephilanthropy.com/home/philanthropoids-and-nonprofit-staffers-who-won-big-in-the-blue-tsunami",
+          "domain": "insidephilanthropy.com",
+          "seendate": "2026-11-05T22:00:00Z",
+          "kinds": [
+            "other"
+          ]
+        }
+      ],
+      "events_by_kind": {
+        "ad": 0,
+        "debate": 0,
+        "endorsement": 0,
+        "rally": 0,
+        "poll": 0,
+        "legal": 0,
+        "scandal": 0,
+        "money": 0,
+        "other": 3
+      },
+      "polls": [],
+      "poll_average": {
+        "margin_d": 7.0,
+        "n": 5,
+        "newest": "2026-10-29"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9988
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.998
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Hobbs held Arizona by thirteen",
+    "what_happened": "Katie Hobbs won. The count read D+12.73 at 94 percent counted, and the call was first seen on CNN's AP feed at 03:34 ET on 11/04 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_Arizona_gubernatorial_election&oldid=1383724427). Kalshi settled at 99.8 from 91.6 (retrieved). Our lock had the Democrat at 80, our final call at 90, and the model's number on the lock's inputs is 95.85 (retrieved, data/dashboard/grade.json and race_summary.json). The count was 94 percent in at the call (retrieved).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_Arizona_gubernatorial_election&oldid=1383724427",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_sc",
+    "item": "Governor · SC",
+    "flag_kind": "benchmark",
+    "triggers": [
+      "Decision Desk moved -15.0 (30.0 to 15.0%)"
+    ],
+    "facts": "Flagged: Decision Desk moved -15.0 (30.0 to 15.0%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": -11.14,
+        "n": 7,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.0105
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.019
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Wilson held South Carolina by four and a half, closer than anyone had it",
+    "what_happened": "Alan Wilson won. The count read D-4.47 at 99 percent counted, and the call was first seen on CNN's AP feed at 23:23 ET on 11/03 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_South_Carolina_gubernatorial_election&oldid=1383725784). Decision Desk's final update moved 30 to 15 for the Democrat (retrieved). Our lock had the Democrat at 5, our final call at 4, and the model's number on the lock's inputs is 1.91 (retrieved, data/dashboard/grade.json and race_summary.json). Decision Desk's move is its final model update at 15:04 on Nov 2, after our 09:59 pull that day (retrieved, model_updated_at in the payload). Kalshi sat at 1.9 at the Nov 3 pull and 1.05 today, under the flag threshold (retrieved). The margin was about four and a half points in a race we and every rater had as Likely or Safe R. Our margin range for sc_governor_margin was -21 to -5.",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_South_Carolina_gubernatorial_election&oldid=1383725784",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "gov_mi",
+    "item": "Governor · MI",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +7.2 points since the last pull (Kalshi 92.7 to 99.9%)"
+    ],
+    "facts": "Flagged: markets moved +7.2 points since the last pull (Kalshi 92.7 to 99.9%). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": {
+        "margin_d": 8.29,
+        "n": 14,
+        "newest": "2026-11-01"
+      },
+      "market_path": [
+        [
+          "2026-11-06T00:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T01:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T02:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T03:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T04:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T05:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T06:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T07:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T08:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T09:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T10:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T11:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T12:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T13:00:00-05:00",
+          0.9992
+        ],
+        [
+          "2026-11-06T14:00:00-05:00",
+          0.999
+        ]
+      ],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Benson won Michigan by eleven",
+    "what_happened": "Jocelyn Benson won. The count read D+10.83 at 98 percent counted, and the call was first seen on CNN's AP feed at 01:14 ET on 11/04 (retrieved, https://en.wikipedia.org/w/index.php?title=2026_Michigan_gubernatorial_election&oldid=1383795020). Kalshi settled at 99.9 from 92.7 (retrieved). Our lock had the Democrat at 85, our final call at 90, and the model's number on the lock's inputs is 96.44 (retrieved, data/dashboard/grade.json and race_summary.json).",
+    "why_it_moved": "Settlement, not news. The last market pull before this one was 18:00 on Nov 3, before any result, so the gap is the whole move from a pre-election price to the called result (inferred).",
+    "should_it_move_us": "No. The race is called and a forecast does not move after the fact. The grade carries it.",
+    "trigger": "Nothing. Only the certified margin can still change, and that is a count item, not this one.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_Michigan_gubernatorial_election&oldid=1383795020",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "ga_senate_margin",
+    "item": "Georgia Senate margin",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +6.7 points since the last pull (Polymarket 12.4 to 19.1 pts)"
+    ],
+    "facts": "Flagged: markets moved +6.7 points since the last pull (Polymarket 12.4 to 19.1 pts). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Georgia's count reads Ossoff by 18, above our range",
+    "what_happened": "Pending certification. The count reads D+18.0 at 100 percent in as of 13:47 today, and ga_margin_above_4 resolved yes on it (retrieved, grade.json). Polymarket's derived margin moved from 12.4 to 19.1 since the Nov 3 pull, with the 18 to 21 bracket at 0.9075 (retrieved). Our lock range was 1 to 15 with a point of 8, and the final call moved the point to 8.5 (retrieved). Georgia certifies by Nov 20 (retrieved, Brennan Center).",
+    "why_it_moved": "The count. The market is pricing the bracket the result fell in (retrieved).",
+    "should_it_move_us": "Wait. The item grades on the certified margin, and the count already sits above the top of our interval.",
+    "trigger": "The certified margin on Nov 20.",
+    "sources": [
+      "https://results.sos.ga.gov/results/public/api/elections/Georgia/11032026GeneralAndSpecialElection/data",
+      "https://polymarket.com/event/georgia-senate-election-first-round-margin-of-victory-20260804175717495"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "sc_governor_margin",
+    "item": "SC governor margin",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +6.4 points since the last pull (Polymarket -9.3 to -2.9 pts)"
+    ],
+    "facts": "Flagged: markets moved +6.4 points since the last pull (Polymarket -9.3 to -2.9 pts). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "South Carolina governor count at R+4.5, above our range",
+    "what_happened": "Pending certification. The count reads D-4.47 at 99 percent counted, called for Wilson (retrieved, resolutions.json). Polymarket's derived margin moved from -9.3 to -2.9 since the Nov 3 pull, with the -5 to 0 bracket at 0.947, so the market is pricing the result bracket, and the derived median sits inside it (retrieved). Our lock range was -21 to -5 with a point of -13, and the final call moved the point to -11 (retrieved).",
+    "why_it_moved": "The count. A Republican hold by about four and a half points in a race every source had at ten or more (retrieved).",
+    "should_it_move_us": "Wait. The item grades on the certified margin, and the count already sits above the top of our interval.",
+    "trigger": "South Carolina's certified margin, due by Nov 13.",
+    "sources": [
+      "https://polymarket.com/event/south-carolina-governor-margin-of-victory-2026",
+      "https://en.wikipedia.org/w/index.php?title=2026_South_Carolina_gubernatorial_election&oldid=1383725784"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "TN-09",
+    "item": "TN-09",
+    "flag_kind": "rating",
+    "triggers": [
+      "Cook changed its rating, Solid R (flip) to Likely R (flip)",
+      "Sabato changed its rating, Safe R (flip) to Likely R (flip)"
+    ],
+    "facts": "Flagged: Cook changed its rating, Solid R (flip) to Likely R (flip); Sabato changed its rating, Safe R (flip) to Likely R (flip). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Taylor held the redrawn Memphis seat by about one point",
+    "what_happened": "Cook's final call, dated Nov 2, moved Solid R (flip) to Likely R (flip), and Sabato's moved Safe R (flip) to Likely R (flip) (retrieved, Wikipedia revid 1383968270). The result: R won, the count reading D-1.13 at 99 percent of the expected vote, called on CNN's AP feed Nov 5 at 12:14 (retrieved, retro.json). Our line was -12.15 and the wide grade had the Republican at 96.56 (retrieved, night.json and grade.json).",
+    "why_it_moved": "The raters' final calls, read today for the first time since Nov 2 (retrieved). The vote was far closer than their Likely R or our line (retrieved).",
+    "should_it_move_us": "No. Called. The grade scores our 97 for the Republican as a win on the side and a miss on the margin.",
+    "trigger": "Nothing for this item. Our resolution for Tennessee is by hand, with no script-readable feed.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings",
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "house_popular_vote_margin_d",
+    "item": "House popular vote",
+    "flag_kind": "market",
+    "triggers": [
+      "markets moved +4.4 points since the last pull (Polymarket 10.1 to 14.6; Kalshi 9.9 to 14.2 pts)"
+    ],
+    "facts": "Flagged: markets moved +4.4 points since the last pull (Polymarket 10.1 to 14.6; Kalshi 9.9 to 14.2 pts). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Markets price the House vote at D+14, above our range",
+    "what_happened": "Pending. The item needs the full national count, California and other mail states count for weeks, and certification is in December (retrieved, grade.json). Polymarket's derived margin moved from 10.1 to 14.6 and Kalshi's from 9.9 to 14.2 since the Nov 3 pull, with Polymarket's 14 to 16 bracket at 0.704 (retrieved). Our lock range was 4 to 12 with a point of 8, and the final call moved the point to 7.5 (retrieved).",
+    "why_it_moved": "The count so far. Both markets moved to the same bracket, which is one count read twice, not two signals (inferred).",
+    "should_it_move_us": "Wait. The item grades on the certified national vote, and the markets have it above the top of our interval.",
+    "trigger": "The certified national House vote in December, and before it, California's count.",
+    "sources": [
+      "https://polymarket.com/event/2026-midterms-house-popular-vote-margin-of-victory-224",
+      "https://kalshi.com/markets/house"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "TX-35",
+    "item": "TX-35",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Johnny Garcia won TX-35, which Sabato moved to Lean D on Nov 2",
+    "what_happened": "Sabato's final call, dated Nov 2, moved Tossup to Lean D (retrieved, Wikipedia revid 1383968270). The result: the Democrat won, the count reading D+10.85 at 99 percent of the expected vote on CNN's AP feed (retrieved, night.json). The wide grade had the Democrat at 50.36 (retrieved, grade.json).",
+    "why_it_moved": "Sabato's final call, read today for the first time since Nov 2 (retrieved).",
+    "should_it_move_us": "No. Called and scored.",
+    "trigger": "Nothing for this item.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings",
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "OH-09",
+    "item": "OH-09",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Marcy Kaptur won OH-09, which Sabato moved to Lean D on Nov 2",
+    "what_happened": "Sabato's final call, dated Nov 2, moved Tossup to Lean D (retrieved, Wikipedia revid 1383968270). The result: the Democrat won, the count reading D+5.45 at 98 percent of the expected vote on CNN's AP feed (retrieved, night.json). The wide grade had the Democrat at 71.3 (retrieved, grade.json).",
+    "why_it_moved": "Sabato's final call, read today for the first time since Nov 2 (retrieved).",
+    "should_it_move_us": "No. Called and scored.",
+    "trigger": "Nothing for this item.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings",
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "FL-14",
+    "item": "FL-14",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Kathy Castor won FL-14, which Sabato moved to Lean D on Nov 2",
+    "what_happened": "Sabato's final call, dated Nov 2, moved Tossup to Lean D (retrieved, Wikipedia revid 1383968270). The result: the Democrat won, the count reading D+5.36 at 99 percent of the expected vote on CNN's AP feed (retrieved, night.json). The wide grade had the Democrat at 70.7 (retrieved, grade.json).",
+    "why_it_moved": "Sabato's final call, read today for the first time since Nov 2 (retrieved).",
+    "should_it_move_us": "No. Called and scored.",
+    "trigger": "Nothing for this item.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings",
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "FL-22",
+    "item": "FL-22",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Pia Dandiya won FL-22, which Sabato moved to Lean D on Nov 2",
+    "what_happened": "Sabato's final call, dated Nov 2, moved Tossup to Lean D (retrieved, Wikipedia revid 1383968270). The result: the Democrat won, the count reading D+3.81 at 99 percent of the expected vote on CNN's AP feed (retrieved, night.json). The wide grade had the Democrat at 46.78 (retrieved, grade.json). The grade marks it an upset against our number (retrieved).",
+    "why_it_moved": "Sabato's final call, read today for the first time since Nov 2 (retrieved).",
+    "should_it_move_us": "No. Called and scored.",
+    "trigger": "Nothing for this item.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings",
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "AL-02",
+    "item": "AL-02",
+    "flag_kind": "rating",
+    "triggers": [
+      "Sabato changed its rating, Tossup to Lean D"
+    ],
+    "facts": "Flagged: Sabato changed its rating, Tossup to Lean D. News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "why": {
+      "events": [],
+      "events_by_kind": {},
+      "polls": [],
+      "poll_average": null,
+      "market_path": [],
+      "events_window_hours": 48,
+      "early_vote": []
+    },
+    "explained": true,
+    "headline": "Shomari Figures won AL-02, which Sabato moved to Lean D on Nov 2",
+    "what_happened": "Sabato's final call, dated Nov 2, moved Tossup to Lean D (retrieved, Wikipedia revid 1383968270). The result: the Democrat won, the count reading D+7.51 at 99 percent of the expected vote on CNN's AP feed (retrieved, night.json). The wide grade had the Democrat at 27.9 (retrieved, grade.json). The grade marks it an upset against our number (retrieved).",
+    "why_it_moved": "Sabato's final call, read today for the first time since Nov 2 (retrieved).",
+    "should_it_move_us": "No. Called and scored.",
+    "trigger": "Nothing for this item.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_ratings",
+      "https://politics.api.cnn.io/results/national-races/2026-HG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-06",
+    "kind": "item",
+    "item_id": "grade",
+    "item": "The grade",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Our lock ranks fourth of eight on 21 races, the final call seventh",
+    "what_happened": "scripts/grade.py scored 21 resolved statewide races. On mean Brier at the lock: Silver Bulletin 0.1035, Polymarket 0.1245, Kalshi 0.1283, our locked forecast 0.1487, Decision Desk 0.1563, Sabato 0.1629, Cook 0.175, Inside Elections 0.1983. At the close: Silver Bulletin 0.0774, Polymarket 0.0793, Kalshi 0.0821, Sabato 0.1324, Inside Elections 0.1451, Decision Desk 0.1455, our final call 0.1462, Cook 0.1497 (retrieved, data/dashboard/grade.json). Our favorites won 16 of 20 both times. Across all 457 races on the night board the wide grade counts 24 upsets against our numbers, 23 by Democrats and 1 by a Republican, and the 90 to 97 bucket won 23 of 28 against a mean chance of 93.8 (retrieved).",
+    "why_it_moved": "Three misses carry the score: South Carolina Senate at 20 and 13, Kansas Senate at 33 and 40, Iowa Senate at 40 and 34, every one a Democratic win (retrieved). The final call moved toward the Democrat where polls had moved and away in Iowa and Nevada, and the market beat us by moving further (inferred).",
+    "should_it_move_us": "No. The grade is the grade. The reading of it is a /where retro's job, not the brief's.",
+    "trigger": "Alaska and Kansas governor, the two open races, and the certified margins for the count items.",
+    "sources": [
+      "data/dashboard/grade.json",
+      "data/lock.json",
+      "data/closing.json"
+    ],
+    "label": "inferred"
   }
 ]
