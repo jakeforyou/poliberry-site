@@ -148,7 +148,7 @@ body { background: var(--color-bg); color: var(--color-fg); margin: 0; }
 .lx-note b { font-weight: 600; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '4c9fcee03ccb';</script>
+<script>window.__usTopoUrl = 'us-states-10m.json';window.__nightShare = true; window.__siteVersion = '02e5a4abb54d';</script>
 <script>
 (() => {
   // ---------- the dashboard's data layer, served from /data/<name>.json
@@ -9103,6 +9103,8 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
   const rtDur = (m) => (m == null ? '' : m < 60 ? `${Math.round(m)} min` : `${Math.floor(m / 60)} hr${Math.round(m % 60) ? ` ${Math.round(m % 60)} min` : ''}`);
   const rtDurS = (m) => (m == null ? '' : m < 60 ? `${Math.round(m)}m` : `${Math.floor(m / 60)}h${Math.round(m % 60) ? ` ${Math.round(m % 60)}m` : ''}`);  // a table cell on a phone
   const rtWho = (p) => ({ D: 'Democrats', R: 'Republicans', I: 'an independent' }[p] || '');
+  // the side most upsets went to, when at least three in four went that way (Nov 5, 9pm: the first Republican upset, ME-02)
+  const rtLean = (ub) => { const e = Object.entries(ub || {}).sort((a, b) => b[1] - a[1]), n = e.reduce((s, [, k]) => s + k, 0); return e.length && e[0][1] * 4 >= n * 3 ? { side: e[0][0], k: e[0][1], n, all: e.length === 1 } : null; };
   const rtSt = (s) => NT_STATE[s] || s;
   const rtOffice = (o) => ({ senate: 'Senate', governor: 'governor', house: 'House' }[o] || o);
   const rtP = (v) => (v == null ? '—' : v >= 0.995 ? 'over 99%' : v < 0.005 ? 'under 1%' : `${Math.round(100 * v)}%`);  // a 0 to 1 chance, as a percent
@@ -9235,7 +9237,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (U.length) {
       const by = {}; for (const u of U) by[u.winner] = (by[u.winner] || 0) + 1;
       const one = Object.keys(by).length === 1, lo = U.reduce((a, b) => (b.pre_chance != null && (a == null || b.pre_chance < a.pre_chance) ? b : a), null);
-      out.push(['rt-upsets', [el('b', {}, `${U.length} upset${U.length === 1 ? '' : 's'}`), document.createTextNode(one ? `, all won by ${rtWho(U[0].winner)}.` : `: ${Object.entries(by).map(([p, n]) => `${n} ${rtWho(p)}`).join(', ')}.`),
+      out.push(['rt-upsets', [el('b', {}, `${U.length} upset${U.length === 1 ? '' : 's'}`), document.createTextNode(one ? `, all won by ${rtWho(U[0].winner)}.` : `: ${Object.entries(by).sort((a, b) => b[1] - a[1]).map(([p, n], i) => `${n} ${i ? 'by' : 'won by'} ${rtWho(p)}`).join(', ')}.`),
         ...(lo ? [document.createTextNode(` The longest shot: ${ntLast(lo.winner_name || '') || lo.name} in ${lo.name}, ${rtP(lo.pre_chance)} in our forecast.`)] : [])]]);
     }
     if (!out.length) return null;
@@ -9596,12 +9598,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
       tile('Picked the winner', `${oc.favorites_won} of ${oc.favorites}`, `Key Senate and governor races where our final call's favorite won.${oc.toss_ups ? ` We called ${oc.toss_ups === 1 ? 'one more' : `${oc.toss_ups} more`} a toss-up.` : ''}`, `Locked forecast, Oct 16: ${ol.favorites_won} of ${ol.favorites}.`),
       tile('Against the field', `${rtOrd(oc.rank)} of ${cl.of}`, `Our final call's Brier score on the same ${cl.n} races, against forecasters and markets that day. Best: ${best.join(' and ')}.`, `Locked forecast, Oct 16: ${rtOrd(ol.rank)} of ${lk.of}.`));
     if (W.all && W.all.favorites) tiles.append(tile('Every race we forecast', `${W.all.favorites_won} of ${W.all.favorites}`, `Called Senate, governor and House races where our favorite won.`, W.competitive ? `In the ${W.competitive.favorites} closer ones, favorite under 90%: ${W.competitive.favorites_won}.` : ''));
-    const ub = (W.all || {}).upsets_by || {}, oneSide = Object.keys(ub).length === 1 ? Object.keys(ub)[0] : null;
+    const lean = rtLean((W.all || {}).upsets_by);
     const above = cl.rows.filter((r) => r.rank < oc.rank).map((r) => RT_GSHORT[r.source] || r.label);
     const past = (S.pending || []).map((p) => p.side || (p.count_so_far && p.count_so_far.vs_range !== 'inside' ? p.count_so_far.vs_range : null)).filter(Boolean);
     const say = [oc.favorites_won * 4 >= oc.favorites * 3 ? 'We picked most winners.' : 'We missed more winners than we should have.',
       above.length ? `${above.length} of the ${cl.of - 1} others put better numbers on the same races, led by ${best.join(' and ')}.` : 'Our final call scored best of the field.',
-      oneSide ? `All ${ub[oneSide]} of our misses went to ${rtWho(oneSide)}.` : '',
+      lean ? `${lean.all ? `All ${lean.k}` : `${lean.k} of the ${lean.n}`} upsets in races we forecast went to ${rtWho(lean.side)}.` : '',
       past.length && new Set(past).size === 1 ? `Every seat count and margin already past our range, ${past.length} of them, is past it ${past[0] === 'bluer' ? 'toward Democrats' : 'toward Republicans'}. None is final yet.` : ''];
     const kids = [tiles, el('p', { class: 'rt-sub rt-gsay' }, say.filter(Boolean).join(' '))];
     // the field
@@ -9632,7 +9634,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (W.calibration && W.all) {
       kids.push(el('h3', { class: 'rt-h3' }, `When we said a favorite had this chance, how often it won: ${W.all.n} called races`), rtCalib(W),
         ntKids('p', { class: 'rt-cap' }, [el('span', { class: 'k won' }, 'How often the favorite won'), el('span', { class: 'k said' }, 'The chance we gave, on average'),
-          document.createTextNode(`Every called Senate, governor and House race our forecast gave a chance before any votes: the key races at our final call, the rest from our written calls and our model. A bar that reaches its tick is a forecast that meant what it said.${W.all.toss_ups ? ` ${W.all.toss_ups === 1 ? 'One race' : `${W.all.toss_ups} races`} we called a toss-up ${W.all.toss_ups === 1 ? 'is' : 'are'} left out.` : ''}${oneSide ? ` The misses all went one way, so they were not ${ub[oneSide]} separate surprises: one national shift moved many races together.` : ''}`)]));
+          document.createTextNode(`Every called Senate, governor and House race our forecast gave a chance before any votes: the key races at our final call, the rest from our written calls and our model. A bar that reaches its tick is a forecast that meant what it said.${W.all.toss_ups ? ` ${W.all.toss_ups === 1 ? 'One race' : `${W.all.toss_ups} races`} we called a toss-up ${W.all.toss_ups === 1 ? 'is' : 'are'} left out.` : ''}${lean ? ` ${lean.all ? 'The misses all went' : `${lean.k} of the ${lean.n} misses went`} one way, so they were not ${lean.k} separate surprises: one national shift moved many races together.` : ''}`)]));
     }
     if ((W.all || {}).upsets && ((retroData || {}).upsets || []).length) {
       const go = el('button', { type: 'button', class: 'nt-link', 'data-fk': 'rt:to:upsets' }, `See all ${W.all.upsets} upsets, longest shot first`);
@@ -9654,12 +9656,12 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     const S = G.scorecard, W = G.wide || {}, cl = S.compare.closing, oc = cl.rows.find((r) => r.source === 'closing');
     if (!oc) return null;
     const ctl = Object.fromEntries((S.other || []).map((r) => [r.id, r])), sen = ctl.senate_dem_control, hou = ctl.house_dem_majority;
-    const ub = (W.all || {}).upsets_by || {}, sides = Object.keys(ub), seats = (S.pending || []).find((p) => p.id === 'senate_dem_seats');
+    const lean = rtLean((W.all || {}).upsets_by), seats = (S.pending || []).find((p) => p.id === 'senate_dem_seats');
     const pts = [];
     if (sen && hou && sen.outcome === hou.outcome) {
       const fav = (r) => (r.outcome ? r.closing.p_d : 1 - r.closing.p_d) > 0.5;
       pts.push(`${fav(sen) && fav(hou) ? 'We had the right side in both chambers' : 'We had the wrong side in a chamber'}: our final call gave ${rtWho(sen.outcome ? 'D' : 'R')} ${rtP(sen.outcome ? sen.closing.p_d : 1 - sen.closing.p_d)} for the Senate and ${rtP(hou.outcome ? hou.closing.p_d : 1 - hou.closing.p_d)} for the House.`
-        + (sides.length === 1 ? ` We missed the size. All ${ub[sides[0]]} upsets went to ${rtWho(sides[0])}${seats && seats.range_already === 'outside' ? `, and ${seats.side === 'bluer' ? 'Democrats and their allies' : 'Republicans'} already hold more Senate seats than our range allowed` : ''}.` : ''));
+        + (lean ? ` We missed the size. ${lean.all ? `All ${lean.k}` : `${lean.k} of ${lean.n}`} upsets went to ${rtWho(lean.side)}${seats && seats.range_already === 'outside' ? `, and ${seats.side === 'bluer' ? 'Democrats and their allies' : 'Republicans'} already hold more Senate seats than our range allowed` : ''}.` : ''));
     }
     const above = cl.rows.filter((r) => r.rank < oc.rank);
     if (above.length) pts.push(`On the ${cl.n} key races, ${above.length} of the ${cl.of - 1} others were sharper than our final call, among them ${above.slice(0, 3).map((r) => `${RT_GSHORT[r.source] || r.label}${r.kind === 'rating' ? '\'s ratings' : ''}`).join(', ').replace(/, ([^,]*)$/, ' and $1')}. Our locked forecast, a month earlier, placed ${rtOrd((S.compare.lock.rows.find((r) => r.source === 'lock') || {}).rank)}.`);
@@ -9668,7 +9670,7 @@ body.nt-mode .ms-band { padding-bottom: var(--cds-gap-xs); }
     if (!pts.length) return null;
     const ul = el('ul', { class: 'rt-errs rt-means' }); for (const t of pts) ul.append(el('li', {}, t));
     const kids = [el('span', { class: 'rt-tag' }, 'So far'), ul];
-    if (sides.length === 1) kids.push(ntKids('p', { class: 'rt-sub rt-reading' }, [el('b', {}, 'Our reading: '), document.createTextNode('one national shift explains most of the misses, since the races moved together. A forecast that treats races one at a time looks overconfident on a night like this. The lesson for us is how large a shared swing we allow for, more than any single race.')]));
+    if (lean) kids.push(ntKids('p', { class: 'rt-sub rt-reading' }, [el('b', {}, 'Our reading: '), document.createTextNode('one national shift explains most of the misses, since the races moved together. A forecast that treats races one at a time looks overconfident on a night like this. The lesson for us is how large a shared swing we allow for, more than any single race.')]));
     kids.push(el('small', { class: 'nt-mute' }, `Partial: ${S.resolved} of ${S.items} questions graded. The findings come from the grade above. The reading is ours, an inference, not a score.`));
     return kids;
   }
