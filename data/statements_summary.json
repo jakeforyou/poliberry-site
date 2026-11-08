@@ -1,50 +1,17 @@
 [
   {
-    "as_of": "2026-11-06",
+    "as_of": null,
     "days": 7,
-    "this_period": {
-      "start": "2026-10-31",
-      "end": "2026-11-06",
-      "articles": 0,
-      "usable_days": 0,
-      "skipped_days": [
-        "2026-10-31",
-        "2026-11-01",
-        "2026-11-02",
-        "2026-11-03",
-        "2026-11-04",
-        "2026-11-05",
-        "2026-11-06"
-      ]
-    },
-    "prior_period": {
-      "start": "2026-10-24",
-      "end": "2026-10-30",
-      "articles": 151,
-      "usable_days": 1,
-      "skipped_days": [
-        "2026-10-25",
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30"
-      ]
-    },
+    "this_period": null,
+    "prior_period": null,
     "change_pct": null,
-    "direction": "unclear",
-    "top_kind": "rigged or fraud claim",
-    "top_kind_articles": 1,
-    "top_speaker": "Donald Trump",
-    "top_speaker_articles": 137,
-    "counts_source": "daily",
-    "baseline": {
-      "usable_days": 34,
-      "per_day": 243.7,
-      "this_per_day": null,
-      "change_pct": null
-    },
-    "sentence": "Coverage of election-legitimacy statements cannot be compared this week: GDELT has usable data for 0 of 7 days this week and 1 of 7 days the week before.",
+    "direction": "none",
+    "top_kind": null,
+    "top_kind_articles": 0,
+    "top_speaker": null,
+    "top_speaker_articles": 0,
+    "counts_source": null,
+    "sentence": "No coverage of election-legitimacy statements was retrieved.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",

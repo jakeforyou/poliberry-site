@@ -1945,5 +1945,233 @@
     "delta": "Error found",
     "conclusion": "The odds agent notes that robots.txt on elections2026.thehill.com, insideelections.com, newsweek.com and channel4.com disallows ClaudeBot, Claude-Web and anthropic-ai, and that scripts/fetch_ratings.py calls the MediaWiki API under a path Wikipedia's robots.txt disallows (the /wiki/ article pages are allowed and were what this run read). Both are policy questions for Jake, not fixed here.",
     "as_of": "2026-11-06"
+  },
+  {
+    "n": 1,
+    "kind": "inference",
+    "delta": "Senate control at 56 against a core model at 70.5 and markets at 71.5. The gap is one decision: how much of the red-state polling miss of 2018, 2022 and 2024 to carry into Ohio, Texas, Iowa and Alaska.",
+    "mechanisms": "Republican-leaning low-attention voters skip surveys and vote, so red-state polls overstate Democrats by 3 to 5 as in three straight cycles | A midterm without Trump on the ballot leaves those voters home, so the polls are right, as the 2022 national average was | Polls understate Democrats in a low-approval midterm, as in Virginia and New Jersey in 2025 and as O'Rourke's 2018 Texas race did",
+    "evidence": "The early vote cuts against the first mechanism: North Carolina Republicans are 26.2 percent of accepted ballots against 31.6 in 2022 and 33.8 in 2024, and in every state reporting party Democrats run above their registration share. The 2018 Ohio, Iowa and Michigan Senate misses cut for it: they happened in a midterm without Trump. Iowa's early vote moved 8 points toward Republicans against 2022, Pennsylvania's mail 9, and both are partly Republicans now voting early.",
+    "conclusion": "Carry two thirds of the red-state miss. That puts Ohio at 58, Texas at 52, Iowa at 34, Alaska at 55 and the Senate at 56. The model's 70 assumes the miss is zero; your map assumes it is the whole 2020 miss.",
+    "confidence": 0.6,
+    "falsifier": "Brown or Talarico winning by 4 or more says the discount was wrong and should have been zero. Husted and Paxton both winning says it should have been the full miss.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 2,
+    "kind": "inference",
+    "delta": "House at 88 against a core model at 81 and markets at 94.",
+    "mechanisms": "The chamber model's 3-point shared swing plus coarse ratings widen the distribution past what the generic lead supports | The markets price the generic ballot at D+9.5 and give almost nothing to a miss toward Republicans | Redistricting is worth more than the raters' 5 flips to Republicans show",
+    "evidence": "Every midterm since 1994 with the president under 45 flipped the House when the out-party did not hold it. The generic average is D+8.1 and the special-election discount says 6 to 9. A 3-to-4-point miss toward Republicans, near 30 percent likely, still lands near 222 seats on these lines.",
+    "conclusion": "88. The downside case is a Republican hold at 218 to 222 and needs a miss of 5 or more, which no midterm in the modern polling record has produced.",
+    "confidence": 0.75,
+    "falsifier": "A final national House vote under D+4 with Republicans at 218 or more.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 3,
+    "kind": "inference",
+    "delta": "Michigan Senate from 72 to 70, and the drop since this morning is 8 points, the largest one-day move of the run.",
+    "mechanisms": "Stevens's suburban voters follow her to Rogers in numbers that matter, 2 points or more | The endorsement is an elite event that changes prices and not votes, as most late endorsements do | Michigan's polls were already 1 to 2 points too Democratic and the endorsement only confirms a race closer than +5",
+    "evidence": "No poll will field after the endorsement. Polymarket fell 7.5 points in two hours and recovered 3. The nonpartisan average before it was +5.4 across seven polls including a YouGov at +4 on Oct 29. The 2018 and 2024 Michigan Senate misses were 3 to 4 toward Democrats; 2022's was 5 toward Republicans.",
+    "conclusion": "Take 1.5 for the endorsement and 1.5 for the state's net polling history. +5.4 becomes about +2.5. 70. This is the one race in the run where today's news moved a number, and the cap on judgment in the core model will keep it from moving the board by more than 3 points of margin.",
+    "confidence": 0.55,
+    "falsifier": "El-Sayed winning by 5 or more says the endorsement was priced and worth nothing. Rogers winning says it was worth more than 2.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 4,
+    "kind": "inference",
+    "delta": "South Carolina Senate at 13 and the margin at Graham +6, against four nonpartisan polls averaging Graham +2.3 and markets at 25.5.",
+    "mechanisms": "The 2020 South Carolina miss of 6.5 toward the Democrat recurs because the same pollsters are measuring the same electorate | The three nonpartisan likely-voter polls within 4 points are right and the race is a genuine toss-up | The doubled early turnout is new voters the county mix cannot see",
+    "evidence": "Early voting closed at 1.87 times 2022's pace with the Harris counties at 24.45 percent of ballots against 24.93 in 2022 and the geography estimate within 0.7 of 2022. The pre-registered test for the flip trigger was not met. The Black share of mail ballots is 27.1 against 24.2 at 2022's close, the one composition figure that leans the other way.",
+    "conclusion": "13 and Graham by 6. The electorate that has voted looks like 2022, when Scott won by 26 and Graham in 2020 by 10 after polls had him near even.",
+    "confidence": 0.6,
+    "falsifier": "Andrews within 3 says the county mix was the wrong lens. Graham by 10 or more says the polls repeated 2020.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 5,
+    "kind": "red_team",
+    "delta": "The opposite reading",
+    "conclusion": "The opposite reading is that this run has repeated the lock's mistake in the other direction: it discounts red-state polls on three cycles of history, two of them with Trump on the ballot, while the actual ballots in hand say the opposite. North Carolina's Republicans have not shown up early at their 2022 or 2024 rates. Every state with party registration has Democrats above their share of the rolls. The specials ran D+10 to 13 all year and did not fade. Virginia and New Jersey beat their polls toward Democrats by 5 and 10 last November with the same pollsters and the same weighting. If the polls are simply right, Brown wins by 3, Talarico by 2, Jackson by 3, Peltola by 2, and the Senate is 52 to 48 with this run 20 points too low. The second counter-case is the one Jake holds: the polls are 4 or more too Democratic everywhere, Republicans hold Ohio, Texas, Iowa, Alaska, Maine and Kansas, Michigan falls, and the Senate is 52 to 48 the other way. This run gives that about 4 percent and the first counter-case about 25. To believe Republicans hold the House I would need to see: a final national House vote under D+4, Republicans ahead in the early-counting Florida and Georgia House seats by 9 pm ET, Democrats failing to flip PA-07, PA-08 and NY-17, and a Republican share of the North Carolina Election Day vote above 45 percent.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 6,
+    "kind": "cable",
+    "delta": "What cable will say and why it is wrong",
+    "conclusion": "Cable will say the early vote shows a Democratic wave. It shows a Democratic early vote, which North Carolina and Iowa also had in 2022 before Budd won by 3 and Grassley by 12. The number to watch is not who voted early but Ossoff's margin when Georgia reports around 9 pm. Under 5 and the polls were too Democratic everywhere; 8 or more and they were not.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 7,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "Decision Desk's governor ratings for Georgia and Ohio, as transcribed in Wikipedia's prediction table, swapped between Toss-up and Lean D on Oct 29, Oct 30 and Oct 31, firing a benchmark flag each day. The values are consistent within each pull and carry distinct as-of dates, so this is the raters' table, not our parse, but a rating that flips three times in a week is not a benchmark to lean on.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 8,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The FEC pull's principal-committee lookup hit the DEMO_KEY rate limit on Oct 31 and Nov 1 while the cash figures themselves came through (32 of 32). The note is in each pull. A personal api.data.gov key would remove it.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 9,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "tests/test_events.py::test_a_later_page_failing_keeps_the_earlier_rows_and_says_so still fails (not_retrieved is None where a partial reason is expected). Logged on four days running. Not fixed in this run.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 10,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The site push permission rule matches only the bare command; the morning task's variant with a leading cd and a trailing pipe was refused on Nov 1 and the bare form went through. Logged by the task.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 11,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The 2026-10-16 and 2026-10-20 gate files list Maine Question 1 (voter ID and absentee changes) as on the Nov 2026 ballot. Maine Public reports it failed on Nov 4, 2025. Found by the closing call's gate agent; the earlier files are left as written and the correction is recorded here.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 12,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The polls agent and the independence agent disagree on the Michigan endorsement: the polls agent found only an Oct 29 article saying Stevens endorsed El-Sayed after the primary, while the independence agent verified the Nov 1 Rogers endorsement against CBS News with a quote, and CNBC, Bridge Michigan and Kalshi carry it. The run takes the Nov 1 endorsement as retrieved.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 13,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "Decision Desk serves two Senate copies: /forecast/2026/senate/ dated Oct 14 (control 56, 51 seats) and /forecast/2026/governor/ dated Nov 1 (control 62, 52 seats). scripts/fetch_ddhq.py reads only the Oct 14 copy, so the board's DDHQ benchmark is 18 days stale. Found by the odds agent. Logged, not fixed; the fetcher needs a decision on which copy it reads.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 14,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The odds agent notes that robots.txt on elections2026.thehill.com, insideelections.com, newsweek.com and channel4.com disallows ClaudeBot, Claude-Web and anthropic-ai, and that scripts/fetch_ratings.py calls the MediaWiki API under a path Wikipedia's robots.txt disallows (the /wiki/ article pages are allowed and were what this run read). Both are policy questions for Jake, not fixed here.",
+    "as_of": "2026-11-07"
+  },
+  {
+    "n": 1,
+    "kind": "inference",
+    "delta": "Senate control at 56 against a core model at 70.5 and markets at 71.5. The gap is one decision: how much of the red-state polling miss of 2018, 2022 and 2024 to carry into Ohio, Texas, Iowa and Alaska.",
+    "mechanisms": "Republican-leaning low-attention voters skip surveys and vote, so red-state polls overstate Democrats by 3 to 5 as in three straight cycles | A midterm without Trump on the ballot leaves those voters home, so the polls are right, as the 2022 national average was | Polls understate Democrats in a low-approval midterm, as in Virginia and New Jersey in 2025 and as O'Rourke's 2018 Texas race did",
+    "evidence": "The early vote cuts against the first mechanism: North Carolina Republicans are 26.2 percent of accepted ballots against 31.6 in 2022 and 33.8 in 2024, and in every state reporting party Democrats run above their registration share. The 2018 Ohio, Iowa and Michigan Senate misses cut for it: they happened in a midterm without Trump. Iowa's early vote moved 8 points toward Republicans against 2022, Pennsylvania's mail 9, and both are partly Republicans now voting early.",
+    "conclusion": "Carry two thirds of the red-state miss. That puts Ohio at 58, Texas at 52, Iowa at 34, Alaska at 55 and the Senate at 56. The model's 70 assumes the miss is zero; your map assumes it is the whole 2020 miss.",
+    "confidence": 0.6,
+    "falsifier": "Brown or Talarico winning by 4 or more says the discount was wrong and should have been zero. Husted and Paxton both winning says it should have been the full miss.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 2,
+    "kind": "inference",
+    "delta": "House at 88 against a core model at 81 and markets at 94.",
+    "mechanisms": "The chamber model's 3-point shared swing plus coarse ratings widen the distribution past what the generic lead supports | The markets price the generic ballot at D+9.5 and give almost nothing to a miss toward Republicans | Redistricting is worth more than the raters' 5 flips to Republicans show",
+    "evidence": "Every midterm since 1994 with the president under 45 flipped the House when the out-party did not hold it. The generic average is D+8.1 and the special-election discount says 6 to 9. A 3-to-4-point miss toward Republicans, near 30 percent likely, still lands near 222 seats on these lines.",
+    "conclusion": "88. The downside case is a Republican hold at 218 to 222 and needs a miss of 5 or more, which no midterm in the modern polling record has produced.",
+    "confidence": 0.75,
+    "falsifier": "A final national House vote under D+4 with Republicans at 218 or more.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 3,
+    "kind": "inference",
+    "delta": "Michigan Senate from 72 to 70, and the drop since this morning is 8 points, the largest one-day move of the run.",
+    "mechanisms": "Stevens's suburban voters follow her to Rogers in numbers that matter, 2 points or more | The endorsement is an elite event that changes prices and not votes, as most late endorsements do | Michigan's polls were already 1 to 2 points too Democratic and the endorsement only confirms a race closer than +5",
+    "evidence": "No poll will field after the endorsement. Polymarket fell 7.5 points in two hours and recovered 3. The nonpartisan average before it was +5.4 across seven polls including a YouGov at +4 on Oct 29. The 2018 and 2024 Michigan Senate misses were 3 to 4 toward Democrats; 2022's was 5 toward Republicans.",
+    "conclusion": "Take 1.5 for the endorsement and 1.5 for the state's net polling history. +5.4 becomes about +2.5. 70. This is the one race in the run where today's news moved a number, and the cap on judgment in the core model will keep it from moving the board by more than 3 points of margin.",
+    "confidence": 0.55,
+    "falsifier": "El-Sayed winning by 5 or more says the endorsement was priced and worth nothing. Rogers winning says it was worth more than 2.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 4,
+    "kind": "inference",
+    "delta": "South Carolina Senate at 13 and the margin at Graham +6, against four nonpartisan polls averaging Graham +2.3 and markets at 25.5.",
+    "mechanisms": "The 2020 South Carolina miss of 6.5 toward the Democrat recurs because the same pollsters are measuring the same electorate | The three nonpartisan likely-voter polls within 4 points are right and the race is a genuine toss-up | The doubled early turnout is new voters the county mix cannot see",
+    "evidence": "Early voting closed at 1.87 times 2022's pace with the Harris counties at 24.45 percent of ballots against 24.93 in 2022 and the geography estimate within 0.7 of 2022. The pre-registered test for the flip trigger was not met. The Black share of mail ballots is 27.1 against 24.2 at 2022's close, the one composition figure that leans the other way.",
+    "conclusion": "13 and Graham by 6. The electorate that has voted looks like 2022, when Scott won by 26 and Graham in 2020 by 10 after polls had him near even.",
+    "confidence": 0.6,
+    "falsifier": "Andrews within 3 says the county mix was the wrong lens. Graham by 10 or more says the polls repeated 2020.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 5,
+    "kind": "red_team",
+    "delta": "The opposite reading",
+    "conclusion": "The opposite reading is that this run has repeated the lock's mistake in the other direction: it discounts red-state polls on three cycles of history, two of them with Trump on the ballot, while the actual ballots in hand say the opposite. North Carolina's Republicans have not shown up early at their 2022 or 2024 rates. Every state with party registration has Democrats above their share of the rolls. The specials ran D+10 to 13 all year and did not fade. Virginia and New Jersey beat their polls toward Democrats by 5 and 10 last November with the same pollsters and the same weighting. If the polls are simply right, Brown wins by 3, Talarico by 2, Jackson by 3, Peltola by 2, and the Senate is 52 to 48 with this run 20 points too low. The second counter-case is the one Jake holds: the polls are 4 or more too Democratic everywhere, Republicans hold Ohio, Texas, Iowa, Alaska, Maine and Kansas, Michigan falls, and the Senate is 52 to 48 the other way. This run gives that about 4 percent and the first counter-case about 25. To believe Republicans hold the House I would need to see: a final national House vote under D+4, Republicans ahead in the early-counting Florida and Georgia House seats by 9 pm ET, Democrats failing to flip PA-07, PA-08 and NY-17, and a Republican share of the North Carolina Election Day vote above 45 percent.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 6,
+    "kind": "cable",
+    "delta": "What cable will say and why it is wrong",
+    "conclusion": "Cable will say the early vote shows a Democratic wave. It shows a Democratic early vote, which North Carolina and Iowa also had in 2022 before Budd won by 3 and Grassley by 12. The number to watch is not who voted early but Ossoff's margin when Georgia reports around 9 pm. Under 5 and the polls were too Democratic everywhere; 8 or more and they were not.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 7,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "Decision Desk's governor ratings for Georgia and Ohio, as transcribed in Wikipedia's prediction table, swapped between Toss-up and Lean D on Oct 29, Oct 30 and Oct 31, firing a benchmark flag each day. The values are consistent within each pull and carry distinct as-of dates, so this is the raters' table, not our parse, but a rating that flips three times in a week is not a benchmark to lean on.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 8,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The FEC pull's principal-committee lookup hit the DEMO_KEY rate limit on Oct 31 and Nov 1 while the cash figures themselves came through (32 of 32). The note is in each pull. A personal api.data.gov key would remove it.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 9,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "tests/test_events.py::test_a_later_page_failing_keeps_the_earlier_rows_and_says_so still fails (not_retrieved is None where a partial reason is expected). Logged on four days running. Not fixed in this run.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 10,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The site push permission rule matches only the bare command; the morning task's variant with a leading cd and a trailing pipe was refused on Nov 1 and the bare form went through. Logged by the task.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 11,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The 2026-10-16 and 2026-10-20 gate files list Maine Question 1 (voter ID and absentee changes) as on the Nov 2026 ballot. Maine Public reports it failed on Nov 4, 2025. Found by the closing call's gate agent; the earlier files are left as written and the correction is recorded here.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 12,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The polls agent and the independence agent disagree on the Michigan endorsement: the polls agent found only an Oct 29 article saying Stevens endorsed El-Sayed after the primary, while the independence agent verified the Nov 1 Rogers endorsement against CBS News with a quote, and CNBC, Bridge Michigan and Kalshi carry it. The run takes the Nov 1 endorsement as retrieved.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 13,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "Decision Desk serves two Senate copies: /forecast/2026/senate/ dated Oct 14 (control 56, 51 seats) and /forecast/2026/governor/ dated Nov 1 (control 62, 52 seats). scripts/fetch_ddhq.py reads only the Oct 14 copy, so the board's DDHQ benchmark is 18 days stale. Found by the odds agent. Logged, not fixed; the fetcher needs a decision on which copy it reads.",
+    "as_of": "2026-11-08"
+  },
+  {
+    "n": 14,
+    "kind": "error",
+    "delta": "Error found",
+    "conclusion": "The odds agent notes that robots.txt on elections2026.thehill.com, insideelections.com, newsweek.com and channel4.com disallows ClaudeBot, Claude-Web and anthropic-ai, and that scripts/fetch_ratings.py calls the MediaWiki API under a path Wikipedia's robots.txt disallows (the /wiki/ article pages are allowed and were what this run read). Both are policy questions for Jake, not fixed here.",
+    "as_of": "2026-11-08"
   }
 ]
