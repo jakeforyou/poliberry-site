@@ -5665,14 +5665,14 @@
     "triggers": [
       "markets moved +3.8 points since the last pull (Polymarket -18.8 to -15.0 pts)"
     ],
-    "facts": "Flagged: markets moved +3.8 points since the last pull (Polymarket -18.8 to -15.0 pts). News in the last 48 hours: 0 articles. No reading yet. The morning brief explains every flagged item.",
+    "facts": "Flagged: markets moved +3.8 points since the last pull (Polymarket -18.8 to -15.0 pts). No reading yet. The morning brief explains every flagged item.",
     "why": {
       "events": [],
       "events_by_kind": {},
       "polls": [],
       "poll_average": null,
       "market_path": [],
-      "events_window_hours": 48,
+      "events_window_hours": null,
       "early_vote": []
     },
     "explained": true,
@@ -5705,6 +5705,76 @@
     "sources": [
       "https://www.elections.alaska.gov/results/",
       "https://polymarket.com/event/alaska-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-09",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold: no forecast number, Decision Desk number, rating or market price moved past one, and the largest intraday market move was two tenths of a point (retrieved). The thing that happened was a call. CNN's feed marked Cindy Holscher the winner of the Kansas governor race at the 20:58 ET read on Sunday, with 99 percent of the expected vote in and a 0.7 point lead, and by the 07:53 ET read on Monday the winner mark was gone and the race was back to pending (retrieved, night poller log). The count itself has not changed: 551,250 to 543,612. Alaska remains the other open statewide race on the board, at 74 percent counted with Sullivan ahead by about two on first choices and the ranked-choice tabulation set for Nov 18 (retrieved). The largest board change was Pennsylvania adding 1,031 returned mail ballots to a file whose party shares did not move, and a Collins FEC amendment that restates a period already filed (retrieved). The GDELT feed failed on every query again, so the events window is empty (retrieved).",
+    "written_at": "2026-11-09T11:30:32-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-09",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Kansas was called Sunday night. By Monday morning it was not.",
+    "vibe": "CNN's feed marked Holscher the winner at 99 percent counted and a 0.7 point lead, dropped the mark overnight, and the count has not moved. Alaska is still at 74 percent, waiting on Nov 18.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://ent.sos.ks.gov/kssos_ent.html",
+      "https://www.elections.alaska.gov/results/",
+      "https://polymarket.com/event/alaska-senate-election-winner"
+    ],
+    "written_at": "2026-11-09T11:30:32-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-09",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas governor: a winner mark that appeared, then did not",
+    "what_happened": "The night poller logged a new call for Holscher from CNN's AP feed at the 2026-11-08T20:58 ET read, 99 percent of the expected vote in, margin 0.7 points toward the Democrat (retrieved, data/dashboard/night_poller.log). At the 2026-11-09T07:53 ET read the feed carried no winner, and the board returned the race to pending with the note that a call was logged then withdrawn (retrieved, data/resolutions.json). A live read of the same feed at about 11:30 ET on Nov 9 still shows no winner: Holscher 551,250, Masterson 543,612, 99 percent reporting (retrieved). The night board estimates about 11,000 ballots outstanding on AP's expected vote and says Masterson would need 84.5 percent of them (inferred, data/dashboard/night.json). The Kansas Secretary of State results site returns HTTP 403 to scripts, so there is no official read (retrieved). Whether AP retracted a formal call or the feed's winner field flickered is not known from our data (inferred). Our number is 53.56 for Holscher with a margin of +0.4 (core model). The run had 30 and the lock 27. Polymarket and Kalshi price Holscher at 99.6 (retrieved, 11:24 ET).",
+    "why_it_moved": "A data-feed event, not a count event. The vote totals are the same before and after the mark came and went (retrieved). The lead of 7,638 votes against roughly 11,000 outstanding is why the markets sit at 99.6 and why the night board scored it as called for a morning (inferred).",
+    "should_it_move_us": "No. The item grades on the certified result, and the count did not move. The model's number stands at 53.56 until the grade, and the markets already treat it as decided.",
+    "trigger": "A call that stays in the feed, or the county canvass totals. The one fact that matters is how many ballots are actually left, provisional ballots included, against the 7,638 vote lead.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://ent.sos.ks.gov/kssos_ent.html",
+      "https://polymarket.com/event/kansas-governor-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-09",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska still at 74 percent, Sullivan ahead on first choices",
+    "what_happened": "The count stands at 74 percent of the expected vote with Sullivan ahead by 1.97 points on first choices, 107,171 to 102,962 (retrieved, CNN read 2026-11-09T07:53 ET). Polymarket prices Peltola at 98.05 and Kalshi at 97.3, down about half a point on Polymarket since yesterday's pull and below the flag threshold (retrieved, 11:24 ET). The night board puts about 75,000 ballots outstanding on AP's estimate and says Peltola needs 52.8 percent of them to lead on first choices (inferred, data/dashboard/night.json). The ranked-choice tabulation is set for Nov 18 and certification for Nov 25 (retrieved). No new poll (retrieved). Our number is 74.94 for Peltola with a margin of +2.31 (core model). The run had 55 and the lock 62.",
+    "why_it_moved": "Nothing moved past a threshold. The item is here because it is the only Senate seat on the board without a winner and the market drifted a few tenths against Peltola as the first-choice gap held (inferred).",
+    "should_it_move_us": "Wait. The item is pending until the ranked-choice tabulation, and a forecast does not update on a partial first-choice count.",
+    "trigger": "The Nov 18 tabulation, or the Division of Elections' remaining absentee and questioned ballot counts before it. The first-choice gap and the third candidate's share are what second preferences have to overcome.",
+    "sources": [
+      "https://www.elections.alaska.gov/results/",
+      "https://polymarket.com/event/alaska-senate-election-winner",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json"
     ],
     "label": "inferred"
   }

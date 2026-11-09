@@ -1,17 +1,30 @@
 [
   {
-    "as_of": null,
+    "as_of": "2026-11-09",
     "days": 7,
-    "this_period": null,
-    "prior_period": null,
+    "this_period": {
+      "start": "2026-11-03",
+      "end": "2026-11-09",
+      "articles": 43,
+      "usable_days": null,
+      "skipped_days": []
+    },
+    "prior_period": {
+      "start": "2026-10-27",
+      "end": "2026-11-02",
+      "articles": 0,
+      "usable_days": null,
+      "skipped_days": []
+    },
     "change_pct": null,
-    "direction": "none",
-    "top_kind": null,
-    "top_kind_articles": 0,
-    "top_speaker": null,
-    "top_speaker_articles": 0,
-    "counts_source": null,
-    "sentence": "No coverage of election-legitimacy statements was retrieved.",
+    "direction": "new",
+    "top_kind": "mail ballots",
+    "top_kind_articles": 1,
+    "top_speaker": "Donald Trump",
+    "top_speaker_articles": 43,
+    "counts_source": "rows",
+    "baseline": null,
+    "sentence": "Coverage of election-legitimacy statements is up from zero this week (43 articles against 0), led by Trump on mail ballots.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",
