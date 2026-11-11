@@ -5847,5 +5847,96 @@
       "https://polymarket.com/event/kansas-governor-winner-2026"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-11",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold: no forecast number, Decision Desk number, rating or market price moved past one, and the largest intraday market move was one tenth of a point, on Kansas (retrieved). It was a counting day. The three South Carolina House items went from pending to called at the 10:02 ET poll: Lacore (D) in the first district by 1.03, Timmons (R) in the fourth by 6.06, Clyburn (D) in the sixth by 38.84 (retrieved, Wikipedia's results tables). Alaska went from 76 to 84 percent of the expected vote and Peltola's first-choice lead over Sullivan went from 2,517 to 4,250, still at 49 percent of all votes, so the Nov 18 ranked count still decides it (retrieved, CNN's AP feed). Kansas added 508 votes and no call (retrieved). The largest board change was Illinois adding 43,143 ballots to its early-vote file, which is bookkeeping (retrieved).",
+    "written_at": "2026-11-11T10:04:40-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-11",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "South Carolina's first district has a winner, and it is Lacore.",
+    "vibe": "The three South Carolina House races on the board finally read as called, with Lacore taking the first district by 1.03 points, while Alaska reached 84 percent counted and Kansas found 508 more votes without finding a call.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_House_of_Representatives_elections_in_South_Carolina&oldid=1384968105",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json"
+    ],
+    "written_at": "2026-11-11T10:04:40-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-11",
+    "kind": "item",
+    "item_id": "sc01_margin",
+    "item": "SC-01 margin",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "SC-01 reads as called: Lacore by 1.03",
+    "what_happened": "The 10:02 ET poll on Nov 11 read all three South Carolina House items as called for the first time (retrieved, data/night/2026-11-11T1002.json). SC-01: Nancy Lacore (D) 162,103 and 49.66 percent, Jenny Costa Honeycutt (R) 158,751 and 48.63 percent, margin D+1.03. SC-04: William Timmons (R), margin R+6.06. SC-06: Jim Clyburn (D), margin D+38.84 (retrieved, Wikipedia revision 1384968105, checked by hand against the page's wikitext at 10:05 ET). The same revision read as pending at the 23:32 ET poll on Nov 10, so the change is in our reading of the page, not in the page (inferred). The state's own results site is Clarity and stays blocked to scripts, so there is no official read (retrieved). The scorecard had SC-01 at R+6 with an interval of R+13 to D+1, SC-04 at R+18 with R+25 to R+11, and SC-06 at D+28 with D+20 to D+36 (retrieved, data/dashboard/scorecard.json). Decision Desk had R+5, R+15 and D+29 (retrieved). No market trades these.",
+    "why_it_moved": "No number moved. The item is here because three pending rows resolved in one poll. The parser found results tables it did not find last night on the same page revision, which points to an intermittent read rather than new votes (inferred). The results themselves are a week old.",
+    "should_it_move_us": "No. These items are resolved, not forecast. The grade script scores them. On the face of the board all three margins landed more Democratic than our point calls, and SC-01 and SC-04 sit outside the stated intervals (inferred, the grade will say by how much).",
+    "trigger": "The certified South Carolina totals. A second source for the SC-01 margin would settle whether D+1.03 holds, since the lead is 3,352 votes and the official site cannot be read.",
+    "sources": [
+      "https://en.wikipedia.org/w/index.php?title=2026_United_States_House_of_Representatives_elections_in_South_Carolina&oldid=1384968105",
+      "https://enr-scvotes.org/",
+      "https://elections2026.thehill.com/forecast/2026/house/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-11",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska at 84 percent: Peltola leads Sullivan by 4,250",
+    "what_happened": "CNN's AP feed at 10:00 ET on Nov 11 has Peltola 118,926, Sullivan 114,676 and Heikes (R) 5,318, with 84 percent of the expected vote in and 242,947 counted (retrieved, read from the feed's candidate list). The Nov 10 read had Peltola 106,321, Sullivan 103,804 and Heikes 4,865 at 76 percent and 218,641 counted (retrieved). So about 24,300 new ballots went Peltola 12,605, Sullivan 10,872, Heikes 453 (inferred, by subtraction). Peltola has 49 percent of all votes, under the 50 that wins outright, so the ranked-choice count on Nov 18 decides it (retrieved). The board's margin of R+0.44 adds both Republicans together. It was R+1.07 yesterday (retrieved). The night board puts about 46,000 ballots outstanding on AP's estimate and says Peltola needs 51.2 percent of them to pass both Republicans combined (inferred, data/dashboard/night.json). The markets price Peltola at 98.9 (retrieved, 10:00 ET alert). No new poll (retrieved). Our number is 74.84 for Peltola with a margin of +2.3 (core model). The run had 55 and the lock 62.",
+    "why_it_moved": "Nothing moved past a threshold. The count moved. This batch broke for Peltola by a narrower split than the small one before it, about 52 to 45 against two to one, and it still widened her lead (inferred). The markets were already at 98 and barely changed (retrieved).",
+    "should_it_move_us": "Wait. The item is pending until the ranked-choice tabulation, and the model does not update on a partial count. The count is consistent with our side of the call, not proof of it.",
+    "trigger": "The Nov 18 tabulation. Before it, whether Peltola crosses 50 percent of all votes, and if not, how Heikes's 5,318 ballots rank Sullivan second.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://www.elections.alaska.gov/results/",
+      "https://polymarket.com/event/alaska-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-11",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas governor: 508 more votes, still no call",
+    "what_happened": "CNN's AP feed at 10:00 ET on Nov 11 shows Holscher 551,467, Masterson 543,903, 99 percent of the expected vote in, and no winner (retrieved). Yesterday it was 551,250 to 543,612. Holscher added 217 and Masterson 291, so the lead went from 7,638 to 7,564 (inferred, by subtraction). The winner mark that appeared on Nov 8 and was withdrawn by Nov 9 has not come back (retrieved, data/resolutions.json). The night board estimates about 11,000 ballots outstanding and says Masterson would need 84.2 percent of them (inferred, data/dashboard/night.json). The Kansas Secretary of State site returns HTTP 403 to scripts, so there is no official read (retrieved). Polymarket prices Holscher at 99.1 and Kalshi at 99.7. The blend opened at 99.5 and is 99.4, the day's largest move (retrieved, 10:00 ET). Our number is 53.56 for Holscher with a margin of +0.4 (core model). The run had 30 and the lock 27.",
+    "why_it_moved": "It barely did. A small batch, likely canvass additions, split 57 to 43 for Masterson and cut the lead by 74 votes (inferred). That rate is far under what Masterson needs.",
+    "should_it_move_us": "No. The model's number stands at 53.56 until the grade, and a 508 vote batch changes nothing about a 7,564 vote lead.",
+    "trigger": "A call that stays in the feed, or the county canvass totals. The one fact that matters is how many ballots are actually left, provisional ballots included.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://ent.sos.ks.gov/kssos_ent.html",
+      "https://polymarket.com/event/kansas-governor-winner-2026"
+    ],
+    "label": "inferred"
   }
 ]
