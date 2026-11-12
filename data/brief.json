@@ -5938,5 +5938,74 @@
       "https://polymarket.com/event/kansas-governor-winner-2026"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-12",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold: no forecast number, Decision Desk number, rating or market price moved past one, and the largest intraday market move was two tenths of a point, on Alaska (retrieved). It was a counting day, and a thin one. Alaska went from 84 to 86 percent of the expected vote and Peltola's first-choice lead over Sullivan went from 4,250 to 3,975, the first batch since Nov 9 to cut it. She is still at 49 percent of all votes, so the Nov 18 ranked count still decides it (retrieved, CNN's AP feed). Kansas did not add a vote and has no call (retrieved). The only board changes were Oregon and Virginia adding ballots to their files, which is bookkeeping (retrieved).",
+    "written_at": "2026-11-12T10:03:43-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-12",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Sullivan won a batch in Alaska. Kansas did not count a vote.",
+    "vibe": "Alaska reached 86 percent counted and Peltola's first-choice lead over Sullivan slipped from 4,250 to 3,975, Kansas sat on the same 7,564 vote gap with no call, and Oregon is still logging ballots nine days after the election.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://election.lab.ufl.edu/early-vote/2026-early-voting/"
+    ],
+    "written_at": "2026-11-12T10:03:43-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-12",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska at 86 percent: Peltola's lead slips to 3,975",
+    "what_happened": "CNN's AP feed at 10:00 ET on Nov 12 has Peltola 121,487, Sullivan 117,512 and Heikes (R) 5,426, with 86 percent of the expected vote in and 248,525 counted (retrieved, read from the feed's candidate list). The Nov 11 read had Peltola 118,926, Sullivan 114,676 and Heikes 5,318 at 84 percent and 242,947 counted (retrieved). So 5,578 new ballots went Sullivan 2,836, Peltola 2,561, Heikes 108, and the lead went from 4,250 to 3,975 (inferred, by subtraction). Peltola has 49 percent of all votes, under the 50 that wins outright, so the ranked-choice count on Nov 18 decides it (retrieved). The board's margin of R+0.58 adds both Republicans together. It was R+0.44 yesterday (retrieved). The board's estimate of ballots outstanding was last built on Nov 10 and is not quoted here (retrieved). The markets price Peltola at 99.4, with Polymarket at 99.5 and Kalshi at 99.3 (retrieved, 10:00 ET alert). No new poll (retrieved). Our number is 74.75 for Peltola with a margin of +2.3 (core model). The run had 55 and the lock 62.",
+    "why_it_moved": "Nothing moved past a threshold. The count moved, against Peltola for once. Sullivan took about 51 percent of this batch to her 46, after two batches that widened her lead (inferred). The batch is small. The markets did not react and sit a half point higher than yesterday morning (retrieved).",
+    "should_it_move_us": "Wait. The item is pending until the ranked-choice tabulation, and the model does not update on a partial count. One small batch for Sullivan does not change the reading, but it is the first evidence that the late count is not uniformly hers.",
+    "trigger": "The Nov 18 tabulation. Before it, whether the next batch also breaks for Sullivan, and how Heikes's 5,426 ballots rank Sullivan second.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://www.elections.alaska.gov/results/",
+      "https://polymarket.com/event/alaska-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-12",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas governor: no new votes, no call",
+    "what_happened": "CNN's AP feed at 10:00 ET on Nov 12 shows Holscher 551,467, Masterson 543,903, 99 percent of the expected vote in, and no winner (retrieved). Those are the same counts as the Nov 11 read, so the lead is still 7,564 (retrieved). The winner mark that appeared on Nov 8 and was withdrawn by Nov 9 has not come back (retrieved, data/resolutions.json). The Kansas Secretary of State site returns HTTP 403 to scripts, so there is no official read (retrieved). Polymarket and Kalshi both price Holscher at 99.7. The blend opened at 99.6 (retrieved, 10:00 ET). Our number is 53.47 for Holscher with a margin of +0.4 (core model). The run had 30 and the lock 27.",
+    "why_it_moved": "It did not. No votes were added and the price moved a tenth of a point (retrieved). The likeliest reading is that the feed is waiting on county canvass totals (inferred).",
+    "should_it_move_us": "No. The model's number stands until the grade, and nothing changed.",
+    "trigger": "A call that stays in the feed, or the county canvass totals. The one fact that matters is how many ballots are actually left, provisional ballots included.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://ent.sos.ks.gov/kssos_ent.html",
+      "https://polymarket.com/event/kansas-governor-winner-2026"
+    ],
+    "label": "inferred"
   }
 ]

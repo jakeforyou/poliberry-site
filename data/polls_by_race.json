@@ -771,7 +771,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine#Polling_4",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -1924,7 +1924,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -2016,6 +2016,24 @@
     "margin_d": 5.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-oh-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_oh",
+    "kind": "poll",
+    "pollster": "HarrisX",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 496,
+    "moe": 4.4,
+    "d": 47.0,
+    "r": 45.0,
+    "other": 4.0,
+    "undecided": 5.0,
+    "margin_d": 2.0,
+    "aggregate": false,
+    "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
   },
   {
     "race_id": "senate_oh",
@@ -2992,8 +3010,8 @@
   {
     "race_id": "senate_oh",
     "kind": "average",
-    "average_margin_d": 2.27,
-    "n_polls": 15,
+    "average_margin_d": 2.25,
+    "n_polls": 16,
     "candidates": {
       "D": [
         "Sherrod Brown"
@@ -3005,7 +3023,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Ohio#Polling",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -3061,6 +3079,24 @@
     "margin_d": 7.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-tx-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_tx",
+    "kind": "poll",
+    "pollster": "HarrisX",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 512,
+    "moe": 4.3,
+    "d": 50.0,
+    "r": 44.0,
+    "other": 4.0,
+    "undecided": 2.0,
+    "margin_d": 6.0,
+    "aggregate": false,
+    "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
   },
   {
     "race_id": "senate_tx",
@@ -4541,8 +4577,8 @@
   {
     "race_id": "senate_tx",
     "kind": "average",
-    "average_margin_d": 3.0,
-    "n_polls": 15,
+    "average_margin_d": 3.5,
+    "n_polls": 14,
     "candidates": {
       "D": [
         "James Talarico"
@@ -4554,7 +4590,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas#Polling_4",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -5133,7 +5169,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alaska#Polling_2",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -5962,7 +5998,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Iowa#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -6036,6 +6072,24 @@
     "margin_d": 11.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
+  },
+  {
+    "race_id": "senate_mi",
+    "kind": "poll",
+    "pollster": "HarrisX",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 663,
+    "moe": 3.8,
+    "d": 48.0,
+    "r": 45.0,
+    "other": 4.0,
+    "undecided": 2.0,
+    "margin_d": 3.0,
+    "aggregate": false,
+    "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
   },
   {
     "race_id": "senate_mi",
@@ -7354,8 +7408,8 @@
   {
     "race_id": "senate_mi",
     "kind": "average",
-    "average_margin_d": 5.41,
-    "n_polls": 17,
+    "average_margin_d": 5.28,
+    "n_polls": 18,
     "candidates": {
       "D": [
         "Abdul El-Sayed"
@@ -7367,7 +7421,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -7872,7 +7926,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -8503,7 +8557,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Hampshire#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -8869,8 +8923,8 @@
   {
     "race_id": "senate_sc",
     "kind": "average",
-    "average_margin_d": -0.78,
-    "n_polls": 9,
+    "average_margin_d": -1.0,
+    "n_polls": 8,
     "candidates": {
       "R": [
         "Darline Graham"
@@ -8882,7 +8936,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina#Polling_5",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -9531,7 +9585,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida#Polling_2",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -9946,7 +10000,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas#Polling_2",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -10438,8 +10492,8 @@
   {
     "race_id": "senate_mn",
     "kind": "average",
-    "average_margin_d": 5.88,
-    "n_polls": 8,
+    "average_margin_d": 6.29,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Peggy Flanagan"
@@ -10451,7 +10505,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -10884,7 +10938,7 @@
     "newest_end_date": "2026-11-02",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -11497,7 +11551,7 @@
     "newest_end_date": "2026-10-29",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -11840,7 +11894,7 @@
     "newest_end_date": "2026-10-28",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Nevada_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -12165,7 +12219,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Wisconsin_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -12203,6 +12257,24 @@
     "margin_d": 13.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
+  },
+  {
+    "race_id": "gov_mi",
+    "kind": "poll",
+    "pollster": "HarrisX",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 663,
+    "moe": 3.8,
+    "d": 53.0,
+    "r": 41.0,
+    "other": 3.0,
+    "undecided": 3.0,
+    "margin_d": 12.0,
+    "aggregate": false,
+    "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
   },
   {
     "race_id": "gov_mi",
@@ -13017,8 +13089,8 @@
   {
     "race_id": "gov_mi",
     "kind": "average",
-    "average_margin_d": 8.17,
-    "n_polls": 12,
+    "average_margin_d": 8.46,
+    "n_polls": 13,
     "candidates": {
       "D": [
         "Jocelyn Benson"
@@ -13030,7 +13102,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -13104,6 +13176,24 @@
     "margin_d": 6.0,
     "aggregate": false,
     "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-oh-poll-toplines.html"
+  },
+  {
+    "race_id": "gov_oh",
+    "kind": "poll",
+    "pollster": "HarrisX",
+    "sponsor": null,
+    "start_date": "2026-10-30",
+    "end_date": "2026-11-01",
+    "population": "LV",
+    "sample": 496,
+    "moe": 4.4,
+    "d": 45.0,
+    "r": 47.0,
+    "other": 4.0,
+    "undecided": 4.0,
+    "margin_d": -2.0,
+    "aggregate": false,
+    "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
   },
   {
     "race_id": "gov_oh",
@@ -13918,8 +14008,8 @@
   {
     "race_id": "gov_oh",
     "kind": "average",
-    "average_margin_d": 4.5,
-    "n_polls": 12,
+    "average_margin_d": 4.0,
+    "n_polls": 13,
     "candidates": {
       "D": [
         "Amy Acton"
@@ -13931,7 +14021,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Ohio_gubernatorial_election#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -14472,7 +14562,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Iowa_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -14689,7 +14779,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_South_Carolina_gubernatorial_election#Polling_4",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -14965,8 +15055,8 @@
   {
     "race_id": "gov_ks",
     "kind": "average",
-    "average_margin_d": 0.12,
-    "n_polls": 8,
+    "average_margin_d": 0.14,
+    "n_polls": 7,
     "candidates": {
       "D": [
         "Cindy Holscher"
@@ -14978,7 +15068,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_Kansas_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -15321,7 +15411,7 @@
     "newest_end_date": "2026-11-01",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election#Polling_2",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -15430,7 +15520,7 @@
     "newest_end_date": "2026-10-22",
     "not_retrieved": null,
     "source_url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_South_Carolina#Polling_3",
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -15442,7 +15532,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   },
   {
@@ -15454,7 +15544,7 @@
     "newest_end_date": null,
     "not_retrieved": "General election section has no Polling subsection",
     "source_url": null,
-    "retrieved_at": "2026-11-11T09:33:41-05:00",
+    "retrieved_at": "2026-11-12T09:33:54-05:00",
     "label": "retrieved"
   }
 ]
