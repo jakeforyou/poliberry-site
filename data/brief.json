@@ -6007,5 +6007,74 @@
       "https://polymarket.com/event/kansas-governor-winner-2026"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-13",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold: no forecast number, Decision Desk number, rating or market price moved past one, and the largest intraday market move was a tenth of a point, on Alaska (retrieved). It was a counting day, and the counts are the story. CNN's AP feed marks Holscher the winner in Kansas again, on a lead that shrank from 7,564 to 7,266 (retrieved). The same mark appeared on Nov 8 and was withdrawn by Nov 9, so the board still holds Kansas as pending (retrieved, data/resolutions.json, last built Nov 10). Alaska went from 86 to 88 percent counted and Peltola's first-choice lead went from 3,975 to 5,800, which reverses yesterday's batch for Sullivan (retrieved). The only board changes were Illinois and Texas adjusting their ballot files, which is bookkeeping (retrieved).",
+    "written_at": "2026-11-13T10:02:21-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-13",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Kansas has a winner mark again. Alaska swung back to Peltola.",
+    "vibe": "CNN's AP feed marks Holscher the winner in Kansas for the second time, with her lead down to 7,266, and Alaska's newest batch lifted Peltola's first-choice lead over Sullivan from 3,975 to 5,800 at 88 percent counted.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://polymarket.com/event/alaska-senate-election-winner"
+    ],
+    "written_at": "2026-11-13T10:02:21-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-13",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas: the winner mark is back, lead 7,266",
+    "what_happened": "CNN's AP feed at 10:05 ET on Nov 13 shows Holscher 552,137 and Masterson 544,871, with 98 percent of the expected vote in, 1,097,008 counted, and Holscher marked the winner (retrieved, read from the feed's candidate list). The Nov 12 read had Holscher 551,467, Masterson 543,903, 99 percent in and no winner (retrieved). So the new votes went Masterson 968, Holscher 670, and the lead went from 7,564 to 7,266 (inferred, by subtraction). The share counted fell from 99 to 98, which means the feed raised its estimate of the total vote (inferred). A winner mark appeared on Nov 8 and was withdrawn by Nov 9 (retrieved, data/resolutions.json). The resolutions file was last built on Nov 10 and still lists Kansas as pending (retrieved). The Kansas Secretary of State site returns HTTP 403 to scripts, so there is no official read (retrieved). Polymarket prices Holscher at 99.95 and Kalshi at 99.9. The blend is 99.9 and did not move today (retrieved, 10:00 ET alert). Our number is 53.47 for Holscher with a margin of +0.4 (core model). The run had 30 and the lock 27.",
+    "why_it_moved": "No price or forecast moved. The feed changed its mind, for the second time. The likeliest reading is that county canvass totals came in and the remaining ballots can no longer cover 7,266 (inferred). The new votes did break for Masterson, so the mark came with a smaller lead, not a larger one (retrieved).",
+    "should_it_move_us": "Wait. The model's number stands until the grade. This mark was withdrawn once, so the item stays pending until the mark survives a second read or a grading pass resolves it.",
+    "trigger": "Whether the winner mark is still in the feed at the next read. Behind that, the county canvass totals and the count of provisional ballots left.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://ent.sos.ks.gov/kssos_ent.html",
+      "https://polymarket.com/event/kansas-governor-winner-2026"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-13",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska at 88 percent: Peltola's lead back up to 5,800",
+    "what_happened": "CNN's AP feed at 10:05 ET on Nov 13 has Peltola 125,157, Dan Sullivan (R) 119,357, Heikes (R) 5,490 and an independent also named Sullivan 4,199, with 88 percent of the expected vote in and 254,203 counted (retrieved, read from the feed's candidate list). The Nov 12 read had Peltola 121,487, Sullivan 117,512 and Heikes 5,426 at 86 percent and 248,525 counted (retrieved). So 5,678 new ballots went Peltola 3,670, Sullivan 1,845, Heikes 64, and the lead went from 3,975 to 5,800 (inferred, by subtraction). Peltola is at 49 percent of all votes, under the 50 that wins outright, so the ranked-choice count on Nov 18 decides it (retrieved). No winner is marked (retrieved). The markets price Peltola at 99.6, with Polymarket at 99.65 and Kalshi at 99.55. They opened at 99.5 (retrieved, 10:00 ET alert). No new poll (retrieved). Our number is 74.75 for Peltola with a margin of +2.3 (core model). The run had 55 and the lock 62.",
+    "why_it_moved": "Nothing moved past a threshold. The count moved, toward Peltola. She took about two thirds of this batch, after Sullivan took yesterday's (inferred). Three of the last four batches have widened her lead (inferred, from the Nov 9 to Nov 13 reads). The markets added a tenth of a point (retrieved).",
+    "should_it_move_us": "Wait. The item is pending until the ranked-choice tabulation, and the model does not update on a partial count. Yesterday's batch for Sullivan now looks like one batch, not a turn.",
+    "trigger": "The Nov 18 tabulation. Before it, whether Peltola crosses 50 percent of first choices, and how the Heikes and independent ballots rank Sullivan second.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://www.elections.alaska.gov/results/",
+      "https://polymarket.com/event/alaska-senate-election-winner"
+    ],
+    "label": "inferred"
   }
 ]
