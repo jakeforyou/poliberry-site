@@ -1,6 +1,6 @@
 [
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_dem_control",
     "label": "Senate control",
     "office": "control",
@@ -41,11 +41,6 @@
     "trump_2024": null,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 56.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 56.0,
         "markets": 99.9
@@ -74,6 +69,11 @@
         "date": "2026-11-13",
         "ours": 56.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 56.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
@@ -86,7 +86,7 @@
     "move": null
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "house_dem_majority",
     "label": "House majority",
     "office": "control",
@@ -127,11 +127,6 @@
     "trump_2024": null,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 88.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 88.0,
         "markets": 99.9
@@ -160,6 +155,11 @@
         "date": "2026-11-13",
         "ours": 88.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 88.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
@@ -172,7 +172,7 @@
     "move": null
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_tx",
     "label": "Senate · TX",
     "office": "senate",
@@ -213,11 +213,6 @@
     "trump_2024": 13.68,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 52.0,
-        "markets": 99.7
-      },
-      {
         "date": "2026-11-08",
         "ours": 52.0,
         "markets": 99.7
@@ -246,17 +241,22 @@
         "date": "2026-11-13",
         "ours": 52.0,
         "markets": 99.7
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 52.0,
+        "markets": 99.7
       }
     ],
     "source_url": "https://polymarket.com/event/texas-senate-election-winner",
     "call": {
-      "share_d": 50.46,
-      "share_r": 47.29,
+      "share_d": 50.5,
+      "share_r": 47.25,
       "other": 2.25,
-      "margin": 3.17,
-      "lo": -1.24,
-      "hi": 7.57,
-      "source": "core model: fundamentals and 19 polls, run judgment -0.17",
+      "margin": 3.25,
+      "lo": -1.16,
+      "hi": 7.65,
+      "source": "core model: fundamentals and 19 polls, run judgment -0.19",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
@@ -281,16 +281,16 @@
       "note": "Compare Talarico's county numbers to both O'Rourke 2018 (statewide D-2.6) and Allred 2024 (D-8.5). Tarrant, Williamson, Nueces are the tipping-point style counties; the Valley trio (Hidalgo, Cameron, Webb) measures whether the 2020-2024 Latino shift holds. For the 'first_returns' fields, only Harris has a retrieved 2024 timestamp."
     },
     "model": {
-      "chance": 82.13,
-      "core_chance": 83.39,
+      "chance": 82.73,
+      "core_chance": 84.1,
       "run_chance": 52.0,
       "lock_chance": 52.0,
-      "d_run": 30.13,
-      "d_lock": 30.13,
-      "margin": 3.17,
-      "margin_lo": -1.24,
-      "margin_hi": 7.57,
-      "core_margin": 3.34,
+      "d_run": 30.73,
+      "d_lock": 30.73,
+      "margin": 3.25,
+      "margin_lo": -1.16,
+      "margin_hi": 7.65,
+      "core_margin": 3.44,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -301,9 +301,9 @@
       "incumbent": "John Cornyn",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 3.34,
+      "m_p": 3.44,
       "n_polls": 19,
-      "n_eff": 17.281,
+      "n_eff": 16.194,
       "polls": [
         {
           "pollster": "Research Co.",
@@ -315,7 +315,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0416
+          "weight": 0.044
         },
         {
           "pollster": "New York Times / Siena University",
@@ -327,7 +327,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.067
+          "weight": 0.0708
         },
         {
           "pollster": "HarrisX",
@@ -339,7 +339,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0462
+          "weight": 0.0489
         },
         {
           "pollster": "Emerson College",
@@ -351,7 +351,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.052
+          "weight": 0.055
         },
         {
           "pollster": "AtlasIntel",
@@ -363,7 +363,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1315
+          "weight": 0.1391
         },
         {
           "pollster": "Kreate Strategies",
@@ -375,7 +375,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0688
+          "weight": 0.0727
         },
         {
           "pollster": "YouGov",
@@ -387,7 +387,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.082
+          "weight": 0.0867
         },
         {
           "pollster": "Quantus Insights",
@@ -399,7 +399,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0707
+          "weight": 0.0748
         },
         {
           "pollster": "ActiVote",
@@ -411,7 +411,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0357
+          "weight": 0.0378
         },
         {
           "pollster": "SSRS",
@@ -423,7 +423,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0459
+          "weight": 0.0486
         },
         {
           "pollster": "A2 Insights",
@@ -435,7 +435,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0354
+          "weight": 0.0375
         },
         {
           "pollster": "Texas Southern University",
@@ -447,7 +447,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1116
+          "weight": 0.118
         },
         {
           "pollster": "Univision / YouGov",
@@ -456,10 +456,10 @@
           "margin_d": 5.0,
           "moe": 3.8,
           "source_url": "https://www.univision.com/noticias/politica/poll-univision-texas-latinos",
-          "fade": 0.71,
+          "fade": 0.57,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0365
+          "weight": 0.0309
         },
         {
           "pollster": "Rasmussen Reports",
@@ -468,10 +468,10 @@
           "margin_d": 0.0,
           "moe": 3.0,
           "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate",
-          "fade": 0.71,
+          "fade": 0.57,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.052
+          "weight": 0.044
         },
         {
           "pollster": "ActiVote",
@@ -480,10 +480,10 @@
           "margin_d": 2.0,
           "moe": 4.9,
           "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/",
-          "fade": 0.71,
+          "fade": 0.57,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.024
+          "weight": 0.0203
         },
         {
           "pollster": "Verasight /VoteHub",
@@ -492,10 +492,10 @@
           "margin_d": 3.0,
           "moe": 4.3,
           "source_url": "https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Texas_Report_D8A925D0.pdf",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0237
+          "weight": 0.0188
         },
         {
           "pollster": "Emerson College",
@@ -504,10 +504,10 @@
           "margin_d": 1.0,
           "moe": 3.0,
           "source_url": "https://emersoncollegepolling.com/texas-2026-poll-toss-up/",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0307
+          "weight": 0.0216
         },
         {
           "pollster": "Beacon Research/ Shaw & Co. Research",
@@ -516,10 +516,10 @@
           "margin_d": 0.0,
           "moe": 2.5,
           "source_url": "https://www.foxnews.com/politics/fox-news-poll-texas-senate-race-galloping-toward-photo-finish",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.039
+          "weight": 0.0275
         },
         {
           "pollster": "Pollfinity Research",
@@ -528,10 +528,10 @@
           "margin_d": 5.0,
           "moe": 6.5,
           "source_url": "https://pollfinity.com/polls/tx-governor-senate-2026-oct",
-          "fade": 0.29,
+          "fade": 0.14,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0056
+          "weight": 0.003
         }
       ],
       "excluded": [
@@ -576,21 +576,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.17,
-      "adjustment_raw": -3.16,
+      "adjustment": -0.19,
+      "adjustment_raw": -3.26,
       "adjustment_capped": false,
       "run_margin": 0.17,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 52.0,
         "model_at_lock": 72.4,
-        "chance": 82.13,
-        "total": 30.13,
+        "chance": 82.73,
+        "total": 30.73,
         "method_gap": 20.4,
-        "since_lock": 9.73,
-        "world": 9.73,
+        "since_lock": 10.33,
+        "world": 10.33,
         "n_new_polls": 20,
         "n_polls_at_lock": 38,
         "generic_lock": null,
@@ -644,134 +644,134 @@
             "kind": "poll",
             "label": "Beacon Research/ Shaw & Co. Research through 2026-10-19",
             "detail": "D+0.0 among LV voters",
-            "chance": 54.3,
-            "margin": 0.37,
-            "delta": -17.65,
+            "chance": 53.24,
+            "margin": 0.28,
+            "delta": -18.71,
             "source_url": "https://www.foxnews.com/politics/fox-news-poll-texas-senate-race-galloping-toward-photo-finish"
           },
           {
             "kind": "poll",
             "label": "Emerson College through 2026-10-19",
             "detail": "D+1.0 among LV voters",
-            "chance": 56.03,
-            "margin": 0.52,
-            "delta": 1.73,
+            "chance": 54.76,
+            "margin": 0.41,
+            "delta": 1.52,
             "source_url": "https://emersoncollegepolling.com/texas-2026-poll-toss-up/"
           },
           {
             "kind": "poll",
             "label": "Verasight /VoteHub through 2026-10-20",
             "detail": "D+3.0 among LV voters",
-            "chance": 60.24,
-            "margin": 0.89,
-            "delta": 4.21,
+            "chance": 58.98,
+            "margin": 0.78,
+            "delta": 4.22,
             "source_url": "https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Texas_Report_D8A925D0.pdf"
           },
           {
             "kind": "poll",
             "label": "ActiVote through 2026-10-21",
             "detail": "D+2.0 among LV voters",
-            "chance": 61.85,
-            "margin": 1.04,
-            "delta": 1.61,
+            "chance": 60.82,
+            "margin": 0.94,
+            "delta": 1.84,
             "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/"
           },
           {
             "kind": "poll",
             "label": "Rasmussen Reports through 2026-10-21",
             "detail": "D+0.0 among LV voters",
-            "chance": 59.27,
-            "margin": 0.81,
-            "delta": -2.58,
+            "chance": 58.38,
+            "margin": 0.73,
+            "delta": -2.44,
             "source_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate"
           },
           {
             "kind": "poll",
             "label": "Univision / YouGov through 2026-10-21",
             "detail": "D+5.0 among RV voters",
-            "chance": 65.53,
-            "margin": 1.37,
-            "delta": 6.26,
+            "chance": 64.88,
+            "margin": 1.31,
+            "delta": 6.5,
             "source_url": "https://www.univision.com/noticias/politica/poll-univision-texas-latinos"
           },
           {
             "kind": "poll",
             "label": "Texas Southern University through 2026-10-25",
             "detail": "D+2.0 among LV voters",
-            "chance": 67.46,
-            "margin": 1.56,
-            "delta": 1.93,
+            "chance": 67.33,
+            "margin": 1.54,
+            "delta": 2.45,
             "source_url": "https://www.wfaa.com/article/news/politics/elections/new-poll-talarico-abbott-lead-as-early-voting-in-texas-nears-close/287-7f4cca13-6e1d-433c-9041-727931b591cd"
           },
           {
             "kind": "poll",
             "label": "A2 Insights through 2026-10-27",
             "detail": "D+3.0 among LV voters",
-            "chance": 68.78,
-            "margin": 1.68,
-            "delta": 1.32,
+            "chance": 68.83,
+            "margin": 1.69,
+            "delta": 1.5,
             "source_url": "https://drive.google.com/file/d/1UACnmnM84Dd1hU0l6iqHNgXkyh5oCelO/view"
           },
           {
             "kind": "poll",
             "label": "SSRS through 2026-10-27",
             "detail": "D+6.0 among LV voters",
-            "chance": 72.99,
-            "margin": 2.11,
-            "delta": 4.21,
+            "chance": 73.66,
+            "margin": 2.18,
+            "delta": 4.83,
             "source_url": "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/"
           },
           {
             "kind": "poll",
             "label": "ActiVote through 2026-10-28",
             "detail": "D+4.0 among LV voters",
-            "chance": 74.33,
-            "margin": 2.25,
-            "delta": 1.34,
+            "chance": 74.95,
+            "margin": 2.32,
+            "delta": 1.29,
             "source_url": "https://www.activote.net/polls/2026/tx-u-s-senate/"
           },
           {
             "kind": "poll",
             "label": "Quantus Insights through 2026-10-28",
             "detail": "D-1.0 among LV voters",
-            "chance": 70.38,
-            "margin": 1.84,
-            "delta": -3.95,
+            "chance": 70.57,
+            "margin": 1.86,
+            "delta": -4.38,
             "source_url": "https://quantusinsights.org/polling/f/texas-survey-paxton-up-one-abbott-ahead-by-five"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+4.0 among LV voters",
-            "chance": 73.05,
-            "margin": 2.11,
-            "delta": 2.67,
+            "chance": 73.43,
+            "margin": 2.15,
+            "delta": 2.86,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "Kreate Strategies through 2026-10-30",
             "detail": "D+3.0 among LV voters",
-            "chance": 73.84,
-            "margin": 2.2,
-            "delta": 0.79,
+            "chance": 74.29,
+            "margin": 2.24,
+            "delta": 0.86,
             "source_url": "https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+6.0 among LV voters",
-            "chance": 79.11,
-            "margin": 2.79,
-            "delta": 5.27,
+            "chance": 79.77,
+            "margin": 2.87,
+            "delta": 5.48,
             "source_url": "https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf"
           },
           {
             "kind": "poll",
             "label": "Emerson College through 2026-11-01",
             "detail": "D+2.0 among LV voters",
-            "chance": 78.69,
-            "margin": 2.74,
+            "chance": 79.35,
+            "margin": 2.82,
             "delta": -0.42,
             "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
           },
@@ -779,35 +779,35 @@
             "kind": "poll",
             "label": "HarrisX through 2026-11-01",
             "detail": "D+6.0 among LV voters",
-            "chance": 80.01,
-            "margin": 2.9,
-            "delta": 1.32,
+            "chance": 80.62,
+            "margin": 2.97,
+            "delta": 1.27,
             "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+7.0 among LV voters",
-            "chance": 82.17,
-            "margin": 3.17,
-            "delta": 2.16,
+            "chance": 82.8,
+            "margin": 3.26,
+            "delta": 2.18,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-tx-poll-toplines.html"
           },
           {
             "kind": "poll",
             "label": "Research Co. through 2026-11-02",
             "detail": "D+3.0 among LV voters",
-            "chance": 82.13,
-            "margin": 3.17,
-            "delta": -0.04,
+            "chance": 82.73,
+            "margin": 3.25,
+            "delta": -0.07,
             "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 52.0, the run says 52.0",
-            "chance": 82.13,
-            "margin": 3.17,
+            "chance": 82.73,
+            "margin": 3.25,
             "delta": 0.0
           }
         ],
@@ -819,7 +819,7 @@
     "early_vote": {
       "as_of": "2026-10-30",
       "days_before": 4,
-      "total": 7710025,
+      "total": 7709058,
       "ratio_2022": null,
       "share_of_2022_turnout": 94.6,
       "gap_2026": null,
@@ -835,8 +835,8 @@
       "day": {
         "last_date": "2026-10-30",
         "prev_date": "2026-10-29",
-        "total": 7710025,
-        "added": 866599,
+        "total": 7709058,
+        "added": 867299,
         "gap": null,
         "gap_prev": null,
         "swing": null,
@@ -858,37 +858,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/texas-results",
-      "retrieved_at": "2026-11-13T09:34:10-05:00",
+      "retrieved_at": "2026-11-14T09:33:34-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 82.13,
+      "chance": 82.73,
       "lock_judgment": 52.0,
       "model_at_lock": 72.4,
-      "d_lock": 9.73,
-      "d_lock_vs_judgment": 30.13,
+      "d_lock": 10.33,
+      "d_lock_vs_judgment": 30.73,
       "method_gap": 20.4,
-      "prev_day": "2026-11-12",
-      "chance_prev": 81.46,
+      "prev_day": "2026-11-13",
+      "chance_prev": 82.13,
       "prev_reconstructed": true,
-      "d_day": 0.67,
-      "chance_prev_published": 81.46,
-      "day_5d": "2026-11-08",
-      "chance_5d": 79.4,
+      "d_day": 0.6,
+      "chance_prev_published": 82.13,
+      "day_5d": "2026-11-09",
+      "chance_5d": 79.57,
       "reconstructed_5d": true,
-      "chance_5d_published": 78.46,
-      "d_5d": 2.73,
-      "margin": 3.17,
-      "margin_prev": 3.08,
+      "chance_5d_published": 78.61,
+      "d_5d": 3.16,
+      "margin": 3.25,
+      "margin_prev": 3.17,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_ak",
     "label": "Senate · AK",
     "office": "senate",
@@ -901,13 +901,13 @@
     "ours_lo": null,
     "ours_hi": null,
     "range_width": null,
-    "market": 99.7,
+    "market": 99.8,
     "ddhq": 61.0,
     "consensus": 50.0,
     "category": "Toss-up",
     "gap_at_lock": -12.0,
-    "market_move_since_lock": 25.6,
-    "gap_now": -44.6,
+    "market_move_since_lock": 25.8,
+    "gap_now": -44.8,
     "gap_words": "We are 45 points under the markets, at the lock we were 12 points under them, and the market has moved +26 since the lock.",
     "conviction": {
       "flip_trigger": null,
@@ -921,18 +921,13 @@
     "flag_today": null,
     "flag_triggers": [],
     "verdict_today": "Wait",
-    "brief_headline": "Alaska at 88 percent: Peltola's lead back up to 5,800",
+    "brief_headline": "Alaska at 96 percent: Peltola's lead to 10,412",
     "upset": null,
     "incumbent_party": "R",
     "cand_d": "Mary Peltola",
     "cand_r": "Daniel J. Sullivan Jr., Dan Sullivan, Gerald Heikes",
     "trump_2024": 13.13,
     "trend7": [
-      {
-        "date": "2026-11-07",
-        "ours": 55.0,
-        "markets": 98.2
-      },
       {
         "date": "2026-11-08",
         "ours": 55.0,
@@ -961,18 +956,23 @@
       {
         "date": "2026-11-13",
         "ours": 55.0,
-        "markets": 99.6
+        "markets": 99.5
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 55.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/alaska-senate-election-winner",
     "call": {
-      "share_d": 50.15,
-      "share_r": 47.85,
+      "share_d": 50.14,
+      "share_r": 47.86,
       "other": 2.0,
-      "margin": 2.29,
-      "lo": -2.12,
-      "hi": 6.7,
-      "source": "core model: fundamentals and 3 polls, run judgment -0.65",
+      "margin": 2.28,
+      "lo": -2.13,
+      "hi": 6.69,
+      "source": "core model: fundamentals and 3 polls, run judgment -0.66",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": "forecast on the final round; other is the first-round share",
@@ -997,15 +997,15 @@
       "note": "Expect roughly 75% of the vote by the morning after, first choices only, then a two-week wait for RCV. The 2024 pattern (late ballots moving results toward Democrats and against the RCV repeal) is retrieved, not assumed to repeat."
     },
     "model": {
-      "chance": 74.75,
+      "chance": 74.66,
       "core_chance": 80.39,
       "run_chance": 55.0,
       "lock_chance": 62.0,
-      "d_run": 19.75,
-      "d_lock": 12.75,
-      "margin": 2.29,
-      "margin_lo": -2.12,
-      "margin_hi": 6.7,
+      "d_run": 19.66,
+      "d_lock": 12.66,
+      "margin": 2.28,
+      "margin_lo": -2.13,
+      "margin_hi": 6.69,
       "core_margin": 2.94,
       "sigma": 3.44,
       "days_out": 0,
@@ -1019,7 +1019,7 @@
       "incumbent_on_ballot": true,
       "m_p": 2.94,
       "n_polls": 3,
-      "n_eff": 2.857,
+      "n_eff": 2.832,
       "polls": [
         {
           "pollster": "AtlasIntel",
@@ -1076,21 +1076,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.65,
+      "adjustment": -0.66,
       "adjustment_raw": -2.51,
       "adjustment_capped": false,
       "run_margin": 0.43,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 62.0,
         "model_at_lock": 77.75,
-        "chance": 74.75,
-        "total": 12.75,
+        "chance": 74.66,
+        "total": 12.66,
         "method_gap": 15.75,
-        "since_lock": -3.0,
-        "world": -3.0,
+        "since_lock": -3.09,
+        "world": -3.09,
         "n_new_polls": 3,
         "n_polls_at_lock": 14,
         "generic_lock": null,
@@ -1126,9 +1126,9 @@
             "kind": "poll",
             "label": "Alaska Survey Research through 2026-10-29",
             "detail": "D+2.0 among LV voters",
-            "chance": 67.91,
-            "margin": 1.6,
-            "delta": 11.79,
+            "chance": 67.8,
+            "margin": 1.59,
+            "delta": 11.68,
             "source_url": "https://x.com/The_Real_ASR/status/2116291676176331181"
           },
           {
@@ -1137,7 +1137,7 @@
             "detail": "D+2.0 among LV voters",
             "chance": 68.74,
             "margin": 1.68,
-            "delta": 0.83,
+            "delta": 0.94,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ak-poll-toplines.html"
           },
           {
@@ -1153,9 +1153,9 @@
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 62.0, the run says 55.0",
-            "chance": 74.75,
-            "margin": 2.29,
-            "delta": -1.46
+            "chance": 74.66,
+            "margin": 2.28,
+            "delta": -1.55
           }
         ],
         "label": "inferred"
@@ -1166,29 +1166,29 @@
     "early_vote": null,
     "modeled_party": null,
     "move": {
-      "chance": 74.75,
+      "chance": 74.66,
       "lock_judgment": 62.0,
       "model_at_lock": 77.75,
-      "d_lock": -3.0,
-      "d_lock_vs_judgment": 12.75,
+      "d_lock": -3.09,
+      "d_lock_vs_judgment": 12.66,
       "method_gap": 15.75,
-      "prev_day": "2026-11-12",
+      "prev_day": "2026-11-13",
       "chance_prev": 74.75,
       "prev_reconstructed": true,
-      "d_day": 0.0,
+      "d_day": -0.09,
       "chance_prev_published": 74.75,
-      "day_5d": "2026-11-08",
+      "day_5d": "2026-11-09",
       "chance_5d": 74.94,
       "reconstructed_5d": true,
       "chance_5d_published": 74.94,
-      "d_5d": -0.19,
-      "margin": 2.29,
+      "d_5d": -0.28,
+      "margin": 2.28,
       "margin_prev": 2.29,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_oh",
     "label": "Senate · OH special",
     "office": "senate",
@@ -1229,11 +1229,6 @@
     "trump_2024": 11.21,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 58.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 58.0,
         "markets": 99.8
@@ -1262,22 +1257,27 @@
         "date": "2026-11-13",
         "ours": 58.0,
         "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 58.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/ohio-senate-election-winner",
     "call": {
-      "share_d": 49.52,
-      "share_r": 46.61,
-      "other": 3.87,
-      "margin": 2.9,
-      "lo": -1.51,
-      "hi": 7.31,
-      "source": "core model: fundamentals and 13 polls, run judgment -0.20",
+      "share_d": 49.46,
+      "share_r": 46.62,
+      "other": 3.92,
+      "margin": 2.85,
+      "lo": -1.56,
+      "hi": 7.26,
+      "source": "core model: fundamentals and 13 polls, run judgment -0.21",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 15 polls"
+      "other_source": "poll average of other over 13 polls"
     },
     "votes": {
       "turnout_2022": 4201368,
@@ -1297,16 +1297,16 @@
       "note": "Brown 2024 county margins are the comparison baseline for Tuesday. Brown lost statewide by 3.62; counties where he beat Harris most: Lake (+9.6), Montgomery (+6.7), Lorain (+10.5), Mahoning (+9.2)."
     },
     "model": {
-      "chance": 80.07,
-      "core_chance": 81.65,
+      "chance": 79.61,
+      "core_chance": 81.29,
       "run_chance": 58.0,
       "lock_chance": 58.0,
-      "d_run": 22.07,
-      "d_lock": 22.07,
-      "margin": 2.9,
-      "margin_lo": -1.51,
-      "margin_hi": 7.31,
-      "core_margin": 3.1,
+      "d_run": 21.61,
+      "d_lock": 21.61,
+      "margin": 2.85,
+      "margin_lo": -1.56,
+      "margin_hi": 7.26,
+      "core_margin": 3.06,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -1317,9 +1317,9 @@
       "incumbent": "Jon Husted",
       "appointed": true,
       "incumbent_on_ballot": true,
-      "m_p": 3.1,
+      "m_p": 3.06,
       "n_polls": 13,
-      "n_eff": 10.818,
+      "n_eff": 10.158,
       "polls": [
         {
           "pollster": "Survey 160",
@@ -1331,7 +1331,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0499
+          "weight": 0.0527
         },
         {
           "pollster": "Research Co.",
@@ -1343,7 +1343,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0659
+          "weight": 0.0696
         },
         {
           "pollster": "New York Times / Siena University",
@@ -1355,7 +1355,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.071
+          "weight": 0.075
         },
         {
           "pollster": "HarrisX",
@@ -1367,7 +1367,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.071
+          "weight": 0.075
         },
         {
           "pollster": "Emerson College",
@@ -1379,7 +1379,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.117
+          "weight": 0.1235
         },
         {
           "pollster": "AtlasIntel",
@@ -1391,7 +1391,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.2101
+          "weight": 0.2218
         },
         {
           "pollster": "ActiVote",
@@ -1403,7 +1403,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0586
+          "weight": 0.0619
         },
         {
           "pollster": "YouGov",
@@ -1415,7 +1415,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1373
+          "weight": 0.145
         },
         {
           "pollster": "Suffolk University",
@@ -1427,7 +1427,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0673
+          "weight": 0.0711
         },
         {
           "pollster": "Verasight/VoteHub",
@@ -1436,10 +1436,10 @@
           "margin_d": 4.0,
           "moe": 4.2,
           "source_url": "https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Ohio_Report_D1CB7735.pdf",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0394
+          "weight": 0.0312
         },
         {
           "pollster": "Beacon Research/ Shaw & Co. Research",
@@ -1448,10 +1448,10 @@
           "margin_d": 5.0,
           "moe": 2.0,
           "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-15-19-2026_ohio_topline_october-21-release.pdf",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0802
+          "weight": 0.0564
         },
         {
           "pollster": "Marist University",
@@ -1460,10 +1460,10 @@
           "margin_d": 4.0,
           "moe": 4.5,
           "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_OH-NOS-and-Tables_202610191215zz9hjdV2l.pdf",
-          "fade": 0.29,
+          "fade": 0.14,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0172
+          "weight": 0.0091
         },
         {
           "pollster": "ActiVote",
@@ -1472,10 +1472,10 @@
           "margin_d": 0.0,
           "moe": 4.9,
           "source_url": "https://www.activote.net/polls/2026/oh-u-s-senate/",
-          "fade": 0.29,
+          "fade": 0.14,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0149
+          "weight": 0.0079
         }
       ],
       "excluded": [
@@ -1544,21 +1544,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.2,
-      "adjustment_raw": -2.41,
+      "adjustment": -0.21,
+      "adjustment_raw": -2.36,
       "adjustment_capped": false,
       "run_margin": 0.69,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 58.0,
         "model_at_lock": 89.33,
-        "chance": 80.07,
-        "total": 22.07,
+        "chance": 79.61,
+        "total": 21.61,
         "method_gap": 31.33,
-        "since_lock": -9.26,
-        "world": -9.26,
+        "since_lock": -9.72,
+        "world": -9.72,
         "n_new_polls": 14,
         "n_polls_at_lock": 16,
         "generic_lock": null,
@@ -1603,125 +1603,125 @@
             "kind": "poll",
             "label": "ActiVote through 2026-10-18",
             "detail": "D+0.0 among LV voters",
-            "chance": 56.92,
-            "margin": 0.6,
-            "delta": -22.71,
+            "chance": 57.38,
+            "margin": 0.64,
+            "delta": -22.25,
             "source_url": "https://www.activote.net/polls/2026/oh-u-s-senate/"
           },
           {
             "kind": "poll",
             "label": "Marist University through 2026-10-18",
             "detail": "D+4.0 among LV voters",
-            "chance": 62.15,
-            "margin": 1.06,
-            "delta": 5.23,
+            "chance": 60.37,
+            "margin": 0.9,
+            "delta": 2.99,
             "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_OH-NOS-and-Tables_202610191215zz9hjdV2l.pdf"
           },
           {
             "kind": "poll",
             "label": "Beacon Research/ Shaw & Co. Research through 2026-10-19",
             "detail": "D+5.0 among LV voters",
-            "chance": 77.62,
-            "margin": 2.61,
-            "delta": 15.47,
+            "chance": 74.34,
+            "margin": 2.25,
+            "delta": 13.97,
             "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-15-19-2026_ohio_topline_october-21-release.pdf"
           },
           {
             "kind": "poll",
             "label": "Verasight/VoteHub through 2026-10-20",
             "detail": "D+4.0 among LV voters",
-            "chance": 79.51,
-            "margin": 2.84,
-            "delta": 1.89,
+            "chance": 76.79,
+            "margin": 2.52,
+            "delta": 2.45,
             "source_url": "https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Ohio_Report_D1CB7735.pdf"
           },
           {
             "kind": "poll",
             "label": "Suffolk University through 2026-10-26",
             "detail": "D+3.0 among LV voters",
-            "chance": 79.76,
-            "margin": 2.87,
-            "delta": 0.25,
+            "chance": 77.92,
+            "margin": 2.65,
+            "delta": 1.13,
             "source_url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+2.0 among LV voters",
-            "chance": 77.49,
-            "margin": 2.6,
-            "delta": -2.27,
+            "chance": 75.93,
+            "margin": 2.42,
+            "delta": -1.99,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "ActiVote through 2026-10-31",
             "detail": "D+0.0 among LV voters",
-            "chance": 74.82,
-            "margin": 2.3,
-            "delta": -2.67,
+            "chance": 73.06,
+            "margin": 2.11,
+            "delta": -2.87,
             "source_url": "https://www.activote.net/polls/2026/oh-u-s-senate/"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+7.0 among LV voters",
-            "chance": 85.76,
-            "margin": 3.68,
-            "delta": 10.94,
+            "chance": 85.6,
+            "margin": 3.66,
+            "delta": 12.54,
             "source_url": "https://atlasintel.org/poll/usa-ohio-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "poll",
             "label": "Emerson College through 2026-11-01",
             "detail": "D-2.0 among LV voters",
-            "chance": 79.91,
-            "margin": 2.88,
-            "delta": -5.85,
+            "chance": 79.25,
+            "margin": 2.8,
+            "delta": -6.35,
             "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
           },
           {
             "kind": "poll",
             "label": "HarrisX through 2026-11-01",
             "detail": "D+2.0 among LV voters",
-            "chance": 79.33,
-            "margin": 2.81,
-            "delta": -0.58,
+            "chance": 78.73,
+            "margin": 2.74,
+            "delta": -0.52,
             "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+5.0 among LV voters",
-            "chance": 80.6,
-            "margin": 2.97,
-            "delta": 1.27,
+            "chance": 80.15,
+            "margin": 2.91,
+            "delta": 1.42,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-oh-poll-toplines.html"
           },
           {
             "kind": "poll",
             "label": "Research Co. through 2026-11-01",
             "detail": "D+1.0 among LV voters",
-            "chance": 79.6,
-            "margin": 2.85,
-            "delta": -1.0,
+            "chance": 79.09,
+            "margin": 2.78,
+            "delta": -1.06,
             "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
           },
           {
             "kind": "poll",
             "label": "Survey 160 through 2026-11-01",
             "detail": "D+4.0 among LV voters",
-            "chance": 80.07,
-            "margin": 2.9,
-            "delta": 0.47,
+            "chance": 79.61,
+            "margin": 2.85,
+            "delta": 0.52,
             "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 58.0, the run says 58.0",
-            "chance": 80.07,
-            "margin": 2.9,
+            "chance": 79.61,
+            "margin": 2.85,
             "delta": 0.0
           }
         ],
@@ -1731,8 +1731,8 @@
       "rule": "fundamentals plus polls, 2022 constants, the run's judgment capped; polls fade over 7 days after the 21-day window (amendment 2026-10-23)"
     },
     "early_vote": {
-      "as_of": "2026-11-13",
-      "days_before": -10,
+      "as_of": "2026-11-14",
+      "days_before": -11,
       "total": 1777904,
       "ratio_2022": null,
       "share_of_2022_turnout": 42.3,
@@ -1747,8 +1747,8 @@
       "label": "retrieved",
       "in_number": false,
       "day": {
-        "last_date": "2026-11-13",
-        "prev_date": "2026-11-12",
+        "last_date": "2026-11-14",
+        "prev_date": "2026-11-13",
         "total": 1777904,
         "added": 0,
         "gap": 1.96,
@@ -1772,37 +1772,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/ohio-results",
-      "retrieved_at": "2026-11-13T09:34:08-05:00",
+      "retrieved_at": "2026-11-14T09:33:33-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 80.07,
+      "chance": 79.61,
       "lock_judgment": 58.0,
       "model_at_lock": 89.33,
-      "d_lock": -9.26,
-      "d_lock_vs_judgment": 22.07,
+      "d_lock": -9.72,
+      "d_lock_vs_judgment": 21.61,
       "method_gap": 31.33,
-      "prev_day": "2026-11-12",
-      "chance_prev": 80.41,
+      "prev_day": "2026-11-13",
+      "chance_prev": 80.07,
       "prev_reconstructed": true,
-      "d_day": -0.34,
-      "chance_prev_published": 80.41,
-      "day_5d": "2026-11-08",
-      "chance_5d": 81.65,
+      "d_day": -0.46,
+      "chance_prev_published": 80.07,
+      "day_5d": "2026-11-09",
+      "chance_5d": 81.52,
       "reconstructed_5d": true,
-      "chance_5d_published": 82.09,
-      "d_5d": -1.58,
-      "margin": 2.9,
-      "margin_prev": 2.95,
+      "chance_5d_published": 82.05,
+      "d_5d": -1.91,
+      "margin": 2.85,
+      "margin_prev": 2.9,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_ks",
     "label": "Senate · KS",
     "office": "senate",
@@ -1843,11 +1843,6 @@
     "trump_2024": 16.12,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 40.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 40.0,
         "markets": 99.9
@@ -1876,22 +1871,27 @@
         "date": "2026-11-13",
         "ours": 40.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 40.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/kansas-senate-election-winner",
     "call": {
-      "share_d": 50.83,
-      "share_r": 46.42,
-      "other": 2.75,
-      "margin": 4.41,
-      "lo": -0.0,
-      "hi": 8.81,
-      "source": "core model: fundamentals and 7 polls, run judgment -0.64",
+      "share_d": 50.85,
+      "share_r": 46.45,
+      "other": 2.71,
+      "margin": 4.4,
+      "lo": -0.01,
+      "hi": 8.8,
+      "source": "core model: fundamentals and 7 polls, run judgment -0.65",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 8 polls"
+      "other_source": "poll average of other over 7 polls"
     },
     "votes": {
       "turnout_2022": 1008998,
@@ -1911,15 +1911,15 @@
       "note": "Harris carried Johnson, Shawnee, Douglas, Wyandotte and Riley in 2020 and 2024 (AP). Kansas has no 2024 Senate race."
     },
     "model": {
-      "chance": 89.98,
+      "chance": 89.93,
       "core_chance": 92.88,
       "run_chance": 40.0,
       "lock_chance": 33.0,
-      "d_run": 49.98,
-      "d_lock": 56.98,
-      "margin": 4.41,
-      "margin_lo": -0.0,
-      "margin_hi": 8.81,
+      "d_run": 49.93,
+      "d_lock": 56.93,
+      "margin": 4.4,
+      "margin_lo": -0.01,
+      "margin_hi": 8.8,
       "core_margin": 5.05,
       "sigma": 3.44,
       "days_out": 0,
@@ -1933,7 +1933,7 @@
       "incumbent_on_ballot": true,
       "m_p": 5.05,
       "n_polls": 7,
-      "n_eff": 8.245,
+      "n_eff": 8.172,
       "polls": [
         {
           "pollster": "Survey 160",
@@ -2038,21 +2038,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.64,
+      "adjustment": -0.65,
       "adjustment_raw": -5.92,
       "adjustment_capped": false,
       "run_margin": -0.87,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 33.0,
         "model_at_lock": 58.66,
-        "chance": 89.98,
-        "total": 56.98,
+        "chance": 89.93,
+        "total": 56.93,
         "method_gap": 25.66,
-        "since_lock": 31.32,
-        "world": 31.32,
+        "since_lock": 31.27,
+        "world": 31.27,
         "n_new_polls": 7,
         "n_polls_at_lock": 3,
         "generic_lock": null,
@@ -2106,44 +2106,44 @@
             "kind": "poll",
             "label": "Emerson College through 2026-10-28",
             "detail": "D+3.0 among LV voters",
-            "chance": 83.97,
-            "margin": 3.42,
-            "delta": -2.51,
+            "chance": 83.83,
+            "margin": 3.4,
+            "delta": -2.65,
             "source_url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+1.0 among LV voters",
-            "chance": 78.51,
-            "margin": 2.72,
-            "delta": -5.46,
+            "chance": 78.43,
+            "margin": 2.71,
+            "delta": -5.4,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+7.0 among LV voters",
-            "chance": 87.95,
-            "margin": 4.03,
-            "delta": 9.44,
+            "chance": 87.89,
+            "margin": 4.02,
+            "delta": 9.46,
             "source_url": "https://atlasintel.org/poll/usa-kansas-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+5.0 among LV voters",
-            "chance": 88.47,
-            "margin": 4.12,
-            "delta": 0.52,
+            "chance": 88.42,
+            "margin": 4.11,
+            "delta": 0.53,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html"
           },
           {
             "kind": "poll",
             "label": "Survey 160 through 2026-11-01",
             "detail": "D+6.0 among LV voters",
-            "chance": 89.62,
-            "margin": 4.34,
+            "chance": 89.57,
+            "margin": 4.33,
             "delta": 1.15,
             "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
           },
@@ -2151,8 +2151,8 @@
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 33.0, the run says 40.0",
-            "chance": 89.98,
-            "margin": 4.41,
+            "chance": 89.93,
+            "margin": 4.4,
             "delta": 0.36
           }
         ],
@@ -2191,29 +2191,29 @@
     },
     "modeled_party": null,
     "move": {
-      "chance": 89.98,
+      "chance": 89.93,
       "lock_judgment": 33.0,
       "model_at_lock": 58.66,
-      "d_lock": 31.32,
-      "d_lock_vs_judgment": 56.98,
+      "d_lock": 31.27,
+      "d_lock_vs_judgment": 56.93,
       "method_gap": 25.66,
-      "prev_day": "2026-11-12",
-      "chance_prev": 90.03,
+      "prev_day": "2026-11-13",
+      "chance_prev": 89.98,
       "prev_reconstructed": true,
       "d_day": -0.05,
-      "chance_prev_published": 90.03,
-      "day_5d": "2026-11-08",
-      "chance_5d": 90.14,
+      "chance_prev_published": 89.98,
+      "day_5d": "2026-11-09",
+      "chance_5d": 90.09,
       "reconstructed_5d": true,
-      "chance_5d_published": 90.14,
+      "chance_5d_published": 90.09,
       "d_5d": -0.16,
-      "margin": 4.41,
-      "margin_prev": 4.42,
+      "margin": 4.4,
+      "margin_prev": 4.41,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_ia",
     "label": "Senate · IA",
     "office": "senate",
@@ -2254,11 +2254,6 @@
     "trump_2024": 13.21,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 34.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 34.0,
         "markets": 99.9
@@ -2287,22 +2282,27 @@
         "date": "2026-11-13",
         "ours": 34.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 34.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/iowa-senate-election-winner",
     "call": {
-      "share_d": 49.64,
-      "share_r": 47.92,
-      "other": 2.43,
-      "margin": 1.72,
-      "lo": -2.69,
-      "hi": 6.13,
-      "source": "core model: fundamentals and 3 polls, run judgment -0.93",
+      "share_d": 50.02,
+      "share_r": 48.31,
+      "other": 1.67,
+      "margin": 1.71,
+      "lo": -2.7,
+      "hi": 6.12,
+      "source": "core model: fundamentals and 3 polls, run judgment -0.94",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 7 polls"
+      "other_source": "poll average of other over 6 polls"
     },
     "votes": {
       "turnout_2022": 1230417,
@@ -2315,7 +2315,7 @@
         "label": "inferred from retrieved counts"
       },
       "rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
-      "d": 700000.0,
+      "d": 710000.0,
       "r": 680000.0
     },
     "night": {
@@ -2330,15 +2330,15 @@
       "note": "Iowa has both a 2022 governor and 2022 Senate race in the county records (statewide_2022 = governor; senate_2022 also given). No 2024 Senate race."
     },
     "model": {
-      "chance": 69.14,
+      "chance": 69.04,
       "core_chance": 77.94,
       "run_chance": 34.0,
       "lock_chance": 40.0,
-      "d_run": 35.14,
-      "d_lock": 29.14,
-      "margin": 1.72,
-      "margin_lo": -2.69,
-      "margin_hi": 6.13,
+      "d_run": 35.04,
+      "d_lock": 29.04,
+      "margin": 1.71,
+      "margin_lo": -2.7,
+      "margin_hi": 6.12,
       "core_margin": 2.65,
       "sigma": 3.44,
       "days_out": 0,
@@ -2352,7 +2352,7 @@
       "incumbent_on_ballot": false,
       "m_p": 2.65,
       "n_polls": 3,
-      "n_eff": 3.366,
+      "n_eff": 3.336,
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -2449,21 +2449,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.93,
+      "adjustment": -0.94,
       "adjustment_raw": -4.07,
       "adjustment_capped": false,
       "run_margin": -1.42,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 40.0,
         "model_at_lock": 51.95,
-        "chance": 69.14,
-        "total": 29.14,
+        "chance": 69.04,
+        "total": 29.04,
         "method_gap": 11.95,
-        "since_lock": 17.19,
-        "world": 17.19,
+        "since_lock": 17.09,
+        "world": 17.09,
         "n_new_polls": 4,
         "n_polls_at_lock": 17,
         "generic_lock": null,
@@ -2517,9 +2517,9 @@
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+5.0 among LV voters",
-            "chance": 71.98,
-            "margin": 2.0,
-            "delta": 19.89,
+            "chance": 71.88,
+            "margin": 1.99,
+            "delta": 19.79,
             "source_url": "https://atlasintel.org/poll/usa-iowa-atlaspollstergraph-poll-2026-11-02"
           },
           {
@@ -2528,16 +2528,16 @@
             "detail": "D+1.0 among LV voters",
             "chance": 70.36,
             "margin": 1.84,
-            "delta": -1.62,
+            "delta": -1.52,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 40.0, the run says 34.0",
-            "chance": 69.14,
-            "margin": 1.72,
-            "delta": -1.22
+            "chance": 69.04,
+            "margin": 1.71,
+            "delta": -1.32
           }
         ],
         "label": "inferred"
@@ -2575,29 +2575,29 @@
     },
     "modeled_party": null,
     "move": {
-      "chance": 69.14,
+      "chance": 69.04,
       "lock_judgment": 40.0,
       "model_at_lock": 51.95,
-      "d_lock": 17.19,
-      "d_lock_vs_judgment": 29.14,
+      "d_lock": 17.09,
+      "d_lock_vs_judgment": 29.04,
       "method_gap": 11.95,
-      "prev_day": "2026-11-12",
+      "prev_day": "2026-11-13",
       "chance_prev": 69.14,
       "prev_reconstructed": true,
-      "d_day": 0.0,
+      "d_day": -0.1,
       "chance_prev_published": 69.14,
-      "day_5d": "2026-11-08",
-      "chance_5d": 68.17,
+      "day_5d": "2026-11-09",
+      "chance_5d": 69.45,
       "reconstructed_5d": true,
-      "chance_5d_published": 68.17,
-      "d_5d": 0.97,
-      "margin": 1.72,
+      "chance_5d_published": 69.45,
+      "d_5d": -0.41,
+      "margin": 1.71,
       "margin_prev": 1.72,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_me",
     "label": "Senate · ME",
     "office": "senate",
@@ -2638,11 +2638,6 @@
     "trump_2024": -6.94,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 70.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 70.0,
         "markets": 99.9
@@ -2671,22 +2666,27 @@
         "date": "2026-11-13",
         "ours": 70.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 70.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/maine-senate-election-winner",
     "call": {
-      "share_d": 51.52,
-      "share_r": 46.92,
-      "other": 1.56,
-      "margin": 4.59,
-      "lo": 0.18,
-      "hi": 9.0,
-      "source": "core model: fundamentals and 9 polls, run judgment -0.33",
+      "share_d": 51.54,
+      "share_r": 46.84,
+      "other": 1.62,
+      "margin": 4.7,
+      "lo": 0.29,
+      "hi": 9.11,
+      "source": "core model: fundamentals and 9 polls, run judgment -0.35",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": "forecast on the final round; other is the first-round share",
       "runoff_chance": null,
-      "other_source": "poll average of other over 9 polls"
+      "other_source": "poll average of other over 8 polls"
     },
     "votes": {
       "turnout_2022": 680909,
@@ -2706,16 +2706,16 @@
       "note": "Maine 2024 Senate was King (I) vs Costello (R) vs Kouzounas (D); county numbers are given under senate_2024_king and are not comparable as a D-R margin. Maine is slow: 50% at 12:54 am and 90% only at 3:13 pm the next day in 2024."
     },
     "model": {
-      "chance": 90.88,
-      "core_chance": 92.35,
+      "chance": 91.41,
+      "core_chance": 92.9,
       "run_chance": 70.0,
       "lock_chance": 55.0,
-      "d_run": 20.88,
-      "d_lock": 35.88,
-      "margin": 4.59,
-      "margin_lo": 0.18,
-      "margin_hi": 9.0,
-      "core_margin": 4.92,
+      "d_run": 21.41,
+      "d_lock": 36.41,
+      "margin": 4.7,
+      "margin_lo": 0.29,
+      "margin_hi": 9.11,
+      "core_margin": 5.05,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -2726,9 +2726,9 @@
       "incumbent": "Susan Collins",
       "appointed": false,
       "incumbent_on_ballot": true,
-      "m_p": 4.92,
+      "m_p": 5.05,
       "n_polls": 9,
-      "n_eff": 8.513,
+      "n_eff": 8.213,
       "polls": [
         {
           "pollster": "Survey 160",
@@ -2740,7 +2740,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1014
+          "weight": 0.1042
         },
         {
           "pollster": "New York Times / Siena University",
@@ -2752,7 +2752,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0807
+          "weight": 0.083
         },
         {
           "pollster": "Emerson College",
@@ -2764,7 +2764,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1055
+          "weight": 0.1084
         },
         {
           "pollster": "AtlasIntel",
@@ -2776,7 +2776,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1631
+          "weight": 0.1675
         },
         {
           "pollster": "University of New Hampshire",
@@ -2788,7 +2788,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.2161
+          "weight": 0.2221
         },
         {
           "pollster": "YouGov",
@@ -2800,7 +2800,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1027
+          "weight": 0.1056
         },
         {
           "pollster": "SSRS",
@@ -2812,7 +2812,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0824
+          "weight": 0.0846
         },
         {
           "pollster": "Marist University",
@@ -2824,7 +2824,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0415
+          "weight": 0.0426
         },
         {
           "pollster": "Beacon Research/ Shaw & Co. Research",
@@ -2833,10 +2833,10 @@
           "margin_d": 0.0,
           "moe": 2.5,
           "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1065
+          "weight": 0.0821
         }
       ],
       "excluded": [
@@ -2881,21 +2881,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.33,
-      "adjustment_raw": -3.11,
+      "adjustment": -0.35,
+      "adjustment_raw": -3.25,
       "adjustment_capped": false,
       "run_margin": 1.8,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 55.0,
         "model_at_lock": 73.62,
-        "chance": 90.88,
-        "total": 35.88,
+        "chance": 91.41,
+        "total": 36.41,
         "method_gap": 18.62,
-        "since_lock": 17.26,
-        "world": 17.26,
+        "since_lock": 17.79,
+        "world": 17.79,
         "n_new_polls": 9,
         "n_polls_at_lock": 14,
         "generic_lock": null,
@@ -2931,90 +2931,90 @@
             "kind": "poll",
             "label": "Beacon Research/ Shaw & Co. Research through 2026-10-20",
             "detail": "D+0.0 among LV voters",
-            "chance": 52.67,
-            "margin": 0.23,
-            "delta": -25.87,
+            "chance": 53.01,
+            "margin": 0.26,
+            "delta": -25.53,
             "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf"
           },
           {
             "kind": "poll",
             "label": "Marist University through 2026-10-25",
             "detail": "D+2.0 among LV voters",
-            "chance": 55.79,
-            "margin": 0.5,
-            "delta": 3.12,
+            "chance": 56.51,
+            "margin": 0.56,
+            "delta": 3.5,
             "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_Maine-NOS-and-Tables_202610261228-3_43sjl2.pdf"
           },
           {
             "kind": "poll",
             "label": "SSRS through 2026-10-26",
             "detail": "D+4.0 among LV voters",
-            "chance": 65.05,
-            "margin": 1.33,
-            "delta": 9.26,
+            "chance": 66.17,
+            "margin": 1.43,
+            "delta": 9.66,
             "source_url": "https://www.documentcloud.org/documents/28856725-cnn-poll-conducted-by-ssrs-maine-october/"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+5.0 among LV voters",
-            "chance": 73.59,
-            "margin": 2.17,
-            "delta": 8.54,
+            "chance": 74.83,
+            "margin": 2.3,
+            "delta": 8.66,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "University of New Hampshire through 2026-10-31",
             "detail": "D+9.0 among LV voters",
-            "chance": 89.89,
-            "margin": 4.39,
-            "delta": 16.3,
+            "chance": 90.72,
+            "margin": 4.55,
+            "delta": 15.89,
             "source_url": "https://scholars.unh.edu/survey_center_polls/1013/"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+9.0 among LV voters",
-            "chance": 93.8,
-            "margin": 5.29,
-            "delta": 3.91,
+            "chance": 94.37,
+            "margin": 5.46,
+            "delta": 3.65,
             "source_url": "https://atlasintel.org/poll/usa-maine-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "poll",
             "label": "Emerson College through 2026-11-01",
             "detail": "D-2.0 among LV voters",
-            "chance": 90.3,
-            "margin": 4.47,
-            "delta": -3.5,
+            "chance": 90.93,
+            "margin": 4.6,
+            "delta": -3.44,
             "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+6.0 among LV voters",
-            "chance": 90.91,
-            "margin": 4.59,
-            "delta": 0.61,
+            "chance": 91.45,
+            "margin": 4.71,
+            "delta": 0.52,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-me-poll-toplines.html"
           },
           {
             "kind": "poll",
             "label": "Survey 160 through 2026-11-01",
             "detail": "D+3.0 among LV voters",
-            "chance": 90.19,
-            "margin": 4.45,
-            "delta": -0.72,
+            "chance": 90.71,
+            "margin": 4.55,
+            "delta": -0.74,
             "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 55.0, the run says 70.0",
-            "chance": 90.88,
-            "margin": 4.59,
-            "delta": 0.69
+            "chance": 91.41,
+            "margin": 4.7,
+            "delta": 0.7
           }
         ],
         "label": "inferred"
@@ -3052,29 +3052,29 @@
     },
     "modeled_party": null,
     "move": {
-      "chance": 90.88,
+      "chance": 91.41,
       "lock_judgment": 55.0,
       "model_at_lock": 73.62,
-      "d_lock": 17.26,
-      "d_lock_vs_judgment": 35.88,
+      "d_lock": 17.79,
+      "d_lock_vs_judgment": 36.41,
       "method_gap": 18.62,
-      "prev_day": "2026-11-12",
-      "chance_prev": 90.4,
+      "prev_day": "2026-11-13",
+      "chance_prev": 90.88,
       "prev_reconstructed": true,
-      "d_day": 0.48,
-      "chance_prev_published": 90.4,
-      "day_5d": "2026-11-08",
+      "d_day": 0.53,
+      "chance_prev_published": 90.88,
+      "day_5d": "2026-11-09",
       "chance_5d": 89.4,
       "reconstructed_5d": true,
       "chance_5d_published": 89.4,
-      "d_5d": 1.48,
-      "margin": 4.59,
-      "margin_prev": 4.49,
+      "d_5d": 2.01,
+      "margin": 4.7,
+      "margin_prev": 4.59,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_mi",
     "label": "Senate · MI",
     "office": "senate",
@@ -3115,11 +3115,6 @@
     "trump_2024": 1.42,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 70.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 70.0,
         "markets": 99.9
@@ -3148,22 +3143,27 @@
         "date": "2026-11-13",
         "ours": 70.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 70.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/michigan-senate-election-winner",
     "call": {
-      "share_d": 51.19,
-      "share_r": 45.81,
-      "other": 3.0,
+      "share_d": 51.4,
+      "share_r": 46.02,
+      "other": 2.58,
       "margin": 5.37,
-      "lo": 0.96,
+      "lo": 0.97,
       "hi": 9.78,
-      "source": "core model: fundamentals and 13 polls, run judgment -0.31",
+      "source": "core model: fundamentals and 13 polls, run judgment -0.33",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 14 polls"
+      "other_source": "poll average of other over 12 polls"
     },
     "votes": {
       "turnout_2022": 4500400,
@@ -3176,8 +3176,8 @@
         "label": "inferred from retrieved counts"
       },
       "rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
-      "d": 2650000.0,
-      "r": 2370000.0
+      "d": 2660000.0,
+      "r": 2380000.0
     },
     "night": {
       "midnight_margin": null,
@@ -3191,16 +3191,16 @@
       "note": "Wayne is listed last by design: it reports late and skews the statewide total until its absentees land. Saginaw is the single best early read."
     },
     "model": {
-      "chance": 94.08,
-      "core_chance": 95.07,
+      "chance": 94.09,
+      "core_chance": 95.14,
       "run_chance": 70.0,
       "lock_chance": 70.0,
-      "d_run": 24.08,
-      "d_lock": 24.08,
+      "d_run": 24.09,
+      "d_lock": 24.09,
       "margin": 5.37,
-      "margin_lo": 0.96,
+      "margin_lo": 0.97,
       "margin_hi": 9.78,
-      "core_margin": 5.68,
+      "core_margin": 5.7,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -3211,9 +3211,9 @@
       "incumbent": "Gary Peters",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 5.68,
+      "m_p": 5.7,
       "n_polls": 13,
-      "n_eff": 11.542,
+      "n_eff": 10.936,
       "polls": [
         {
           "pollster": "John Zogby Strategies",
@@ -3225,7 +3225,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1107
+          "weight": 0.1158
         },
         {
           "pollster": "Research Co.",
@@ -3237,7 +3237,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0618
+          "weight": 0.0646
         },
         {
           "pollster": "New York Times / Siena University",
@@ -3249,7 +3249,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0845
+          "weight": 0.0884
         },
         {
           "pollster": "HarrisX",
@@ -3261,7 +3261,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0845
+          "weight": 0.0884
         },
         {
           "pollster": "Emerson College",
@@ -3273,7 +3273,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0666
+          "weight": 0.0696
         },
         {
           "pollster": "AtlasIntel",
@@ -3285,7 +3285,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1203
+          "weight": 0.1258
         },
         {
           "pollster": "YouGov",
@@ -3297,7 +3297,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1171
+          "weight": 0.1225
         },
         {
           "pollster": "SSRS",
@@ -3309,7 +3309,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.057
+          "weight": 0.0596
         },
         {
           "pollster": "Mitchell Research & Communications",
@@ -3321,7 +3321,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0775
+          "weight": 0.0811
         },
         {
           "pollster": "Michigan State University /Verasight",
@@ -3330,10 +3330,10 @@
           "margin_d": 8.0,
           "moe": 2.9,
           "source_url": "https://polisci.msu.edu/news-events/news/smidt-poll102926.html",
-          "fade": null,
+          "fade": 0.86,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1163
+          "weight": 0.1043
         },
         {
           "pollster": "Glengariff Group",
@@ -3342,10 +3342,10 @@
           "margin_d": 6.0,
           "moe": 4.0,
           "source_url": "https://www.clickondetroit.com/news/local/2026/10/27/democratic-candidate-el-sayed-leads-michigan-us-senate-race-new-poll-finds/",
-          "fade": 0.86,
+          "fade": 0.71,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.061
+          "weight": 0.0532
         },
         {
           "pollster": "Michigan State University / YouGov",
@@ -3354,10 +3354,10 @@
           "margin_d": 2.0,
           "moe": 4.4,
           "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0254
+          "weight": 0.0177
         },
         {
           "pollster": "Marist University",
@@ -3366,10 +3366,10 @@
           "margin_d": 2.0,
           "moe": 4.3,
           "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_MI-NOS-and-Tables_202610191238FFx09@Jal.pdf",
-          "fade": 0.29,
+          "fade": 0.14,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0174
+          "weight": 0.0091
         }
       ],
       "excluded": [
@@ -3438,21 +3438,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.31,
-      "adjustment_raw": -3.88,
+      "adjustment": -0.33,
+      "adjustment_raw": -3.9,
       "adjustment_capped": false,
       "run_margin": 1.8,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 70.0,
         "model_at_lock": 82.82,
-        "chance": 94.08,
-        "total": 24.08,
+        "chance": 94.09,
+        "total": 24.09,
         "method_gap": 12.82,
-        "since_lock": 11.26,
-        "world": 11.26,
+        "since_lock": 11.27,
+        "world": 11.27,
         "n_new_polls": 13,
         "n_polls_at_lock": 25,
         "generic_lock": null,
@@ -3488,17 +3488,17 @@
             "kind": "poll",
             "label": "Marist University through 2026-10-18",
             "detail": "D+2.0 among LV voters",
-            "chance": 70.36,
-            "margin": 1.84,
-            "delta": -13.49,
+            "chance": 70.16,
+            "margin": 1.82,
+            "delta": -13.69,
             "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_MI-NOS-and-Tables_202610191238FFx09@Jal.pdf"
           },
           {
             "kind": "poll",
             "label": "Michigan State University / YouGov through 2026-10-19",
             "detail": "D+2.0 among LV voters",
-            "chance": 70.66,
-            "margin": 1.87,
+            "chance": 70.46,
+            "margin": 1.85,
             "delta": 0.3,
             "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf"
           },
@@ -3506,62 +3506,62 @@
             "kind": "poll",
             "label": "Glengariff Group through 2026-10-22",
             "detail": "D+6.0 among LV voters",
-            "chance": 82.31,
-            "margin": 3.19,
-            "delta": 11.65,
+            "chance": 81.92,
+            "margin": 3.14,
+            "delta": 11.46,
             "source_url": "https://www.clickondetroit.com/news/local/2026/10/27/democratic-candidate-el-sayed-leads-michigan-us-senate-race-new-poll-finds/"
           },
           {
             "kind": "poll",
             "label": "Michigan State University /Verasight through 2026-10-23",
             "detail": "D+8.0 among LV voters",
-            "chance": 92.77,
-            "margin": 5.02,
-            "delta": 10.46,
+            "chance": 92.61,
+            "margin": 4.98,
+            "delta": 10.69,
             "source_url": "https://polisci.msu.edu/news-events/news/smidt-poll102926.html"
           },
           {
             "kind": "poll",
             "label": "Mitchell Research & Communications through 2026-10-27",
             "detail": "D+7.0 among LV voters",
-            "chance": 94.23,
-            "margin": 5.42,
-            "delta": 1.46,
+            "chance": 94.3,
+            "margin": 5.44,
+            "delta": 1.69,
             "source_url": "https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/"
           },
           {
             "kind": "poll",
             "label": "SSRS through 2026-10-27",
             "detail": "D+7.0 among LV voters",
-            "chance": 94.89,
-            "margin": 5.62,
-            "delta": 0.66,
+            "chance": 95.02,
+            "margin": 5.66,
+            "delta": 0.72,
             "source_url": "https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+4.0 among LV voters",
-            "chance": 93.75,
+            "chance": 93.77,
             "margin": 5.28,
-            "delta": -1.14,
+            "delta": -1.25,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+8.0 among LV voters",
-            "chance": 95.3,
-            "margin": 5.76,
-            "delta": 1.55,
+            "chance": 95.39,
+            "margin": 5.79,
+            "delta": 1.62,
             "source_url": "https://atlasintel.org/poll/usa-michigan-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "poll",
             "label": "Emerson College through 2026-11-01",
             "detail": "D+6.0 among LV voters",
-            "chance": 95.37,
-            "margin": 5.79,
+            "chance": 95.46,
+            "margin": 5.82,
             "delta": 0.07,
             "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
           },
@@ -3569,43 +3569,43 @@
             "kind": "poll",
             "label": "HarrisX through 2026-11-01",
             "detail": "D+3.0 among LV voters",
-            "chance": 94.51,
-            "margin": 5.5,
-            "delta": -0.86,
+            "chance": 94.56,
+            "margin": 5.52,
+            "delta": -0.9,
             "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+11.0 among LV voters",
-            "chance": 95.96,
-            "margin": 6.01,
-            "delta": 1.45,
+            "chance": 96.07,
+            "margin": 6.05,
+            "delta": 1.51,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
           },
           {
             "kind": "poll",
             "label": "Research Co. through 2026-11-01",
             "detail": "D+2.0 among LV voters",
-            "chance": 95.3,
-            "margin": 5.76,
-            "delta": -0.66,
+            "chance": 95.35,
+            "margin": 5.78,
+            "delta": -0.72,
             "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
           },
           {
             "kind": "poll",
             "label": "John Zogby Strategies through 2026-11-02",
             "detail": "D+2.0 among LV voters",
-            "chance": 94.08,
+            "chance": 94.09,
             "margin": 5.37,
-            "delta": -1.22,
+            "delta": -1.26,
             "source_url": "https://johnzogbystrategies.com/el-sayed-leads-rogers-51-49-new-john-zogby-strategies-eve-of-election-day-poll/"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 70.0, the run says 70.0",
-            "chance": 94.08,
+            "chance": 94.09,
             "margin": 5.37,
             "delta": 0.0
           }
@@ -3657,37 +3657,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/michigan-results",
-      "retrieved_at": "2026-11-13T09:34:14-05:00",
+      "retrieved_at": "2026-11-14T09:33:38-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 94.08,
+      "chance": 94.09,
       "lock_judgment": 70.0,
       "model_at_lock": 82.82,
-      "d_lock": 11.26,
-      "d_lock_vs_judgment": 24.08,
+      "d_lock": 11.27,
+      "d_lock_vs_judgment": 24.09,
       "method_gap": 12.82,
-      "prev_day": "2026-11-12",
-      "chance_prev": 93.95,
+      "prev_day": "2026-11-13",
+      "chance_prev": 94.08,
       "prev_reconstructed": true,
-      "d_day": 0.13,
-      "chance_prev_published": 93.95,
-      "day_5d": "2026-11-08",
-      "chance_5d": 93.96,
+      "d_day": 0.01,
+      "chance_prev_published": 94.08,
+      "day_5d": "2026-11-09",
+      "chance_5d": 94.03,
       "reconstructed_5d": true,
-      "chance_5d_published": 93.96,
-      "d_5d": 0.12,
+      "chance_5d_published": 94.03,
+      "d_5d": 0.06,
       "margin": 5.37,
-      "margin_prev": 5.33,
+      "margin_prev": 5.37,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_sc",
     "label": "Senate · SC",
     "office": "senate",
@@ -3728,11 +3728,6 @@
     "trump_2024": 17.87,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 13.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 13.0,
         "markets": 99.8
@@ -3759,6 +3754,11 @@
       },
       {
         "date": "2026-11-13",
+        "ours": 13.0,
+        "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
         "ours": 13.0,
         "markets": 99.8
       }
@@ -3826,7 +3826,7 @@
       "incumbent_on_ballot": true,
       "m_p": -2.27,
       "n_polls": 4,
-      "n_eff": 4.224,
+      "n_eff": 4.186,
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -3942,7 +3942,7 @@
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 20.0,
         "model_at_lock": 2.24,
         "chance": 22.7,
@@ -4160,10 +4160,10 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/south-carolina-results",
-      "retrieved_at": "2026-11-13T09:34:13-05:00",
+      "retrieved_at": "2026-11-14T09:33:37-05:00",
       "label": "modeled",
       "in_number": false
     },
@@ -4174,12 +4174,12 @@
       "d_lock": 20.46,
       "d_lock_vs_judgment": 2.7,
       "method_gap": -17.76,
-      "prev_day": "2026-11-12",
+      "prev_day": "2026-11-13",
       "chance_prev": 22.7,
       "prev_reconstructed": true,
       "d_day": 0.0,
       "chance_prev_published": 22.7,
-      "day_5d": "2026-11-08",
+      "day_5d": "2026-11-09",
       "chance_5d": 22.79,
       "reconstructed_5d": true,
       "chance_5d_published": 22.79,
@@ -4190,7 +4190,7 @@
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_mn",
     "label": "Senate · MN",
     "office": "senate",
@@ -4231,11 +4231,6 @@
     "trump_2024": -4.24,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 93.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 93.0,
         "markets": 99.9
@@ -4262,6 +4257,11 @@
       },
       {
         "date": "2026-11-13",
+        "ours": 93.0,
+        "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
         "ours": 93.0,
         "markets": 99.9
       }
@@ -4321,7 +4321,7 @@
       "incumbent_on_ballot": false,
       "m_p": 6.1,
       "n_polls": 5,
-      "n_eff": 5.622,
+      "n_eff": 5.572,
       "polls": [
         {
           "pollster": "Survey 160",
@@ -4425,7 +4425,7 @@
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 86.0,
         "model_at_lock": 85.85,
         "chance": 95.8,
@@ -4477,9 +4477,9 @@
             "kind": "poll",
             "label": "KSTP / SurveyUSA through 2026-10-28",
             "detail": "D+7.0 among LV voters",
-            "chance": 98.95,
-            "margin": 7.94,
-            "delta": -0.98,
+            "chance": 98.93,
+            "margin": 7.92,
+            "delta": -1.0,
             "source_url": "https://kstp.com/kstp-news/top-news/kstp-surveyusa-minnesota-statewide-races-inch-left-in-final-poll-before-election-day/"
           },
           {
@@ -4488,7 +4488,7 @@
             "detail": "D+2.0 among LV voters",
             "chance": 93.36,
             "margin": 5.17,
-            "delta": -5.59,
+            "delta": -5.57,
             "source_url": "https://atlasintel.org/poll/usa-minnesota-atlaspollstergraph-poll-2026-11-02"
           },
           {
@@ -4565,10 +4565,10 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/minnesota-results",
-      "retrieved_at": "2026-11-13T09:34:15-05:00",
+      "retrieved_at": "2026-11-14T09:33:40-05:00",
       "label": "modeled",
       "in_number": false
     },
@@ -4579,23 +4579,23 @@
       "d_lock": 9.95,
       "d_lock_vs_judgment": 9.8,
       "method_gap": -0.15,
-      "prev_day": "2026-11-12",
-      "chance_prev": 95.83,
+      "prev_day": "2026-11-13",
+      "chance_prev": 95.8,
       "prev_reconstructed": true,
-      "d_day": -0.03,
-      "chance_prev_published": 95.83,
-      "day_5d": "2026-11-08",
-      "chance_5d": 95.71,
+      "d_day": 0.0,
+      "chance_prev_published": 95.8,
+      "day_5d": "2026-11-09",
+      "chance_5d": 95.83,
       "reconstructed_5d": true,
-      "chance_5d_published": 95.71,
-      "d_5d": 0.09,
+      "chance_5d_published": 95.83,
+      "d_5d": -0.03,
       "margin": 5.94,
-      "margin_prev": 5.95,
+      "margin_prev": 5.94,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_nh",
     "label": "Senate · NH",
     "office": "senate",
@@ -4636,11 +4636,6 @@
     "trump_2024": -2.78,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 94.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 94.0,
         "markets": 99.9
@@ -4669,22 +4664,27 @@
         "date": "2026-11-13",
         "ours": 94.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 94.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/new-hampshire-senate-election-winner",
     "call": {
-      "share_d": 53.13,
-      "share_r": 44.37,
-      "other": 2.5,
-      "margin": 8.77,
-      "lo": 4.36,
-      "hi": 13.18,
-      "source": "core model: fundamentals and 4 polls, run judgment -0.74",
+      "share_d": 53.43,
+      "share_r": 44.57,
+      "other": 2.0,
+      "margin": 8.86,
+      "lo": 4.45,
+      "hi": 13.27,
+      "source": "core model: fundamentals and 4 polls, run judgment -0.83",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 4 polls"
+      "other_source": "poll average of other over 3 polls"
     },
     "votes": {
       "turnout_2022": null,
@@ -4704,16 +4704,16 @@
       "note": "Harris-minus-Trump margins. NH county totals aggregate town returns; Wikipedia presidential county tables used directly. 2024 governor county shares use OpenElections town data with Libertarian and undervotes in the denominator, so they run ~1 pt low for both candidates versus valid-vote shares."
     },
     "model": {
-      "chance": 99.46,
-      "core_chance": 99.71,
+      "chance": 99.5,
+      "core_chance": 99.76,
       "run_chance": 94.0,
       "lock_chance": 86.0,
-      "d_run": 5.46,
-      "d_lock": 13.46,
-      "margin": 8.77,
-      "margin_lo": 4.36,
-      "margin_hi": 13.18,
-      "core_margin": 9.51,
+      "d_run": 5.5,
+      "d_lock": 13.5,
+      "margin": 8.86,
+      "margin_lo": 4.45,
+      "margin_hi": 13.27,
+      "core_margin": 9.69,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -4724,9 +4724,9 @@
       "incumbent": "Jeanne Shaheen",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 9.51,
+      "m_p": 9.69,
       "n_polls": 4,
-      "n_eff": 4.612,
+      "n_eff": 4.257,
       "polls": [
         {
           "pollster": "AtlasIntel",
@@ -4738,7 +4738,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.301
+          "weight": 0.3232
         },
         {
           "pollster": "University of New Hampshire",
@@ -4750,7 +4750,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.4412
+          "weight": 0.4738
         },
         {
           "pollster": "Saint Anselm College",
@@ -4759,10 +4759,10 @@
           "margin_d": 7.0,
           "moe": 2.4,
           "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.2067
+          "weight": 0.1664
         },
         {
           "pollster": "UMass Lowell / YouGov",
@@ -4771,10 +4771,10 @@
           "margin_d": 7.0,
           "moe": 5.0,
           "source_url": "https://www.uml.edu/news/press-releases/2026/102826-new-england-polls.aspx",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0511
+          "weight": 0.0366
         }
       ],
       "excluded": [
@@ -4803,21 +4803,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.74,
-      "adjustment_raw": -4.16,
+      "adjustment": -0.83,
+      "adjustment_raw": -4.34,
       "adjustment_capped": false,
       "run_margin": 5.35,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 86.0,
         "model_at_lock": 96.78,
-        "chance": 99.46,
-        "total": 13.46,
+        "chance": 99.5,
+        "total": 13.5,
         "method_gap": 10.78,
-        "since_lock": 2.68,
-        "world": 2.68,
+        "since_lock": 2.72,
+        "world": 2.72,
         "n_new_polls": 4,
         "n_polls_at_lock": 16,
         "generic_lock": null,
@@ -4853,44 +4853,44 @@
             "kind": "poll",
             "label": "UMass Lowell / YouGov through 2026-10-19",
             "detail": "D+7.0 among LV voters",
-            "chance": 89.65,
-            "margin": 4.34,
-            "delta": -8.26,
+            "chance": 88.67,
+            "margin": 4.16,
+            "delta": -9.24,
             "source_url": "https://www.uml.edu/news/press-releases/2026/102826-new-england-polls.aspx"
           },
           {
             "kind": "poll",
             "label": "Saint Anselm College through 2026-10-20",
             "detail": "D+7.0 among LV voters",
-            "chance": 94.51,
-            "margin": 5.5,
-            "delta": 4.86,
+            "chance": 93.62,
+            "margin": 5.24,
+            "delta": 4.95,
             "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
           },
           {
             "kind": "poll",
             "label": "University of New Hampshire through 2026-10-31",
             "detail": "D+12.0 among LV voters",
-            "chance": 99.4,
-            "margin": 8.64,
-            "delta": 4.89,
+            "chance": 99.45,
+            "margin": 8.75,
+            "delta": 5.83,
             "source_url": "https://scholars.unh.edu/survey_center_polls/1011/"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+8.0 among LV voters",
-            "chance": 99.31,
-            "margin": 8.48,
-            "delta": -0.09,
+            "chance": 99.35,
+            "margin": 8.55,
+            "delta": -0.1,
             "source_url": "https://atlasintel.org/poll/usa-new-hampshire-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 86.0, the run says 94.0",
-            "chance": 99.46,
-            "margin": 8.77,
+            "chance": 99.5,
+            "margin": 8.86,
             "delta": 0.15
           }
         ],
@@ -4902,29 +4902,29 @@
     "early_vote": null,
     "modeled_party": null,
     "move": {
-      "chance": 99.46,
+      "chance": 99.5,
       "lock_judgment": 86.0,
       "model_at_lock": 96.78,
-      "d_lock": 2.68,
-      "d_lock_vs_judgment": 13.46,
+      "d_lock": 2.72,
+      "d_lock_vs_judgment": 13.5,
       "method_gap": 10.78,
-      "prev_day": "2026-11-12",
-      "chance_prev": 99.42,
+      "prev_day": "2026-11-13",
+      "chance_prev": 99.46,
       "prev_reconstructed": true,
       "d_day": 0.04,
-      "chance_prev_published": 99.42,
-      "day_5d": "2026-11-08",
+      "chance_prev_published": 99.46,
+      "day_5d": "2026-11-09",
       "chance_5d": 99.33,
       "reconstructed_5d": true,
       "chance_5d_published": 99.33,
-      "d_5d": 0.13,
-      "margin": 8.77,
-      "margin_prev": 8.68,
+      "d_5d": 0.17,
+      "margin": 8.86,
+      "margin_prev": 8.77,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_fl",
     "label": "Senate · FL special",
     "office": "senate",
@@ -4965,11 +4965,6 @@
     "trump_2024": 13.1,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 6.0,
-        "markets": 0.1
-      },
-      {
         "date": "2026-11-08",
         "ours": 6.0,
         "markets": 0.1
@@ -4998,22 +4993,27 @@
         "date": "2026-11-13",
         "ours": 6.0,
         "markets": 0.1
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 6.0,
+        "markets": 0.1
       }
     ],
     "source_url": "https://polymarket.com/event/florida-senate-election-winner",
     "call": {
-      "share_d": 45.51,
-      "share_r": 51.49,
+      "share_d": 45.49,
+      "share_r": 51.51,
       "other": 3.0,
-      "margin": -5.98,
-      "lo": -10.39,
-      "hi": -1.58,
-      "source": "core model: fundamentals and 9 polls, run judgment +0.07",
+      "margin": -6.02,
+      "lo": -10.43,
+      "hi": -1.61,
+      "source": "core model: fundamentals and 9 polls, run judgment +0.08",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 11 polls"
+      "other_source": "poll average of other over 9 polls"
     },
     "votes": {
       "turnout_2022": 7796916,
@@ -5033,16 +5033,16 @@
       "note": "Harris-minus-Trump margins. Wikipedia FL tables list Trump first; margins here are sign-flipped to D-minus-R. 2024 Senate county percentages are to one decimal as published."
     },
     "model": {
-      "chance": 4.09,
-      "core_chance": 3.92,
+      "chance": 4.0,
+      "core_chance": 3.8,
       "run_chance": 6.0,
       "lock_chance": 11.0,
-      "d_run": -1.91,
-      "d_lock": -6.91,
-      "margin": -5.98,
-      "margin_lo": -10.39,
-      "margin_hi": -1.58,
-      "core_margin": -6.05,
+      "d_run": -2.0,
+      "d_lock": -7.0,
+      "margin": -6.02,
+      "margin_lo": -10.43,
+      "margin_hi": -1.61,
+      "core_margin": -6.1,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -5053,9 +5053,9 @@
       "incumbent": "Ashley Moody",
       "appointed": true,
       "incumbent_on_ballot": true,
-      "m_p": -6.05,
+      "m_p": -6.1,
       "n_polls": 9,
-      "n_eff": 8.502,
+      "n_eff": 8.234,
       "polls": [
         {
           "pollster": "Research Co.",
@@ -5067,7 +5067,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0846
+          "weight": 0.0866
         },
         {
           "pollster": "Stetson University",
@@ -5079,7 +5079,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1226
+          "weight": 0.1254
         },
         {
           "pollster": "Big Data Poll",
@@ -5091,7 +5091,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1604
+          "weight": 0.1641
         },
         {
           "pollster": "Targoz Market Research",
@@ -5103,7 +5103,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.159
+          "weight": 0.1627
         },
         {
           "pollster": "Political Matrix/The Listener Group",
@@ -5115,7 +5115,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0872
+          "weight": 0.0892
         },
         {
           "pollster": "St. Pete Polls",
@@ -5127,7 +5127,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1424
+          "weight": 0.1457
         },
         {
           "pollster": "ActiVote",
@@ -5139,7 +5139,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.072
+          "weight": 0.0737
         },
         {
           "pollster": "New York Times / Siena University",
@@ -5151,7 +5151,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1034
+          "weight": 0.1058
         },
         {
           "pollster": "University of North Florida",
@@ -5160,10 +5160,10 @@
           "margin_d": -4.0,
           "moe": 2.8,
           "source_url": "https://static1.squarespace.com/static/6994d571bce3436c60d86870/t/6ad8a5ec13c20404a1f8052b/1792583148294/UNF+PORL+FALL+Statewide+2026+FLLV+-+Press+Release+1021+EMBARGO.pdf",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0685
+          "weight": 0.0467
         }
       ],
       "excluded": [
@@ -5224,21 +5224,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": 0.07,
-      "adjustment_raw": 0.71,
+      "adjustment": 0.08,
+      "adjustment_raw": 0.75,
       "adjustment_capped": false,
       "run_margin": -5.35,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 11.0,
         "model_at_lock": 2.61,
-        "chance": 4.09,
-        "total": -6.91,
+        "chance": 4.0,
+        "total": -7.0,
         "method_gap": -8.39,
-        "since_lock": 1.48,
-        "world": 1.48,
+        "since_lock": 1.39,
+        "world": 1.39,
         "n_new_polls": 9,
         "n_polls_at_lock": 15,
         "generic_lock": null,
@@ -5274,53 +5274,53 @@
             "kind": "poll",
             "label": "University of North Florida through 2026-10-19",
             "detail": "D-4.0 among LV voters",
-            "chance": 11.44,
-            "margin": -4.14,
-            "delta": 9.5,
+            "chance": 11.33,
+            "margin": -4.16,
+            "delta": 9.39,
             "source_url": "https://static1.squarespace.com/static/6994d571bce3436c60d86870/t/6ad8a5ec13c20404a1f8052b/1792583148294/UNF+PORL+FALL+Statewide+2026+FLLV+-+Press+Release+1021+EMBARGO.pdf"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-10-25",
             "detail": "D-6.0 among LV voters",
-            "chance": 8.13,
-            "margin": -4.8,
-            "delta": -3.31,
+            "chance": 7.85,
+            "margin": -4.87,
+            "delta": -3.48,
             "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-fl-poll-toplines.html"
           },
           {
             "kind": "poll",
             "label": "ActiVote through 2026-10-27",
             "detail": "D-6.0 among LV voters",
-            "chance": 7.15,
-            "margin": -5.04,
-            "delta": -0.98,
+            "chance": 6.88,
+            "margin": -5.11,
+            "delta": -0.97,
             "source_url": "https://www.activote.net/polls/2026/fl-u-s-senate/"
           },
           {
             "kind": "poll",
             "label": "St. Pete Polls through 2026-10-27",
             "detail": "D-4.0 among LV voters",
-            "chance": 8.38,
-            "margin": -4.75,
-            "delta": 1.23,
+            "chance": 8.21,
+            "margin": -4.79,
+            "delta": 1.33,
             "source_url": "https://data.ddhq.io/polls/2026/10/28/St.-Pete-Polls-Florida"
           },
           {
             "kind": "poll",
             "label": "Political Matrix/The Listener Group through 2026-10-28",
             "detail": "D-6.0 among LV voters",
-            "chance": 7.59,
-            "margin": -4.93,
-            "delta": -0.79,
+            "chance": 7.45,
+            "margin": -4.97,
+            "delta": -0.76,
             "source_url": "https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/"
           },
           {
             "kind": "poll",
             "label": "Targoz Market Research through 2026-10-29",
             "detail": "D-9.0 among LV voters",
-            "chance": 4.6,
-            "margin": -5.8,
+            "chance": 4.46,
+            "margin": -5.85,
             "delta": -2.99,
             "source_url": "https://www.targoz.com/market-matters-blog/2026/11/2/republicans-lead-all-five-florida-statewide-races"
           },
@@ -5328,8 +5328,8 @@
             "kind": "poll",
             "label": "Big Data Poll through 2026-10-30",
             "detail": "D-7.0 among LV voters",
-            "chance": 4.05,
-            "margin": -6.0,
+            "chance": 3.91,
+            "margin": -6.06,
             "delta": -0.55,
             "source_url": "https://www.bigdatapoll.com/blog/sunshine-state-poll-ashley-moody-leads-angie-craig-governors-race-tight/"
           },
@@ -5337,27 +5337,27 @@
             "kind": "poll",
             "label": "Stetson University through 2026-10-30",
             "detail": "D-4.0 among RV voters",
-            "chance": 4.68,
-            "margin": -5.77,
-            "delta": 0.63,
+            "chance": 4.57,
+            "margin": -5.81,
+            "delta": 0.66,
             "source_url": "https://www.stetson.edu/artsci/cpor/media/cpor-fall-2026-report-wave-3-october.pdf"
           },
           {
             "kind": "poll",
             "label": "Research Co. through 2026-11-02",
             "detail": "D-7.0 among LV voters",
-            "chance": 4.41,
-            "margin": -5.86,
-            "delta": -0.27,
+            "chance": 4.31,
+            "margin": -5.9,
+            "delta": -0.26,
             "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 11.0, the run says 6.0",
-            "chance": 4.09,
-            "margin": -5.98,
-            "delta": -0.32
+            "chance": 4.0,
+            "margin": -6.02,
+            "delta": -0.31
           }
         ],
         "label": "inferred"
@@ -5395,29 +5395,29 @@
     },
     "modeled_party": null,
     "move": {
-      "chance": 4.09,
+      "chance": 4.0,
       "lock_judgment": 11.0,
       "model_at_lock": 2.61,
-      "d_lock": 1.48,
-      "d_lock_vs_judgment": -6.91,
+      "d_lock": 1.39,
+      "d_lock_vs_judgment": -7.0,
       "method_gap": -8.39,
-      "prev_day": "2026-11-12",
-      "chance_prev": 4.21,
+      "prev_day": "2026-11-13",
+      "chance_prev": 4.09,
       "prev_reconstructed": true,
-      "d_day": -0.12,
-      "chance_prev_published": 4.21,
-      "day_5d": "2026-11-08",
-      "chance_5d": 4.15,
+      "d_day": -0.09,
+      "chance_prev_published": 4.09,
+      "day_5d": "2026-11-09",
+      "chance_5d": 4.24,
       "reconstructed_5d": true,
-      "chance_5d_published": 4.15,
-      "d_5d": -0.06,
-      "margin": -5.98,
-      "margin_prev": -5.94,
+      "chance_5d_published": 4.24,
+      "d_5d": -0.24,
+      "margin": -6.02,
+      "margin_prev": -5.98,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_nc",
     "label": "Senate · NC",
     "office": "senate",
@@ -5458,11 +5458,6 @@
     "trump_2024": 3.21,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 96.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 96.0,
         "markets": 99.8
@@ -5491,22 +5486,27 @@
         "date": "2026-11-13",
         "ours": 96.0,
         "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 96.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/north-carolina-senate-election-winner",
     "call": {
-      "share_d": 54.52,
-      "share_r": 43.68,
-      "other": 1.8,
-      "margin": 10.84,
-      "lo": 6.43,
-      "hi": 15.25,
-      "source": "core model: fundamentals and 5 polls, run judgment -1.05",
+      "share_d": 54.74,
+      "share_r": 44.01,
+      "other": 1.25,
+      "margin": 10.73,
+      "lo": 6.32,
+      "hi": 15.13,
+      "source": "core model: fundamentals and 5 polls, run judgment -1.08",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 5 polls"
+      "other_source": "poll average of other over 4 polls"
     },
     "votes": {
       "turnout_2022": 3790202,
@@ -5519,8 +5519,8 @@
         "label": "inferred from retrieved counts"
       },
       "rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
-      "d": 2380000.0,
-      "r": 1900000.0
+      "d": 2390000.0,
+      "r": 1920000.0
     },
     "night": {
       "midnight_margin": null,
@@ -5534,16 +5534,16 @@
       "note": "AG 2024 county numbers are two-candidate (no third party on ballot). NC-01 (Davis) was redrawn in 2025; Nash is inside the district under both maps per AP (Davis rematch vs Buckhout)."
     },
     "model": {
-      "chance": 99.92,
+      "chance": 99.91,
       "core_chance": 99.97,
       "run_chance": 96.0,
       "lock_chance": 95.0,
-      "d_run": 3.92,
-      "d_lock": 4.92,
-      "margin": 10.84,
-      "margin_lo": 6.43,
-      "margin_hi": 15.25,
-      "core_margin": 11.89,
+      "d_run": 3.91,
+      "d_lock": 4.91,
+      "margin": 10.73,
+      "margin_lo": 6.32,
+      "margin_hi": 15.13,
+      "core_margin": 11.81,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -5554,9 +5554,9 @@
       "incumbent": "Thom Tillis",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 11.89,
+      "m_p": 11.81,
       "n_polls": 5,
-      "n_eff": 4.565,
+      "n_eff": 4.355,
       "polls": [
         {
           "pollster": "AtlasIntel",
@@ -5568,7 +5568,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.3041
+          "weight": 0.3159
         },
         {
           "pollster": "YouGov",
@@ -5580,7 +5580,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.3103
+          "weight": 0.3224
         },
         {
           "pollster": "East Carolina University",
@@ -5592,7 +5592,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.2363
+          "weight": 0.2454
         },
         {
           "pollster": "High Point University / YouGov",
@@ -5601,10 +5601,10 @@
           "margin_d": 14.0,
           "moe": 4.7,
           "source_url": "https://www.highpoint.edu/blog/2026/10/hpu-yougov-poll-north-carolina-likely-voters-weigh-in-on-u-s-senate-race-and-more/",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0773
+          "weight": 0.0602
         },
         {
           "pollster": "ActiVote",
@@ -5613,10 +5613,10 @@
           "margin_d": 14.0,
           "moe": 4.9,
           "source_url": "https://www.activote.net/polls/2026/nc-u-s-senate/",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.072
+          "weight": 0.0561
         }
       ],
       "excluded": [
@@ -5661,21 +5661,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -1.05,
-      "adjustment_raw": -5.87,
+      "adjustment": -1.08,
+      "adjustment_raw": -5.78,
       "adjustment_capped": false,
       "run_margin": 6.02,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 95.0,
         "model_at_lock": 99.78,
-        "chance": 99.92,
-        "total": 4.92,
+        "chance": 99.91,
+        "total": 4.91,
         "method_gap": 4.78,
-        "since_lock": 0.14,
-        "world": 0.14,
+        "since_lock": 0.13,
+        "world": 0.13,
         "n_new_polls": 5,
         "n_polls_at_lock": 28,
         "generic_lock": null,
@@ -5729,35 +5729,35 @@
             "kind": "poll",
             "label": "East Carolina University through 2026-10-29",
             "detail": "D+9.0 among LV voters",
-            "chance": 99.57,
-            "margin": 9.03,
-            "delta": -0.36,
+            "chance": 99.42,
+            "margin": 8.69,
+            "delta": -0.51,
             "source_url": "https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-cooper-leads-whatley-by-9-points-as-election-day-nears"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+11.0 among LV voters",
-            "chance": 99.76,
-            "margin": 9.69,
-            "delta": 0.19,
+            "chance": 99.71,
+            "margin": 9.5,
+            "delta": 0.29,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_nc_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+14.0 among LV voters",
-            "chance": 99.91,
-            "margin": 10.77,
-            "delta": 0.15,
+            "chance": 99.9,
+            "margin": 10.66,
+            "delta": 0.19,
             "source_url": "https://atlasintel.org/poll/usa-north-carolina-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 95.0, the run says 96.0",
-            "chance": 99.92,
-            "margin": 10.84,
+            "chance": 99.91,
+            "margin": 10.73,
             "delta": 0.01
           }
         ],
@@ -5769,7 +5769,7 @@
     "early_vote": {
       "as_of": "2026-11-03",
       "days_before": 0,
-      "total": 2823895,
+      "total": 2823772,
       "ratio_2022": 1.29,
       "share_of_2022_turnout": 74.5,
       "gap_2026": 12.3,
@@ -5785,40 +5785,40 @@
       "day": {
         "last_date": "2026-11-03",
         "prev_date": "2026-11-02",
-        "total": 2823895,
-        "added": 6430,
-        "gap": 12.24,
+        "total": 2823772,
+        "added": 6416,
+        "gap": 12.23,
         "gap_prev": 12.21,
-        "swing": 5.14,
+        "swing": 5.13,
         "swing_prev": 5.25,
-        "swing_day": -0.11
+        "swing_day": -0.12
       }
     },
     "modeled_party": null,
     "move": {
-      "chance": 99.92,
+      "chance": 99.91,
       "lock_judgment": 95.0,
       "model_at_lock": 99.78,
-      "d_lock": 0.14,
-      "d_lock_vs_judgment": 4.92,
+      "d_lock": 0.13,
+      "d_lock_vs_judgment": 4.91,
       "method_gap": 4.78,
-      "prev_day": "2026-11-12",
-      "chance_prev": 99.93,
+      "prev_day": "2026-11-13",
+      "chance_prev": 99.92,
       "prev_reconstructed": true,
       "d_day": -0.01,
-      "chance_prev_published": 99.93,
-      "day_5d": "2026-11-08",
+      "chance_prev_published": 99.92,
+      "day_5d": "2026-11-09",
       "chance_5d": 99.94,
       "reconstructed_5d": true,
       "chance_5d_published": 99.94,
-      "d_5d": -0.02,
-      "margin": 10.84,
-      "margin_prev": 10.93,
+      "d_5d": -0.03,
+      "margin": 10.73,
+      "margin_prev": 10.84,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "senate_ga",
     "label": "Senate · GA",
     "office": "senate",
@@ -5859,11 +5859,6 @@
     "trump_2024": 2.19,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 96.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 96.0,
         "markets": 99.8
@@ -5892,22 +5887,27 @@
         "date": "2026-11-13",
         "ours": 96.0,
         "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 96.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/georgia-senate-election-winner",
     "call": {
-      "share_d": 52.87,
-      "share_r": 45.13,
+      "share_d": 52.86,
+      "share_r": 45.14,
       "other": 2.0,
-      "margin": 7.73,
-      "lo": 3.32,
-      "hi": 12.14,
-      "source": "core model: fundamentals and 2 polls, run judgment -1.64",
+      "margin": 7.72,
+      "lo": 3.31,
+      "hi": 12.13,
+      "source": "core model: fundamentals and 2 polls, run judgment -1.77",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
-      "runoff_chance": 11.74,
-      "other_source": "default (only 1 polls report other)"
+      "runoff_chance": 11.76,
+      "other_source": "default (only 0 polls report other)"
     },
     "votes": {
       "turnout_2022": 3964926,
@@ -5927,16 +5927,16 @@
       "note": "Harris-minus-Trump margins. 2022 governor county figures come from OpenElections precinct aggregation (all counties except Gwinnett); Senate figures from the same file match Wikipedia exactly, which validates the file."
     },
     "model": {
-      "chance": 98.77,
-      "core_chance": 99.68,
+      "chance": 98.76,
+      "core_chance": 99.71,
       "run_chance": 96.0,
       "lock_chance": 95.0,
-      "d_run": 2.77,
-      "d_lock": 3.77,
-      "margin": 7.73,
-      "margin_lo": 3.32,
-      "margin_hi": 12.14,
-      "core_margin": 9.37,
+      "d_run": 2.76,
+      "d_lock": 3.76,
+      "margin": 7.72,
+      "margin_lo": 3.31,
+      "margin_hi": 12.13,
+      "core_margin": 9.49,
       "sigma": 3.44,
       "days_out": 0,
       "m_f": null,
@@ -5947,9 +5947,9 @@
       "incumbent": "Jon Ossoff",
       "appointed": false,
       "incumbent_on_ballot": true,
-      "m_p": 9.37,
+      "m_p": 9.49,
       "n_polls": 2,
-      "n_eff": 1.048,
+      "n_eff": 0.957,
       "polls": [
         {
           "pollster": "Research Co.",
@@ -5961,7 +5961,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.6865
+          "weight": 0.7448
         },
         {
           "pollster": "ActiVote",
@@ -5970,10 +5970,10 @@
           "margin_d": 8.0,
           "moe": 4.9,
           "source_url": "https://www.activote.net/polls/2026/ga-u-s-senate/",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.3135
+          "weight": 0.2552
         }
       ],
       "excluded": [
@@ -5992,14 +5992,6 @@
           "population": "LV",
           "reason": "partisan (R)",
           "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
-        },
-        {
-          "pollster": "Quantus Insights",
-          "end_date": "2026-10-17",
-          "margin_d": 7.0,
-          "population": "LV",
-          "reason": "partisan (R)",
-          "source_url": "https://drive.google.com/file/d/1e2r7nm_omQkzU9N5XySW6BidnadoY3vB/view"
         }
       ],
       "chance_at_cap": false,
@@ -6010,21 +6002,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -1.64,
-      "adjustment_raw": -3.35,
+      "adjustment": -1.77,
+      "adjustment_raw": -3.47,
       "adjustment_capped": false,
       "run_margin": 6.02,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 95.0,
         "model_at_lock": 98.79,
-        "chance": 98.77,
-        "total": 3.77,
+        "chance": 98.76,
+        "total": 3.76,
         "method_gap": 3.79,
-        "since_lock": -0.02,
-        "world": -0.02,
+        "since_lock": -0.03,
+        "world": -0.03,
         "n_new_polls": 3,
         "n_polls_at_lock": 6,
         "generic_lock": null,
@@ -6069,27 +6061,27 @@
             "kind": "poll",
             "label": "ActiVote through 2026-10-20",
             "detail": "D+8.0 among LV voters",
-            "chance": 96.52,
-            "margin": 6.24,
-            "delta": -2.34,
+            "chance": 96.24,
+            "margin": 6.12,
+            "delta": -2.62,
             "source_url": "https://www.activote.net/polls/2026/ga-u-s-senate/"
           },
           {
             "kind": "poll",
             "label": "Research Co. through 2026-11-02",
             "detail": "D+10.0 among LV voters",
-            "chance": 98.6,
-            "margin": 7.56,
-            "delta": 2.08,
+            "chance": 98.57,
+            "margin": 7.53,
+            "delta": 2.33,
             "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 95.0, the run says 96.0",
-            "chance": 98.77,
-            "margin": 7.73,
-            "delta": 0.17
+            "chance": 98.76,
+            "margin": 7.72,
+            "delta": 0.19
           }
         ],
         "label": "inferred"
@@ -6139,37 +6131,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/georgia-results",
-      "retrieved_at": "2026-11-13T09:34:07-05:00",
+      "retrieved_at": "2026-11-14T09:33:32-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 98.77,
+      "chance": 98.76,
       "lock_judgment": 95.0,
       "model_at_lock": 98.79,
-      "d_lock": -0.02,
-      "d_lock_vs_judgment": 3.77,
+      "d_lock": -0.03,
+      "d_lock_vs_judgment": 3.76,
       "method_gap": 3.79,
-      "prev_day": "2026-11-12",
-      "chance_prev": 98.79,
+      "prev_day": "2026-11-13",
+      "chance_prev": 98.77,
       "prev_reconstructed": true,
-      "d_day": -0.02,
-      "chance_prev_published": 98.79,
-      "day_5d": "2026-11-08",
-      "chance_5d": 98.87,
+      "d_day": -0.01,
+      "chance_prev_published": 98.77,
+      "day_5d": "2026-11-09",
+      "chance_5d": 98.86,
       "reconstructed_5d": true,
-      "chance_5d_published": 98.87,
+      "chance_5d_published": 98.86,
       "d_5d": -0.1,
-      "margin": 7.73,
-      "margin_prev": 7.75,
+      "margin": 7.72,
+      "margin_prev": 7.73,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_ga",
     "label": "Governor · GA",
     "office": "governor",
@@ -6210,11 +6202,6 @@
     "trump_2024": 2.19,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 50.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 50.0,
         "markets": 99.8
@@ -6243,17 +6230,22 @@
         "date": "2026-11-13",
         "ours": 50.0,
         "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 50.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/georgia-governor-winner-2026",
     "call": {
-      "share_d": 49.42,
-      "share_r": 48.58,
+      "share_d": 49.48,
+      "share_r": 48.52,
       "other": 2.0,
-      "margin": 0.85,
-      "lo": -4.84,
-      "hi": 6.54,
-      "source": "core model: fundamentals and 3 polls, run judgment -0.43",
+      "margin": 0.95,
+      "lo": -4.74,
+      "hi": 6.64,
+      "source": "core model: fundamentals and 3 polls, run judgment -0.51",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
@@ -6278,16 +6270,16 @@
       "note": "Harris-minus-Trump margins. 2022 governor county figures come from OpenElections precinct aggregation (all counties except Gwinnett); Senate figures from the same file match Wikipedia exactly, which validates the file."
     },
     "model": {
-      "chance": 57.57,
-      "core_chance": 61.33,
+      "chance": 58.5,
+      "core_chance": 62.91,
       "run_chance": 50.0,
       "lock_chance": 50.0,
-      "d_run": 7.57,
-      "d_lock": 7.57,
-      "margin": 0.85,
-      "margin_lo": -4.84,
-      "margin_hi": 6.54,
-      "core_margin": 1.28,
+      "d_run": 8.5,
+      "d_lock": 8.5,
+      "margin": 0.95,
+      "margin_lo": -4.74,
+      "margin_hi": 6.64,
+      "core_margin": 1.46,
       "sigma": 4.44,
       "days_out": 0,
       "m_f": null,
@@ -6298,9 +6290,9 @@
       "incumbent": "Brian Kemp",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 1.28,
+      "m_p": 1.46,
       "n_polls": 3,
-      "n_eff": 1.98,
+      "n_eff": 1.881,
       "polls": [
         {
           "pollster": "Research Co.",
@@ -6312,7 +6304,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.3632
+          "weight": 0.379
         },
         {
           "pollster": "State Navigate",
@@ -6324,7 +6316,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.4709
+          "weight": 0.4912
         },
         {
           "pollster": "ActiVote",
@@ -6333,10 +6325,10 @@
           "margin_d": -3.0,
           "moe": 4.9,
           "source_url": "https://www.activote.net/polls/2026/ga-governor/",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1659
+          "weight": 0.1298
         }
       ],
       "excluded": [
@@ -6355,14 +6347,6 @@
           "population": "LV",
           "reason": "partisan (R)",
           "source_url": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/"
-        },
-        {
-          "pollster": "Quantus Insights",
-          "end_date": "2026-10-17",
-          "margin_d": -1.0,
-          "population": "LV",
-          "reason": "partisan (R)",
-          "source_url": "https://drive.google.com/file/d/1e2r7nm_omQkzU9N5XySW6BidnadoY3vB/view"
         }
       ],
       "chance_at_cap": false,
@@ -6373,21 +6357,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.43,
-      "adjustment_raw": -1.28,
+      "adjustment": -0.51,
+      "adjustment_raw": -1.46,
       "adjustment_capped": false,
       "run_margin": 0.0,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 50.0,
         "model_at_lock": 46.82,
-        "chance": 57.57,
-        "total": 7.57,
+        "chance": 58.5,
+        "total": 8.5,
         "method_gap": -3.18,
-        "since_lock": 10.75,
-        "world": 10.75,
+        "since_lock": 11.68,
+        "world": 11.68,
         "n_new_polls": 3,
         "n_polls_at_lock": 6,
         "generic_lock": null,
@@ -6423,35 +6407,35 @@
             "kind": "poll",
             "label": "ActiVote through 2026-10-20",
             "detail": "D-3.0 among LV voters",
-            "chance": 43.38,
-            "margin": -0.74,
-            "delta": -17.7,
+            "chance": 44.71,
+            "margin": -0.59,
+            "delta": -16.37,
             "source_url": "https://www.activote.net/polls/2026/ga-governor/"
           },
           {
             "kind": "poll",
             "label": "State Navigate through 2026-10-27",
             "detail": "D+3.0 among LV voters",
-            "chance": 57.12,
-            "margin": 0.8,
-            "delta": 13.74,
+            "chance": 58.35,
+            "margin": 0.94,
+            "delta": 13.64,
             "source_url": "https://articles.statenavigate.com/ga/keisha-lance-bottoms-holds-narrow-lead-in-georgia-governor-race/"
           },
           {
             "kind": "poll",
             "label": "Research Co. through 2026-11-02",
             "detail": "D+1.0 among LV voters",
-            "chance": 57.57,
-            "margin": 0.85,
-            "delta": 0.45,
+            "chance": 58.5,
+            "margin": 0.95,
+            "delta": 0.15,
             "source_url": "https://researchco.ca/2026/11/02/midterms-2026-two/"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 50.0, the run says 50.0",
-            "chance": 57.57,
-            "margin": 0.85,
+            "chance": 58.5,
+            "margin": 0.95,
             "delta": 0.0
           }
         ],
@@ -6502,37 +6486,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/georgia-results",
-      "retrieved_at": "2026-11-13T09:34:07-05:00",
+      "retrieved_at": "2026-11-14T09:33:32-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 57.57,
+      "chance": 58.5,
       "lock_judgment": 50.0,
       "model_at_lock": 46.82,
-      "d_lock": 10.75,
-      "d_lock_vs_judgment": 7.57,
+      "d_lock": 11.68,
+      "d_lock_vs_judgment": 8.5,
       "method_gap": -3.18,
-      "prev_day": "2026-11-12",
-      "chance_prev": 56.69,
+      "prev_day": "2026-11-13",
+      "chance_prev": 57.57,
       "prev_reconstructed": true,
-      "d_day": 0.88,
-      "chance_prev_published": 56.69,
-      "day_5d": "2026-11-08",
-      "chance_5d": 52.66,
+      "d_day": 0.93,
+      "chance_prev_published": 57.57,
+      "day_5d": "2026-11-09",
+      "chance_5d": 53.14,
       "reconstructed_5d": true,
-      "chance_5d_published": 52.66,
-      "d_5d": 4.91,
-      "margin": 0.85,
-      "margin_prev": 0.75,
+      "chance_5d_published": 53.14,
+      "d_5d": 5.36,
+      "margin": 0.95,
+      "margin_prev": 0.85,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_nv",
     "label": "Governor · NV",
     "office": "governor",
@@ -6573,11 +6557,6 @@
     "trump_2024": 3.1,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 42.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 42.0,
         "markets": 99.9
@@ -6606,6 +6585,11 @@
         "date": "2026-11-13",
         "ours": 42.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 42.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/nevada-governor-winner-2026",
@@ -6613,15 +6597,15 @@
       "share_d": 48.74,
       "share_r": 49.26,
       "other": 2.0,
-      "margin": -0.51,
-      "lo": -6.2,
-      "hi": 5.18,
-      "source": "core model: fundamentals and 1 poll, run judgment -0.51",
+      "margin": -0.52,
+      "lo": -6.21,
+      "hi": 5.17,
+      "source": "core model: fundamentals and 1 poll, run judgment -0.52",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "default (only 2 polls report other)"
+      "other_source": "default (only 1 polls report other)"
     },
     "votes": {
       "turnout_2022": 1023617,
@@ -6641,15 +6625,15 @@
       "note": "Nothing is posted until every in-line voter has voted; in 2024 that meant no Nevada numbers until 12:54 am ET. 2022 Senate (senate_2022) and governor (statewide_2022) both provided."
     },
     "model": {
-      "chance": 45.43,
+      "chance": 45.34,
       "core_chance": 50.0,
       "run_chance": 42.0,
       "lock_chance": 45.0,
-      "d_run": 3.43,
-      "d_lock": 0.43,
-      "margin": -0.51,
-      "margin_lo": -6.2,
-      "margin_hi": 5.18,
+      "d_run": 3.34,
+      "d_lock": 0.34,
+      "margin": -0.52,
+      "margin_lo": -6.21,
+      "margin_hi": 5.17,
       "core_margin": 0.0,
       "sigma": 4.44,
       "days_out": 0,
@@ -6663,7 +6647,7 @@
       "incumbent_on_ballot": true,
       "m_p": 0.0,
       "n_polls": 1,
-      "n_eff": 0.741,
+      "n_eff": 0.735,
       "polls": [
         {
           "pollster": "Noble Predictive Insights",
@@ -6704,21 +6688,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.51,
+      "adjustment": -0.52,
       "adjustment_raw": -0.9,
       "adjustment_capped": false,
       "run_margin": -0.9,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 45.0,
         "model_at_lock": 42.22,
-        "chance": 45.43,
-        "total": 0.43,
+        "chance": 45.34,
+        "total": 0.34,
         "method_gap": -2.78,
-        "since_lock": 3.21,
-        "world": 3.21,
+        "since_lock": 3.12,
+        "world": 3.12,
         "n_new_polls": 1,
         "n_polls_at_lock": 7,
         "generic_lock": null,
@@ -6763,9 +6747,9 @@
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 45.0, the run says 42.0",
-            "chance": 45.43,
-            "margin": -0.51,
-            "delta": -1.7
+            "chance": 45.34,
+            "margin": -0.52,
+            "delta": -1.79
           }
         ],
         "label": "inferred"
@@ -6803,29 +6787,29 @@
     },
     "modeled_party": null,
     "move": {
-      "chance": 45.43,
+      "chance": 45.34,
       "lock_judgment": 45.0,
       "model_at_lock": 42.22,
-      "d_lock": 3.21,
-      "d_lock_vs_judgment": 0.43,
+      "d_lock": 3.12,
+      "d_lock_vs_judgment": 0.34,
       "method_gap": -2.78,
-      "prev_day": "2026-11-12",
+      "prev_day": "2026-11-13",
       "chance_prev": 45.43,
       "prev_reconstructed": true,
-      "d_day": 0.0,
+      "d_day": -0.09,
       "chance_prev_published": 45.43,
-      "day_5d": "2026-11-08",
-      "chance_5d": 45.52,
+      "day_5d": "2026-11-09",
+      "chance_5d": 45.43,
       "reconstructed_5d": true,
-      "chance_5d_published": 45.52,
+      "chance_5d_published": 45.43,
       "d_5d": -0.09,
-      "margin": -0.51,
+      "margin": -0.52,
       "margin_prev": -0.51,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_oh",
     "label": "Governor · OH",
     "office": "governor",
@@ -6866,11 +6850,6 @@
     "trump_2024": 11.21,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 60.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 60.0,
         "markets": 99.8
@@ -6899,22 +6878,27 @@
         "date": "2026-11-13",
         "ours": 60.0,
         "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 60.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/ohio-governor-winner-2026",
     "call": {
-      "share_d": 50.37,
-      "share_r": 46.32,
-      "other": 3.31,
-      "margin": 4.05,
-      "lo": -1.64,
-      "hi": 9.74,
-      "source": "core model: fundamentals and 13 polls, run judgment -0.28",
+      "share_d": 50.44,
+      "share_r": 46.3,
+      "other": 3.27,
+      "margin": 4.14,
+      "lo": -1.55,
+      "hi": 9.83,
+      "source": "core model: fundamentals and 13 polls, run judgment -0.31",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 13 polls"
+      "other_source": "poll average of other over 11 polls"
     },
     "votes": {
       "turnout_2022": 4201368,
@@ -6934,16 +6918,16 @@
       "note": "Brown 2024 county margins are the comparison baseline for Tuesday. Brown lost statewide by 3.62; counties where he beat Harris most: Lake (+9.6), Montgomery (+6.7), Lorain (+10.5), Mahoning (+9.2)."
     },
     "model": {
-      "chance": 81.9,
-      "core_chance": 83.51,
+      "chance": 82.43,
+      "core_chance": 84.17,
       "run_chance": 60.0,
       "lock_chance": 62.0,
-      "d_run": 21.9,
-      "d_lock": 19.9,
-      "margin": 4.05,
-      "margin_lo": -1.64,
-      "margin_hi": 9.74,
-      "core_margin": 4.33,
+      "d_run": 22.43,
+      "d_lock": 20.43,
+      "margin": 4.14,
+      "margin_lo": -1.55,
+      "margin_hi": 9.83,
+      "core_margin": 4.45,
       "sigma": 4.44,
       "days_out": 0,
       "m_f": null,
@@ -6954,9 +6938,9 @@
       "incumbent": "Mike DeWine",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 4.33,
+      "m_p": 4.45,
       "n_polls": 13,
-      "n_eff": 10.534,
+      "n_eff": 9.875,
       "polls": [
         {
           "pollster": "Survey 160",
@@ -6968,7 +6952,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0513
+          "weight": 0.0542
         },
         {
           "pollster": "Research Co.",
@@ -6980,7 +6964,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0677
+          "weight": 0.0716
         },
         {
           "pollster": "New York Times / Siena University",
@@ -6992,7 +6976,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0729
+          "weight": 0.0771
         },
         {
           "pollster": "HarrisX",
@@ -7004,7 +6988,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0729
+          "weight": 0.0771
         },
         {
           "pollster": "Emerson College",
@@ -7016,7 +7000,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0853
+          "weight": 0.0902
         },
         {
           "pollster": "AtlasIntel",
@@ -7028,7 +7012,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.2158
+          "weight": 0.2282
         },
         {
           "pollster": "ActiVote",
@@ -7040,7 +7024,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0602
+          "weight": 0.0637
         },
         {
           "pollster": "YouGov",
@@ -7052,7 +7036,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.141
+          "weight": 0.1491
         },
         {
           "pollster": "Suffolk University",
@@ -7064,7 +7048,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0691
+          "weight": 0.0731
         },
         {
           "pollster": "Verasight/VoteHub",
@@ -7073,10 +7057,10 @@
           "margin_d": 1.0,
           "moe": 4.2,
           "source_url": "https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Ohio_Report_D1CB7735.pdf",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0404
+          "weight": 0.0321
         },
         {
           "pollster": "Beacon Research/ Shaw & Co. Research",
@@ -7085,10 +7069,10 @@
           "margin_d": 2.0,
           "moe": 2.0,
           "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-15-19-2026_ohio_topline_october-21-release.pdf",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0824
+          "weight": 0.058
         },
         {
           "pollster": "ActiVote",
@@ -7097,10 +7081,10 @@
           "margin_d": -2.0,
           "moe": 4.9,
           "source_url": "https://www.activote.net/polls/2026/oh-governor/",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0232
+          "weight": 0.0163
         },
         {
           "pollster": "Marist University",
@@ -7109,10 +7093,10 @@
           "margin_d": 8.0,
           "moe": 4.5,
           "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_OH-NOS-and-Tables_202610191215zz9hjdV2l.pdf",
-          "fade": 0.29,
+          "fade": 0.14,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0177
+          "weight": 0.0094
         }
       ],
       "excluded": [
@@ -7157,21 +7141,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.28,
-      "adjustment_raw": -3.2,
+      "adjustment": -0.31,
+      "adjustment_raw": -3.32,
       "adjustment_capped": false,
       "run_margin": 1.12,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 62.0,
         "model_at_lock": 76.22,
-        "chance": 81.9,
-        "total": 19.9,
+        "chance": 82.43,
+        "total": 20.43,
         "method_gap": 14.22,
-        "since_lock": 5.68,
-        "world": 5.68,
+        "since_lock": 6.21,
+        "world": 6.21,
         "n_new_polls": 14,
         "n_polls_at_lock": 13,
         "generic_lock": null,
@@ -7225,117 +7209,117 @@
             "kind": "poll",
             "label": "ActiVote through 2026-10-19",
             "detail": "D-2.0 among LV voters",
-            "chance": 64.5,
-            "margin": 1.65,
-            "delta": -22.49,
+            "chance": 62.48,
+            "margin": 1.41,
+            "delta": -24.51,
             "source_url": "https://www.activote.net/polls/2026/oh-governor/"
           },
           {
             "kind": "poll",
             "label": "Beacon Research/ Shaw & Co. Research through 2026-10-19",
             "detail": "D+2.0 among LV voters",
-            "chance": 65.57,
-            "margin": 1.78,
-            "delta": 1.07,
+            "chance": 64.07,
+            "margin": 1.6,
+            "delta": 1.59,
             "source_url": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-15-19-2026_ohio_topline_october-21-release.pdf"
           },
           {
             "kind": "poll",
             "label": "Verasight/VoteHub through 2026-10-20",
             "detail": "D+1.0 among LV voters",
-            "chance": 64.54,
-            "margin": 1.66,
-            "delta": -1.03,
+            "chance": 63.34,
+            "margin": 1.51,
+            "delta": -0.73,
             "source_url": "https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Ohio_Report_D1CB7735.pdf"
           },
           {
             "kind": "poll",
             "label": "Suffolk University through 2026-10-26",
             "detail": "D+4.0 among LV voters",
-            "chance": 68.65,
-            "margin": 2.16,
-            "delta": 4.11,
+            "chance": 68.47,
+            "margin": 2.14,
+            "delta": 5.13,
             "source_url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+6.0 among LV voters",
-            "chance": 77.18,
-            "margin": 3.31,
-            "delta": 8.53,
+            "chance": 78.11,
+            "margin": 3.44,
+            "delta": 9.64,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "ActiVote through 2026-10-31",
             "detail": "D+2.0 among LV voters",
-            "chance": 76.21,
-            "margin": 3.17,
-            "delta": -0.97,
+            "chance": 76.9,
+            "margin": 3.27,
+            "delta": -1.21,
             "source_url": "https://www.activote.net/polls/2026/oh-governor/"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+8.0 among LV voters",
-            "chance": 84.79,
-            "margin": 4.56,
-            "delta": 8.58,
+            "chance": 85.75,
+            "margin": 4.75,
+            "delta": 8.85,
             "source_url": "https://atlasintel.org/poll/usa-ohio-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "poll",
             "label": "Emerson College through 2026-11-01",
             "detail": "D+0.0 among LV voters",
-            "chance": 82.2,
-            "margin": 4.1,
-            "delta": -2.59,
+            "chance": 82.93,
+            "margin": 4.22,
+            "delta": -2.82,
             "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
           },
           {
             "kind": "poll",
             "label": "HarrisX through 2026-11-01",
             "detail": "D-2.0 among LV voters",
-            "chance": 79.17,
-            "margin": 3.61,
-            "delta": -3.03,
+            "chance": 79.67,
+            "margin": 3.68,
+            "delta": -3.26,
             "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+6.0 among LV voters",
-            "chance": 80.29,
-            "margin": 3.78,
-            "delta": 1.12,
+            "chance": 80.84,
+            "margin": 3.87,
+            "delta": 1.17,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-oh-poll-toplines.html"
           },
           {
             "kind": "poll",
             "label": "Research Co. through 2026-11-01",
             "detail": "D+6.0 among LV voters",
-            "chance": 81.15,
-            "margin": 3.92,
-            "delta": 0.86,
+            "chance": 81.74,
+            "margin": 4.02,
+            "delta": 0.9,
             "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
           },
           {
             "kind": "poll",
             "label": "Survey 160 through 2026-11-01",
             "detail": "D+7.0 among LV voters",
-            "chance": 82.02,
-            "margin": 4.07,
-            "delta": 0.87,
+            "chance": 82.6,
+            "margin": 4.17,
+            "delta": 0.86,
             "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 62.0, the run says 60.0",
-            "chance": 81.9,
-            "margin": 4.05,
-            "delta": -0.12
+            "chance": 82.43,
+            "margin": 4.14,
+            "delta": -0.17
           }
         ],
         "label": "inferred"
@@ -7344,8 +7328,8 @@
       "rule": "fundamentals plus polls, 2022 constants, the run's judgment capped; polls fade over 7 days after the 21-day window (amendment 2026-10-23)"
     },
     "early_vote": {
-      "as_of": "2026-11-13",
-      "days_before": -10,
+      "as_of": "2026-11-14",
+      "days_before": -11,
       "total": 1777904,
       "ratio_2022": null,
       "share_of_2022_turnout": 42.3,
@@ -7360,8 +7344,8 @@
       "label": "retrieved",
       "in_number": false,
       "day": {
-        "last_date": "2026-11-13",
-        "prev_date": "2026-11-12",
+        "last_date": "2026-11-14",
+        "prev_date": "2026-11-13",
         "total": 1777904,
         "added": 0,
         "gap": 1.96,
@@ -7385,37 +7369,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/ohio-results",
-      "retrieved_at": "2026-11-13T09:34:08-05:00",
+      "retrieved_at": "2026-11-14T09:33:33-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 81.9,
+      "chance": 82.43,
       "lock_judgment": 62.0,
       "model_at_lock": 76.22,
-      "d_lock": 5.68,
-      "d_lock_vs_judgment": 19.9,
+      "d_lock": 6.21,
+      "d_lock_vs_judgment": 20.43,
       "method_gap": 14.22,
-      "prev_day": "2026-11-12",
-      "chance_prev": 81.43,
+      "prev_day": "2026-11-13",
+      "chance_prev": 81.9,
       "prev_reconstructed": true,
-      "d_day": 0.47,
-      "chance_prev_published": 81.43,
-      "day_5d": "2026-11-08",
-      "chance_5d": 82.56,
+      "d_day": 0.53,
+      "chance_prev_published": 81.9,
+      "day_5d": "2026-11-09",
+      "chance_5d": 82.37,
       "reconstructed_5d": true,
-      "chance_5d_published": 82.56,
-      "d_5d": -0.66,
-      "margin": 4.05,
-      "margin_prev": 3.97,
+      "chance_5d_published": 82.37,
+      "d_5d": 0.06,
+      "margin": 4.14,
+      "margin_prev": 4.05,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_ks",
     "label": "Governor · KS",
     "office": "governor",
@@ -7448,18 +7432,13 @@
     "flag_today": null,
     "flag_triggers": [],
     "verdict_today": "Wait",
-    "brief_headline": "Kansas: the winner mark is back, lead 7,266",
+    "brief_headline": "Kansas: winner mark holds on a second read, lead 7,200",
     "upset": null,
     "incumbent_party": "D",
     "cand_d": "Cindy Holscher",
     "cand_r": "Ty Masterson",
     "trump_2024": 16.12,
     "trend7": [
-      {
-        "date": "2026-11-07",
-        "ours": 30.0,
-        "markets": 99.5
-      },
       {
         "date": "2026-11-08",
         "ours": 30.0,
@@ -7468,7 +7447,7 @@
       {
         "date": "2026-11-09",
         "ours": 30.0,
-        "markets": 99.5
+        "markets": 99.6
       },
       {
         "date": "2026-11-10",
@@ -7478,17 +7457,22 @@
       {
         "date": "2026-11-11",
         "ours": 30.0,
-        "markets": 99.4
+        "markets": 99.3
       },
       {
         "date": "2026-11-12",
         "ours": 30.0,
-        "markets": 99.5
+        "markets": 99.8
       },
       {
         "date": "2026-11-13",
         "ours": 30.0,
-        "markets": 100.0
+        "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 30.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/kansas-governor-winner-2026",
@@ -7546,7 +7530,7 @@
       "incumbent_on_ballot": false,
       "m_p": 0.72,
       "n_polls": 7,
-      "n_eff": 8.245,
+      "n_eff": 8.172,
       "polls": [
         {
           "pollster": "Survey 160",
@@ -7658,7 +7642,7 @@
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 27.0,
         "model_at_lock": 27.97,
         "chance": 53.47,
@@ -7710,9 +7694,9 @@
             "kind": "poll",
             "label": "The Washington Post / SSPG through 2026-10-26",
             "detail": "D+6.0 among LV voters",
-            "chance": 46.88,
-            "margin": -0.35,
-            "delta": 26.39,
+            "chance": 46.79,
+            "margin": -0.36,
+            "delta": 26.3,
             "source_url": "https://www.washingtonpost.com/documents/91bad124-1d3a-437b-b1ba-07af61cb729d.pdf"
           },
           {
@@ -7721,24 +7705,24 @@
             "detail": "D-5.0 among LV voters",
             "chance": 35.02,
             "margin": -1.71,
-            "delta": -11.86,
+            "delta": -11.77,
             "source_url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D-1.0 among LV voters",
-            "chance": 36.77,
-            "margin": -1.5,
-            "delta": 1.75,
+            "chance": 36.68,
+            "margin": -1.51,
+            "delta": 1.66,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+4.0 among LV voters",
-            "chance": 51.67,
-            "margin": 0.19,
+            "chance": 51.58,
+            "margin": 0.18,
             "delta": 14.9,
             "source_url": "https://atlasintel.org/poll/usa-kansas-atlaspollstergraph-poll-2026-11-02"
           },
@@ -7746,9 +7730,9 @@
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+1.0 among LV voters",
-            "chance": 52.37,
-            "margin": 0.26,
-            "delta": 0.7,
+            "chance": 52.29,
+            "margin": 0.25,
+            "delta": 0.71,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ks-poll-toplines.html"
           },
           {
@@ -7757,7 +7741,7 @@
             "detail": "D+1.0 among LV voters",
             "chance": 53.11,
             "margin": 0.35,
-            "delta": 0.74,
+            "delta": 0.82,
             "source_url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states"
           },
           {
@@ -7810,12 +7794,12 @@
       "d_lock": 25.5,
       "d_lock_vs_judgment": 26.47,
       "method_gap": 0.97,
-      "prev_day": "2026-11-12",
+      "prev_day": "2026-11-13",
       "chance_prev": 53.47,
       "prev_reconstructed": true,
       "d_day": 0.0,
       "chance_prev_published": 53.47,
-      "day_5d": "2026-11-08",
+      "day_5d": "2026-11-09",
       "chance_5d": 53.56,
       "reconstructed_5d": true,
       "chance_5d_published": 53.56,
@@ -7826,7 +7810,7 @@
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_ia",
     "label": "Governor · IA",
     "office": "governor",
@@ -7867,11 +7851,6 @@
     "trump_2024": 13.21,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 72.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 72.0,
         "markets": 99.8
@@ -7900,6 +7879,11 @@
         "date": "2026-11-13",
         "ours": 72.0,
         "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 72.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/iowa-governor-winner-2026",
@@ -7907,10 +7891,10 @@
       "share_d": 53.3,
       "share_r": 46.2,
       "other": 0.5,
-      "margin": 7.1,
-      "lo": 1.41,
-      "hi": 12.79,
-      "source": "core model: fundamentals and 3 polls, run judgment -1.34",
+      "margin": 7.09,
+      "lo": 1.4,
+      "hi": 12.78,
+      "source": "core model: fundamentals and 3 polls, run judgment -1.35",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
@@ -7943,15 +7927,15 @@
       "note": "Iowa has both a 2022 governor and 2022 Senate race in the county records (statewide_2022 = governor; senate_2022 also given). No 2024 Senate race."
     },
     "model": {
-      "chance": 94.51,
+      "chance": 94.49,
       "core_chance": 97.14,
       "run_chance": 72.0,
       "lock_chance": 78.0,
-      "d_run": 22.51,
-      "d_lock": 16.51,
-      "margin": 7.1,
-      "margin_lo": 1.41,
-      "margin_hi": 12.79,
+      "d_run": 22.49,
+      "d_lock": 16.49,
+      "margin": 7.09,
+      "margin_lo": 1.4,
+      "margin_hi": 12.78,
       "core_margin": 8.44,
       "sigma": 4.44,
       "days_out": 0,
@@ -7965,7 +7949,7 @@
       "incumbent_on_ballot": false,
       "m_p": 8.44,
       "n_polls": 3,
-      "n_eff": 3.366,
+      "n_eff": 3.336,
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -8046,21 +8030,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -1.34,
+      "adjustment": -1.35,
       "adjustment_raw": -5.85,
       "adjustment_capped": false,
       "run_margin": 2.59,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 78.0,
         "model_at_lock": 84.41,
-        "chance": 94.51,
-        "total": 16.51,
+        "chance": 94.49,
+        "total": 16.49,
         "method_gap": 6.41,
-        "since_lock": 10.1,
-        "world": 10.1,
+        "since_lock": 10.08,
+        "world": 10.08,
         "n_new_polls": 4,
         "n_polls_at_lock": 15,
         "generic_lock": null,
@@ -8105,26 +8089,26 @@
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+7.0 among LV voters",
-            "chance": 88.98,
-            "margin": 5.44,
-            "delta": 6.13,
+            "chance": 88.93,
+            "margin": 5.43,
+            "delta": 6.08,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ia_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+10.0 among LV voters",
-            "chance": 94.67,
-            "margin": 7.16,
-            "delta": 5.69,
+            "chance": 94.65,
+            "margin": 7.15,
+            "delta": 5.72,
             "source_url": "https://atlasintel.org/poll/usa-iowa-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+8.0 among LV voters",
-            "chance": 94.97,
-            "margin": 7.29,
+            "chance": 94.95,
+            "margin": 7.28,
             "delta": 0.3,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-ia-poll-toplines.html"
           },
@@ -8132,8 +8116,8 @@
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 78.0, the run says 72.0",
-            "chance": 94.51,
-            "margin": 7.1,
+            "chance": 94.49,
+            "margin": 7.09,
             "delta": -0.46
           }
         ],
@@ -8172,29 +8156,29 @@
     },
     "modeled_party": null,
     "move": {
-      "chance": 94.51,
+      "chance": 94.49,
       "lock_judgment": 78.0,
       "model_at_lock": 84.41,
-      "d_lock": 10.1,
-      "d_lock_vs_judgment": 16.51,
+      "d_lock": 10.08,
+      "d_lock_vs_judgment": 16.49,
       "method_gap": 6.41,
-      "prev_day": "2026-11-12",
-      "chance_prev": 94.54,
+      "prev_day": "2026-11-13",
+      "chance_prev": 94.51,
       "prev_reconstructed": true,
-      "d_day": -0.03,
-      "chance_prev_published": 94.54,
-      "day_5d": "2026-11-08",
+      "d_day": -0.02,
+      "chance_prev_published": 94.51,
+      "day_5d": "2026-11-09",
       "chance_5d": 94.83,
       "reconstructed_5d": true,
       "chance_5d_published": 94.83,
-      "d_5d": -0.32,
-      "margin": 7.1,
-      "margin_prev": 7.11,
+      "d_5d": -0.34,
+      "margin": 7.09,
+      "margin_prev": 7.1,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_wi",
     "label": "Governor · WI",
     "office": "governor",
@@ -8235,11 +8219,6 @@
     "trump_2024": 0.86,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 75.0,
-        "markets": 98.6
-      },
-      {
         "date": "2026-11-08",
         "ours": 75.0,
         "markets": 98.6
@@ -8268,17 +8247,22 @@
         "date": "2026-11-13",
         "ours": 75.0,
         "markets": 98.6
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 75.0,
+        "markets": 98.6
       }
     ],
     "source_url": "https://polymarket.com/event/wisconsin-governor-winner-2026",
     "call": {
-      "share_d": 51.3,
-      "share_r": 46.7,
+      "share_d": 51.24,
+      "share_r": 46.76,
       "other": 2.0,
-      "margin": 4.59,
-      "lo": -1.1,
-      "hi": 10.28,
-      "source": "core model: fundamentals and 2 polls, run judgment -1.27",
+      "margin": 4.48,
+      "lo": -1.21,
+      "hi": 10.17,
+      "source": "core model: fundamentals and 2 polls, run judgment -1.29",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
@@ -8303,16 +8287,16 @@
       "note": "Both 2022 governor (statewide_2022) and 2022 Senate (senate_2022) are given. Milwaukee city absentees are the last big batch; do not read a Republican lead before they land."
     },
     "model": {
-      "chance": 84.94,
-      "core_chance": 90.66,
+      "chance": 84.37,
+      "core_chance": 90.32,
       "run_chance": 75.0,
       "lock_chance": 68.0,
-      "d_run": 9.94,
-      "d_lock": 16.94,
-      "margin": 4.59,
-      "margin_lo": -1.1,
-      "margin_hi": 10.28,
-      "core_margin": 5.86,
+      "d_run": 9.37,
+      "d_lock": 16.37,
+      "margin": 4.48,
+      "margin_lo": -1.21,
+      "margin_hi": 10.17,
+      "core_margin": 5.77,
       "sigma": 4.44,
       "days_out": 0,
       "m_f": null,
@@ -8323,9 +8307,9 @@
       "incumbent": "Tony Evers",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 5.86,
+      "m_p": 5.77,
       "n_polls": 2,
-      "n_eff": 1.252,
+      "n_eff": 1.152,
       "polls": [
         {
           "pollster": "Research Co.",
@@ -8337,7 +8321,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.5695
+          "weight": 0.6136
         },
         {
           "pollster": "Marquette University",
@@ -8346,10 +8330,10 @@
           "margin_d": 7.0,
           "moe": 4.7,
           "source_url": "https://law.marquette.edu/poll/2026/10/28/mlsp92-press-release/",
-          "fade": 0.86,
+          "fade": 0.71,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.4305
+          "weight": 0.3864
         }
       ],
       "excluded": [
@@ -8370,21 +8354,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -1.27,
-      "adjustment_raw": -2.87,
+      "adjustment": -1.29,
+      "adjustment_raw": -2.78,
       "adjustment_capped": false,
       "run_margin": 2.99,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 68.0,
         "model_at_lock": 67.34,
-        "chance": 84.94,
-        "total": 16.94,
+        "chance": 84.37,
+        "total": 16.37,
         "method_gap": -0.66,
-        "since_lock": 17.6,
-        "world": 17.6,
+        "since_lock": 17.03,
+        "world": 17.03,
         "n_new_polls": 2,
         "n_polls_at_lock": 5,
         "generic_lock": null,
@@ -8429,18 +8413,18 @@
             "kind": "poll",
             "label": "Research Co. through 2026-11-01",
             "detail": "D+5.0 among LV voters",
-            "chance": 82.68,
-            "margin": 4.18,
-            "delta": 1.06,
+            "chance": 81.93,
+            "margin": 4.05,
+            "delta": 0.31,
             "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 68.0, the run says 75.0",
-            "chance": 84.94,
-            "margin": 4.59,
-            "delta": 2.26
+            "chance": 84.37,
+            "margin": 4.48,
+            "delta": 2.44
           }
         ],
         "label": "inferred"
@@ -8490,37 +8474,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/wisconsin-results",
-      "retrieved_at": "2026-11-13T09:34:12-05:00",
+      "retrieved_at": "2026-11-14T09:33:35-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 84.94,
+      "chance": 84.37,
       "lock_judgment": 68.0,
       "model_at_lock": 67.34,
-      "d_lock": 17.6,
-      "d_lock_vs_judgment": 16.94,
+      "d_lock": 17.03,
+      "d_lock_vs_judgment": 16.37,
       "method_gap": -0.66,
-      "prev_day": "2026-11-12",
-      "chance_prev": 85.44,
+      "prev_day": "2026-11-13",
+      "chance_prev": 84.94,
       "prev_reconstructed": true,
-      "d_day": -0.5,
-      "chance_prev_published": 85.44,
-      "day_5d": "2026-11-08",
-      "chance_5d": 85.6,
+      "d_day": -0.57,
+      "chance_prev_published": 84.94,
+      "day_5d": "2026-11-09",
+      "chance_5d": 85.55,
       "reconstructed_5d": true,
-      "chance_5d_published": 85.6,
-      "d_5d": -0.66,
-      "margin": 4.59,
-      "margin_prev": 4.69,
+      "chance_5d_published": 85.55,
+      "d_5d": -1.18,
+      "margin": 4.48,
+      "margin_prev": 4.59,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_az",
     "label": "Governor · AZ",
     "office": "governor",
@@ -8561,11 +8545,6 @@
     "trump_2024": 5.53,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 90.0,
-        "markets": 99.8
-      },
-      {
         "date": "2026-11-08",
         "ours": 90.0,
         "markets": 99.8
@@ -8594,22 +8573,27 @@
         "date": "2026-11-13",
         "ours": 90.0,
         "markets": 99.8
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 90.0,
+        "markets": 99.8
       }
     ],
     "source_url": "https://polymarket.com/event/arizona-governor-winner-2026",
     "call": {
-      "share_d": 52.49,
-      "share_r": 44.84,
-      "other": 2.67,
-      "margin": 7.65,
-      "lo": 1.96,
-      "hi": 13.34,
-      "source": "core model: fundamentals and 2 polls, run judgment -1.42",
+      "share_d": 52.82,
+      "share_r": 45.18,
+      "other": 2.0,
+      "margin": 7.64,
+      "lo": 1.95,
+      "hi": 13.33,
+      "source": "core model: fundamentals and 2 polls, run judgment -1.43",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 3 polls"
+      "other_source": "default (only 2 polls report other)"
     },
     "votes": {
       "turnout_2022": 2592313,
@@ -8629,15 +8613,15 @@
       "note": "AP: Apache, Coconino, Pima and Santa Cruz have gone Democratic in every statewide race since 2012. Arizona was at 66% at 6:30 am the morning after in 2024; the late-early count drives the multi-day finish."
     },
     "model": {
-      "chance": 95.75,
+      "chance": 95.73,
       "core_chance": 97.94,
       "run_chance": 90.0,
       "lock_chance": 80.0,
-      "d_run": 5.75,
-      "d_lock": 15.75,
-      "margin": 7.65,
-      "margin_lo": 1.96,
-      "margin_hi": 13.34,
+      "d_run": 5.73,
+      "d_lock": 15.73,
+      "margin": 7.64,
+      "margin_lo": 1.95,
+      "margin_hi": 13.33,
       "core_margin": 9.07,
       "sigma": 4.44,
       "days_out": 0,
@@ -8651,7 +8635,7 @@
       "incumbent_on_ballot": true,
       "m_p": 9.07,
       "n_polls": 2,
-      "n_eff": 1.371,
+      "n_eff": 1.359,
       "polls": [
         {
           "pollster": "Noble Predictive Insights",
@@ -8712,21 +8696,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -1.42,
+      "adjustment": -1.43,
       "adjustment_raw": -3.38,
       "adjustment_capped": false,
       "run_margin": 5.69,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 80.0,
         "model_at_lock": 97.09,
-        "chance": 95.75,
-        "total": 15.75,
+        "chance": 95.73,
+        "total": 15.73,
         "method_gap": 17.09,
-        "since_lock": -1.34,
-        "world": -1.34,
+        "since_lock": -1.36,
+        "world": -1.36,
         "n_new_polls": 2,
         "n_polls_at_lock": 13,
         "generic_lock": null,
@@ -8771,18 +8755,18 @@
             "kind": "poll",
             "label": "Noble Predictive Insights through 2026-10-28",
             "detail": "D+6.0 among LV voters",
-            "chance": 93.77,
-            "margin": 6.82,
-            "delta": -5.01,
+            "chance": 93.74,
+            "margin": 6.81,
+            "delta": -5.04,
             "source_url": "https://www.noblepredictiveinsights.com/post/az-poll-of-record-hobbs-6-yee-bucks-the-trend"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 80.0, the run says 90.0",
-            "chance": 95.75,
-            "margin": 7.65,
-            "delta": 1.98
+            "chance": 95.73,
+            "margin": 7.64,
+            "delta": 1.99
           }
         ],
         "label": "inferred"
@@ -8820,29 +8804,29 @@
     },
     "modeled_party": null,
     "move": {
-      "chance": 95.75,
+      "chance": 95.73,
       "lock_judgment": 80.0,
       "model_at_lock": 97.09,
-      "d_lock": -1.34,
-      "d_lock_vs_judgment": 15.75,
+      "d_lock": -1.36,
+      "d_lock_vs_judgment": 15.73,
       "method_gap": 17.09,
-      "prev_day": "2026-11-12",
+      "prev_day": "2026-11-13",
       "chance_prev": 95.75,
       "prev_reconstructed": true,
-      "d_day": 0.0,
+      "d_day": -0.02,
       "chance_prev_published": 95.75,
-      "day_5d": "2026-11-08",
-      "chance_5d": 95.81,
+      "day_5d": "2026-11-09",
+      "chance_5d": 95.79,
       "reconstructed_5d": true,
-      "chance_5d_published": 95.81,
+      "chance_5d_published": 95.79,
       "d_5d": -0.06,
-      "margin": 7.65,
+      "margin": 7.64,
       "margin_prev": 7.65,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_mi",
     "label": "Governor · MI",
     "office": "governor",
@@ -8883,11 +8867,6 @@
     "trump_2024": 1.42,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 90.0,
-        "markets": 99.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 90.0,
         "markets": 99.9
@@ -8916,22 +8895,27 @@
         "date": "2026-11-13",
         "ours": 90.0,
         "markets": 99.9
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 90.0,
+        "markets": 99.9
       }
     ],
     "source_url": "https://polymarket.com/event/michigan-governor-winner-2026",
     "call": {
-      "share_d": 52.61,
-      "share_r": 44.3,
-      "other": 3.09,
-      "margin": 8.31,
-      "lo": 2.62,
-      "hi": 14.0,
-      "source": "core model: fundamentals and 12 polls, run judgment -0.26",
+      "share_d": 52.86,
+      "share_r": 44.54,
+      "other": 2.6,
+      "margin": 8.32,
+      "lo": 2.63,
+      "hi": 14.01,
+      "source": "core model: fundamentals and 12 polls, run judgment -0.27",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 11 polls"
+      "other_source": "poll average of other over 10 polls"
     },
     "votes": {
       "turnout_2022": 4500400,
@@ -8944,8 +8928,8 @@
         "label": "inferred from retrieved counts"
       },
       "rule": "early-vote ratio at the same days out, clamped 0.85 to 1.15",
-      "d": 2730000.0,
-      "r": 2290000.0
+      "d": 2740000.0,
+      "r": 2310000.0
     },
     "night": {
       "midnight_margin": null,
@@ -8959,16 +8943,16 @@
       "note": "Wayne is listed last by design: it reports late and skews the statewide total until its absentees land. Saginaw is the single best early read."
     },
     "model": {
-      "chance": 96.94,
-      "core_chance": 97.32,
+      "chance": 96.95,
+      "core_chance": 97.34,
       "run_chance": 90.0,
       "lock_chance": 85.0,
-      "d_run": 6.94,
-      "d_lock": 11.94,
-      "margin": 8.31,
-      "margin_lo": 2.62,
-      "margin_hi": 14.0,
-      "core_margin": 8.57,
+      "d_run": 6.95,
+      "d_lock": 11.95,
+      "margin": 8.32,
+      "margin_lo": 2.63,
+      "margin_hi": 14.01,
+      "core_margin": 8.59,
       "sigma": 4.44,
       "days_out": 0,
       "m_f": null,
@@ -8979,9 +8963,9 @@
       "incumbent": "Gretchen Whitmer",
       "appointed": false,
       "incumbent_on_ballot": false,
-      "m_p": 8.57,
+      "m_p": 8.59,
       "n_polls": 12,
-      "n_eff": 10.275,
+      "n_eff": 9.697,
       "polls": [
         {
           "pollster": "Research Co.",
@@ -8993,7 +8977,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0694
+          "weight": 0.0729
         },
         {
           "pollster": "New York Times / Siena University",
@@ -9005,7 +8989,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0949
+          "weight": 0.0997
         },
         {
           "pollster": "HarrisX",
@@ -9017,7 +9001,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0949
+          "weight": 0.0997
         },
         {
           "pollster": "Emerson College",
@@ -9029,7 +9013,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0874
+          "weight": 0.0918
         },
         {
           "pollster": "AtlasIntel",
@@ -9041,7 +9025,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1351
+          "weight": 0.1419
         },
         {
           "pollster": "YouGov",
@@ -9053,7 +9037,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.1315
+          "weight": 0.1381
         },
         {
           "pollster": "SSRS",
@@ -9065,7 +9049,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.064
+          "weight": 0.0672
         },
         {
           "pollster": "Mitchell Research & Communications",
@@ -9077,7 +9061,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0871
+          "weight": 0.0915
         },
         {
           "pollster": "Michigan State University /Verasight",
@@ -9086,10 +9070,10 @@
           "margin_d": 9.0,
           "moe": 3.1,
           "source_url": "https://polisci.msu.edu/news-events/news/smidt-poll102926.html",
-          "fade": null,
+          "fade": 0.86,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.119
+          "weight": 0.1071
         },
         {
           "pollster": "Glengariff Group",
@@ -9098,10 +9082,10 @@
           "margin_d": 6.0,
           "moe": 4.0,
           "source_url": "https://www.detroitnews.com/story/news/politics/2026/10/27/jocelyn-bensons-lead-over-john-james-grows-in-michigan-governor-race/92441176007/",
-          "fade": 0.86,
+          "fade": 0.71,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0685
+          "weight": 0.06
         },
         {
           "pollster": "Michigan State University / YouGov",
@@ -9110,10 +9094,10 @@
           "margin_d": 12.0,
           "moe": 4.4,
           "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0285
+          "weight": 0.02
         },
         {
           "pollster": "Marist University",
@@ -9122,10 +9106,10 @@
           "margin_d": 6.0,
           "moe": 4.3,
           "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_MI-NOS-and-Tables_202610191238FFx09@Jal.pdf",
-          "fade": 0.29,
+          "fade": 0.14,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0196
+          "weight": 0.0103
         }
       ],
       "excluded": [
@@ -9162,21 +9146,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.26,
-      "adjustment_raw": -2.88,
+      "adjustment": -0.27,
+      "adjustment_raw": -2.9,
       "adjustment_capped": false,
       "run_margin": 5.69,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 85.0,
         "model_at_lock": 82.84,
-        "chance": 96.94,
-        "total": 11.94,
+        "chance": 96.95,
+        "total": 11.95,
         "method_gap": -2.16,
-        "since_lock": 14.1,
-        "world": 14.1,
+        "since_lock": 14.11,
+        "world": 14.11,
         "n_new_polls": 12,
         "n_polls_at_lock": 20,
         "generic_lock": null,
@@ -9212,99 +9196,99 @@
             "kind": "poll",
             "label": "Marist University through 2026-10-18",
             "detail": "D+6.0 among LV voters",
-            "chance": 86.22,
-            "margin": 4.84,
-            "delta": 0.2,
+            "chance": 85.66,
+            "margin": 4.73,
+            "delta": -0.36,
             "source_url": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_MI-NOS-and-Tables_202610191238FFx09@Jal.pdf"
           },
           {
             "kind": "poll",
             "label": "Michigan State University / YouGov through 2026-10-19",
             "detail": "D+12.0 among LV voters",
-            "chance": 93.02,
-            "margin": 6.56,
-            "delta": 6.8,
+            "chance": 94.15,
+            "margin": 6.96,
+            "delta": 8.49,
             "source_url": "https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf"
           },
           {
             "kind": "poll",
             "label": "Glengariff Group through 2026-10-22",
             "detail": "D+6.0 among LV voters",
-            "chance": 91.76,
-            "margin": 6.17,
-            "delta": -1.26,
+            "chance": 90.72,
+            "margin": 5.88,
+            "delta": -3.43,
             "source_url": "https://www.detroitnews.com/story/news/politics/2026/10/27/jocelyn-bensons-lead-over-john-james-grows-in-michigan-governor-race/92441176007/"
           },
           {
             "kind": "poll",
             "label": "Michigan State University /Verasight through 2026-10-23",
             "detail": "D+9.0 among LV voters",
-            "chance": 94.71,
-            "margin": 7.18,
-            "delta": 2.95,
+            "chance": 94.22,
+            "margin": 6.99,
+            "delta": 3.5,
             "source_url": "https://polisci.msu.edu/news-events/news/smidt-poll102926.html"
           },
           {
             "kind": "poll",
             "label": "Mitchell Research & Communications through 2026-10-27",
             "detail": "D+5.0 among LV voters",
-            "chance": 93.51,
-            "margin": 6.73,
-            "delta": -1.2,
+            "chance": 92.9,
+            "margin": 6.52,
+            "delta": -1.32,
             "source_url": "https://www.cbsnews.com/detroit/news/jocelyn-benson-john-james-october-michigan-gubernatorial-poll/"
           },
           {
             "kind": "poll",
             "label": "SSRS through 2026-10-27",
             "detail": "D+12.0 among LV voters",
-            "chance": 95.27,
-            "margin": 7.42,
-            "delta": 1.76,
+            "chance": 95.05,
+            "margin": 7.32,
+            "delta": 2.15,
             "source_url": "https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/"
           },
           {
             "kind": "poll",
             "label": "YouGov through 2026-10-29",
             "detail": "D+6.0 among LV voters",
-            "chance": 94.56,
-            "margin": 7.12,
-            "delta": -0.71,
+            "chance": 94.32,
+            "margin": 7.02,
+            "delta": -0.73,
             "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D+8.0 among LV voters",
-            "chance": 94.94,
-            "margin": 7.28,
-            "delta": 0.38,
+            "chance": 94.78,
+            "margin": 7.21,
+            "delta": 0.46,
             "source_url": "https://atlasintel.org/poll/usa-michigan-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "poll",
             "label": "Emerson College through 2026-11-01",
             "detail": "D+4.0 among LV voters",
-            "chance": 94.08,
-            "margin": 6.93,
-            "delta": -0.86,
+            "chance": 93.86,
+            "margin": 6.85,
+            "delta": -0.92,
             "source_url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and"
           },
           {
             "kind": "poll",
             "label": "HarrisX through 2026-11-01",
             "detail": "D+12.0 among LV voters",
-            "chance": 95.34,
-            "margin": 7.45,
-            "delta": 1.26,
+            "chance": 95.23,
+            "margin": 7.4,
+            "delta": 1.37,
             "source_url": "https://www.harrisx.com/posts/final-harrisx-2026-midterm-poll"
           },
           {
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-11-01",
             "detail": "D+13.0 among LV voters",
-            "chance": 96.36,
-            "margin": 7.96,
-            "delta": 1.02,
+            "chance": 96.33,
+            "margin": 7.95,
+            "delta": 1.1,
             "source_url": "https://www.nytimes.com/interactive/2026/11/01/polls/times-siena-mi-poll-toplines.html"
           },
           {
@@ -9313,16 +9297,16 @@
             "detail": "D+12.0 among LV voters",
             "chance": 96.79,
             "margin": 8.22,
-            "delta": 0.43,
+            "delta": 0.46,
             "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 85.0, the run says 90.0",
-            "chance": 96.94,
-            "margin": 8.31,
-            "delta": 0.15
+            "chance": 96.95,
+            "margin": 8.32,
+            "delta": 0.16
           }
         ],
         "label": "inferred"
@@ -9372,37 +9356,37 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/michigan-results",
-      "retrieved_at": "2026-11-13T09:34:14-05:00",
+      "retrieved_at": "2026-11-14T09:33:38-05:00",
       "label": "modeled",
       "in_number": false
     },
     "move": {
-      "chance": 96.94,
+      "chance": 96.95,
       "lock_judgment": 85.0,
       "model_at_lock": 82.84,
-      "d_lock": 14.1,
-      "d_lock_vs_judgment": 11.94,
+      "d_lock": 14.11,
+      "d_lock_vs_judgment": 11.95,
       "method_gap": -2.16,
-      "prev_day": "2026-11-12",
+      "prev_day": "2026-11-13",
       "chance_prev": 96.94,
       "prev_reconstructed": true,
-      "d_day": 0.0,
+      "d_day": 0.01,
       "chance_prev_published": 96.94,
-      "day_5d": "2026-11-08",
-      "chance_5d": 96.96,
+      "day_5d": "2026-11-09",
+      "chance_5d": 96.98,
       "reconstructed_5d": true,
-      "chance_5d_published": 96.44,
-      "d_5d": -0.02,
-      "margin": 8.31,
+      "chance_5d_published": 96.46,
+      "d_5d": -0.03,
+      "margin": 8.32,
       "margin_prev": 8.31,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_nh",
     "label": "Governor · NH",
     "office": "governor",
@@ -9443,11 +9427,6 @@
     "trump_2024": -2.78,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 8.0,
-        "markets": 0.7
-      },
-      {
         "date": "2026-11-08",
         "ours": 8.0,
         "markets": 0.7
@@ -9476,22 +9455,27 @@
         "date": "2026-11-13",
         "ours": 8.0,
         "markets": 0.7
+      },
+      {
+        "date": "2026-11-14",
+        "ours": 8.0,
+        "markets": 0.7
       }
     ],
     "source_url": "https://polymarket.com/event/new-hampshire-governor-winner-2026",
     "call": {
-      "share_d": 46.65,
-      "share_r": 50.85,
-      "other": 2.5,
-      "margin": -4.21,
-      "lo": -9.9,
-      "hi": 1.48,
-      "source": "core model: fundamentals and 4 polls, run judgment -0.44",
+      "share_d": 46.66,
+      "share_r": 50.67,
+      "other": 2.67,
+      "margin": -4.01,
+      "lo": -9.7,
+      "hi": 1.68,
+      "source": "core model: fundamentals and 4 polls, run judgment -0.52",
       "label": "inferred",
       "suppressed": null,
       "rcv_note": null,
       "runoff_chance": null,
-      "other_source": "poll average of other over 4 polls"
+      "other_source": "poll average of other over 3 polls"
     },
     "votes": {
       "turnout_2022": null,
@@ -9511,16 +9495,16 @@
       "note": "Harris-minus-Trump margins. NH county totals aggregate town returns; Wikipedia presidential county tables used directly. 2024 governor county shares use OpenElections town data with Libertarian and undervotes in the denominator, so they run ~1 pt low for both candidates versus valid-vote shares."
     },
     "model": {
-      "chance": 17.18,
-      "core_chance": 19.82,
+      "chance": 18.32,
+      "core_chance": 21.59,
       "run_chance": 8.0,
       "lock_chance": 7.0,
-      "d_run": 9.18,
-      "d_lock": 10.18,
-      "margin": -4.21,
-      "margin_lo": -9.9,
-      "margin_hi": 1.48,
-      "core_margin": -3.77,
+      "d_run": 10.32,
+      "d_lock": 11.32,
+      "margin": -4.01,
+      "margin_lo": -9.7,
+      "margin_hi": 1.68,
+      "core_margin": -3.49,
       "sigma": 4.44,
       "days_out": 0,
       "m_f": null,
@@ -9531,9 +9515,9 @@
       "incumbent": "Kelly Ayotte",
       "appointed": false,
       "incumbent_on_ballot": true,
-      "m_p": -3.77,
+      "m_p": -3.49,
       "n_polls": 4,
-      "n_eff": 4.612,
+      "n_eff": 4.257,
       "polls": [
         {
           "pollster": "AtlasIntel",
@@ -9545,7 +9529,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.301
+          "weight": 0.3232
         },
         {
           "pollster": "University of New Hampshire",
@@ -9557,7 +9541,7 @@
           "fade": null,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.4412
+          "weight": 0.4738
         },
         {
           "pollster": "Saint Anselm College",
@@ -9566,10 +9550,10 @@
           "margin_d": -8.0,
           "moe": 2.4,
           "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape",
-          "fade": 0.57,
+          "fade": 0.43,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.2067
+          "weight": 0.1664
         },
         {
           "pollster": "UMass Lowell / YouGov",
@@ -9578,10 +9562,10 @@
           "margin_d": -6.0,
           "moe": 5.0,
           "source_url": "https://www.uml.edu/news/press-releases/2026/102826-new-england-polls.aspx",
-          "fade": 0.43,
+          "fade": 0.29,
           "house_effect": null,
           "partisan_mark": null,
-          "weight": 0.0511
+          "weight": 0.0366
         }
       ],
       "excluded": [
@@ -9610,21 +9594,21 @@
         "polls": 1.0
       },
       "core_rule": "polls only (no baseline)",
-      "adjustment": -0.44,
-      "adjustment_raw": -2.47,
+      "adjustment": -0.52,
+      "adjustment_raw": -2.75,
       "adjustment_capped": false,
       "run_margin": -6.24,
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 7.0,
         "model_at_lock": 13.29,
-        "chance": 17.18,
-        "total": 10.18,
+        "chance": 18.32,
+        "total": 11.32,
         "method_gap": 6.29,
-        "since_lock": 3.89,
-        "world": 3.89,
+        "since_lock": 5.03,
+        "world": 5.03,
         "n_new_polls": 4,
         "n_polls_at_lock": 10,
         "generic_lock": null,
@@ -9660,44 +9644,44 @@
             "kind": "poll",
             "label": "UMass Lowell / YouGov through 2026-10-19",
             "detail": "D-6.0 among LV voters",
-            "chance": 7.32,
-            "margin": -6.45,
-            "delta": 4.21,
+            "chance": 7.22,
+            "margin": -6.48,
+            "delta": 4.11,
             "source_url": "https://www.uml.edu/news/press-releases/2026/102826-new-england-polls.aspx"
           },
           {
             "kind": "poll",
             "label": "Saint Anselm College through 2026-10-20",
             "detail": "D-8.0 among LV voters",
-            "chance": 5.43,
-            "margin": -7.12,
-            "delta": -1.89,
+            "chance": 5.59,
+            "margin": -7.06,
+            "delta": -1.63,
             "source_url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape"
           },
           {
             "kind": "poll",
             "label": "University of New Hampshire through 2026-10-31",
             "detail": "D+0.0 among LV voters",
-            "chance": 20.27,
-            "margin": -3.69,
-            "delta": 14.84,
+            "chance": 22.25,
+            "margin": -3.39,
+            "delta": 16.66,
             "source_url": "https://scholars.unh.edu/survey_center_polls/1011/"
           },
           {
             "kind": "poll",
             "label": "AtlasIntel through 2026-11-01",
             "detail": "D-6.0 among LV voters",
-            "chance": 16.83,
-            "margin": -4.27,
-            "delta": -3.44,
+            "chance": 17.97,
+            "margin": -4.07,
+            "delta": -4.28,
             "source_url": "https://atlasintel.org/poll/usa-new-hampshire-atlaspollstergraph-poll-2026-11-02"
           },
           {
             "kind": "judgment",
             "label": "The run's judgment",
             "detail": "the lock said 7.0, the run says 8.0",
-            "chance": 17.18,
-            "margin": -4.21,
+            "chance": 18.32,
+            "margin": -4.01,
             "delta": 0.35
           }
         ],
@@ -9709,29 +9693,29 @@
     "early_vote": null,
     "modeled_party": null,
     "move": {
-      "chance": 17.18,
+      "chance": 18.32,
       "lock_judgment": 7.0,
       "model_at_lock": 13.29,
-      "d_lock": 3.89,
-      "d_lock_vs_judgment": 10.18,
+      "d_lock": 5.03,
+      "d_lock_vs_judgment": 11.32,
       "method_gap": 6.29,
-      "prev_day": "2026-11-12",
-      "chance_prev": 16.22,
+      "prev_day": "2026-11-13",
+      "chance_prev": 17.18,
       "prev_reconstructed": true,
-      "d_day": 0.96,
-      "chance_prev_published": 16.22,
-      "day_5d": "2026-11-08",
+      "d_day": 1.14,
+      "chance_prev_published": 17.18,
+      "day_5d": "2026-11-09",
       "chance_5d": 14.56,
       "reconstructed_5d": true,
       "chance_5d_published": 14.56,
-      "d_5d": 2.62,
-      "margin": -4.21,
-      "margin_prev": -4.38,
+      "d_5d": 3.76,
+      "margin": -4.01,
+      "margin_prev": -4.21,
       "label": "inferred"
     }
   },
   {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "id": "gov_sc",
     "label": "Governor · SC",
     "office": "governor",
@@ -9772,11 +9756,6 @@
     "trump_2024": 17.87,
     "trend7": [
       {
-        "date": "2026-11-07",
-        "ours": 4.0,
-        "markets": 1.9
-      },
-      {
         "date": "2026-11-08",
         "ours": 4.0,
         "markets": 1.9
@@ -9803,6 +9782,11 @@
       },
       {
         "date": "2026-11-13",
+        "ours": 4.0,
+        "markets": 1.9
+      },
+      {
+        "date": "2026-11-14",
         "ours": 4.0,
         "markets": 1.9
       }
@@ -9870,7 +9854,7 @@
       "incumbent_on_ballot": false,
       "m_p": -9.46,
       "n_polls": 3,
-      "n_eff": 2.906,
+      "n_eff": 2.88,
       "polls": [
         {
           "pollster": "New York Times / Siena University",
@@ -9950,7 +9934,7 @@
       "run_point": null,
       "since_lock": {
         "lock_date": "2026-10-16",
-        "as_of": "2026-11-13",
+        "as_of": "2026-11-14",
         "lock_chance": 5.0,
         "model_at_lock": 6.71,
         "chance": 2.1,
@@ -10020,9 +10004,9 @@
             "kind": "poll",
             "label": "New York Times / Siena University through 2026-10-26",
             "detail": "D-7.0 among LV voters",
-            "chance": 2.24,
-            "margin": -8.91,
-            "delta": 0.49,
+            "chance": 2.25,
+            "margin": -8.9,
+            "delta": 0.5,
             "source_url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-sc-poll-toplines.html"
           },
           {
@@ -10031,7 +10015,7 @@
             "detail": "the lock said 5.0, the run says 4.0",
             "chance": 2.1,
             "margin": -9.03,
-            "delta": -0.14
+            "delta": -0.15
           }
         ],
         "label": "inferred"
@@ -10160,10 +10144,10 @@
       "basis": "state registration, as the page labels it",
       "modeled": false,
       "party_text": "",
-      "last_updated_text": "November 13, 2026",
+      "last_updated_text": "November 14, 2026",
       "provider": "TargetSmart, via NBC News",
       "source_url": "https://www.nbcnews.com/politics/2026-elections/south-carolina-results",
-      "retrieved_at": "2026-11-13T09:34:13-05:00",
+      "retrieved_at": "2026-11-14T09:33:37-05:00",
       "label": "modeled",
       "in_number": false
     },
@@ -10174,18 +10158,18 @@
       "d_lock": -4.61,
       "d_lock_vs_judgment": -2.9,
       "method_gap": 1.71,
-      "prev_day": "2026-11-12",
-      "chance_prev": 2.07,
+      "prev_day": "2026-11-13",
+      "chance_prev": 2.1,
       "prev_reconstructed": true,
-      "d_day": 0.03,
-      "chance_prev_published": 2.07,
-      "day_5d": "2026-11-08",
-      "chance_5d": 1.95,
+      "d_day": 0.0,
+      "chance_prev_published": 2.1,
+      "day_5d": "2026-11-09",
+      "chance_5d": 1.98,
       "reconstructed_5d": true,
-      "chance_5d_published": 1.95,
-      "d_5d": 0.15,
+      "chance_5d_published": 1.98,
+      "d_5d": 0.12,
       "margin": -9.03,
-      "margin_prev": -9.06,
+      "margin_prev": -9.03,
       "label": "inferred"
     }
   }
