@@ -6145,5 +6145,93 @@
       "https://polymarket.com/event/kansas-governor-winner-2026"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-15",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold: no forecast number, Decision Desk number, rating or market price moved past one, and the largest intraday market move was a tenth of a point, on Alaska (retrieved, 10:00 ET alert). Ballots moved most, and only a little. Alaska went from 96 to 97 percent counted and Peltola's first-choice lead went from 10,412 to 11,213 (retrieved). Kansas did not add a vote and Holscher keeps the winner mark (retrieved). The one board change was Florida's ballot file, which moved no party share (retrieved).",
+    "written_at": "2026-11-15T10:01:00-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-15",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "A Sunday of one Alaska batch, one Florida file, no prices.",
+    "vibe": "Alaska counted 4,219 more ballots and Peltola's first-choice lead reached 11,213, Florida's ballot file changed without changing a share, Kansas did not move, and no poll, rating or market price on the board did either.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://electindex.com/early-vote/"
+    ],
+    "written_at": "2026-11-15T10:01:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-15",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska at 97 percent: Peltola's lead to 11,213",
+    "what_happened": "CNN's AP feed at about 10:00 ET on Nov 15 has Peltola 140,637, Dan Sullivan (R) 129,424, Heikes (R) 6,002 and an independent also named Sullivan 4,652, with 97 percent of the expected vote in and 281,587 counted (retrieved, read from the feed's candidate list). The Nov 14 read had 277,368 counted at 96 percent (retrieved). So 4,219 new ballots went Peltola 2,397, Sullivan 1,596, Heikes 117, the independent 92, and the lead went from 10,412 to 11,213 (retrieved, subtraction done by script). Peltola is at 49.9 percent, under the 50 that wins outright, so the ranked-choice count on Nov 18 decides it unless the rest lifts her past it (retrieved). No winner is marked (retrieved). The markets price Peltola at 99.8 (retrieved, 10:00 ET alert). No new poll (retrieved). Our number is 74.66 for Peltola with a margin of +2.3 (core model). The run had 55.",
+    "why_it_moved": "Nothing moved past a threshold. The count moved, toward Peltola again, and she took more than half of a small batch (inferred). Five of the last six batches have widened her lead (inferred, from the Nov 9 to Nov 15 reads).",
+    "should_it_move_us": "Wait. The item is pending until the ranked-choice tabulation, and the model does not update on a partial count.",
+    "trigger": "The Nov 18 tabulation. Before it, whether the last 3 percent lifts Peltola past 50 percent of first choices.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://www.elections.alaska.gov/results/",
+      "https://polymarket.com/event/alaska-senate-election-winner"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-15",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas: no new votes, winner mark holds, lead 7,200",
+    "what_happened": "CNN's AP feed at about 10:00 ET on Nov 15 shows Holscher 552,328 and Masterson 545,128, with 98 percent of the expected vote in, 1,097,456 counted, and Holscher still marked the winner (retrieved). Those are the same totals as the Nov 14 read, so nothing new was counted (retrieved). The mark first appeared Nov 8, was withdrawn by Nov 9, returned Nov 13 and has held three reads since (retrieved). Our number is 53.47 for Holscher with a margin of +0.4 (core model). The run had 30.",
+    "why_it_moved": "Nothing moved. A weekend with no new county reports (inferred).",
+    "should_it_move_us": "Wait. The item resolves on certification or a canvass, not on a partial count, and the model does not update on one.",
+    "trigger": "Whether the county canvasses or a recount request change the 7,200 lead.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://sos.ks.gov/elections/elections-results.html"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-15",
+    "kind": "item",
+    "item_id": "ev_FL",
+    "item": "Florida: ballots voted (mail returned plus in person)",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Florida ballot file updates, no share moves",
+    "what_happened": "The Florida ballot file on electindex shows 5,547,969 voters, Democrats 37.8, Republicans 40.1 and other 22.1 percent, the same shares as the Nov 14 read (retrieved). This is party registration of who voted, not how they voted (retrieved, per the source).",
+    "why_it_moved": "A post-election file update with no composition change (inferred). The change log calls it the day's biggest change only because it was the only one (inferred).",
+    "should_it_move_us": "No. Shares did not move and the model does not take registration as a vote.",
+    "trigger": "None pending. The file is past its useful window.",
+    "sources": [
+      "https://electindex.com/early-vote/"
+    ],
+    "label": "inferred"
   }
 ]
