@@ -6233,5 +6233,92 @@
       "https://electindex.com/early-vote/"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-16",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold: no forecast number, Decision Desk number, rating or market price moved past one, and no hourly market check was flagged (retrieved, 10:00 ET alerts). Ballots were the only thing that moved, and only on paper. North Carolina's voter history file now counts 112,697 first-time voters among early voters, down from 171,237 (retrieved). Alaska and Kansas returned the same totals as Sunday (retrieved). The board is waiting on the Alaska ranked-choice count on Nov 18.",
+    "written_at": "2026-11-16T10:20:00-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-16",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Alaska and Kansas sat still, and North Carolina recounted its first-timers.",
+    "vibe": "Alaska stayed at 97 percent with Peltola's lead at 11,213, Kansas added no votes, and the only board change was North Carolina's first-time voter count dropping in a refreshed history file.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip"
+    ],
+    "written_at": "2026-11-16T10:20:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-16",
+    "kind": "item",
+    "item_id": "ev_NC",
+    "item": "North Carolina: first-time voters among early voters",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "North Carolina first-time early voters revised down to 112,697",
+    "what_happened": "The state's statewide voter history file now shows 112,697 first-time voters among early voters, 4.0 percent, against 171,237 and 6.1 percent on Nov 15 (retrieved, NCSBE ncvhis_Statewide). A count of voters cannot fall unless the file was rebuilt or the definition of first-time changed (inferred).",
+    "why_it_moved": "A post-election refresh of the history file, most likely re-matching voters to prior history (inferred). No new ballots are behind it (inferred).",
+    "should_it_move_us": "No. It is a reading of who voted, not how, the election is over, and the model does not take it as a vote.",
+    "trigger": "None pending. The file is past its useful window.",
+    "sources": [
+      "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-16",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska unchanged at 97 percent, Peltola leads by 11,213",
+    "what_happened": "CNN's AP feed read at about 10:15 ET on Nov 16 has Peltola 140,637, Dan Sullivan (R) 129,424, Heikes (R) 6,002 and the independent Sullivan 4,652, with 97 percent in and 281,587 counted (retrieved). Those are the Nov 15 totals exactly (retrieved). Peltola is at 49.9 percent, under the 50 that wins outright, and no winner is marked (retrieved). The markets price Peltola at 99.8 (retrieved). No new poll (retrieved). Our number is 74.66 for Peltola with a margin of +2.3 (core model).",
+    "why_it_moved": "Nothing moved. No batch was reported over the weekend (inferred).",
+    "should_it_move_us": "Wait. The item resolves on the ranked-choice tabulation, and the model does not update on a partial count.",
+    "trigger": "The Nov 18 tabulation, and before it whether the last 3 percent lifts Peltola past 50 percent of first choices.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://www.elections.alaska.gov/results/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-16",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas: same count, winner mark holds, lead 7,200",
+    "what_happened": "CNN's AP feed read at about 10:15 ET on Nov 16 has Holscher 552,328 and Masterson 545,128, 98 percent in, 1,097,456 counted, Holscher marked the winner (retrieved). Same totals as Nov 14 and Nov 15 (retrieved). Our number is 53.38 for Holscher with a margin of +0.4 (core model). The markets have 99.9 (retrieved).",
+    "why_it_moved": "Nothing moved. No new county reports (inferred).",
+    "should_it_move_us": "Wait. The item resolves on certification or a canvass, and the model does not update on a partial count.",
+    "trigger": "Whether county canvasses or a recount request change the 7,200 lead.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://sos.ks.gov/elections/elections-results.html"
+    ],
+    "label": "inferred"
   }
 ]
