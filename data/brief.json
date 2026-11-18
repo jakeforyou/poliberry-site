@@ -6386,5 +6386,71 @@
       "https://sos.ks.gov/elections/elections-results.html"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-18",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold, the changes log shows two early-vote rows with no real movement, and no hourly market check was flagged (retrieved, 10:00 ET alerts). The news is in the counts, which the flag scripts do not watch. CNN's AP feed now marks Peltola the winner in Alaska at 99 percent in, with 50.12 percent of the first-choice vote (retrieved, about 10:00 ET). Kansas added a small batch and Holscher's lead slipped slightly to 11,369 (retrieved). Both items wait on certification.",
+    "written_at": "2026-11-18T10:05:00-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-18",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Alaska's count now has a winner mark next to Peltola.",
+    "vibe": "The AP feed marked Peltola the Senate winner at 99 percent in, still just over half the first-choice vote. Kansas added a few hundred votes each way. Nothing else on the board moved.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json"
+    ],
+    "written_at": "2026-11-18T10:05:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-18",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Senate · AK",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "AP marks Peltola the winner at 99 percent in",
+    "what_happened": "CNN's AP feed read at about 10:00 ET on Nov 18 has Peltola 144,302, Dan Sullivan (R) 131,844, Heikes (R) 6,105 and the independent Sullivan 4,760, with 99 percent in and 287,896 counted, and Peltola marked the winner (retrieved). On Nov 17 it was 141,637 to 130,162 at 98 percent with no winner marked (retrieved, yesterday's brief). Peltola gained 2,665 and Sullivan 1,682 on 5,393 added ballots, so the lead is 12,458 and Peltola's share is 50.12 percent (script arithmetic on retrieved totals). Our number is 74.57 for Peltola with a margin of +2.27 (core model). Markets have no flagged intraday move (retrieved).",
+    "why_it_moved": "Another post-election batch, likely late absentee and questioned ballots, kept Peltola above 50 percent of first choices, and the AP called the race on that basis (inferred). The call means a ranked-choice tabulation is not expected to change the leader (inferred).",
+    "should_it_move_us": "No. The model does not update on a partial count or a media call, and the item resolves on the certified result.",
+    "trigger": "The Alaska Division of Elections' certified first-choice total, and whether Peltola stays above 50 percent so no tabulation runs.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://www.elections.alaska.gov/"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-18",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Governor · KS",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas adds a small batch, Holscher lead at 11,369",
+    "what_happened": "CNN's AP feed read at about 10:00 ET on Nov 18 has Holscher 562,012 and Masterson 550,643, 99 percent in, 1,112,655 counted, Holscher marked the winner (retrieved). On Nov 17 it was 561,475 to 549,988 (retrieved, yesterday's brief). Holscher gained 537 and Masterson 655, so the lead fell by 118 (script arithmetic). Our number is 52.98 for Holscher with a margin of +0.33 (core model). The Kansas Secretary of State site still returns 403 to scripts, so this is the AP feed only.",
+    "why_it_moved": "A small county canvass batch that split close to even, slightly toward Masterson (inferred).",
+    "should_it_move_us": "No. The model does not update on a partial count, and a batch this size does not threaten the winner mark.",
+    "trigger": "The state canvass board's certified total, and whether Masterson requests a recount.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://sos.ks.gov/elections/elections-results.html"
+    ],
+    "label": "inferred"
   }
 ]
