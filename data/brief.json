@@ -6452,5 +6452,69 @@
       "https://sos.ks.gov/elections/elections-results.html"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-19",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold, the changes log shows two early-vote rows with no real movement, and no hourly market check was flagged (retrieved, 09:00 ET alerts). The only motion is in the counts, which the flag scripts do not watch. CNN's AP feed adds 311 ballots in Alaska and Peltola's lead grows to 12,521 (retrieved, script arithmetic). Kansas is unchanged since yesterday at Holscher by 11,369 (retrieved). Both items wait on certification.",
+    "written_at": "2026-11-19T09:58:00-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-19",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Alaska counted 311 more ballots. Kansas counted none.",
+    "vibe": "Peltola's lead in Alaska grew to 12,521 with her share still just over half, Kansas sat exactly where it sat yesterday, and every market and early-vote row held still.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json"
+    ],
+    "written_at": "2026-11-19T09:58:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-19",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Alaska Senate",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska adds 311 ballots, Peltola lead at 12,521",
+    "what_happened": "CNN's AP feed read at about 09:52 ET on Nov 19 has Peltola 144,486, Dan Sullivan (R) 131,965, Heikes (R) 6,105 and the independent Sullivan 4,765, with 99 percent in and 288,207 counted, Peltola marked the winner (retrieved). On Nov 18 it was 144,302 to 131,844 on 287,896 counted (retrieved, yesterday's brief). Peltola gained 184 and Sullivan 121 on 311 added ballots, so the lead is 12,521 and her share is 50.13 percent (script arithmetic on retrieved totals). Our number is 74.57 for Peltola with a margin of +2.27 (core model).",
+    "why_it_moved": "A small late batch, likely cured or overseas ballots (inferred). No flag fired because the flag scripts do not watch counts.",
+    "should_it_move_us": "No, the model number is the lock and the count now settles the item, not a forecast.",
+    "trigger": "The Alaska Division of Elections' certified first-choice total, and whether Peltola stays above 50 percent so no tabulation runs.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-19",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Kansas governor",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas count unchanged, Holscher lead at 11,369",
+    "what_happened": "CNN's AP feed read at about 09:52 ET on Nov 19 has Holscher 562,012 and Masterson 550,643, 99 percent in, 1,112,655 counted, Holscher marked the winner (retrieved). That is identical to the Nov 18 read (retrieved, yesterday's brief). Our number is 52.98 for Holscher with a margin of +0.33 (core model). The Kansas Secretary of State site was not checked again today because it returned 403 to scripts on prior days.",
+    "why_it_moved": "It did not move. No new batch reached the AP feed overnight (retrieved).",
+    "should_it_move_us": "No, the count settles the item and nothing in it changed.",
+    "trigger": "The state canvass board's certified total, and whether Masterson requests a recount.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json"
+    ],
+    "label": "inferred"
   }
 ]
