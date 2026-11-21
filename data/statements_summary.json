@@ -1,50 +1,51 @@
 [
   {
-    "as_of": "2026-11-15",
+    "as_of": "2026-11-20",
     "days": 7,
     "this_period": {
-      "start": "2026-11-09",
-      "end": "2026-11-15",
+      "start": "2026-11-14",
+      "end": "2026-11-20",
       "articles": 0,
       "usable_days": 0,
       "skipped_days": [
+        "2026-11-14",
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20"
+      ]
+    },
+    "prior_period": {
+      "start": "2026-11-07",
+      "end": "2026-11-13",
+      "articles": 0,
+      "usable_days": 0,
+      "skipped_days": [
+        "2026-11-07",
+        "2026-11-08",
         "2026-11-09",
         "2026-11-10",
         "2026-11-11",
         "2026-11-12",
-        "2026-11-13",
-        "2026-11-14",
-        "2026-11-15"
-      ]
-    },
-    "prior_period": {
-      "start": "2026-11-02",
-      "end": "2026-11-08",
-      "articles": 71,
-      "usable_days": 1,
-      "skipped_days": [
-        "2026-11-02",
-        "2026-11-03",
-        "2026-11-04",
-        "2026-11-05",
-        "2026-11-07",
-        "2026-11-08"
+        "2026-11-13"
       ]
     },
     "change_pct": null,
     "direction": "unclear",
-    "top_kind": "other",
-    "top_kind_articles": 46,
+    "top_kind": "rigged or fraud claim",
+    "top_kind_articles": 1,
     "top_speaker": "Donald Trump",
-    "top_speaker_articles": 174,
+    "top_speaker_articles": 79,
     "counts_source": "daily",
     "baseline": {
       "usable_days": 35,
-      "per_day": 232.9,
+      "per_day": 234.1,
       "this_per_day": null,
       "change_pct": null
     },
-    "sentence": "Coverage of election-legitimacy statements cannot be compared this week: GDELT has usable data for 0 of 7 days this week and 1 of 7 days the week before.",
+    "sentence": "Coverage of election-legitimacy statements cannot be compared this week: GDELT has usable data for 0 of 7 days this week and 0 of 7 days the week before.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",
