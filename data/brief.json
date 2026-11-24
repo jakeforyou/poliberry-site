@@ -6711,5 +6711,99 @@
       "https://politics.api.cnn.io/results/national-races/2026-GG.json"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-23",
+    "kind": "lead",
+    "item_id": null,
+    "text": null,
+    "written_at": null,
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": "No brief written for this day yet.",
+    "label": null
+  },
+  {
+    "as_of": "2026-11-24",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold (retrieved, flags.json). The changes log has one entry since Nov 23: Pennsylvania mail ballot requests fell by 51 and the Republican share held at 24.4 (retrieved). That is a file cleanup, not a vote, and it reads who asked for a ballot, not how anyone voted (inferred). None of the 11 hourly market checks through 10:00 ET was flagged (retrieved, alerts). CNN's AP feed shows Alaska and Kansas on the same totals as Nov 19 to 22 (retrieved). No brief was written on Nov 23 (retrieved, data/brief). The core model's Alaska and Kansas numbers drifted again with no logged input change, which is recorded in data/errors.md.",
+    "written_at": "2026-11-24T10:10:00-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-24",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Pennsylvania's mail requests fell by 51, and that was the day.",
+    "vibe": "The only change on the board is a Pennsylvania mail-request file that shed 51 requests three weeks after the election, the markets sat flat all morning, and the Alaska and Kansas counts have not moved since last week.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://polymarket.com/event/which-party-will-win-the-house-in-2026"
+    ],
+    "written_at": "2026-11-24T10:10:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-24",
+    "kind": "item",
+    "item_id": "ev_PA",
+    "item": "Pennsylvania mail ballot requests",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Pennsylvania request file shrank by 51",
+    "what_happened": "The Nov 24 pull of the Pennsylvania mail-request file shows 51 fewer requests than the Nov 23 pull, with the Republican share at 24.4 (retrieved, changes.json). It is the only change logged since Nov 23 (retrieved).",
+    "why_it_moved": "A routine purge or correction of the request file after the election (inferred). No feed item explains it and none was expected.",
+    "should_it_move_us": "No, a request count three weeks after the election says nothing about an unresolved item.",
+    "trigger": "A Pennsylvania certification change, which this file would not show.",
+    "sources": [],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-24",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Alaska Senate",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska count unchanged, Peltola still marked the winner",
+    "what_happened": "CNN's AP feed read at about 10:01 ET on Nov 24 has Peltola 144,486, Dan Sullivan (R) 131,965, Heikes (R) 6,105 and the independent Sullivan 4,765, 99 percent in, Peltola marked the winner (retrieved). Same totals as Nov 19 to 22 (retrieved, prior briefs). Our number is 72.77 for Peltola with a margin of +2.08 (core model). It read 73.99 and +2.21 on Nov 23 with no logged input change (retrieved, git history, logged in errors.md).",
+    "why_it_moved": "The count did not move. The model drift is unexplained and logged.",
+    "should_it_move_us": "No, the count settles the item and nothing in it changed.",
+    "trigger": "The Alaska Division of Elections' certified first-choice total, and whether Peltola stays above 50 percent so no tabulation runs.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-24",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Kansas governor",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas count unchanged, Holscher still ahead",
+    "what_happened": "CNN's AP feed read at about 10:01 ET on Nov 24 has Holscher 562,012 and Masterson 550,643, 99 percent in, Holscher marked the winner (retrieved). Same as the Nov 18 to 22 reads (retrieved, prior briefs). Our number is 57.82 for Holscher with a margin of +0.88 (core model). It read 57.45 and +0.83 on Nov 23 with no logged input change (retrieved, git history, logged in errors.md). The Kansas Secretary of State site was not checked because it returned 403 to scripts on prior days.",
+    "why_it_moved": "The count did not move. The model drift is unexplained and logged.",
+    "should_it_move_us": "No, the count settles the item and nothing in it changed.",
+    "trigger": "The Kansas state canvass total.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json"
+    ],
+    "label": "inferred"
   }
 ]

@@ -1,47 +1,47 @@
 [
   {
-    "as_of": "2026-11-21",
+    "as_of": "2026-11-23",
     "days": 7,
     "this_period": {
-      "start": "2026-11-15",
-      "end": "2026-11-21",
+      "start": "2026-11-17",
+      "end": "2026-11-23",
       "articles": 0,
       "usable_days": 0,
       "skipped_days": [
-        "2026-11-15",
-        "2026-11-16",
         "2026-11-17",
         "2026-11-18",
         "2026-11-19",
         "2026-11-20",
-        "2026-11-21"
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23"
       ]
     },
     "prior_period": {
-      "start": "2026-11-08",
-      "end": "2026-11-14",
+      "start": "2026-11-10",
+      "end": "2026-11-16",
       "articles": 0,
       "usable_days": 0,
       "skipped_days": [
-        "2026-11-08",
-        "2026-11-09",
         "2026-11-10",
         "2026-11-11",
         "2026-11-12",
         "2026-11-13",
-        "2026-11-14"
+        "2026-11-14",
+        "2026-11-15",
+        "2026-11-16"
       ]
     },
     "change_pct": null,
     "direction": "unclear",
-    "top_kind": "rigged or fraud claim",
-    "top_kind_articles": 1,
+    "top_kind": "other",
+    "top_kind_articles": 4,
     "top_speaker": "Donald Trump",
-    "top_speaker_articles": 79,
+    "top_speaker_articles": 83,
     "counts_source": "daily",
     "baseline": {
       "usable_days": 35,
-      "per_day": 238.9,
+      "per_day": 232.9,
       "this_per_day": null,
       "change_pct": null
     },
