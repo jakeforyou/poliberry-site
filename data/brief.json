@@ -6805,5 +6805,90 @@
       "https://politics.api.cnn.io/results/national-races/2026-GG.json"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-25",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold (retrieved, flags.json). The only logged change is Pennsylvania's returned mail ballot file, up 34 with every party share unchanged (retrieved, changes.json). CNN's AP feed shows Alaska's Senate count moved for the first time since Nov 19, with Peltola still marked the winner, while Kansas holds the same totals (retrieved). None of the 11 hourly market checks through 10:00 ET was flagged (retrieved, alerts). The core model's Alaska and Kansas numbers moved again, logged in data/errors.md.",
+    "written_at": "2026-11-25T10:05:00-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-25",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Alaska found a few more ballots, and Peltola is still ahead.",
+    "vibe": "Alaska's count moved for the first time since Nov 19, Pennsylvania's mail file picked up 34 returned ballots, Kansas sat still, and the markets did not move all morning.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://data.pa.gov/d/nbwd-pfn4"
+    ],
+    "written_at": "2026-11-25T10:05:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-25",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Alaska Senate",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska count ticks up, Peltola still marked the winner",
+    "what_happened": "CNN's AP feed read at about 10:01 ET on Nov 25 has Peltola 144,583, Dan Sullivan (R) 132,022, Heikes (R) 6,107 and the independent Sullivan 4,767, 99 percent in, Peltola marked the winner (retrieved). On Nov 24 it read 144,486, 131,965, 6,105 and 4,765 (retrieved, prior brief). Our number is 70.97 for Peltola with a margin of +1.9 (core model). It read 72.77 and +2.08 on Nov 24 (retrieved, prior brief).",
+    "why_it_moved": "Late ballots, likely cured or overseas ballots, added to the count (inferred). The model's fall does not track the count, since Peltola's vote lead did not shrink (inferred), and it continues the unexplained drift logged since Nov 20.",
+    "should_it_move_us": "No, the added ballots leave Peltola ahead and the count settles the item.",
+    "trigger": "The Alaska Division of Elections' certified first-choice total, and whether Peltola stays above 50 percent so no tabulation runs.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-25",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Kansas governor",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas count unchanged, Holscher still ahead",
+    "what_happened": "CNN's AP feed read at about 10:01 ET on Nov 25 has Holscher 562,012 and Masterson 550,643, 99 percent in, Holscher marked the winner (retrieved). Same as the Nov 18 to 24 reads (retrieved, prior briefs). Our number is 58.37 for Holscher with a margin of +0.94 (core model). It read 57.82 and +0.88 on Nov 24 with no logged input change (retrieved, prior brief, logged in errors.md).",
+    "why_it_moved": "The count did not move. The model drift is unexplained and logged.",
+    "should_it_move_us": "No, the count settles the item and nothing in it changed.",
+    "trigger": "The Kansas state canvass total.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-25",
+    "kind": "item",
+    "item_id": "ev_PA",
+    "item": "Pennsylvania mail ballots returned",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Pennsylvania returned file gained 34 ballots",
+    "what_happened": "The Nov 25 pull of the Pennsylvania mail file shows 1,176,230 returned ballots against 1,176,196 on Nov 24, with Democrats 64.4, Republicans 24.9 and other 10.7, all unchanged (retrieved, changes.json). It is party registration of returned ballots, not how anyone voted.",
+    "why_it_moved": "Routine post-election file maintenance (inferred).",
+    "should_it_move_us": "No, a returned-ballot count three weeks after the election says nothing about an unresolved item.",
+    "trigger": "A Pennsylvania certification change, which this file would not show.",
+    "sources": [
+      "https://data.pa.gov/d/nbwd-pfn4"
+    ],
+    "label": "inferred"
   }
 ]
