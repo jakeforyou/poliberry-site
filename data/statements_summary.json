@@ -1,51 +1,50 @@
 [
   {
-    "as_of": "2026-11-24",
+    "as_of": "2026-11-25",
     "days": 7,
     "this_period": {
-      "start": "2026-11-18",
-      "end": "2026-11-24",
-      "articles": 0,
-      "usable_days": 0,
+      "start": "2026-11-19",
+      "end": "2026-11-25",
+      "articles": 118,
+      "usable_days": 1,
       "skipped_days": [
-        "2026-11-18",
         "2026-11-19",
         "2026-11-20",
         "2026-11-21",
         "2026-11-22",
         "2026-11-23",
-        "2026-11-24"
+        "2026-11-25"
       ]
     },
     "prior_period": {
-      "start": "2026-11-11",
-      "end": "2026-11-17",
+      "start": "2026-11-12",
+      "end": "2026-11-18",
       "articles": 0,
       "usable_days": 0,
       "skipped_days": [
-        "2026-11-11",
         "2026-11-12",
         "2026-11-13",
         "2026-11-14",
         "2026-11-15",
         "2026-11-16",
-        "2026-11-17"
+        "2026-11-17",
+        "2026-11-18"
       ]
     },
     "change_pct": null,
     "direction": "unclear",
-    "top_kind": "certification",
-    "top_kind_articles": 1,
+    "top_kind": "voter rolls",
+    "top_kind_articles": 2,
     "top_speaker": "Donald Trump",
-    "top_speaker_articles": 177,
+    "top_speaker_articles": 226,
     "counts_source": "daily",
     "baseline": {
       "usable_days": 35,
-      "per_day": 234.1,
-      "this_per_day": null,
-      "change_pct": null
+      "per_day": 235.8,
+      "this_per_day": 118.0,
+      "change_pct": -50.0
     },
-    "sentence": "Coverage of election-legitimacy statements cannot be compared this week: GDELT has usable data for 0 of 7 days this week and 0 of 7 days the week before.",
+    "sentence": "Coverage of election-legitimacy statements cannot be compared this week: GDELT has usable data for 1 of 7 days this week and 0 of 7 days the week before.",
     "labels": {
       "articles": "retrieved",
       "daily": "retrieved",

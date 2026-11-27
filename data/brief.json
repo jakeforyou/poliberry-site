@@ -6890,5 +6890,70 @@
       "https://data.pa.gov/d/nbwd-pfn4"
     ],
     "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-26",
+    "kind": "lead",
+    "item_id": null,
+    "text": "No flag today. Nothing cleared a threshold and changes.json logs nothing new since Nov 25 (retrieved). CNN's AP feed read at 16:57 ET shows the Alaska Senate and Kansas governor counts exactly as on Nov 25, both winners still marked (retrieved). The hourly market check read 25 items at 14:04, 15:04 and 16:00 ET and flagged none (retrieved, alerts). The core model's Alaska and Kansas numbers fell again with no input change, and the Kansas fall is the largest yet (retrieved, logged in data/errors.md). The snapshot landed late, at about 15:00, after a disk read error and two stalled downloads (retrieved, errors.md).",
+    "written_at": "2026-11-26T17:00:00-05:00",
+    "n_flags": 0,
+    "n_explained": 0,
+    "stale": null,
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-26",
+    "kind": "headline",
+    "item_id": null,
+    "headline": "Thanksgiving, and the only thing on the board that moved was us.",
+    "vibe": "Alaska and Kansas held the same counts as Wednesday, Pennsylvania's mail file sat still, the markets did not move across the afternoon checks, and the model's Alaska and Kansas numbers slipped again on their own.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json",
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json",
+      "https://polymarket.com/event/which-party-will-win-the-house-in-2026"
+    ],
+    "written_at": "2026-11-26T17:00:00-05:00",
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-26",
+    "kind": "item",
+    "item_id": "senate_ak",
+    "item": "Alaska Senate",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Alaska count unchanged, model number slips again",
+    "what_happened": "CNN's AP feed read at 16:57 ET on Nov 26 has Peltola 144,583, Dan Sullivan (R) 132,022, Heikes (R) 6,107 and the independent Sullivan 4,767, 99 percent in, Peltola marked the winner (retrieved). Identical to the Nov 25 read (retrieved, prior brief). Our number is 68.1 for Peltola with a margin of +1.62 (core model). It read 70.97 and +1.9 on Nov 25 (retrieved, prior brief).",
+    "why_it_moved": "The count did not move. The model's fall has no logged input behind it and continues the drift logged since Nov 20 (inferred).",
+    "should_it_move_us": "No, the count settles the item and nothing in it changed. The model drift is a bug to find, not a reading.",
+    "trigger": "The Alaska Division of Elections' certified first-choice total, and whether Peltola stays above 50 percent so no tabulation runs.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-SG.json"
+    ],
+    "label": "inferred"
+  },
+  {
+    "as_of": "2026-11-26",
+    "kind": "item",
+    "item_id": "gov_ks",
+    "item": "Kansas governor",
+    "flag_kind": "brief",
+    "triggers": [],
+    "facts": null,
+    "why": null,
+    "explained": true,
+    "headline": "Kansas count unchanged, model number falls for the first time",
+    "what_happened": "CNN's AP feed read at 16:57 ET on Nov 26 has Holscher 562,012 and Masterson 550,643, 99 percent in, Holscher marked the winner (retrieved). Same as the Nov 18 to 25 reads (retrieved, prior briefs). Our number is 56.37 for Holscher with a margin of +0.71 (core model). It read 58.37 and +0.94 on Nov 25 (retrieved, prior brief). It had risen every day since Nov 20.",
+    "why_it_moved": "The count did not move. The model drift is unexplained and logged. It reversed direction today (inferred).",
+    "should_it_move_us": "No, the count settles the item and nothing in it changed.",
+    "trigger": "The Kansas state canvass total.",
+    "sources": [
+      "https://politics.api.cnn.io/results/national-races/2026-GG.json"
+    ],
+    "label": "inferred"
   }
 ]
